@@ -18,7 +18,10 @@
       "Bash(/c/Users/KANEKI/AppData/Local/Programs/Python/Python313/python.exe:*)",
       "Bash(/c/Users/KANEKI/AppData/Local/Programs/Python/Python313/Scripts/mkdocs.exe build:*)",
       "WebFetch(domain:note.isshikih.top)",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "Bash(\"C:/Program Files/GitHub CLI/gh.exe\" api repos/WalkinDadHH/notes --jq '{id: .id, node_id: .node_id, has_discussions: .has_discussions, name: .name}')",
+      "Bash(C:/Program Files/GitHub CLI/gh.exe api:*)",
+      "Bash(\"C:/Program Files/GitHub CLI/gh.exe\" api /user/installations --jq '.installations[] | {app_slug: .app.slug, id: .id}')"
     ]
   }
 }
