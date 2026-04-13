@@ -97,6 +97,11 @@ nav:
     - math/index.md
   - 物理:
     - physics/index.md
+    - 大学物理（下）:
+      - 光学:
+        - physics/optics/index.md
+        - 几何光学: physics/optics/geometrical-optics.md
+        - 光的干涉: physics/optics/interference.md
   - 化学:
     - chemistry/index.md
   - 专业课程:
