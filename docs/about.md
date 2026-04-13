@@ -1,28 +1,25 @@
-# 关于我
+# 关于本站
 
-## 自我介绍
+## 关于我
 
 你好，我是 **WalkinDadHH**，就读于能源与环境工程专业（能环）。
 
-这个网站是我的个人学习笔记站，灵感来源于前辈 [Savia](https://savia7582.github.io/Exterior/) 的开源笔记项目。看到前辈把课程笔记整理得如此完善、无私地分享出来，深受触动，于是也想做一个类似的网站，记录自己的学习历程，希望能对后来的学弟学妹有所帮助。
-
-笔记内容以课堂整理、公式推导、习题思路为主，难免有疏漏，欢迎指正交流。
-
----
+这个网站用于记录课程笔记，希望能帮到后来的学弟学妹。如发现错误，欢迎在 [GitHub Issues](https://github.com/WalkinDadHH/notes/issues) 留言指正。
 
 ## 本站信息
 
 | 项目 | 说明 |
 |------|------|
-| 作者 | WalkinDadHH |
-| 专业 | 能源与环境工程（能环） |
 | 框架 | [MkDocs](https://www.mkdocs.org/) + [Material 主题](https://squidfunk.github.io/mkdocs-material/) |
-| 字体 | [Noto Serif SC](https://fonts.google.com/noto/specimen/Noto+Serif+SC) / [JetBrains Mono](https://www.jetbrains.com/lp/mono/) |
+| 字体 | [霞鹜文楷](https://github.com/lxgw/LxgwWenKai) · [JetBrains Mono](https://www.jetbrains.com/lp/mono/) |
 | 部署 | [GitHub Pages](https://pages.github.com/) |
-| 致谢 | [Savia 的外装代脑](https://savia7582.github.io/Exterior/) |
 
----
+## 致谢
 
-## 联系方式
+> 本站的建立离不开前辈们的无私分享。
 
-如发现笔记错误或想要交流，可以通过 [GitHub Issues](https://github.com/WalkinDadHH/notes/issues) 留言。
+- **[Savia 的外装代脑](https://savia7582.github.io/Exterior/)** —— 直接启发了这个网站的诞生，提供了课程笔记分享的思路与结构参考
+- **[Isshiki修's Notebook](https://note.isshikih.top/)** —— 视觉设计的重要参考，包括标题 `#` 前缀、阴影 Admonition、整体排版美学
+- **[咸鱼暄的代码空间](https://xuan-insr.github.io/)** —— 配色方案的参考来源
+
+感谢以上前辈的开源精神。
