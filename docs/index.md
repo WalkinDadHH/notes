@@ -1,75 +1,59 @@
-# 欢迎来到我的笔记
+# 欢迎来到 WalkinDadHH 的笔记站
 
-> 好记性不如烂笔头。
-
-这是我的个人知识库，用于记录学习笔记、技术总结和日常思考。
+> 好记性不如烂笔头。——谨以此站献给所有努力的能环人。
 
 ---
 
-## 快速导航
+## 关于本站
+
+这里是**能环专业 WalkinDadHH** 的个人笔记网站。
+
+受前辈 [Savia](https://savia7582.github.io/Exterior/) 的启发，我也想把自己整理的课程笔记、公式推导、学习心得记录下来，希望能帮助到后来的学弟学妹们。
+
+如果笔记中有错误或不足，欢迎指正。
+
+---
+
+## 笔记分类
 
 <div class="grid cards" markdown>
 
--   :material-notebook-outline: **笔记**
+-   :material-math-compass: **数学**
 
     ---
 
-    学习笔记与知识整理
+    高等数学、线性代数、概率论等课程笔记
 
-    [:octicons-arrow-right-24: 浏览笔记](notes/index.md)
+    [:octicons-arrow-right-24: 前往数学](math/index.md)
 
--   :material-information-outline: **关于**
+-   :material-atom: **物理**
 
     ---
 
-    关于本站的说明
+    大学物理课程笔记与习题整理
 
-    [:octicons-arrow-right-24: 了解更多](about.md)
+    [:octicons-arrow-right-24: 前往物理](physics/index.md)
+
+-   :material-flask: **化学**
+
+    ---
+
+    大学化学、物理化学等课程笔记
+
+    [:octicons-arrow-right-24: 前往化学](chemistry/index.md)
+
+-   :material-book-open-page-variant: **专业课程**
+
+    ---
+
+    能源与环境专业核心课程笔记
+
+    [:octicons-arrow-right-24: 前往专业课](major/index.md)
 
 </div>
 
 ---
 
-## 本站特性
+## 致谢
 
-- **全文搜索**：支持中英文搜索
-- **数学公式**：支持 $\LaTeX$ 渲染，例如 $E = mc^2$
-- **代码高亮**：支持多种编程语言
-- **深色模式**：跟随系统或手动切换
-- **流程图**：支持 Mermaid 图表
-
-## 示例
-
-### 代码块
-
-```python title="hello.py"
-def greet(name: str) -> str:
-    """返回问候语"""
-    return f"你好，{name}！"
-
-print(greet("世界"))
-```
-
-### 流程图
-
-```mermaid
-graph LR
-    A[想法] --> B{值得记录？}
-    B -- 是 --> C[写入笔记]
-    B -- 否 --> D[放弃]
-    C --> E[整理归类]
-```
-
-### 数学公式
-
-$$
-\int_{-\infty}^{+\infty} e^{-x^2} \, dx = \sqrt{\pi}
-$$
-
-### 提示框
-
-!!! tip "提示"
-    使用左上角的搜索框可以快速找到笔记。
-
-!!! note "说明"
-    本站使用 [MkDocs](https://www.mkdocs.org/) + [Material 主题](https://squidfunk.github.io/mkdocs-material/) 构建。
+感谢 [Savia](https://savia7582.github.io/Exterior/) 前辈的开源分享，给了我建立这个网站的灵感与勇气。
