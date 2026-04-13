@@ -23,19 +23,17 @@ theme:
     - content.code.annotate
     - content.tabs.link
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: light green
-      accent: red
+    - scheme: default
+      primary: cyan
+      accent: cyan
       toggle:
-        icon: material/weather-sunny
+        icon: material/brightness-7
         name: 切换到深色模式
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: blue
-      accent: blue
+    - scheme: slate
+      primary: orange
+      accent: orange
       toggle:
-        icon: material/weather-night
+        icon: material/brightness-4
         name: 切换到浅色模式
 
 extra_css:
