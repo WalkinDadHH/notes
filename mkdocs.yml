@@ -1,4 +1,4 @@
-site_name: WalkinDadHH 的笔记站
+site_name: WalkinDadHH's Notebook
 site_description: 能环专业学习笔记，愿对学弟学妹有所帮助
 site_author: WalkinDadHH
 docs_dir: docs
@@ -24,14 +24,14 @@ theme:
     - content.tabs.link
   palette:
     - scheme: default
-      primary: cyan
-      accent: cyan
+      primary: blue
+      accent: blue
       toggle:
         icon: material/brightness-7
         name: 切换到深色模式
     - scheme: slate
-      primary: orange
-      accent: orange
+      primary: blue
+      accent: blue
       toggle:
         icon: material/brightness-4
         name: 切换到浅色模式
@@ -100,7 +100,6 @@ nav:
   - 化学:
     - chemistry/index.md
   - 专业课程:
-    - major/index.md
     - 专业基础课:
       - major/foundation/index.md
       - 工程力学: major/foundation/engineering-mechanics.md

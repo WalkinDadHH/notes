@@ -15,7 +15,9 @@
       "WebFetch(domain:raw.githubusercontent.com)",
       "WebFetch(domain:xuan-insr.github.io)",
       "Bash(/c/Users/KANEKI/AppData/Local/Programs/Python/Python313/python.exe -m pip install pymupdf)",
-      "Bash(/c/Users/KANEKI/AppData/Local/Programs/Python/Python313/python.exe:*)"
+      "Bash(/c/Users/KANEKI/AppData/Local/Programs/Python/Python313/python.exe:*)",
+      "Bash(/c/Users/KANEKI/AppData/Local/Programs/Python/Python313/Scripts/mkdocs.exe build:*)",
+      "WebFetch(domain:note.isshikih.top)"
     ]
   }
 }

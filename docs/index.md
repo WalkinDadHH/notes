@@ -1,20 +1,18 @@
-# 欢迎来到 WalkinDadHH 的笔记站
+# WalkinDadHH's Notebook
 
-> 好记性不如烂笔头。——谨以此站献给所有努力的能环人。
-
----
-
-## 关于本站
-
-这里是**能环专业 WalkinDadHH** 的个人笔记网站。
-
-受前辈 [Savia](https://savia7582.github.io/Exterior/) 的启发，我也想把自己整理的课程笔记、公式推导、学习心得记录下来，希望能帮助到后来的学弟学妹们。
-
-如果笔记中有错误或不足，欢迎指正。
+> 纸上得来终觉浅，绝知此事要躬行。
 
 ---
 
-## 笔记分类
+这里是 **WalkinDadHH** 的个人笔记站。
+
+就读于能源与环境工程专业（能环），受前辈 [Savia](https://savia7582.github.io/Exterior/) 的启发，尝试将课程笔记整理成册，希望能对后来的学弟学妹有所帮助。
+
+笔记以课堂整理、公式推导、习题分析为主，难免有疏漏，欢迎指正。
+
+---
+
+## 内容导览
 
 <div class="grid cards" markdown>
 
@@ -22,38 +20,38 @@
 
     ---
 
-    高等数学、线性代数、概率论等课程笔记
+    高等数学 · 线性代数 · 概率论
 
-    [:octicons-arrow-right-24: 前往数学](math/index.md)
+    [:octicons-arrow-right-24: 前往](math/index.md)
 
 -   :material-atom: **物理**
 
     ---
 
-    大学物理课程笔记与习题整理
+    大学物理（上）· 大学物理（下）
 
-    [:octicons-arrow-right-24: 前往物理](physics/index.md)
+    [:octicons-arrow-right-24: 前往](physics/index.md)
 
 -   :material-flask: **化学**
 
     ---
 
-    大学化学、物理化学等课程笔记
+    大学化学 · 物理化学 · 有机化学
 
-    [:octicons-arrow-right-24: 前往化学](chemistry/index.md)
+    [:octicons-arrow-right-24: 前往](chemistry/index.md)
 
 -   :material-book-open-page-variant: **专业课程**
 
     ---
 
-    能源与环境专业核心课程笔记
+    专业基础课 · 专业核心课
 
-    [:octicons-arrow-right-24: 前往专业课](major/index.md)
+    [:octicons-arrow-right-24: 前往](major/foundation/index.md)
 
 </div>
 
 ---
 
-## 致谢
-
-感谢 [Savia](https://savia7582.github.io/Exterior/) 前辈的开源分享，给了我建立这个网站的灵感与勇气。
+!!! quote "致谢"
+    感谢 [Savia](https://savia7582.github.io/Exterior/) 前辈的无私分享，给了我建立这个站点的勇气。  
+    本站使用 [MkDocs](https://www.mkdocs.org/) + [Material](https://squidfunk.github.io/mkdocs-material/) 构建，字体采用[霞鹜文楷](https://github.com/lxgw/LxgwWenKai)。

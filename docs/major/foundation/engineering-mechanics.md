@@ -1,24 +1,17 @@
 # 工程力学 · 复习讲义
 
 !!! info "文件说明"
-    本讲义为工程力学期末复习整理版，涵盖核心考点与公式总结。
+    本讲义为工程力学期末复习整理版，涵盖核心考点与公式总结，共 19 页。
 
-=== "PDF 预览（桌面端）"
+=== ":material-file-pdf-box: PDF 预览"
 
-    <div style="width:100%; height:85vh; border:1px solid #e0e0e0; border-radius:6px; overflow:hidden;">
-      <iframe src="../engineering-mechanics.pdf"
-              width="100%"
-              height="100%"
-              style="border:none;">
-        您的浏览器不支持内嵌 PDF，请切换到图片模式查看。
-      </iframe>
-    </div>
+    <iframe src="../engineering-mechanics.pdf" width="100%" height="820px" frameborder="0"></iframe>
 
-    [⬇ 下载 PDF](../engineering-mechanics.pdf){ .md-button }
+    [⬇ 下载 PDF](../engineering-mechanics.pdf){ .md-button .md-button--primary }
 
-=== "图片模式（全设备可用）"
+=== ":material-image-multiple: 图片模式（iOS 可用）"
 
-    > 共 19 页，图片清晰度 2x，适合 iOS / 移动端阅读。
+    > 共 19 页，2x 清晰度，适合手机 / iPad 阅读。
 
     ![第 1 页](engineering-mechanics-imgs/page-001.jpg)
     ![第 2 页](engineering-mechanics-imgs/page-002.jpg)
