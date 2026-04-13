@@ -2,8 +2,8 @@
    全局字体
    ========================================= */
 :root {
-  --md-text-font: "Noto Serif SC", "LXGW WenKai", "PingFang SC", "Microsoft YaHei", serif;
-  --md-code-font: "JetBrains Mono", "Roboto Mono", "Fira Code", monospace;
+  --md-text-font: "LXGW WenKai", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --md-code-font: "JetBrains Mono", "Fira Code", monospace;
 }
 
 body,

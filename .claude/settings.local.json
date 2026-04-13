@@ -9,7 +9,10 @@
       "Bash(/c/Users/KANEKI/AppData/Local/Programs/Python/Python313/python.exe -m pip install mkdocs-material)",
       "Bash(ipconfig)",
       "Bash(git:*)",
-      "Bash(gh:*)"
+      "Bash(gh:*)",
+      "Bash(/c/Users/KANEKI/AppData/Local/Programs/Python/Python313/Scripts/mkdocs.exe gh-deploy:*)",
+      "WebFetch(domain:savia7582.github.io)",
+      "WebFetch(domain:raw.githubusercontent.com)"
     ]
   }
 }
