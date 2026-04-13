@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip --version)",
+      "Bash(py --version)",
+      "Bash(where python:*)",
+      "Bash(winget:*)",
+      "Bash(pip install:*)",
+      "Bash(/c/Users/KANEKI/AppData/Local/Programs/Python/Python313/python.exe -m pip install mkdocs-material)",
+      "Bash(ipconfig)",
+      "Bash(git:*)",
+      "Bash(gh:*)"
+    ]
+  }
+}

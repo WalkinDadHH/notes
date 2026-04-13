@@ -1,0 +1,95 @@
+/* =========================================
+   全局字体
+   ========================================= */
+:root {
+  --md-text-font: "LXGW WenKai", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --md-code-font: "JetBrains Mono", "Fira Code", monospace;
+}
+
+body,
+.md-typeset {
+  font-family: var(--md-text-font);
+}
+
+code,
+pre,
+kbd,
+.md-typeset code,
+.md-typeset pre {
+  font-family: var(--md-code-font);
+}
+
+/* =========================================
+   代码块优化
+   ========================================= */
+.md-typeset pre > code {
+  font-size: 0.85em;
+  line-height: 1.7;
+}
+
+/* 行内代码 */
+.md-typeset code:not(pre code) {
+  font-size: 0.875em;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+/* =========================================
+   标题
+   ========================================= */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+/* =========================================
+   正文
+   ========================================= */
+.md-typeset {
+  font-size: 0.8rem;
+  line-height: 1.8;
+}
+
+/* =========================================
+   导航
+   ========================================= */
+.md-nav {
+  font-size: 0.75rem;
+}
+
+/* =========================================
+   表格
+   ========================================= */
+.md-typeset table:not([class]) {
+  font-size: 0.8rem;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.md-typeset table:not([class]) th {
+  font-weight: 600;
+}
+
+/* =========================================
+   引用块
+   ========================================= */
+.md-typeset blockquote {
+  border-left: 4px solid var(--md-primary-fg-color);
+  opacity: 0.9;
+}
+
+/* =========================================
+   任务列表
+   ========================================= */
+.md-typeset .task-list-item [type="checkbox"] {
+  margin-top: 0.1em;
+}
+
+/* =========================================
+   页脚
+   ========================================= */
+.md-footer-meta {
+  font-size: 0.7rem;
+}
