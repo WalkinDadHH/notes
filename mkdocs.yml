@@ -109,11 +109,5 @@ nav:
     - 专业基础课:
       - major/foundation/index.md
       - 工程力学: major/foundation/engineering-mechanics.md
-      - 工程热力学（甲）:
-        - major/foundation/thermodynamics/index.md
-        - 第一章 基本概念及定义: major/foundation/thermodynamics/chapter1.md
-        - 第二章 能量与热力学第一定律: major/foundation/thermodynamics/chapter2.md
-        - 第三章 熵与热力学第二定律: major/foundation/thermodynamics/chapter3.md
-        - 第四章 热力学一般关系: major/foundation/thermodynamics/chapter4.md
-        - 第五章 气体的热力性质: major/foundation/thermodynamics/chapter5.md
+      - 工程热力学（甲）: major/foundation/thermodynamics/index.md
   - 关于: about.md
