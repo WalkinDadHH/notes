@@ -228,3 +228,31 @@ center, p, li {
   -webkit-mask-image: var(--md-admonition-icon--key-point);
   mask-image: var(--md-admonition-icon--key-point);
 }
+
+/* =========================================
+   深色模式（slate）适配
+   ========================================= */
+[data-md-color-scheme="slate"] {
+  --md-admonition-bg-color: rgba(255, 255, 255, .04);
+}
+
+/* definition 深色 */
+[data-md-color-scheme="slate"] .md-typeset .definition > .admonition-title,
+[data-md-color-scheme="slate"] .md-typeset .definition > summary {
+  background-color: rgba(30, 136, 229, .18);
+  color: var(--md-default-fg-color);
+}
+
+/* proof 深色 */
+[data-md-color-scheme="slate"] .md-typeset .proof > .admonition-title,
+[data-md-color-scheme="slate"] .md-typeset .proof > summary {
+  background-color: rgba(144, 202, 249, .14);
+  color: var(--md-default-fg-color);
+}
+
+/* key-point 深色 */
+[data-md-color-scheme="slate"] .md-typeset .key-point > .admonition-title,
+[data-md-color-scheme="slate"] .md-typeset .key-point > summary {
+  background-color: rgba(255, 152, 0, .16);
+  color: var(--md-default-fg-color);
+}
