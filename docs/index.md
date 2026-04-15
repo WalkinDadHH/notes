@@ -20,7 +20,7 @@
 
     ---
 
-    高等数学 · 线性代数 · 概率论
+    微积分甲（I）· 微积分甲（II）· 线性代数 · 概率论
 
     [:octicons-arrow-right-24: 前往](math/index.md)
 
