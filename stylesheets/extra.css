@@ -225,17 +225,17 @@ center, p, li {
 }
 
 .md-typeset table:not([class]) th {
-  color: #35527a;
+  color: #4b5563;
   font-weight: 700;
-  background: rgba(21, 101, 192, .05);
+  background: rgba(107, 114, 128, .08);
 }
 
 .md-typeset p:has(> strong:first-child) {
   margin: 1.15rem 0 .65rem;
   padding: .58rem .82rem;
-  border-left: .22rem solid rgba(21, 101, 192, .68);
+  border-left: .22rem solid rgba(107, 114, 128, .72);
   border-radius: .38rem;
-  background: linear-gradient(90deg, rgba(21, 101, 192, .10), rgba(21, 101, 192, .025));
+  background: linear-gradient(90deg, rgba(107, 114, 128, .12), rgba(107, 114, 128, .035));
 }
 
 .md-typeset p > strong:first-child {
@@ -243,8 +243,8 @@ center, p, li {
   margin-right: .45rem;
   padding: .1rem .48rem;
   border-radius: 999px;
-  background: rgba(21, 101, 192, .14);
-  color: #0d47a1;
+  background: rgba(107, 114, 128, .16);
+  color: #374151;
   font-size: .98rem;
   font-weight: 700;
   letter-spacing: .02em;
