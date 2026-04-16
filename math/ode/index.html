@@ -299,15 +299,8 @@
   
     
     
-      
-  
-  
-  
-  
-    
-    
       <li class="md-tabs__item">
-        <a href="../../major/foundation/" class="md-tabs__link">
+        <a href="../../major/" class="md-tabs__link">
           
   
   
@@ -317,9 +310,6 @@
 
         </a>
       </li>
-    
-  
-
     
   
 
@@ -1254,6 +1244,10 @@
     
       
         
+          
+        
+      
+        
       
     
     
@@ -1269,8 +1263,9 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../../major/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -1284,8 +1279,14 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
@@ -1297,6 +1298,8 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -1326,7 +1329,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -1348,14 +1351,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2270,11 +2273,65 @@ $$e^{\alpha x}\sin\beta x,\; x e^{\alpha x}\sin\beta x,\; \dots,\; x^{k-1}e^{\al
 <hr />
 <h2 id="_6">五、证明题选讲<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>本节收录历年卷中的典型证明题。</p>
+<div class="admonition info">
+<p class="admonition-title">证明题常用定理与工具</p>
+<p>第五部分的证明题虽然题面短，但默认你已经会用一批“基础工具”。先把这些工具和典型用途梳理清楚，再看后面的证明会顺很多。</p>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>核心结论</th>
+<th>本节中的典型用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>解的线性叠加性</td>
+<td>齐次线性方程的任意线性组合仍是解</td>
+<td>构造辅助函数 <span class="arithmatex">\(\varphi(x)\)</span>，把“两个解的关系”转化为“新解是否恒为零”</td>
+</tr>
+<tr>
+<td>唯一性定理</td>
+<td>二阶线性方程在给定 <span class="arithmatex">\(y(x_0), y'(x_0)\)</span> 时解唯一</td>
+<td>若某解在一点满足 <span class="arithmatex">\(y(x_0)=y'(x_0)=0\)</span>，则该解只能是零解</td>
+</tr>
+<tr>
+<td>Wronskian 判别</td>
+<td>对二阶齐次线性方程，两解线性无关 <span class="arithmatex">\(\Leftrightarrow W(x)\neq 0\)</span></td>
+<td>判断两个解能否在同一点同时为零，或是否构成基础解系</td>
+</tr>
+<tr>
+<td>刘维尔公式</td>
+<td><span class="arithmatex">\(W' + p(x)W = 0\)</span>，故 <span class="arithmatex">\(W(x)=Ce^{-\int p(x)\,\mathrm{d}x}\)</span></td>
+<td>说明只要某点 <span class="arithmatex">\(W\neq 0\)</span>，则整个区间都不为零</td>
+</tr>
+<tr>
+<td>Cramer 法则</td>
+<td>线性方程组在系数行列式非零时有唯一解</td>
+<td>由两组基础解反推方程系数 <span class="arithmatex">\(p(x), q(x)\)</span></td>
+</tr>
+<tr>
+<td>Euler 齐次函数定理</td>
+<td>若 <span class="arithmatex">\(P,Q\)</span> 为 <span class="arithmatex">\(m\)</span> 次齐次函数，则 <span class="arithmatex">\(xP_x+yP_y=mP,\;xQ_x+yQ_y=mQ\)</span></td>
+<td>化简积分因子证明中的偏导表达式</td>
+</tr>
+<tr>
+<td>Riccati 特解降阶法</td>
+<td>已知 Riccati 方程一个特解时，可令 <span class="arithmatex">\(y=y_1+u\)</span> 降为 Bernoulli 方程</td>
+<td>证明“已知一解可化简原方程”</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">学习顺序</p>
+<p>建议先掌握“唯一性定理 + Wronskian + Cramer 法则”这三组工具，再看 5.1 和 5.2；5.3 和 5.4 更像是“结构识别题”，重点是看到题目后知道该套哪个工具。</p>
+</div>
 <h3 id="51">5.1 线性无关解无公共零点<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
 <p><strong>命题</strong> (24-25 / 23-24) 设 <span class="arithmatex">\(u(x), v(x)\)</span> 是 <span class="arithmatex">\(y'' + p(x)y' + q(x)y = 0\)</span> 的两个线性无关解（<span class="arithmatex">\(p, q\)</span> 连续），则 <span class="arithmatex">\(u, v\)</span> 不存在公共零点。</p>
 <p><strong>证明</strong>：反设存在 <span class="arithmatex">\(x^{*}\)</span> 使 <span class="arithmatex">\(u(x^{*}) = v(x^{*}) = 0\)</span>。则朗斯基行列式</p>
 <div class="arithmatex">\[W(x^{*}) = \begin{vmatrix} u(x^{*}) &amp; v(x^{*}) \\ u'(x^{*}) &amp; v'(x^{*}) \end{vmatrix} = 0\]</div>
-<p>但 <span class="arithmatex">\(u, v\)</span> 线性无关 <span class="arithmatex">\(\Rightarrow\)</span> <span class="arithmatex">\(W(x) \ne 0\)</span>（<span class="arithmatex">\(\forall x\)</span>），矛盾。<span class="arithmatex">\(\blacksquare\)</span></p>
+<p>但 <span class="arithmatex">\(u, v\)</span> 线性无关 <span class="arithmatex">\(\Rightarrow\)</span> <span class="arithmatex">\(W(x) \ne 0\)</span>（<span class="arithmatex">\(\forall x\)</span>），矛盾。证毕。</p>
 <div class="admonition note">
 <p class="admonition-title">另证（不用 Wronskian）</p>
 <p>若 <span class="arithmatex">\(u(x^{*}) = 0\)</span>，由 <span class="arithmatex">\(u \not\equiv 0\)</span> 知 <span class="arithmatex">\(u'(x^{*}) \ne 0\)</span>（否则由唯一性定理 <span class="arithmatex">\(u \equiv 0\)</span>）。同理 <span class="arithmatex">\(v'(x^{*}) \ne 0\)</span>。构造 <span class="arithmatex">\(\varphi(x) = u'(x^{*})\,v(x) - v'(x^{*})\,u(x)\)</span>，它也是齐次方程的解，且 <span class="arithmatex">\(\varphi(x^{*}) = \varphi'(x^{*}) = 0\)</span>，由唯一性 <span class="arithmatex">\(\varphi \equiv 0\)</span>，即 <span class="arithmatex">\(u, v\)</span> 线性相关，矛盾。</p>
@@ -2286,20 +2343,21 @@ $$e^{\alpha x}\sin\beta x,\; x e^{\alpha x}\sin\beta x,\; \dots,\; x^{k-1}e^{\al
 <p>将其视为关于 <span class="arithmatex">\(p, q\)</span> 的线性方程组，系数行列式为</p>
 <div class="arithmatex">\[\Delta = \begin{vmatrix} y_1' &amp; y_1 \\ y_2' &amp; y_2 \end{vmatrix} = -(y_1 y_2' - y_1' y_2) = -W \ne 0\]</div>
 <p>由 Cramer 法则，<span class="arithmatex">\(p, q\)</span> 有唯一解：</p>
-<div class="arithmatex">\[p = \frac{y_1'' y_2 - y_2'' y_1}{W},\quad q = \frac{y_2'' y_1' - y_1'' y_2'}{W} \qquad\blacksquare\]</div>
+<div class="arithmatex">\[p = \frac{y_1'' y_2 - y_2'' y_1}{W},\quad q = \frac{y_2'' y_1' - y_1'' y_2'}{W}\]</div>
+<p>故 <span class="arithmatex">\(p(x), q(x)\)</span> 被 <span class="arithmatex">\(y_1, y_2\)</span> 唯一确定。证毕。</p>
 <h3 id="53">5.3 齐次函数的积分因子<a class="headerlink" href="#53" title="Permanent link">&para;</a></h3>
 <p><strong>命题</strong> (24-25夏) 若 <span class="arithmatex">\(P(x,y)\,\mathrm{d}x + Q(x,y)\,\mathrm{d}y = 0\)</span> 中 <span class="arithmatex">\(P, Q\)</span> 均为 <span class="arithmatex">\(m\)</span> 次齐次函数（即 <span class="arithmatex">\(P(tx,ty) = t^m P(x,y)\)</span>），则 <span class="arithmatex">\(\mu = \dfrac{1}{Px + Qy}\)</span> 是方程的一个积分因子（当 <span class="arithmatex">\(Px + Qy \ne 0\)</span>）。</p>
 <p><strong>证明</strong>：由 Euler 齐次函数定理，<span class="arithmatex">\(m\)</span> 次齐次函数满足 <span class="arithmatex">\(xP_x + yP_y = mP\)</span>，<span class="arithmatex">\(xQ_x + yQ_y = mQ\)</span>。</p>
 <p>需验证 <span class="arithmatex">\(\mu P\,\mathrm{d}x + \mu Q\,\mathrm{d}y\)</span> 是全微分，即 <span class="arithmatex">\(\dfrac{\partial(\mu P)}{\partial y} = \dfrac{\partial(\mu Q)}{\partial x}\)</span>。</p>
 <p>记 <span class="arithmatex">\(D = Px + Qy\)</span>。展开</p>
 <div class="arithmatex">\[\frac{\partial(\mu P)}{\partial y} = \frac{P_y D - P(P_x y + Q + Q_y y + P_y x - P_y x)}{D^2}\]</div>
-<p>经齐次性化简（利用 Euler 定理及 <span class="arithmatex">\(P_y = Q_x\)</span> 不必要成立的一般情况），可对称地证得两侧相等。<span class="arithmatex">\(\blacksquare\)</span></p>
+<p>经齐次性化简（利用 Euler 定理及 <span class="arithmatex">\(P_y = Q_x\)</span> 不必要成立的一般情况），可对称地证得两侧相等。证毕。</p>
 <h3 id="54-riccati-bernoulli">5.4 Riccati 方程化为 Bernoulli 方程<a class="headerlink" href="#54-riccati-bernoulli" title="Permanent link">&para;</a></h3>
 <p><strong>命题</strong> (23-24) 若 <span class="arithmatex">\(y_1\)</span> 是 Riccati 方程 <span class="arithmatex">\(y' = a(x) + b(x)\,y + c(x)\,y^2\)</span> 的一个解，则代换 <span class="arithmatex">\(y = y_1 + u\)</span> 可将方程化为关于 <span class="arithmatex">\(u\)</span> 的 Bernoulli 方程。</p>
 <p><strong>证明</strong>：将 <span class="arithmatex">\(y = y_1 + u\)</span> 代入，利用 <span class="arithmatex">\(y_1' = a + by_1 + cy_1^2\)</span>：</p>
 <div class="arithmatex">\[y_1' + u' = a + b(y_1 + u) + c(y_1 + u)^2\]</div>
 <div class="arithmatex">\[u' = (b + 2cy_1)\,u + c\,u^2\]</div>
-<p>这正是关于 <span class="arithmatex">\(u\)</span> 的 Bernoulli 方程（<span class="arithmatex">\(n = 2\)</span>）。<span class="arithmatex">\(\blacksquare\)</span></p>
+<p>这正是关于 <span class="arithmatex">\(u\)</span> 的 Bernoulli 方程（<span class="arithmatex">\(n = 2\)</span>）。证毕。</p>
 <hr />
 <div class="admonition info">
 <p class="admonition-title">说明</p>
