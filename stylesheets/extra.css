@@ -207,8 +207,7 @@ center, p, li {
 
 /* 表格：紧凑字号 + 可横向滚动 */
 .md-typeset table:not([class]) {
-  font-size: 0.88rem;
-  line-height: 1.75;
+  font-size: 1rem;
 }
 
 .md-typeset__scrollwrap {
@@ -218,19 +217,30 @@ center, p, li {
 
 .md-typeset table:not([class]) td,
 .md-typeset table:not([class]) th {
+  padding: .6em .8em;
+  font-size: 1rem;
+}
+
+.ode-notes table:not([class]) {
+  font-size: 0.88rem;
+  line-height: 1.75;
+}
+
+.ode-notes table:not([class]) td,
+.ode-notes table:not([class]) th {
   padding: .55rem .7rem;
   font-size: 0.86rem;
   vertical-align: top;
   word-break: break-word;
 }
 
-.md-typeset table:not([class]) th {
+.ode-notes table:not([class]) th {
   color: #4b5563;
   font-weight: 700;
   background: rgba(107, 114, 128, .08);
 }
 
-.md-typeset p:has(> strong:first-child) {
+.ode-notes p:has(> strong:first-child) {
   margin: 1.15rem 0 .65rem;
   padding: .58rem .82rem;
   border-left: .22rem solid rgba(107, 114, 128, .72);
@@ -238,7 +248,7 @@ center, p, li {
   background: linear-gradient(90deg, rgba(107, 114, 128, .12), rgba(107, 114, 128, .035));
 }
 
-.md-typeset p > strong:first-child {
+.ode-notes p > strong:first-child {
   display: inline-block;
   margin-right: .45rem;
   padding: .1rem .48rem;
