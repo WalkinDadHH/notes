@@ -1,6 +1,7 @@
 ---
 comments: true
 ---
+<div class="ode-notes" markdown>
 
 # 常微分方程
 
@@ -672,60 +673,68 @@ $$X(t)\,\mathbf{c}'(t) = \mathbf{f}(t) \;\Rightarrow\; \mathbf{c}(t) = \int X^{-
 
 ### 5.1 线性无关解无公共零点
 
-**命题** (24-25 / 23-24) 设 $u(x), v(x)$ 是 $y'' + p(x)y' + q(x)y = 0$ 的两个线性无关解（$p, q$ 连续），则 $u, v$ 不存在公共零点。
+!!! example "命题 (24-25 / 23-24)"
+    设 $u(x), v(x)$ 是 $y'' + p(x)y' + q(x)y = 0$ 的两个线性无关解（$p, q$ 连续），则 $u, v$ 不存在公共零点。
 
-**证明**：反设存在 $x^{*}$ 使 $u(x^{*}) = v(x^{*}) = 0$。则 Wronskian 行列式
 
-$$W(x^{*}) = \begin{vmatrix} u(x^{*}) & v(x^{*}) \\ u'(x^{*}) & v'(x^{*}) \end{vmatrix} = 0$$
+    **证明**：反设存在 $x^{*}$ 使 $u(x^{*}) = v(x^{*}) = 0$。则 Wronskian 行列式
 
-但 $u, v$ 线性无关 $\Rightarrow$ $W(x) \ne 0$（$\forall x$），矛盾。证毕。
+    $$W(x^{*}) = \begin{vmatrix} u(x^{*}) & v(x^{*}) \\ u'(x^{*}) & v'(x^{*}) \end{vmatrix} = 0$$
+
+    但 $u, v$ 线性无关 $\Rightarrow$ $W(x) \ne 0$（$\forall x$），矛盾。证毕。
 
 !!! note "另证（不用 Wronskian）"
     若 $u(x^{*}) = 0$，由 $u \not\equiv 0$ 知 $u'(x^{*}) \ne 0$（否则由唯一性定理 $u \equiv 0$）。同理 $v'(x^{*}) \ne 0$。构造 $\varphi(x) = u'(x^{*})\,v(x) - v'(x^{*})\,u(x)$，它也是齐次方程的解，且 $\varphi(x^{*}) = \varphi'(x^{*}) = 0$，由唯一性 $\varphi \equiv 0$，即 $u, v$ 线性相关，矛盾。
 
 ### 5.2 系数由基础解系唯一确定
 
-**命题** (23-24) 设 $y_1, y_2$ 是 $y'' + p(x)y' + q(x)y = 0$ 的两个线性无关解，则 $p(x), q(x)$ 由 $y_1, y_2$ 唯一确定。
+!!! example "命题 (23-24)"
+    设 $y_1, y_2$ 是 $y'' + p(x)y' + q(x)y = 0$ 的两个线性无关解，则 $p(x), q(x)$ 由 $y_1, y_2$ 唯一确定。
 
-**证明**：由
 
-$$\begin{cases} y_1'' + p\,y_1' + q\,y_1 = 0 \\ y_2'' + p\,y_2' + q\,y_2 = 0 \end{cases}$$
+    **证明**：由
 
-将其视为关于 $p, q$ 的线性方程组，系数行列式为
+    $$\begin{cases} y_1'' + p\,y_1' + q\,y_1 = 0 \\ y_2'' + p\,y_2' + q\,y_2 = 0 \end{cases}$$
 
-$$\Delta = \begin{vmatrix} y_1' & y_1 \\ y_2' & y_2 \end{vmatrix} = -(y_1 y_2' - y_1' y_2) = -W \ne 0$$
+    将其视为关于 $p, q$ 的线性方程组，系数行列式为
 
-由 Cramer 法则，$p, q$ 有唯一解：
+    $$\Delta = \begin{vmatrix} y_1' & y_1 \\ y_2' & y_2 \end{vmatrix} = -(y_1 y_2' - y_1' y_2) = -W \ne 0$$
 
-$$p = \frac{y_1'' y_2 - y_2'' y_1}{W},\quad q = \frac{y_2'' y_1' - y_1'' y_2'}{W}$$
+    由 Cramer 法则，$p, q$ 有唯一解：
 
-故 $p(x), q(x)$ 被 $y_1, y_2$ 唯一确定。证毕。
+    $$p = \frac{y_1'' y_2 - y_2'' y_1}{W},\quad q = \frac{y_2'' y_1' - y_1'' y_2'}{W}$$
+
+    故 $p(x), q(x)$ 被 $y_1, y_2$ 唯一确定。证毕。
 
 ### 5.3 齐次函数的积分因子
 
-**命题** (24-25夏) 若 $P(x,y)\,\mathrm{d}x + Q(x,y)\,\mathrm{d}y = 0$ 中 $P, Q$ 均为 $m$ 次齐次函数（即 $P(tx,ty) = t^m P(x,y)$），则 $\mu = \dfrac{1}{Px + Qy}$ 是方程的一个积分因子（当 $Px + Qy \ne 0$）。
+!!! example "命题 (24-25夏)"
+    若 $P(x,y)\,\mathrm{d}x + Q(x,y)\,\mathrm{d}y = 0$ 中 $P, Q$ 均为 $m$ 次齐次函数（即 $P(tx,ty) = t^m P(x,y)$），则 $\mu = \dfrac{1}{Px + Qy}$ 是方程的一个积分因子（当 $Px + Qy \ne 0$）。
 
-**证明**：由 Euler 齐次函数定理，$m$ 次齐次函数满足 $xP_x + yP_y = mP$，$xQ_x + yQ_y = mQ$。
 
-需验证 $\mu P\,\mathrm{d}x + \mu Q\,\mathrm{d}y$ 是全微分，即 $\dfrac{\partial(\mu P)}{\partial y} = \dfrac{\partial(\mu Q)}{\partial x}$。
+    **证明**：由 Euler 齐次函数定理，$m$ 次齐次函数满足 $xP_x + yP_y = mP$，$xQ_x + yQ_y = mQ$。
 
-记 $D = Px + Qy$。展开
+    需验证 $\mu P\,\mathrm{d}x + \mu Q\,\mathrm{d}y$ 是全微分，即 $\dfrac{\partial(\mu P)}{\partial y} = \dfrac{\partial(\mu Q)}{\partial x}$。
 
-$$\frac{\partial(\mu P)}{\partial y} = \frac{P_y D - P(P_x y + Q + Q_y y + P_y x - P_y x)}{D^2}$$
+    记 $D = Px + Qy$。展开
 
-经齐次性化简（利用 Euler 定理及 $P_y = Q_x$ 不必要成立的一般情况），可对称地证得两侧相等。证毕。
+    $$\frac{\partial(\mu P)}{\partial y} = \frac{P_y D - P(P_x y + Q + Q_y y + P_y x - P_y x)}{D^2}$$
+
+    经齐次性化简（利用 Euler 定理及 $P_y = Q_x$ 不必要成立的一般情况），可对称地证得两侧相等。证毕。
 
 ### 5.4 Riccati（里卡提）方程化为 Bernoulli（伯努利）方程
 
-**命题** (23-24) 若 $y_1$ 是 Riccati 方程 $y' = a(x) + b(x)\,y + c(x)\,y^2$ 的一个解，则代换 $y = y_1 + u$ 可将方程化为关于 $u$ 的 Bernoulli 方程。
+!!! example "命题 (23-24)"
+    若 $y_1$ 是 Riccati 方程 $y' = a(x) + b(x)\,y + c(x)\,y^2$ 的一个解，则代换 $y = y_1 + u$ 可将方程化为关于 $u$ 的 Bernoulli 方程。
 
-**证明**：将 $y = y_1 + u$ 代入，利用 $y_1' = a + by_1 + cy_1^2$：
 
-$$y_1' + u' = a + b(y_1 + u) + c(y_1 + u)^2$$
+    **证明**：将 $y = y_1 + u$ 代入，利用 $y_1' = a + by_1 + cy_1^2$：
 
-$$u' = (b + 2cy_1)\,u + c\,u^2$$
+    $$y_1' + u' = a + b(y_1 + u) + c(y_1 + u)^2$$
 
-这正是关于 $u$ 的 Bernoulli 方程（$n = 2$）。证毕。
+    $$u' = (b + 2cy_1)\,u + c\,u^2$$
+
+    这正是关于 $u$ 的 Bernoulli 方程（$n = 2$）。证毕。
 
 ---
 
