@@ -314,7 +314,29 @@ $$W(x) = \begin{vmatrix} y_1(x) & y_2(x) \\ y_1'(x) & y_2'(x) \end{vmatrix}$$
 
 $$y(x) = y_1(x)\!\left[c_1 - \int \frac{y_2(x) f(x)}{W(x)}\,\mathrm{d}x\right] + y_2(x)\!\left[c_2 + \int \frac{y_1(x) f(x)}{W(x)}\,\mathrm{d}x\right]$$
 
-**例题** (17-18) 已知 $y_1 = \dfrac{e^{x}}{x}$ 是 $y'' + \dfrac{2}{x} y' - y = 0$ 的解，求 $y'' + \dfrac{2}{x} y' - y = x$ 的通解。
+**例题 1** (23-24) $(x+2)\,y'' + 2y' - (x+2)\,y = x^2 + 2x + 2$
+
+除以 $(x+2)$ 化标准形：
+
+$$y'' + \frac{2}{x+2}\,y' - y = \frac{x^2 + 2x + 2}{x+2}$$
+
+这里 $p(x) = \dfrac{2}{x+2}$，$q(x) = -1$。验证
+
+$$2p'(x) + p^2(x) - 4q(x) = -\frac{4}{(x+2)^2} + \frac{4}{(x+2)^2} + 4 = 4$$
+
+为常数 $a = 4$。作代换 $y = u\,e^{-\int p/2\,\mathrm{d}x} = \dfrac{u}{x+2}$，方程化为
+
+$$u'' - u = 0$$
+
+得 $u_1 = e^{x},\; u_2 = e^{-x}$，于是齐次基础解系为
+
+$$y_1 = \frac{e^{x}}{x+2},\quad y_2 = \frac{e^{-x}}{x+2}$$
+
+朗斯基行列式 $W = -\dfrac{2}{(x+2)^2}$。由常数变易公式求特解，化简后
+
+$$y = c_1\frac{e^{x}}{x+2} + c_2\frac{e^{-x}}{x+2} - \frac{x^2 + 2x + 2}{x+2}$$
+
+**例题 2** (17-18) 已知 $y_1 = \dfrac{e^{x}}{x}$ 是 $y'' + \dfrac{2}{x} y' - y = 0$ 的解，求 $y'' + \dfrac{2}{x} y' - y = x$ 的通解。
 
 由刘维尔公式得另一基础解 $y_2 = \dfrac{e^{-x}}{x}$。$W = -\dfrac{2}{x^2}$。代入常数变易公式化简后：
 

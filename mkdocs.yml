@@ -96,6 +96,7 @@ nav:
   - 首页: index.md
   - 数学:
     - math/index.md
+    - 常微分方程: math/ode/index.md
   - 物理:
     - physics/index.md
     - 大学物理（下）:
