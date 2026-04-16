@@ -137,6 +137,7 @@ h1,
   margin-top: .8rem;
   opacity: .5;
   font-family: var(--md-text-font);
+  font-size: .82rem;
 }
 
 .md-tabs__link--active,
@@ -169,7 +170,39 @@ center, p, li {
 }
 
 .md-nav__link {
-  font-size: small;
+  font-size: .86rem;
+}
+
+.md-header__title,
+.md-header__topic,
+.md-header__button,
+.md-search__input,
+.md-search-result__meta,
+.md-nav__title,
+.md-nav__item .md-nav__link,
+.md-sidebar .md-nav__link,
+.md-nav--secondary .md-nav__link,
+.md-nav--secondary .md-nav__title,
+.md-tabs__link,
+.md-ellipsis {
+  font-size: .9rem;
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-header__title,
+  .md-header__topic,
+  .md-header__button,
+  .md-search__input,
+  .md-search-result__meta,
+  .md-nav__title,
+  .md-nav__item .md-nav__link,
+  .md-sidebar .md-nav__link,
+  .md-nav--secondary .md-nav__link,
+  .md-nav--secondary .md-nav__title,
+  .md-tabs__link,
+  .md-ellipsis {
+    font-size: .98rem;
+  }
 }
 
 /* 表格字号放大，避免公式过小 */
