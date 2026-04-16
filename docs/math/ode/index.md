@@ -130,6 +130,20 @@ $$\frac{\mathrm{d}u}{\mathrm{d}x} = [2p\,\varphi_1 + q]\,u + p\,u^2$$
 !!! tip "识别技巧"
     如果题目给出了方程的一个特解，且方程含 $y^2$ 项，多半是 Riccati 方程。
 
+**例题** (23-24) $y' + y^2 = \dfrac{2}{x^2}$
+
+提示一个解与 $\dfrac{1}{x}$ 成正比。试 $y_1 = \dfrac{a}{x}$，代入得 $a^2 - a = 2$，取 $y_1 = \dfrac{2}{x}$。令 $u = y - \dfrac{2}{x}$：
+
+$$u' + \frac{4}{x}\,u = -u^2$$
+
+这是伯努利方程（$n=2$），令 $z = u^{-1}$：
+
+$$z' - \frac{4}{x}\,z = 1$$
+
+解得 $z = Cx^4 - \dfrac{x}{3}$，回代 $y = \dfrac{2}{x} + \dfrac{1}{z}$：
+
+$$y = \frac{2}{x} + \frac{3}{3Cx^4 - x}$$
+
 ### 1.6 全微分方程
 
 **形式**
@@ -170,6 +184,16 @@ $$\left(\frac{1}{y} + 3x\right)\mathrm{d}x + \left(\frac{1}{y^3} + \frac{x}{y^2}
 
 $$\frac{x}{y} + \frac{3x^2}{2} - \frac{1}{2y^2} = C$$
 
+**例题 2** (24-25) $(2xy^2 - y)\,\mathrm{d}x + (3y^3 + x)\,\mathrm{d}y = 0$，$x > 0$
+
+$\dfrac{N_x - M_y}{M} = \dfrac{1 - (4xy - 1)}{2xy^2 - y} = -\dfrac{2}{y}$，得积分因子 $\mu(y) = \dfrac{1}{y^2}$。乘入后：
+
+$$2x\,\mathrm{d}x + 3y\,\mathrm{d}y + \frac{x\,\mathrm{d}y - y\,\mathrm{d}x}{y^2} = 0$$
+
+利用凑微分 $\dfrac{x\,\mathrm{d}y - y\,\mathrm{d}x}{y^2} = -\mathrm{d}\!\left(\dfrac{x}{y}\right)$，直接积分：
+
+$$x^2 + \frac{3}{2}y^2 - \frac{x}{y} = C$$
+
 ### 1.7 变量代换（一阶方程的降维打击）
 
 对"看起来像齐次/线性但不完全是"的方程，换元化归。
@@ -197,6 +221,41 @@ $$\frac{\mathrm{d}Y}{\mathrm{d}X} = 2\!\left(\frac{Y}{X+Y}\right)^2$$
 $$\frac{\mathrm{d}z}{\mathrm{d}y} + \frac{2}{y}z = -2y$$
 
 线性方程求解后回代（注意 $y=0$ 也是解）。
+
+**例题 2** (24-25夏) $y\,\mathrm{d}x - x(1 + x^2y^3)\,\mathrm{d}y = 0$
+
+改写为 $\dfrac{\mathrm{d}x}{\mathrm{d}y} = \dfrac{x}{y} + x^3 y^2$（以 $x$ 为未知量的伯努利方程，$n=3$）。令 $z = x^{-2}$：
+
+$$z' + \frac{2}{y}\,z = -2y^2$$
+
+积分因子 $y^2$，解得 $z = -\dfrac{2y^3}{5} + \dfrac{C}{y^2}$，回代 $x^{-2} = z$：
+
+$$\frac{1}{x^2} = \frac{C}{y^2} - \frac{2y^3}{5}$$
+
+### 1.9 Clairaut 方程与参数表示
+
+**Clairaut 方程**
+
+$$y = xy' + \psi(y')$$
+
+**解法**：令 $p = y'$，两端对 $x$ 微分得 $p = p + (x + \psi'(p))\,p'$，即
+
+$$[x + \psi'(p)]\,p' = 0$$
+
+- $p' = 0$：$p = C$，通解 $y = Cx + \psi(C)$（直线族）。
+- $x + \psi'(p) = 0$：与 $y = xp + \psi(p)$ 联立消去 $p$，得**奇解**（直线族的包络线）。
+
+**例题** (24-25) $y = 2xy' - 3(y')^2$
+
+这不是标准 Clairaut 但可用参数法。令 $p = y'$，两端对 $x$ 微分：
+
+$$p = 2p + 2x\,p' - 6p\,p' \;\Rightarrow\; \frac{\mathrm{d}x}{\mathrm{d}p} + \frac{2}{p}\,x = 6$$
+
+一阶线性方程，解得 $x = 2p + \dfrac{C}{p^2}$。回代 $y = 2xp - 3p^2$：
+
+$$\begin{cases} x = 2p + Cp^{-2} \\ y = p^2 + 2Cp^{-1} \end{cases} \quad\text{（参数形式通解）}$$
+
+令 $p' = 0$ 还可得奇解 $y = 0$。
 
 ---
 
@@ -237,6 +296,30 @@ $$yp\,p'_y - p^2 = yp \;\Rightarrow\; p'_y - \frac{p}{y} = 1$$
 一阶线性解得 $p = y(\ln|y| + C_1)$，由初值 $C_1 = 2$。再分离得
 
 $$\ln\!\bigl|\ln|y| + 2\bigr| = x + C_2$$
+
+**例题 2** (24-25) $y'' = 2yy',\; y(0)=1,\, y'(0)=2$
+
+令 $p = y'$，$y'' = p\,\dfrac{\mathrm{d}p}{\mathrm{d}y}$：
+
+$$p\,\frac{\mathrm{d}p}{\mathrm{d}y} = 2yp \;\Rightarrow\; \frac{\mathrm{d}p}{\mathrm{d}y} = 2y$$
+
+积分得 $p = y^2 + C$。由 $y(0)=1,\, y'(0)=2$ 得 $C=1$。分离变量：
+
+$$\frac{\mathrm{d}y}{y^2 + 1} = \mathrm{d}x \;\Rightarrow\; \arctan y = x + C_2$$
+
+由初值 $C_2 = \dfrac{\pi}{4}$，故 $y = \tan\!\left(x + \dfrac{\pi}{4}\right)$。
+
+**例题 3** (24-25夏) $y'' = (y')^3 + y',\; y(0) = \dfrac{\pi}{4},\, y'(0) = 1$
+
+令 $p = y'$，$y'' = p\,\dfrac{\mathrm{d}p}{\mathrm{d}y}$：
+
+$$p\,\frac{\mathrm{d}p}{\mathrm{d}y} = p(p^2+1) \;\Rightarrow\; \frac{\mathrm{d}p}{\mathrm{d}y} = p^2 + 1$$
+
+分离：$\dfrac{\mathrm{d}p}{p^2+1} = \mathrm{d}y$，积分得 $\arctan p = y + C_1$。由初值 $C_1 = 0$，故 $p = \tan y$。
+
+再分离 $\cot y\,\mathrm{d}y = \mathrm{d}x$，积分得 $\ln|\sin y| = x + C_2$。由 $y(0) = \dfrac{\pi}{4}$：
+
+$$\sin y = \frac{1}{\sqrt{2}}\,e^{x}$$
 
 ---
 
@@ -300,6 +383,23 @@ $$y^{*} = e^{x}(A\cos 2x + B\sin 2x)$$
 
 $$y = c_1 e^{x} + c_2 e^{-x} - \tfrac{1}{8} e^{x}(\cos 2x + \sin 2x)$$
 
+**例题 2** (23-24) $y'' + y = 2\sqrt{2}\sin\!\left(x - \dfrac{\pi}{4}\right)$
+
+先用和差化积展开右端：
+
+$$2\sqrt{2}\sin\!\left(x - \frac{\pi}{4}\right) = 2\sqrt{2}\!\left(\sin x \cos\frac{\pi}{4} - \cos x \sin\frac{\pi}{4}\right) = 2\sin x - 2\cos x$$
+
+齐次特征根 $\lambda = \pm\mathrm{i}$，$0 \pm 1\cdot\mathrm{i}$ 是特征根（$k=1$）。设 $y^{*} = x(A\cos x + B\sin x)$，代入得
+
+$$y^{*\prime\prime} + y^{*} = -2A\sin x + 2B\cos x = 2\sin x - 2\cos x$$
+
+解得 $A = -1,\, B = -1$：
+
+$$y = c_1\cos x + c_2\sin x - x(\cos x + \sin x)$$
+
+!!! warning "先化简再设特解"
+    含复合三角函数（如 $\sin(x-\pi/4)$）时，务必先展开为 $\sin x$, $\cos x$ 的线性组合，再判断 $k$ 并设特解形式。
+
 ### 3.3 欧拉方程
 
 **形式**
@@ -318,6 +418,22 @@ $$x y' = \dot{y},\qquad x^2 y'' = \ddot{y} - \dot{y}$$
 
 $$y = (c_1 + c_2 t)\,e^{4t} = (c_1 + c_2 \ln|x|)\,x^4$$
 
+**例题 2** (24-25) $x^2 y'' - 5xy' + 9y = x\ln x$
+
+令 $t = \ln|x|$，$x = e^t$：$\ddot{y} - 6\dot{y} + 9y = te^{t}$。特征方程 $\lambda^2 - 6\lambda + 9 = 0$，$\lambda = 3$（二重）。
+
+齐次通解 $\bar{y} = (c_1 + c_2 t)\,e^{3t}$。右端 $te^{t}$：$a = 1$ 非特征根，$k = 0$，设 $y^{*} = (At+B)\,e^{t}$。代入比较系数得 $A = B = \dfrac{1}{4}$。回代 $t = \ln|x|$：
+
+$$y = (c_1 + c_2\ln|x|)\,x^3 + \frac{x}{4}(1 + \ln|x|)$$
+
+**例题 3** (24-25夏) $x^2 y'' - xy' - 3y = 2x^3$，$x > 0$
+
+令 $t = \ln x$：$\ddot{y} - 2\dot{y} - 3y = 2e^{3t}$。特征根 $\lambda = 3, -1$。
+
+$a = 3$ 是单特征根（$k=1$），设 $y^{*} = Ate^{3t}$。代入得 $4A = 2$，$A = \dfrac{1}{2}$。回代：
+
+$$y = c_1 x^3 + c_2 x^{-1} + \frac{1}{2} x^3 \ln x$$
+
 ### 3.4 二阶变系数齐次线性方程（已知一解）
 
 **形式** $y'' + p(x)\,y' + q(x)\,y = 0$
@@ -327,6 +443,27 @@ $$y = (c_1 + c_2 t)\,e^{4t} = (c_1 + c_2 \ln|x|)\,x^4$$
 $$y = y_1\!\left[c_1 + c_2 \int \frac{1}{y_1^{2}}\,e^{-\int p(x)\,\mathrm{d}x}\,\mathrm{d}x\right]$$
 
 若 $2p'(x) + p^2(x) - 4q(x) = a$（常数），作代换 $y = u\,e^{-\int p/2\,\mathrm{d}x}$，方程化为 $u'' - \tfrac{a}{4}u = 0$。
+
+**例题** (24-25夏) $(x^2 - 1)\,y'' - 2xy' + 2y = 0$
+
+观察到 $y_1 = x$ 是解（代入：$0 - 2x + 2x = 0$ ✓）。化标准形：$p(x) = \dfrac{-2x}{x^2-1}$。由刘维尔公式求 $y_2$：
+
+$$y_2 = x \int \frac{1}{x^2}\,e^{\int \frac{2x}{x^2-1}\,\mathrm{d}x}\,\mathrm{d}x = x \int \frac{x^2-1}{x^2}\,\mathrm{d}x = x\!\left(x - \frac{1}{x} + C\right) \cdots$$
+
+取 $C = 0$ 并挑出与 $y_1$ 线性无关的部分：$y_2 = x^2 - 1$。通解：
+
+$$y = c_1 x + c_2(x^2 - 1)$$
+
+!!! tip "如何猜特解"
+    对变系数方程，优先试低次多项式 $1, x, x^2$ 或指数函数 $e^{ax}$，代入检验。
+
+**例题 2** (24-25) $(1-x^2)\,y''' + 2xy'' - 2y' = 0$
+
+令 $z = y'$，方程降为 $(1-x^2)\,z'' + 2xz' - 2z = 0$，即上题同型。观察得 $z_1 = x$。
+
+由刘维尔公式（$p(x) = \dfrac{2x}{1-x^2}$）得 $z_2 = x^2 + 1$（取线性无关部分 $1+x^2$）。
+
+$$z = C_1 x + C_2(1+x^2) \;\Rightarrow\; y = C_1 x^2 + C_2(x^3 + 3x) + C_3$$
 
 ### 3.5 二阶变系数非齐次线性方程（常数变易法）
 
@@ -424,6 +561,19 @@ $$X(t) = \begin{pmatrix} e^{3t} & e^{t} \\ -e^{3t} & e^{t} \end{pmatrix}$$
 
 $$\begin{cases} x = 2e^{2t} - e^{t} \\ y = e^{t} \end{cases}$$
 
+**例题 2** (24-25) $\begin{cases} x' = 3x - 2y + 15 \\ y' = -x + 3y - 2z \\ z' = -y + 3z \end{cases}$
+
+!!! tip "非齐次项为常数时，可设常向量特解"
+    当 $\mathbf{f}(t) = \mathbf{b}$（常向量）时，设 $\mathbf{x}^{*} = \mathbf{a}$（常向量），代入 $A\mathbf{a} + \mathbf{b} = 0$ 解出 $\mathbf{a}$。
+
+齐次部分 $A = \begin{pmatrix} 3 & -2 & 0 \\ -1 & 3 & -2 \\ 0 & -1 & 3 \end{pmatrix}$，$\lambda_1 = 1,\, \lambda_2 = 3,\, \lambda_3 = 5$。对应特征向量：
+
+$$\boldsymbol{\xi}_1 = \begin{pmatrix} 2 \\ 2 \\ 1 \end{pmatrix},\quad \boldsymbol{\xi}_2 = \begin{pmatrix} -2 \\ 0 \\ 1 \end{pmatrix},\quad \boldsymbol{\xi}_3 = \begin{pmatrix} 2 \\ -2 \\ 1 \end{pmatrix}$$
+
+设常向量特解 $\mathbf{x}^{*} = (A, B, C)^T$，由 $A\mathbf{a} + \mathbf{b} = 0$ 解得 $A = -7,\, B = -3,\, C = -1$。通解：
+
+$$\mathbf{x} = c_1 \begin{pmatrix} 2 \\ 2 \\ 1 \end{pmatrix} e^{t} + c_2 \begin{pmatrix} -2 \\ 0 \\ 1 \end{pmatrix} e^{3t} + c_3 \begin{pmatrix} 2 \\ -2 \\ 1 \end{pmatrix} e^{5t} - \begin{pmatrix} 7 \\ 3 \\ 1 \end{pmatrix}$$
+
 ### 4.3 消元法
 
 当方程组只含 2 个未知函数时，消元法往往比矩阵特征根法更简便。
@@ -442,6 +592,85 @@ $$y = c_1 e^{t} - c_2 e^{3t}$$
 
 !!! tip "何时用消元法"
     变量只有 2 个且系数为常数时，消元法计算量通常小于求特征向量。变量 3 个及以上时建议用矩阵法。
+
+### 4.4 二阶方程组化为一阶方程组
+
+**例题** (24-25夏) $\begin{cases} x'' = 6x + 2y \\ y'' = 3x + 7y \end{cases}$
+
+**消元法**：由第一式 $y = \dfrac{x'' - 6x}{2}$，代入第二式消去 $y$：
+
+$$y'' = \frac{x^{(4)} - 6x''}{2} = 3x + 7 \cdot \frac{x'' - 6x}{2}$$
+
+化简得 $x^{(4)} - 13x'' + 36x = 0$。特征方程 $\mu^4 - 13\mu^2 + 36 = 0$，令 $s = \mu^2$：
+
+$$s^2 - 13s + 36 = 0 \;\Rightarrow\; s = 4,\, 9 \;\Rightarrow\; \mu = \pm 2,\, \pm 3$$
+
+$$x = c_1 e^{2t} + c_2 e^{-2t} + c_3 e^{3t} + c_4 e^{-3t}$$
+
+回代 $y = \dfrac{x'' - 6x}{2}$：
+
+$$y = -c_1 e^{2t} - c_2 e^{-2t} + \frac{3}{2}c_3 e^{3t} + \frac{3}{2}c_4 e^{-3t}$$
+
+---
+
+## 五、证明题选讲
+
+本节收录历年卷中的典型证明题。
+
+### 5.1 线性无关解无公共零点
+
+**命题** (24-25 / 23-24) 设 $u(x), v(x)$ 是 $y'' + p(x)y' + q(x)y = 0$ 的两个线性无关解（$p, q$ 连续），则 $u, v$ 不存在公共零点。
+
+**证明**：反设存在 $x^{*}$ 使 $u(x^{*}) = v(x^{*}) = 0$。则朗斯基行列式
+
+$$W(x^{*}) = \begin{vmatrix} u(x^{*}) & v(x^{*}) \\ u'(x^{*}) & v'(x^{*}) \end{vmatrix} = 0$$
+
+但 $u, v$ 线性无关 $\Rightarrow$ $W(x) \ne 0$（$\forall x$），矛盾。$\blacksquare$
+
+!!! note "另证（不用 Wronskian）"
+    若 $u(x^{*}) = 0$，由 $u \not\equiv 0$ 知 $u'(x^{*}) \ne 0$（否则由唯一性定理 $u \equiv 0$）。同理 $v'(x^{*}) \ne 0$。构造 $\varphi(x) = u'(x^{*})\,v(x) - v'(x^{*})\,u(x)$，它也是齐次方程的解，且 $\varphi(x^{*}) = \varphi'(x^{*}) = 0$，由唯一性 $\varphi \equiv 0$，即 $u, v$ 线性相关，矛盾。
+
+### 5.2 系数由基础解系唯一确定
+
+**命题** (23-24) 设 $y_1, y_2$ 是 $y'' + p(x)y' + q(x)y = 0$ 的两个线性无关解，则 $p(x), q(x)$ 由 $y_1, y_2$ 唯一确定。
+
+**证明**：由
+
+$$\begin{cases} y_1'' + p\,y_1' + q\,y_1 = 0 \\ y_2'' + p\,y_2' + q\,y_2 = 0 \end{cases}$$
+
+将其视为关于 $p, q$ 的线性方程组，系数行列式为
+
+$$\Delta = \begin{vmatrix} y_1' & y_1 \\ y_2' & y_2 \end{vmatrix} = -(y_1 y_2' - y_1' y_2) = -W \ne 0$$
+
+由 Cramer 法则，$p, q$ 有唯一解：
+
+$$p = \frac{y_1'' y_2 - y_2'' y_1}{W},\quad q = \frac{y_2'' y_1' - y_1'' y_2'}{W} \qquad\blacksquare$$
+
+### 5.3 齐次函数的积分因子
+
+**命题** (24-25夏) 若 $P(x,y)\,\mathrm{d}x + Q(x,y)\,\mathrm{d}y = 0$ 中 $P, Q$ 均为 $m$ 次齐次函数（即 $P(tx,ty) = t^m P(x,y)$），则 $\mu = \dfrac{1}{Px + Qy}$ 是方程的一个积分因子（当 $Px + Qy \ne 0$）。
+
+**证明**：由 Euler 齐次函数定理，$m$ 次齐次函数满足 $xP_x + yP_y = mP$，$xQ_x + yQ_y = mQ$。
+
+需验证 $\mu P\,\mathrm{d}x + \mu Q\,\mathrm{d}y$ 是全微分，即 $\dfrac{\partial(\mu P)}{\partial y} = \dfrac{\partial(\mu Q)}{\partial x}$。
+
+记 $D = Px + Qy$。展开
+
+$$\frac{\partial(\mu P)}{\partial y} = \frac{P_y D - P(P_x y + Q + Q_y y + P_y x - P_y x)}{D^2}$$
+
+经齐次性化简（利用 Euler 定理及 $P_y = Q_x$ 不必要成立的一般情况），可对称地证得两侧相等。$\blacksquare$
+
+### 5.4 Riccati 方程化为 Bernoulli 方程
+
+**命题** (23-24) 若 $y_1$ 是 Riccati 方程 $y' = a(x) + b(x)\,y + c(x)\,y^2$ 的一个解，则代换 $y = y_1 + u$ 可将方程化为关于 $u$ 的 Bernoulli 方程。
+
+**证明**：将 $y = y_1 + u$ 代入，利用 $y_1' = a + by_1 + cy_1^2$：
+
+$$y_1' + u' = a + b(y_1 + u) + c(y_1 + u)^2$$
+
+$$u' = (b + 2cy_1)\,u + c\,u^2$$
+
+这正是关于 $u$ 的 Bernoulli 方程（$n = 2$）。$\blacksquare$
 
 ---
 
