@@ -4,6 +4,35 @@ comments: true
 
 # 工程热力学（甲）
 
+<div class="course-hero" markdown>
+
+<span class="course-hero__kicker">Course Notes</span>
+
+## 工程热力学课程总览
+
+这页是当前专业课主力页面之一。整理思路不是简单抄板书，而是尽量把符号、章节状态和复习入口放到最前面，让后续阅读更顺。
+
+<div class="course-hero__meta" markdown>
+
+- <strong>课程类型</strong><span>能源动力类核心基础课</span>
+- <strong>当前进度</strong><span>前 1 至 5 章已完成，后续章节施工中</span>
+- <strong>阅读方式</strong><span>先看符号速查，再按章节推进</span>
+
+</div>
+
+<div class="course-hero__badges" markdown>
+
+<span class="badge badge--building">持续补完</span>
+<span class="badge">专业课主线</span>
+<span class="badge">章节导向</span>
+
+</div>
+
+</div>
+
+!!! tip "阅读建议"
+    如果你是跟课学习，建议先看“符号速查”和“章节概览”；如果你是期末复习，优先进入已完成章节，再把未完成部分当作补充目录使用。
+
 !!! note "课程信息"
     - **任课教师**：郑梦莲 / 魏健健 / 王凯歌
     - **使用教材**：《工程热力学（第四版）》曾丹苓、敖越等主编
@@ -14,7 +43,7 @@ comments: true
 
 ---
 
-## 符号速查
+## 符号速查 {#符号速查}
 
 !!! info "本课程常用符号一览"
 

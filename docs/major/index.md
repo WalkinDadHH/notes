@@ -1,18 +1,25 @@
 # 专业课程
 
-!!! note "说明"
-    本章收录能源与环境工程专业相关课程笔记与资料。
+<div class="section-hero" markdown>
 
-## 分类
+<span class="section-hero__kicker">Major Courses</span>
 
-<div class="grid cards" markdown>
+## 能源与环境工程专业课导览
 
--   :material-book-education: **专业基础课**
+这里集中收录专业基础课与后续核心课程。页面会优先强调课程路径、章节状态和适合的阅读顺序，而不是只给出静态目录。
+
+</div>
+
+<div class="grid cards cards--section" markdown>
+
+-   :material-book-education-outline: **专业基础课**
 
     ---
 
-    工程力学、工程热力学、流体力学等
+    当前重点包括工程力学与工程热力学，后续会继续补全流体力学等专业课程。
 
-    [:octicons-arrow-right-24: 前往](foundation/index.md)
+    <span class="badge badge--ready">主力板块</span>
+
+    [进入专业基础课](foundation/index.md)
 
 </div>
