@@ -14,6 +14,18 @@
 
 ---
 
+## 协作前置检查
+
+在修改仓库结构、部署方式、维护规范前，先阅读：
+
+- `README.md`
+- `MAINTENANCE_LOG.md`
+- 本文件
+
+如果本次修改会影响后续维护流程，完成后必须在 `MAINTENANCE_LOG.md` 追加一条记录。
+
+---
+
 ## 部署命令（每次更新必须执行）
 
 ```bash
@@ -22,7 +34,7 @@ git add . && git commit -m "feat/fix: 描述" && git push
 /c/Users/KANEKI/AppData/Local/Programs/Python/Python313/Scripts/mkdocs.exe gh-deploy --force
 ```
 
-**不要让用户自己运行命令，直接帮他执行。**
+**这是仓库所有者明确要求保留的工作流。不要擅自关闭自动提交/自动部署机制。**
 
 ---
 
@@ -54,6 +66,7 @@ nav:
   - 首页: index.md
   - 数学:
     - math/index.md
+    - 常微分方程: math/ode/index.md
   - 物理:
     - physics/index.md
     - 大学物理（下）:
@@ -180,3 +193,14 @@ nav:
 - 样式来源：isshikih.top
 - 结构来源：savia7582.github.io
 - 热力学单页模式参考：czy1101kksk.github.io/energy/Engineering_Thermodynamics/
+
+---
+
+## Codex / Claude 协作约定
+
+- 两者都把本仓库视为共享工作区，不要覆盖对方未理解的改动
+- 优先修改 `docs/`、`mkdocs.yml`、维护文档；谨慎处理 `site/`
+- `site/` 当前仍在 Git 跟踪中，本地构建会产生大量脏文件，除非任务明确要求，不要顺手提交这些产物
+- 日常校验优先使用 `scripts/validate-mkdocs.ps1`，避免直接刷新已跟踪的 `site/`
+- 自动发布是仓库所有者要求保留的流程，不要自行关闭
+- 若更新了约定、脚本、目录策略，同步更新 `README.md` 或本文件，并记入 `MAINTENANCE_LOG.md`

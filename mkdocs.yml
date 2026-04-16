@@ -107,6 +107,7 @@ nav:
   - 化学:
     - chemistry/index.md
   - 专业课程:
+    - major/index.md
     - 专业基础课:
       - major/foundation/index.md
       - 工程力学: major/foundation/engineering-mechanics.md

@@ -1,0 +1,12 @@
+# Local note-extraction intermediates.
+_ode*.txt
+
+# Local validation/build scratch directories.
+.tmp/
+.tmp_site_validation/
+
+# Python cache / virtualenv artifacts.
+__pycache__/
+*.py[cod]
+.venv/
+
