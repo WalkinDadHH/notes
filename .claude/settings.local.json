@@ -43,7 +43,10 @@
       "Bash(rm -f docs/friends.md docs/updates.md)",
       "Bash(rm -rf docs/assets/images/hero/)",
       "Bash(python3.13 -m mkdocs build --clean)",
-      "Bash(\"C:\\\\Users\\\\KANEKI\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe\" -m mkdocs build --clean)"
+      "Bash(\"C:\\\\Users\\\\KANEKI\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe\" -m mkdocs build --clean)",
+      "Bash(\"C:\\\\Users\\\\KANEKI\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe\" -m mkdocs gh-deploy --force)",
+      "WebFetch(domain:api.github.com)",
+      "WebFetch(domain:note.tonycrane.cc)"
     ]
   },
   "hooks": {
