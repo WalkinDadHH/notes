@@ -2068,19 +2068,25 @@
 <p class="admonition-title">易丢失的解</p>
 <p>若存在 <span class="arithmatex">\(y^{*}\)</span> 使 <span class="arithmatex">\(g(y^{*})=0\)</span>，则 <span class="arithmatex">\(y \equiv y^{*}\)</span> 也是解。分离变量时要回头检查。</p>
 </div>
-<p><strong>例题</strong> (20-21) <span class="arithmatex">\(\dfrac{\mathrm{d}y}{\mathrm{d}x} = (1-y^2)\,x\)</span></p>
+<div class="admonition example">
+<p class="admonition-title">例题 (20-21)</p>
+<p><span class="arithmatex">\(\dfrac{\mathrm{d}y}{\mathrm{d}x} = (1-y^2)\,x\)</span></p>
 <p>分离变量：<span class="arithmatex">\(\dfrac{\mathrm{d}y}{1-y^2} = x\,\mathrm{d}x\)</span>，两端积分：</p>
 <div class="arithmatex">\[\frac{1}{2}\ln\left|\frac{1+y}{1-y}\right| = \frac{x^2}{2} + C \;\Rightarrow\; \frac{1+y}{1-y} = C\,e^{x^2}\]</div>
+</div>
 <h3 id="12">1.2 齐次方程<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
 <p><strong>形式</strong>（右端只依赖 <span class="arithmatex">\(y/x\)</span>）</p>
 <div class="arithmatex">\[\frac{\mathrm{d}y}{\mathrm{d}x} = f\!\left(\frac{y}{x}\right)\]</div>
 <p><strong>解法</strong></p>
 <p>令 <span class="arithmatex">\(u = y/x\)</span>，则 <span class="arithmatex">\(y = ux\)</span>，<span class="arithmatex">\(\dfrac{\mathrm{d}y}{\mathrm{d}x} = u + x\dfrac{\mathrm{d}u}{\mathrm{d}x}\)</span>，化为关于 <span class="arithmatex">\(u\)</span> 的可分离方程：</p>
 <div class="arithmatex">\[x\frac{\mathrm{d}u}{\mathrm{d}x} = f(u) - u\]</div>
-<p><strong>例题</strong> (23-24) <span class="arithmatex">\(2xy\,y' = 4x^2 + 3y^2,\; y(1)=1\)</span></p>
+<div class="admonition example">
+<p class="admonition-title">例题 (23-24)</p>
+<p><span class="arithmatex">\(2xy\,y' = 4x^2 + 3y^2,\; y(1)=1\)</span></p>
 <p>化标准形 <span class="arithmatex">\(y' = \dfrac{4x^2 + 3y^2}{2xy}\)</span>，令 <span class="arithmatex">\(y = ux\)</span>：</p>
 <div class="arithmatex">\[u + xu' = \frac{2}{u} + \frac{3u}{2} \;\Rightarrow\; xu' = \frac{4 + u^2}{2u}\]</div>
 <p>分离积分、回代 <span class="arithmatex">\(u = y/x\)</span> 得 <span class="arithmatex">\(y^2 = Cx^3 - 4x^2\)</span>，代 <span class="arithmatex">\(y(1)=1\)</span> 解得 <span class="arithmatex">\(C=5\)</span>，故 <span class="arithmatex">\(y^2 = 5x^3 - 4x^2\)</span>。</p>
+</div>
 <h3 id="13">1.3 一阶线性方程<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
 <p><strong>形式</strong></p>
 <div class="arithmatex">\[\frac{\mathrm{d}y}{\mathrm{d}x} + p(x)\,y = f(x)\]</div>
@@ -2102,11 +2108,14 @@
 <p class="admonition-title">Warning</p>
 <p><span class="arithmatex">\(n=0\)</span> 退化为线性方程；<span class="arithmatex">\(n=1\)</span> 退化为可分离方程；若 <span class="arithmatex">\(n&gt;0\)</span>，注意 <span class="arithmatex">\(y\equiv 0\)</span> 也是解。</p>
 </div>
-<p><strong>例题</strong> (20-21) <span class="arithmatex">\(x\,y' - 4y = x^2\sqrt{y}\)</span></p>
+<div class="admonition example">
+<p class="admonition-title">例题 (20-21)</p>
+<p><span class="arithmatex">\(x\,y' - 4y = x^2\sqrt{y}\)</span></p>
 <p>除以 <span class="arithmatex">\(x\)</span> 得 <span class="arithmatex">\(y' - \dfrac{4}{x}y = x\sqrt{y}\)</span>（<span class="arithmatex">\(n = \tfrac{1}{2}\)</span>）。令 <span class="arithmatex">\(z = y^{1/2}\)</span>：</p>
 <div class="arithmatex">\[z' - \frac{2}{x}z = \frac{x}{2}\]</div>
 <p>积分因子 <span class="arithmatex">\(x^{-2}\)</span>，解得 <span class="arithmatex">\(z = x^2\!\left(\tfrac{1}{2}\ln|x| + C\right)\)</span>，回代</p>
 <div class="arithmatex">\[y = x^4\!\left(\tfrac{1}{2}\ln|x| + C\right)^{2}\]</div>
+</div>
 <h3 id="15-riccati">1.5 Riccati（里卡提）方程<a class="headerlink" href="#15-riccati" title="Permanent link">&para;</a></h3>
 <p><strong>形式</strong></p>
 <div class="arithmatex">\[\frac{\mathrm{d}y}{\mathrm{d}x} = p(x)\,y^2 + q(x)\,y + r(x)\]</div>
@@ -2119,13 +2128,16 @@
 <p class="admonition-title">识别技巧</p>
 <p>如果题目给出了方程的一个特解，且方程含 <span class="arithmatex">\(y^2\)</span> 项，多半是 Riccati（里卡提）方程。</p>
 </div>
-<p><strong>例题</strong> (23-24) <span class="arithmatex">\(y' + y^2 = \dfrac{2}{x^2}\)</span></p>
+<div class="admonition example">
+<p class="admonition-title">例题 (23-24)</p>
+<p><span class="arithmatex">\(y' + y^2 = \dfrac{2}{x^2}\)</span></p>
 <p>提示一个解与 <span class="arithmatex">\(\dfrac{1}{x}\)</span> 成正比。试 <span class="arithmatex">\(y_1 = \dfrac{a}{x}\)</span>，代入得 <span class="arithmatex">\(a^2 - a = 2\)</span>，取 <span class="arithmatex">\(y_1 = \dfrac{2}{x}\)</span>。令 <span class="arithmatex">\(u = y - \dfrac{2}{x}\)</span>：</p>
 <div class="arithmatex">\[u' + \frac{4}{x}\,u = -u^2\]</div>
 <p>这是 Bernoulli 方程（<span class="arithmatex">\(n=2\)</span>），令 <span class="arithmatex">\(z = u^{-1}\)</span>：</p>
 <div class="arithmatex">\[z' - \frac{4}{x}\,z = 1\]</div>
 <p>解得 <span class="arithmatex">\(z = Cx^4 - \dfrac{x}{3}\)</span>，回代 <span class="arithmatex">\(y = \dfrac{2}{x} + \dfrac{1}{z}\)</span>：</p>
 <div class="arithmatex">\[y = \frac{2}{x} + \frac{3}{3Cx^4 - x}\]</div>
+</div>
 <h3 id="16">1.6 全微分方程<a class="headerlink" href="#16" title="Permanent link">&para;</a></h3>
 <p><strong>形式</strong></p>
 <div class="arithmatex">\[M(x,y)\,\mathrm{d}x + N(x,y)\,\mathrm{d}y = 0\]</div>
@@ -2160,35 +2172,53 @@
 <li><span class="arithmatex">\(\dfrac{x\,\mathrm{d}x + y\,\mathrm{d}y}{x^2 + y^2} = \dfrac{1}{2}\mathrm{d}\!\left(\ln(x^2+y^2)\right)\)</span></li>
 </ul>
 </div>
-<p><strong>例题</strong> (23-24) <span class="arithmatex">\((y^2 + 3xy^3)\,\mathrm{d}x + (1 + xy)\,\mathrm{d}y = 0\)</span></p>
+<div class="admonition example">
+<p class="admonition-title">例题 (23-24)</p>
+<p><span class="arithmatex">\((y^2 + 3xy^3)\,\mathrm{d}x + (1 + xy)\,\mathrm{d}y = 0\)</span></p>
 <p><span class="arithmatex">\(M_y \ne N_x\)</span>。算 <span class="arithmatex">\(\dfrac{N_x - M_y}{M} = -\dfrac{3}{y}\)</span>，得积分因子 <span class="arithmatex">\(\mu(y) = y^{-3}\)</span>。方程乘 <span class="arithmatex">\(\mu\)</span>：</p>
 <div class="arithmatex">\[\left(\frac{1}{y} + 3x\right)\mathrm{d}x + \left(\frac{1}{y^3} + \frac{x}{y^2}\right)\mathrm{d}y = 0\]</div>
 <p>凑 <span class="arithmatex">\(u = \dfrac{x}{y} + \dfrac{3x^2}{2} + \varphi(y)\)</span>，由 <span class="arithmatex">\(\partial_y u = N\)</span> 得 <span class="arithmatex">\(\varphi(y) = -\dfrac{1}{2y^2}\)</span>。通解：</p>
 <div class="arithmatex">\[\frac{x}{y} + \frac{3x^2}{2} - \frac{1}{2y^2} = C\]</div>
-<p><strong>例题 2</strong> (24-25) <span class="arithmatex">\((2xy^2 - y)\,\mathrm{d}x + (3y^3 + x)\,\mathrm{d}y = 0\)</span>，<span class="arithmatex">\(x &gt; 0\)</span></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例题 2 (24-25)</p>
+<p><span class="arithmatex">\((2xy^2 - y)\,\mathrm{d}x + (3y^3 + x)\,\mathrm{d}y = 0\)</span>，<span class="arithmatex">\(x &gt; 0\)</span></p>
 <p><span class="arithmatex">\(\dfrac{N_x - M_y}{M} = \dfrac{1 - (4xy - 1)}{2xy^2 - y} = -\dfrac{2}{y}\)</span>，得积分因子 <span class="arithmatex">\(\mu(y) = \dfrac{1}{y^2}\)</span>。乘入后：</p>
 <div class="arithmatex">\[2x\,\mathrm{d}x + 3y\,\mathrm{d}y + \frac{x\,\mathrm{d}y - y\,\mathrm{d}x}{y^2} = 0\]</div>
 <p>利用凑微分 <span class="arithmatex">\(\dfrac{x\,\mathrm{d}y - y\,\mathrm{d}x}{y^2} = -\mathrm{d}\!\left(\dfrac{x}{y}\right)\)</span>，直接积分：</p>
 <div class="arithmatex">\[x^2 + \frac{3}{2}y^2 - \frac{x}{y} = C\]</div>
+</div>
 <h3 id="17">1.7 变量代换（一阶方程的降维打击）<a class="headerlink" href="#17" title="Permanent link">&para;</a></h3>
 <p>对"看起来像齐次/线性但不完全是"的方程，换元化归。</p>
-<p><strong>例 1</strong> (20-21) <span class="arithmatex">\(y' = \cos^2(x+y)\)</span></p>
+<div class="admonition example">
+<p class="admonition-title">例 1 (20-21)</p>
+<p><span class="arithmatex">\(y' = \cos^2(x+y)\)</span></p>
 <p>令 <span class="arithmatex">\(u = x+y\)</span>，<span class="arithmatex">\(u' = 1 + y'\)</span>：<span class="arithmatex">\(u' = 1 + \cos^2 u\)</span>（可分离）。得 <span class="arithmatex">\(\cot(x+y) + x = C\)</span>。</p>
-<p><strong>例 2</strong> (20-21) <span class="arithmatex">\(y' = 2\!\left(\dfrac{y+2}{x+y-1}\right)^{2}\)</span></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例 2 (20-21)</p>
+<p><span class="arithmatex">\(y' = 2\!\left(\dfrac{y+2}{x+y-1}\right)^{2}\)</span></p>
 <p>解 <span class="arithmatex">\(\begin{cases} x+y-1=0 \\ y+2=0 \end{cases}\)</span> 得 <span class="arithmatex">\((3,-2)\)</span>。令 <span class="arithmatex">\(X=x-3,\; Y=y+2\)</span>：</p>
 <div class="arithmatex">\[\frac{\mathrm{d}Y}{\mathrm{d}X} = 2\!\left(\frac{Y}{X+Y}\right)^2\]</div>
 <p>再令 <span class="arithmatex">\(u = Y/X\)</span> 化为齐次方程。</p>
+</div>
 <h3 id="18-x-y">1.8 x, y 互换<a class="headerlink" href="#18-x-y" title="Permanent link">&para;</a></h3>
 <p>把 <span class="arithmatex">\(x\)</span> 视作 <span class="arithmatex">\(y\)</span> 的函数，伯努利型有时反过来就是线性。</p>
-<p><strong>例</strong> (23-24) <span class="arithmatex">\(\dfrac{\mathrm{d}y}{\mathrm{d}x} = \dfrac{y}{x(x^2y^2+1)}\)</span></p>
+<div class="admonition example">
+<p class="admonition-title">例题 (23-24)</p>
+<p><span class="arithmatex">\(\dfrac{\mathrm{d}y}{\mathrm{d}x} = \dfrac{y}{x(x^2y^2+1)}\)</span></p>
 <p>取倒数：<span class="arithmatex">\(\dfrac{\mathrm{d}x}{\mathrm{d}y} = \dfrac{x}{y} + x^3 y\)</span>（以 <span class="arithmatex">\(x\)</span> 为未知量的 Bernoulli 方程，<span class="arithmatex">\(n=3\)</span>）。令 <span class="arithmatex">\(z = x^{-2}\)</span>：</p>
 <div class="arithmatex">\[\frac{\mathrm{d}z}{\mathrm{d}y} + \frac{2}{y}z = -2y\]</div>
 <p>线性方程求解后回代（注意 <span class="arithmatex">\(y=0\)</span> 也是解）。</p>
-<p><strong>例题 2</strong> (24-25夏) <span class="arithmatex">\(y\,\mathrm{d}x - x(1 + x^2y^3)\,\mathrm{d}y = 0\)</span></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例题 2 (24-25夏)</p>
+<p><span class="arithmatex">\(y\,\mathrm{d}x - x(1 + x^2y^3)\,\mathrm{d}y = 0\)</span></p>
 <p>改写为 <span class="arithmatex">\(\dfrac{\mathrm{d}x}{\mathrm{d}y} = \dfrac{x}{y} + x^3 y^2\)</span>（以 <span class="arithmatex">\(x\)</span> 为未知量的 Bernoulli 方程，<span class="arithmatex">\(n=3\)</span>）。令 <span class="arithmatex">\(z = x^{-2}\)</span>：</p>
 <div class="arithmatex">\[z' + \frac{2}{y}\,z = -2y^2\]</div>
 <p>积分因子 <span class="arithmatex">\(y^2\)</span>，解得 <span class="arithmatex">\(z = -\dfrac{2y^3}{5} + \dfrac{C}{y^2}\)</span>，回代 <span class="arithmatex">\(x^{-2} = z\)</span>：</p>
 <div class="arithmatex">\[\frac{1}{x^2} = \frac{C}{y^2} - \frac{2y^3}{5}\]</div>
+</div>
 <h3 id="19-clairaut">1.9 Clairaut（克莱罗）方程与参数表示<a class="headerlink" href="#19-clairaut" title="Permanent link">&para;</a></h3>
 <p><strong>Clairaut（克莱罗）方程</strong></p>
 <div class="arithmatex">\[y = xy' + \psi(y')\]</div>
@@ -2198,44 +2228,59 @@
 <li><span class="arithmatex">\(p' = 0\)</span>：<span class="arithmatex">\(p = C\)</span>，通解 <span class="arithmatex">\(y = Cx + \psi(C)\)</span>（直线族）。</li>
 <li><span class="arithmatex">\(x + \psi'(p) = 0\)</span>：与 <span class="arithmatex">\(y = xp + \psi(p)\)</span> 联立消去 <span class="arithmatex">\(p\)</span>，得<strong>奇解</strong>（直线族的包络线）。</li>
 </ul>
-<p><strong>例题</strong> (24-25) <span class="arithmatex">\(y = 2xy' - 3(y')^2\)</span></p>
+<div class="admonition example">
+<p class="admonition-title">例题 (24-25)</p>
+<p><span class="arithmatex">\(y = 2xy' - 3(y')^2\)</span></p>
 <p>这不是标准 Clairaut 但可用参数法。令 <span class="arithmatex">\(p = y'\)</span>，两端对 <span class="arithmatex">\(x\)</span> 微分：</p>
 <div class="arithmatex">\[p = 2p + 2x\,p' - 6p\,p' \;\Rightarrow\; \frac{\mathrm{d}x}{\mathrm{d}p} + \frac{2}{p}\,x = 6\]</div>
 <p>一阶线性方程，解得 <span class="arithmatex">\(x = 2p + \dfrac{C}{p^2}\)</span>。回代 <span class="arithmatex">\(y = 2xp - 3p^2\)</span>：</p>
 <div class="arithmatex">\[\begin{cases} x = 2p + Cp^{-2} \\ y = p^2 + 2Cp^{-1} \end{cases} \quad\text{（参数形式通解）}\]</div>
 <p>令 <span class="arithmatex">\(p' = 0\)</span> 还可得奇解 <span class="arithmatex">\(y = 0\)</span>。</p>
+</div>
 <hr />
 <h2 id="_3">二、可降阶的二阶微分方程<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="21-y">2.1 不显含 y 的方程<a class="headerlink" href="#21-y" title="Permanent link">&para;</a></h3>
 <p><strong>形式</strong> <span class="arithmatex">\(y'' = f(x,\, y')\)</span></p>
 <p><strong>解法</strong>：令 <span class="arithmatex">\(p = y'\)</span>，则 <span class="arithmatex">\(p' = y''\)</span>，化为一阶方程 <span class="arithmatex">\(p' = f(x,p)\)</span>。解出 <span class="arithmatex">\(p(x)\)</span> 后再积一次分得 <span class="arithmatex">\(y\)</span>。</p>
-<p><strong>例题</strong> (20-21) <span class="arithmatex">\(y'' - y' = 12x^2 - 6\)</span></p>
+<div class="admonition example">
+<p class="admonition-title">例题 (20-21)</p>
+<p><span class="arithmatex">\(y'' - y' = 12x^2 - 6\)</span></p>
 <p>令 <span class="arithmatex">\(p = y'\)</span>：<span class="arithmatex">\(p' - p = 12x^2 - 6\)</span>（一阶线性）。用公式：</p>
 <div class="arithmatex">\[p = e^{x}\!\left[\int (12x^2 - 6)\,e^{-x}\,\mathrm{d}x + C_1\right] = -6(2x^2 + 4x + 3) + C_1 e^{x}\]</div>
 <p>再积分：</p>
 <div class="arithmatex">\[y = -4x^3 - 12x^2 - 18x + C_1 e^{x} + C_2\]</div>
+</div>
 <h3 id="22-x">2.2 不显含 x 的方程<a class="headerlink" href="#22-x" title="Permanent link">&para;</a></h3>
 <p><strong>形式</strong> <span class="arithmatex">\(y'' = f(y,\, y')\)</span></p>
 <p><strong>解法</strong>：令 <span class="arithmatex">\(p = y'\)</span>，视 <span class="arithmatex">\(p\)</span> 为 <span class="arithmatex">\(y\)</span> 的函数，则</p>
 <div class="arithmatex">\[y'' = \frac{\mathrm{d}p}{\mathrm{d}x} = p\,\frac{\mathrm{d}p}{\mathrm{d}y}\]</div>
 <p>方程化为 <span class="arithmatex">\(p\dfrac{\mathrm{d}p}{\mathrm{d}y} = f(y,p)\)</span>。解出 <span class="arithmatex">\(p = \varphi(y)\)</span> 后再由 <span class="arithmatex">\(\dfrac{\mathrm{d}y}{\mathrm{d}x}=\varphi(y)\)</span> 分离积分。</p>
-<p><strong>例题</strong> (23-24) <span class="arithmatex">\(yy'' - (y')^2 = yy',\; y(0)=1,\, y'(0)=2\)</span></p>
+<div class="admonition example">
+<p class="admonition-title">例题 (23-24)</p>
+<p><span class="arithmatex">\(yy'' - (y')^2 = yy',\; y(0)=1,\, y'(0)=2\)</span></p>
 <p>令 <span class="arithmatex">\(p = y'\)</span>，<span class="arithmatex">\(y'' = p\,p'_y\)</span>：</p>
 <div class="arithmatex">\[yp\,p'_y - p^2 = yp \;\Rightarrow\; p'_y - \frac{p}{y} = 1\]</div>
 <p>一阶线性解得 <span class="arithmatex">\(p = y(\ln|y| + C_1)\)</span>，由初值 <span class="arithmatex">\(C_1 = 2\)</span>。再分离得</p>
 <div class="arithmatex">\[\ln\!\bigl|\ln|y| + 2\bigr| = x + C_2\]</div>
-<p><strong>例题 2</strong> (24-25) <span class="arithmatex">\(y'' = 2yy',\; y(0)=1,\, y'(0)=2\)</span></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例题 2 (24-25)</p>
+<p><span class="arithmatex">\(y'' = 2yy',\; y(0)=1,\, y'(0)=2\)</span></p>
 <p>令 <span class="arithmatex">\(p = y'\)</span>，<span class="arithmatex">\(y'' = p\,\dfrac{\mathrm{d}p}{\mathrm{d}y}\)</span>：</p>
 <div class="arithmatex">\[p\,\frac{\mathrm{d}p}{\mathrm{d}y} = 2yp \;\Rightarrow\; \frac{\mathrm{d}p}{\mathrm{d}y} = 2y\]</div>
 <p>积分得 <span class="arithmatex">\(p = y^2 + C\)</span>。由 <span class="arithmatex">\(y(0)=1,\, y'(0)=2\)</span> 得 <span class="arithmatex">\(C=1\)</span>。分离变量：</p>
 <div class="arithmatex">\[\frac{\mathrm{d}y}{y^2 + 1} = \mathrm{d}x \;\Rightarrow\; \arctan y = x + C_2\]</div>
 <p>由初值 <span class="arithmatex">\(C_2 = \dfrac{\pi}{4}\)</span>，故 <span class="arithmatex">\(y = \tan\!\left(x + \dfrac{\pi}{4}\right)\)</span>。</p>
-<p><strong>例题 3</strong> (24-25夏) <span class="arithmatex">\(y'' = (y')^3 + y',\; y(0) = \dfrac{\pi}{4},\, y'(0) = 1\)</span></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例题 3 (24-25夏)</p>
+<p><span class="arithmatex">\(y'' = (y')^3 + y',\; y(0) = \dfrac{\pi}{4},\, y'(0) = 1\)</span></p>
 <p>令 <span class="arithmatex">\(p = y'\)</span>，<span class="arithmatex">\(y'' = p\,\dfrac{\mathrm{d}p}{\mathrm{d}y}\)</span>：</p>
 <div class="arithmatex">\[p\,\frac{\mathrm{d}p}{\mathrm{d}y} = p(p^2+1) \;\Rightarrow\; \frac{\mathrm{d}p}{\mathrm{d}y} = p^2 + 1\]</div>
 <p>分离：<span class="arithmatex">\(\dfrac{\mathrm{d}p}{p^2+1} = \mathrm{d}y\)</span>，积分得 <span class="arithmatex">\(\arctan p = y + C_1\)</span>。由初值 <span class="arithmatex">\(C_1 = 0\)</span>，故 <span class="arithmatex">\(p = \tan y\)</span>。</p>
 <p>再分离 <span class="arithmatex">\(\cot y\,\mathrm{d}y = \mathrm{d}x\)</span>，积分得 <span class="arithmatex">\(\ln|\sin y| = x + C_2\)</span>。由 <span class="arithmatex">\(y(0) = \dfrac{\pi}{4}\)</span>：</p>
 <div class="arithmatex">\[\sin y = \frac{1}{\sqrt{2}}\,e^{x}\]</div>
+</div>
 <hr />
 <h2 id="_4">三、高阶线性微分方程<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p><strong>方法总览</strong>（<span class="arithmatex">\(n\)</span> 阶线性方程 <span class="arithmatex">\(y^{(n)} + a_1 y^{(n-1)} + \cdots + a_n y = f(x)\)</span>）</p>
@@ -2273,9 +2318,12 @@
 <div class="arithmatex">\[e^{\alpha x}\cos\beta x,\; x e^{\alpha x}\cos\beta x,\; \dots,\; x^{k-1}e^{\alpha x}\cos\beta x$$
 $$e^{\alpha x}\sin\beta x,\; x e^{\alpha x}\sin\beta x,\; \dots,\; x^{k-1}e^{\alpha x}\sin\beta x\]</div>
 <p>通解为所有基础解的线性组合。</p>
-<p><strong>例题</strong> (23-24) <span class="arithmatex">\(y^{(4)} + 2y^{(3)} + 3y'' + 2y' + y = 0\)</span></p>
+<div class="admonition example">
+<p class="admonition-title">例题 (23-24)</p>
+<p><span class="arithmatex">\(y^{(4)} + 2y^{(3)} + 3y'' + 2y' + y = 0\)</span></p>
 <p>特征方程 <span class="arithmatex">\(\lambda^4 + 2\lambda^3 + 3\lambda^2 + 2\lambda + 1 = (\lambda^2 + \lambda + 1)^2 = 0\)</span>，得 <span class="arithmatex">\(\lambda = -\tfrac{1}{2} \pm \tfrac{\sqrt{3}}{2}\mathrm{i}\)</span>（二重）。</p>
 <div class="arithmatex">\[y = e^{-x/2}\!\left[(c_1 + c_2 x)\cos\tfrac{\sqrt{3}}{2}x + (c_3 + c_4 x)\sin\tfrac{\sqrt{3}}{2}x\right]\]</div>
+</div>
 <h3 id="32">3.2 二阶常系数非齐次线性方程<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
 <p><strong>形式</strong> <span class="arithmatex">\(y'' + py' + qy = f(x)\)</span></p>
 <p><strong>解法</strong>：<span class="arithmatex">\(y = \bar{y} + y^{*}\)</span>。齐次通解 <span class="arithmatex">\(\bar{y}\)</span> 查表：</p>
@@ -2329,18 +2377,24 @@ $$e^{\alpha x}\sin\beta x,\; x e^{\alpha x}\sin\beta x,\; \dots,\; x^{k-1}e^{\al
 <p class="admonition-title">叠加原理</p>
 <p>若 <span class="arithmatex">\(f(x) = f_1(x) + f_2(x)\)</span>，分别求出 <span class="arithmatex">\(y_1^{*}, y_2^{*}\)</span>，则 <span class="arithmatex">\(y^{*} = y_1^{*} + y_2^{*}\)</span>。</p>
 </div>
-<p><strong>例题</strong> <span class="arithmatex">\(y'' - y = e^{x}\sin 2x\)</span></p>
+<div class="admonition example">
+<p class="admonition-title">例题</p>
+<p><span class="arithmatex">\(y'' - y = e^{x}\sin 2x\)</span></p>
 <p>齐次：<span class="arithmatex">\(\lambda = \pm 1\)</span>，<span class="arithmatex">\(\bar{y} = c_1 e^{x} + c_2 e^{-x}\)</span>。<span class="arithmatex">\(1 \pm 2\mathrm{i}\)</span> 非特征根，<span class="arithmatex">\(k=0\)</span>。设</p>
 <div class="arithmatex">\[y^{*} = e^{x}(A\cos 2x + B\sin 2x)\]</div>
 <p>代入比较系数得 <span class="arithmatex">\(A = B = -\tfrac{1}{8}\)</span>：</p>
 <div class="arithmatex">\[y = c_1 e^{x} + c_2 e^{-x} - \tfrac{1}{8} e^{x}(\cos 2x + \sin 2x)\]</div>
-<p><strong>例题 2</strong> (23-24) <span class="arithmatex">\(y'' + y = 2\sqrt{2}\sin\!\left(x - \dfrac{\pi}{4}\right)\)</span></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例题 2 (23-24)</p>
+<p><span class="arithmatex">\(y'' + y = 2\sqrt{2}\sin\!\left(x - \dfrac{\pi}{4}\right)\)</span></p>
 <p>先用和差化积展开右端：</p>
 <div class="arithmatex">\[2\sqrt{2}\sin\!\left(x - \frac{\pi}{4}\right) = 2\sqrt{2}\!\left(\sin x \cos\frac{\pi}{4} - \cos x \sin\frac{\pi}{4}\right) = 2\sin x - 2\cos x\]</div>
 <p>齐次特征根 <span class="arithmatex">\(\lambda = \pm\mathrm{i}\)</span>，<span class="arithmatex">\(0 \pm 1\cdot\mathrm{i}\)</span> 是特征根（<span class="arithmatex">\(k=1\)</span>）。设 <span class="arithmatex">\(y^{*} = x(A\cos x + B\sin x)\)</span>，代入得</p>
 <div class="arithmatex">\[y^{*\prime\prime} + y^{*} = -2A\sin x + 2B\cos x = 2\sin x - 2\cos x\]</div>
 <p>解得 <span class="arithmatex">\(A = -1,\, B = -1\)</span>：</p>
 <div class="arithmatex">\[y = c_1\cos x + c_2\sin x - x(\cos x + \sin x)\]</div>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">先化简再设特解</p>
 <p>含复合三角函数（如 <span class="arithmatex">\(\sin(x-\pi/4)\)</span>）时，务必先展开为 <span class="arithmatex">\(\sin x\)</span>, <span class="arithmatex">\(\cos x\)</span> 的线性组合，再判断 <span class="arithmatex">\(k\)</span> 并设特解形式。</p>
@@ -2351,42 +2405,59 @@ $$e^{\alpha x}\sin\beta x,\; x e^{\alpha x}\sin\beta x,\; \dots,\; x^{k-1}e^{\al
 <p><strong>解法</strong>：令 <span class="arithmatex">\(t = \ln|x|\)</span>，则</p>
 <div class="arithmatex">\[x y' = \dot{y},\qquad x^2 y'' = \ddot{y} - \dot{y}\]</div>
 <p>方程化为关于 <span class="arithmatex">\(t\)</span> 的常系数线性方程，按 3.&#8531;.2 求解后回代 <span class="arithmatex">\(t=\ln|x|\)</span>。</p>
-<p><strong>例题</strong> (23-24) <span class="arithmatex">\(x^2 y'' - 7xy' + 16y = 0\)</span></p>
+<div class="admonition example">
+<p class="admonition-title">例题 (23-24)</p>
+<p><span class="arithmatex">\(x^2 y'' - 7xy' + 16y = 0\)</span></p>
 <p>令 <span class="arithmatex">\(t = \ln|x|\)</span>：<span class="arithmatex">\(\ddot{y} - 8\dot{y} + 16 y = 0\)</span>。特征方程 <span class="arithmatex">\(\lambda^2 - 8\lambda + 16 = 0\)</span>，<span class="arithmatex">\(\lambda = 4\)</span>（二重）。</p>
 <div class="arithmatex">\[y = (c_1 + c_2 t)\,e^{4t} = (c_1 + c_2 \ln|x|)\,x^4\]</div>
-<p><strong>例题 2</strong> (24-25) <span class="arithmatex">\(x^2 y'' - 5xy' + 9y = x\ln x\)</span></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例题 2 (24-25)</p>
+<p><span class="arithmatex">\(x^2 y'' - 5xy' + 9y = x\ln x\)</span></p>
 <p>令 <span class="arithmatex">\(t = \ln|x|\)</span>，<span class="arithmatex">\(x = e^t\)</span>：<span class="arithmatex">\(\ddot{y} - 6\dot{y} + 9y = te^{t}\)</span>。特征方程 <span class="arithmatex">\(\lambda^2 - 6\lambda + 9 = 0\)</span>，<span class="arithmatex">\(\lambda = 3\)</span>（二重）。</p>
 <p>齐次通解 <span class="arithmatex">\(\bar{y} = (c_1 + c_2 t)\,e^{3t}\)</span>。右端 <span class="arithmatex">\(te^{t}\)</span>：<span class="arithmatex">\(a = 1\)</span> 非特征根，<span class="arithmatex">\(k = 0\)</span>，设 <span class="arithmatex">\(y^{*} = (At+B)\,e^{t}\)</span>。代入比较系数得 <span class="arithmatex">\(A = B = \dfrac{1}{4}\)</span>。回代 <span class="arithmatex">\(t = \ln|x|\)</span>：</p>
 <div class="arithmatex">\[y = (c_1 + c_2\ln|x|)\,x^3 + \frac{x}{4}(1 + \ln|x|)\]</div>
-<p><strong>例题 3</strong> (24-25夏) <span class="arithmatex">\(x^2 y'' - xy' - 3y = 2x^3\)</span>，<span class="arithmatex">\(x &gt; 0\)</span></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例题 3 (24-25夏)</p>
+<p><span class="arithmatex">\(x^2 y'' - xy' - 3y = 2x^3\)</span>，<span class="arithmatex">\(x &gt; 0\)</span></p>
 <p>令 <span class="arithmatex">\(t = \ln x\)</span>：<span class="arithmatex">\(\ddot{y} - 2\dot{y} - 3y = 2e^{3t}\)</span>。特征根 <span class="arithmatex">\(\lambda = 3, -1\)</span>。</p>
 <p><span class="arithmatex">\(a = 3\)</span> 是单特征根（<span class="arithmatex">\(k=1\)</span>），设 <span class="arithmatex">\(y^{*} = Ate^{3t}\)</span>。代入得 <span class="arithmatex">\(4A = 2\)</span>，<span class="arithmatex">\(A = \dfrac{1}{2}\)</span>。回代：</p>
 <div class="arithmatex">\[y = c_1 x^3 + c_2 x^{-1} + \frac{1}{2} x^3 \ln x\]</div>
+</div>
 <h3 id="34">3.4 二阶变系数齐次线性方程（已知一解）<a class="headerlink" href="#34" title="Permanent link">&para;</a></h3>
 <p><strong>形式</strong> <span class="arithmatex">\(y'' + p(x)\,y' + q(x)\,y = 0\)</span></p>
 <p><strong>解法（Liouville（刘维尔）公式）</strong>：若已知一个非零解 <span class="arithmatex">\(y_1\)</span>，则</p>
 <div class="arithmatex">\[y = y_1\!\left[c_1 + c_2 \int \frac{1}{y_1^{2}}\,e^{-\int p(x)\,\mathrm{d}x}\,\mathrm{d}x\right]\]</div>
 <p>若 <span class="arithmatex">\(2p'(x) + p^2(x) - 4q(x) = a\)</span>（常数），作代换 <span class="arithmatex">\(y = u\,e^{-\int p/2\,\mathrm{d}x}\)</span>，方程化为 <span class="arithmatex">\(u'' - \tfrac{a}{4}u = 0\)</span>。</p>
-<p><strong>例题</strong> (24-25夏) <span class="arithmatex">\((x^2 - 1)\,y'' - 2xy' + 2y = 0\)</span></p>
+<div class="admonition example">
+<p class="admonition-title">例题 (24-25夏)</p>
+<p><span class="arithmatex">\((x^2 - 1)\,y'' - 2xy' + 2y = 0\)</span></p>
 <p>观察到 <span class="arithmatex">\(y_1 = x\)</span> 是解（代入：<span class="arithmatex">\(0 - 2x + 2x = 0\)</span> ✓）。化标准形：<span class="arithmatex">\(p(x) = \dfrac{-2x}{x^2-1}\)</span>。由 Liouville 公式求 <span class="arithmatex">\(y_2\)</span>：</p>
 <div class="arithmatex">\[y_2 = x \int \frac{1}{x^2}\,e^{\int \frac{2x}{x^2-1}\,\mathrm{d}x}\,\mathrm{d}x = x \int \frac{x^2-1}{x^2}\,\mathrm{d}x = x\!\left(x - \frac{1}{x} + C\right) \cdots\]</div>
 <p>取 <span class="arithmatex">\(C = 0\)</span> 并挑出与 <span class="arithmatex">\(y_1\)</span> 线性无关的部分：<span class="arithmatex">\(y_2 = x^2 - 1\)</span>。通解：</p>
 <div class="arithmatex">\[y = c_1 x + c_2(x^2 - 1)\]</div>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">如何猜特解</p>
 <p>对变系数方程，优先试低次多项式 <span class="arithmatex">\(1, x, x^2\)</span> 或指数函数 <span class="arithmatex">\(e^{ax}\)</span>，代入检验。</p>
 </div>
-<p><strong>例题 2</strong> (24-25) <span class="arithmatex">\((1-x^2)\,y''' + 2xy'' - 2y' = 0\)</span></p>
+<div class="admonition example">
+<p class="admonition-title">例题 2 (24-25)</p>
+<p><span class="arithmatex">\((1-x^2)\,y''' + 2xy'' - 2y' = 0\)</span></p>
 <p>令 <span class="arithmatex">\(z = y'\)</span>，方程降为 <span class="arithmatex">\((1-x^2)\,z'' + 2xz' - 2z = 0\)</span>，即上题同型。观察得 <span class="arithmatex">\(z_1 = x\)</span>。</p>
 <p>由 Liouville 公式（<span class="arithmatex">\(p(x) = \dfrac{2x}{1-x^2}\)</span>）得 <span class="arithmatex">\(z_2 = x^2 + 1\)</span>（取线性无关部分 <span class="arithmatex">\(1+x^2\)</span>）。</p>
 <div class="arithmatex">\[z = C_1 x + C_2(1+x^2) \;\Rightarrow\; y = C_1 x^2 + C_2(x^3 + 3x) + C_3\]</div>
+</div>
 <h3 id="35">3.5 二阶变系数非齐次线性方程（常数变易法）<a class="headerlink" href="#35" title="Permanent link">&para;</a></h3>
 <p><strong>形式</strong> <span class="arithmatex">\(y'' + p(x)\,y' + q(x)\,y = f(x)\)</span>，已知齐次基础解系 <span class="arithmatex">\(y_1, y_2\)</span>。</p>
 <p><strong>通解公式</strong>：记 Wronskian（朗斯基）行列式</p>
 <div class="arithmatex">\[W(x) = \begin{vmatrix} y_1(x) &amp; y_2(x) \\ y_1'(x) &amp; y_2'(x) \end{vmatrix}\]</div>
 <p>则</p>
 <div class="arithmatex">\[y(x) = y_1(x)\!\left[c_1 - \int \frac{y_2(x) f(x)}{W(x)}\,\mathrm{d}x\right] + y_2(x)\!\left[c_2 + \int \frac{y_1(x) f(x)}{W(x)}\,\mathrm{d}x\right]\]</div>
-<p><strong>例题 1</strong> (23-24) <span class="arithmatex">\((x+2)\,y'' + 2y' - (x+2)\,y = x^2 + 2x + 2\)</span></p>
+<div class="admonition example">
+<p class="admonition-title">例题 1 (23-24)</p>
+<p><span class="arithmatex">\((x+2)\,y'' + 2y' - (x+2)\,y = x^2 + 2x + 2\)</span></p>
 <p>除以 <span class="arithmatex">\((x+2)\)</span> 化标准形：</p>
 <div class="arithmatex">\[y'' + \frac{2}{x+2}\,y' - y = \frac{x^2 + 2x + 2}{x+2}\]</div>
 <p>这里 <span class="arithmatex">\(p(x) = \dfrac{2}{x+2}\)</span>，<span class="arithmatex">\(q(x) = -1\)</span>。验证</p>
@@ -2397,9 +2468,13 @@ $$e^{\alpha x}\sin\beta x,\; x e^{\alpha x}\sin\beta x,\; \dots,\; x^{k-1}e^{\al
 <div class="arithmatex">\[y_1 = \frac{e^{x}}{x+2},\quad y_2 = \frac{e^{-x}}{x+2}\]</div>
 <p>Wronskian 行列式 <span class="arithmatex">\(W = -\dfrac{2}{(x+2)^2}\)</span>。由常数变易公式求特解，化简后</p>
 <div class="arithmatex">\[y = c_1\frac{e^{x}}{x+2} + c_2\frac{e^{-x}}{x+2} - \frac{x^2 + 2x + 2}{x+2}\]</div>
-<p><strong>例题 2</strong> (17-18) 已知 <span class="arithmatex">\(y_1 = \dfrac{e^{x}}{x}\)</span> 是 <span class="arithmatex">\(y'' + \dfrac{2}{x} y' - y = 0\)</span> 的解，求 <span class="arithmatex">\(y'' + \dfrac{2}{x} y' - y = x\)</span> 的通解。</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例题 2 (17-18)</p>
+<p>已知 <span class="arithmatex">\(y_1 = \dfrac{e^{x}}{x}\)</span> 是 <span class="arithmatex">\(y'' + \dfrac{2}{x} y' - y = 0\)</span> 的解，求 <span class="arithmatex">\(y'' + \dfrac{2}{x} y' - y = x\)</span> 的通解。</p>
 <p>由 Liouville 公式得另一基础解 <span class="arithmatex">\(y_2 = \dfrac{e^{-x}}{x}\)</span>。<span class="arithmatex">\(W = -\dfrac{2}{x^2}\)</span>。代入常数变易公式化简后：</p>
 <div class="arithmatex">\[y = c_1\frac{e^{x}}{x} + c_2\frac{e^{-x}}{x} - \frac{x^2 + 2}{x}\]</div>
+</div>
 <hr />
 <h2 id="_5">四、线性微分方程组<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <h3 id="41">4.1 常系数齐次线性方程组<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
@@ -2416,46 +2491,59 @@ $$e^{\alpha x}\sin\beta x,\; x e^{\alpha x}\sin\beta x,\; \dots,\; x^{k-1}e^{\al
 <li><strong>复特征值 <span class="arithmatex">\(\lambda = \alpha \pm \mathrm{i}\beta\)</span>，复特征向量 <span class="arithmatex">\(\mathbf{p}\pm\mathrm{i}\mathbf{q}\)</span></strong>：取实部虚部</li>
 </ul>
 <div class="arithmatex">\[e^{\alpha t}(\mathbf{p}\cos\beta t - \mathbf{q}\sin\beta t),\quad e^{\alpha t}(\mathbf{p}\sin\beta t + \mathbf{q}\cos\beta t)\]</div>
-<p><strong>例题</strong> (23-24)</p>
+<div class="admonition example">
+<p class="admonition-title">例题 (23-24)</p>
 <div class="arithmatex">\[\begin{cases} x' = 3x - 2y - 2z \\ y' = -5x + 4y + 2z \\ z' = 5x - 5y - 3z \end{cases}\]</div>
 <p><span class="arithmatex">\(A = \begin{pmatrix} 3 &amp; -2 &amp; -2 \\ -5 &amp; 4 &amp; 2 \\ 5 &amp; -5 &amp; -3 \end{pmatrix}\)</span>，特征方程 <span class="arithmatex">\((1-\lambda)(3-\lambda)(-2-\lambda) = 0\)</span>，<span class="arithmatex">\(\lambda = 1, 3, -2\)</span>。分别求特征向量：</p>
 <div class="arithmatex">\[\boldsymbol{\xi}_1 = \begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix},\quad \boldsymbol{\xi}_2 = \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix},\quad \boldsymbol{\xi}_3 = \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix}\]</div>
 <p>通解：</p>
 <div class="arithmatex">\[\begin{cases} x = c_1 e^{t} + c_2 e^{3t} \\ y = c_1 e^{t} + c_2 e^{3t} + c_3 e^{-2t} \\ z = c_2 e^{3t} + c_3 e^{-2t} \end{cases}\]</div>
+</div>
 <h3 id="42">4.2 常系数非齐次线性方程组<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
 <p><strong>形式</strong></p>
 <div class="arithmatex">\[\frac{\mathrm{d}\mathbf{x}}{\mathrm{d}t} = A\mathbf{x} + \mathbf{f}(t)\]</div>
 <p><strong>常数变易法</strong>：设齐次方程组的基本解矩阵为 <span class="arithmatex">\(X(t)\)</span>，令 <span class="arithmatex">\(\mathbf{x} = X(t)\,\mathbf{c}(t)\)</span>，代入得</p>
 <div class="arithmatex">\[X(t)\,\mathbf{c}'(t) = \mathbf{f}(t) \;\Rightarrow\; \mathbf{c}(t) = \int X^{-1}(t)\mathbf{f}(t)\,\mathrm{d}t + \mathbf{c}_0\]</div>
 <p>通解：<span class="arithmatex">\(\mathbf{x} = X(t)\,\mathbf{c}(t)\)</span>。</p>
-<p><strong>例题</strong> (23-24) <span class="arithmatex">\(\begin{cases} x' = 2x - y \\ y' = x + 2y + 2e^{2t} \end{cases},\; x(0)=1,\, y(0)=-1\)</span></p>
+<div class="admonition example">
+<p class="admonition-title">例题 (23-24)</p>
+<p><span class="arithmatex">\(\begin{cases} x' = 2x - y \\ y' = x + 2y + 2e^{2t} \end{cases},\; x(0)=1,\, y(0)=-1\)</span></p>
 <p>解出齐次基本解矩阵</p>
 <div class="arithmatex">\[X(t) = \begin{pmatrix} e^{3t} &amp; e^{t} \\ -e^{3t} &amp; e^{t} \end{pmatrix}\]</div>
 <p>由 <span class="arithmatex">\(X\mathbf{c}' = \mathbf{f}\)</span> 得 <span class="arithmatex">\(\mathbf{c}'(t) = \begin{pmatrix} -e^{-t} \\ e^{t} \end{pmatrix}\)</span>，积分并代入初值解得</p>
 <div class="arithmatex">\[\begin{cases} x = 2e^{2t} - e^{t} \\ y = e^{t} \end{cases}\]</div>
-<p><strong>例题 2</strong> (24-25) <span class="arithmatex">\(\begin{cases} x' = 3x - 2y + 15 \\ y' = -x + 3y - 2z \\ z' = -y + 3z \end{cases}\)</span></p>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">非齐次项为常数时，可设常向量特解</p>
 <p>当 <span class="arithmatex">\(\mathbf{f}(t) = \mathbf{b}\)</span>（常向量）时，设 <span class="arithmatex">\(\mathbf{x}^{*} = \mathbf{a}\)</span>（常向量），代入 <span class="arithmatex">\(A\mathbf{a} + \mathbf{b} = 0\)</span> 解出 <span class="arithmatex">\(\mathbf{a}\)</span>。</p>
 </div>
+<div class="admonition example">
+<p class="admonition-title">例题 2 (24-25)</p>
+<p><span class="arithmatex">\(\begin{cases} x' = 3x - 2y + 15 \\ y' = -x + 3y - 2z \\ z' = -y + 3z \end{cases}\)</span></p>
 <p>齐次部分 <span class="arithmatex">\(A = \begin{pmatrix} 3 &amp; -2 &amp; 0 \\ -1 &amp; 3 &amp; -2 \\ 0 &amp; -1 &amp; 3 \end{pmatrix}\)</span>，<span class="arithmatex">\(\lambda_1 = 1,\, \lambda_2 = 3,\, \lambda_3 = 5\)</span>。对应特征向量：</p>
 <div class="arithmatex">\[\boldsymbol{\xi}_1 = \begin{pmatrix} 2 \\ 2 \\ 1 \end{pmatrix},\quad \boldsymbol{\xi}_2 = \begin{pmatrix} -2 \\ 0 \\ 1 \end{pmatrix},\quad \boldsymbol{\xi}_3 = \begin{pmatrix} 2 \\ -2 \\ 1 \end{pmatrix}\]</div>
 <p>设常向量特解 <span class="arithmatex">\(\mathbf{x}^{*} = (A, B, C)^T\)</span>，由 <span class="arithmatex">\(A\mathbf{a} + \mathbf{b} = 0\)</span> 解得 <span class="arithmatex">\(A = -7,\, B = -3,\, C = -1\)</span>。通解：</p>
 <div class="arithmatex">\[\mathbf{x} = c_1 \begin{pmatrix} 2 \\ 2 \\ 1 \end{pmatrix} e^{t} + c_2 \begin{pmatrix} -2 \\ 0 \\ 1 \end{pmatrix} e^{3t} + c_3 \begin{pmatrix} 2 \\ -2 \\ 1 \end{pmatrix} e^{5t} - \begin{pmatrix} 7 \\ 3 \\ 1 \end{pmatrix}\]</div>
+</div>
 <h3 id="43">4.3 消元法<a class="headerlink" href="#43" title="Permanent link">&para;</a></h3>
 <p>当方程组只含 2 个未知函数时，消元法往往比矩阵特征根法更简便。</p>
 <p><strong>思路</strong>：从方程组中消去一个未知函数，化为一个高阶常系数方程求解。</p>
-<p><strong>例题</strong> <span class="arithmatex">\(\begin{cases} x' = 2x - y \\ y' = x + 2y \end{cases}\)</span></p>
+<div class="admonition example">
+<p class="admonition-title">例题</p>
+<p><span class="arithmatex">\(\begin{cases} x' = 2x - y \\ y' = x + 2y \end{cases}\)</span></p>
 <p>由第一式 <span class="arithmatex">\(y = 2x - x'\)</span>，代入第二式：</p>
 <div class="arithmatex">\[y' = 2x' - x'' = x + 2(2x - x') \;\Rightarrow\; x'' - 4x' + 3x = 0\]</div>
 <p>特征方程 <span class="arithmatex">\(\lambda^2 - 4\lambda + 3 = 0\)</span>，<span class="arithmatex">\(\lambda = 1, 3\)</span>。<span class="arithmatex">\(x = c_1 e^{t} + c_2 e^{3t}\)</span>，回代 <span class="arithmatex">\(y = 2x - x'\)</span> 得</p>
 <div class="arithmatex">\[y = c_1 e^{t} - c_2 e^{3t}\]</div>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">何时用消元法</p>
 <p>变量只有 2 个且系数为常数时，消元法计算量通常小于求特征向量。变量 3 个及以上时建议用矩阵法。</p>
 </div>
 <h3 id="44">4.4 二阶方程组化为一阶方程组<a class="headerlink" href="#44" title="Permanent link">&para;</a></h3>
-<p><strong>例题</strong> (24-25夏) <span class="arithmatex">\(\begin{cases} x'' = 6x + 2y \\ y'' = 3x + 7y \end{cases}\)</span></p>
+<div class="admonition example">
+<p class="admonition-title">例题 (24-25夏)</p>
+<p><span class="arithmatex">\(\begin{cases} x'' = 6x + 2y \\ y'' = 3x + 7y \end{cases}\)</span></p>
 <p><strong>消元法</strong>：由第一式 <span class="arithmatex">\(y = \dfrac{x'' - 6x}{2}\)</span>，代入第二式消去 <span class="arithmatex">\(y\)</span>：</p>
 <div class="arithmatex">\[y'' = \frac{x^{(4)} - 6x''}{2} = 3x + 7 \cdot \frac{x'' - 6x}{2}\]</div>
 <p>化简得 <span class="arithmatex">\(x^{(4)} - 13x'' + 36x = 0\)</span>。特征方程 <span class="arithmatex">\(\mu^4 - 13\mu^2 + 36 = 0\)</span>，令 <span class="arithmatex">\(s = \mu^2\)</span>：</p>
@@ -2463,12 +2551,13 @@ $$e^{\alpha x}\sin\beta x,\; x e^{\alpha x}\sin\beta x,\; \dots,\; x^{k-1}e^{\al
 <div class="arithmatex">\[x = c_1 e^{2t} + c_2 e^{-2t} + c_3 e^{3t} + c_4 e^{-3t}\]</div>
 <p>回代 <span class="arithmatex">\(y = \dfrac{x'' - 6x}{2}\)</span>：</p>
 <div class="arithmatex">\[y = -c_1 e^{2t} - c_2 e^{-2t} + \frac{3}{2}c_3 e^{3t} + \frac{3}{2}c_4 e^{-3t}\]</div>
+</div>
 <hr />
 <h2 id="_6">五、证明题选讲<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>本节收录历年卷中的典型证明题。</p>
 <div class="admonition info">
 <p class="admonition-title">证明题常用定理与工具</p>
-<p>第五部分的证明题虽然题面短，但默认你已经会用一批“基础工具”。先把这些工具和典型用途梳理清楚，再看后面的证明会顺很多。</p>
+<p>第五部分的证明题虽然题面短，但默认你已经会用一批"基础工具"。先把这些工具和典型用途梳理清楚，再看后面的证明会顺很多。</p>
 <table>
 <thead>
 <tr>
@@ -2481,7 +2570,7 @@ $$e^{\alpha x}\sin\beta x,\; x e^{\alpha x}\sin\beta x,\; \dots,\; x^{k-1}e^{\al
 <tr>
 <td>解的线性叠加性</td>
 <td>齐次线性方程的任意线性组合仍是解</td>
-<td>构造辅助函数 <span class="arithmatex">\(\varphi(x)\)</span>，把“两个解的关系”转化为“新解是否恒为零”</td>
+<td>构造辅助函数 <span class="arithmatex">\(\varphi(x)\)</span>，把"两个解的关系"转化为"新解是否恒为零"</td>
 </tr>
 <tr>
 <td>唯一性定理</td>
@@ -2511,14 +2600,14 @@ $$e^{\alpha x}\sin\beta x,\; x e^{\alpha x}\sin\beta x,\; \dots,\; x^{k-1}e^{\al
 <tr>
 <td>Riccati（里卡提）特解降阶法</td>
 <td>已知 Riccati 方程一个特解时，可令 <span class="arithmatex">\(y=y_1+u\)</span> 降为 Bernoulli（伯努利）方程</td>
-<td>证明”已知一解可化简原方程”</td>
+<td>证明"已知一解可化简原方程"</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">学习顺序</p>
-<p>建议先掌握“唯一性定理 + Wronskian + Cramer 法则”这三组工具，再看 5.1 和 5.2；5.3 和 5.4 更像是“结构识别题”，重点是看到题目后知道该套哪个工具。</p>
+<p>建议先掌握"唯一性定理 + Wronskian + Cramer 法则"这三组工具，再看 5.1 和 5.2；5.3 和 5.4 更像是"结构识别题"，重点是看到题目后知道该套哪个工具。</p>
 </div>
 <h3 id="51">5.1 线性无关解无公共零点<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
 <p><strong>命题</strong> (24-25 / 23-24) 设 <span class="arithmatex">\(u(x), v(x)\)</span> 是 <span class="arithmatex">\(y'' + p(x)y' + q(x)y = 0\)</span> 的两个线性无关解（<span class="arithmatex">\(p, q\)</span> 连续），则 <span class="arithmatex">\(u, v\)</span> 不存在公共零点。</p>
