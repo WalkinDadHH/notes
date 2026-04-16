@@ -168,8 +168,9 @@ center, p, li {
   font-size: 1rem;
 }
 
-.md-nav__link {
-  font-size: 0.85rem;
+.md-nav__link,
+.md-nav__title {
+  font-size: 0.9rem;
 }
 
 /* 表格字号放大，避免公式过小 */
