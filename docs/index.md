@@ -1,8 +1,12 @@
 # WalkinDadHH's Notebook
 
-> 纸上得来终觉浅，绝知此事要躬行。
-
-*或许是不知梦的缘故，流离之人追逐幻影。*
+!!! note ""
+    <div align="center" style="font-size:1.5rem;font-weight:bold;padding:.6rem 0 .3rem">
+        纸上得来终觉浅，绝知此事要躬行。
+    </div>
+    <div align="center" style="font-size:0.88rem;opacity:.7;padding-bottom:.4rem">
+        或许是不知梦的缘故，流离之人追逐幻影。
+    </div>
 
 ---
 
@@ -11,11 +15,6 @@
 就读于能源与环境工程专业（能环），受前辈 [Savia](https://savia7582.github.io/Exterior/) 的启发，尝试将课程笔记整理成册，希望能对后来的学弟学妹有所帮助。
 
 笔记以课堂整理、公式推导、习题分析为主，难免有疏漏，欢迎指正。
-
-:material-pencil-outline: [常微分方程](math/ode/index.md) &nbsp;&nbsp;
-:material-fire: [工程热力学（甲）](major/foundation/thermodynamics/index.md) &nbsp;&nbsp;
-:material-telescope: [大学物理光学](physics/optics/index.md) &nbsp;&nbsp;
-[友链 →](friends.md)
 
 ---
 
@@ -56,6 +55,13 @@
     [:octicons-arrow-right-24: 前往](major/foundation/index.md)
 
 </div>
+
+---
+
+!!! note "推荐阅读"
+    - [:material-pencil-outline: 常微分方程讲义](math/ode/index.md)
+    - [:material-fire: 工程热力学（甲）](major/foundation/thermodynamics/index.md)
+    - [:material-telescope: 大学物理 · 光学](physics/optics/index.md)
 
 ---
 
