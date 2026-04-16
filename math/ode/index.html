@@ -2144,18 +2144,27 @@
 </div>
 <h3 id="17">1.7 变量代换（一阶方程的降维打击）<a class="headerlink" href="#17" title="Permanent link">&para;</a></h3>
 <p>对"看起来像齐次/线性但不完全是"的方程，换元化归。</p>
-<p><strong>例 1</strong> (20-21) <span class="arithmatex">\(y' = \cos^2(x+y)\)</span></p>
+<div class="admonition example">
+<p class="admonition-title">例题 1 (20-21)</p>
+<p><span class="arithmatex">\(y' = \cos^2(x+y)\)</span></p>
 <p>令 <span class="arithmatex">\(u = x+y\)</span>，<span class="arithmatex">\(u' = 1 + y'\)</span>：<span class="arithmatex">\(u' = 1 + \cos^2 u\)</span>（可分离）。得 <span class="arithmatex">\(\cot(x+y) + x = C\)</span>。</p>
-<p><strong>例 2</strong> (20-21) <span class="arithmatex">\(y' = 2\!\left(\dfrac{y+2}{x+y-1}\right)^{2}\)</span></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例题 2 (20-21)</p>
+<p><span class="arithmatex">\(y' = 2\!\left(\dfrac{y+2}{x+y-1}\right)^{2}\)</span></p>
 <p>解 <span class="arithmatex">\(\begin{cases} x+y-1=0 \\ y+2=0 \end{cases}\)</span> 得 <span class="arithmatex">\((3,-2)\)</span>。令 <span class="arithmatex">\(X=x-3,\; Y=y+2\)</span>：</p>
 <div class="arithmatex">\[\frac{\mathrm{d}Y}{\mathrm{d}X} = 2\!\left(\frac{Y}{X+Y}\right)^2\]</div>
 <p>再令 <span class="arithmatex">\(u = Y/X\)</span> 化为齐次方程。</p>
+</div>
 <h3 id="18-x-y">1.8 x, y 互换<a class="headerlink" href="#18-x-y" title="Permanent link">&para;</a></h3>
 <p>把 <span class="arithmatex">\(x\)</span> 视作 <span class="arithmatex">\(y\)</span> 的函数，伯努利型有时反过来就是线性。</p>
-<p><strong>例</strong> (23-24) <span class="arithmatex">\(\dfrac{\mathrm{d}y}{\mathrm{d}x} = \dfrac{y}{x(x^2y^2+1)}\)</span></p>
+<div class="admonition example">
+<p class="admonition-title">例题 (23-24)</p>
+<p><span class="arithmatex">\(\dfrac{\mathrm{d}y}{\mathrm{d}x} = \dfrac{y}{x(x^2y^2+1)}\)</span></p>
 <p>取倒数：<span class="arithmatex">\(\dfrac{\mathrm{d}x}{\mathrm{d}y} = \dfrac{x}{y} + x^3 y\)</span>（以 <span class="arithmatex">\(x\)</span> 为未知量的 Bernoulli 方程，<span class="arithmatex">\(n=3\)</span>）。令 <span class="arithmatex">\(z = x^{-2}\)</span>：</p>
 <div class="arithmatex">\[\frac{\mathrm{d}z}{\mathrm{d}y} + \frac{2}{y}z = -2y\]</div>
 <p>线性方程求解后回代（注意 <span class="arithmatex">\(y=0\)</span> 也是解）。</p>
+</div>
 <div class="admonition example">
 <p class="admonition-title">例题 2 (24-25夏)</p>
 <p><span class="arithmatex">\(y\,\mathrm{d}x - x(1 + x^2y^3)\,\mathrm{d}y = 0\)</span></p>
