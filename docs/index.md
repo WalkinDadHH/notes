@@ -6,7 +6,11 @@
 
 ---
 
-就读于**能源与环境工程**（能环）的笔记站。受前辈 [Savia](https://savia7582.github.io/Exterior/) 启发建站，主要记录课堂整理、公式推导和习题分析，希望对后来的学弟学妹有用。
+这里是 **WalkinDadHH** 的个人笔记站。
+
+就读于能源与环境工程专业（能环），受前辈 [Savia](https://savia7582.github.io/Exterior/) 的启发，尝试将课程笔记整理成册，希望能对后来的学弟学妹有所帮助。
+
+笔记以课堂整理、公式推导、习题分析为主，难免有疏漏，欢迎指正。
 
 :material-pencil-outline: [常微分方程](math/ode/index.md) &nbsp;&nbsp;
 :material-fire: [工程热力学（甲）](major/foundation/thermodynamics/index.md) &nbsp;&nbsp;
