@@ -1,10 +1,7 @@
 # WalkinDadHH's Notebook
 
 !!! note ""
-    <div align="center" style="font-size:1.5rem;font-weight:bold;padding:.6rem 0 .3rem">
-        纸上得来终觉浅，绝知此事要躬行。
-    </div>
-    <div align="center" style="font-size:0.88rem;opacity:.7;padding-bottom:.4rem">
+    <div align="center" style="font-size:1.3rem;padding:.5rem 0">
         或许是不知梦的缘故，流离之人追逐幻影。
     </div>
 
