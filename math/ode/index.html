@@ -2068,6 +2068,29 @@
 <div class="arithmatex">\[\sin y = \frac{1}{\sqrt{2}}\,e^{x}\]</div>
 <hr />
 <h2 id="_4">三、高阶线性微分方程<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p><strong>方法总览</strong>（<span class="arithmatex">\(n\)</span> 阶线性方程 <span class="arithmatex">\(y^{(n)} + a_1 y^{(n-1)} + \cdots + a_n y = f(x)\)</span>）</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>齐次 <span class="arithmatex">\(f(x)=0\)</span></th>
+<th>非齐次 <span class="arithmatex">\(f(x)\ne 0\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>常系数</strong></td>
+<td>特征方程 <span class="arithmatex">\(D(\lambda)=0\)</span>：单根 <span class="arithmatex">\(e^{\lambda x}\)</span>、复根 <span class="arithmatex">\(e^{\alpha x}\cos/\sin\beta x\)</span>、<span class="arithmatex">\(k\)</span> 重根 <span class="arithmatex">\(\times\,x^{0},\dots,x^{k-1}\)</span>（§3.1）</td>
+<td>待定系数法：设 <span class="arithmatex">\(y^*=x^k R_m(x)e^{ax}\)</span>，叠加原理（§3.2）</td>
+</tr>
+<tr>
+<td><strong>非常系数</strong></td>
+<td>Euler 方程 <span class="arithmatex">\(x=e^t\)</span> 化常系数（§3.3）；已知一解 <span class="arithmatex">\(y_1\)</span> 用 Liouville 公式 / 降阶法（§3.4）</td>
+<td>常数变易法（§3.5）</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h3 id="31-n">3.1 n 阶常系数齐次线性方程<a class="headerlink" href="#31-n" title="Permanent link">&para;</a></h3>
 <p><strong>形式</strong></p>
 <div class="arithmatex">\[y^{(n)} + a_1 y^{(n-1)} + \cdots + a_{n-1} y' + a_n y = 0\]</div>
