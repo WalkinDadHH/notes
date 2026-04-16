@@ -10,7 +10,7 @@
 
     ---
 
-    信息安全专业学生的笔记站，视觉风格来源之一。
+    这是一名神秘的大佬。
 
 -   **[Savia's Exterior](https://savia7582.github.io/Exterior/)**
 

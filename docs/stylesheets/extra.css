@@ -137,6 +137,7 @@ h1,
   margin-top: .8rem;
   opacity: .5;
   font-family: var(--md-text-font);
+  font-size: 0.9rem !important;
 }
 
 .md-tabs__link--active,
@@ -170,7 +171,7 @@ center, p, li {
 
 .md-nav__link,
 .md-nav__title {
-  font-size: 0.9rem;
+  font-size: 0.9rem !important;
 }
 
 /* 表格字号放大，避免公式过小 */
