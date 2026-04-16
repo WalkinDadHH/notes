@@ -15,8 +15,8 @@ comments: true
 - **阶**：方程中出现的最高阶导数的阶数。$F(x, y, y', \dots, y^{(n)}) = 0$ 为 $n$ 阶 ODE。
 - **通解**：含 $n$ 个独立任意常数的解（$n$ = 方程阶数）。
 - **特解**：由初值条件确定全部常数后的解。
-- **初值问题**（Cauchy 问题）：方程 + 初值条件 $y(x_0) = y_0,\, y'(x_0) = y_1,\, \dots$
-- **Picard 存在唯一性定理**：$y' = f(x,y)$，若 $f$ 和 $\partial f / \partial y$ 在 $(x_0, y_0)$ 附近连续，则初值问题在某邻域内存在唯一解。
+- **初值问题**（Cauchy（柯西）问题）：方程 + 初值条件 $y(x_0) = y_0,\, y'(x_0) = y_1,\, \dots$
+- **Picard（皮卡）存在唯一性定理**：$y' = f(x,y)$，若 $f$ 和 $\partial f / \partial y$ 在 $(x_0, y_0)$ 附近连续，则初值问题在某邻域内存在唯一解。
 
 ---
 
@@ -86,7 +86,7 @@ $$y = e^{-\int_{x_0}^{x} p(\xi)\,\mathrm{d}\xi}\!\left[\int_{x_0}^{x} f(\xi)\,e^
 !!! tip "记忆口诀"
     "外负内正"：外层系数 $e^{-\int p\,\mathrm{d}x}$ 取负号，内层 $e^{\int p\,\mathrm{d}x}$ 取正号。
 
-### 1.4 伯努利方程
+### 1.4 Bernoulli（伯努利）方程
 
 **形式**
 
@@ -111,7 +111,7 @@ $$z' - \frac{2}{x}z = \frac{x}{2}$$
 
 $$y = x^4\!\left(\tfrac{1}{2}\ln|x| + C\right)^{2}$$
 
-### 1.5 Riccati 方程
+### 1.5 Riccati（里卡提）方程
 
 **形式**
 
@@ -125,10 +125,10 @@ $$\frac{\mathrm{d}y}{\mathrm{d}x} = p(x)\,y^2 + q(x)\,y + r(x)$$
 
 $$\frac{\mathrm{d}u}{\mathrm{d}x} = [2p\,\varphi_1 + q]\,u + p\,u^2$$
 
-这是关于 $u$ 的伯努利方程（$n=2$），按 1.4 节方法求解。
+这是关于 $u$ 的 Bernoulli 方程（$n=2$），按 1.4 节方法求解。
 
 !!! tip "识别技巧"
-    如果题目给出了方程的一个特解，且方程含 $y^2$ 项，多半是 Riccati 方程。
+    如果题目给出了方程的一个特解，且方程含 $y^2$ 项，多半是 Riccati（里卡提）方程。
 
 **例题** (23-24) $y' + y^2 = \dfrac{2}{x^2}$
 
@@ -136,7 +136,7 @@ $$\frac{\mathrm{d}u}{\mathrm{d}x} = [2p\,\varphi_1 + q]\,u + p\,u^2$$
 
 $$u' + \frac{4}{x}\,u = -u^2$$
 
-这是伯努利方程（$n=2$），令 $z = u^{-1}$：
+这是 Bernoulli 方程（$n=2$），令 $z = u^{-1}$：
 
 $$z' - \frac{4}{x}\,z = 1$$
 
@@ -216,7 +216,7 @@ $$\frac{\mathrm{d}Y}{\mathrm{d}X} = 2\!\left(\frac{Y}{X+Y}\right)^2$$
 
 **例** (23-24) $\dfrac{\mathrm{d}y}{\mathrm{d}x} = \dfrac{y}{x(x^2y^2+1)}$
 
-取倒数：$\dfrac{\mathrm{d}x}{\mathrm{d}y} = \dfrac{x}{y} + x^3 y$（以 $x$ 为未知量的伯努利方程，$n=3$）。令 $z = x^{-2}$：
+取倒数：$\dfrac{\mathrm{d}x}{\mathrm{d}y} = \dfrac{x}{y} + x^3 y$（以 $x$ 为未知量的 Bernoulli 方程，$n=3$）。令 $z = x^{-2}$：
 
 $$\frac{\mathrm{d}z}{\mathrm{d}y} + \frac{2}{y}z = -2y$$
 
@@ -224,7 +224,7 @@ $$\frac{\mathrm{d}z}{\mathrm{d}y} + \frac{2}{y}z = -2y$$
 
 **例题 2** (24-25夏) $y\,\mathrm{d}x - x(1 + x^2y^3)\,\mathrm{d}y = 0$
 
-改写为 $\dfrac{\mathrm{d}x}{\mathrm{d}y} = \dfrac{x}{y} + x^3 y^2$（以 $x$ 为未知量的伯努利方程，$n=3$）。令 $z = x^{-2}$：
+改写为 $\dfrac{\mathrm{d}x}{\mathrm{d}y} = \dfrac{x}{y} + x^3 y^2$（以 $x$ 为未知量的 Bernoulli 方程，$n=3$）。令 $z = x^{-2}$：
 
 $$z' + \frac{2}{y}\,z = -2y^2$$
 
@@ -232,9 +232,9 @@ $$z' + \frac{2}{y}\,z = -2y^2$$
 
 $$\frac{1}{x^2} = \frac{C}{y^2} - \frac{2y^3}{5}$$
 
-### 1.9 Clairaut 方程与参数表示
+### 1.9 Clairaut（克莱罗）方程与参数表示
 
-**Clairaut 方程**
+**Clairaut（克莱罗）方程**
 
 $$y = xy' + \psi(y')$$
 
@@ -330,7 +330,7 @@ $$\sin y = \frac{1}{\sqrt{2}}\,e^{x}$$
 |  | 齐次 $f(x)=0$ | 非齐次 $f(x)\ne 0$ |
 |--|----------------|---------------------|
 | **常系数** | 特征方程 $D(\lambda)=0$：单根 $e^{\lambda x}$、复根 $e^{\alpha x}\cos/\sin\beta x$、$k$ 重根 $\times\,x^{0},\dots,x^{k-1}$（§3.1） | 待定系数法：设 $y^*=x^k R_m(x)e^{ax}$，叠加原理（§3.2） |
-| **非常系数** | Euler 方程 $x=e^t$ 化常系数（§3.3）；已知一解 $y_1$ 用 Liouville 公式 / 降阶法（§3.4） | 常数变易法（§3.5） |
+| **非常系数** | Euler（欧拉）方程 $x=e^t$ 化常系数（§3.3）；已知一解 $y_1$ 用 Liouville（刘维尔）公式 / 降阶法（§3.4） | 常数变易法（§3.5） |
 
 ---
 
@@ -409,7 +409,7 @@ $$y = c_1\cos x + c_2\sin x - x(\cos x + \sin x)$$
 !!! warning "先化简再设特解"
     含复合三角函数（如 $\sin(x-\pi/4)$）时，务必先展开为 $\sin x$, $\cos x$ 的线性组合，再判断 $k$ 并设特解形式。
 
-### 3.3 欧拉方程
+### 3.3 Euler（欧拉）方程
 
 **形式**
 
@@ -447,7 +447,7 @@ $$y = c_1 x^3 + c_2 x^{-1} + \frac{1}{2} x^3 \ln x$$
 
 **形式** $y'' + p(x)\,y' + q(x)\,y = 0$
 
-**解法（刘维尔公式）**：若已知一个非零解 $y_1$，则
+**解法（Liouville（刘维尔）公式）**：若已知一个非零解 $y_1$，则
 
 $$y = y_1\!\left[c_1 + c_2 \int \frac{1}{y_1^{2}}\,e^{-\int p(x)\,\mathrm{d}x}\,\mathrm{d}x\right]$$
 
@@ -455,7 +455,7 @@ $$y = y_1\!\left[c_1 + c_2 \int \frac{1}{y_1^{2}}\,e^{-\int p(x)\,\mathrm{d}x}\,
 
 **例题** (24-25夏) $(x^2 - 1)\,y'' - 2xy' + 2y = 0$
 
-观察到 $y_1 = x$ 是解（代入：$0 - 2x + 2x = 0$ ✓）。化标准形：$p(x) = \dfrac{-2x}{x^2-1}$。由刘维尔公式求 $y_2$：
+观察到 $y_1 = x$ 是解（代入：$0 - 2x + 2x = 0$ ✓）。化标准形：$p(x) = \dfrac{-2x}{x^2-1}$。由 Liouville 公式求 $y_2$：
 
 $$y_2 = x \int \frac{1}{x^2}\,e^{\int \frac{2x}{x^2-1}\,\mathrm{d}x}\,\mathrm{d}x = x \int \frac{x^2-1}{x^2}\,\mathrm{d}x = x\!\left(x - \frac{1}{x} + C\right) \cdots$$
 
@@ -470,7 +470,7 @@ $$y = c_1 x + c_2(x^2 - 1)$$
 
 令 $z = y'$，方程降为 $(1-x^2)\,z'' + 2xz' - 2z = 0$，即上题同型。观察得 $z_1 = x$。
 
-由刘维尔公式（$p(x) = \dfrac{2x}{1-x^2}$）得 $z_2 = x^2 + 1$（取线性无关部分 $1+x^2$）。
+由 Liouville 公式（$p(x) = \dfrac{2x}{1-x^2}$）得 $z_2 = x^2 + 1$（取线性无关部分 $1+x^2$）。
 
 $$z = C_1 x + C_2(1+x^2) \;\Rightarrow\; y = C_1 x^2 + C_2(x^3 + 3x) + C_3$$
 
@@ -478,7 +478,7 @@ $$z = C_1 x + C_2(1+x^2) \;\Rightarrow\; y = C_1 x^2 + C_2(x^3 + 3x) + C_3$$
 
 **形式** $y'' + p(x)\,y' + q(x)\,y = f(x)$，已知齐次基础解系 $y_1, y_2$。
 
-**通解公式**：记朗斯基行列式
+**通解公式**：记 Wronskian（朗斯基）行列式
 
 $$W(x) = \begin{vmatrix} y_1(x) & y_2(x) \\ y_1'(x) & y_2'(x) \end{vmatrix}$$
 
@@ -504,13 +504,13 @@ $$u'' - u = 0$$
 
 $$y_1 = \frac{e^{x}}{x+2},\quad y_2 = \frac{e^{-x}}{x+2}$$
 
-朗斯基行列式 $W = -\dfrac{2}{(x+2)^2}$。由常数变易公式求特解，化简后
+Wronskian 行列式 $W = -\dfrac{2}{(x+2)^2}$。由常数变易公式求特解，化简后
 
 $$y = c_1\frac{e^{x}}{x+2} + c_2\frac{e^{-x}}{x+2} - \frac{x^2 + 2x + 2}{x+2}$$
 
 **例题 2** (17-18) 已知 $y_1 = \dfrac{e^{x}}{x}$ 是 $y'' + \dfrac{2}{x} y' - y = 0$ 的解，求 $y'' + \dfrac{2}{x} y' - y = x$ 的通解。
 
-由刘维尔公式得另一基础解 $y_2 = \dfrac{e^{-x}}{x}$。$W = -\dfrac{2}{x^2}$。代入常数变易公式化简后：
+由 Liouville 公式得另一基础解 $y_2 = \dfrac{e^{-x}}{x}$。$W = -\dfrac{2}{x^2}$。代入常数变易公式化简后：
 
 $$y = c_1\frac{e^{x}}{x} + c_2\frac{e^{-x}}{x} - \frac{x^2 + 2}{x}$$
 
@@ -633,11 +633,11 @@ $$y = -c_1 e^{2t} - c_2 e^{-2t} + \frac{3}{2}c_3 e^{3t} + \frac{3}{2}c_4 e^{-3t}
     |------|----------|------------------|
     | 解的线性叠加性 | 齐次线性方程的任意线性组合仍是解 | 构造辅助函数 $\varphi(x)$，把“两个解的关系”转化为“新解是否恒为零” |
     | 唯一性定理 | 二阶线性方程在给定 $y(x_0), y'(x_0)$ 时解唯一 | 若某解在一点满足 $y(x_0)=y'(x_0)=0$，则该解只能是零解 |
-    | Wronskian 判别 | 对二阶齐次线性方程，两解线性无关 $\Leftrightarrow W(x)\neq 0$ | 判断两个解能否在同一点同时为零，或是否构成基础解系 |
-    | 刘维尔公式 | $W' + p(x)W = 0$，故 $W(x)=Ce^{-\int p(x)\,\mathrm{d}x}$ | 说明只要某点 $W\neq 0$，则整个区间都不为零 |
+    | Wronskian（朗斯基）判别 | 对二阶齐次线性方程，两解线性无关 $\Leftrightarrow W(x)\neq 0$ | 判断两个解能否在同一点同时为零，或是否构成基础解系 |
+    | Liouville（刘维尔）公式 | $W' + p(x)W = 0$，故 $W(x)=Ce^{-\int p(x)\,\mathrm{d}x}$ | 说明只要某点 $W\neq 0$，则整个区间都不为零 |
     | Cramer 法则 | 线性方程组在系数行列式非零时有唯一解 | 由两组基础解反推方程系数 $p(x), q(x)$ |
-    | Euler 齐次函数定理 | 若 $P,Q$ 为 $m$ 次齐次函数，则 $xP_x+yP_y=mP,\;xQ_x+yQ_y=mQ$ | 化简积分因子证明中的偏导表达式 |
-    | Riccati 特解降阶法 | 已知 Riccati 方程一个特解时，可令 $y=y_1+u$ 降为 Bernoulli 方程 | 证明“已知一解可化简原方程” |
+    | Euler（欧拉）齐次函数定理 | 若 $P,Q$ 为 $m$ 次齐次函数，则 $xP_x+yP_y=mP,\;xQ_x+yQ_y=mQ$ | 化简积分因子证明中的偏导表达式 |
+    | Riccati（里卡提）特解降阶法 | 已知 Riccati 方程一个特解时，可令 $y=y_1+u$ 降为 Bernoulli（伯努利）方程 | 证明”已知一解可化简原方程” |
 
 !!! tip "学习顺序"
     建议先掌握“唯一性定理 + Wronskian + Cramer 法则”这三组工具，再看 5.1 和 5.2；5.3 和 5.4 更像是“结构识别题”，重点是看到题目后知道该套哪个工具。
@@ -646,7 +646,7 @@ $$y = -c_1 e^{2t} - c_2 e^{-2t} + \frac{3}{2}c_3 e^{3t} + \frac{3}{2}c_4 e^{-3t}
 
 **命题** (24-25 / 23-24) 设 $u(x), v(x)$ 是 $y'' + p(x)y' + q(x)y = 0$ 的两个线性无关解（$p, q$ 连续），则 $u, v$ 不存在公共零点。
 
-**证明**：反设存在 $x^{*}$ 使 $u(x^{*}) = v(x^{*}) = 0$。则朗斯基行列式
+**证明**：反设存在 $x^{*}$ 使 $u(x^{*}) = v(x^{*}) = 0$。则 Wronskian 行列式
 
 $$W(x^{*}) = \begin{vmatrix} u(x^{*}) & v(x^{*}) \\ u'(x^{*}) & v'(x^{*}) \end{vmatrix} = 0$$
 
@@ -687,7 +687,7 @@ $$\frac{\partial(\mu P)}{\partial y} = \frac{P_y D - P(P_x y + Q + Q_y y + P_y x
 
 经齐次性化简（利用 Euler 定理及 $P_y = Q_x$ 不必要成立的一般情况），可对称地证得两侧相等。证毕。
 
-### 5.4 Riccati 方程化为 Bernoulli 方程
+### 5.4 Riccati（里卡提）方程化为 Bernoulli（伯努利）方程
 
 **命题** (23-24) 若 $y_1$ 是 Riccati 方程 $y' = a(x) + b(x)\,y + c(x)\,y^2$ 的一个解，则代换 $y = y_1 + u$ 可将方程化为关于 $u$ 的 Bernoulli 方程。
 
