@@ -4,7 +4,9 @@ window.MathJax = {
     displayMath: [["\\[", "\\]"]],
     processEscapes: true,
     processEnvironments: true,
+    packages: { "[+]": ["boldsymbol"] },
   },
+  loader: { load: ["[tex]/boldsymbol"] },
   options: {
     ignoreHtmlClass: ".*|",
     processHtmlClass: "arithmatex",
