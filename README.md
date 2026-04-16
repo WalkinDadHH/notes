@@ -98,6 +98,7 @@ Preferred local validation:
 
 Codex and Claude should both read these files before editing repository conventions:
 
+- `SKILL.md`
 - `README.md`
 - `MAINTENANCE_LOG.md`
 - `.claude/commands/notes-guide.md`

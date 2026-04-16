@@ -21,7 +21,43 @@
       "WebFetch(domain:github.com)",
       "Bash(\"C:/Program Files/GitHub CLI/gh.exe\" api repos/WalkinDadHH/notes --jq '{id: .id, node_id: .node_id, has_discussions: .has_discussions, name: .name}')",
       "Bash(C:/Program Files/GitHub CLI/gh.exe api:*)",
-      "Bash(\"C:/Program Files/GitHub CLI/gh.exe\" api /user/installations --jq '.installations[] | {app_slug: .app.slug, id: .id}')"
+      "Bash(\"C:/Program Files/GitHub CLI/gh.exe\" api /user/installations --jq '.installations[] | {app_slug: .app.slug, id: .id}')",
+      "WebFetch(domain:czy1101kksk.github.io)",
+      "Bash(mkdocs build:*)",
+      "Skill(update-config)",
+      "Bash(python3:*)",
+      "Bash(pdftotext -layout \"D:/BaiduNetdiskDownload/《常微分方程》第 1 讲  一阶微分方程求解.pdf\" \"D:/Unbili/_ode_lesson1.txt\")",
+      "Bash(mkdir -p \"D:/Unbili/docs/math/ode\")",
+      "Bash(rm \"D:/Unbili/_ode_lesson1.txt\")",
+      "Bash(pdftotext -layout \"D:/BaiduNetdiskDownload/第 2 讲  可降阶的二阶微分方程.pdf\" \"D:/Unbili/_ode2.txt\")",
+      "Bash(pdftotext -layout \"D:/BaiduNetdiskDownload/《常微分方程》第 3 讲  高阶线性微分方程.pdf\" \"D:/Unbili/_ode3.txt\")",
+      "Bash(pdftotext -layout \"D:/BaiduNetdiskDownload/《常微分方程》第 4 讲  线性微分方程组.pdf\" \"D:/Unbili/_ode4.txt\")",
+      "Bash(pdftotext -layout \"D:/BaiduNetdiskDownload/《常微分方程》第 1 讲  一阶微分方程求解.pdf\" \"D:/Unbili/_ode1.txt\")",
+      "Bash(wc -l D:/Unbili/_ode*.txt)",
+      "Bash(pdftotext -layout \"D:/BaiduNetdiskDownload/《常微分方程》计算题类型整理.pdf\" \"D:/Unbili/_ode_types.txt\")",
+      "Bash(ls *)",
+      "Bash(python *)",
+      "Bash(mkdocs serve *)",
+      "Bash(pkill -f \"mkdocs serve\")",
+      "Bash(mkdocs gh-deploy *)",
+      "Bash(rm -f docs/friends.md docs/updates.md)",
+      "Bash(rm -rf docs/assets/images/hero/)",
+      "Bash(python3.13 -m mkdocs build --clean)",
+      "Bash(\"C:\\\\Users\\\\KANEKI\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe\" -m mkdocs build --clean)"
+    ]
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /d/Unbili && git add docs/ mkdocs.yml && git diff --cached --quiet || (git commit -m \"auto: sync notes to GitHub Pages\" && git push origin main && /c/Users/KANEKI/AppData/Local/Programs/Python/Python313/Scripts/mkdocs.exe gh-deploy --force && echo '{\"systemMessage\": \"已部署完成，可访问 https://WalkinDadHH.github.io/notes/\"}')",
+            "timeout": 120,
+            "statusMessage": "同步到 GitHub Pages..."
+          }
+        ]
+      }
     ]
   }
 }

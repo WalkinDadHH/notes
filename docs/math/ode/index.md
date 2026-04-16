@@ -4,35 +4,6 @@ comments: true
 
 # 常微分方程
 
-<div class="course-hero" markdown>
-
-<span class="course-hero__kicker">Course Notes</span>
-
-## ODE 讲义总览
-
-这份讲义按题型组织，而不是机械照抄教材章节。目标是让你在复习时能尽快找到“标准形式、解法步骤、典型例题”三件最关键的东西。
-
-<div class="course-hero__meta" markdown>
-
-- <strong>适用范围</strong><span>1 学分工科常微分方程</span>
-- <strong>内容组织</strong><span>按题型归纳，强调查阅效率</span>
-- <strong>当前状态</strong><span>主干内容已整理，可直接复习</span>
-
-</div>
-
-<div class="course-hero__badges" markdown>
-
-<span class="badge badge--ready">主力讲义</span>
-<span class="badge">推荐优先阅读</span>
-<span class="badge">题型导向</span>
-
-</div>
-
-</div>
-
-!!! tip "阅读建议"
-    如果你是第一次看，先读“基本概念速览”和每一类题型的**形式 / 解法**部分；如果你是考前复习，可以直接按题型跳读对应例题。
-
 !!! note "讲义说明"
     - **内容范围**：一阶微分方程、可降阶的二阶微分方程、高阶线性微分方程、线性微分方程组
     - **适用范围**：1 学分工科常微分方程
@@ -72,42 +43,11 @@ $$\int_{y_0}^{y} \frac{\mathrm{d}y}{g(y)} = \int_{x_0}^{x} f(x)\,\mathrm{d}x$$
 !!! warning "易丢失的解"
     若存在 $y^{*}$ 使 $g(y^{*})=0$，则 $y \equiv y^{*}$ 也是解。分离变量时要回头检查。
 
-!!! example "例题 (20-21)"
-    $\dfrac{\mathrm{d}y}{\mathrm{d}x} = (1-y^2)\,x$
+**例题** (20-21) $\dfrac{\mathrm{d}y}{\mathrm{d}x} = (1-y^2)\,x$
 
-    这题右端已经写成了"只含 $x$ 的因子 $\times$ 只含 $y$ 的因子"，所以第一反应就是**分离变量**。但分离前先检查 $1-y^2=0$，得到常值解
+分离变量：$\dfrac{\mathrm{d}y}{1-y^2} = x\,\mathrm{d}x$，两端积分：
 
-    $$y\equiv 1,\qquad y\equiv -1$$
-
-    这两个解在后续约去 $1-y^2$ 时会丢掉，必须先记下来。
-
-    对非平衡解，分离变量：
-
-    $$\frac{\mathrm{d}y}{1-y^2} = x\,\mathrm{d}x$$
-
-    左边用部分分式
-
-    $$\frac{1}{1-y^2}=\frac{1}{2}\left(\frac{1}{1+y}+\frac{1}{1-y}\right)$$
-
-    所以
-
-    $$\int \frac{\mathrm{d}y}{1-y^2}
-    = \frac{1}{2}\int\left(\frac{1}{1+y}+\frac{1}{1-y}\right)\mathrm{d}y
-    = \frac{1}{2}\ln\left|\frac{1+y}{1-y}\right|$$
-
-    右边积分为 $\dfrac{x^2}{2}+C$，故
-
-    $$\frac{1}{2}\ln\left|\frac{1+y}{1-y}\right| = \frac{x^2}{2} + C$$
-
-    两边乘 2 并指数化：
-
-    $$\ln\left|\frac{1+y}{1-y}\right| = x^2 + C_1
-    \;\Longrightarrow\;
-    \frac{1+y}{1-y} = C\,e^{x^2}$$
-
-    若题目要求显式写出 $y$，再继续化简：
-
-    $$y=\frac{Ce^{x^2}-1}{Ce^{x^2}+1}$$
+$$\frac{1}{2}\ln\left|\frac{1+y}{1-y}\right| = \frac{x^2}{2} + C \;\Rightarrow\; \frac{1+y}{1-y} = C\,e^{x^2}$$
 
 ### 1.2 齐次方程
 
@@ -121,53 +61,13 @@ $$\frac{\mathrm{d}y}{\mathrm{d}x} = f\!\left(\frac{y}{x}\right)$$
 
 $$x\frac{\mathrm{d}u}{\mathrm{d}x} = f(u) - u$$
 
-!!! example "例题 (23-24)"
-    $2xy\,y' = 4x^2 + 3y^2,\; y(1)=1$
+**例题** (23-24) $2xy\,y' = 4x^2 + 3y^2,\; y(1)=1$
 
-    先看右端是否只依赖 $y/x$。将原式化成标准形：
+化标准形 $y' = \dfrac{4x^2 + 3y^2}{2xy}$，令 $y = ux$：
 
-    $$y' = \frac{4x^2 + 3y^2}{2xy}
-    = \frac{2x}{y} + \frac{3y}{2x}$$
+$$u + xu' = \frac{2}{u} + \frac{3u}{2} \;\Rightarrow\; xu' = \frac{4 + u^2}{2u}$$
 
-    右端可改写为
-
-    $$\frac{2}{y/x}+\frac{3}{2}(y/x)$$
-
-    所以它确实只与 $y/x$ 有关，是**齐次方程**。令 $u=y/x$，即 $y=ux$，则 $y'=u+xu'$，代入得
-
-    $$u + xu' = \frac{2}{u} + \frac{3u}{2} \;\Rightarrow\; xu' = \frac{4 + u^2}{2u}$$
-
-    这一步别急着回代，先把 $u$ 的方程分离：
-
-    $$\frac{2u}{u^2+4}\,\mathrm{d}u=\frac{\mathrm{d}x}{x}$$
-
-    两边积分：
-
-    $$\int \frac{2u}{u^2+4}\,\mathrm{d}u=\int \frac{\mathrm{d}x}{x}
-    \;\Longrightarrow\;
-    \ln(u^2+4)=\ln|x|+C$$
-
-    吸收常数后写成
-
-    $$u^2+4=Cx$$
-
-    回代 $u=y/x$：
-
-    $$\frac{y^2}{x^2}+4=Cx
-    \;\Longrightarrow\;
-    y^2=Cx^3-4x^2$$
-
-    利用初值 $y(1)=1$：
-
-    $$1=C-4 \;\Longrightarrow\; C=5$$
-
-    因而
-
-    $$y^2=5x^3-4x^2$$
-
-    若继续显式求 $y$，应写成 $y=\pm x\sqrt{5x-4}$，再结合 $y(1)=1$ 取正号，得到
-
-    $$y=x\sqrt{5x-4}$$
+分离积分、回代 $u = y/x$ 得 $y^2 = Cx^3 - 4x^2$，代 $y(1)=1$ 解得 $C=5$，故 $y^2 = 5x^3 - 4x^2$。
 
 ### 1.3 一阶线性方程
 
@@ -201,46 +101,15 @@ $$\frac{\mathrm{d}z}{\mathrm{d}x} + (1-n)\,p(x)\,z = (1-n)\,f(x)$$
 !!! warning
     $n=0$ 退化为线性方程；$n=1$ 退化为可分离方程；若 $n>0$，注意 $y\equiv 0$ 也是解。
 
-!!! example "例题 (20-21)"
-    $x\,y' - 4y = x^2\sqrt{y}$
+**例题** (20-21) $x\,y' - 4y = x^2\sqrt{y}$
 
-    先整理成 Bernoulli 标准形：
+除以 $x$ 得 $y' - \dfrac{4}{x}y = x\sqrt{y}$（$n = \tfrac{1}{2}$）。令 $z = y^{1/2}$：
 
-    $$y' - \frac{4}{x}y = x\sqrt{y}$$
+$$z' - \frac{2}{x}z = \frac{x}{2}$$
 
-    右端是 $f(x)y^n$，其中 $n=\tfrac12$，所以这是 Bernoulli 方程。按公式令
+积分因子 $x^{-2}$，解得 $z = x^2\!\left(\tfrac{1}{2}\ln|x| + C\right)$，回代
 
-    $$z=y^{1-n}=y^{1/2}$$
-
-    因为 $y=z^2$，所以 $y'=2zz'$。代入原方程：
-
-    $$2zz' - \frac{4}{x}z^2 = xz$$
-
-    对非零解可约去 $z$，得到线性方程
-
-    $$z' - \frac{2}{x}z = \frac{x}{2}$$
-
-    它的积分因子为
-
-    $$\mu(x)=e^{\int -2/x\,\mathrm{d}x}=x^{-2}$$
-
-    两边同乘 $x^{-2}$：
-
-    $$x^{-2}z'-2x^{-3}z=\frac{1}{2x}
-    \;\Longrightarrow\;
-    \left(\frac{z}{x^2}\right)'=\frac{1}{2x}$$
-
-    积分得
-
-    $$\frac{z}{x^2}=\frac12\ln|x|+C
-    \;\Longrightarrow\;
-    z=x^2\!\left(\frac12\ln|x|+C\right)$$
-
-    回代 $z=\sqrt y$：
-
-    $$y = x^4\!\left(\tfrac{1}{2}\ln|x| + C\right)^{2}$$
-
-    同时别忘了前面约去 $z$ 时丢掉的零解 $y\equiv 0$。
+$$y = x^4\!\left(\tfrac{1}{2}\ln|x| + C\right)^{2}$$
 
 ### 1.5 Riccati（里卡提）方程
 
@@ -261,20 +130,19 @@ $$\frac{\mathrm{d}u}{\mathrm{d}x} = [2p\,\varphi_1 + q]\,u + p\,u^2$$
 !!! tip "识别技巧"
     如果题目给出了方程的一个特解，且方程含 $y^2$ 项，多半是 Riccati（里卡提）方程。
 
-!!! example "例题 (23-24)"
-    $y' + y^2 = \dfrac{2}{x^2}$
+**例题** (23-24) $y' + y^2 = \dfrac{2}{x^2}$
 
-    提示一个解与 $\dfrac{1}{x}$ 成正比。试 $y_1 = \dfrac{a}{x}$，代入得 $a^2 - a = 2$，取 $y_1 = \dfrac{2}{x}$。令 $u = y - \dfrac{2}{x}$：
+提示一个解与 $\dfrac{1}{x}$ 成正比。试 $y_1 = \dfrac{a}{x}$，代入得 $a^2 - a = 2$，取 $y_1 = \dfrac{2}{x}$。令 $u = y - \dfrac{2}{x}$：
 
-    $$u' + \frac{4}{x}\,u = -u^2$$
+$$u' + \frac{4}{x}\,u = -u^2$$
 
-    这是 Bernoulli 方程（$n=2$），令 $z = u^{-1}$：
+这是 Bernoulli 方程（$n=2$），令 $z = u^{-1}$：
 
-    $$z' - \frac{4}{x}\,z = 1$$
+$$z' - \frac{4}{x}\,z = 1$$
 
-    解得 $z = Cx^4 - \dfrac{x}{3}$，回代 $y = \dfrac{2}{x} + \dfrac{1}{z}$：
+解得 $z = Cx^4 - \dfrac{x}{3}$，回代 $y = \dfrac{2}{x} + \dfrac{1}{z}$：
 
-    $$y = \frac{2}{x} + \frac{3}{3Cx^4 - x}$$
+$$y = \frac{2}{x} + \frac{3}{3Cx^4 - x}$$
 
 ### 1.6 全微分方程
 
@@ -306,69 +174,63 @@ $$M(x,y)\,\mathrm{d}x + N(x,y)\,\mathrm{d}y = 0$$
     - $\dfrac{x\,\mathrm{d}x - y\,\mathrm{d}y}{x^2 - y^2} = \dfrac{1}{2}\mathrm{d}\!\left(\ln\!\left|\dfrac{x-y}{x+y}\right|\right)$
     - $\dfrac{x\,\mathrm{d}x + y\,\mathrm{d}y}{x^2 + y^2} = \dfrac{1}{2}\mathrm{d}\!\left(\ln(x^2+y^2)\right)$
 
-!!! example "例题 (23-24)"
-    $(y^2 + 3xy^3)\,\mathrm{d}x + (1 + xy)\,\mathrm{d}y = 0$
+**例题** (23-24) $(y^2 + 3xy^3)\,\mathrm{d}x + (1 + xy)\,\mathrm{d}y = 0$
 
-    $M_y \ne N_x$。算 $\dfrac{N_x - M_y}{M} = -\dfrac{3}{y}$，得积分因子 $\mu(y) = y^{-3}$。方程乘 $\mu$：
+$M_y \ne N_x$。算 $\dfrac{N_x - M_y}{M} = -\dfrac{3}{y}$，得积分因子 $\mu(y) = y^{-3}$。方程乘 $\mu$：
 
-    $$\left(\frac{1}{y} + 3x\right)\mathrm{d}x + \left(\frac{1}{y^3} + \frac{x}{y^2}\right)\mathrm{d}y = 0$$
+$$\left(\frac{1}{y} + 3x\right)\mathrm{d}x + \left(\frac{1}{y^3} + \frac{x}{y^2}\right)\mathrm{d}y = 0$$
 
-    凑 $u = \dfrac{x}{y} + \dfrac{3x^2}{2} + \varphi(y)$，由 $\partial_y u = N$ 得 $\varphi(y) = -\dfrac{1}{2y^2}$。通解：
+凑 $u = \dfrac{x}{y} + \dfrac{3x^2}{2} + \varphi(y)$，由 $\partial_y u = N$ 得 $\varphi(y) = -\dfrac{1}{2y^2}$。通解：
 
-    $$\frac{x}{y} + \frac{3x^2}{2} - \frac{1}{2y^2} = C$$
+$$\frac{x}{y} + \frac{3x^2}{2} - \frac{1}{2y^2} = C$$
 
-!!! example "例题 2 (24-25)"
-    $(2xy^2 - y)\,\mathrm{d}x + (3y^3 + x)\,\mathrm{d}y = 0$，$x > 0$
+**例题 2** (24-25) $(2xy^2 - y)\,\mathrm{d}x + (3y^3 + x)\,\mathrm{d}y = 0$，$x > 0$
 
-    $\dfrac{N_x - M_y}{M} = \dfrac{1 - (4xy - 1)}{2xy^2 - y} = -\dfrac{2}{y}$，得积分因子 $\mu(y) = \dfrac{1}{y^2}$。乘入后：
+$\dfrac{N_x - M_y}{M} = \dfrac{1 - (4xy - 1)}{2xy^2 - y} = -\dfrac{2}{y}$，得积分因子 $\mu(y) = \dfrac{1}{y^2}$。乘入后：
 
-    $$2x\,\mathrm{d}x + 3y\,\mathrm{d}y + \frac{x\,\mathrm{d}y - y\,\mathrm{d}x}{y^2} = 0$$
+$$2x\,\mathrm{d}x + 3y\,\mathrm{d}y + \frac{x\,\mathrm{d}y - y\,\mathrm{d}x}{y^2} = 0$$
 
-    利用凑微分 $\dfrac{x\,\mathrm{d}y - y\,\mathrm{d}x}{y^2} = -\mathrm{d}\!\left(\dfrac{x}{y}\right)$，直接积分：
+利用凑微分 $\dfrac{x\,\mathrm{d}y - y\,\mathrm{d}x}{y^2} = -\mathrm{d}\!\left(\dfrac{x}{y}\right)$，直接积分：
 
-    $$x^2 + \frac{3}{2}y^2 - \frac{x}{y} = C$$
+$$x^2 + \frac{3}{2}y^2 - \frac{x}{y} = C$$
 
 ### 1.7 变量代换（一阶方程的降维打击）
 
 对"看起来像齐次/线性但不完全是"的方程，换元化归。
 
-!!! example "例题 1 (20-21)"
-    $y' = \cos^2(x+y)$
+**例 1** (20-21) $y' = \cos^2(x+y)$
 
-    令 $u = x+y$，$u' = 1 + y'$：$u' = 1 + \cos^2 u$（可分离）。得 $\cot(x+y) + x = C$。
+令 $u = x+y$，$u' = 1 + y'$：$u' = 1 + \cos^2 u$（可分离）。得 $\cot(x+y) + x = C$。
 
-!!! example "例题 2 (20-21)"
-    $y' = 2\!\left(\dfrac{y+2}{x+y-1}\right)^{2}$
+**例 2** (20-21) $y' = 2\!\left(\dfrac{y+2}{x+y-1}\right)^{2}$
 
-    解 $\begin{cases} x+y-1=0 \\ y+2=0 \end{cases}$ 得 $(3,-2)$。令 $X=x-3,\; Y=y+2$：
+解 $\begin{cases} x+y-1=0 \\ y+2=0 \end{cases}$ 得 $(3,-2)$。令 $X=x-3,\; Y=y+2$：
 
-    $$\frac{\mathrm{d}Y}{\mathrm{d}X} = 2\!\left(\frac{Y}{X+Y}\right)^2$$
+$$\frac{\mathrm{d}Y}{\mathrm{d}X} = 2\!\left(\frac{Y}{X+Y}\right)^2$$
 
-    再令 $u = Y/X$ 化为齐次方程。
+再令 $u = Y/X$ 化为齐次方程。
 
 ### 1.8 x, y 互换
 
 把 $x$ 视作 $y$ 的函数，伯努利型有时反过来就是线性。
 
-!!! example "例题 (23-24)"
-    $\dfrac{\mathrm{d}y}{\mathrm{d}x} = \dfrac{y}{x(x^2y^2+1)}$
+**例** (23-24) $\dfrac{\mathrm{d}y}{\mathrm{d}x} = \dfrac{y}{x(x^2y^2+1)}$
 
-    取倒数：$\dfrac{\mathrm{d}x}{\mathrm{d}y} = \dfrac{x}{y} + x^3 y$（以 $x$ 为未知量的 Bernoulli 方程，$n=3$）。令 $z = x^{-2}$：
+取倒数：$\dfrac{\mathrm{d}x}{\mathrm{d}y} = \dfrac{x}{y} + x^3 y$（以 $x$ 为未知量的 Bernoulli 方程，$n=3$）。令 $z = x^{-2}$：
 
-    $$\frac{\mathrm{d}z}{\mathrm{d}y} + \frac{2}{y}z = -2y$$
+$$\frac{\mathrm{d}z}{\mathrm{d}y} + \frac{2}{y}z = -2y$$
 
-    线性方程求解后回代（注意 $y=0$ 也是解）。
+线性方程求解后回代（注意 $y=0$ 也是解）。
 
-!!! example "例题 2 (24-25夏)"
-    $y\,\mathrm{d}x - x(1 + x^2y^3)\,\mathrm{d}y = 0$
+**例题 2** (24-25夏) $y\,\mathrm{d}x - x(1 + x^2y^3)\,\mathrm{d}y = 0$
 
-    改写为 $\dfrac{\mathrm{d}x}{\mathrm{d}y} = \dfrac{x}{y} + x^3 y^2$（以 $x$ 为未知量的 Bernoulli 方程，$n=3$）。令 $z = x^{-2}$：
+改写为 $\dfrac{\mathrm{d}x}{\mathrm{d}y} = \dfrac{x}{y} + x^3 y^2$（以 $x$ 为未知量的 Bernoulli 方程，$n=3$）。令 $z = x^{-2}$：
 
-    $$z' + \frac{2}{y}\,z = -2y^2$$
+$$z' + \frac{2}{y}\,z = -2y^2$$
 
-    积分因子 $y^2$，解得 $z = -\dfrac{2y^3}{5} + \dfrac{C}{y^2}$，回代 $x^{-2} = z$：
+积分因子 $y^2$，解得 $z = -\dfrac{2y^3}{5} + \dfrac{C}{y^2}$，回代 $x^{-2} = z$：
 
-    $$\frac{1}{x^2} = \frac{C}{y^2} - \frac{2y^3}{5}$$
+$$\frac{1}{x^2} = \frac{C}{y^2} - \frac{2y^3}{5}$$
 
 ### 1.9 Clairaut（克莱罗）方程与参数表示
 
@@ -383,18 +245,17 @@ $$[x + \psi'(p)]\,p' = 0$$
 - $p' = 0$：$p = C$，通解 $y = Cx + \psi(C)$（直线族）。
 - $x + \psi'(p) = 0$：与 $y = xp + \psi(p)$ 联立消去 $p$，得**奇解**（直线族的包络线）。
 
-!!! example "例题 (24-25)"
-    $y = 2xy' - 3(y')^2$
+**例题** (24-25) $y = 2xy' - 3(y')^2$
 
-    这不是标准 Clairaut 但可用参数法。令 $p = y'$，两端对 $x$ 微分：
+这不是标准 Clairaut 但可用参数法。令 $p = y'$，两端对 $x$ 微分：
 
-    $$p = 2p + 2x\,p' - 6p\,p' \;\Rightarrow\; \frac{\mathrm{d}x}{\mathrm{d}p} + \frac{2}{p}\,x = 6$$
+$$p = 2p + 2x\,p' - 6p\,p' \;\Rightarrow\; \frac{\mathrm{d}x}{\mathrm{d}p} + \frac{2}{p}\,x = 6$$
 
-    一阶线性方程，解得 $x = 2p + \dfrac{C}{p^2}$。回代 $y = 2xp - 3p^2$：
+一阶线性方程，解得 $x = 2p + \dfrac{C}{p^2}$。回代 $y = 2xp - 3p^2$：
 
-    $$\begin{cases} x = 2p + Cp^{-2} \\ y = p^2 + 2Cp^{-1} \end{cases} \quad\text{（参数形式通解）}$$
+$$\begin{cases} x = 2p + Cp^{-2} \\ y = p^2 + 2Cp^{-1} \end{cases} \quad\text{（参数形式通解）}$$
 
-    令 $p' = 0$ 还可得奇解 $y = 0$。
+令 $p' = 0$ 还可得奇解 $y = 0$。
 
 ---
 
@@ -406,44 +267,15 @@ $$[x + \psi'(p)]\,p' = 0$$
 
 **解法**：令 $p = y'$，则 $p' = y''$，化为一阶方程 $p' = f(x,p)$。解出 $p(x)$ 后再积一次分得 $y$。
 
-!!! example "例题 (20-21)"
-    $y'' - y' = 12x^2 - 6$
+**例题** (20-21) $y'' - y' = 12x^2 - 6$
 
-    这题不显含 $y$，所以先降阶。令
+令 $p = y'$：$p' - p = 12x^2 - 6$（一阶线性）。用公式：
 
-    $$p=y' \quad\Longrightarrow\quad p'=y''$$
+$$p = e^{x}\!\left[\int (12x^2 - 6)\,e^{-x}\,\mathrm{d}x + C_1\right] = -6(2x^2 + 4x + 3) + C_1 e^{x}$$
 
-    原方程化为
+再积分：
 
-    $$p'-p=12x^2-6$$
-
-    现在就是一阶线性方程。积分因子为 $e^{-x}$，于是
-
-    $$\bigl(e^{-x}p\bigr)'=(12x^2-6)e^{-x}$$
-
-    积分得
-
-    $$e^{-x}p=\int(12x^2-6)e^{-x}\,\mathrm{d}x+C_1$$
-
-    计算这个积分时，考场上通常直接用待定系数法更快。设
-
-    $$p=Ax^2+Bx+C+C_1e^x$$
-
-    代入 $p'-p=12x^2-6$：
-
-    $$(-A)x^2+(2A-B)x+(B-C)=12x^2-6$$
-
-    比较系数得
-
-    $$A=-12,\qquad B=-24,\qquad C=-18$$
-
-    因而
-
-    $$p=y'=-12x^2-24x-18+C_1e^x$$
-
-    再对 $x$ 积分：
-
-    $$y=-4x^3-12x^2-18x+C_1e^x+C_2$$
+$$y = -4x^3 - 12x^2 - 18x + C_1 e^{x} + C_2$$
 
 ### 2.2 不显含 x 的方程
 
@@ -455,82 +287,39 @@ $$y'' = \frac{\mathrm{d}p}{\mathrm{d}x} = p\,\frac{\mathrm{d}p}{\mathrm{d}y}$$
 
 方程化为 $p\dfrac{\mathrm{d}p}{\mathrm{d}y} = f(y,p)$。解出 $p = \varphi(y)$ 后再由 $\dfrac{\mathrm{d}y}{\mathrm{d}x}=\varphi(y)$ 分离积分。
 
-!!! example "例题 (23-24)"
-    $yy'' - (y')^2 = yy',\; y(0)=1,\, y'(0)=2$
+**例题** (23-24) $yy'' - (y')^2 = yy',\; y(0)=1,\, y'(0)=2$
 
-    这题不显含 $x$，因此把 $p=y'$ 看成 $y$ 的函数。链式法则给出
+令 $p = y'$，$y'' = p\,p'_y$：
 
-    $$y''=\frac{\mathrm{d}p}{\mathrm{d}x}
-    =\frac{\mathrm{d}p}{\mathrm{d}y}\frac{\mathrm{d}y}{\mathrm{d}x}
-    =p\frac{\mathrm{d}p}{\mathrm{d}y}$$
+$$yp\,p'_y - p^2 = yp \;\Rightarrow\; p'_y - \frac{p}{y} = 1$$
 
-    代入原方程：
+一阶线性解得 $p = y(\ln|y| + C_1)$，由初值 $C_1 = 2$。再分离得
 
-    $$yp\frac{\mathrm{d}p}{\mathrm{d}y}-p^2=yp$$
+$$\ln\!\bigl|\ln|y| + 2\bigr| = x + C_2$$
 
-    由初值 $y'(0)=2$ 可知初始点附近 $p\neq 0$，于是可先除以 $p$，化成关于 $p(y)$ 的一阶线性方程
+**例题 2** (24-25) $y'' = 2yy',\; y(0)=1,\, y'(0)=2$
 
-    $$y\frac{\mathrm{d}p}{\mathrm{d}y}-p=y
-    \;\Longrightarrow\;
-    \frac{\mathrm{d}p}{\mathrm{d}y}-\frac{1}{y}p=1$$
+令 $p = y'$，$y'' = p\,\dfrac{\mathrm{d}p}{\mathrm{d}y}$：
 
-    积分因子为 $e^{\int -1/y\,\mathrm{d}y}=y^{-1}$，故
+$$p\,\frac{\mathrm{d}p}{\mathrm{d}y} = 2yp \;\Rightarrow\; \frac{\mathrm{d}p}{\mathrm{d}y} = 2y$$
 
-    $$\left(\frac{p}{y}\right)'_y=\frac{1}{y}$$
+积分得 $p = y^2 + C$。由 $y(0)=1,\, y'(0)=2$ 得 $C=1$。分离变量：
 
-    积分得
+$$\frac{\mathrm{d}y}{y^2 + 1} = \mathrm{d}x \;\Rightarrow\; \arctan y = x + C_2$$
 
-    $$\frac{p}{y}=\ln|y|+C_1
-    \;\Longrightarrow\;
-    p=y(\ln|y|+C_1)$$
+由初值 $C_2 = \dfrac{\pi}{4}$，故 $y = \tan\!\left(x + \dfrac{\pi}{4}\right)$。
 
-    用初值 $y(0)=1,\;p(0)=y'(0)=2$：
+**例题 3** (24-25夏) $y'' = (y')^3 + y',\; y(0) = \dfrac{\pi}{4},\, y'(0) = 1$
 
-    $$2=1\cdot(\ln 1+C_1)\;\Longrightarrow\; C_1=2$$
+令 $p = y'$，$y'' = p\,\dfrac{\mathrm{d}p}{\mathrm{d}y}$：
 
-    所以
+$$p\,\frac{\mathrm{d}p}{\mathrm{d}y} = p(p^2+1) \;\Rightarrow\; \frac{\mathrm{d}p}{\mathrm{d}y} = p^2 + 1$$
 
-    $$\frac{\mathrm{d}y}{\mathrm{d}x}=y(\ln|y|+2)$$
+分离：$\dfrac{\mathrm{d}p}{p^2+1} = \mathrm{d}y$，积分得 $\arctan p = y + C_1$。由初值 $C_1 = 0$，故 $p = \tan y$。
 
-    再分离变量：
+再分离 $\cot y\,\mathrm{d}y = \mathrm{d}x$，积分得 $\ln|\sin y| = x + C_2$。由 $y(0) = \dfrac{\pi}{4}$：
 
-    $$\frac{\mathrm{d}y}{y(\ln|y|+2)}=\mathrm{d}x$$
-
-    令 $u=\ln|y|+2$，则 $\mathrm{d}u=\dfrac{1}{y}\mathrm{d}y$，得到
-
-    $$\int \frac{\mathrm{d}u}{u}=x+C_2
-    \;\Longrightarrow\;
-    \ln|\ln|y|+2|=x+C_2$$
-
-    如果还要继续由初值确定常数，可代入 $x=0,\;y=1$ 得 $C_2=\ln 2$，最终可写成
-
-    $$\ln|y|+2=2e^x,\qquad y=\exp(2e^x-2)$$
-
-!!! example "例题 2 (24-25)"
-    $y'' = 2yy',\; y(0)=1,\, y'(0)=2$
-
-    令 $p = y'$，$y'' = p\,\dfrac{\mathrm{d}p}{\mathrm{d}y}$：
-
-    $$p\,\frac{\mathrm{d}p}{\mathrm{d}y} = 2yp \;\Rightarrow\; \frac{\mathrm{d}p}{\mathrm{d}y} = 2y$$
-
-    积分得 $p = y^2 + C$。由 $y(0)=1,\, y'(0)=2$ 得 $C=1$。分离变量：
-
-    $$\frac{\mathrm{d}y}{y^2 + 1} = \mathrm{d}x \;\Rightarrow\; \arctan y = x + C_2$$
-
-    由初值 $C_2 = \dfrac{\pi}{4}$，故 $y = \tan\!\left(x + \dfrac{\pi}{4}\right)$。
-
-!!! example "例题 3 (24-25夏)"
-    $y'' = (y')^3 + y',\; y(0) = \dfrac{\pi}{4},\, y'(0) = 1$
-
-    令 $p = y'$，$y'' = p\,\dfrac{\mathrm{d}p}{\mathrm{d}y}$：
-
-    $$p\,\frac{\mathrm{d}p}{\mathrm{d}y} = p(p^2+1) \;\Rightarrow\; \frac{\mathrm{d}p}{\mathrm{d}y} = p^2 + 1$$
-
-    分离：$\dfrac{\mathrm{d}p}{p^2+1} = \mathrm{d}y$，积分得 $\arctan p = y + C_1$。由初值 $C_1 = 0$，故 $p = \tan y$。
-
-    再分离 $\cot y\,\mathrm{d}y = \mathrm{d}x$，积分得 $\ln|\sin y| = x + C_2$。由 $y(0) = \dfrac{\pi}{4}$：
-
-    $$\sin y = \frac{1}{\sqrt{2}}\,e^{x}$$
+$$\sin y = \frac{1}{\sqrt{2}}\,e^{x}$$
 
 ---
 
@@ -563,12 +352,11 @@ $$e^{\alpha x}\sin\beta x,\; x e^{\alpha x}\sin\beta x,\; \dots,\; x^{k-1}e^{\al
 
 通解为所有基础解的线性组合。
 
-!!! example "例题 (23-24)"
-    $y^{(4)} + 2y^{(3)} + 3y'' + 2y' + y = 0$
+**例题** (23-24) $y^{(4)} + 2y^{(3)} + 3y'' + 2y' + y = 0$
 
-    特征方程 $\lambda^4 + 2\lambda^3 + 3\lambda^2 + 2\lambda + 1 = (\lambda^2 + \lambda + 1)^2 = 0$，得 $\lambda = -\tfrac{1}{2} \pm \tfrac{\sqrt{3}}{2}\mathrm{i}$（二重）。
+特征方程 $\lambda^4 + 2\lambda^3 + 3\lambda^2 + 2\lambda + 1 = (\lambda^2 + \lambda + 1)^2 = 0$，得 $\lambda = -\tfrac{1}{2} \pm \tfrac{\sqrt{3}}{2}\mathrm{i}$（二重）。
 
-    $$y = e^{-x/2}\!\left[(c_1 + c_2 x)\cos\tfrac{\sqrt{3}}{2}x + (c_3 + c_4 x)\sin\tfrac{\sqrt{3}}{2}x\right]$$
+$$y = e^{-x/2}\!\left[(c_1 + c_2 x)\cos\tfrac{\sqrt{3}}{2}x + (c_3 + c_4 x)\sin\tfrac{\sqrt{3}}{2}x\right]$$
 
 ### 3.2 二阶常系数非齐次线性方程
 
@@ -594,64 +382,29 @@ $$e^{\alpha x}\sin\beta x,\; x e^{\alpha x}\sin\beta x,\; \dots,\; x^{k-1}e^{\al
 !!! tip "叠加原理"
     若 $f(x) = f_1(x) + f_2(x)$，分别求出 $y_1^{*}, y_2^{*}$，则 $y^{*} = y_1^{*} + y_2^{*}$。
 
-!!! example "例题"
-    $y'' - y = e^{x}\sin 2x$
+**例题** $y'' - y = e^{x}\sin 2x$
 
-    先解齐次方程：
+齐次：$\lambda = \pm 1$，$\bar{y} = c_1 e^{x} + c_2 e^{-x}$。$1 \pm 2\mathrm{i}$ 非特征根，$k=0$。设
 
-    $$\lambda^2-1=0 \;\Longrightarrow\; \lambda=\pm1$$
+$$y^{*} = e^{x}(A\cos 2x + B\sin 2x)$$
 
-    所以
+代入比较系数得 $A = B = -\tfrac{1}{8}$：
 
-    $$\bar y=c_1e^x+c_2e^{-x}$$
+$$y = c_1 e^{x} + c_2 e^{-x} - \tfrac{1}{8} e^{x}(\cos 2x + \sin 2x)$$
 
-    再看非齐次项 $e^x\sin 2x$，它对应的复特征根是 $1\pm 2\mathrm{i}$。这两个数不是齐次特征根，所以**不需要乘 $x$**，即 $k=0$。按待定系数法设
+**例题 2** (23-24) $y'' + y = 2\sqrt{2}\sin\!\left(x - \dfrac{\pi}{4}\right)$
 
-    $$y^{*} = e^{x}(A\cos 2x + B\sin 2x)$$
+先用和差化积展开右端：
 
-    为了少出错，可以先记
+$$2\sqrt{2}\sin\!\left(x - \frac{\pi}{4}\right) = 2\sqrt{2}\!\left(\sin x \cos\frac{\pi}{4} - \cos x \sin\frac{\pi}{4}\right) = 2\sin x - 2\cos x$$
 
-    $$v=A\cos2x+B\sin2x,\qquad y^*=e^xv$$
+齐次特征根 $\lambda = \pm\mathrm{i}$，$0 \pm 1\cdot\mathrm{i}$ 是特征根（$k=1$）。设 $y^{*} = x(A\cos x + B\sin x)$，代入得
 
-    则
+$$y^{*\prime\prime} + y^{*} = -2A\sin x + 2B\cos x = 2\sin x - 2\cos x$$
 
-    $$y^{*\prime}=e^x(v+v'),\qquad y^{*\prime\prime}=e^x(v+2v'+v'')$$
+解得 $A = -1,\, B = -1$：
 
-    又因为
-
-    $$v'=-2A\sin2x+2B\cos2x,\qquad v''=-4A\cos2x-4B\sin2x$$
-
-    所以
-
-    $$y^{*\prime\prime}-y^*=e^x(2v'+v'')
-    =4e^x\bigl[(B-A)\cos2x-(A+B)\sin2x\bigr]$$
-
-    与右端 $e^x\sin2x$ 比较系数：
-
-    $$4(B-A)=0,\qquad -4(A+B)=1$$
-
-    解得
-
-    $$A=B=-\frac18$$
-
-    因而
-
-    $$y = c_1 e^{x} + c_2 e^{-x} - \tfrac{1}{8} e^{x}(\cos 2x + \sin 2x)$$
-
-!!! example "例题 2 (23-24)"
-    $y'' + y = 2\sqrt{2}\sin\!\left(x - \dfrac{\pi}{4}\right)$
-
-    先用和差化积展开右端：
-
-    $$2\sqrt{2}\sin\!\left(x - \frac{\pi}{4}\right) = 2\sqrt{2}\!\left(\sin x \cos\frac{\pi}{4} - \cos x \sin\frac{\pi}{4}\right) = 2\sin x - 2\cos x$$
-
-    齐次特征根 $\lambda = \pm\mathrm{i}$，$0 \pm 1\cdot\mathrm{i}$ 是特征根（$k=1$）。设 $y^{*} = x(A\cos x + B\sin x)$，代入得
-
-    $$y^{*\prime\prime} + y^{*} = -2A\sin x + 2B\cos x = 2\sin x - 2\cos x$$
-
-    解得 $A = -1,\, B = -1$：
-
-    $$y = c_1\cos x + c_2\sin x - x(\cos x + \sin x)$$
+$$y = c_1\cos x + c_2\sin x - x(\cos x + \sin x)$$
 
 !!! warning "先化简再设特解"
     含复合三角函数（如 $\sin(x-\pi/4)$）时，务必先展开为 $\sin x$, $\cos x$ 的线性组合，再判断 $k$ 并设特解形式。
@@ -668,48 +421,27 @@ $$x y' = \dot{y},\qquad x^2 y'' = \ddot{y} - \dot{y}$$
 
 方程化为关于 $t$ 的常系数线性方程，按 3.1/3.2 求解后回代 $t=\ln|x|$。
 
-!!! example "例题 (23-24)"
-    $x^2 y'' - 7xy' + 16y = 0$
+**例题** (23-24) $x^2 y'' - 7xy' + 16y = 0$
 
-    这是标准 Euler 方程，因为 $x^2, x, 1$ 分别乘在 $y'',y',y$ 前面。令
+令 $t = \ln|x|$：$\ddot{y} - 8\dot{y} + 16 y = 0$。特征方程 $\lambda^2 - 8\lambda + 16 = 0$，$\lambda = 4$（二重）。
 
-    $$t=\ln|x|$$
+$$y = (c_1 + c_2 t)\,e^{4t} = (c_1 + c_2 \ln|x|)\,x^4$$
 
-    并记对 $t$ 的导数为点号。要熟记两个基本换元公式：
+**例题 2** (24-25) $x^2 y'' - 5xy' + 9y = x\ln x$
 
-    $$xy'=\dot y,\qquad x^2y''=\ddot y-\dot y$$
+令 $t = \ln|x|$，$x = e^t$：$\ddot{y} - 6\dot{y} + 9y = te^{t}$。特征方程 $\lambda^2 - 6\lambda + 9 = 0$，$\lambda = 3$（二重）。
 
-    所以原方程化为
+齐次通解 $\bar{y} = (c_1 + c_2 t)\,e^{3t}$。右端 $te^{t}$：$a = 1$ 非特征根，$k = 0$，设 $y^{*} = (At+B)\,e^{t}$。代入比较系数得 $A = B = \dfrac{1}{4}$。回代 $t = \ln|x|$：
 
-    $$(\ddot y-\dot y)-7\dot y+16y=0
-    \;\Longrightarrow\;
-    \ddot y-8\dot y+16y=0$$
+$$y = (c_1 + c_2\ln|x|)\,x^3 + \frac{x}{4}(1 + \ln|x|)$$
 
-    这已经是常系数方程。特征方程
+**例题 3** (24-25夏) $x^2 y'' - xy' - 3y = 2x^3$，$x > 0$
 
-    $$\lambda^2-8\lambda+16=0 \;\Longrightarrow\; \lambda=4 \text{（二重）}$$
+令 $t = \ln x$：$\ddot{y} - 2\dot{y} - 3y = 2e^{3t}$。特征根 $\lambda = 3, -1$。
 
-    $$y = (c_1 + c_2 t)\,e^{4t} = (c_1 + c_2 \ln|x|)\,x^4$$
+$a = 3$ 是单特征根（$k=1$），设 $y^{*} = Ate^{3t}$。代入得 $4A = 2$，$A = \dfrac{1}{2}$。回代：
 
-    其中 $e^{4t}=e^{4\ln|x|}=|x|^4=x^4$，所以回代时不用分 $x$ 的正负号。
-
-!!! example "例题 2 (24-25)"
-    $x^2 y'' - 5xy' + 9y = x\ln x$
-
-    令 $t = \ln|x|$，$x = e^t$：$\ddot{y} - 6\dot{y} + 9y = te^{t}$。特征方程 $\lambda^2 - 6\lambda + 9 = 0$，$\lambda = 3$（二重）。
-
-    齐次通解 $\bar{y} = (c_1 + c_2 t)\,e^{3t}$。右端 $te^{t}$：$a = 1$ 非特征根，$k = 0$，设 $y^{*} = (At+B)\,e^{t}$。代入比较系数得 $A = B = \dfrac{1}{4}$。回代 $t = \ln|x|$：
-
-    $$y = (c_1 + c_2\ln|x|)\,x^3 + \frac{x}{4}(1 + \ln|x|)$$
-
-!!! example "例题 3 (24-25夏)"
-    $x^2 y'' - xy' - 3y = 2x^3$，$x > 0$
-
-    令 $t = \ln x$：$\ddot{y} - 2\dot{y} - 3y = 2e^{3t}$。特征根 $\lambda = 3, -1$。
-
-    $a = 3$ 是单特征根（$k=1$），设 $y^{*} = Ate^{3t}$。代入得 $4A = 2$，$A = \dfrac{1}{2}$。回代：
-
-    $$y = c_1 x^3 + c_2 x^{-1} + \frac{1}{2} x^3 \ln x$$
+$$y = c_1 x^3 + c_2 x^{-1} + \frac{1}{2} x^3 \ln x$$
 
 ### 3.4 二阶变系数齐次线性方程（已知一解）
 
@@ -721,28 +453,26 @@ $$y = y_1\!\left[c_1 + c_2 \int \frac{1}{y_1^{2}}\,e^{-\int p(x)\,\mathrm{d}x}\,
 
 若 $2p'(x) + p^2(x) - 4q(x) = a$（常数），作代换 $y = u\,e^{-\int p/2\,\mathrm{d}x}$，方程化为 $u'' - \tfrac{a}{4}u = 0$。
 
-!!! example "例题 (24-25夏)"
-    $(x^2 - 1)\,y'' - 2xy' + 2y = 0$
+**例题** (24-25夏) $(x^2 - 1)\,y'' - 2xy' + 2y = 0$
 
-    观察到 $y_1 = x$ 是解（代入：$0 - 2x + 2x = 0$ ✓）。化标准形：$p(x) = \dfrac{-2x}{x^2-1}$。由 Liouville 公式求 $y_2$：
+观察到 $y_1 = x$ 是解（代入：$0 - 2x + 2x = 0$ ✓）。化标准形：$p(x) = \dfrac{-2x}{x^2-1}$。由 Liouville 公式求 $y_2$：
 
-    $$y_2 = x \int \frac{1}{x^2}\,e^{\int \frac{2x}{x^2-1}\,\mathrm{d}x}\,\mathrm{d}x = x \int \frac{x^2-1}{x^2}\,\mathrm{d}x = x\!\left(x - \frac{1}{x} + C\right) \cdots$$
+$$y_2 = x \int \frac{1}{x^2}\,e^{\int \frac{2x}{x^2-1}\,\mathrm{d}x}\,\mathrm{d}x = x \int \frac{x^2-1}{x^2}\,\mathrm{d}x = x\!\left(x - \frac{1}{x} + C\right) \cdots$$
 
-    取 $C = 0$ 并挑出与 $y_1$ 线性无关的部分：$y_2 = x^2 - 1$。通解：
+取 $C = 0$ 并挑出与 $y_1$ 线性无关的部分：$y_2 = x^2 - 1$。通解：
 
-    $$y = c_1 x + c_2(x^2 - 1)$$
+$$y = c_1 x + c_2(x^2 - 1)$$
 
 !!! tip "如何猜特解"
     对变系数方程，优先试低次多项式 $1, x, x^2$ 或指数函数 $e^{ax}$，代入检验。
 
-!!! example "例题 2 (24-25)"
-    $(1-x^2)\,y''' + 2xy'' - 2y' = 0$
+**例题 2** (24-25) $(1-x^2)\,y''' + 2xy'' - 2y' = 0$
 
-    令 $z = y'$，方程降为 $(1-x^2)\,z'' + 2xz' - 2z = 0$，即上题同型。观察得 $z_1 = x$。
+令 $z = y'$，方程降为 $(1-x^2)\,z'' + 2xz' - 2z = 0$，即上题同型。观察得 $z_1 = x$。
 
-    由 Liouville 公式（$p(x) = \dfrac{2x}{1-x^2}$）得 $z_2 = x^2 + 1$（取线性无关部分 $1+x^2$）。
+由 Liouville 公式（$p(x) = \dfrac{2x}{1-x^2}$）得 $z_2 = x^2 + 1$（取线性无关部分 $1+x^2$）。
 
-    $$z = C_1 x + C_2(1+x^2) \;\Rightarrow\; y = C_1 x^2 + C_2(x^3 + 3x) + C_3$$
+$$z = C_1 x + C_2(1+x^2) \;\Rightarrow\; y = C_1 x^2 + C_2(x^3 + 3x) + C_3$$
 
 ### 3.5 二阶变系数非齐次线性方程（常数变易法）
 
@@ -756,35 +486,33 @@ $$W(x) = \begin{vmatrix} y_1(x) & y_2(x) \\ y_1'(x) & y_2'(x) \end{vmatrix}$$
 
 $$y(x) = y_1(x)\!\left[c_1 - \int \frac{y_2(x) f(x)}{W(x)}\,\mathrm{d}x\right] + y_2(x)\!\left[c_2 + \int \frac{y_1(x) f(x)}{W(x)}\,\mathrm{d}x\right]$$
 
-!!! example "例题 1 (23-24)"
-    $(x+2)\,y'' + 2y' - (x+2)\,y = x^2 + 2x + 2$
+**例题 1** (23-24) $(x+2)\,y'' + 2y' - (x+2)\,y = x^2 + 2x + 2$
 
-    除以 $(x+2)$ 化标准形：
+除以 $(x+2)$ 化标准形：
 
-    $$y'' + \frac{2}{x+2}\,y' - y = \frac{x^2 + 2x + 2}{x+2}$$
+$$y'' + \frac{2}{x+2}\,y' - y = \frac{x^2 + 2x + 2}{x+2}$$
 
-    这里 $p(x) = \dfrac{2}{x+2}$，$q(x) = -1$。验证
+这里 $p(x) = \dfrac{2}{x+2}$，$q(x) = -1$。验证
 
-    $$2p'(x) + p^2(x) - 4q(x) = -\frac{4}{(x+2)^2} + \frac{4}{(x+2)^2} + 4 = 4$$
+$$2p'(x) + p^2(x) - 4q(x) = -\frac{4}{(x+2)^2} + \frac{4}{(x+2)^2} + 4 = 4$$
 
-    为常数 $a = 4$。作代换 $y = u\,e^{-\int p/2\,\mathrm{d}x} = \dfrac{u}{x+2}$，方程化为
+为常数 $a = 4$。作代换 $y = u\,e^{-\int p/2\,\mathrm{d}x} = \dfrac{u}{x+2}$，方程化为
 
-    $$u'' - u = 0$$
+$$u'' - u = 0$$
 
-    得 $u_1 = e^{x},\; u_2 = e^{-x}$，于是齐次基础解系为
+得 $u_1 = e^{x},\; u_2 = e^{-x}$，于是齐次基础解系为
 
-    $$y_1 = \frac{e^{x}}{x+2},\quad y_2 = \frac{e^{-x}}{x+2}$$
+$$y_1 = \frac{e^{x}}{x+2},\quad y_2 = \frac{e^{-x}}{x+2}$$
 
-    Wronskian 行列式 $W = -\dfrac{2}{(x+2)^2}$。由常数变易公式求特解，化简后
+Wronskian 行列式 $W = -\dfrac{2}{(x+2)^2}$。由常数变易公式求特解，化简后
 
-    $$y = c_1\frac{e^{x}}{x+2} + c_2\frac{e^{-x}}{x+2} - \frac{x^2 + 2x + 2}{x+2}$$
+$$y = c_1\frac{e^{x}}{x+2} + c_2\frac{e^{-x}}{x+2} - \frac{x^2 + 2x + 2}{x+2}$$
 
-!!! example "例题 2 (17-18)"
-    已知 $y_1 = \dfrac{e^{x}}{x}$ 是 $y'' + \dfrac{2}{x} y' - y = 0$ 的解，求 $y'' + \dfrac{2}{x} y' - y = x$ 的通解。
+**例题 2** (17-18) 已知 $y_1 = \dfrac{e^{x}}{x}$ 是 $y'' + \dfrac{2}{x} y' - y = 0$ 的解，求 $y'' + \dfrac{2}{x} y' - y = x$ 的通解。
 
-    由 Liouville 公式得另一基础解 $y_2 = \dfrac{e^{-x}}{x}$。$W = -\dfrac{2}{x^2}$。代入常数变易公式化简后：
+由 Liouville 公式得另一基础解 $y_2 = \dfrac{e^{-x}}{x}$。$W = -\dfrac{2}{x^2}$。代入常数变易公式化简后：
 
-    $$y = c_1\frac{e^{x}}{x} + c_2\frac{e^{-x}}{x} - \frac{x^2 + 2}{x}$$
+$$y = c_1\frac{e^{x}}{x} + c_2\frac{e^{-x}}{x} - \frac{x^2 + 2}{x}$$
 
 ---
 
@@ -808,38 +536,17 @@ $$\mathbf{x}^{(i)}(t) = e^{\lambda_i t}\sum_{j=0}^{k-1}\frac{t^{j}}{j!}\,\mathbf
 
 $$e^{\alpha t}(\mathbf{p}\cos\beta t - \mathbf{q}\sin\beta t),\quad e^{\alpha t}(\mathbf{p}\sin\beta t + \mathbf{q}\cos\beta t)$$
 
-!!! example "例题 (23-24)"
-    $$\begin{cases} x' = 3x - 2y - 2z \\ y' = -5x + 4y + 2z \\ z' = 5x - 5y - 3z \end{cases}$$
+**例题** (23-24)
 
-    先写成矩阵形式 $\mathbf{x}'=A\mathbf{x}$，
+$$\begin{cases} x' = 3x - 2y - 2z \\ y' = -5x + 4y + 2z \\ z' = 5x - 5y - 3z \end{cases}$$
 
-    $$A = \begin{pmatrix} 3 & -2 & -2 \\ -5 & 4 & 2 \\ 5 & -5 & -3 \end{pmatrix}$$
+$A = \begin{pmatrix} 3 & -2 & -2 \\ -5 & 4 & 2 \\ 5 & -5 & -3 \end{pmatrix}$，特征方程 $(1-\lambda)(3-\lambda)(-2-\lambda) = 0$，$\lambda = 1, 3, -2$。分别求特征向量：
 
-    第一步永远是求特征值。这里
+$$\boldsymbol{\xi}_1 = \begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix},\quad \boldsymbol{\xi}_2 = \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix},\quad \boldsymbol{\xi}_3 = \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix}$$
 
-    $$|A-\lambda E|=(1-\lambda)(3-\lambda)(-2-\lambda)=0$$
+通解：
 
-    所以
-
-    $$\lambda_1=1,\qquad \lambda_2=3,\qquad \lambda_3=-2$$
-
-    第二步对每个特征值分别解 $(A-\lambda E)\boldsymbol\xi=0$：
-
-    $$\boldsymbol{\xi}_1 = \begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix},\quad \boldsymbol{\xi}_2 = \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix},\quad \boldsymbol{\xi}_3 = \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix}$$
-
-    因而得到三组独立解
-
-    $$\boldsymbol\xi_1e^t,\qquad \boldsymbol\xi_2e^{3t},\qquad \boldsymbol\xi_3e^{-2t}$$
-
-    它们线性无关，所以直接线性组合得到通解：
-
-    $$\begin{cases} x = c_1 e^{t} + c_2 e^{3t} \\ y = c_1 e^{t} + c_2 e^{3t} + c_3 e^{-2t} \\ z = c_2 e^{3t} + c_3 e^{-2t} \end{cases}$$
-
-    这类题最容易漏的是"把特征向量按分量抄回各未知函数时抄错位置"，建议始终按
-
-    $$\mathbf{x}=c_1\boldsymbol\xi_1e^{\lambda_1 t}+c_2\boldsymbol\xi_2e^{\lambda_2 t}+c_3\boldsymbol\xi_3e^{\lambda_3 t}$$
-
-    先写向量式，再拆成坐标式。
+$$\begin{cases} x = c_1 e^{t} + c_2 e^{3t} \\ y = c_1 e^{t} + c_2 e^{3t} + c_3 e^{-2t} \\ z = c_2 e^{3t} + c_3 e^{-2t} \end{cases}$$
 
 ### 4.2 常系数非齐次线性方程组
 
@@ -853,67 +560,28 @@ $$X(t)\,\mathbf{c}'(t) = \mathbf{f}(t) \;\Rightarrow\; \mathbf{c}(t) = \int X^{-
 
 通解：$\mathbf{x} = X(t)\,\mathbf{c}(t)$。
 
-!!! example "例题 (23-24)"
-    $\begin{cases} x' = 2x - y \\ y' = x + 2y + 2e^{2t} \end{cases},\; x(0)=1,\, y(0)=-1$
+**例题** (23-24) $\begin{cases} x' = 2x - y \\ y' = x + 2y + 2e^{2t} \end{cases},\; x(0)=1,\, y(0)=-1$
 
-    先解对应齐次方程组。矩阵
+解出齐次基本解矩阵
 
-    $$A=\begin{pmatrix}2&-1\\1&2\end{pmatrix}$$
+$$X(t) = \begin{pmatrix} e^{3t} & e^{t} \\ -e^{3t} & e^{t} \end{pmatrix}$$
 
-    的特征值为 $3,1$，对应特征向量可取 $(1,-1)^T,(1,1)^T$，所以齐次基本解矩阵取为
+由 $X\mathbf{c}' = \mathbf{f}$ 得 $\mathbf{c}'(t) = \begin{pmatrix} -e^{-t} \\ e^{t} \end{pmatrix}$，积分并代入初值解得
 
-    $$X(t) = \begin{pmatrix} e^{3t} & e^{t} \\ -e^{3t} & e^{t} \end{pmatrix}$$
+$$\begin{cases} x = 2e^{2t} - e^{t} \\ y = e^{t} \end{cases}$$
 
-    设
-
-    $$\binom{x}{y}=X(t)\binom{c_1(t)}{c_2(t)}$$
-
-    非齐次项为 $\mathbf f(t)=(0,2e^{2t})^T$。由常数变易法
-
-    $$X(t)\mathbf c'(t)=\mathbf f(t)$$
-
-    即
-
-    $$\begin{pmatrix} e^{3t} & e^{t} \\ -e^{3t} & e^{t} \end{pmatrix}
-    \binom{c_1'}{c_2'}
-    =
-    \binom{0}{2e^{2t}}$$
-
-    直接解这个二元一次方程组最省事。两式相加得
-
-    $$2e^t c_2'=2e^{2t}\;\Longrightarrow\; c_2'=e^t$$
-
-    再代回第一式：
-
-    $$e^{3t}c_1'+e^t\cdot e^t=0
-    \;\Longrightarrow\;
-    c_1'=-e^{-t}$$
-
-    所以
-
-    $$c_1=e^{-t}+C_1,\qquad c_2=e^t+C_2$$
-
-    代回得到
-
-    $$x=1+C_1e^{3t}+C_2e^t,\qquad y=-1-C_1e^{3t}+C_2e^t$$
-
-    利用初值 $x(0)=1,\;y(0)=-1$，解得 $C_1=C_2=0$，故
-
-    $$\begin{cases} x = 2e^{2t} - e^{t} \\ y = e^{t} \end{cases}$$
-
-!!! example "例题 2 (24-25)"
-    $\begin{cases} x' = 3x - 2y + 15 \\ y' = -x + 3y - 2z \\ z' = -y + 3z \end{cases}$
+**例题 2** (24-25) $\begin{cases} x' = 3x - 2y + 15 \\ y' = -x + 3y - 2z \\ z' = -y + 3z \end{cases}$
 
 !!! tip "非齐次项为常数时，可设常向量特解"
     当 $\mathbf{f}(t) = \mathbf{b}$（常向量）时，设 $\mathbf{x}^{*} = \mathbf{a}$（常向量），代入 $A\mathbf{a} + \mathbf{b} = 0$ 解出 $\mathbf{a}$。
 
-    齐次部分 $A = \begin{pmatrix} 3 & -2 & 0 \\ -1 & 3 & -2 \\ 0 & -1 & 3 \end{pmatrix}$，$\lambda_1 = 1,\, \lambda_2 = 3,\, \lambda_3 = 5$。对应特征向量：
+齐次部分 $A = \begin{pmatrix} 3 & -2 & 0 \\ -1 & 3 & -2 \\ 0 & -1 & 3 \end{pmatrix}$，$\lambda_1 = 1,\, \lambda_2 = 3,\, \lambda_3 = 5$。对应特征向量：
 
-    $$\boldsymbol{\xi}_1 = \begin{pmatrix} 2 \\ 2 \\ 1 \end{pmatrix},\quad \boldsymbol{\xi}_2 = \begin{pmatrix} -2 \\ 0 \\ 1 \end{pmatrix},\quad \boldsymbol{\xi}_3 = \begin{pmatrix} 2 \\ -2 \\ 1 \end{pmatrix}$$
+$$\boldsymbol{\xi}_1 = \begin{pmatrix} 2 \\ 2 \\ 1 \end{pmatrix},\quad \boldsymbol{\xi}_2 = \begin{pmatrix} -2 \\ 0 \\ 1 \end{pmatrix},\quad \boldsymbol{\xi}_3 = \begin{pmatrix} 2 \\ -2 \\ 1 \end{pmatrix}$$
 
-    设常向量特解 $\mathbf{x}^{*} = (A, B, C)^T$，由 $A\mathbf{a} + \mathbf{b} = 0$ 解得 $A = -7,\, B = -3,\, C = -1$。通解：
+设常向量特解 $\mathbf{x}^{*} = (A, B, C)^T$，由 $A\mathbf{a} + \mathbf{b} = 0$ 解得 $A = -7,\, B = -3,\, C = -1$。通解：
 
-    $$\mathbf{x} = c_1 \begin{pmatrix} 2 \\ 2 \\ 1 \end{pmatrix} e^{t} + c_2 \begin{pmatrix} -2 \\ 0 \\ 1 \end{pmatrix} e^{3t} + c_3 \begin{pmatrix} 2 \\ -2 \\ 1 \end{pmatrix} e^{5t} - \begin{pmatrix} 7 \\ 3 \\ 1 \end{pmatrix}$$
+$$\mathbf{x} = c_1 \begin{pmatrix} 2 \\ 2 \\ 1 \end{pmatrix} e^{t} + c_2 \begin{pmatrix} -2 \\ 0 \\ 1 \end{pmatrix} e^{3t} + c_3 \begin{pmatrix} 2 \\ -2 \\ 1 \end{pmatrix} e^{5t} - \begin{pmatrix} 7 \\ 3 \\ 1 \end{pmatrix}$$
 
 ### 4.3 消元法
 
@@ -921,38 +589,36 @@ $$X(t)\,\mathbf{c}'(t) = \mathbf{f}(t) \;\Rightarrow\; \mathbf{c}(t) = \int X^{-
 
 **思路**：从方程组中消去一个未知函数，化为一个高阶常系数方程求解。
 
-!!! example "例题"
-    $\begin{cases} x' = 2x - y \\ y' = x + 2y \end{cases}$
+**例题** $\begin{cases} x' = 2x - y \\ y' = x + 2y \end{cases}$
 
-    由第一式 $y = 2x - x'$，代入第二式：
+由第一式 $y = 2x - x'$，代入第二式：
 
-    $$y' = 2x' - x'' = x + 2(2x - x') \;\Rightarrow\; x'' - 4x' + 3x = 0$$
+$$y' = 2x' - x'' = x + 2(2x - x') \;\Rightarrow\; x'' - 4x' + 3x = 0$$
 
-    特征方程 $\lambda^2 - 4\lambda + 3 = 0$，$\lambda = 1, 3$。$x = c_1 e^{t} + c_2 e^{3t}$，回代 $y = 2x - x'$ 得
+特征方程 $\lambda^2 - 4\lambda + 3 = 0$，$\lambda = 1, 3$。$x = c_1 e^{t} + c_2 e^{3t}$，回代 $y = 2x - x'$ 得
 
-    $$y = c_1 e^{t} - c_2 e^{3t}$$
+$$y = c_1 e^{t} - c_2 e^{3t}$$
 
 !!! tip "何时用消元法"
     变量只有 2 个且系数为常数时，消元法计算量通常小于求特征向量。变量 3 个及以上时建议用矩阵法。
 
 ### 4.4 二阶方程组化为一阶方程组
 
-!!! example "例题 (24-25夏)"
-    $\begin{cases} x'' = 6x + 2y \\ y'' = 3x + 7y \end{cases}$
+**例题** (24-25夏) $\begin{cases} x'' = 6x + 2y \\ y'' = 3x + 7y \end{cases}$
 
-    **消元法**：由第一式 $y = \dfrac{x'' - 6x}{2}$，代入第二式消去 $y$：
+**消元法**：由第一式 $y = \dfrac{x'' - 6x}{2}$，代入第二式消去 $y$：
 
-    $$y'' = \frac{x^{(4)} - 6x''}{2} = 3x + 7 \cdot \frac{x'' - 6x}{2}$$
+$$y'' = \frac{x^{(4)} - 6x''}{2} = 3x + 7 \cdot \frac{x'' - 6x}{2}$$
 
-    化简得 $x^{(4)} - 13x'' + 36x = 0$。特征方程 $\mu^4 - 13\mu^2 + 36 = 0$，令 $s = \mu^2$：
+化简得 $x^{(4)} - 13x'' + 36x = 0$。特征方程 $\mu^4 - 13\mu^2 + 36 = 0$，令 $s = \mu^2$：
 
-    $$s^2 - 13s + 36 = 0 \;\Rightarrow\; s = 4,\, 9 \;\Rightarrow\; \mu = \pm 2,\, \pm 3$$
+$$s^2 - 13s + 36 = 0 \;\Rightarrow\; s = 4,\, 9 \;\Rightarrow\; \mu = \pm 2,\, \pm 3$$
 
-    $$x = c_1 e^{2t} + c_2 e^{-2t} + c_3 e^{3t} + c_4 e^{-3t}$$
+$$x = c_1 e^{2t} + c_2 e^{-2t} + c_3 e^{3t} + c_4 e^{-3t}$$
 
-    回代 $y = \dfrac{x'' - 6x}{2}$：
+回代 $y = \dfrac{x'' - 6x}{2}$：
 
-    $$y = -c_1 e^{2t} - c_2 e^{-2t} + \frac{3}{2}c_3 e^{3t} + \frac{3}{2}c_4 e^{-3t}$$
+$$y = -c_1 e^{2t} - c_2 e^{-2t} + \frac{3}{2}c_3 e^{3t} + \frac{3}{2}c_4 e^{-3t}$$
 
 ---
 

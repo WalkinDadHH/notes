@@ -1,5 +1,5 @@
 site_name: WalkinDadHH's Notebook
-site_description: 能源与环境工程专业课程笔记与学习整理
+site_description: 能环专业学习笔记，愿对学弟学妹有所帮助
 site_author: WalkinDadHH
 docs_dir: docs
 site_dir: site
@@ -8,13 +8,12 @@ theme:
   name: material
   custom_dir: overrides
   language: zh
-  font: false
+  font: false   # 禁用 Google Fonts，改用 CDN 加载
   icon:
     logo: material/notebook-outline
   favicon: https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/svgs/solid/book.svg
   features:
     - navigation.tabs
-    - navigation.sections
     - navigation.tracking
     - navigation.indexes
     - navigation.top
@@ -113,9 +112,4 @@ nav:
       - major/foundation/index.md
       - 工程力学: major/foundation/engineering-mechanics.md
       - 工程热力学（甲）: major/foundation/thermodynamics/index.md
-  - 笔记:
-    - notes/index.md
-    - 示例笔记: notes/example.md
-  - 最近更新: updates.md
-  - 友链: friends.md
   - 关于: about.md

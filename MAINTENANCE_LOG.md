@@ -160,3 +160,282 @@ Files changed:
 - `mkdocs.yml` — 导航更新
 - `.gitignore` — 移除 site/ 排除
 - `MAINTENANCE_LOG.md` — 本记录
+
+## 2026-04-16 - ODE example block consistency fix and deploy
+
+Scope:
+- Restore visual separation between example problems and body text in ODE sections 1.7 and 1.8
+- Validate the rendered page and publish the update to GitHub Pages
+
+Completed:
+- Wrapped the inline examples in `docs/math/ode/index.md` section `1.7 变量代换` into `!!! example` blocks:
+  - `例题 1 (20-21)`
+  - `例题 2 (20-21)`
+- Wrapped the inline example in section `1.8 x, y 互换` into a `!!! example` block:
+  - `例题 (23-24)`
+- Kept the existing example styling pipeline unchanged and reused the repository's established `.example` admonition rendering
+- Ran `scripts/validate-mkdocs.ps1` to confirm the page builds cleanly without touching tracked `site/`
+- Verified generated HTML in `.tmp_site_validation/math/ode/index.html` shows these items as `<div class="admonition example">`
+- Deployed with `python -m mkdocs gh-deploy --force`
+
+Files changed:
+- `docs/math/ode/index.md` — converted 1.7/1.8 inline examples into example blocks
+- `MAINTENANCE_LOG.md` — appended this record
+
+## 2026-04-16 - Added project SKILL.md logging rule
+
+Scope:
+- Add a repository-level `SKILL.md` so future agents inherit project maintenance rules directly
+- Make "important updates must be logged" an explicit project skill requirement
+
+Completed:
+- Created `SKILL.md` at the repository root for Unbili maintenance workflows
+- Added an explicit rule that important updates must be recorded in `MAINTENANCE_LOG.md` before ending work
+- Defined important updates broadly to include content, style, structure, workflow, and deployment changes
+- Updated `README.md` so repository convention changes now explicitly require reading `SKILL.md`
+
+Files changed:
+- `SKILL.md` — new project-level maintenance skill
+- `README.md` — added `SKILL.md` to collaboration prerequisites
+- `MAINTENANCE_LOG.md` — appended this record
+
+## 2026-04-16 - Synced logging rule into Claude guide
+
+Scope:
+- Mirror the project-level logging requirement into `.claude/commands/notes-guide.md`
+- Ensure Claude-side repo instructions directly require reading `SKILL.md` and writing logs for important updates
+
+Completed:
+- Added `SKILL.md` to the pre-read list in `.claude/commands/notes-guide.md`
+- Added an explicit rule that important updates must be logged by default
+- Listed the default important-update categories: content, style, structure, workflow, and deployment
+- Added a fallback rule to log even short entries when there is uncertainty
+
+Files changed:
+- `.claude/commands/notes-guide.md` — synced project logging policy
+- `MAINTENANCE_LOG.md` — appended this record
+
+## 2026-04-16 - Standard site upgrade inspired by TonyCrane note
+
+Scope:
+- Standard visual and structural site upgrade
+- No changes to course-note body content
+- No tracked `site/` refresh in this round
+
+Completed:
+- Reworked `docs/index.md` into a landing-style homepage with hero section, status strip, subject cards, and quick-entry blocks
+- Upgraded section landing pages in `docs/math/index.md`, `docs/physics/index.md`, `docs/chemistry/index.md`, `docs/major/index.md`, and `docs/notes/index.md`
+- Rewrote `docs/about.md` to better explain site purpose, maintenance direction, and feedback path
+- Added `docs/updates.md` and `docs/friends.md` as auxiliary pages inspired by reference notebook sites
+- Reorganized `mkdocs.yml` navigation to expose `笔记`, `最近更新`, and `友链` as first-class entries
+- Rebuilt `docs/stylesheets/extra.css` into a fuller visual system with hero components, card variants, badges, info/timeline blocks, and refreshed light/dark theme variables
+
+Why:
+- The previous site structure worked as a course directory but lacked a distinctive homepage and consistent section-entry experience
+- The upgrade target was to move from a lightly customized Material site toward a more intentional personal notebook site
+- The reference value taken from TonyCrane's notebook was mainly product structure and supporting pages, not direct visual copying
+
+Validation:
+- Ran `powershell -ExecutionPolicy Bypass -File .\scripts\validate-mkdocs.ps1`
+- Validation build completed successfully in `.tmp_site_validation/`
+- Confirmed generated HTML contains the new homepage and auxiliary page component classes (`hero-panel`, `cards--landing`, `section-hero`, `timeline`, `cards--friends`)
+
+Files changed:
+- `mkdocs.yml`
+- `docs/index.md`
+- `docs/about.md`
+- `docs/math/index.md`
+- `docs/physics/index.md`
+- `docs/chemistry/index.md`
+- `docs/major/index.md`
+- `docs/notes/index.md`
+- `docs/updates.md`
+- `docs/friends.md`
+- `docs/stylesheets/extra.css`
+- `MAINTENANCE_LOG.md`
+
+## 2026-04-16 - Homepage signature and blue-tone refinement
+
+Scope:
+- Visual refinement only
+- No navigation or note-content changes
+
+Completed:
+- Refined the site palette in `docs/stylesheets/extra.css` toward a quieter, more melancholic blue-gray direction
+- Reduced overly bright blue highlights in headers, hero glow, buttons, cards, and supporting surfaces while preserving the established blue identity
+- Added the homepage signature line `或许是不知梦的缘故，流离之人追逐幻影。` below the status strip in `docs/index.md`
+- Styled the signature as a restrained left-border quote block so it reads like a site motto rather than a main headline
+
+Validation:
+- Ran `powershell -ExecutionPolicy Bypass -File .\scripts\validate-mkdocs.ps1`
+- Validation build completed successfully in `.tmp_site_validation/`
+
+Files changed:
+- `docs/index.md`
+- `docs/stylesheets/extra.css`
+- `MAINTENANCE_LOG.md`
+
+## 2026-04-16 - Homepage opening compressed further
+
+Scope:
+- Homepage first-screen compression only
+- No structural changes below the hero opening
+
+Completed:
+- Shortened the homepage opening copy in `docs/index.md`
+- Tightened the three hero metric items so they take less vertical space
+- Reduced compact-hero padding and heading spacing in `docs/stylesheets/extra.css`
+- Kept the same melancholic blue-gray treatment while making the page get to content faster
+
+Validation:
+- Ran `powershell -ExecutionPolicy Bypass -File .\scripts\validate-mkdocs.ps1`
+- Validation build completed successfully in `.tmp_site_validation/`
+
+Note:
+- A direct `mkdocs build --clean` into tracked `site/` was blocked because `site/index.html` was open and locked by another process
+
+Files changed:
+- `docs/index.md`
+- `docs/stylesheets/extra.css`
+- `MAINTENANCE_LOG.md`
+
+## 2026-04-16 - Hero readability pass and updates page timeline upgrade
+
+Scope:
+- Homepage hero readability refinement
+- Updates page structural/visual upgrade
+
+Completed:
+- Tuned the homepage hero image in `docs/stylesheets/extra.css` to be darker, less saturated, and slightly more contrast-controlled so the left-side heading area feels steadier
+- Strengthened the hero overlay to better hold the site's melancholic blue-gray tone against the inserted illustration
+- Rebuilt `docs/updates.md` from a simple dated list into a more intentional updates page with:
+  - a summary block
+  - timeline entries
+  - update category badges
+  - recommended follow-up entry cards
+- Added timeline-specific styling in `docs/stylesheets/extra.css` for `updates-summary`, `updates-timeline`, `updates-entry`, and `update-badge`
+
+Why:
+- The inserted hero illustration was visually correct but still a little too bright in the window/sea area relative to the surrounding homepage copy
+- The updates page was still structurally behind the rest of the upgraded site and needed to feel like a first-class page rather than a plain note list
+
+Validation:
+- Ran `powershell -ExecutionPolicy Bypass -File .\scripts\validate-mkdocs.ps1`
+- Validation build completed successfully in `.tmp_site_validation/`
+- Confirmed generated homepage still references `assets/images/hero/hero.png`
+- Confirmed generated updates page includes `updates-summary`, `updates-timeline`, `updates-entry`, and `update-badge`
+
+Files changed:
+- `docs/updates.md`
+- `docs/stylesheets/extra.css`
+- `MAINTENANCE_LOG.md`
+
+## 2026-04-16 - Homepage hero image rolled back to compact layout
+
+Scope:
+- Homepage layout correction only
+- Remove oversized hero illustration treatment that harmed page rhythm
+
+Completed:
+- Removed the split hero image layout from `docs/index.md`
+- Replaced it with a shorter, denser homepage opening more aligned with the site's content-first direction
+- Preserved the melancholic blue-gray mood through background layers and typography instead of relying on a large illustration block
+- Added compact inline quick links near the homepage introduction, taking inspiration from the reference notebook's short, high-density top section
+- Removed now-unused large hero-art layout rules from `docs/stylesheets/extra.css`
+
+Why:
+- The large illustration card made the homepage too tall, visually heavy, and structurally inconsistent with the rest of the site
+- The better reference to borrow from TonyCrane's homepage is compactness, direct entry points, and high information density, not a large decorative hero block
+
+Validation:
+- Rebuilt `site/` with `python -m mkdocs build --clean`
+- Confirmed `site/index.html` now renders `hero-panel--compact` and inline quick links instead of the image-first hero block
+
+Files changed:
+- `docs/index.md`
+- `docs/stylesheets/extra.css`
+- `MAINTENANCE_LOG.md`
+
+## 2026-04-16 - Homepage hero image integrated
+
+Scope:
+- Homepage hero image integration only
+- No navigation or note-content changes
+
+Completed:
+- Replaced the CSS-only hero illustration placeholder in `docs/index.md` with the provided image asset at `docs/assets/images/hero/hero.png`
+- Updated the hero visual caption to reflect that the homepage now uses a final illustration rather than a placeholder slot
+- Tuned `docs/stylesheets/extra.css` so the hero image uses `object-fit: cover`, a slightly right-shifted crop, and a restrained blue-gray overlay for text harmony
+- Added mobile-safe cropping behavior so the figure and window area remain readable on smaller screens
+
+Validation:
+- Ran `powershell -ExecutionPolicy Bypass -File .\scripts\validate-mkdocs.ps1`
+- Validation build completed successfully in `.tmp_site_validation/`
+- Confirmed generated output includes the `hero.png` asset and the homepage `<img>` tag wired to it
+
+Files changed:
+- `docs/index.md`
+- `docs/stylesheets/extra.css`
+- `MAINTENANCE_LOG.md`
+
+## 2026-04-16 - Second refinement round for homepage, sub-index pages, and friends
+
+Scope:
+- Second-round site refinement only
+- No course-note body edits
+- Focus on homepage information architecture and section landing consistency
+
+Completed:
+- Expanded `docs/index.md` with three new homepage modules: `精选笔记`, `施工中`, and `推荐阅读顺序`
+- Upgraded `docs/major/foundation/index.md` into a proper landing page with course cards, state badges, and reading guidance
+- Upgraded `docs/physics/optics/index.md` into the same landing-page pattern for consistency with the rest of the site
+- Reworked `docs/friends.md` into a fuller reference-card wall and limited entries to the three explicitly confirmed inspiration sites:
+  - `https://note.isshikih.top/`
+  - `https://savia7582.github.io/Exterior/`
+  - `https://note.tonycrane.cc/`
+- Added explicit “what was borrowed” framing so the references are documented as visual, structural, and product-level inspiration respectively
+- Added supporting styles in `docs/stylesheets/extra.css` for muted feature cards, reading-path block, and friend tags
+
+Why:
+- The homepage needed stronger next-step guidance after the first visual overhaul
+- The `专业基础课` and `光学` index pages lagged behind the new section-entry style used elsewhere
+- The friend-links page should reflect the actual reference set and make the inspiration relationship explicit
+
+Validation:
+- Ran `powershell -ExecutionPolicy Bypass -File .\scripts\validate-mkdocs.ps1`
+- Validation build completed successfully in `.tmp_site_validation/`
+- Confirmed generated HTML includes homepage second-round sections, upgraded sub-index pages, and tagged friend cards
+
+Files changed:
+- `docs/index.md`
+- `docs/major/foundation/index.md`
+- `docs/physics/optics/index.md`
+- `docs/friends.md`
+- `docs/stylesheets/extra.css`
+- `MAINTENANCE_LOG.md`
+
+## 2026-04-16 - Homepage hero illustration slot and CSS fallback atmosphere
+
+Scope:
+- Homepage hero refinement only
+- Prepare for future illustrated banner without requiring external image generation now
+
+Completed:
+- Reworked the homepage hero in `docs/index.md` into a two-column layout with text on the left and a dedicated illustration slot on the right
+- Added a project-ready hero-art placeholder area meant for a future custom banner image
+- Implemented a pure CSS fallback scene in `docs/stylesheets/extra.css` that evokes an empty classroom, cold sea light, and a solitary blue-gray figure silhouette
+- Added a small caption under the hero visual so the placeholder reads as intentional and replaceable
+
+Why:
+- The user only has ChatGPT Plus and cannot use the OpenAI Images API fallback route
+- The site still benefits from having a strong visual hero structure now, while preserving a clean upgrade path for a future final illustration
+
+Validation:
+- Ran `powershell -ExecutionPolicy Bypass -File .\scripts\validate-mkdocs.ps1`
+- Validation build completed successfully in `.tmp_site_validation/`
+- Confirmed generated homepage HTML includes `hero-panel--illustrated`, `hero-visual`, and `hero-art` blocks
+
+Files changed:
+- `docs/index.md`
+- `docs/stylesheets/extra.css`
+- `MAINTENANCE_LOG.md`
