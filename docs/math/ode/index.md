@@ -441,11 +441,15 @@ $$x y' = \dot{y},\qquad x^2 y'' = \ddot{y} - \dot{y}$$
 方程化为关于 $t$ 的常系数线性方程，按 3.1/3.2 求解后回代 $t=\ln|x|$。
 
 !!! example "例题 (23-24)"
-    $x^2 y'' - 7xy' + 16y = 0$
+    $x^2 y'' - 7xy' + 16y = 0$，$y(-1)=1$，$y'(1)=-3$
 
     令 $t = \ln|x|$：$\ddot{y} - 8\dot{y} + 16 y = 0$。特征方程 $\lambda^2 - 8\lambda + 16 = 0$，$\lambda = 4$（二重）。
 
     $$y = (c_1 + c_2 t)\,e^{4t} = (c_1 + c_2 \ln|x|)\,x^4$$
+
+    代入初值 $y(-1)=1$、$y'(1)=-3$ 得 $c_1=1,\, c_2=-8$，故
+
+    $$y = (1 - 8\ln|x|)\,x^4$$
 
 !!! example "例题 2 (24-25)"
     $x^2 y'' - 5xy' + 9y = x\ln x$
@@ -511,27 +515,27 @@ $$W(x) = \begin{vmatrix} y_1(x) & y_2(x) \\ y_1'(x) & y_2'(x) \end{vmatrix}$$
 $$y(x) = y_1(x)\!\left[c_1 - \int \frac{y_2(x) f(x)}{W(x)}\,\mathrm{d}x\right] + y_2(x)\!\left[c_2 + \int \frac{y_1(x) f(x)}{W(x)}\,\mathrm{d}x\right]$$
 
 !!! example "例题 1 (23-24)"
-    $(x+2)\,y'' + 2y' - (x+2)\,y = x^2 + 2x + 2$
+    $(x-2)\,y'' + 2y' - (x-2)\,y = x^2 - 2x - 2$
 
-    除以 $(x+2)$ 化标准形：
+    除以 $(x-2)$ 化标准形：
 
-    $$y'' + \frac{2}{x+2}\,y' - y = \frac{x^2 + 2x + 2}{x+2}$$
+    $$y'' + \frac{2}{x-2}\,y' - y = \frac{x^2 - 2x - 2}{x-2}$$
 
-    这里 $p(x) = \dfrac{2}{x+2}$，$q(x) = -1$。验证
+    这里 $p(x) = \dfrac{2}{x-2}$，$q(x) = -1$。验证
 
-    $$2p'(x) + p^2(x) - 4q(x) = -\frac{4}{(x+2)^2} + \frac{4}{(x+2)^2} + 4 = 4$$
+    $$2p'(x) + p^2(x) - 4q(x) = -\frac{4}{(x-2)^2} + \frac{4}{(x-2)^2} + 4 = 4$$
 
-    为常数 $a = 4$。作代换 $y = u\,e^{-\int p/2\,\mathrm{d}x} = \dfrac{u}{x+2}$，方程化为
+    为常数 $a = 4$。作代换 $y = u\,e^{-\int p/2\,\mathrm{d}x} = \dfrac{u}{x-2}$，方程化为
 
     $$u'' - u = 0$$
 
     得 $u_1 = e^{x},\; u_2 = e^{-x}$，于是齐次基础解系为
 
-    $$y_1 = \frac{e^{x}}{x+2},\quad y_2 = \frac{e^{-x}}{x+2}$$
+    $$y_1 = \frac{e^{x}}{x-2},\quad y_2 = \frac{e^{-x}}{x-2}$$
 
-    Wronskian 行列式 $W = -\dfrac{2}{(x+2)^2}$。由常数变易公式求特解，化简后
+    Wronskian 行列式 $W = -\dfrac{2}{(x-2)^2}$。由常数变易公式求特解，化简后
 
-    $$y = c_1\frac{e^{x}}{x+2} + c_2\frac{e^{-x}}{x+2} - \frac{x^2 + 2x + 2}{x+2}$$
+    $$y = c_1\frac{e^{x}}{x-2} + c_2\frac{e^{-x}}{x-2} - \frac{x^2 - 2x - 2}{x-2}$$
 
 !!! example "例题 2 (17-18)"
     已知 $y_1 = \dfrac{e^{x}}{x}$ 是 $y'' + \dfrac{2}{x} y' - y = 0$ 的解，求 $y'' + \dfrac{2}{x} y' - y = x$ 的通解。

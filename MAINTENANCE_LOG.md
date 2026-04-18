@@ -455,3 +455,26 @@ Files changed:
 - `docs/index.md`
 - `docs/stylesheets/extra.css`
 - `MAINTENANCE_LOG.md`
+
+---
+
+## 2026-04-18 — ODE 笔记 3.x 审阅比对
+
+Completed:
+- Fixed sign error in 3.5 例题 1 (23-24): `(x+2)` → `(x-2)` throughout (方程、标准形、p(x)、代换、基础解系、Wronskian、最终通解); reference is 23-24夏期末回忆卷第 I.6 题
+- Enriched 3.3 例题 (23-24) with initial conditions `y(-1)=1, y'(1)=-3` and particular solution `y=(1-8ln|x|)x^4`, matching Savia 第 3 讲 方程 10 例题
+
+Why:
+- 3.5 例题 1 原方程系数与 23-24夏期末卷原题不一致，虽然两版本都能用同一方法求解，但应忠实于真题
+- 3.3 欧拉方程例题原本只给出通解，补齐 IVP 与定解后更贴近考试题目完整流程
+
+Verified against references:
+- `D:\Unbili\docs\《常微分方程》第 3 讲  高阶线性微分方程.pdf`
+- `C:\Users\KANEKI\Desktop\23-24夏常微分方程期末卷.pdf`
+- `C:\Users\KANEKI\Desktop\24-25春学期常微分方程期末卷.pdf`（II.1 x²y''-5xy'+9y=xlnx 与站点 3.3 例题 2 匹配；II.2 与 3.4 例题 2 匹配）
+
+Not changed:
+- 3.1、3.2、3.3 例题 2/3、3.4 例题 1/2 已与各自参考源匹配，无需修改
+
+Files changed:
+- `docs/math/ode/index.md`
