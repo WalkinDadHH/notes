@@ -554,9 +554,9 @@ $$\frac{\mathrm{d}\mathbf{x}}{\mathrm{d}t} = A\mathbf{x},\quad A \in \mathbb{R}^
 
 - **$\lambda_i$ 对应单特征向量 $\boldsymbol{\xi}_i$**：贡献解 $\boldsymbol{\xi}_i e^{\lambda_i t}$
 - **$\lambda_i$ 为 $k$ 重、有 $k$ 个线性无关特征向量**：直接给出 $k$ 个独立解
-- **$\lambda_i$ 为 $k$ 重、特征向量不足**：求广义特征向量链 $(A - \lambda_i E)\mathbf{v}_{j+1} = \mathbf{v}_j$，解为
+- **$\lambda_i$ 为 $k$ 重、特征向量不足**：先解 $(A - \lambda_i E)^{k}\mathbf{v}^{(i)}_{0} = \mathbf{0}$ 得到 $\mathbf{v}^{(i)}_{0}$，再按递推式 $(A - \lambda_i E)\mathbf{v}^{(i)}_{j-1} = \mathbf{v}^{(i)}_{j}$ 依次求出 $\mathbf{v}^{(i)}_{1},\dots,\mathbf{v}^{(i)}_{k-1}$（其中 $\mathbf{v}^{(i)}_{k-1}$ 即普通特征向量）。此 $k$ 重根贡献的 $k$ 个特解为
 
-$$\mathbf{x}^{(i)}(t) = e^{\lambda_i t}\sum_{j=0}^{k-1}\frac{t^{j}}{j!}\,\mathbf{v}^{(i)}_{j}$$
+$$\mathbf{x}^{(i)}(t) = e^{\lambda_i t}\sum_{j=0}^{k-1}\frac{t^{j}}{j!}\,\mathbf{v}^{(i)}_{j},\qquad i = 1,\dots,k$$
 
 - **复特征值 $\lambda = \alpha \pm \mathrm{i}\beta$，复特征向量 $\mathbf{p}\pm\mathrm{i}\mathbf{q}$**：取实部虚部
 
@@ -585,14 +585,22 @@ $$X(t)\,\mathbf{c}'(t) = \mathbf{f}(t) \;\Rightarrow\; \mathbf{c}(t) = \int X^{-
 
 通解：$\mathbf{x} = X(t)\,\mathbf{c}(t)$。
 
-!!! example "例题 (23-24)"
-    $\begin{cases} x' = 2x - y \\ y' = x + 2y + 2e^{2t} \end{cases},\; x(0)=1,\, y(0)=-1$
+!!! example "例题 (23-24 夏)"
+    $$\begin{cases} \dfrac{\mathrm{d}x}{\mathrm{d}t} = 2x + y \\[2pt] \dfrac{\mathrm{d}y}{\mathrm{d}t} = x + 2y - 2e^{2t} \end{cases},\qquad x(0)=1,\; y(0)=1$$
 
-    解出齐次基本解矩阵
+    **① 求齐次基本解矩阵 $X$。** 系数矩阵 $A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$，特征值 $\lambda_1 = 3,\, \lambda_2 = 1$，对应特征向量
 
-    $$X(t) = \begin{pmatrix} e^{3t} & e^{t} \\ -e^{3t} & e^{t} \end{pmatrix}$$
+    $$\boldsymbol{\xi}_1 = \begin{pmatrix} 1 \\ 1 \end{pmatrix} e^{3t},\quad \boldsymbol{\xi}_2 = \begin{pmatrix} 1 \\ -1 \end{pmatrix} e^{t},\qquad X(t) = \begin{pmatrix} e^{3t} & e^{t} \\ e^{3t} & -e^{t} \end{pmatrix}$$
 
-    由 $X\mathbf{c}' = \mathbf{f}$ 得 $\mathbf{c}'(t) = \begin{pmatrix} -e^{-t} \\ e^{t} \end{pmatrix}$，积分并代入初值解得
+    **② 解 $X\mathbf{c}'(t) = \mathbf{f}(t)$。**
+
+    $$\begin{pmatrix} e^{3t} & e^{t} \\ e^{3t} & -e^{t} \end{pmatrix}\mathbf{c}' = \begin{pmatrix} 0 \\ -2e^{2t} \end{pmatrix}\;\Rightarrow\; \mathbf{c}'(t) = \begin{pmatrix} -e^{-t} \\ e^{t} \end{pmatrix},\quad \mathbf{c}(t) = \begin{pmatrix} e^{-t} \\ e^{t} \end{pmatrix} + \mathbf{c}$$
+
+    **③ 组合通解，代入初值。**
+
+    $$\mathbf{x} = X(t)\mathbf{c}(t) = \begin{pmatrix} e^{3t} & e^{t} \\ e^{3t} & -e^{t} \end{pmatrix}\!\left[\begin{pmatrix} e^{-t} \\ e^{t} \end{pmatrix} + \mathbf{c}\right]$$
+
+    由 $x(0)=1,\; y(0)=1$ 解得 $\mathbf{c} = \begin{pmatrix} 0 \\ -1 \end{pmatrix}$，特解为
 
     $$\begin{cases} x = 2e^{2t} - e^{t} \\ y = e^{t} \end{cases}$$
 

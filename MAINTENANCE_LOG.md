@@ -1,5 +1,15 @@
 # Maintenance Log
 
+## 2026-04-18 - ODE 笔记勘误（对照 Savia 参考 PDF）
+
+Scope:
+- `docs/math/ode/index.md` 内容勘误
+- 依据 `docs/《常微分方程》第 4 讲  线性微分方程组.pdf`
+
+Fixed:
+- 4.1 广义特征向量链递推式方向写反：原 `(A-λE)v_{j+1}=v_j` 改为 `(A-λE)v_{j-1}=v_j`，并补全 `(A-λE)^k v_0 = 0` 的种子步骤与链底为普通特征向量的说明
+- 4.2 常系数非齐次方程组例题（23-24 夏）题目与参考 PDF 不符：方程组、初值、基本解矩阵全部按参考原题重写（`x'=2x+y, y'=x+2y-2e^{2t}, x(0)=y(0)=1`），求解步骤展开为 ①②③ 三步
+
 ## 2026-04-16 - Codex first-round repo maintenance
 
 Scope:
