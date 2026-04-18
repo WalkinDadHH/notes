@@ -562,16 +562,30 @@ $$\mathbf{x}^{(i)}(t) = e^{\lambda_i t}\sum_{j=0}^{k-1}\frac{t^{j}}{j!}\,\mathbf
 
 $$e^{\alpha t}(\mathbf{p}\cos\beta t - \mathbf{q}\sin\beta t),\quad e^{\alpha t}(\mathbf{p}\sin\beta t + \mathbf{q}\cos\beta t)$$
 
-!!! example "例题 (23-24)"
-    $$\begin{cases} x' = 3x - 2y - 2z \\ y' = -5x + 4y + 2z \\ z' = 5x - 5y - 3z \end{cases}$$
+!!! example "例题 (23-24 夏)"
+    $$\begin{cases} \dfrac{\mathrm{d}x}{\mathrm{d}t} = 3x + 2y + 2z \\[2pt] \dfrac{\mathrm{d}y}{\mathrm{d}t} = -5x - 4y - 2z \\[2pt] \dfrac{\mathrm{d}z}{\mathrm{d}t} = 5x + 5y + 3z \end{cases}$$
 
-    $A = \begin{pmatrix} 3 & -2 & -2 \\ -5 & 4 & 2 \\ 5 & -5 & -3 \end{pmatrix}$，特征方程 $(1-\lambda)(3-\lambda)(-2-\lambda) = 0$，$\lambda = 1, 3, -2$。分别求特征向量：
+    **① 写出矩阵并求特征值。**
 
-    $$\boldsymbol{\xi}_1 = \begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix},\quad \boldsymbol{\xi}_2 = \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix},\quad \boldsymbol{\xi}_3 = \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix}$$
+    $$A = \begin{pmatrix} 3 & 2 & 2 \\ -5 & -4 & -2 \\ 5 & 5 & 3 \end{pmatrix},\quad |A - \lambda E| = (1-\lambda)(3-\lambda)(-2-\lambda) = 0$$
 
-    通解：
+    解得 $\lambda_1 = 1,\; \lambda_2 = 3,\; \lambda_3 = -2$。
 
-    $$\begin{cases} x = c_1 e^{t} + c_2 e^{3t} \\ y = c_1 e^{t} + c_2 e^{3t} + c_3 e^{-2t} \\ z = c_2 e^{3t} + c_3 e^{-2t} \end{cases}$$
+    **② 逐个求特征向量。**
+
+    $$(A - E)\boldsymbol{\xi} = \begin{pmatrix} 2 & 2 & 2 \\ -5 & -5 & -2 \\ 5 & 5 & 1 \end{pmatrix}\boldsymbol{\xi} = \mathbf{0} \;\Rightarrow\; \boldsymbol{\xi}_1 = \begin{pmatrix} 1 \\ -1 \\ 0 \end{pmatrix}$$
+
+    $$(A - 3E)\boldsymbol{\xi} = \begin{pmatrix} 0 & 2 & 2 \\ -5 & -7 & -2 \\ 5 & 5 & 0 \end{pmatrix}\boldsymbol{\xi} = \mathbf{0} \;\Rightarrow\; \boldsymbol{\xi}_2 = \begin{pmatrix} 1 \\ -1 \\ 1 \end{pmatrix}$$
+
+    $$(A + 2E)\boldsymbol{\xi} = \begin{pmatrix} 5 & 2 & 2 \\ -5 & -2 & -2 \\ 5 & 5 & 5 \end{pmatrix}\boldsymbol{\xi} = \mathbf{0} \;\Rightarrow\; \boldsymbol{\xi}_3 = \begin{pmatrix} 0 \\ -1 \\ 1 \end{pmatrix}$$
+
+    **③ 组合得到通解。**
+
+    $$\mathbf{x} = c_1 \begin{pmatrix} 1 \\ -1 \\ 0 \end{pmatrix} e^{t} + c_2 \begin{pmatrix} 1 \\ -1 \\ 1 \end{pmatrix} e^{3t} + c_3 \begin{pmatrix} 0 \\ -1 \\ 1 \end{pmatrix} e^{-2t}$$
+
+    即
+
+    $$\begin{cases} x = c_1 e^{t} + c_2 e^{3t} \\ y = -c_1 e^{t} - c_2 e^{3t} - c_3 e^{-2t} \\ z = c_2 e^{3t} + c_3 e^{-2t} \end{cases}$$
 
 ### 4.2 常系数非齐次线性方程组
 
