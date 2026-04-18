@@ -2493,12 +2493,19 @@ $$e^{\alpha x}\sin\beta x,\; x e^{\alpha x}\sin\beta x,\; \dots,\; x^{k-1}e^{\al
 </ul>
 <div class="arithmatex">\[e^{\alpha t}(\mathbf{p}\cos\beta t - \mathbf{q}\sin\beta t),\quad e^{\alpha t}(\mathbf{p}\sin\beta t + \mathbf{q}\cos\beta t)\]</div>
 <div class="admonition example">
-<p class="admonition-title">例题 (23-24)</p>
-<div class="arithmatex">\[\begin{cases} x' = 3x - 2y - 2z \\ y' = -5x + 4y + 2z \\ z' = 5x - 5y - 3z \end{cases}\]</div>
-<p><span class="arithmatex">\(A = \begin{pmatrix} 3 &amp; -2 &amp; -2 \\ -5 &amp; 4 &amp; 2 \\ 5 &amp; -5 &amp; -3 \end{pmatrix}\)</span>，特征方程 <span class="arithmatex">\((1-\lambda)(3-\lambda)(-2-\lambda) = 0\)</span>，<span class="arithmatex">\(\lambda = 1, 3, -2\)</span>。分别求特征向量：</p>
-<div class="arithmatex">\[\boldsymbol{\xi}_1 = \begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix},\quad \boldsymbol{\xi}_2 = \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix},\quad \boldsymbol{\xi}_3 = \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix}\]</div>
-<p>通解：</p>
-<div class="arithmatex">\[\begin{cases} x = c_1 e^{t} + c_2 e^{3t} \\ y = c_1 e^{t} + c_2 e^{3t} + c_3 e^{-2t} \\ z = c_2 e^{3t} + c_3 e^{-2t} \end{cases}\]</div>
+<p class="admonition-title">例题 (23-24 夏)</p>
+<div class="arithmatex">\[\begin{cases} \dfrac{\mathrm{d}x}{\mathrm{d}t} = 3x + 2y + 2z \\[2pt] \dfrac{\mathrm{d}y}{\mathrm{d}t} = -5x - 4y - 2z \\[2pt] \dfrac{\mathrm{d}z}{\mathrm{d}t} = 5x + 5y + 3z \end{cases}\]</div>
+<p><strong>① 写出矩阵并求特征值。</strong></p>
+<div class="arithmatex">\[A = \begin{pmatrix} 3 &amp; 2 &amp; 2 \\ -5 &amp; -4 &amp; -2 \\ 5 &amp; 5 &amp; 3 \end{pmatrix},\quad |A - \lambda E| = (1-\lambda)(3-\lambda)(-2-\lambda) = 0\]</div>
+<p>解得 <span class="arithmatex">\(\lambda_1 = 1,\; \lambda_2 = 3,\; \lambda_3 = -2\)</span>。</p>
+<p><strong>② 逐个求特征向量。</strong></p>
+<div class="arithmatex">\[(A - E)\boldsymbol{\xi} = \begin{pmatrix} 2 &amp; 2 &amp; 2 \\ -5 &amp; -5 &amp; -2 \\ 5 &amp; 5 &amp; 1 \end{pmatrix}\boldsymbol{\xi} = \mathbf{0} \;\Rightarrow\; \boldsymbol{\xi}_1 = \begin{pmatrix} 1 \\ -1 \\ 0 \end{pmatrix}\]</div>
+<div class="arithmatex">\[(A - 3E)\boldsymbol{\xi} = \begin{pmatrix} 0 &amp; 2 &amp; 2 \\ -5 &amp; -7 &amp; -2 \\ 5 &amp; 5 &amp; 0 \end{pmatrix}\boldsymbol{\xi} = \mathbf{0} \;\Rightarrow\; \boldsymbol{\xi}_2 = \begin{pmatrix} 1 \\ -1 \\ 1 \end{pmatrix}\]</div>
+<div class="arithmatex">\[(A + 2E)\boldsymbol{\xi} = \begin{pmatrix} 5 &amp; 2 &amp; 2 \\ -5 &amp; -2 &amp; -2 \\ 5 &amp; 5 &amp; 5 \end{pmatrix}\boldsymbol{\xi} = \mathbf{0} \;\Rightarrow\; \boldsymbol{\xi}_3 = \begin{pmatrix} 0 \\ -1 \\ 1 \end{pmatrix}\]</div>
+<p><strong>③ 组合得到通解。</strong></p>
+<div class="arithmatex">\[\mathbf{x} = c_1 \begin{pmatrix} 1 \\ -1 \\ 0 \end{pmatrix} e^{t} + c_2 \begin{pmatrix} 1 \\ -1 \\ 1 \end{pmatrix} e^{3t} + c_3 \begin{pmatrix} 0 \\ -1 \\ 1 \end{pmatrix} e^{-2t}\]</div>
+<p>即</p>
+<div class="arithmatex">\[\begin{cases} x = c_1 e^{t} + c_2 e^{3t} \\ y = -c_1 e^{t} - c_2 e^{3t} - c_3 e^{-2t} \\ z = c_2 e^{3t} + c_3 e^{-2t} \end{cases}\]</div>
 </div>
 <h3 id="42">4.2 常系数非齐次线性方程组<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
 <p><strong>形式</strong></p>
