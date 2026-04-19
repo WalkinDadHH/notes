@@ -2072,8 +2072,17 @@
 <div class="admonition example">
 <p class="admonition-title">例题 (20-21)</p>
 <p><span class="arithmatex">\(\dfrac{\mathrm{d}y}{\mathrm{d}x} = (1-y^2)\,x\)</span></p>
-<p>分离变量：<span class="arithmatex">\(\dfrac{\mathrm{d}y}{1-y^2} = x\,\mathrm{d}x\)</span>，两端积分：</p>
-<div class="arithmatex">\[\frac{1}{2}\ln\left|\frac{1+y}{1-y}\right| = \frac{x^2}{2} + C \;\Rightarrow\; \frac{1+y}{1-y} = C\,e^{x^2}\]</div>
+<p><strong>分离变量</strong>：将方程改写为</p>
+<div class="arithmatex">\[\frac{\mathrm{d}y}{1-y^2} = x\,\mathrm{d}x\]</div>
+<p><strong>积分左端</strong>：<span class="arithmatex">\(1-y^2 = (1+y)(1-y)\)</span>，用部分分式分解：</p>
+<div class="arithmatex">\[\frac{1}{(1+y)(1-y)} = \frac{A}{1+y} + \frac{B}{1-y}\]</div>
+<p>通分比较分子：<span class="arithmatex">\(1 = A(1-y) + B(1+y)\)</span>。令 <span class="arithmatex">\(y=1\)</span> 得 <span class="arithmatex">\(B=\tfrac{1}{2}\)</span>；令 <span class="arithmatex">\(y=-1\)</span> 得 <span class="arithmatex">\(A=\tfrac{1}{2}\)</span>。故</p>
+<div class="arithmatex">\[\int\frac{\mathrm{d}y}{1-y^2} = \frac{1}{2}\int\!\left(\frac{1}{1+y}+\frac{1}{1-y}\right)\mathrm{d}y = \frac{1}{2}\bigl[\ln|1+y| - \ln|1-y|\bigr] = \frac{1}{2}\ln\left|\frac{1+y}{1-y}\right|\]</div>
+<p><strong>积分右端</strong>：<span class="arithmatex">\(\displaystyle\int x\,\mathrm{d}x = \dfrac{x^2}{2}\)</span>。合并，令 <span class="arithmatex">\(C_0\)</span> 为积分常数：</p>
+<div class="arithmatex">\[\frac{1}{2}\ln\left|\frac{1+y}{1-y}\right| = \frac{x^2}{2} + C_0\]</div>
+<p>两边乘 2 后取指数，令 <span class="arithmatex">\(C = \pm e^{2C_0}\)</span> 吸收符号，得通解</p>
+<div class="arithmatex">\[\frac{1+y}{1-y} = C\,e^{x^2}\]</div>
+<p><strong>检查遗漏解</strong>：<span class="arithmatex">\(1-y^2=0\)</span> 时 <span class="arithmatex">\(y=\pm 1\)</span>，代回验证 <span class="arithmatex">\(\dfrac{\mathrm{d}y}{\mathrm{d}x}=0\)</span> 成立，故 <span class="arithmatex">\(y\equiv 1\)</span> 和 <span class="arithmatex">\(y\equiv -1\)</span> 也是解。</p>
 </div>
 <h3 id="12">1.2 齐次方程<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
 <p><strong>形式</strong>（右端只依赖 <span class="arithmatex">\(y/x\)</span>）</p>
@@ -2084,9 +2093,18 @@
 <div class="admonition example">
 <p class="admonition-title">例题 (23-24)</p>
 <p><span class="arithmatex">\(2xy\,y' = 4x^2 + 3y^2,\; y(1)=1\)</span></p>
-<p>化标准形 <span class="arithmatex">\(y' = \dfrac{4x^2 + 3y^2}{2xy}\)</span>，令 <span class="arithmatex">\(y = ux\)</span>：</p>
-<div class="arithmatex">\[u + xu' = \frac{2}{u} + \frac{3u}{2} \;\Rightarrow\; xu' = \frac{4 + u^2}{2u}\]</div>
-<p>分离积分、回代 <span class="arithmatex">\(u = y/x\)</span> 得 <span class="arithmatex">\(y^2 = Cx^3 - 4x^2\)</span>，代 <span class="arithmatex">\(y(1)=1\)</span> 解得 <span class="arithmatex">\(C=5\)</span>，故 <span class="arithmatex">\(y^2 = 5x^3 - 4x^2\)</span>。</p>
+<p><strong>化标准形</strong>：两边除以 <span class="arithmatex">\(2xy\)</span>，<span class="arithmatex">\(y' = \dfrac{4x^2+3y^2}{2xy}\)</span>。注意右端只含 <span class="arithmatex">\(y/x\)</span>，是齐次方程。</p>
+<p><strong>令 <span class="arithmatex">\(u = y/x\)</span></strong>（即 <span class="arithmatex">\(y = ux\)</span>，<span class="arithmatex">\(y' = u + xu'\)</span>），代入：</p>
+<div class="arithmatex">\[u + xu' = \frac{4x^2 + 3u^2x^2}{2x\cdot ux} = \frac{2}{u} + \frac{3u}{2}\]</div>
+<p>整理：<span class="arithmatex">\(xu' = \dfrac{2}{u} + \dfrac{3u}{2} - u = \dfrac{2}{u} + \dfrac{u}{2} = \dfrac{4+u^2}{2u}\)</span>。</p>
+<p><strong>分离变量</strong>：</p>
+<div class="arithmatex">\[\frac{2u\,\mathrm{d}u}{4+u^2} = \frac{\mathrm{d}x}{x}\]</div>
+<p><strong>积分</strong>：左端令 <span class="arithmatex">\(w = 4+u^2\)</span>，<span class="arithmatex">\(\mathrm{d}w = 2u\,\mathrm{d}u\)</span>，故 <span class="arithmatex">\(\displaystyle\int\frac{2u\,\mathrm{d}u}{4+u^2} = \ln(4+u^2)\)</span>（<span class="arithmatex">\(4+u^2&gt;0\)</span>）。右端积分得 <span class="arithmatex">\(\ln|x|\)</span>，故</p>
+<div class="arithmatex">\[\ln(4+u^2) = \ln|Cx| \;\Rightarrow\; 4 + u^2 = Cx\]</div>
+<p><strong>回代</strong> <span class="arithmatex">\(u = y/x\)</span>：<span class="arithmatex">\(4 + y^2/x^2 = Cx\)</span>，两端乘 <span class="arithmatex">\(x^2\)</span>：</p>
+<div class="arithmatex">\[4x^2 + y^2 = Cx^3\]</div>
+<p><strong>代初值</strong> <span class="arithmatex">\(y(1)=1\)</span>：<span class="arithmatex">\(4+1 = C\)</span>，得 <span class="arithmatex">\(C = 5\)</span>，特解为</p>
+<div class="arithmatex">\[y^2 = 5x^3 - 4x^2\]</div>
 </div>
 <h3 id="13">1.3 一阶线性方程<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
 <p><strong>形式</strong></p>
@@ -2098,6 +2116,17 @@
 <div class="admonition tip">
 <p class="admonition-title">记忆口诀</p>
 <p>"外负内正"：外层系数 <span class="arithmatex">\(e^{-\int p\,\mathrm{d}x}\)</span> 取负号，内层 <span class="arithmatex">\(e^{\int p\,\mathrm{d}x}\)</span> 取正号。</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例题</p>
+<p><span class="arithmatex">\(y' - \dfrac{2}{x}\,y = x^2\)</span>，<span class="arithmatex">\(y(1) = 0\)</span></p>
+<p>这里 <span class="arithmatex">\(p(x) = -\dfrac{2}{x}\)</span>，<span class="arithmatex">\(f(x) = x^2\)</span>。</p>
+<p><strong>第一步：求积分量。</strong> <span class="arithmatex">\(\displaystyle\int p(x)\,\mathrm{d}x = \int -\frac{2}{x}\,\mathrm{d}x = -2\ln|x|\)</span>，故</p>
+<div class="arithmatex">\[e^{\int p\,\mathrm{d}x} = e^{-2\ln|x|} = x^{-2}, \qquad e^{-\int p\,\mathrm{d}x} = x^{2}\]</div>
+<p><strong>第二步：代通解公式。</strong></p>
+<div class="arithmatex">\[y = x^{2}\!\left[\int x^2 \cdot x^{-2}\,\mathrm{d}x + C\right] = x^{2}\!\left[\int 1\,\mathrm{d}x + C\right] = x^2(x + C) = x^3 + Cx^2\]</div>
+<p><strong>第三步：代初值</strong> <span class="arithmatex">\(y(1)=0\)</span>：<span class="arithmatex">\(0 = 1 + C\)</span>，故 <span class="arithmatex">\(C = -1\)</span>，特解为</p>
+<div class="arithmatex">\[y = x^3 - x^2\]</div>
 </div>
 <h3 id="14-bernoulli">1.4 Bernoulli（伯努利）方程<a class="headerlink" href="#14-bernoulli" title="Permanent link">&para;</a></h3>
 <p><strong>形式</strong></p>
@@ -2112,10 +2141,19 @@
 <div class="admonition example">
 <p class="admonition-title">例题 (20-21)</p>
 <p><span class="arithmatex">\(x\,y' - 4y = x^2\sqrt{y}\)</span></p>
-<p>除以 <span class="arithmatex">\(x\)</span> 得 <span class="arithmatex">\(y' - \dfrac{4}{x}y = x\sqrt{y}\)</span>（<span class="arithmatex">\(n = \tfrac{1}{2}\)</span>）。令 <span class="arithmatex">\(z = y^{1/2}\)</span>：</p>
-<div class="arithmatex">\[z' - \frac{2}{x}z = \frac{x}{2}\]</div>
-<p>积分因子 <span class="arithmatex">\(x^{-2}\)</span>，解得 <span class="arithmatex">\(z = x^2\!\left(\tfrac{1}{2}\ln|x| + C\right)\)</span>，回代</p>
-<div class="arithmatex">\[y = x^4\!\left(\tfrac{1}{2}\ln|x| + C\right)^{2}\]</div>
+<p><strong>识别类型</strong>：除以 <span class="arithmatex">\(x\)</span> 得 <span class="arithmatex">\(y' - \dfrac{4}{x}y = x\sqrt{y} = x\,y^{1/2}\)</span>，这是 <span class="arithmatex">\(n = \dfrac{1}{2}\)</span> 的 Bernoulli 方程，<span class="arithmatex">\(p(x) = -\dfrac{4}{x}\)</span>，<span class="arithmatex">\(f(x) = x\)</span>。</p>
+<p><strong>令 <span class="arithmatex">\(z = y^{1-n} = y^{1/2}\)</span></strong>，则 <span class="arithmatex">\(z' = \dfrac{1}{2}y^{-1/2}y'\)</span>，即 <span class="arithmatex">\(y^{-1/2}y' = 2z'\)</span>。原方程两边除以 <span class="arithmatex">\(y^{1/2}\)</span>：</p>
+<div class="arithmatex">\[y^{-1/2}y' - \frac{4}{x}y^{1/2} = x \;\Rightarrow\; 2z' - \frac{4}{x}z = x \;\Rightarrow\; z' - \frac{2}{x}z = \frac{x}{2}\]</div>
+<p>（两边除以 2，前提 <span class="arithmatex">\(z \ne 0\)</span> 即 <span class="arithmatex">\(y \ne 0\)</span>）。</p>
+<p><strong>求积分因子</strong>：<span class="arithmatex">\(p_z(x) = -\dfrac{2}{x}\)</span>，<span class="arithmatex">\(\displaystyle\int p_z\,\mathrm{d}x = -2\ln|x|\)</span>，故</p>
+<div class="arithmatex">\[\mu = e^{\int p_z\,\mathrm{d}x} = x^{-2}\]</div>
+<p><strong>两端乘</strong> <span class="arithmatex">\(\mu = x^{-2}\)</span>：</p>
+<div class="arithmatex">\[x^{-2}z' - 2x^{-3}z = \frac{1}{2x} \;\Rightarrow\; \frac{\mathrm{d}}{\mathrm{d}x}\!\left(x^{-2}z\right) = \frac{1}{2x}\]</div>
+<p>积分：<span class="arithmatex">\(\displaystyle x^{-2}z = \int\frac{\mathrm{d}x}{2x} = \frac{1}{2}\ln|x| + C\)</span>，故</p>
+<div class="arithmatex">\[z = x^2\!\left(\frac{1}{2}\ln|x| + C\right)\]</div>
+<p><strong>回代</strong> <span class="arithmatex">\(z = y^{1/2}\)</span>，两边平方：</p>
+<div class="arithmatex">\[y = z^2 = x^4\!\left(\frac{1}{2}\ln|x| + C\right)^{2}\]</div>
+<p>另外注意 <span class="arithmatex">\(y \equiv 0\)</span> 也是原方程的解（<span class="arithmatex">\(n&gt;0\)</span> 时的奇解）。</p>
 </div>
 <h3 id="15-riccati">1.5 Riccati（里卡提）方程<a class="headerlink" href="#15-riccati" title="Permanent link">&para;</a></h3>
 <p><strong>形式</strong></p>
@@ -2132,11 +2170,19 @@
 <div class="admonition example">
 <p class="admonition-title">例题 (23-24)</p>
 <p><span class="arithmatex">\(y' + y^2 = \dfrac{2}{x^2}\)</span></p>
-<p>提示一个解与 <span class="arithmatex">\(\dfrac{1}{x}\)</span> 成正比。试 <span class="arithmatex">\(y_1 = \dfrac{a}{x}\)</span>，代入得 <span class="arithmatex">\(a^2 - a = 2\)</span>，取 <span class="arithmatex">\(y_1 = \dfrac{2}{x}\)</span>。令 <span class="arithmatex">\(u = y - \dfrac{2}{x}\)</span>：</p>
-<div class="arithmatex">\[u' + \frac{4}{x}\,u = -u^2\]</div>
-<p>这是 Bernoulli 方程（<span class="arithmatex">\(n=2\)</span>），令 <span class="arithmatex">\(z = u^{-1}\)</span>：</p>
-<div class="arithmatex">\[z' - \frac{4}{x}\,z = 1\]</div>
-<p>解得 <span class="arithmatex">\(z = Cx^4 - \dfrac{x}{3}\)</span>，回代 <span class="arithmatex">\(y = \dfrac{2}{x} + \dfrac{1}{z}\)</span>：</p>
+<p><strong>第一步：找特解。</strong> 设 <span class="arithmatex">\(y_1 = \dfrac{a}{x}\)</span>，则 <span class="arithmatex">\(y_1' = -\dfrac{a}{x^2}\)</span>。代入方程：</p>
+<div class="arithmatex">\[-\frac{a}{x^2} + \frac{a^2}{x^2} = \frac{2}{x^2} \;\Rightarrow\; a^2 - a - 2 = 0 \;\Rightarrow\; (a-2)(a+1)=0\]</div>
+<p>取 <span class="arithmatex">\(a=2\)</span>，即特解 <span class="arithmatex">\(y_1 = \dfrac{2}{x}\)</span>。</p>
+<p><strong>第二步：令 <span class="arithmatex">\(u = y - y_1 = y - \dfrac{2}{x}\)</span></strong>，则 <span class="arithmatex">\(y = u + \dfrac{2}{x}\)</span>，<span class="arithmatex">\(y' = u' - \dfrac{2}{x^2}\)</span>。代入方程 <span class="arithmatex">\(y' + y^2 = \dfrac{2}{x^2}\)</span>：</p>
+<div class="arithmatex">\[\underbrace{\left(u' - \frac{2}{x^2}\right)}_{y'} + \underbrace{\left(u + \frac{2}{x}\right)^2}_{y^2} = \frac{2}{x^2}\]</div>
+<p>展开 <span class="arithmatex">\(\left(u+\dfrac{2}{x}\right)^2 = u^2 + \dfrac{4u}{x} + \dfrac{4}{x^2}\)</span>，合并常数项（<span class="arithmatex">\(-\tfrac{2}{x^2}+\tfrac{4}{x^2}-\tfrac{2}{x^2}=0\)</span>）：</p>
+<div class="arithmatex">\[u' + \frac{4}{x}\,u + u^2 = 0 \;\Rightarrow\; u' + \frac{4}{x}\,u = -u^2\]</div>
+<p><strong>第三步：Bernoulli 化线性（<span class="arithmatex">\(n=2\)</span>）。</strong> 令 <span class="arithmatex">\(z = u^{-1}\)</span>，则 <span class="arithmatex">\(z' = -u^{-2}u'\)</span>。原方程两边除以 <span class="arithmatex">\(-u^2\)</span>：</p>
+<div class="arithmatex">\[-u^{-2}u' - \frac{4}{xu} = 1 \;\Rightarrow\; z' - \frac{4}{x}\,z = 1\]</div>
+<p><strong>第四步：求解线性方程。</strong> <span class="arithmatex">\(p_z = -4/x\)</span>，积分因子 <span class="arithmatex">\(\mu = e^{\int -4/x\,\mathrm{d}x} = x^{-4}\)</span>：</p>
+<div class="arithmatex">\[\frac{\mathrm{d}}{\mathrm{d}x}(x^{-4}z) = x^{-4} \;\Rightarrow\; x^{-4}z = \int x^{-4}\,\mathrm{d}x = -\frac{x^{-3}}{3} + C\]</div>
+<p>故 <span class="arithmatex">\(z = x^4\!\left(C - \dfrac{1}{3x^3}\right) = Cx^4 - \dfrac{x}{3}\)</span>。</p>
+<p><strong>第五步：回代。</strong> <span class="arithmatex">\(u = z^{-1} = \dfrac{3}{3Cx^4 - x}\)</span>，再回代 <span class="arithmatex">\(y = u + \dfrac{2}{x}\)</span>：</p>
 <div class="arithmatex">\[y = \frac{2}{x} + \frac{3}{3Cx^4 - x}\]</div>
 </div>
 <h3 id="16">1.6 全微分方程<a class="headerlink" href="#16" title="Permanent link">&para;</a></h3>
@@ -2208,9 +2254,17 @@
 <div class="admonition example">
 <p class="admonition-title">例题 (23-24)</p>
 <p><span class="arithmatex">\(\dfrac{\mathrm{d}y}{\mathrm{d}x} = \dfrac{y}{x(x^2y^2+1)}\)</span></p>
-<p>取倒数：<span class="arithmatex">\(\dfrac{\mathrm{d}x}{\mathrm{d}y} = \dfrac{x}{y} + x^3 y\)</span>（以 <span class="arithmatex">\(x\)</span> 为未知量的 Bernoulli 方程，<span class="arithmatex">\(n=3\)</span>）。令 <span class="arithmatex">\(z = x^{-2}\)</span>：</p>
-<div class="arithmatex">\[\frac{\mathrm{d}z}{\mathrm{d}y} + \frac{2}{y}z = -2y\]</div>
-<p>线性方程求解后回代（注意 <span class="arithmatex">\(y=0\)</span> 也是解）。</p>
+<p><strong>互换变量</strong>：将 <span class="arithmatex">\(x\)</span> 视为 <span class="arithmatex">\(y\)</span> 的函数，取倒数：</p>
+<div class="arithmatex">\[\frac{\mathrm{d}x}{\mathrm{d}y} = \frac{x(x^2y^2+1)}{y} = \frac{x}{y} + x^3 y\]</div>
+<p>这是以 <span class="arithmatex">\(x\)</span> 为未知量的 Bernoulli 方程（<span class="arithmatex">\(n=3\)</span>），标准形：<span class="arithmatex">\(\dfrac{\mathrm{d}x}{\mathrm{d}y} - \dfrac{x}{y} = yx^3\)</span>。</p>
+<p><strong>令 <span class="arithmatex">\(z = x^{1-3} = x^{-2}\)</span></strong>，则 <span class="arithmatex">\(\dfrac{\mathrm{d}z}{\mathrm{d}y} = -2x^{-3}\dfrac{\mathrm{d}x}{\mathrm{d}y}\)</span>。方程两边除以 <span class="arithmatex">\(-2x^3\)</span>（等价于乘以 <span class="arithmatex">\(1-n=-2\)</span> 后同除 <span class="arithmatex">\(-1/(-2)\)</span>）：</p>
+<div class="arithmatex">\[\frac{\mathrm{d}z}{\mathrm{d}y} + \frac{2}{y}\,z = -2y\]</div>
+<p><strong>求解线性方程</strong>：<span class="arithmatex">\(p(y)=2/y\)</span>，积分因子 <span class="arithmatex">\(\mu = e^{\int 2/y\,\mathrm{d}y} = y^2\)</span>。两端乘 <span class="arithmatex">\(y^2\)</span>：</p>
+<div class="arithmatex">\[\frac{\mathrm{d}}{\mathrm{d}y}(y^2 z) = -2y^3 \;\Rightarrow\; y^2 z = \int -2y^3\,\mathrm{d}y = -\frac{y^4}{2} + C\]</div>
+<p>故 <span class="arithmatex">\(z = \dfrac{C}{y^2} - \dfrac{y^2}{2}\)</span>。</p>
+<p><strong>回代</strong> <span class="arithmatex">\(z = x^{-2}\)</span>：</p>
+<div class="arithmatex">\[\frac{1}{x^2} = \frac{C}{y^2} - \frac{y^2}{2}\]</div>
+<p>另外，<span class="arithmatex">\(y \equiv 0\)</span> 也是原方程的解（代入右端：<span class="arithmatex">\(0/(x\cdot1)=0\)</span> 成立）。</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">例题 2 (24-25夏)</p>
@@ -2246,9 +2300,18 @@
 <div class="admonition example">
 <p class="admonition-title">例题 (20-21)</p>
 <p><span class="arithmatex">\(y''' - y'' = 12x^2 - 6\)</span></p>
-<p>令 <span class="arithmatex">\(p = y''\)</span>：<span class="arithmatex">\(p' - p = 12x^2 - 6\)</span>（一阶线性）。用公式：</p>
-<div class="arithmatex">\[p = e^{x}\!\left[\int (12x^2 - 6)\,e^{-x}\,\mathrm{d}x + C_1\right] = -6(2x^2 + 4x + 3) + C_1 e^{x}\]</div>
-<p>对 <span class="arithmatex">\(p = y''\)</span> 两次积分得：</p>
+<p><strong>降阶</strong>：令 <span class="arithmatex">\(p = y''\)</span>，方程化为 <span class="arithmatex">\(p' - p = 12x^2 - 6\)</span>（<span class="arithmatex">\(p(x)=-1\)</span>，<span class="arithmatex">\(f(x)=12x^2-6\)</span> 的一阶线性方程）。</p>
+<p><strong>求解</strong>：积分因子 <span class="arithmatex">\(e^{-x}\)</span>，用通解公式：</p>
+<div class="arithmatex">\[p = e^{x}\!\left[\int (12x^2 - 6)\,e^{-x}\,\mathrm{d}x + C_1\right]\]</div>
+<p>括号内反复分部积分（设 <span class="arithmatex">\(I = \int(12x^2-6)e^{-x}\mathrm{d}x\)</span>，每次对多项式求导）：</p>
+<div class="arithmatex">\[I = (12x^2-6)\cdot(-e^{-x}) - \int 24x\cdot(-e^{-x})\mathrm{d}x = -(12x^2-6)e^{-x} + 24\int xe^{-x}\mathrm{d}x\]</div>
+<div class="arithmatex">\[\int xe^{-x}\mathrm{d}x = x(-e^{-x}) - \int(-e^{-x})\mathrm{d}x = -xe^{-x} - e^{-x}\]</div>
+<p>代回：<span class="arithmatex">\(I = -(12x^2-6)e^{-x} + 24(-xe^{-x}-e^{-x}) = e^{-x}\!\left[-(12x^2-6)-24x-24\right] = -6e^{-x}(2x^2+4x+3)\)</span>。</p>
+<p>故 <span class="arithmatex">\(\displaystyle\int(12x^2-6)e^{-x}\mathrm{d}x = -6e^{-x}(2x^2+4x+3)\)</span>，代入：</p>
+<div class="arithmatex">\[p = e^{x}\!\left[-6e^{-x}(2x^2+4x+3)+C_1\right] = -6(2x^2+4x+3)+C_1 e^{x}\]</div>
+<p><strong>两次积分求 <span class="arithmatex">\(y\)</span></strong>：由 <span class="arithmatex">\(p = y''\)</span> 积分一次得 <span class="arithmatex">\(y'\)</span>：</p>
+<div class="arithmatex">\[y' = \int p\,\mathrm{d}x = -6\!\left(\frac{2x^3}{3}+2x^2+3x\right) + C_1 e^{x} + C_2 = -4x^3-12x^2-18x+C_1 e^{x}+C_2\]</div>
+<p>再积分一次：</p>
 <div class="arithmatex">\[y = -x^4 - 4x^3 - 9x^2 + C_1 e^{x} + C_2 x + C_3\]</div>
 </div>
 <h3 id="22-x">2.2 不显含 x 的方程<a class="headerlink" href="#22-x" title="Permanent link">&para;</a></h3>
@@ -2259,10 +2322,18 @@
 <div class="admonition example">
 <p class="admonition-title">例题 (23-24)</p>
 <p><span class="arithmatex">\(yy'' - (y')^2 = yy',\; y(0)=1,\, y'(0)=2\)</span></p>
-<p>令 <span class="arithmatex">\(p = y'\)</span>，<span class="arithmatex">\(y'' = p\,p'_y\)</span>：</p>
-<div class="arithmatex">\[yp\,p'_y - p^2 = yp \;\Rightarrow\; p'_y - \frac{p}{y} = 1\]</div>
-<p>一阶线性解得 <span class="arithmatex">\(p = y(\ln|y| + C_1)\)</span>，由初值 <span class="arithmatex">\(C_1 = 2\)</span>。再分离得</p>
-<div class="arithmatex">\[\ln\!\bigl|\ln|y| + 2\bigr| = x + C_2\]</div>
+<p><strong>令 <span class="arithmatex">\(p = y'\)</span></strong>，视 <span class="arithmatex">\(p\)</span> 为 <span class="arithmatex">\(y\)</span> 的函数：<span class="arithmatex">\(y'' = p\dfrac{\mathrm{d}p}{\mathrm{d}y}\)</span>。代入方程：</p>
+<div class="arithmatex">\[y\cdot p\cdot\frac{\mathrm{d}p}{\mathrm{d}y} - p^2 = yp\]</div>
+<p><span class="arithmatex">\(p \ne 0\)</span> 时两边除以 <span class="arithmatex">\(p\)</span>：<span class="arithmatex">\(y\dfrac{\mathrm{d}p}{\mathrm{d}y} - p = y\)</span>，整理为</p>
+<div class="arithmatex">\[\frac{\mathrm{d}p}{\mathrm{d}y} - \frac{p}{y} = 1\]</div>
+<p><strong>求解</strong>：这是关于 <span class="arithmatex">\(p\)</span> 的一阶线性方程（<span class="arithmatex">\(y\)</span> 为自变量），积分因子 <span class="arithmatex">\(\mu = e^{-\int dy/y} = y^{-1}\)</span>：</p>
+<div class="arithmatex">\[\frac{\mathrm{d}}{\mathrm{d}y}\!\left(\frac{p}{y}\right) = \frac{1}{y} \;\Rightarrow\; \frac{p}{y} = \ln|y| + C_1 \;\Rightarrow\; p = y(\ln|y| + C_1)\]</div>
+<p><strong>代初值</strong> <span class="arithmatex">\(y(0)=1,\,y'(0)=2\)</span>（即 <span class="arithmatex">\(p=2\)</span> 时 <span class="arithmatex">\(y=1\)</span>）：<span class="arithmatex">\(2 = 1\cdot(\ln 1 + C_1) = C_1\)</span>，故 <span class="arithmatex">\(C_1=2\)</span>。</p>
+<div class="arithmatex">\[\frac{\mathrm{d}y}{\mathrm{d}x} = y(\ln y + 2) \qquad (y&gt;0)\]</div>
+<p><strong>分离变量</strong>：<span class="arithmatex">\(\dfrac{\mathrm{d}y}{y(\ln y + 2)} = \mathrm{d}x\)</span>。令 <span class="arithmatex">\(v = \ln y + 2\)</span>，<span class="arithmatex">\(\mathrm{d}v = \mathrm{d}y/y\)</span>：</p>
+<div class="arithmatex">\[\int\frac{\mathrm{d}v}{v} = x + C_2 \;\Rightarrow\; \ln v = x + C_2 \;\Rightarrow\; \ln(\ln y + 2) = x + C_2\]</div>
+<p><strong>代初值</strong> <span class="arithmatex">\(y(0)=1\)</span>：<span class="arithmatex">\(\ln(\ln 1+2)=0+C_2\)</span>，即 <span class="arithmatex">\(C_2 = \ln 2\)</span>。故</p>
+<div class="arithmatex">\[\ln(\ln y + 2) = x + \ln 2 \;\Rightarrow\; \ln y + 2 = 2e^{x} \;\Rightarrow\; \boxed{y = e^{2(e^x - 1)}}\]</div>
 </div>
 <div class="admonition example">
 <p class="admonition-title">例题 2 (24-25)</p>
@@ -2381,9 +2452,20 @@ $$e^{\alpha x}\sin\beta x,\; x e^{\alpha x}\sin\beta x,\; \dots,\; x^{k-1}e^{\al
 <div class="admonition example">
 <p class="admonition-title">例题</p>
 <p><span class="arithmatex">\(y'' - y = e^{x}\sin 2x\)</span></p>
-<p>齐次：<span class="arithmatex">\(\lambda = \pm 1\)</span>，<span class="arithmatex">\(\bar{y} = c_1 e^{x} + c_2 e^{-x}\)</span>。<span class="arithmatex">\(1 \pm 2\mathrm{i}\)</span> 非特征根，<span class="arithmatex">\(k=0\)</span>。设</p>
+<p><strong>齐次通解</strong>：特征方程 <span class="arithmatex">\(\lambda^2-1=0\)</span>，<span class="arithmatex">\(\lambda=\pm 1\)</span>，<span class="arithmatex">\(\bar{y}=c_1e^x+c_2e^{-x}\)</span>。右端 <span class="arithmatex">\(f(x)=e^x\sin 2x\)</span> 对应 <span class="arithmatex">\(\alpha+\mathrm{i}\beta=1+2\mathrm{i}\)</span>，不是特征根，故 <span class="arithmatex">\(k=0\)</span>，设</p>
 <div class="arithmatex">\[y^{*} = e^{x}(A\cos 2x + B\sin 2x)\]</div>
-<p>代入比较系数得 <span class="arithmatex">\(A = B = -\tfrac{1}{8}\)</span>：</p>
+<p><strong>计算 <span class="arithmatex">\({y^*}''\)</span></strong>：先求 <span class="arithmatex">\({y^*}'\)</span>：</p>
+<div class="arithmatex">\[{y^*}' = e^x(A\cos 2x+B\sin 2x)+e^x(-2A\sin 2x+2B\cos 2x) = e^x\!\bigl[(A+2B)\cos 2x+(B-2A)\sin 2x\bigr]\]</div>
+<p>再求 <span class="arithmatex">\({y^*}''\)</span>：</p>
+<div class="arithmatex">\[{y^*}'' = e^x\!\bigl[(A+2B)\cos 2x+(B-2A)\sin 2x\bigr] + e^x\!\bigl[-2(A+2B)\sin 2x+2(B-2A)\cos 2x\bigr]\]</div>
+<p>合并 <span class="arithmatex">\(\cos 2x\)</span> 项：<span class="arithmatex">\((A+2B)+(2B-4A) = -3A+4B\)</span>；<span class="arithmatex">\(\sin 2x\)</span> 项：<span class="arithmatex">\((B-2A)+(-2A-4B) = -4A-3B\)</span>：</p>
+<div class="arithmatex">\[{y^*}'' = e^x\!\bigl[(-3A+4B)\cos 2x+(-4A-3B)\sin 2x\bigr]\]</div>
+<p><strong>代入方程</strong> <span class="arithmatex">\({y^*}''-y^*=e^x\sin 2x\)</span>，即</p>
+<div class="arithmatex">\[e^x\!\bigl[(-3A+4B-A)\cos 2x+(-4A-3B-B)\sin 2x\bigr] = e^x\sin 2x\]</div>
+<p>比较系数：</p>
+<div class="arithmatex">\[\cos 2x:\; -4A+4B = 0 \;\Rightarrow\; A=B\]</div>
+<div class="arithmatex">\[\sin 2x:\; -4A-4B = 1 \;\xrightarrow{A=B}\; -8A=1 \;\Rightarrow\; A=B=-\tfrac{1}{8}\]</div>
+<p><strong>通解</strong>：</p>
 <div class="arithmatex">\[y = c_1 e^{x} + c_2 e^{-x} - \tfrac{1}{8} e^{x}(\cos 2x + \sin 2x)\]</div>
 </div>
 <div class="admonition example">
