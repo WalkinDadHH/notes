@@ -47,9 +47,27 @@ $$\int_{y_0}^{y} \frac{\mathrm{d}y}{g(y)} = \int_{x_0}^{x} f(x)\,\mathrm{d}x$$
 !!! example "例题 (20-21)"
     $\dfrac{\mathrm{d}y}{\mathrm{d}x} = (1-y^2)\,x$
 
-    分离变量：$\dfrac{\mathrm{d}y}{1-y^2} = x\,\mathrm{d}x$，两端积分：
+    **分离变量**：将方程改写为
 
-    $$\frac{1}{2}\ln\left|\frac{1+y}{1-y}\right| = \frac{x^2}{2} + C \;\Rightarrow\; \frac{1+y}{1-y} = C\,e^{x^2}$$
+    $$\frac{\mathrm{d}y}{1-y^2} = x\,\mathrm{d}x$$
+
+    **积分左端**：$1-y^2 = (1+y)(1-y)$，用部分分式分解：
+
+    $$\frac{1}{(1+y)(1-y)} = \frac{A}{1+y} + \frac{B}{1-y}$$
+
+    通分比较分子：$1 = A(1-y) + B(1+y)$。令 $y=1$ 得 $B=\tfrac{1}{2}$；令 $y=-1$ 得 $A=\tfrac{1}{2}$。故
+
+    $$\int\frac{\mathrm{d}y}{1-y^2} = \frac{1}{2}\int\!\left(\frac{1}{1+y}+\frac{1}{1-y}\right)\mathrm{d}y = \frac{1}{2}\bigl[\ln|1+y| - \ln|1-y|\bigr] = \frac{1}{2}\ln\left|\frac{1+y}{1-y}\right|$$
+
+    **积分右端**：$\displaystyle\int x\,\mathrm{d}x = \dfrac{x^2}{2}$。合并，令 $C_0$ 为积分常数：
+
+    $$\frac{1}{2}\ln\left|\frac{1+y}{1-y}\right| = \frac{x^2}{2} + C_0$$
+
+    两边乘 2 后取指数，令 $C = \pm e^{2C_0}$ 吸收符号，得通解
+
+    $$\frac{1+y}{1-y} = C\,e^{x^2}$$
+
+    **检查遗漏解**：$1-y^2=0$ 时 $y=\pm 1$，代回验证 $\dfrac{\mathrm{d}y}{\mathrm{d}x}=0$ 成立，故 $y\equiv 1$ 和 $y\equiv -1$ 也是解。
 
 ### 1.2 齐次方程
 
@@ -66,11 +84,29 @@ $$x\frac{\mathrm{d}u}{\mathrm{d}x} = f(u) - u$$
 !!! example "例题 (23-24)"
     $2xy\,y' = 4x^2 + 3y^2,\; y(1)=1$
 
-    化标准形 $y' = \dfrac{4x^2 + 3y^2}{2xy}$，令 $y = ux$：
+    **化标准形**：两边除以 $2xy$，$y' = \dfrac{4x^2+3y^2}{2xy}$。注意右端只含 $y/x$，是齐次方程。
 
-    $$u + xu' = \frac{2}{u} + \frac{3u}{2} \;\Rightarrow\; xu' = \frac{4 + u^2}{2u}$$
+    **令 $u = y/x$**（即 $y = ux$，$y' = u + xu'$），代入：
 
-    分离积分、回代 $u = y/x$ 得 $y^2 = Cx^3 - 4x^2$，代 $y(1)=1$ 解得 $C=5$，故 $y^2 = 5x^3 - 4x^2$。
+    $$u + xu' = \frac{4x^2 + 3u^2x^2}{2x\cdot ux} = \frac{2}{u} + \frac{3u}{2}$$
+
+    整理：$xu' = \dfrac{2}{u} + \dfrac{3u}{2} - u = \dfrac{2}{u} + \dfrac{u}{2} = \dfrac{4+u^2}{2u}$。
+
+    **分离变量**：
+
+    $$\frac{2u\,\mathrm{d}u}{4+u^2} = \frac{\mathrm{d}x}{x}$$
+
+    **积分**：左端令 $w = 4+u^2$，$\mathrm{d}w = 2u\,\mathrm{d}u$，故 $\displaystyle\int\frac{2u\,\mathrm{d}u}{4+u^2} = \ln(4+u^2)$（$4+u^2>0$）。右端积分得 $\ln|x|$，故
+
+    $$\ln(4+u^2) = \ln|Cx| \;\Rightarrow\; 4 + u^2 = Cx$$
+
+    **回代** $u = y/x$：$4 + y^2/x^2 = Cx$，两端乘 $x^2$：
+
+    $$4x^2 + y^2 = Cx^3$$
+
+    **代初值** $y(1)=1$：$4+1 = C$，得 $C = 5$，特解为
+
+    $$y^2 = 5x^3 - 4x^2$$
 
 ### 1.3 一阶线性方程
 
@@ -88,6 +124,23 @@ $$y = e^{-\int_{x_0}^{x} p(\xi)\,\mathrm{d}\xi}\!\left[\int_{x_0}^{x} f(\xi)\,e^
 
 !!! tip "记忆口诀"
     "外负内正"：外层系数 $e^{-\int p\,\mathrm{d}x}$ 取负号，内层 $e^{\int p\,\mathrm{d}x}$ 取正号。
+
+!!! example "例题"
+    $y' - \dfrac{2}{x}\,y = x^2$，$y(1) = 0$
+
+    这里 $p(x) = -\dfrac{2}{x}$，$f(x) = x^2$。
+
+    **第一步：求积分量。** $\displaystyle\int p(x)\,\mathrm{d}x = \int -\frac{2}{x}\,\mathrm{d}x = -2\ln|x|$，故
+
+    $$e^{\int p\,\mathrm{d}x} = e^{-2\ln|x|} = x^{-2}, \qquad e^{-\int p\,\mathrm{d}x} = x^{2}$$
+
+    **第二步：代通解公式。**
+
+    $$y = x^{2}\!\left[\int x^2 \cdot x^{-2}\,\mathrm{d}x + C\right] = x^{2}\!\left[\int 1\,\mathrm{d}x + C\right] = x^2(x + C) = x^3 + Cx^2$$
+
+    **第三步：代初值** $y(1)=0$：$0 = 1 + C$，故 $C = -1$，特解为
+
+    $$y = x^3 - x^2$$
 
 ### 1.4 Bernoulli（伯努利）方程
 
@@ -107,13 +160,31 @@ $$\frac{\mathrm{d}z}{\mathrm{d}x} + (1-n)\,p(x)\,z = (1-n)\,f(x)$$
 !!! example "例题 (20-21)"
     $x\,y' - 4y = x^2\sqrt{y}$
 
-    除以 $x$ 得 $y' - \dfrac{4}{x}y = x\sqrt{y}$（$n = \tfrac{1}{2}$）。令 $z = y^{1/2}$：
+    **识别类型**：除以 $x$ 得 $y' - \dfrac{4}{x}y = x\sqrt{y} = x\,y^{1/2}$，这是 $n = \dfrac{1}{2}$ 的 Bernoulli 方程，$p(x) = -\dfrac{4}{x}$，$f(x) = x$。
 
-    $$z' - \frac{2}{x}z = \frac{x}{2}$$
+    **令 $z = y^{1-n} = y^{1/2}$**，则 $z' = \dfrac{1}{2}y^{-1/2}y'$，即 $y^{-1/2}y' = 2z'$。原方程两边除以 $y^{1/2}$：
 
-    积分因子 $x^{-2}$，解得 $z = x^2\!\left(\tfrac{1}{2}\ln|x| + C\right)$，回代
+    $$y^{-1/2}y' - \frac{4}{x}y^{1/2} = x \;\Rightarrow\; 2z' - \frac{4}{x}z = x \;\Rightarrow\; z' - \frac{2}{x}z = \frac{x}{2}$$
 
-    $$y = x^4\!\left(\tfrac{1}{2}\ln|x| + C\right)^{2}$$
+    （两边除以 2，前提 $z \ne 0$ 即 $y \ne 0$）。
+
+    **求积分因子**：$p_z(x) = -\dfrac{2}{x}$，$\displaystyle\int p_z\,\mathrm{d}x = -2\ln|x|$，故
+
+    $$\mu = e^{\int p_z\,\mathrm{d}x} = x^{-2}$$
+
+    **两端乘** $\mu = x^{-2}$：
+
+    $$x^{-2}z' - 2x^{-3}z = \frac{1}{2x} \;\Rightarrow\; \frac{\mathrm{d}}{\mathrm{d}x}\!\left(x^{-2}z\right) = \frac{1}{2x}$$
+
+    积分：$\displaystyle x^{-2}z = \int\frac{\mathrm{d}x}{2x} = \frac{1}{2}\ln|x| + C$，故
+
+    $$z = x^2\!\left(\frac{1}{2}\ln|x| + C\right)$$
+
+    **回代** $z = y^{1/2}$，两边平方：
+
+    $$y = z^2 = x^4\!\left(\frac{1}{2}\ln|x| + C\right)^{2}$$
+
+    另外注意 $y \equiv 0$ 也是原方程的解（$n>0$ 时的奇解）。
 
 ### 1.5 Riccati（里卡提）方程
 
@@ -137,15 +208,31 @@ $$\frac{\mathrm{d}u}{\mathrm{d}x} = [2p\,\varphi_1 + q]\,u + p\,u^2$$
 !!! example "例题 (23-24)"
     $y' + y^2 = \dfrac{2}{x^2}$
 
-    提示一个解与 $\dfrac{1}{x}$ 成正比。试 $y_1 = \dfrac{a}{x}$，代入得 $a^2 - a = 2$，取 $y_1 = \dfrac{2}{x}$。令 $u = y - \dfrac{2}{x}$：
+    **第一步：找特解。** 设 $y_1 = \dfrac{a}{x}$，则 $y_1' = -\dfrac{a}{x^2}$。代入方程：
 
-    $$u' + \frac{4}{x}\,u = -u^2$$
+    $$-\frac{a}{x^2} + \frac{a^2}{x^2} = \frac{2}{x^2} \;\Rightarrow\; a^2 - a - 2 = 0 \;\Rightarrow\; (a-2)(a+1)=0$$
 
-    这是 Bernoulli 方程（$n=2$），令 $z = u^{-1}$：
+    取 $a=2$，即特解 $y_1 = \dfrac{2}{x}$。
 
-    $$z' - \frac{4}{x}\,z = 1$$
+    **第二步：令 $u = y - y_1 = y - \dfrac{2}{x}$**，则 $y = u + \dfrac{2}{x}$，$y' = u' - \dfrac{2}{x^2}$。代入方程 $y' + y^2 = \dfrac{2}{x^2}$：
 
-    解得 $z = Cx^4 - \dfrac{x}{3}$，回代 $y = \dfrac{2}{x} + \dfrac{1}{z}$：
+    $$\underbrace{\left(u' - \frac{2}{x^2}\right)}_{y'} + \underbrace{\left(u + \frac{2}{x}\right)^2}_{y^2} = \frac{2}{x^2}$$
+
+    展开 $\left(u+\dfrac{2}{x}\right)^2 = u^2 + \dfrac{4u}{x} + \dfrac{4}{x^2}$，合并常数项（$-\tfrac{2}{x^2}+\tfrac{4}{x^2}-\tfrac{2}{x^2}=0$）：
+
+    $$u' + \frac{4}{x}\,u + u^2 = 0 \;\Rightarrow\; u' + \frac{4}{x}\,u = -u^2$$
+
+    **第三步：Bernoulli 化线性（$n=2$）。** 令 $z = u^{-1}$，则 $z' = -u^{-2}u'$。原方程两边除以 $-u^2$：
+
+    $$-u^{-2}u' - \frac{4}{xu} = 1 \;\Rightarrow\; z' - \frac{4}{x}\,z = 1$$
+
+    **第四步：求解线性方程。** $p_z = -4/x$，积分因子 $\mu = e^{\int -4/x\,\mathrm{d}x} = x^{-4}$：
+
+    $$\frac{\mathrm{d}}{\mathrm{d}x}(x^{-4}z) = x^{-4} \;\Rightarrow\; x^{-4}z = \int x^{-4}\,\mathrm{d}x = -\frac{x^{-3}}{3} + C$$
+
+    故 $z = x^4\!\left(C - \dfrac{1}{3x^3}\right) = Cx^4 - \dfrac{x}{3}$。
+
+    **第五步：回代。** $u = z^{-1} = \dfrac{3}{3Cx^4 - x}$，再回代 $y = u + \dfrac{2}{x}$：
 
     $$y = \frac{2}{x} + \frac{3}{3Cx^4 - x}$$
 
@@ -226,11 +313,27 @@ $$M(x,y)\,\mathrm{d}x + N(x,y)\,\mathrm{d}y = 0$$
 !!! example "例题 (23-24)"
     $\dfrac{\mathrm{d}y}{\mathrm{d}x} = \dfrac{y}{x(x^2y^2+1)}$
 
-    取倒数：$\dfrac{\mathrm{d}x}{\mathrm{d}y} = \dfrac{x}{y} + x^3 y$（以 $x$ 为未知量的 Bernoulli 方程，$n=3$）。令 $z = x^{-2}$：
+    **互换变量**：将 $x$ 视为 $y$ 的函数，取倒数：
 
-    $$\frac{\mathrm{d}z}{\mathrm{d}y} + \frac{2}{y}z = -2y$$
+    $$\frac{\mathrm{d}x}{\mathrm{d}y} = \frac{x(x^2y^2+1)}{y} = \frac{x}{y} + x^3 y$$
 
-    线性方程求解后回代（注意 $y=0$ 也是解）。
+    这是以 $x$ 为未知量的 Bernoulli 方程（$n=3$），标准形：$\dfrac{\mathrm{d}x}{\mathrm{d}y} - \dfrac{x}{y} = yx^3$。
+
+    **令 $z = x^{1-3} = x^{-2}$**，则 $\dfrac{\mathrm{d}z}{\mathrm{d}y} = -2x^{-3}\dfrac{\mathrm{d}x}{\mathrm{d}y}$。方程两边除以 $-2x^3$（等价于乘以 $1-n=-2$ 后同除 $-1/(-2)$）：
+
+    $$\frac{\mathrm{d}z}{\mathrm{d}y} + \frac{2}{y}\,z = -2y$$
+
+    **求解线性方程**：$p(y)=2/y$，积分因子 $\mu = e^{\int 2/y\,\mathrm{d}y} = y^2$。两端乘 $y^2$：
+
+    $$\frac{\mathrm{d}}{\mathrm{d}y}(y^2 z) = -2y^3 \;\Rightarrow\; y^2 z = \int -2y^3\,\mathrm{d}y = -\frac{y^4}{2} + C$$
+
+    故 $z = \dfrac{C}{y^2} - \dfrac{y^2}{2}$。
+
+    **回代** $z = x^{-2}$：
+
+    $$\frac{1}{x^2} = \frac{C}{y^2} - \frac{y^2}{2}$$
+
+    另外，$y \equiv 0$ 也是原方程的解（代入右端：$0/(x\cdot1)=0$ 成立）。
 
 !!! example "例题 2 (24-25夏)"
     $y\,\mathrm{d}x - x(1 + x^2y^3)\,\mathrm{d}y = 0$
@@ -282,11 +385,29 @@ $$[x + \psi'(p)]\,p' = 0$$
 !!! example "例题 (20-21)"
     $y''' - y'' = 12x^2 - 6$
 
-    令 $p = y''$：$p' - p = 12x^2 - 6$（一阶线性）。用公式：
+    **降阶**：令 $p = y''$，方程化为 $p' - p = 12x^2 - 6$（$p(x)=-1$，$f(x)=12x^2-6$ 的一阶线性方程）。
 
-    $$p = e^{x}\!\left[\int (12x^2 - 6)\,e^{-x}\,\mathrm{d}x + C_1\right] = -6(2x^2 + 4x + 3) + C_1 e^{x}$$
+    **求解**：积分因子 $e^{-x}$，用通解公式：
 
-    对 $p = y''$ 两次积分得：
+    $$p = e^{x}\!\left[\int (12x^2 - 6)\,e^{-x}\,\mathrm{d}x + C_1\right]$$
+
+    括号内反复分部积分（设 $I = \int(12x^2-6)e^{-x}\mathrm{d}x$，每次对多项式求导）：
+
+    $$I = (12x^2-6)\cdot(-e^{-x}) - \int 24x\cdot(-e^{-x})\mathrm{d}x = -(12x^2-6)e^{-x} + 24\int xe^{-x}\mathrm{d}x$$
+
+    $$\int xe^{-x}\mathrm{d}x = x(-e^{-x}) - \int(-e^{-x})\mathrm{d}x = -xe^{-x} - e^{-x}$$
+
+    代回：$I = -(12x^2-6)e^{-x} + 24(-xe^{-x}-e^{-x}) = e^{-x}\!\left[-(12x^2-6)-24x-24\right] = -6e^{-x}(2x^2+4x+3)$。
+
+    故 $\displaystyle\int(12x^2-6)e^{-x}\mathrm{d}x = -6e^{-x}(2x^2+4x+3)$，代入：
+
+    $$p = e^{x}\!\left[-6e^{-x}(2x^2+4x+3)+C_1\right] = -6(2x^2+4x+3)+C_1 e^{x}$$
+
+    **两次积分求 $y$**：由 $p = y''$ 积分一次得 $y'$：
+
+    $$y' = \int p\,\mathrm{d}x = -6\!\left(\frac{2x^3}{3}+2x^2+3x\right) + C_1 e^{x} + C_2 = -4x^3-12x^2-18x+C_1 e^{x}+C_2$$
+
+    再积分一次：
 
     $$y = -x^4 - 4x^3 - 9x^2 + C_1 e^{x} + C_2 x + C_3$$
 
@@ -303,13 +424,29 @@ $$y'' = \frac{\mathrm{d}p}{\mathrm{d}x} = p\,\frac{\mathrm{d}p}{\mathrm{d}y}$$
 !!! example "例题 (23-24)"
     $yy'' - (y')^2 = yy',\; y(0)=1,\, y'(0)=2$
 
-    令 $p = y'$，$y'' = p\,p'_y$：
+    **令 $p = y'$**，视 $p$ 为 $y$ 的函数：$y'' = p\dfrac{\mathrm{d}p}{\mathrm{d}y}$。代入方程：
 
-    $$yp\,p'_y - p^2 = yp \;\Rightarrow\; p'_y - \frac{p}{y} = 1$$
+    $$y\cdot p\cdot\frac{\mathrm{d}p}{\mathrm{d}y} - p^2 = yp$$
 
-    一阶线性解得 $p = y(\ln|y| + C_1)$，由初值 $C_1 = 2$。再分离得
+    $p \ne 0$ 时两边除以 $p$：$y\dfrac{\mathrm{d}p}{\mathrm{d}y} - p = y$，整理为
 
-    $$\ln\!\bigl|\ln|y| + 2\bigr| = x + C_2$$
+    $$\frac{\mathrm{d}p}{\mathrm{d}y} - \frac{p}{y} = 1$$
+
+    **求解**：这是关于 $p$ 的一阶线性方程（$y$ 为自变量），积分因子 $\mu = e^{-\int dy/y} = y^{-1}$：
+
+    $$\frac{\mathrm{d}}{\mathrm{d}y}\!\left(\frac{p}{y}\right) = \frac{1}{y} \;\Rightarrow\; \frac{p}{y} = \ln|y| + C_1 \;\Rightarrow\; p = y(\ln|y| + C_1)$$
+
+    **代初值** $y(0)=1,\,y'(0)=2$（即 $p=2$ 时 $y=1$）：$2 = 1\cdot(\ln 1 + C_1) = C_1$，故 $C_1=2$。
+
+    $$\frac{\mathrm{d}y}{\mathrm{d}x} = y(\ln y + 2) \qquad (y>0)$$
+
+    **分离变量**：$\dfrac{\mathrm{d}y}{y(\ln y + 2)} = \mathrm{d}x$。令 $v = \ln y + 2$，$\mathrm{d}v = \mathrm{d}y/y$：
+
+    $$\int\frac{\mathrm{d}v}{v} = x + C_2 \;\Rightarrow\; \ln v = x + C_2 \;\Rightarrow\; \ln(\ln y + 2) = x + C_2$$
+
+    **代初值** $y(0)=1$：$\ln(\ln 1+2)=0+C_2$，即 $C_2 = \ln 2$。故
+
+    $$\ln(\ln y + 2) = x + \ln 2 \;\Rightarrow\; \ln y + 2 = 2e^{x} \;\Rightarrow\; \boxed{y = e^{2(e^x - 1)}}$$
 
 !!! example "例题 2 (24-25)"
     $y'' = 2yy',\; y(0)=1,\, y'(0)=2$
@@ -402,11 +539,33 @@ $$e^{\alpha x}\sin\beta x,\; x e^{\alpha x}\sin\beta x,\; \dots,\; x^{k-1}e^{\al
 !!! example "例题"
     $y'' - y = e^{x}\sin 2x$
 
-    齐次：$\lambda = \pm 1$，$\bar{y} = c_1 e^{x} + c_2 e^{-x}$。$1 \pm 2\mathrm{i}$ 非特征根，$k=0$。设
+    **齐次通解**：特征方程 $\lambda^2-1=0$，$\lambda=\pm 1$，$\bar{y}=c_1e^x+c_2e^{-x}$。右端 $f(x)=e^x\sin 2x$ 对应 $\alpha+\mathrm{i}\beta=1+2\mathrm{i}$，不是特征根，故 $k=0$，设
 
     $$y^{*} = e^{x}(A\cos 2x + B\sin 2x)$$
 
-    代入比较系数得 $A = B = -\tfrac{1}{8}$：
+    **计算 ${y^*}''$**：先求 ${y^*}'$：
+
+    $${y^*}' = e^x(A\cos 2x+B\sin 2x)+e^x(-2A\sin 2x+2B\cos 2x) = e^x\!\bigl[(A+2B)\cos 2x+(B-2A)\sin 2x\bigr]$$
+
+    再求 ${y^*}''$：
+
+    $${y^*}'' = e^x\!\bigl[(A+2B)\cos 2x+(B-2A)\sin 2x\bigr] + e^x\!\bigl[-2(A+2B)\sin 2x+2(B-2A)\cos 2x\bigr]$$
+
+    合并 $\cos 2x$ 项：$(A+2B)+(2B-4A) = -3A+4B$；$\sin 2x$ 项：$(B-2A)+(-2A-4B) = -4A-3B$：
+
+    $${y^*}'' = e^x\!\bigl[(-3A+4B)\cos 2x+(-4A-3B)\sin 2x\bigr]$$
+
+    **代入方程** ${y^*}''-y^*=e^x\sin 2x$，即
+
+    $$e^x\!\bigl[(-3A+4B-A)\cos 2x+(-4A-3B-B)\sin 2x\bigr] = e^x\sin 2x$$
+
+    比较系数：
+
+    $$\cos 2x:\; -4A+4B = 0 \;\Rightarrow\; A=B$$
+
+    $$\sin 2x:\; -4A-4B = 1 \;\xrightarrow{A=B}\; -8A=1 \;\Rightarrow\; A=B=-\tfrac{1}{8}$$
+
+    **通解**：
 
     $$y = c_1 e^{x} + c_2 e^{-x} - \tfrac{1}{8} e^{x}(\cos 2x + \sin 2x)$$
 
