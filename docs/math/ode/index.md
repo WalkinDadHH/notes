@@ -280,15 +280,15 @@ $$[x + \psi'(p)]\,p' = 0$$
 **解法**：令 $p = y'$，则 $p' = y''$，化为一阶方程 $p' = f(x,p)$。解出 $p(x)$ 后再积一次分得 $y$。
 
 !!! example "例题 (20-21)"
-    $y'' - y' = 12x^2 - 6$
+    $y''' - y'' = 12x^2 - 6$
 
-    令 $p = y'$：$p' - p = 12x^2 - 6$（一阶线性）。用公式：
+    令 $p = y''$：$p' - p = 12x^2 - 6$（一阶线性）。用公式：
 
     $$p = e^{x}\!\left[\int (12x^2 - 6)\,e^{-x}\,\mathrm{d}x + C_1\right] = -6(2x^2 + 4x + 3) + C_1 e^{x}$$
 
-    再积分：
+    对 $p = y''$ 两次积分得：
 
-    $$y = -4x^3 - 12x^2 - 18x + C_1 e^{x} + C_2$$
+    $$y = -x^4 - 4x^3 - 9x^2 + C_1 e^{x} + C_2 x + C_3$$
 
 ### 2.2 不显含 x 的方程
 
@@ -368,12 +368,12 @@ $$e^{\alpha x}\sin\beta x,\; x e^{\alpha x}\sin\beta x,\; \dots,\; x^{k-1}e^{\al
 
 通解为所有基础解的线性组合。
 
-!!! example "例题 (23-24)"
-    $y^{(4)} + 2y^{(3)} + 3y'' + 2y' + y = 0$
+!!! example "例题 (23-24 春)"
+    $y^{(4)} - 2y^{(3)} + 3y'' - 2y' + y = 0$
 
-    特征方程 $\lambda^4 + 2\lambda^3 + 3\lambda^2 + 2\lambda + 1 = (\lambda^2 + \lambda + 1)^2 = 0$，得 $\lambda = -\tfrac{1}{2} \pm \tfrac{\sqrt{3}}{2}\mathrm{i}$（二重）。
+    特征方程 $\lambda^4 - 2\lambda^3 + 3\lambda^2 - 2\lambda + 1 = (\lambda^2 - \lambda + 1)^2 = 0$，得 $\lambda = \tfrac{1}{2} \pm \tfrac{\sqrt{3}}{2}\mathrm{i}$（二重）。
 
-    $$y = e^{-x/2}\!\left[(c_1 + c_2 x)\cos\tfrac{\sqrt{3}}{2}x + (c_3 + c_4 x)\sin\tfrac{\sqrt{3}}{2}x\right]$$
+    $$y = e^{x/2}\!\left[(c_1 + c_2 x)\cos\tfrac{\sqrt{3}}{2}x + (c_3 + c_4 x)\sin\tfrac{\sqrt{3}}{2}x\right]$$
 
 ### 3.2 二阶常系数非齐次线性方程
 
