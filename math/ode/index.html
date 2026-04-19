@@ -2245,11 +2245,11 @@
 <p><strong>解法</strong>：令 <span class="arithmatex">\(p = y'\)</span>，则 <span class="arithmatex">\(p' = y''\)</span>，化为一阶方程 <span class="arithmatex">\(p' = f(x,p)\)</span>。解出 <span class="arithmatex">\(p(x)\)</span> 后再积一次分得 <span class="arithmatex">\(y\)</span>。</p>
 <div class="admonition example">
 <p class="admonition-title">例题 (20-21)</p>
-<p><span class="arithmatex">\(y'' - y' = 12x^2 - 6\)</span></p>
-<p>令 <span class="arithmatex">\(p = y'\)</span>：<span class="arithmatex">\(p' - p = 12x^2 - 6\)</span>（一阶线性）。用公式：</p>
+<p><span class="arithmatex">\(y''' - y'' = 12x^2 - 6\)</span></p>
+<p>令 <span class="arithmatex">\(p = y''\)</span>：<span class="arithmatex">\(p' - p = 12x^2 - 6\)</span>（一阶线性）。用公式：</p>
 <div class="arithmatex">\[p = e^{x}\!\left[\int (12x^2 - 6)\,e^{-x}\,\mathrm{d}x + C_1\right] = -6(2x^2 + 4x + 3) + C_1 e^{x}\]</div>
-<p>再积分：</p>
-<div class="arithmatex">\[y = -4x^3 - 12x^2 - 18x + C_1 e^{x} + C_2\]</div>
+<p>对 <span class="arithmatex">\(p = y''\)</span> 两次积分得：</p>
+<div class="arithmatex">\[y = -x^4 - 4x^3 - 9x^2 + C_1 e^{x} + C_2 x + C_3\]</div>
 </div>
 <h3 id="22-x">2.2 不显含 x 的方程<a class="headerlink" href="#22-x" title="Permanent link">&para;</a></h3>
 <p><strong>形式</strong> <span class="arithmatex">\(y'' = f(y,\, y')\)</span></p>
@@ -2320,10 +2320,10 @@
 $$e^{\alpha x}\sin\beta x,\; x e^{\alpha x}\sin\beta x,\; \dots,\; x^{k-1}e^{\alpha x}\sin\beta x\]</div>
 <p>通解为所有基础解的线性组合。</p>
 <div class="admonition example">
-<p class="admonition-title">例题 (23-24)</p>
-<p><span class="arithmatex">\(y^{(4)} + 2y^{(3)} + 3y'' + 2y' + y = 0\)</span></p>
-<p>特征方程 <span class="arithmatex">\(\lambda^4 + 2\lambda^3 + 3\lambda^2 + 2\lambda + 1 = (\lambda^2 + \lambda + 1)^2 = 0\)</span>，得 <span class="arithmatex">\(\lambda = -\tfrac{1}{2} \pm \tfrac{\sqrt{3}}{2}\mathrm{i}\)</span>（二重）。</p>
-<div class="arithmatex">\[y = e^{-x/2}\!\left[(c_1 + c_2 x)\cos\tfrac{\sqrt{3}}{2}x + (c_3 + c_4 x)\sin\tfrac{\sqrt{3}}{2}x\right]\]</div>
+<p class="admonition-title">例题 (23-24 春)</p>
+<p><span class="arithmatex">\(y^{(4)} - 2y^{(3)} + 3y'' - 2y' + y = 0\)</span></p>
+<p>特征方程 <span class="arithmatex">\(\lambda^4 - 2\lambda^3 + 3\lambda^2 - 2\lambda + 1 = (\lambda^2 - \lambda + 1)^2 = 0\)</span>，得 <span class="arithmatex">\(\lambda = \tfrac{1}{2} \pm \tfrac{\sqrt{3}}{2}\mathrm{i}\)</span>（二重）。</p>
+<div class="arithmatex">\[y = e^{x/2}\!\left[(c_1 + c_2 x)\cos\tfrac{\sqrt{3}}{2}x + (c_3 + c_4 x)\sin\tfrac{\sqrt{3}}{2}x\right]\]</div>
 </div>
 <h3 id="32">3.2 二阶常系数非齐次线性方程<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
 <p><strong>形式</strong> <span class="arithmatex">\(y'' + py' + qy = f(x)\)</span></p>
