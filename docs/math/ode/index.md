@@ -267,11 +267,11 @@ $$M(x,y)\,\mathrm{d}x + N(x,y)\,\mathrm{d}y = 0$$
     - $\dfrac{x\,\mathrm{d}x + y\,\mathrm{d}y}{x^2 + y^2} = \dfrac{1}{2}\mathrm{d}\!\left(\ln(x^2+y^2)\right)$
 
 !!! example "例题 (23-24)"
-    $(y^2 + 3xy^3)\,\mathrm{d}x + (1 + xy)\,\mathrm{d}y = 0$
+    $(y^2 + 3xy^3)\,\mathrm{d}x + (1 - xy)\,\mathrm{d}y = 0$
 
     $M_y \ne N_x$。算 $\dfrac{N_x - M_y}{M} = -\dfrac{3}{y}$，得积分因子 $\mu(y) = y^{-3}$。方程乘 $\mu$：
 
-    $$\left(\frac{1}{y} + 3x\right)\mathrm{d}x + \left(\frac{1}{y^3} + \frac{x}{y^2}\right)\mathrm{d}y = 0$$
+    $$\left(\frac{1}{y} + 3x\right)\mathrm{d}x + \left(\frac{1}{y^3} - \frac{x}{y^2}\right)\mathrm{d}y = 0$$
 
     凑 $u = \dfrac{x}{y} + \dfrac{3x^2}{2} + \varphi(y)$，由 $\partial_y u = N$ 得 $\varphi(y) = -\dfrac{1}{2y^2}$。通解：
 

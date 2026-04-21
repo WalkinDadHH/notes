@@ -1,5 +1,15 @@
 # Maintenance Log
 
+## 2026-04-21 - ODE §1.6 例题 (23-24) 双符号勘误
+
+Scope: `docs/math/ode/index.md`
+
+Fixed:
+- 原方程 `(1 + xy)dy` 改为 `(1 − xy)dy`（N 符号错误导致后续推导全部失效）
+- 乘以积分因子 μ=y⁻³ 后中间方程 `+ x/y²` 改为 `− x/y²`
+
+验证：N=1−xy → Nx=−y → (Nx−My)/M=(−3y−9xy²)/(y²(1+3xy))=−3/y ✓；μN=(1−xy)/y³=1/y³−x/y²；φ'(y)=1/y³ → φ=−1/(2y²)；通解不变。
+
 ## 2026-04-19 - ODE 讲义例题步骤细化
 
 Scope: `docs/math/ode/index.md`
