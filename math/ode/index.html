@@ -789,7 +789,18 @@
   <a href="#35" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.5 二阶变系数非齐次线性方程（常数变易法）
+        3.5 二阶变系数齐次线性方程（某些特殊系数）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 二阶变系数非齐次线性方程（常数变易法）
       
     </span>
   </a>
@@ -1881,7 +1892,18 @@
   <a href="#35" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.5 二阶变系数非齐次线性方程（常数变易法）
+        3.5 二阶变系数齐次线性方程（某些特殊系数）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 二阶变系数非齐次线性方程（常数变易法）
       
     </span>
   </a>
@@ -2372,8 +2394,8 @@
 </tr>
 <tr>
 <td><strong>非常系数</strong></td>
-<td>Euler（欧拉）方程 <span class="arithmatex">\(x=e^t\)</span> 化常系数（§3.3）；已知一解 <span class="arithmatex">\(y_1\)</span> 用 Liouville（刘维尔）公式 / 降阶法（§3.4）</td>
-<td>常数变易法（§3.5）</td>
+<td>Euler（欧拉）方程 <span class="arithmatex">\(x=e^t\)</span> 化常系数（§3.3）；已知一解 <span class="arithmatex">\(y_1\)</span> 用 Liouville（刘维尔）公式 / 降阶法（§3.4）；某些特殊系数可化为常系数（§3.5）</td>
+<td>常数变易法（§3.6）</td>
 </tr>
 </tbody>
 </table>
@@ -2512,9 +2534,23 @@ $$e^{\alpha x}\sin\beta x,\; x e^{\alpha x}\sin\beta x,\; \dots,\; x^{k-1}e^{\al
 </div>
 <h3 id="34">3.4 二阶变系数齐次线性方程（已知一解）<a class="headerlink" href="#34" title="Permanent link">&para;</a></h3>
 <p><strong>形式</strong> <span class="arithmatex">\(y'' + p(x)\,y' + q(x)\,y = 0\)</span></p>
-<p><strong>解法（Liouville（刘维尔）公式）</strong>：若已知一个非零解 <span class="arithmatex">\(y_1\)</span>，则</p>
-<div class="arithmatex">\[y = y_1\!\left[c_1 + c_2 \int \frac{1}{y_1^{2}}\,e^{-\int p(x)\,\mathrm{d}x}\,\mathrm{d}x\right]\]</div>
-<p>若 <span class="arithmatex">\(2p'(x) + p^2(x) - 4q(x) = a\)</span>（常数），作代换 <span class="arithmatex">\(y = u\,e^{-\int p/2\,\mathrm{d}x}\)</span>，方程化为 <span class="arithmatex">\(u'' - \tfrac{a}{4}u = 0\)</span>。</p>
+<p><strong>解法（设 <span class="arithmatex">\(y=u y_1\)</span> 降阶）</strong>：若已知一个非零解 <span class="arithmatex">\(y_1\)</span>，设</p>
+<div class="arithmatex">\[y = u y_1.\]</div>
+<p>则</p>
+<div class="arithmatex">\[
+\begin{aligned}
+y' &amp;= u' y_1 + u y_1',\\
+y'' &amp;= u'' y_1 + 2u' y_1' + u y_1''.
+\end{aligned}
+\]</div>
+<p>代回原方程，并利用 <span class="arithmatex">\(y_1'' + p y_1' + q y_1 = 0\)</span>，得</p>
+<div class="arithmatex">\[y_1 u'' + (2y_1' + p y_1)u' = 0.\]</div>
+<p>令 <span class="arithmatex">\(z = u'\)</span>，则</p>
+<div class="arithmatex">\[y_1 z' + (2y_1' + p y_1)z = 0.\]</div>
+<p>解得</p>
+<div class="arithmatex">\[z = \frac{C}{y_1^2} e^{-\int p(x)\,\mathrm{d}x}.\]</div>
+<p>再积分即得 Liouville（刘维尔）公式</p>
+<div class="arithmatex">\[y = y_1\!\left[c_1 + c_2 \int \frac{1}{y_1^{2}}\,e^{-\int p(x)\,\mathrm{d}x}\,\mathrm{d}x\right].\]</div>
 <div class="admonition example">
 <p class="admonition-title">例题 (24-25夏)</p>
 <p><span class="arithmatex">\((x^2 - 1)\,y'' - 2xy' + 2y = 0\)</span></p>
@@ -2534,30 +2570,201 @@ $$e^{\alpha x}\sin\beta x,\; x e^{\alpha x}\sin\beta x,\; \dots,\; x^{k-1}e^{\al
 <p>由 Liouville 公式（<span class="arithmatex">\(p(x) = \dfrac{2x}{1-x^2}\)</span>）得 <span class="arithmatex">\(z_2 = x^2 + 1\)</span>（取线性无关部分 <span class="arithmatex">\(1+x^2\)</span>）。</p>
 <div class="arithmatex">\[z = C_1 x + C_2(1+x^2) \;\Rightarrow\; y = C_1 x^2 + C_2(x^3 + 3x) + C_3\]</div>
 </div>
-<h3 id="35">3.5 二阶变系数非齐次线性方程（常数变易法）<a class="headerlink" href="#35" title="Permanent link">&para;</a></h3>
-<p><strong>形式</strong> <span class="arithmatex">\(y'' + p(x)\,y' + q(x)\,y = f(x)\)</span>，已知齐次基础解系 <span class="arithmatex">\(y_1, y_2\)</span>。</p>
-<p><strong>通解公式</strong>：记 Wronskian（朗斯基）行列式</p>
-<div class="arithmatex">\[W(x) = \begin{vmatrix} y_1(x) &amp; y_2(x) \\ y_1'(x) &amp; y_2'(x) \end{vmatrix}\]</div>
+<h3 id="35">3.5 二阶变系数齐次线性方程（某些特殊系数）<a class="headerlink" href="#35" title="Permanent link">&para;</a></h3>
+<p><strong>形式</strong> <span class="arithmatex">\(y'' + p(x)\,y' + q(x)\,y = 0\)</span></p>
+<p><strong>解法（设 <span class="arithmatex">\(y=uv\)</span> 化为常系数）</strong>：设</p>
+<div class="arithmatex">\[y = uv,\]</div>
 <p>则</p>
-<div class="arithmatex">\[y(x) = y_1(x)\!\left[c_1 - \int \frac{y_2(x) f(x)}{W(x)}\,\mathrm{d}x\right] + y_2(x)\!\left[c_2 + \int \frac{y_1(x) f(x)}{W(x)}\,\mathrm{d}x\right]\]</div>
+<div class="arithmatex">\[
+\begin{aligned}
+y' &amp;= u'v + uv',\\
+y'' &amp;= u''v + 2u'v' + uv''.
+\end{aligned}
+\]</div>
+<p>代回原方程，得</p>
+<div class="arithmatex">\[v u'' + (2v' + pv)u' + (v'' + pv' + qv)u = 0.\]</div>
+<p>若取 <span class="arithmatex">\(v\)</span> 满足</p>
+<div class="arithmatex">\[2v' + pv = 0,\]</div>
+<p>则</p>
+<div class="arithmatex">\[v = e^{-\int p/2\,\mathrm{d}x}.\]</div>
+<p>进一步计算</p>
+<div class="arithmatex">\[
+\begin{aligned}
+v' &amp;= -\frac{p}{2}v,\\
+v'' &amp;= \left(-\frac{p'}{2} + \frac{p^2}{4}\right)v,
+\end{aligned}
+\]</div>
+<p>故</p>
+<div class="arithmatex">\[v'' + pv' + qv = -\frac{1}{4}\bigl(2p' + p^2 - 4q\bigr)v.\]</div>
+<p>因此当</p>
+<div class="arithmatex">\[2p'(x) + p^2(x) - 4q(x) = a\]</div>
+<p>为常数时，原方程化为</p>
+<div class="arithmatex">\[u'' - \frac{a}{4}u = 0.\]</div>
+<div class="admonition tip">
+<p class="admonition-title">识别技巧</p>
+<p>先把方程化为标准形，再算 <span class="arithmatex">\(2p'(x)+p^2(x)-4q(x)\)</span>。若结果是常数，就直接用本法。</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例题 (对应课堂板书)</p>
+<p><span class="arithmatex">\(4y'' + 4xy' + (x^2 + 1)y = 0\)</span></p>
+<p>化标准形：</p>
+<div class="arithmatex">\[y'' + x y' + \frac{x^2+1}{4}y = 0.\]</div>
+<p>这里 <span class="arithmatex">\(p(x)=x,\; q(x)=\dfrac{x^2+1}{4}\)</span>。验证</p>
+<div class="arithmatex">\[2p'(x) + p^2(x) - 4q(x) = 2 + x^2 - (x^2+1) = 1.\]</div>
+<p>故 <span class="arithmatex">\(a=1\)</span>。取</p>
+<div class="arithmatex">\[v = e^{-\int p/2\,\mathrm{d}x} = e^{-x^2/4},\qquad y = uv.\]</div>
+<p>原方程化为</p>
+<div class="arithmatex">\[u'' - \frac{1}{4}u = 0.\]</div>
+<p>特征方程 <span class="arithmatex">\(\lambda^2 - \dfrac{1}{4} = 0\)</span>，得 <span class="arithmatex">\(\lambda = \pm \dfrac{1}{2}\)</span>，故</p>
+<div class="arithmatex">\[u = c_1 e^{x/2} + c_2 e^{-x/2}.\]</div>
+<p>回代得</p>
+<div class="arithmatex">\[y = e^{-x^2/4}\!\left(c_1 e^{x/2} + c_2 e^{-x/2}\right).\]</div>
+</div>
+<h3 id="36">3.6 二阶变系数非齐次线性方程（常数变易法）<a class="headerlink" href="#36" title="Permanent link">&para;</a></h3>
+<p><strong>形式</strong> <span class="arithmatex">\(y'' + p(x)\,y' + q(x)\,y = f(x)\)</span>，已知齐次基础解系 <span class="arithmatex">\(y_1, y_2\)</span>。</p>
+<p><strong>解法（常数变易法）</strong>：设</p>
+<div class="arithmatex">\[y = u_1(x)y_1(x) + u_2(x)y_2(x).\]</div>
+<p>为减少求导后的项，附加条件</p>
+<div class="arithmatex">\[u_1' y_1 + u_2' y_2 = 0.\]</div>
+<p>则</p>
+<div class="arithmatex">\[
+\begin{aligned}
+y' &amp;= u_1 y_1' + u_2 y_2',\\
+y'' &amp;= u_1' y_1' + u_2' y_2' + u_1 y_1'' + u_2 y_2''.
+\end{aligned}
+\]</div>
+<p>代回 <span class="arithmatex">\(y'' + p(x)y' + q(x)y = f(x)\)</span>，并利用 <span class="arithmatex">\(y_1, y_2\)</span> 满足齐次方程，得</p>
+<div class="arithmatex">\[u_1' y_1' + u_2' y_2' = f(x).\]</div>
+<p>故 <span class="arithmatex">\(u_1',u_2'\)</span> 满足方程组</p>
+<div class="arithmatex">\[
+\begin{cases}
+u_1' y_1 + u_2' y_2 = 0,\\
+u_1' y_1' + u_2' y_2' = f(x).
+\end{cases}
+\]</div>
+<p>直接解这组方程即可；若记 Wronskian（朗斯基）行列式</p>
+<div class="arithmatex">\[W(x) = \begin{vmatrix} y_1(x) &amp; y_2(x) \\ y_1'(x) &amp; y_2'(x) \end{vmatrix}\]</div>
+<p>则由 Cramer（克拉默）法则</p>
+<div class="arithmatex">\[u_1' = -\frac{y_2(x)f(x)}{W(x)},\qquad u_2' = \frac{y_1(x)f(x)}{W(x)}.\]</div>
+<p>积分后得到通解公式</p>
+<div class="arithmatex">\[y(x) = y_1(x)\!\left[c_1 - \int \frac{y_2(x) f(x)}{W(x)}\,\mathrm{d}x\right] + y_2(x)\!\left[c_2 + \int \frac{y_1(x) f(x)}{W(x)}\,\mathrm{d}x\right].\]</div>
 <div class="admonition example">
 <p class="admonition-title">例题 1 (23-24)</p>
 <p><span class="arithmatex">\((x-2)\,y'' + 2y' - (x-2)\,y = x^2 - 2x - 2\)</span></p>
 <p>除以 <span class="arithmatex">\((x-2)\)</span> 化标准形：</p>
 <div class="arithmatex">\[y'' + \frac{2}{x-2}\,y' - y = \frac{x^2 - 2x - 2}{x-2}\]</div>
+<p>先看对应齐次方程</p>
+<div class="arithmatex">\[y'' + \frac{2}{x-2}\,y' - y = 0.\]</div>
 <p>这里 <span class="arithmatex">\(p(x) = \dfrac{2}{x-2}\)</span>，<span class="arithmatex">\(q(x) = -1\)</span>。验证</p>
 <div class="arithmatex">\[2p'(x) + p^2(x) - 4q(x) = -\frac{4}{(x-2)^2} + \frac{4}{(x-2)^2} + 4 = 4\]</div>
-<p>为常数 <span class="arithmatex">\(a = 4\)</span>。作代换 <span class="arithmatex">\(y = u\,e^{-\int p/2\,\mathrm{d}x} = \dfrac{u}{x-2}\)</span>，方程化为</p>
-<div class="arithmatex">\[u'' - u = 0\]</div>
-<p>得 <span class="arithmatex">\(u_1 = e^{x},\; u_2 = e^{-x}\)</span>，于是齐次基础解系为</p>
+<p>为常数 <span class="arithmatex">\(a = 4\)</span>，可先按 3.5 的特殊系数法求齐次解。取</p>
+<div class="arithmatex">\[v = e^{-\int p/2\,\mathrm{d}x} = e^{-\int \frac{1}{x-2}\,\mathrm{d}x} = \frac{1}{x-2},\qquad y = uv.\]</div>
+<p>原方程化为</p>
+<div class="arithmatex">\[u'' - u = 0.\]</div>
+<p>得</p>
+<div class="arithmatex">\[u = c_1 e^x + c_2 e^{-x},\]</div>
+<p>因而齐次基础解系可取</p>
 <div class="arithmatex">\[y_1 = \frac{e^{x}}{x-2},\quad y_2 = \frac{e^{-x}}{x-2}\]</div>
-<p>Wronskian 行列式 <span class="arithmatex">\(W = -\dfrac{2}{(x-2)^2}\)</span>。由常数变易公式求特解，化简后</p>
-<div class="arithmatex">\[y = c_1\frac{e^{x}}{x-2} + c_2\frac{e^{-x}}{x-2} - \frac{x^2 - 2x - 2}{x-2}\]</div>
+<p>设 <span class="arithmatex">\(f(x) = \dfrac{x^2 - 2x - 2}{x-2}\)</span>。由常数变易法，令</p>
+<div class="arithmatex">\[
+y = u_1\frac{e^x}{x-2} + u_2\frac{e^{-x}}{x-2}.
+\]</div>
+<p>则</p>
+<div class="arithmatex">\[
+\begin{cases}
+u_1'\dfrac{e^x}{x-2} + u_2'\dfrac{e^{-x}}{x-2} = 0,\\[8pt]
+u_1'\dfrac{e^x(x-3)}{(x-2)^2} - u_2'\dfrac{e^{-x}(x-1)}{(x-2)^2} = \dfrac{x^2 - 2x - 2}{x-2}.
+\end{cases}
+\]</div>
+<p>第一式乘 <span class="arithmatex">\((x-2)\)</span>，第二式乘 <span class="arithmatex">\((x-2)^2\)</span>，得</p>
+<div class="arithmatex">\[
+\begin{cases}
+u_1'e^x + u_2'e^{-x} = 0,\\
+u_1'e^x(x-3) - u_2'e^{-x}(x-1) = (x^2 - 2x - 2)(x-2).
+\end{cases}
+\]</div>
+<p>由第一式 <span class="arithmatex">\(u_2'e^{-x} = -u_1'e^x\)</span>，代入第二式：</p>
+<div class="arithmatex">\[2(x-2)u_1'e^x = (x^2 - 2x - 2)(x-2).\]</div>
+<p>故</p>
+<div class="arithmatex">\[
+u_1' = \frac{1}{2}e^{-x}(x^2 - 2x - 2),\qquad
+u_2' = -\frac{1}{2}e^x(x^2 - 2x - 2).
+\]</div>
+<p>积分可取</p>
+<div class="arithmatex">\[
+u_1 = -\frac{1}{2}(x^2 - 2)e^{-x},\qquad
+u_2 = -\frac{1}{2}(x^2 - 4x + 2)e^x.
+\]</div>
+<p>因而一组特解为</p>
+<div class="arithmatex">\[y^* = u_1 y_1 + u_2 y_2 = -x.\]</div>
+<p>通解为</p>
+<div class="arithmatex">\[y = c_1\frac{e^{x}}{x-2} + c_2\frac{e^{-x}}{x-2} - x\]</div>
 </div>
 <div class="admonition example">
-<p class="admonition-title">例题 2 (17-18)</p>
+<p class="admonition-title">例题 2 (对应课堂板书)</p>
+<p><span class="arithmatex">\(y'' - 2y' + y = \dfrac{e^x}{x}\)</span></p>
+<p>齐次方程特征方程 <span class="arithmatex">\((r-1)^2=0\)</span>，故</p>
+<div class="arithmatex">\[y_1 = e^x,\qquad y_2 = xe^x.\]</div>
+<p>设</p>
+<div class="arithmatex">\[y = u_1 e^x + u_2 xe^x.\]</div>
+<p>由常数变易法：</p>
+<div class="arithmatex">\[
+\begin{cases}
+u_1' e^x + u_2' xe^x = 0,\\
+u_1' e^x + u_2'(e^x + xe^x) = \dfrac{e^x}{x}.
+\end{cases}
+\]</div>
+<p>两式同除以 <span class="arithmatex">\(e^x\)</span>：</p>
+<div class="arithmatex">\[
+\begin{cases}
+u_1' + xu_2' = 0,\\
+u_1' + (1+x)u_2' = \dfrac{1}{x}.
+\end{cases}
+\]</div>
+<p>相减得 <span class="arithmatex">\(u_2' = \dfrac{1}{x}\)</span>，故 <span class="arithmatex">\(u_2 = \ln|x|\)</span>；再由第一式得 <span class="arithmatex">\(u_1'=-1\)</span>，故 <span class="arithmatex">\(u_1=-x\)</span>。</p>
+<p>因而一组特解为</p>
+<div class="arithmatex">\[y^* = -xe^x + x\ln|x|\,e^x.\]</div>
+<p>吸收齐次项后，通解可写为</p>
+<div class="arithmatex">\[y = (c_1 + c_2 x + x\ln|x|)e^x.\]</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例题 3 (17-18)</p>
 <p>已知 <span class="arithmatex">\(y_1 = \dfrac{e^{x}}{x}\)</span> 是 <span class="arithmatex">\(y'' + \dfrac{2}{x} y' - y = 0\)</span> 的解，求 <span class="arithmatex">\(y'' + \dfrac{2}{x} y' - y = x\)</span> 的通解。</p>
-<p>由 Liouville 公式得另一基础解 <span class="arithmatex">\(y_2 = \dfrac{e^{-x}}{x}\)</span>。<span class="arithmatex">\(W = -\dfrac{2}{x^2}\)</span>。代入常数变易公式化简后：</p>
+<p>由 3.4 的 Liouville 公式得另一基础解</p>
+<div class="arithmatex">\[y_2 = \frac{e^{-x}}{x}.\]</div>
+<p>由常数变易法，令</p>
+<div class="arithmatex">\[
+y = u_1\frac{e^x}{x} + u_2\frac{e^{-x}}{x}.
+\]</div>
+<p>则</p>
+<div class="arithmatex">\[
+\begin{cases}
+u_1'\dfrac{e^x}{x} + u_2'\dfrac{e^{-x}}{x} = 0,\\[8pt]
+u_1'\dfrac{e^x(x-1)}{x^2} - u_2'\dfrac{e^{-x}(x+1)}{x^2} = x.
+\end{cases}
+\]</div>
+<p>第一式乘 <span class="arithmatex">\(x\)</span>，第二式乘 <span class="arithmatex">\(x^2\)</span>，得</p>
+<div class="arithmatex">\[
+\begin{cases}
+u_1'e^x + u_2'e^{-x} = 0,\\
+u_1'e^x(x-1) - u_2'e^{-x}(x+1) = x^3.
+\end{cases}
+\]</div>
+<p>由第一式 <span class="arithmatex">\(u_2'e^{-x} = -u_1'e^x\)</span>，代入第二式：</p>
+<div class="arithmatex">\[2x\,u_1'e^x = x^3.\]</div>
+<p>故</p>
+<div class="arithmatex">\[
+u_1' = \frac{1}{2}x^2 e^{-x},\qquad
+u_2' = -\frac{1}{2}x^2 e^x.
+\]</div>
+<p>积分可取</p>
+<div class="arithmatex">\[
+u_1 = -\frac{1}{2}(x^2+2x+2)e^{-x},\qquad
+u_2 = -\frac{1}{2}(x^2-2x+2)e^x.
+\]</div>
+<p>因而一组特解为</p>
+<div class="arithmatex">\[y^* = u_1 y_1 + u_2 y_2 = -\frac{x^2+2}{x}.\]</div>
+<p>通解为</p>
 <div class="arithmatex">\[y = c_1\frac{e^{x}}{x} + c_2\frac{e^{-x}}{x} - \frac{x^2 + 2}{x}\]</div>
 </div>
 <hr />
