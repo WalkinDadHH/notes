@@ -483,7 +483,7 @@ $$y'' = \frac{\mathrm{d}p}{\mathrm{d}x} = p\,\frac{\mathrm{d}p}{\mathrm{d}y}$$
 |  | 齐次 $f(x)=0$ | 非齐次 $f(x)\ne 0$ |
 |--|----------------|---------------------|
 | **常系数** | 特征方程 $D(\lambda)=0$：单根 $e^{\lambda x}$、复根 $e^{\alpha x}\cos/\sin\beta x$、$k$ 重根 $\times\,x^{0},\dots,x^{k-1}$（§3.1） | 待定系数法：设 $y^*=x^k R_m(x)e^{ax}$，叠加原理（§3.2） |
-| **非常系数** | Euler（欧拉）方程 $x=e^t$ 化常系数（§3.3）；已知一解 $y_1$ 用 Liouville（刘维尔）公式 / 降阶法（§3.4） | 常数变易法（§3.5） |
+| **非常系数** | Euler（欧拉）方程 $x=e^t$ 化常系数（§3.3）；已知一解 $y_1$ 用 Liouville（刘维尔）公式 / 降阶法（§3.4）；某些特殊系数可化为常系数（§3.5） | 常数变易法（§3.6） |
 
 ---
 
@@ -632,11 +632,34 @@ $$x y' = \dot{y},\qquad x^2 y'' = \ddot{y} - \dot{y}$$
 
 **形式** $y'' + p(x)\,y' + q(x)\,y = 0$
 
-**解法（Liouville（刘维尔）公式）**：若已知一个非零解 $y_1$，则
+**解法（设 $y=u y_1$ 降阶）**：若已知一个非零解 $y_1$，设
 
-$$y = y_1\!\left[c_1 + c_2 \int \frac{1}{y_1^{2}}\,e^{-\int p(x)\,\mathrm{d}x}\,\mathrm{d}x\right]$$
+$$y = u y_1.$$
 
-若 $2p'(x) + p^2(x) - 4q(x) = a$（常数），作代换 $y = u\,e^{-\int p/2\,\mathrm{d}x}$，方程化为 $u'' - \tfrac{a}{4}u = 0$。
+则
+
+$$
+\begin{aligned}
+y' &= u' y_1 + u y_1',\\
+y'' &= u'' y_1 + 2u' y_1' + u y_1''.
+\end{aligned}
+$$
+
+代回原方程，并利用 $y_1'' + p y_1' + q y_1 = 0$，得
+
+$$y_1 u'' + (2y_1' + p y_1)u' = 0.$$
+
+令 $z = u'$，则
+
+$$y_1 z' + (2y_1' + p y_1)z = 0.$$
+
+解得
+
+$$z = \frac{C}{y_1^2} e^{-\int p(x)\,\mathrm{d}x}.$$
+
+再积分即得 Liouville（刘维尔）公式
+
+$$y = y_1\!\left[c_1 + c_2 \int \frac{1}{y_1^{2}}\,e^{-\int p(x)\,\mathrm{d}x}\,\mathrm{d}x\right].$$
 
 !!! example "例题 (24-25夏)"
     $(x^2 - 1)\,y'' - 2xy' + 2y = 0$
@@ -661,17 +684,131 @@ $$y = y_1\!\left[c_1 + c_2 \int \frac{1}{y_1^{2}}\,e^{-\int p(x)\,\mathrm{d}x}\,
 
     $$z = C_1 x + C_2(1+x^2) \;\Rightarrow\; y = C_1 x^2 + C_2(x^3 + 3x) + C_3$$
 
-### 3.5 二阶变系数非齐次线性方程（常数变易法）
+### 3.5 二阶变系数齐次线性方程（某些特殊系数）
 
-**形式** $y'' + p(x)\,y' + q(x)\,y = f(x)$，已知齐次基础解系 $y_1, y_2$。
+**形式** $y'' + p(x)\,y' + q(x)\,y = 0$
 
-**通解公式**：记 Wronskian（朗斯基）行列式
+**解法（设 $y=uv$ 化为常系数）**：设
 
-$$W(x) = \begin{vmatrix} y_1(x) & y_2(x) \\ y_1'(x) & y_2'(x) \end{vmatrix}$$
+$$y = uv,$$
 
 则
 
-$$y(x) = y_1(x)\!\left[c_1 - \int \frac{y_2(x) f(x)}{W(x)}\,\mathrm{d}x\right] + y_2(x)\!\left[c_2 + \int \frac{y_1(x) f(x)}{W(x)}\,\mathrm{d}x\right]$$
+$$
+\begin{aligned}
+y' &= u'v + uv',\\
+y'' &= u''v + 2u'v' + uv''.
+\end{aligned}
+$$
+
+代回原方程，得
+
+$$v u'' + (2v' + pv)u' + (v'' + pv' + qv)u = 0.$$
+
+若取 $v$ 满足
+
+$$2v' + pv = 0,$$
+
+则
+
+$$v = e^{-\int p/2\,\mathrm{d}x}.$$
+
+进一步计算
+
+$$
+\begin{aligned}
+v' &= -\frac{p}{2}v,\\
+v'' &= \left(-\frac{p'}{2} + \frac{p^2}{4}\right)v,
+\end{aligned}
+$$
+
+故
+
+$$v'' + pv' + qv = -\frac{1}{4}\bigl(2p' + p^2 - 4q\bigr)v.$$
+
+因此当
+
+$$2p'(x) + p^2(x) - 4q(x) = a$$
+
+为常数时，原方程化为
+
+$$u'' - \frac{a}{4}u = 0.$$
+
+!!! tip "识别技巧"
+    先把方程化为标准形，再算 $2p'(x)+p^2(x)-4q(x)$。若结果是常数，就直接用本法。
+
+!!! example "例题 (对应课堂板书)"
+    $4y'' + 4xy' + (x^2 + 1)y = 0$
+
+    化标准形：
+
+    $$y'' + x y' + \frac{x^2+1}{4}y = 0.$$
+
+    这里 $p(x)=x,\; q(x)=\dfrac{x^2+1}{4}$。验证
+
+    $$2p'(x) + p^2(x) - 4q(x) = 2 + x^2 - (x^2+1) = 1.$$
+
+    故 $a=1$。取
+
+    $$v = e^{-\int p/2\,\mathrm{d}x} = e^{-x^2/4},\qquad y = uv.$$
+
+    原方程化为
+
+    $$u'' - \frac{1}{4}u = 0.$$
+
+    特征方程 $\lambda^2 - \dfrac{1}{4} = 0$，得 $\lambda = \pm \dfrac{1}{2}$，故
+
+    $$u = c_1 e^{x/2} + c_2 e^{-x/2}.$$
+
+    回代得
+
+    $$y = e^{-x^2/4}\!\left(c_1 e^{x/2} + c_2 e^{-x/2}\right).$$
+
+### 3.6 二阶变系数非齐次线性方程（常数变易法）
+
+**形式** $y'' + p(x)\,y' + q(x)\,y = f(x)$，已知齐次基础解系 $y_1, y_2$。
+
+**解法（常数变易法）**：设
+
+$$y = u_1(x)y_1(x) + u_2(x)y_2(x).$$
+
+为减少求导后的项，附加条件
+
+$$u_1' y_1 + u_2' y_2 = 0.$$
+
+则
+
+$$
+\begin{aligned}
+y' &= u_1 y_1' + u_2 y_2',\\
+y'' &= u_1' y_1' + u_2' y_2' + u_1 y_1'' + u_2 y_2''.
+\end{aligned}
+$$
+
+代回 $y'' + p(x)y' + q(x)y = f(x)$，并利用 $y_1, y_2$ 满足齐次方程，得
+
+$$u_1' y_1' + u_2' y_2' = f(x).$$
+
+故 $u_1',u_2'$ 满足方程组
+
+$$
+\begin{cases}
+u_1' y_1 + u_2' y_2 = 0,\\
+u_1' y_1' + u_2' y_2' = f(x).
+\end{cases}
+$$
+
+直接解这组方程即可；若记 Wronskian（朗斯基）行列式
+
+$$W(x) = \begin{vmatrix} y_1(x) & y_2(x) \\ y_1'(x) & y_2'(x) \end{vmatrix}$$
+
+则由 Cramer（克拉默）法则
+
+$$u_1' = -\frac{y_2(x)f(x)}{W(x)},\qquad u_2' = \frac{y_1(x)f(x)}{W(x)}.$$
+
+积分后得到通解公式
+
+$$y(x) = y_1(x)\!\left[c_1 - \int \frac{y_2(x) f(x)}{W(x)}\,\mathrm{d}x\right] + y_2(x)\!\left[c_2 + \int \frac{y_1(x) f(x)}{W(x)}\,\mathrm{d}x\right].$$
 
 !!! example "例题 1 (23-24)"
     $(x-2)\,y'' + 2y' - (x-2)\,y = x^2 - 2x - 2$
@@ -680,26 +817,173 @@ $$y(x) = y_1(x)\!\left[c_1 - \int \frac{y_2(x) f(x)}{W(x)}\,\mathrm{d}x\right] +
 
     $$y'' + \frac{2}{x-2}\,y' - y = \frac{x^2 - 2x - 2}{x-2}$$
 
+    先看对应齐次方程
+
+    $$y'' + \frac{2}{x-2}\,y' - y = 0.$$
+
     这里 $p(x) = \dfrac{2}{x-2}$，$q(x) = -1$。验证
 
     $$2p'(x) + p^2(x) - 4q(x) = -\frac{4}{(x-2)^2} + \frac{4}{(x-2)^2} + 4 = 4$$
 
-    为常数 $a = 4$。作代换 $y = u\,e^{-\int p/2\,\mathrm{d}x} = \dfrac{u}{x-2}$，方程化为
+    为常数 $a = 4$，可先按 3.5 的特殊系数法求齐次解。取
 
-    $$u'' - u = 0$$
+    $$v = e^{-\int p/2\,\mathrm{d}x} = e^{-\int \frac{1}{x-2}\,\mathrm{d}x} = \frac{1}{x-2},\qquad y = uv.$$
 
-    得 $u_1 = e^{x},\; u_2 = e^{-x}$，于是齐次基础解系为
+    原方程化为
+
+    $$u'' - u = 0.$$
+
+    得
+
+    $$u = c_1 e^x + c_2 e^{-x},$$
+
+    因而齐次基础解系可取
 
     $$y_1 = \frac{e^{x}}{x-2},\quad y_2 = \frac{e^{-x}}{x-2}$$
 
-    Wronskian 行列式 $W = -\dfrac{2}{(x-2)^2}$。由常数变易公式求特解，化简后
+    设 $f(x) = \dfrac{x^2 - 2x - 2}{x-2}$。由常数变易法，令
 
-    $$y = c_1\frac{e^{x}}{x-2} + c_2\frac{e^{-x}}{x-2} - \frac{x^2 - 2x - 2}{x-2}$$
+    $$
+    y = u_1\frac{e^x}{x-2} + u_2\frac{e^{-x}}{x-2}.
+    $$
 
-!!! example "例题 2 (17-18)"
+    则
+
+    $$
+    \begin{cases}
+    u_1'\dfrac{e^x}{x-2} + u_2'\dfrac{e^{-x}}{x-2} = 0,\\[8pt]
+    u_1'\dfrac{e^x(x-3)}{(x-2)^2} - u_2'\dfrac{e^{-x}(x-1)}{(x-2)^2} = \dfrac{x^2 - 2x - 2}{x-2}.
+    \end{cases}
+    $$
+
+    第一式乘 $(x-2)$，第二式乘 $(x-2)^2$，得
+
+    $$
+    \begin{cases}
+    u_1'e^x + u_2'e^{-x} = 0,\\
+    u_1'e^x(x-3) - u_2'e^{-x}(x-1) = (x^2 - 2x - 2)(x-2).
+    \end{cases}
+    $$
+
+    由第一式 $u_2'e^{-x} = -u_1'e^x$，代入第二式：
+
+    $$2(x-2)u_1'e^x = (x^2 - 2x - 2)(x-2).$$
+
+    故
+
+    $$
+    u_1' = \frac{1}{2}e^{-x}(x^2 - 2x - 2),\qquad
+    u_2' = -\frac{1}{2}e^x(x^2 - 2x - 2).
+    $$
+
+    积分可取
+
+    $$
+    u_1 = -\frac{1}{2}(x^2 - 2)e^{-x},\qquad
+    u_2 = -\frac{1}{2}(x^2 - 4x + 2)e^x.
+    $$
+
+    因而一组特解为
+
+    $$y^* = u_1 y_1 + u_2 y_2 = -x.$$
+
+    通解为
+
+    $$y = c_1\frac{e^{x}}{x-2} + c_2\frac{e^{-x}}{x-2} - x$$
+
+!!! example "例题 2 (对应课堂板书)"
+    $y'' - 2y' + y = \dfrac{e^x}{x}$
+
+    齐次方程特征方程 $(r-1)^2=0$，故
+
+    $$y_1 = e^x,\qquad y_2 = xe^x.$$
+
+    设
+
+    $$y = u_1 e^x + u_2 xe^x.$$
+
+    由常数变易法：
+
+    $$
+    \begin{cases}
+    u_1' e^x + u_2' xe^x = 0,\\
+    u_1' e^x + u_2'(e^x + xe^x) = \dfrac{e^x}{x}.
+    \end{cases}
+    $$
+
+    两式同除以 $e^x$：
+
+    $$
+    \begin{cases}
+    u_1' + xu_2' = 0,\\
+    u_1' + (1+x)u_2' = \dfrac{1}{x}.
+    \end{cases}
+    $$
+
+    相减得 $u_2' = \dfrac{1}{x}$，故 $u_2 = \ln|x|$；再由第一式得 $u_1'=-1$，故 $u_1=-x$。
+
+    因而一组特解为
+
+    $$y^* = -xe^x + x\ln|x|\,e^x.$$
+
+    吸收齐次项后，通解可写为
+
+    $$y = (c_1 + c_2 x + x\ln|x|)e^x.$$
+
+!!! example "例题 3 (17-18)"
     已知 $y_1 = \dfrac{e^{x}}{x}$ 是 $y'' + \dfrac{2}{x} y' - y = 0$ 的解，求 $y'' + \dfrac{2}{x} y' - y = x$ 的通解。
 
-    由 Liouville 公式得另一基础解 $y_2 = \dfrac{e^{-x}}{x}$。$W = -\dfrac{2}{x^2}$。代入常数变易公式化简后：
+    由 3.4 的 Liouville 公式得另一基础解
+
+    $$y_2 = \frac{e^{-x}}{x}.$$
+
+    由常数变易法，令
+
+    $$
+    y = u_1\frac{e^x}{x} + u_2\frac{e^{-x}}{x}.
+    $$
+
+    则
+
+    $$
+    \begin{cases}
+    u_1'\dfrac{e^x}{x} + u_2'\dfrac{e^{-x}}{x} = 0,\\[8pt]
+    u_1'\dfrac{e^x(x-1)}{x^2} - u_2'\dfrac{e^{-x}(x+1)}{x^2} = x.
+    \end{cases}
+    $$
+
+    第一式乘 $x$，第二式乘 $x^2$，得
+
+    $$
+    \begin{cases}
+    u_1'e^x + u_2'e^{-x} = 0,\\
+    u_1'e^x(x-1) - u_2'e^{-x}(x+1) = x^3.
+    \end{cases}
+    $$
+
+    由第一式 $u_2'e^{-x} = -u_1'e^x$，代入第二式：
+
+    $$2x\,u_1'e^x = x^3.$$
+
+    故
+
+    $$
+    u_1' = \frac{1}{2}x^2 e^{-x},\qquad
+    u_2' = -\frac{1}{2}x^2 e^x.
+    $$
+
+    积分可取
+
+    $$
+    u_1 = -\frac{1}{2}(x^2+2x+2)e^{-x},\qquad
+    u_2 = -\frac{1}{2}(x^2-2x+2)e^x.
+    $$
+
+    因而一组特解为
+
+    $$y^* = u_1 y_1 + u_2 y_2 = -\frac{x^2+2}{x}.$$
+
+    通解为
 
     $$y = c_1\frac{e^{x}}{x} + c_2\frac{e^{-x}}{x} - \frac{x^2 + 2}{x}$$
 
