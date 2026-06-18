@@ -1,5 +1,41 @@
 # Maintenance Log
 
+## 2026-06-18 — 工程热力学第 6–14 章补全 + 仓库参考资料归位
+
+Scope: `docs/major/foundation/thermodynamics/index.md`、`docs/major/foundation/index.md`、新增 `references/` 目录
+
+Changed（内容）:
+- 补全工程热力学第 6–14 章（原为「施工中」存根），延续 1–5 章单页滚动风格：每章 `!!! info "章节概览"` 开篇 + `###/####` 概念小节（`definition`/`key-point`/`tip`/`note`）+ 折叠式 `??? example` 典型例题
+  - 6 蒸汽性质（相图/干度/克劳修斯-克拉贝龙/吉布斯相律）、7 混合物与湿空气（分压/φ/d/h-d 图）、8 理想气体热力过程（多变过程）、9 流动（声速/马赫数/喷管/临界压力比/节流）、10 压缩（定温最省功/余隙/多级中冷）、11 蒸汽动力循环（朗肯/再热/回热）、12 气体动力循环（Otto/Diesel/混合/Brayton）、13 制冷循环（逆卡诺/蒸汽压缩 COP）、14 化学反应（反应热/Hess/Kirchhoff/化学平衡/第三定律）
+- 更新「章节概览」表：6–14 全部 ✅，移除施工中 warning，新增使用提示
+- 「符号速查」增补蒸汽/混合物/循环新符号（x、v'/v''、r、g_i/x_i、φ、d、t_d/t_w、n、c_n、a/Ma、ν_cr、ε(压缩比)、ρ/λ、π、ΔH_f°、K_p），并标注 ε 与 p_v 的上下文歧义
+- `foundation/index.md` 课程说明由「第6-14章施工中」改为「全 14 章完整」
+
+Changed（仓库整理）:
+- 新建 `references/`（位于 `docs/` 之外，**不发布到站点**），按科目归类散落的参考资料：
+  - `references/math-ode/`：5 个《常微分方程》PDF + `ODEnotes_beamer-xxu-2026.pdf`
+  - `references/thermodynamics/`：何雅玲《工程热力学精要分析及典型题精解》PDF（已重命名为简洁文件名）
+  - `references/misc/`：4 个无引用的哈希命名 PNG
+  - 新增 `references/README.md` 说明归档约定
+- 这些文件原散落在 `docs/` 根目录、会被构建发布（含完整教材 PDF，有版权风险），现移出 `docs/`
+
+Why:
+- 第 6–14 章为课程后半与计算重点（蒸汽、湿空气、循环），补全后全书完整可用
+- 参考源 PDF 为扫描版（无文本层），例题采用对应题型的代表性标准值并标注「查表得」，重在展示解题方法
+- 参考资料移出 `docs/` 既避免公开发布受版权保护的完整教材，又消除 `docs/` 根目录杂乱
+
+Verified:
+- `scripts/validate-mkdocs.ps1` 非破坏式构建成功（1.04s），热力学页无警告
+- 例题数值已逐一手算复核
+
+Files changed:
+- `docs/major/foundation/thermodynamics/index.md`
+- `docs/major/foundation/index.md`
+- `references/`（新增，含 README）
+- `MAINTENANCE_LOG.md`
+
+---
+
 ## 2026-04-22 - ODE 第三章特殊系数法拆分与 3.4~3.6 口径统一
 
 Scope: `docs/math/ode/index.md`
