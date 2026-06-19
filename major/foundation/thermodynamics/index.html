@@ -4972,6 +4972,11 @@
 </tr>
 </tbody>
 </table>
+<figure>
+  <img alt="热力系统分类" src="imgs/01-system-classification.png" width="90%" />
+<br />
+<figcaption>热力系统分类：闭口系（控制质量 CM）与开口系（控制体 CV）（图源：课程课件）</figcaption>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">工质</p>
 <p>热力学系统中实现能量转换的媒介物质称为<strong>工质</strong>。分析热机时，工质通常是气体或蒸汽；它在系统内流动并与外界交换热量和功。</p>
@@ -4989,6 +4994,11 @@
 </div>
 <p>只有处于平衡态，系统的宏观性质才能用确定的<strong>状态参数</strong>来描述。常用的状态参数有：温度 <span class="arithmatex">\(T\)</span>、压力 <span class="arithmatex">\(p\)</span>、比体积 <span class="arithmatex">\(v\)</span> 等。</p>
 <p>对于简单可压缩系统，<strong>两个独立的强度量参数</strong>即可完全确定系统状态，其余参数均可由状态方程导出。</p>
+<figure>
+  <img alt="状态参数坐标图" src="imgs/01-state-coordinates.png" width="90%" />
+<br />
+<figcaption>简单可压缩系只需两个独立参数，即可在坐标图上确定一个状态点（图源：课程课件）</figcaption>
+</figure>
 <h3 id="_6">状态参数<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <h4 id="_7">压力<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
 <p>压力是单位面积上工质对边界的法向力，国际单位为 Pa（<span class="arithmatex">\(\text{N/m}^2\)</span>）。</p>
@@ -5020,6 +5030,11 @@
 <h4 id="_11">准静态过程<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
 <p>若过程进行得足够缓慢，系统在每个时刻都无限接近平衡态，则称该过程为<strong>准静态过程</strong>（或准平衡过程）。</p>
 <p>准静态过程可以在热力学状态图（如 <span class="arithmatex">\(p\)</span>-<span class="arithmatex">\(v\)</span> 图、<span class="arithmatex">\(T\)</span>-<span class="arithmatex">\(s\)</span> 图）上用连续曲线表示，这是进行图形分析的基础。</p>
+<figure>
+  <img alt="准静态过程" src="imgs/01-quasistatic-process.png" width="88%" />
+<br />
+<figcaption>准静态过程：每一时刻都无限接近平衡态，可在 p-v 图上用连续曲线表示（图源：课程课件）</figcaption>
+</figure>
 <h4 id="_12">可逆过程<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
 <p>可逆过程是热力学中的理想化极限，需同时满足两个条件：</p>
 <div class="admonition key-point">
@@ -5044,11 +5059,21 @@
 <div class="arithmatex">\[\delta q = T \, \mathrm{d}s\]</div>
 <div class="arithmatex">\[q_{1\text{-}2} = \int_1^2 T \, \mathrm{d}s\]</div>
 <p>在 <span class="arithmatex">\(T\)</span>-<span class="arithmatex">\(s\)</span> 图上，可逆过程的热量等于曲线下的面积。</p>
+<figure>
+  <img alt="热量在 T-s 图上的面积" src="imgs/01-heat-ts.png" width="88%" />
+<br />
+<figcaption>可逆过程热量 q=∫T ds，等于 T-s 图上曲线下的面积（图源：课程课件）</figcaption>
+</figure>
 <h4 id="_16">体积功（膨胀功）<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
 <p>闭口系工质因体积变化对外做的功：</p>
 <div class="arithmatex">\[\delta w = p \, \mathrm{d}v\]</div>
 <div class="arithmatex">\[w_{1\text{-}2} = \int_1^2 p \, \mathrm{d}v\]</div>
 <p>在 <span class="arithmatex">\(p\)</span>-<span class="arithmatex">\(v\)</span> 图上，可逆过程的膨胀功等于曲线下的面积。</p>
+<figure>
+  <img alt="膨胀功在 p-v 图上的面积" src="imgs/01-volume-work.png" width="88%" />
+<br />
+<figcaption>可逆膨胀功 w=∫p dv，等于 p-v 图上曲线下的面积（图源：课程课件）</figcaption>
+</figure>
 <h4 id="_17">有用功<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
 <p>实际装置中，工质不仅推动活塞，还需克服大气背压 <span class="arithmatex">\(p_0\)</span>，因此<strong>有用功</strong>（净输出功）为：</p>
 <div class="arithmatex">\[w_u = \int_1^2 p \, \mathrm{d}v - p_0 \Delta v\]</div>
