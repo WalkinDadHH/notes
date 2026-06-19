@@ -1,5 +1,33 @@
 # Maintenance Log
 
+## 2026-06-20 — 工程热力学：第十二、十三章配入原理图（课件配图·第5批）
+
+Scope: `docs/major/foundation/thermodynamics/index.md`、`docs/major/foundation/thermodynamics/imgs/`
+
+Changed:
+- 第十二章（气体动力循环）从《第十二章 气体动力循环 2026.pdf》选 6 图：
+  - `12-otto-cycle`（定容加热/奥托循环 p-v、T-s）→ 活塞式内燃机理想循环·奥托公式后
+  - `12-diesel-cycle`（定压加热/狄塞尔循环 p-v、T-s）→ 狄塞尔公式后
+  - `12-dual-cycle`（混合加热/萨巴德循环 p-v、T-s）→ 萨巴德公式后
+  - `12-cycle-comparison`（三种循环效率比较·平均温度法）→ 效率比较 tip 后
+  - `12-brayton-device`（燃气轮机装置构造/开式布雷顿，压气机-燃烧室-透平）→ 燃气轮机循环开头
+  - `12-regeneration-ts`（回热在 T-s 图上的表示）→ 提高热效率措施 note 后
+- 第十三章（制冷循环）从《第十三章-制冷循环-2026.pdf》选 6 图：
+  - `13-refrigeration-types`（制冷循环分类树）→ 章节概览后
+  - `13-reverse-carnot-ts`（逆卡诺循环 T-s 矩形，理论上限）→ 制冷系数与供热系数
+  - `13-air-cycle`（空气压缩制冷循环 p-v、T-s）→ 空气压缩制冷循环
+  - `13-vapor-device`（蒸气压缩制冷装置流程：压缩机-冷凝器-节流阀-蒸发器）→ 蒸汽压缩制冷循环开头
+  - `13-vapor-ts`（蒸气压缩制冷循环 T-s，两相区）→ 四个过程表后
+  - `13-throttle-vs-expander`（节流阀 vs 膨胀机对比）→ 为何用节流阀 key-point 后
+- 仍沿用 `<figure markdown="span">` + 「图源：课程课件」；渲染裁切 Matrix 2.4、clip ≈0.11–0.965
+
+Notes:
+- 幻灯片渲染告警（image masks / shadings 不支持）仅影响三联/校验拼图，最终裁切由 `page.get_pixmap` 直接渲染，质量完整
+- 三联拼图页码相对正片有 1–2 页偏移，已用 `verify`（按页直渲）逐一校准后再裁切
+- 分批策略续：本批 2 章（第十二、十三章，均 PDF）；已配 8 章（十一/一/二/五/六/八/十二/十三），共 43 图；剩余 PDF 章节第七/十/十四，PPTX 章节第三/四/九待 PowerPoint 渲染
+
+Validation: `scripts/validate-mkdocs.ps1` 通过
+
 ## 2026-06-20 — 工程热力学：第六、八章配入原理图（课件配图·第4批）
 
 Scope: `docs/major/foundation/thermodynamics/index.md`、`docs/major/foundation/thermodynamics/imgs/`

@@ -2091,13 +2091,28 @@ $$\eta_t = \frac{w_{\text{net}}}{q_1} = \frac{(h_1 - h_2) - (h_4 - h_3)}{h_1 - h
 
 $$\eta_t = 1 - \frac{1}{\varepsilon^{\gamma-1}}, \qquad \varepsilon = \frac{v_1}{v_2}\ (\text{压缩比})$$
 
+<figure markdown="span">
+  ![定容加热（奥托）循环 p-v 图与 T-s 图](imgs/12-otto-cycle.png){ width="90%" }
+  <figcaption>定容加热（奥托）循环：1→2 绝热压缩、2→3 定容加热、3→4 绝热膨胀、4→1 定容放热，对应汽油机（图源：课程课件）</figcaption>
+</figure>
+
 **定压加热循环（狄塞尔）热效率**：
 
 $$\eta_t = 1 - \frac{1}{\varepsilon^{\gamma-1}}\cdot\frac{\rho^\gamma - 1}{\gamma(\rho - 1)}, \qquad \rho = \frac{v_3}{v_2}\ (\text{预胀比})$$
 
+<figure markdown="span">
+  ![定压加热（狄塞尔）循环 p-v 图与 T-s 图](imgs/12-diesel-cycle.png){ width="90%" }
+  <figcaption>定压加热（狄塞尔）循环：加热段 2→3 为定压过程，对应低速柴油机；预胀比 ρ 越大、循环热效率越低（图源：课程课件）</figcaption>
+</figure>
+
 **混合加热循环（萨巴德）热效率**：
 
 $$\eta_t = 1 - \frac{1}{\varepsilon^{\gamma-1}}\cdot\frac{\lambda\rho^\gamma - 1}{(\lambda - 1) + \gamma\lambda(\rho - 1)}, \qquad \lambda = \frac{p_3}{p_2}\ (\text{升压比})$$
+
+<figure markdown="span">
+  ![混合加热（萨巴德）循环 p-v 图与 T-s 图](imgs/12-dual-cycle.png){ width="90%" }
+  <figcaption>混合加热（萨巴德）循环：加热分两段——2→3 定容升压（升压比 λ）、3→4 定压膨胀（预胀比 ρ），对应高速柴油机，性能介于奥托与狄塞尔之间（图源：课程课件）</figcaption>
+</figure>
 
 !!! key-point "压缩比是关键"
     奥托循环效率只取决于压缩比 $\varepsilon$ 与 $\gamma$：$\varepsilon$ 越大效率越高。但汽油机受**爆震**限制，$\varepsilon$ 不能太高（约 8–11）；柴油机压燃，$\varepsilon$ 可达 16–22，故效率更高。
@@ -2110,9 +2125,19 @@ $$\eta_t = 1 - \frac{1}{\varepsilon^{\gamma-1}}\cdot\frac{\lambda\rho^\gamma - 1
 
     后一种比较更贴近实际（受材料耐压耐温限制），这也是高增压比柴油机经济性好的原因。
 
+<figure markdown="span">
+  ![三种内燃机循环效率比较（平均温度法）](imgs/12-cycle-comparison.png){ width="90%" }
+  <figcaption>三种循环效率比较（平均温度法）：压缩比与吸热量相同时，定容加热的平均吸热温度最高，故 η奥托 > η萨巴德 > η狄塞尔（图源：课程课件）</figcaption>
+</figure>
+
 ### 燃气轮机循环（布雷顿循环）
 
 由压气机、燃烧室、燃气透平组成，理想化为：绝热压缩 → 定压加热 → 绝热膨胀 → 定压放热。
+
+<figure markdown="span">
+  ![燃气轮机装置构造（开式布雷顿循环）](imgs/12-brayton-device.png){ width="88%" }
+  <figcaption>燃气轮机装置构造（开式布雷顿循环）：空气经压气机（compressor）增压，在燃烧室（combustion chamber）定压加热，再进入燃气透平（gas turbine）膨胀做功，连续运转、功率密度大（图源：课程课件）</figcaption>
+</figure>
 
 !!! definition "布雷顿循环热效率"
     $$\eta_t = 1 - \frac{1}{\pi^{\frac{\gamma-1}{\gamma}}}, \qquad \pi = \frac{p_2}{p_1}\ (\text{增压比})$$
@@ -2135,6 +2160,11 @@ $$\eta_{C,s} = \frac{w_{C,\text{理论}}}{w_{C,\text{实际}}}\ (\text{压气机
     3. 在回热基础上**多级膨胀 + 中间再热**（使膨胀近似定温）
 
     注意：**脱离回热**单纯分级压缩或中间再热**并不能**提高热效率。
+
+<figure markdown="span">
+  ![回热在 T-s 图上的表示](imgs/12-regeneration-ts.png){ width="88%" }
+  <figcaption>回热在 T-s 图上的表示：用透平排气预热压缩后的空气，回收原本排往低温热源的热量，提高平均吸热温度、降低平均放热温度，从而提高热效率（图源：课程课件）</figcaption>
+</figure>
 
 ??? example "例题 12-1：奥托循环热效率"
     **题目**：某汽油机按奥托循环工作，压缩比 $\varepsilon = 8$，工质取空气 $\gamma = 1.4$。求理想热效率。
@@ -2193,6 +2223,11 @@ $$\eta_{C,s} = \frac{w_{C,\text{理论}}}{w_{C,\text{实际}}}\ (\text{压气机
 !!! info "章节概览"
     制冷循环是**逆循环**：消耗外功把热量从低温热源（冷库）抽向高温热源（环境）。本章给出制冷系数定义、逆卡诺上限，并重点分析工程主流的蒸汽压缩制冷循环。
 
+<figure markdown="span">
+  ![制冷循环的分类](imgs/13-refrigeration-types.png){ width="86%" }
+  <figcaption>制冷循环的分类：按工作原理分为压缩制冷（空气压缩、蒸气压缩）、吸收式制冷、蒸气喷射制冷、半导体制冷与热声制冷，本章重点是蒸气压缩制冷（图源：课程课件）</figcaption>
+</figure>
+
 ### 制冷系数与供热系数
 
 !!! definition "制冷系数 $\varepsilon$ 与供热系数 $\varepsilon'$"
@@ -2208,6 +2243,11 @@ $$\varepsilon_c = \frac{T_2}{T_1 - T_2}$$
 
 温差 $T_1 - T_2$ 越小，制冷系数越高。
 
+<figure markdown="span">
+  ![逆卡诺循环的 T-s 图](imgs/13-reverse-carnot-ts.png){ width="88%" }
+  <figcaption>逆卡诺循环的 T-s 图：两条等温线与两条绝热线围成矩形，是制冷循环的理论上限；高低温热源温差越小，制冷系数越高（图源：课程课件）</figcaption>
+</figure>
+
 ### 空气压缩制冷循环
 
 以空气为工质的逆布雷顿循环：绝热压缩 → 定压放热 → 绝热膨胀 → 定压吸热。
@@ -2215,6 +2255,11 @@ $$\varepsilon_c = \frac{T_2}{T_1 - T_2}$$
 $$\varepsilon = \frac{1}{\pi^{\frac{\gamma-1}{\gamma}} - 1}$$
 
 因空气定压吸热温度变化大、制冷系数低，主要用于早期及航空空调等特殊场合。
+
+<figure markdown="span">
+  ![空气压缩制冷循环 p-v 图与 T-s 图](imgs/13-air-cycle.png){ width="90%" }
+  <figcaption>空气压缩制冷循环（逆布雷顿）：1→2 绝热压缩、2→3 定压放热、3→4 绝热膨胀、4→1 定压吸热制冷；定压吸放热温度变化大，故制冷系数偏低（图源：课程课件）</figcaption>
+</figure>
 
 ??? example "例题 13-2：空气压缩制冷循环（增压比的影响）"
     **题目**：空气压缩制冷循环，压缩机进口（冷库）温度 $T_1 = 290\,\text{K}$、冷却器出口（环境）温度 $T_3 = 300\,\text{K}$。增压比分别为 $\pi = 3$ 和 $6$，求制冷系数与每千克工质制冷量。取 $c_p = 1.005\,\text{kJ/(kg·K)}$、$\gamma = 1.4$。
@@ -2232,6 +2277,11 @@ $$\varepsilon = \frac{1}{\pi^{\frac{\gamma-1}{\gamma}} - 1}$$
 
 利用制冷剂相变吸放热，是冰箱、空调的主流方案，又称**帕金斯（Perkins）循环**：
 
+<figure markdown="span">
+  ![蒸气压缩制冷装置工作流程](imgs/13-vapor-device.png){ width="88%" }
+  <figcaption>蒸气压缩制冷装置工作流程：压缩机 → 冷凝器 → 节流阀 → 蒸发器构成闭式回路，制冷剂在蒸发器吸热、在冷凝器放热，靠相变潜热搬运热量（图源：课程课件）</figcaption>
+</figure>
+
 !!! definition "四个过程"
     | 过程 | 设备 | 性质 |
     |------|------|------|
@@ -2239,6 +2289,11 @@ $$\varepsilon = \frac{1}{\pi^{\frac{\gamma-1}{\gamma}} - 1}$$
     | $2\to3$ | 冷凝器 | 定压放热（过热蒸汽→饱和液） |
     | $3\to4$ | 节流阀 | 绝热节流（$h_3 = h_4$） |
     | $4\to1$ | 蒸发器 | 定压吸热制冷（湿蒸汽→干饱和蒸汽） |
+
+<figure markdown="span">
+  ![蒸气压缩制冷循环的 T-s 图](imgs/13-vapor-ts.png){ width="88%" }
+  <figcaption>蒸气压缩制冷循环的 T-s 图：1→2 绝热压缩（干压缩，进口为干饱和蒸汽）、2→3 定压冷凝放热、3→4 绝热节流、4→1 定压蒸发吸热，相变段在两相区内近似等温（图源：课程课件）</figcaption>
+</figure>
 
 **制冷系数**：
 
@@ -2249,6 +2304,11 @@ $$\varepsilon = \frac{q_2}{w} = \frac{h_1 - h_4}{h_2 - h_1}$$
 
 !!! key-point "为何用节流阀而非膨胀机"
     液态制冷剂经膨胀机可回收的功极小，而膨胀机处理汽液两相既昂贵又易损。改用**节流阀**虽是不可逆过程（产生熵），但结构简单可靠、损失有限，是工程上的最优折中。
+
+<figure markdown="span">
+  ![节流阀与膨胀机的对比](imgs/13-throttle-vs-expander.png){ width="88%" }
+  <figcaption>节流阀与膨胀机的对比：液态制冷剂用膨胀机可回收的功极小，改用节流阀虽产生熵增却结构简单可靠，是工程上的最优折中（图源：课程课件）</figcaption>
+</figure>
 
 ??? example "例题 13-1：蒸汽压缩制冷循环的制冷系数"
     **题目**：某制冷装置以 R134a 为工质，蒸发温度 $-10\,^\circ\text{C}$、冷凝温度 $40\,^\circ\text{C}$。求制冷系数。
