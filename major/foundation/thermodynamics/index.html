@@ -5944,12 +5944,22 @@ $<span class="arithmatex">\(I = T_0\, S_g \geq 0\)</span>$
 </tr>
 </tbody>
 </table>
+<figure>
+  <img alt="蒸气定压发生过程" src="imgs/06-isobaric-generation.png" width="88%" />
+<br />
+<figcaption>蒸气的定压发生过程：在恒定压力下持续加热，工质从液体加热到气化、再到过热，连续经历未饱和水至过热蒸汽五种状态（图源：课程课件）</figcaption>
+</figure>
 <div class="admonition key-point">
 <p class="admonition-title">饱和温度与饱和压力一一对应</p>
 <p>汽液两相平衡共存时的温度称为<strong>饱和温度</strong> <span class="arithmatex">\(t_s\)</span>，对应压力称为<strong>饱和压力</strong> <span class="arithmatex">\(p_s\)</span>。两者一一对应：压力升高，饱和温度随之升高。湿蒸汽区内<strong>定压即定温</strong>，这是相变区最重要的特征。</p>
 </div>
 <p>汽化过程吸收的热量称为<strong>汽化潜热</strong> <span class="arithmatex">\(r\)</span>，等于饱和汽与饱和液的焓差：</p>
 <div class="arithmatex">\[r = h'' - h'\]</div>
+<figure>
+  <img alt="临界压力定压发生" src="imgs/06-critical-generation.png" width="88%" />
+<br />
+<figcaption>p-v 图上不同压力下的定压发生过程：压力越高湿蒸汽段越短，达到临界压力 pc 后两相界限消失，超临界下加热不再出现明显相变（图源：课程课件）</figcaption>
+</figure>
 <h3 id="_64">相图与三区两线<a class="headerlink" href="#_64" title="Permanent link">&para;</a></h3>
 <p>在 <span class="arithmatex">\(T\)</span>-<span class="arithmatex">\(s\)</span> 图（或 <span class="arithmatex">\(p\)</span>-<span class="arithmatex">\(v\)</span> 图）上，纯物质的相变区由两条特征线划分：</p>
 <ul>
@@ -5958,10 +5968,20 @@ $<span class="arithmatex">\(I = T_0\, S_g \geq 0\)</span>$
 <li>两线在顶点交于<strong>临界点 <span class="arithmatex">\(C\)</span></strong>（水：<span class="arithmatex">\(t_c = 374.15\,^\circ\text{C}\)</span>，<span class="arithmatex">\(p_c = 22.12\,\text{MPa}\)</span>）</li>
 <li>两线之间为<strong>湿蒸汽区</strong>（汽液共存）</li>
 </ul>
+<figure>
+  <img alt="p-v 三区两线" src="imgs/06-pv-saturation-dome.png" width="88%" />
+<br />
+<figcaption>p-v 图上的三区两线：饱和液线（x=0）与饱和气线（x=1）将平面分为液相区、湿蒸汽区与过热蒸汽区，两线顶点交于临界点 C（图源：课程课件）</figcaption>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">约定符号：一撇与两撇</p>
 <p>饱和液参数加一撇（<span class="arithmatex">\(v'\)</span>, <span class="arithmatex">\(h'\)</span>, <span class="arithmatex">\(s'\)</span>），干饱和蒸汽参数加两撇（<span class="arithmatex">\(v''\)</span>, <span class="arithmatex">\(h''\)</span>, <span class="arithmatex">\(s''\)</span>）。它们都只是饱和温度（或饱和压力）的单值函数，可直接查饱和水蒸气表。</p>
 </div>
+<figure>
+  <img alt="T-s 等温线群" src="imgs/06-ts-isotherms.png" width="88%" />
+<br />
+<figcaption>T-s 图上的等温线群：湿蒸汽区内等温线水平（定压即定温），离饱和气线越远越接近理想气体（图源：课程课件）</figcaption>
+</figure>
 <h3 id="_65">干度与湿蒸汽参数<a class="headerlink" href="#_65" title="Permanent link">&para;</a></h3>
 <p>湿蒸汽中干饱和蒸汽所占的质量分数称为<strong>干度</strong> <span class="arithmatex">\(x\)</span>：</p>
 <div class="arithmatex">\[x = \frac{m_{\text{汽}}}{m_{\text{汽}} + m_{\text{液}}}\]</div>
@@ -5983,6 +6003,11 @@ u &amp;= u' + x(u'' - u')
 <li><strong>未饱和水与过热蒸汽表</strong>：以 <span class="arithmatex">\((p, t)\)</span> 为自变量查 <span class="arithmatex">\(v, h, s\)</span></li>
 <li><strong>焓熵图（<span class="arithmatex">\(h\)</span>-<span class="arithmatex">\(s\)</span> 图，莫里尔 Mollier 图）</strong>：纵轴 <span class="arithmatex">\(h\)</span>、横轴 <span class="arithmatex">\(s\)</span>，绝热过程为竖直线，便于读取喷管、汽轮机的焓降，是动力循环分析的常用工具</li>
 </ul>
+<figure>
+  <img alt="莫里尔焓熵图" src="imgs/06-mollier-hs.png" width="88%" />
+<br />
+<figcaption>焓熵图（h-s 图，莫里尔图）：纵轴比焓、横轴比熵，绝热过程为竖直线，便于读取汽轮机与喷管的焓降（图源：课程课件）</figcaption>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">水蒸气表的基准点</p>
 <p>水蒸气表规定<strong>三相点</strong>（<span class="arithmatex">\(273.16\,\text{K}\)</span>，即 <span class="arithmatex">\(0.01\,^\circ\text{C}\)</span>）的饱和水<strong>热力学能与熵取为零</strong>。因此表中 <span class="arithmatex">\(u, s\)</span> 都是相对值——计算中只用差值，基准的选取不影响结果。不同制冷工质的表可能选用不同基准点，混用前需留意。查表时<strong>不能跨相界线作线性内插</strong>。</p>
@@ -6008,6 +6033,11 @@ $<span class="arithmatex">\(T' = T'', \quad p' = p'', \quad \mu' = \mu''\)</span
 <div class="arithmatex">\[F = C - P + 2\]</div>
 <p><span class="arithmatex">\(F\)</span> 为自由度（可独立变化的强度量数），<span class="arithmatex">\(C\)</span> 为组分数，<span class="arithmatex">\(P\)</span> 为相数。对纯物质（<span class="arithmatex">\(C=1\)</span>）：单相 <span class="arithmatex">\(F=2\)</span>（需两参数定态）、两相 <span class="arithmatex">\(F=1\)</span>（定压即定温）、三相点 <span class="arithmatex">\(F=0\)</span>（状态唯一）。</p>
 </div>
+<figure>
+  <img alt="p-T 相图" src="imgs/06-pt-phase-diagram.png" width="88%" />
+<br />
+<figcaption>纯物质的 p-T 相图：固、液、气三相区由三条相平衡线分隔，三线交于三相点（自由度 F=0），气液线终止于临界点 C（图源：课程课件）</figcaption>
+</figure>
 <p>不同约束下的<strong>平衡判据</strong>（由第三章熵增原理推广）：</p>
 <table>
 <thead>
@@ -6305,6 +6335,11 @@ $<span class="arithmatex">\(d = 0.622\,\frac{p_v}{p - p_v} \quad (\text{kg 水�
 </tbody>
 </table>
 </div>
+<figure>
+  <img alt="多变过程特例" src="imgs/08-polytropic-special-cases.png" width="86%" />
+<br />
+<figcaption>四个基本过程都是多变过程 pvⁿ=C 的特例：n=0 为定压、n=1 为定温、n=γ 为绝热、n=∞ 为定容（图源：课程课件）</figcaption>
+</figure>
 <p><strong>多变过程参数关系</strong>：</p>
 <div class="arithmatex">\[\frac{T_2}{T_1} = \left(\frac{v_1}{v_2}\right)^{n-1} = \left(\frac{p_2}{p_1}\right)^{\frac{n-1}{n}}\]</div>
 <p><strong>膨胀功与技术功</strong>：</p>
@@ -6354,6 +6389,11 @@ $<span class="arithmatex">\(d = 0.622\,\frac{p_v}{p - p_v} \quad (\text{kg 水�
 </tbody>
 </table>
 <h3 id="p-v-t-s">p-v 图与 T-s 图上的过程走向<a class="headerlink" href="#p-v-t-s" title="Permanent link">&para;</a></h3>
+<figure>
+  <img alt="基本过程 p-v T-s 图" src="imgs/08-processes-pv-ts.png" width="90%" />
+<br />
+<figcaption>四个基本过程在 p-v 图与 T-s 图上的相对走向：自同一初态出发，多变指数 n 越大曲线越陡，定容线最陡、定压线最平（图源：课程课件）</figcaption>
+</figure>
 <div class="admonition key-point">
 <p class="admonition-title">用图判断过程性质</p>
 <ul>
@@ -6362,6 +6402,11 @@ $<span class="arithmatex">\(d = 0.622\,\frac{p_v}{p - p_v} \quad (\text{kg 水�
 <li>过程线<strong>指向右方（熵增）则吸热</strong>，指向左方（熵减）则放热；竖直（<span class="arithmatex">\(\Delta s=0\)</span>）为绝热</li>
 </ul>
 </div>
+<figure>
+  <img alt="做功与吸放热分区" src="imgs/08-heat-direction.png" width="90%" />
+<br />
+<figcaption>p-v 图与 T-s 图上 w、Δu、q 的正负分区：过程线指向右方（熵增）则吸热，指向左方（熵减）则放热（图源：课程课件）</figcaption>
+</figure>
 <details class="example">
 <summary>例题 8-1：多变压缩过程</summary>
 <p><strong>题目</strong>：空气从 <span class="arithmatex">\(p_1 = 0.1\,\text{MPa}\)</span>、<span class="arithmatex">\(t_1 = 20\,^\circ\text{C}\)</span> 多变压缩到 <span class="arithmatex">\(p_2 = 0.5\,\text{MPa}\)</span>，多变指数 <span class="arithmatex">\(n = 1.25\)</span>。取 <span class="arithmatex">\(R_g = 287\,\text{J/(kg·K)}\)</span>，<span class="arithmatex">\(c_v = 718\,\text{J/(kg·K)}\)</span>，<span class="arithmatex">\(\gamma = 1.4\)</span>。求终温 <span class="arithmatex">\(t_2\)</span>、膨胀功 <span class="arithmatex">\(w\)</span>、热量 <span class="arithmatex">\(q\)</span>。</p>
@@ -6375,6 +6420,11 @@ $<span class="arithmatex">\(d = 0.622\,\frac{p_v}{p - p_v} \quad (\text{kg 水�
 <div class="arithmatex">\[q = c_n(T_2 - T_1) = -430.8 \times 111.35 = -48.0\ \text{kJ/kg}\]</div>
 <p><strong>要点</strong>：<span class="arithmatex">\(1 &lt; n &lt; \gamma\)</span> 的压缩过程<strong>对外放热</strong>（<span class="arithmatex">\(q&lt;0\)</span>）且压缩耗功，介于定温（<span class="arithmatex">\(n=1\)</span>，放热最多）与绝热（<span class="arithmatex">\(n=\gamma\)</span>，不放热）之间。</p>
 </details>
+<figure>
+  <img alt="过程判断练习" src="imgs/08-process-exercise.png" width="90%" />
+<br />
+<figcaption>综合判断练习：已知过程为「压缩、升温、放热」，借助 p-v 与 T-s 图即可定位终态所在区域（图源：课程课件）</figcaption>
+</figure>
 <h3 id="_83">真题精选<a class="headerlink" href="#_83" title="Permanent link">&para;</a></h3>
 <details class="question">
 <summary>20-21春夏 · 什么是多变过程，推导多变过程的比热容</summary>
