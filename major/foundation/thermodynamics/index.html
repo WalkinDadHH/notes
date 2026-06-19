@@ -1770,7 +1770,7 @@
   <a href="#_49" class="md-nav__link">
     <span class="md-ellipsis">
       
-        熵的一般微分表达式
+        热力学能、焓、熵的全微分表达式
       
     </span>
   </a>
@@ -3552,7 +3552,7 @@
   <a href="#_49" class="md-nav__link">
     <span class="md-ellipsis">
       
-        熵的一般微分表达式
+        热力学能、焓、熵的全微分表达式
       
     </span>
   </a>
@@ -5540,13 +5540,42 @@ $<span class="arithmatex">\(I = T_0\, S_g \geq 0\)</span>$
 <li>对理想气体，<span class="arithmatex">\(c_p - c_v = R_g\)</span>（第五章导出）</li>
 </ol>
 </div>
-<h3 id="_49">熵的一般微分表达式<a class="headerlink" href="#_49" title="Permanent link">&para;</a></h3>
-<p>将熵 <span class="arithmatex">\(s\)</span> 视为 <span class="arithmatex">\((T, v)\)</span> 或 <span class="arithmatex">\((T, p)\)</span> 的函数，利用 Maxwell 关系代入，得到熵的可计算微分形式：</p>
-<p>以 <span class="arithmatex">\((T, v)\)</span> 为独立变量：</p>
-<div class="arithmatex">\[\mathrm{d}s = \frac{c_v}{T}\,\mathrm{d}T + \left(\frac{\partial p}{\partial T}\right)_v \mathrm{d}v\]</div>
-<p>以 <span class="arithmatex">\((T, p)\)</span> 为独立变量：</p>
-<div class="arithmatex">\[\mathrm{d}s = \frac{c_p}{T}\,\mathrm{d}T - \left(\frac{\partial v}{\partial T}\right)_p \mathrm{d}p\]</div>
-<p>这两个式子将熵变转化为可测量的 <span class="arithmatex">\(c_v\)</span>、<span class="arithmatex">\(c_p\)</span> 和 <span class="arithmatex">\(p\)</span>-<span class="arithmatex">\(v\)</span>-<span class="arithmatex">\(T\)</span> 关系，是实际计算熵变的基础。</p>
+<h3 id="_49">热力学能、焓、熵的全微分表达式<a class="headerlink" href="#_49" title="Permanent link">&para;</a></h3>
+<p>把 <span class="arithmatex">\(u\)</span>、<span class="arithmatex">\(h\)</span>、<span class="arithmatex">\(s\)</span> 取作可测量自变量 <span class="arithmatex">\((T, v)\)</span> 或 <span class="arithmatex">\((T, p)\)</span> 的函数，利用基本微分关系与 Maxwell 关系代入，可把它们的变化量化为<strong>只含 <span class="arithmatex">\(c_v\)</span>、<span class="arithmatex">\(c_p\)</span> 和 <span class="arithmatex">\(p\)</span>-<span class="arithmatex">\(v\)</span>-<span class="arithmatex">\(T\)</span> 关系</strong>的可计算形式。这是制作物性表、计算实际气体（非理想气体）状态变化量的基础。</p>
+<p><strong>热力学能 <span class="arithmatex">\(u(T, v)\)</span></strong>：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\mathrm{d}u &amp;= \left(\frac{\partial u}{\partial T}\right)_v \mathrm{d}T + \left(\frac{\partial u}{\partial v}\right)_T \mathrm{d}v \\[2pt]
+&amp;= c_v\,\mathrm{d}T + \left[\,T\left(\frac{\partial s}{\partial v}\right)_T - p\,\right]\mathrm{d}v \\[2pt]
+&amp;= c_v\,\mathrm{d}T + \left[\,T\left(\frac{\partial p}{\partial T}\right)_v - p\,\right]\mathrm{d}v
+\end{aligned}
+\]</div>
+<p>末行用了 Maxwell 关系 <span class="arithmatex">\(\left(\dfrac{\partial s}{\partial v}\right)_T = \left(\dfrac{\partial p}{\partial T}\right)_v\)</span>。</p>
+<p><strong>焓 <span class="arithmatex">\(h(T, p)\)</span></strong>：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\mathrm{d}h &amp;= \left(\frac{\partial h}{\partial T}\right)_p \mathrm{d}T + \left(\frac{\partial h}{\partial p}\right)_T \mathrm{d}p \\[2pt]
+&amp;= c_p\,\mathrm{d}T + \left[\,v + T\left(\frac{\partial s}{\partial p}\right)_T\,\right]\mathrm{d}p \\[2pt]
+&amp;= c_p\,\mathrm{d}T - \left[\,T\left(\frac{\partial v}{\partial T}\right)_p - v\,\right]\mathrm{d}p
+\end{aligned}
+\]</div>
+<p>末行用了 Maxwell 关系 <span class="arithmatex">\(\left(\dfrac{\partial s}{\partial p}\right)_T = -\left(\dfrac{\partial v}{\partial T}\right)_p\)</span>。</p>
+<p><strong>熵 <span class="arithmatex">\(s(T, v)\)</span> 与 <span class="arithmatex">\(s(T, p)\)</span></strong>：</p>
+<div class="arithmatex">\[
+\mathrm{d}s = \left(\frac{\partial s}{\partial T}\right)_v \mathrm{d}T + \left(\frac{\partial s}{\partial v}\right)_T \mathrm{d}v = \frac{c_v}{T}\,\mathrm{d}T + \left(\frac{\partial p}{\partial T}\right)_v \mathrm{d}v
+\]</div>
+<div class="arithmatex">\[
+\mathrm{d}s = \left(\frac{\partial s}{\partial T}\right)_p \mathrm{d}T + \left(\frac{\partial s}{\partial p}\right)_T \mathrm{d}p = \frac{c_p}{T}\,\mathrm{d}T - \left(\frac{\partial v}{\partial T}\right)_p \mathrm{d}p
+\]</div>
+<p>其中用到 <span class="arithmatex">\(\left(\dfrac{\partial s}{\partial T}\right)_v = \dfrac{c_v}{T}\)</span>、<span class="arithmatex">\(\left(\dfrac{\partial s}{\partial T}\right)_p = \dfrac{c_p}{T}\)</span>。</p>
+<div class="admonition key-point">
+<p class="admonition-title">这组式子为什么重要</p>
+<p>它们把<strong>无法直接测量</strong>的 <span class="arithmatex">\(u\)</span>、<span class="arithmatex">\(h\)</span>、<span class="arithmatex">\(s\)</span> 变化，转化为只含<strong>可测量</strong>的比热容 <span class="arithmatex">\(c_v\)</span>、<span class="arithmatex">\(c_p\)</span> 和 <span class="arithmatex">\(p\)</span>-<span class="arithmatex">\(v\)</span>-<span class="arithmatex">\(T\)</span> 数据的积分，是一切实际工质状态变化量计算的出发点：</p>
+<ul>
+<li>对<strong>理想气体</strong>，<span class="arithmatex">\(\left(\dfrac{\partial p}{\partial T}\right)_v = \dfrac{R_g}{v}\)</span>、<span class="arithmatex">\(\left(\dfrac{\partial v}{\partial T}\right)_p = \dfrac{R_g}{p}\)</span>，代入即退化为第五章的 <span class="arithmatex">\(\mathrm{d}u = c_v\mathrm{d}T\)</span>、<span class="arithmatex">\(\mathrm{d}h = c_p\mathrm{d}T\)</span> 等；</li>
+<li>对<strong>实际气体</strong>，则代入具体状态方程或实测 <span class="arithmatex">\(p\)</span>-<span class="arithmatex">\(v\)</span>-<span class="arithmatex">\(T\)</span> 数据积分。</li>
+</ul>
+</div>
 <h3 id="_50">真题精选<a class="headerlink" href="#_50" title="Permanent link">&para;</a></h3>
 <details class="question">
 <summary>24-25春夏 · 基本热力学关系是否适用于不可逆过程</summary>
