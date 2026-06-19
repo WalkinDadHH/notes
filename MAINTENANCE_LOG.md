@@ -1,5 +1,30 @@
 # Maintenance Log
 
+## 2026-06-20 — 工程热力学：第六、八章配入原理图（课件配图·第4批）
+
+Scope: `docs/major/foundation/thermodynamics/index.md`、`docs/major/foundation/thermodynamics/imgs/`
+
+Changed:
+- 第六章（蒸汽的热力性质）从《第6章 蒸气的热力性质-2.pdf》选 6 图：
+  - `06-isobaric-generation`（三缸定压发生过程：液体加热→气化→过热）→ 纯物质相变与定压发生过程
+  - `06-critical-generation`（p-v 图亚临界/超临界定压发生）→ 纯物质相变与定压发生过程
+  - `06-pv-saturation-dome`（p-v 三区两线，饱和液线/饱和气线/临界点）→ 相图与三区两线
+  - `06-ts-isotherms`（T-s 等温线群，两相区水平）→ 相图与三区两线
+  - `06-mollier-hs`（莫里尔焓熵 h-s 图）→ 水蒸气表与焓熵图
+  - `06-pt-phase-diagram`（p-T 相图，三相点/临界点/三区）→ 吉布斯相律
+- 第八章（理想气体的热力过程）从《第8章 理想气体的热力过程-3.pdf》选 4 图：
+  - `08-polytropic-special-cases`（四基本过程是多变过程特例 n=0/1/γ/∞）→ 多变过程
+  - `08-processes-pv-ts`（四基本过程在 p-v、T-s 图上的相对走向）→ 过程走向
+  - `08-heat-direction`（p-v、T-s 图上 w/Δu/q 正负分区，吸放热判断）→ 用图判断过程性质
+  - `08-process-exercise`（压缩升温放热的终态区域判断练习）→ 例题后、真题前
+- 仍沿用 `<figure markdown="span">` + 「图源：课程课件」；渲染裁切 Matrix 2.4、clip ≈0.11–0.965
+
+Notes:
+- 幻灯片渲染告警（image masks / shadings 不支持）仅影响三联/校验拼图，最终裁切由 `page.get_pixmap` 直接渲染，质量完整
+- 分批策略续：本批 2 章（第六、八章，均 PDF）；剩余 PDF 章节第七/十/十二/十三/十四，PPTX 章节第三/四/九待 PowerPoint 渲染
+
+Validation: `scripts/validate-mkdocs.ps1` 通过（2.77s）
+
 ## 2026-06-19 — 工程热力学：第二、五章配入原理图（课件配图·第3批）
 
 Scope: `docs/major/foundation/thermodynamics/index.md`、`docs/major/foundation/thermodynamics/imgs/`

@@ -1207,12 +1207,22 @@ $$Z = \frac{pv}{R_g T} = \frac{pV}{nRT}$$
 | ④ | 干饱和蒸汽 | 液体刚好全部汽化（$x=1$） |
 | ⑤ | 过热蒸汽 | $t > t_s$，继续升温 |
 
+<figure markdown="span">
+  ![蒸气定压发生过程](imgs/06-isobaric-generation.png){ width="88%" }
+  <figcaption>蒸气的定压发生过程：在恒定压力下持续加热，工质从液体加热到气化、再到过热，连续经历未饱和水至过热蒸汽五种状态（图源：课程课件）</figcaption>
+</figure>
+
 !!! key-point "饱和温度与饱和压力一一对应"
     汽液两相平衡共存时的温度称为**饱和温度** $t_s$，对应压力称为**饱和压力** $p_s$。两者一一对应：压力升高，饱和温度随之升高。湿蒸汽区内**定压即定温**，这是相变区最重要的特征。
 
 汽化过程吸收的热量称为**汽化潜热** $r$，等于饱和汽与饱和液的焓差：
 
 $$r = h'' - h'$$
+
+<figure markdown="span">
+  ![临界压力定压发生](imgs/06-critical-generation.png){ width="88%" }
+  <figcaption>p-v 图上不同压力下的定压发生过程：压力越高湿蒸汽段越短，达到临界压力 pc 后两相界限消失，超临界下加热不再出现明显相变（图源：课程课件）</figcaption>
+</figure>
 
 ### 相图与三区两线
 
@@ -1223,8 +1233,18 @@ $$r = h'' - h'$$
 - 两线在顶点交于**临界点 $C$**（水：$t_c = 374.15\,^\circ\text{C}$，$p_c = 22.12\,\text{MPa}$）
 - 两线之间为**湿蒸汽区**（汽液共存）
 
+<figure markdown="span">
+  ![p-v 三区两线](imgs/06-pv-saturation-dome.png){ width="88%" }
+  <figcaption>p-v 图上的三区两线：饱和液线（x=0）与饱和气线（x=1）将平面分为液相区、湿蒸汽区与过热蒸汽区，两线顶点交于临界点 C（图源：课程课件）</figcaption>
+</figure>
+
 !!! note "约定符号：一撇与两撇"
     饱和液参数加一撇（$v'$, $h'$, $s'$），干饱和蒸汽参数加两撇（$v''$, $h''$, $s''$）。它们都只是饱和温度（或饱和压力）的单值函数，可直接查饱和水蒸气表。
+
+<figure markdown="span">
+  ![T-s 等温线群](imgs/06-ts-isotherms.png){ width="88%" }
+  <figcaption>T-s 图上的等温线群：湿蒸汽区内等温线水平（定压即定温），离饱和气线越远越接近理想气体（图源：课程课件）</figcaption>
+</figure>
 
 ### 干度与湿蒸汽参数
 
@@ -1251,6 +1271,11 @@ u &= u' + x(u'' - u')
 - **饱和水蒸气表**：按温度或按压力列出 $v', v'', h', h'', s', s''$ 及 $r$
 - **未饱和水与过热蒸汽表**：以 $(p, t)$ 为自变量查 $v, h, s$
 - **焓熵图（$h$-$s$ 图，莫里尔 Mollier 图）**：纵轴 $h$、横轴 $s$，绝热过程为竖直线，便于读取喷管、汽轮机的焓降，是动力循环分析的常用工具
+
+<figure markdown="span">
+  ![莫里尔焓熵图](imgs/06-mollier-hs.png){ width="88%" }
+  <figcaption>焓熵图（h-s 图，莫里尔图）：纵轴比焓、横轴比熵，绝热过程为竖直线，便于读取汽轮机与喷管的焓降（图源：课程课件）</figcaption>
+</figure>
 
 !!! note "水蒸气表的基准点"
     水蒸气表规定**三相点**（$273.16\,\text{K}$，即 $0.01\,^\circ\text{C}$）的饱和水**热力学能与熵取为零**。因此表中 $u, s$ 都是相对值——计算中只用差值，基准的选取不影响结果。不同制冷工质的表可能选用不同基准点，混用前需留意。查表时**不能跨相界线作线性内插**。
@@ -1280,6 +1305,11 @@ $$\ln\frac{p_{s,2}}{p_{s,1}} = \frac{r}{R_g}\left(\frac{1}{T_{s,1}} - \frac{1}{T
     $$F = C - P + 2$$
 
     $F$ 为自由度（可独立变化的强度量数），$C$ 为组分数，$P$ 为相数。对纯物质（$C=1$）：单相 $F=2$（需两参数定态）、两相 $F=1$（定压即定温）、三相点 $F=0$（状态唯一）。
+
+<figure markdown="span">
+  ![p-T 相图](imgs/06-pt-phase-diagram.png){ width="88%" }
+  <figcaption>纯物质的 p-T 相图：固、液、气三相区由三条相平衡线分隔，三线交于三相点（自由度 F=0），气液线终止于临界点 C（图源：课程课件）</figcaption>
+</figure>
 
 不同约束下的**平衡判据**（由第三章熵增原理推广）：
 
@@ -1543,6 +1573,11 @@ $$h = \underbrace{1.005\, t}_{\text{干空气}} + \underbrace{d(2501 + 1.86\, t)
     | $\gamma$ | 绝热（等熵） | $pv^\gamma = \text{const}$ |
     | $\infty$ | 定容 | $v = \text{const}$ |
 
+<figure markdown="span">
+  ![多变过程特例](imgs/08-polytropic-special-cases.png){ width="86%" }
+  <figcaption>四个基本过程都是多变过程 pvⁿ=C 的特例：n=0 为定压、n=1 为定温、n=γ 为绝热、n=∞ 为定容（图源：课程课件）</figcaption>
+</figure>
+
 **多变过程参数关系**：
 
 $$\frac{T_2}{T_1} = \left(\frac{v_1}{v_2}\right)^{n-1} = \left(\frac{p_2}{p_1}\right)^{\frac{n-1}{n}}$$
@@ -1566,10 +1601,20 @@ $$c_n = c_v\,\frac{n-\gamma}{n-1}, \qquad q = c_n(T_2 - T_1), \qquad \Delta s = 
 
 ### p-v 图与 T-s 图上的过程走向
 
+<figure markdown="span">
+  ![基本过程 p-v T-s 图](imgs/08-processes-pv-ts.png){ width="90%" }
+  <figcaption>四个基本过程在 p-v 图与 T-s 图上的相对走向：自同一初态出发，多变指数 n 越大曲线越陡，定容线最陡、定压线最平（图源：课程课件）</figcaption>
+</figure>
+
 !!! key-point "用图判断过程性质"
     - 在 **$p$-$v$ 图**上，过同一点的各过程线，$n$ 越大曲线越陡（定容最陡 $n=\infty$，定压最平 $n=0$）
     - 在 **$T$-$s$ 图**上，定容线比定压线陡（$c_v < c_p$，斜率 $\partial T/\partial s = T/c$）
     - 过程线**指向右方（熵增）则吸热**，指向左方（熵减）则放热；竖直（$\Delta s=0$）为绝热
+
+<figure markdown="span">
+  ![做功与吸放热分区](imgs/08-heat-direction.png){ width="90%" }
+  <figcaption>p-v 图与 T-s 图上 w、Δu、q 的正负分区：过程线指向右方（熵增）则吸热，指向左方（熵减）则放热（图源：课程课件）</figcaption>
+</figure>
 
 ??? example "例题 8-1：多变压缩过程"
     **题目**：空气从 $p_1 = 0.1\,\text{MPa}$、$t_1 = 20\,^\circ\text{C}$ 多变压缩到 $p_2 = 0.5\,\text{MPa}$，多变指数 $n = 1.25$。取 $R_g = 287\,\text{J/(kg·K)}$，$c_v = 718\,\text{J/(kg·K)}$，$\gamma = 1.4$。求终温 $t_2$、膨胀功 $w$、热量 $q$。
@@ -1591,6 +1636,11 @@ $$c_n = c_v\,\frac{n-\gamma}{n-1}, \qquad q = c_n(T_2 - T_1), \qquad \Delta s = 
     $$q = c_n(T_2 - T_1) = -430.8 \times 111.35 = -48.0\ \text{kJ/kg}$$
 
     **要点**：$1 < n < \gamma$ 的压缩过程**对外放热**（$q<0$）且压缩耗功，介于定温（$n=1$，放热最多）与绝热（$n=\gamma$，不放热）之间。
+
+<figure markdown="span">
+  ![过程判断练习](imgs/08-process-exercise.png){ width="90%" }
+  <figcaption>综合判断练习：已知过程为「压缩、升温、放热」，借助 p-v 与 T-s 图即可定位终态所在区域（图源：课程课件）</figcaption>
+</figure>
 
 ### 真题精选
 
