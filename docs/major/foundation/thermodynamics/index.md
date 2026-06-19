@@ -890,19 +890,51 @@ $$c_p - c_v = Tv\frac{\alpha_v^2}{\kappa_T}$$
     2. 等号成立当且仅当 $\alpha_v = 0$（如 4°C 的水，密度最大处）
     3. 对理想气体，$c_p - c_v = R_g$（第五章导出）
 
-### 熵的一般微分表达式
+### 热力学能、焓、熵的全微分表达式
 
-将熵 $s$ 视为 $(T, v)$ 或 $(T, p)$ 的函数，利用 Maxwell 关系代入，得到熵的可计算微分形式：
+把 $u$、$h$、$s$ 取作可测量自变量 $(T, v)$ 或 $(T, p)$ 的函数，利用基本微分关系与 Maxwell 关系代入，可把它们的变化量化为**只含 $c_v$、$c_p$ 和 $p$-$v$-$T$ 关系**的可计算形式。这是制作物性表、计算实际气体（非理想气体）状态变化量的基础。
 
-以 $(T, v)$ 为独立变量：
+**热力学能 $u(T, v)$**：
 
-$$\mathrm{d}s = \frac{c_v}{T}\,\mathrm{d}T + \left(\frac{\partial p}{\partial T}\right)_v \mathrm{d}v$$
+$$
+\begin{aligned}
+\mathrm{d}u &= \left(\frac{\partial u}{\partial T}\right)_v \mathrm{d}T + \left(\frac{\partial u}{\partial v}\right)_T \mathrm{d}v \\[2pt]
+&= c_v\,\mathrm{d}T + \left[\,T\left(\frac{\partial s}{\partial v}\right)_T - p\,\right]\mathrm{d}v \\[2pt]
+&= c_v\,\mathrm{d}T + \left[\,T\left(\frac{\partial p}{\partial T}\right)_v - p\,\right]\mathrm{d}v
+\end{aligned}
+$$
 
-以 $(T, p)$ 为独立变量：
+末行用了 Maxwell 关系 $\left(\dfrac{\partial s}{\partial v}\right)_T = \left(\dfrac{\partial p}{\partial T}\right)_v$。
 
-$$\mathrm{d}s = \frac{c_p}{T}\,\mathrm{d}T - \left(\frac{\partial v}{\partial T}\right)_p \mathrm{d}p$$
+**焓 $h(T, p)$**：
 
-这两个式子将熵变转化为可测量的 $c_v$、$c_p$ 和 $p$-$v$-$T$ 关系，是实际计算熵变的基础。
+$$
+\begin{aligned}
+\mathrm{d}h &= \left(\frac{\partial h}{\partial T}\right)_p \mathrm{d}T + \left(\frac{\partial h}{\partial p}\right)_T \mathrm{d}p \\[2pt]
+&= c_p\,\mathrm{d}T + \left[\,v + T\left(\frac{\partial s}{\partial p}\right)_T\,\right]\mathrm{d}p \\[2pt]
+&= c_p\,\mathrm{d}T - \left[\,T\left(\frac{\partial v}{\partial T}\right)_p - v\,\right]\mathrm{d}p
+\end{aligned}
+$$
+
+末行用了 Maxwell 关系 $\left(\dfrac{\partial s}{\partial p}\right)_T = -\left(\dfrac{\partial v}{\partial T}\right)_p$。
+
+**熵 $s(T, v)$ 与 $s(T, p)$**：
+
+$$
+\mathrm{d}s = \left(\frac{\partial s}{\partial T}\right)_v \mathrm{d}T + \left(\frac{\partial s}{\partial v}\right)_T \mathrm{d}v = \frac{c_v}{T}\,\mathrm{d}T + \left(\frac{\partial p}{\partial T}\right)_v \mathrm{d}v
+$$
+
+$$
+\mathrm{d}s = \left(\frac{\partial s}{\partial T}\right)_p \mathrm{d}T + \left(\frac{\partial s}{\partial p}\right)_T \mathrm{d}p = \frac{c_p}{T}\,\mathrm{d}T - \left(\frac{\partial v}{\partial T}\right)_p \mathrm{d}p
+$$
+
+其中用到 $\left(\dfrac{\partial s}{\partial T}\right)_v = \dfrac{c_v}{T}$、$\left(\dfrac{\partial s}{\partial T}\right)_p = \dfrac{c_p}{T}$。
+
+!!! key-point "这组式子为什么重要"
+    它们把**无法直接测量**的 $u$、$h$、$s$ 变化，转化为只含**可测量**的比热容 $c_v$、$c_p$ 和 $p$-$v$-$T$ 数据的积分，是一切实际工质状态变化量计算的出发点：
+
+    - 对**理想气体**，$\left(\dfrac{\partial p}{\partial T}\right)_v = \dfrac{R_g}{v}$、$\left(\dfrac{\partial v}{\partial T}\right)_p = \dfrac{R_g}{p}$，代入即退化为第五章的 $\mathrm{d}u = c_v\mathrm{d}T$、$\mathrm{d}h = c_p\mathrm{d}T$ 等；
+    - 对**实际气体**，则代入具体状态方程或实测 $p$-$v$-$T$ 数据积分。
 
 ### 真题精选
 

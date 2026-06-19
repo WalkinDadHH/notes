@@ -1,5 +1,22 @@
 # Maintenance Log
 
+## 2026-06-19 — 工程热力学：第四章补全 u/h/s 全微分表达式
+
+Scope: `docs/major/foundation/thermodynamics/index.md`
+
+Changed:
+- 第四章原「熵的一般微分表达式」只有 $\mathrm{d}s$ 两式，遗漏了 $\mathrm{d}u$、$\mathrm{d}h$ 的全微分表达式（用户指出且非常重要）
+- 改名为「热力学能、焓、熵的全微分表达式」，补全三组式子并给出经 Maxwell 关系的推导中间步：
+  - $\mathrm{d}u = c_v\mathrm{d}T + [T(\partial p/\partial T)_v - p]\mathrm{d}v$
+  - $\mathrm{d}h = c_p\mathrm{d}T - [T(\partial v/\partial T)_p - v]\mathrm{d}p$
+  - $\mathrm{d}s$ 两式（保留）
+- 新增 key-point 说明其意义（把不可测的 u/h/s 变化化为可测 $c_v,c_p,pvT$ 积分；理想气体退化、实际气体代状态方程）
+
+Why:
+- 这组式子是「热力学一般关系」的核心结论，是实际气体状态变化量计算的出发点；参考 czy1101kksk.github.io 第四章口径
+
+Validation: `scripts/validate-mkdocs.ps1` 通过（1.10s）
+
 ## 2026-06-19 — 工程热力学：第十一章配入原理图（课件配图·试点）
 
 Scope: `docs/major/foundation/thermodynamics/index.md`、新增 `docs/major/foundation/thermodynamics/imgs/`
