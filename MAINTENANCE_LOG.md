@@ -1,20 +1,15 @@
 # Maintenance Log
 
-## 2026-06-19 — 主题：提升浅色模式对比度与阅读舒适度
+## 2026-06-19 — 回退浅色模式对比度改动（git revert）
 
-Scope: `docs/stylesheets/extra.css`（仅浅色 `default` scheme，深色 slate 不变）
+Scope: `docs/stylesheets/extra.css`
 
 Changed:
-- 正文文字 `--md-default-fg-color` `rgba(22,44,72,.82)` → `rgba(15,31,53,.92)`（加深 + 提不透明度），对比由 ~7.7:1 提到 ~12:1（清晰但非刺眼纯黑）
-- 次要文字 `--md-default-fg-color--light` `.56` → `.72`，`--lighter` `.32` → `.42`：修复侧栏/目录/表头等次要文字，由不达标的 ~3.5:1 提到 ~6:1（稳过 WCAG AA）
-- 背景 `--md-default-bg-color` `#f5f9ff` → `#edf1f7`（降亮度、减冷蓝眩光），`bg--light/lighter/lightest` 同步对齐
-- 链接色 `--md-typeset-a-color` 由 `accent--light`(#1976d2) 改为 `primary`(#1565c0)，对比由 ~4:1 提到 ~5:1（过 AA）
+- 按用户要求 `git revert` 掉本日「提升浅色模式对比度」提交（52aba6a），`extra.css` 恢复到改动前配色（正文 `rgba(22,44,72,.82)`、次要 `.56`、背景 `#f5f9ff`、链接 `accent--light`）
+- 重新 `gh-deploy --force` 同步线上站点
 
 Why:
-- 反馈「对比度差、看久了累」；定位到正文偏灰、次要文字不达 AA、亮背景眩光三处主因（应用户多选确认）
-- 字体保持「霞鹜文楷」（用户未选更换字体）
-
-Validation: `scripts/validate-mkdocs.ps1` 通过（1.00s）
+- 用户选择回退该视觉改动；如后续需要可重新做更克制的对比度微调（非整段回退）
 
 ## 2026-06-19 — 工程热力学：整合历年题册，各章新增「真题精选」
 
