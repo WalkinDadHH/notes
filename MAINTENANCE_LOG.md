@@ -1,5 +1,25 @@
 # Maintenance Log
 
+## 2026-06-19 — 工程热力学：第十一章配入原理图（课件配图·试点）
+
+Scope: `docs/major/foundation/thermodynamics/index.md`、新增 `docs/major/foundation/thermodynamics/imgs/`
+
+Changed:
+- 课件配图功能**试点章节**：第十一章 蒸汽动力循环，从课程课件《第十一章 蒸汽动力循环-2026.pdf》(71 页) 选取 6 张原理图，渲染裁切（去标题带/页码条，PyMuPDF Matrix 2.4，clip 0.13–0.94）后插入对应小节：
+  - `11-carnot-steam-ts`（蒸汽卡诺循环 T-s）→ 为什么不用蒸汽卡诺循环
+  - `11-rankine-plant-schematic`（朗肯装置示意图）、`11-rankine-ts-process`（朗肯 T-s 分过程）→ 朗肯循环
+  - `11-initial-temp-effect`（初温对效率影响）→ 提高效率途径
+  - `11-reheat-cycle`（再热装置图+T-s）、`11-regenerative-cycle`（回热 T-s）→ 再热与回热
+- 采用 Material `<figure markdown="span">` + `<figcaption>`，每图标注「图源：课程课件」（attr_list + md_in_html 已启用）
+
+Why:
+- 用户反馈原理部分需配图辅助理解；课件（用户上课所用，2026-06-18 下载于 `Downloads/工程热力学（甲）/`）图源贴合教学
+- 先做单章试点验证版式/密度/裁切风格，确认后再铺开到其他章
+
+Notes:
+- 课件图多为 wmf/emf 矢量，故采用「整页渲染 + 裁切」而非抽取嵌入图；3 个仅 pptx 的章节（3/4/9）后续需 PowerPoint 渲染
+- Validation: `scripts/validate-mkdocs.ps1` 通过（0.98s），6 图均已构建进站点
+
 ## 2026-06-19 — 回退浅色模式对比度改动（git revert）
 
 Scope: `docs/stylesheets/extra.css`

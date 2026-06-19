@@ -1734,7 +1734,17 @@ $$
 
 卡诺循环效率最高，但以水蒸气为工质时难以实现：乏汽在湿蒸汽区压缩需压缩湿蒸汽（汽液两相，压缩机难做）、临界温度限制了高温热源利用。因此实际采用**朗肯循环**。
 
+<figure markdown="span">
+  ![蒸汽卡诺循环 T-s 图](imgs/11-carnot-steam-ts.png){ width="88%" }
+  <figcaption>蒸汽卡诺循环的 T-s 图：3→4 须压缩汽液两相的湿蒸汽，难以实现（图源：课程课件）</figcaption>
+</figure>
+
 ### 朗肯循环
+
+<figure markdown="span">
+  ![朗肯循环装置示意图](imgs/11-rankine-plant-schematic.png){ width="90%" }
+  <figcaption>朗肯循环装置系统：锅炉 → 汽轮机 → 凝汽器 → 给水泵（图源：课程课件）</figcaption>
+</figure>
 
 !!! definition "朗肯循环的四个过程"
     | 过程 | 设备 | 性质 |
@@ -1743,6 +1753,11 @@ $$
     | $1\to2$ | 汽轮机 | 绝热膨胀做功 |
     | $2\to3$ | 冷凝器 | 定压放热（乏汽→凝结水） |
     | $3\to4$ | 水泵 | 绝热加压 |
+
+<figure markdown="span">
+  ![朗肯循环 T-s 图与分过程](imgs/11-rankine-ts-process.png){ width="90%" }
+  <figcaption>朗肯循环在 T-s 图上的四个分过程（图源：课程课件）</figcaption>
+</figure>
 
 **热效率**：
 
@@ -1763,10 +1778,25 @@ $$\eta_t = \frac{w_{\text{net}}}{q_1} = \frac{(h_1 - h_2) - (h_4 - h_3)}{h_1 - h
     2. **提高初温 $t_1$**：效率上升，且改善乏汽干度——最受欢迎，受材料耐温限制
     3. **降低背压 $p_2$**（冷凝压力）：效率上升最显著，受环境冷源温度限制
 
+<figure markdown="span">
+  ![提高初温对效率的影响](imgs/11-initial-temp-effect.png){ width="90%" }
+  <figcaption>提高初温 t₁：循环热效率上升、乏汽干度改善（右图为效率随初温的变化）（图源：课程课件）</figcaption>
+</figure>
+
 ### 再热循环与回热循环
 
 - **再热循环**：蒸汽在汽轮机高压缸膨胀后抽回锅炉**再热**，再进入低压缸继续膨胀。既提高了平均吸热温度、又改善了乏汽干度。
 - **回热循环**：从汽轮机中间级**抽汽**去加热锅炉给水，减少了锅炉中低温段的吸热，提高了平均吸热温度，是现代电厂提效的核心手段。抽汽量 $\alpha$ 由给水加热器的能量平衡确定。
+
+<figure markdown="span">
+  ![再热循环装置图与 T-s 图](imgs/11-reheat-cycle.png){ width="90%" }
+  <figcaption>再热循环：高压缸膨胀后抽回锅炉再热，再入低压缸（装置图 + T-s 图）（图源：课程课件）</figcaption>
+</figure>
+
+<figure markdown="span">
+  ![回热循环 T-s 图](imgs/11-regenerative-cycle.png){ width="88%" }
+  <figcaption>回热循环：抽汽预热给水，改善低温吸热段（4→1 过程）（图源：课程课件）</figcaption>
+</figure>
 
 ### 循环的其他评价指标
 
