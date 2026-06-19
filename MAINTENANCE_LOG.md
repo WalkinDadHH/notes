@@ -1,5 +1,21 @@
 # Maintenance Log
 
+## 2026-06-19 — 主题：提升浅色模式对比度与阅读舒适度
+
+Scope: `docs/stylesheets/extra.css`（仅浅色 `default` scheme，深色 slate 不变）
+
+Changed:
+- 正文文字 `--md-default-fg-color` `rgba(22,44,72,.82)` → `rgba(15,31,53,.92)`（加深 + 提不透明度），对比由 ~7.7:1 提到 ~12:1（清晰但非刺眼纯黑）
+- 次要文字 `--md-default-fg-color--light` `.56` → `.72`，`--lighter` `.32` → `.42`：修复侧栏/目录/表头等次要文字，由不达标的 ~3.5:1 提到 ~6:1（稳过 WCAG AA）
+- 背景 `--md-default-bg-color` `#f5f9ff` → `#edf1f7`（降亮度、减冷蓝眩光），`bg--light/lighter/lightest` 同步对齐
+- 链接色 `--md-typeset-a-color` 由 `accent--light`(#1976d2) 改为 `primary`(#1565c0)，对比由 ~4:1 提到 ~5:1（过 AA）
+
+Why:
+- 反馈「对比度差、看久了累」；定位到正文偏灰、次要文字不达 AA、亮背景眩光三处主因（应用户多选确认）
+- 字体保持「霞鹜文楷」（用户未选更换字体）
+
+Validation: `scripts/validate-mkdocs.ps1` 通过（1.00s）
+
 ## 2026-06-19 — 工程热力学：整合历年题册，各章新增「真题精选」
 
 Scope: `docs/major/foundation/thermodynamics/index.md`
