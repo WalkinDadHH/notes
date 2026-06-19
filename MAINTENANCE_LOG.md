@@ -1,5 +1,16 @@
 # Maintenance Log
 
+## 2026-06-19 — 工程热力学：标题内 LaTeX 改为纯文本（修复侧栏目录乱码）
+
+Scope: `docs/major/foundation/thermodynamics/index.md`
+
+Changed:
+- 将 7 处标题中的 `$...$` 行内公式改为纯文本，避免 MathJax 不处理侧栏 TOC 导致显示 `\(c_v\)` 等源码：定容比热容 c_v、定压比热容 c_p、体膨胀系数 α_v、等温压缩率 κ_T、焦汤系数 μ_J、焓湿图（h-d 图）、p-v 图与 T-s 图上的过程走向
+
+Why:
+- 侧栏目录（TOC）不经过 MathJax 渲染，标题里的 LaTeX 会原样显示源码，影响阅读
+- 已全仓 grep，确认仅此文件存在标题内公式
+
 ## 2026-06-19 — 工程热力学：新增㶲/有效能专节 + 后半章节细节补充
 
 Scope: `docs/major/foundation/thermodynamics/index.md`
