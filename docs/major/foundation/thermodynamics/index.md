@@ -385,6 +385,11 @@ $$\Delta(pv) = p_2 v_2 - p_1 v_1$$
 
 这一项将频繁出现在开口系的能量方程中。
 
+<figure markdown="span">
+  ![流动功示意图](imgs/02-flow-work.png){ width="86%" }
+  <figcaption>流动功 w=pv：上游工质把截面处的工质推入控制体所做的功（图源：课程课件）</figcaption>
+</figure>
+
 ### 焓
 
 为了简化开口系的书写，引入**焓** $H$ 作为复合状态参数：
@@ -416,6 +421,11 @@ $$Q_{\text{net}} = W_{\text{net}}$$
 
 即循环净热量等于循环净功——这是热机效率分析的基础。
 
+<figure markdown="span">
+  ![循环过程与内能是状态量](imgs/02-cycle-internal-energy.png){ width="88%" }
+  <figcaption>沿任意循环 ∮(δQ−δW)=0，故内能 U 是状态参数；循环净热量等于净功（图源：课程课件）</figcaption>
+</figure>
+
 ### 开口系能量方程
 
 对于允许工质进出的**开口系**（控制体），除了热量和功的交换，还需计入工质携带的能量。
@@ -432,9 +442,19 @@ $$\delta Q = \mathrm{d}E_{\text{cv}} + \left(h_2 + \frac{c_2^2}{2} + gz_2\right)
 
 其中 $E_{\text{cv}}$ 为控制体内的总储存能（内能 + 动能 + 势能）。
 
+<figure markdown="span">
+  ![开口系能量方程](imgs/02-open-system-energy.png){ width="90%" }
+  <figcaption>开口系（控制体）能量平衡：进出口工质携带的焓、动能、位能，加上热量与轴功（图源：课程课件）</figcaption>
+</figure>
+
 ### 稳定流动能量方程
 
 工程中最常见的是**稳定流动**（稳态）：控制体内工质状态不随时间变化，进出质量流量相等（$\dot{m}_1 = \dot{m}_2 = \dot{m}$），此时 $\mathrm{d}E_{\text{cv}} = 0$。
+
+<figure markdown="span">
+  ![稳定流动条件](imgs/02-steady-flow.png){ width="88%" }
+  <figcaption>稳定流动：控制体内每一截面状态都不随时间变化，进出口质量流量相等（图源：课程课件）</figcaption>
+</figure>
 
 单位质量工质的稳定流动能量方程（**SFEE**）：
 
@@ -449,6 +469,11 @@ $$q = (h_2 - h_1) + \frac{c_2^2 - c_1^2}{2} + g(z_2 - z_1) + w_i$$
     
     对**绝热**稳定流动（$q = 0$），轴功完全来自焓降：$w_i = h_1 - h_2$
 
+<figure markdown="span">
+  ![透平机械的稳定流动](imgs/02-turbine.png){ width="86%" }
+  <figcaption>汽轮机等透平机械：绝热稳定流动时输出的轴功来自焓降，w=h₁−h₂>0（图源：课程课件）</figcaption>
+</figure>
+
 ### 技术功
 
 在稳定流动中，**技术功** $w_t$ 定义为除流动功以外的所有功之和（含轴功、摩擦功等）：
@@ -462,6 +487,11 @@ $$\delta w_t = -v \, \mathrm{d}p$$
 $$w_t = -\int_1^2 v \, \mathrm{d}p$$
 
 在 $p$-$v$ 图上，$-\int v \, \mathrm{d}p$ 对应曲线**左侧**的面积（与 $\int p \, \mathrm{d}v$ 在曲线下方对应）。
+
+<figure markdown="span">
+  ![技术功在 p-v 图上的面积](imgs/02-technical-work-pv.png){ width="86%" }
+  <figcaption>技术功 wₜ=−∫v dp 在 p-v 图上对应曲线左侧（纵轴方向）的面积（图源：课程课件）</figcaption>
+</figure>
 
 相应地，可逆稳定流动中热量与焓、熵的关系：
 
@@ -998,6 +1028,11 @@ $$
 
 **理想气体**是气体在低压高温极限下的简化模型：分子体积可忽略不计，分子间无相互作用力（无势能）。
 
+<figure markdown="span">
+  ![理想气体分子模型](imgs/05-ideal-gas-model.png){ width="86%" }
+  <figcaption>理想气体微观模型：分子本身体积可忽略，分子间无相互作用力（图源：课程课件）</figcaption>
+</figure>
+
 理想气体的状态方程（**克拉贝龙方程**）：
 
 $$pV = nRT = mR_g T$$
@@ -1085,6 +1120,11 @@ $$\overline{c}_v \big|_{t_1}^{t_2} = \frac{\overline{c}_v \big|_0^{t_2} \cdot t_
 
 其中 $\overline{c}_v \big|_0^{t}$ 为从 0°C 到 $t$°C 的平均比热容，可查热力学数据表。
 
+<figure markdown="span">
+  ![平均比热容](imgs/05-mean-specific-heat.png){ width="88%" }
+  <figcaption>真实比热容随温度升高而增大；平均比热容用 c-T 曲线下的面积除以温差表示（图源：课程课件）</figcaption>
+</figure>
+
 !!! tip "查表方法"
     1. 分别查出以 0°C 为参考态的 $\overline{c}\big|_0^{t_1}$ 和 $\overline{c}\big|_0^{t_2}$
     2. 用上式合成区间 $[t_1, t_2]$ 的平均比热容
@@ -1102,6 +1142,30 @@ $$\overline{c}_v \big|_{t_1}^{t_2} = \frac{\overline{c}_v \big|_0^{t_2} \cdot t_
 | 绝热可逆 | $s=\text{const}$ | $-\Delta u$ | $0$ | $0$ |
 
 绝热可逆过程满足 $pv^\gamma = \text{const}$（详见第八章）。
+
+### 实际气体状态方程与压缩因子
+
+理想气体模型只在低压、高温下成立。实际气体分子本身**有体积**、分子间**有作用力**，需要修正的状态方程来描述。最经典的是**范德瓦尔斯方程（van der Waals）**：
+
+$$\left(p + \frac{a}{v^2}\right)(v - b) = R_g T$$
+
+其中 $a/v^2$ 修正分子间引力（使压力偏小），$b$ 修正分子自身占据的体积。常数 $a$、$b$ 可由临界点的数学特征确定——临界等温线在临界点处为拐点，即 $\left(\dfrac{\partial p}{\partial v}\right)_T = \left(\dfrac{\partial^2 p}{\partial v^2}\right)_T = 0$。
+
+<figure markdown="span">
+  ![范德瓦尔斯方程等温线](imgs/05-vdw-isotherms.png){ width="88%" }
+  <figcaption>范德瓦尔斯方程在 p-v 图上的等温线：高温接近理想气体双曲线，低温出现可反映液-气相变的波动段，临界等温线在临界点有拐点（图源：课程课件）</figcaption>
+</figure>
+
+工程上更常用**压缩因子** $Z$ 衡量实际气体偏离理想气体的程度：
+
+$$Z = \frac{pv}{R_g T} = \frac{pV}{nRT}$$
+
+理想气体 $Z \equiv 1$；$Z$ 偏离 1 的大小反映非理想性。**对比态定律**指出：用对比参数 $p_r = p/p_c$、$T_r = T/T_c$ 表示时，各种气体的 $Z$ 近似只是 $p_r$、$T_r$ 的通用函数，可查**通用压缩因子图**统一估算。
+
+<figure markdown="span">
+  ![通用压缩因子图](imgs/05-compressibility-chart.png){ width="86%" }
+  <figcaption>通用压缩因子图：以对比压力 p_r、对比温度 T_r 为坐标，各种气体的 Z 近似落在同一族曲线上（图源：课程课件）</figcaption>
+</figure>
 
 ### 真题精选
 

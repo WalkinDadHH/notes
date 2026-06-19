@@ -1,5 +1,30 @@
 # Maintenance Log
 
+## 2026-06-19 — 工程热力学：第二、五章配入原理图（课件配图·第3批）
+
+Scope: `docs/major/foundation/thermodynamics/index.md`、`docs/major/foundation/thermodynamics/imgs/`
+
+Changed:
+- 第二章（能量与热力学第一定律）从《第二章 热力学第一定律.pdf》选 6 图：
+  - `02-flow-work`（流动功 w=pv 示意）→ 流动功与推进功
+  - `02-cycle-internal-energy`（循环 ∮(δQ−δW)=0 → 内能是状态量）→ 闭口系
+  - `02-open-system-energy`（控制体能量平衡）→ 开口系能量方程
+  - `02-steady-flow`（稳定流动条件 CV）→ 稳定流动能量方程
+  - `02-turbine`（透平机械，输出轴功 w=h₁−h₂，例1 p45）→ SFEE 应用
+  - `02-technical-work-pv`（技术功 −∫v dp 曲线左侧面积）→ 技术功
+- 第五章（气体的热力性质）从《第5章 气体的热力性质-4.pdf》选 4 图：
+  - `05-ideal-gas-model`（理想气体分子模型）→ 理想气体模型
+  - `05-mean-specific-heat`（真实/平均比热随温度）→ 平均比热容
+  - `05-vdw-isotherms`（范德瓦尔斯等温线）、`05-compressibility-chart`（通用压缩因子图）→ 新增小节
+- 第五章新增「实际气体状态方程与压缩因子」小节（范德瓦尔斯方程 + 压缩因子 Z + 对比态定律），承接原有「压缩因子」真题，补全此前缺失的实际气体内容
+- 仍沿用 `<figure markdown="span">` + 「图源：课程课件」；渲染裁切 Matrix 2.4、clip ≈0.10–0.97
+
+Notes:
+- 第二章 p44/p46 为纯文字应用清单，弃用；改用 p45（透平机械示意，输出轴功 w=h₁−h₂>0）契合「绝热 w=h₁−h₂」结论
+- 分批策略：本批 2 章（第二、五章），批次间用户 /compact 控制上下文
+
+Validation: `scripts/validate-mkdocs.ps1` 通过（1.19s）
+
 ## 2026-06-19 — 工程热力学：第一章配入原理图（课件配图·第2批）
 
 Scope: `docs/major/foundation/thermodynamics/index.md`、`docs/major/foundation/thermodynamics/imgs/`
