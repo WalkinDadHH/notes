@@ -47,15 +47,18 @@ h1,
    ========================================= */
 :root,
 [data-md-color-scheme=default] {
-  --md-default-fg-color:           rgba(22, 44, 72, .82);
-  --md-default-fg-color--light:    rgba(22, 44, 72, .56);
-  --md-default-fg-color--lighter:  rgba(22, 44, 72, .32);
-  --md-default-fg-color--lightest: rgba(22, 44, 72, .14);
+  /* 正文文字加深（.82→.92）并压暗基色，提升对比至 ~12:1（清晰但非刺眼纯黑）；
+     次要文字 .56→.72 使侧栏/目录达 WCAG AA */
+  --md-default-fg-color:           rgba(15, 31, 53, .92);
+  --md-default-fg-color--light:    rgba(15, 31, 53, .72);
+  --md-default-fg-color--lighter:  rgba(15, 31, 53, .42);
+  --md-default-fg-color--lightest: rgba(15, 31, 53, .14);
 
-  --md-default-bg-color:           #f5f9ff;
-  --md-default-bg-color--light:    hsla(220, 100%, 99%, .7);
-  --md-default-bg-color--lighter:  hsla(220, 100%, 99%, .3);
-  --md-default-bg-color--lightest: hsla(220, 100%, 99%, .12);
+  /* 背景降亮度、减冷蓝眩光，缓解长时间阅读疲劳 */
+  --md-default-bg-color:           #edf1f7;
+  --md-default-bg-color--light:    hsla(214, 33%, 97%, .7);
+  --md-default-bg-color--lighter:  hsla(214, 33%, 97%, .3);
+  --md-default-bg-color--lightest: hsla(214, 33%, 97%, .12);
 
   --md-primary-fg-color:           #1565c0;
   --md-primary-fg-color--light:    #1976d2;
@@ -85,7 +88,7 @@ h1,
   --md-code-hl-variable-color:     var(--md-default-fg-color--light);
 
   --md-typeset-color:              var(--md-default-fg-color);
-  --md-typeset-a-color:            var(--md-accent-fg-color--light);
+  --md-typeset-a-color:            var(--md-primary-fg-color);
   --md-typeset-mark-color:         rgba(33, 150, 243, .3);
   --md-typeset-del-color:          rgba(229, 57, 53, .15);
   --md-typeset-ins-color:          rgba(56, 142, 60, .15);
