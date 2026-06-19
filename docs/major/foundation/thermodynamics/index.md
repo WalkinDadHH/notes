@@ -166,6 +166,11 @@ comments: true
 | 闭口系（控制质量） | ✗ | ✓ |
 | 孤立系 | ✗ | ✗ |
 
+<figure markdown="span">
+  ![热力系统分类](imgs/01-system-classification.png){ width="90%" }
+  <figcaption>热力系统分类：闭口系（控制质量 CM）与开口系（控制体 CV）（图源：课程课件）</figcaption>
+</figure>
+
 !!! note "工质"
     热力学系统中实现能量转换的媒介物质称为**工质**。分析热机时，工质通常是气体或蒸汽；它在系统内流动并与外界交换热量和功。
 
@@ -183,6 +188,11 @@ comments: true
 只有处于平衡态，系统的宏观性质才能用确定的**状态参数**来描述。常用的状态参数有：温度 $T$、压力 $p$、比体积 $v$ 等。
 
 对于简单可压缩系统，**两个独立的强度量参数**即可完全确定系统状态，其余参数均可由状态方程导出。
+
+<figure markdown="span">
+  ![状态参数坐标图](imgs/01-state-coordinates.png){ width="90%" }
+  <figcaption>简单可压缩系只需两个独立参数，即可在坐标图上确定一个状态点（图源：课程课件）</figcaption>
+</figure>
 
 ### 状态参数
 
@@ -235,6 +245,11 @@ $$T(\text{K}) = t(^{\circ}\text{C}) + 273.15$$
 
 准静态过程可以在热力学状态图（如 $p$-$v$ 图、$T$-$s$ 图）上用连续曲线表示，这是进行图形分析的基础。
 
+<figure markdown="span">
+  ![准静态过程](imgs/01-quasistatic-process.png){ width="88%" }
+  <figcaption>准静态过程：每一时刻都无限接近平衡态，可在 p-v 图上用连续曲线表示（图源：课程课件）</figcaption>
+</figure>
+
 #### 可逆过程
 
 可逆过程是热力学中的理想化极限，需同时满足两个条件：
@@ -268,6 +283,11 @@ $$q_{1\text{-}2} = \int_1^2 T \, \mathrm{d}s$$
 
 在 $T$-$s$ 图上，可逆过程的热量等于曲线下的面积。
 
+<figure markdown="span">
+  ![热量在 T-s 图上的面积](imgs/01-heat-ts.png){ width="88%" }
+  <figcaption>可逆过程热量 q=∫T ds，等于 T-s 图上曲线下的面积（图源：课程课件）</figcaption>
+</figure>
+
 #### 体积功（膨胀功）
 
 闭口系工质因体积变化对外做的功：
@@ -277,6 +297,11 @@ $$\delta w = p \, \mathrm{d}v$$
 $$w_{1\text{-}2} = \int_1^2 p \, \mathrm{d}v$$
 
 在 $p$-$v$ 图上，可逆过程的膨胀功等于曲线下的面积。
+
+<figure markdown="span">
+  ![膨胀功在 p-v 图上的面积](imgs/01-volume-work.png){ width="88%" }
+  <figcaption>可逆膨胀功 w=∫p dv，等于 p-v 图上曲线下的面积（图源：课程课件）</figcaption>
+</figure>
 
 #### 有用功
 

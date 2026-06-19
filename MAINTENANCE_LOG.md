@@ -1,5 +1,21 @@
 # Maintenance Log
 
+## 2026-06-19 — 工程热力学：第一章配入原理图（课件配图·第2批）
+
+Scope: `docs/major/foundation/thermodynamics/index.md`、`docs/major/foundation/thermodynamics/imgs/`
+
+Changed:
+- 配图铺开第 1 章（基本概念）：从《第一章 基本概念和定义.pdf》选 5 图，渲染裁切（Matrix 2.4，clip 0.12–0.97）后插入：
+  - `01-system-classification`（闭口/开口系分类）→ 热力学系统
+  - `01-state-coordinates`（状态参数坐标图）→ 热力学状态与平衡态
+  - `01-quasistatic-process`（准静态过程 p-v）→ 热力学过程
+  - `01-heat-ts`（热量 T-s 面积）、`01-volume-work`（膨胀功 p-v 面积）→ 热量与功
+- 仍用 `<figure markdown="span">` + 「图源：课程课件」
+
+Notes:
+- 该章为概念章，本批 5 图（系统/状态/过程/功/热），无清晰的表压-绝压条形图故未收
+- 分批策略：本章为一批，批次间用户 /compact 控制上下文；validation 通过（1.02s）
+
 ## 2026-06-19 — 工程热力学：第四章补全 u/h/s 全微分表达式
 
 Scope: `docs/major/foundation/thermodynamics/index.md`
