@@ -6496,7 +6496,17 @@ $<span class="arithmatex">\(p_x = \sqrt{p_1\, p_3}\)</span>$</p>
 </div>
 <h3 id="_98">为什么不用蒸汽卡诺循环<a class="headerlink" href="#_98" title="Permanent link">&para;</a></h3>
 <p>卡诺循环效率最高，但以水蒸气为工质时难以实现：乏汽在湿蒸汽区压缩需压缩湿蒸汽（汽液两相，压缩机难做）、临界温度限制了高温热源利用。因此实际采用<strong>朗肯循环</strong>。</p>
+<figure>
+  <img alt="蒸汽卡诺循环 T-s 图" src="imgs/11-carnot-steam-ts.png" width="88%" />
+<br />
+<figcaption>蒸汽卡诺循环的 T-s 图：3→4 须压缩汽液两相的湿蒸汽，难以实现（图源：课程课件）</figcaption>
+</figure>
 <h3 id="_99">朗肯循环<a class="headerlink" href="#_99" title="Permanent link">&para;</a></h3>
+<figure>
+  <img alt="朗肯循环装置示意图" src="imgs/11-rankine-plant-schematic.png" width="90%" />
+<br />
+<figcaption>朗肯循环装置系统：锅炉 → 汽轮机 → 凝汽器 → 给水泵（图源：课程课件）</figcaption>
+</figure>
 <div class="admonition definition">
 <p class="admonition-title">朗肯循环的四个过程</p>
 <table>
@@ -6531,6 +6541,11 @@ $<span class="arithmatex">\(p_x = \sqrt{p_1\, p_3}\)</span>$</p>
 </tbody>
 </table>
 </div>
+<figure>
+  <img alt="朗肯循环 T-s 图与分过程" src="imgs/11-rankine-ts-process.png" width="90%" />
+<br />
+<figcaption>朗肯循环在 T-s 图上的四个分过程（图源：课程课件）</figcaption>
+</figure>
 <p><strong>热效率</strong>：</p>
 <div class="arithmatex">\[\eta_t = \frac{w_{\text{net}}}{q_1} = \frac{(h_1 - h_2) - (h_4 - h_3)}{h_1 - h_4}\]</div>
 <p>其中汽轮机做功 <span class="arithmatex">\(w_T = h_1 - h_2\)</span>，水泵耗功 <span class="arithmatex">\(w_p = h_4 - h_3 \approx v'(p_1 - p_2)\)</span>。</p>
@@ -6549,11 +6564,26 @@ $<span class="arithmatex">\(\eta_t \approx \frac{h_1 - h_2}{h_1 - h_3}\)</span>$
 <li><strong>降低背压 <span class="arithmatex">\(p_2\)</span></strong>（冷凝压力）：效率上升最显著，受环境冷源温度限制</li>
 </ol>
 </div>
+<figure>
+  <img alt="提高初温对效率的影响" src="imgs/11-initial-temp-effect.png" width="90%" />
+<br />
+<figcaption>提高初温 t₁：循环热效率上升、乏汽干度改善（右图为效率随初温的变化）（图源：课程课件）</figcaption>
+</figure>
 <h3 id="_101">再热循环与回热循环<a class="headerlink" href="#_101" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>再热循环</strong>：蒸汽在汽轮机高压缸膨胀后抽回锅炉<strong>再热</strong>，再进入低压缸继续膨胀。既提高了平均吸热温度、又改善了乏汽干度。</li>
 <li><strong>回热循环</strong>：从汽轮机中间级<strong>抽汽</strong>去加热锅炉给水，减少了锅炉中低温段的吸热，提高了平均吸热温度，是现代电厂提效的核心手段。抽汽量 <span class="arithmatex">\(\alpha\)</span> 由给水加热器的能量平衡确定。</li>
 </ul>
+<figure>
+  <img alt="再热循环装置图与 T-s 图" src="imgs/11-reheat-cycle.png" width="90%" />
+<br />
+<figcaption>再热循环：高压缸膨胀后抽回锅炉再热，再入低压缸（装置图 + T-s 图）（图源：课程课件）</figcaption>
+</figure>
+<figure>
+  <img alt="回热循环 T-s 图" src="imgs/11-regenerative-cycle.png" width="88%" />
+<br />
+<figcaption>回热循环：抽汽预热给水，改善低温吸热段（4→1 过程）（图源：课程课件）</figcaption>
+</figure>
 <h3 id="_102">循环的其他评价指标<a class="headerlink" href="#_102" title="Permanent link">&para;</a></h3>
 <div class="admonition definition">
 <p class="admonition-title">汽耗率、循环功比与相对内效率</p>
