@@ -575,7 +575,7 @@ $$\eta_C = 1 - \frac{T_2}{T_1}$$
 
 <figure markdown="span">
   ![卡诺定理的反证法](imgs/03-carnot-theorem.png){ width="62%" }
-  <figcaption>卡诺定理一的反证：设任意热机 E 的效率高于可逆热机 R，用 E 的部分功 $W_r$ 驱动 R 反转制冷，则可在不消耗外功的情况下把热量从低温热源搬向高温热源——构成第二类永动机，与第二定律矛盾，故 $\eta_E \le \eta_R$（图源：课程课件）</figcaption>
+  <figcaption>卡诺定理一的反证：设任意热机 E 的效率高于可逆热机 R，用 E 的部分功 Wr 驱动 R 反转制冷，则可在不消耗外功的情况下把热量从低温热源搬向高温热源——构成第二类永动机，与第二定律矛盾，故 η_E ≤ η_R（图源：课程课件）</figcaption>
 </figure>
 
 ### 制冷循环与热泵
@@ -592,7 +592,7 @@ $$\varepsilon' = \frac{q_1}{w} = \frac{T_1}{T_1 - T_2} = \varepsilon + 1$$
 
 <figure markdown="span">
   ![逆卡诺循环与性能系数](imgs/03-reverse-carnot.png){ width="88%" }
-  <figcaption>逆卡诺循环（制冷/热泵）：消耗净功 $W=Q_1-Q_2$，从低温热源 $T_2$ 取热 $Q_2$、向高温热源 $T_1$ 放热 $Q_1$。制冷系数 $\varepsilon=T_2/(T_1-T_2)$、供暖系数 $\varepsilon'=T_1/(T_1-T_2)$，统称性能系数 COP（图源：课程课件）</figcaption>
+  <figcaption>逆卡诺循环（制冷/热泵）：消耗净功 W = Q₁−Q₂，从低温热源 T₂ 取热 Q₂、向高温热源 T₁ 放热 Q₁。制冷系数 ε = T₂/(T₁−T₂)、供暖系数 ε′ = T₁/(T₁−T₂)，统称性能系数 COP（图源：课程课件）</figcaption>
 </figure>
 
 ### 克劳修斯不等式
@@ -624,7 +624,7 @@ $$S_2 - S_1 = \int_1^2 \frac{\delta Q}{T}$$
 
 <figure markdown="span">
   ![T-s 图（示热图）](imgs/03-ts-diagram.png){ width="42%" }
-  <figcaption>T-s 图（示热图）：由 $\delta Q = T\,\mathrm{d}s$，过程曲线下的面积即可逆过程交换的热量。从 1 出发，$\mathrm{d}s>0$（1→2）为吸热、$\mathrm{d}s=0$（1→2′）为绝热、$\mathrm{d}s<0$（1→2″）为放热（图源：课程课件）</figcaption>
+  <figcaption>T-s 图（示热图）：由 δQ = T·ds，过程曲线下的面积即可逆过程交换的热量。从 1 出发，ds>0（1→2）为吸热、ds=0（1→2′）为绝热、ds<0（1→2″）为放热（图源：课程课件）</figcaption>
 </figure>
 
 ### 不可逆过程与熵产
@@ -642,6 +642,7 @@ $$\mathrm{d}S = \frac{\delta Q}{T} + \delta S_g$$
 - $\delta S_g \geq 0$：由不可逆因素（摩擦、温差传热等）产生的**熵产**
 
 !!! definition "熵产的性质"
+
     $$\delta S_g \begin{cases} = 0 & \text{可逆过程} \\ > 0 & \text{不可逆过程} \end{cases}$$
     
     熵产永远非负，且不可逆程度越高，熵产越大。熵产是衡量过程不可逆性的量度。
@@ -701,7 +702,9 @@ $$s_2 - s_1 = \int \frac{\delta q}{T_b} + s_g \quad (s_g \geq 0)$$
 
 !!! definition "㶲（exergy）与火无（anergy）"
     在给定环境（$T_0, p_0$）下，能量中**理论上可转化为有用功的最大部分**称为**㶲**（有效能 $E_x$）；其余**无法转化为功**的部分称为**火无**（anergy，无效能 $A_n$）。两者之和为能量本身：
+
     $$\text{能量} = E_x + A_n$$
+
     环境是㶲的基准，**环境的㶲为零**。㶲把"能量的量"与"能量的质"统一了起来。
 
 #### 热量㶲
@@ -729,12 +732,14 @@ $$
 
 !!! key-point "Gouy–Stodola 定理：㶲损 = 熵产 × 环境温度"
     一切不可逆过程都会**损失做功能力**，称为**㶲损** $I$。它与熵产 $S_g$ 直接成正比：
+
     $$I = T_0\, S_g \geq 0$$
+
     可逆过程 $S_g = 0$ 故 $I = 0$。**㶲损只取决于熵产**——而熵是状态量、易计算，功是过程量、难计算，所以求㶲损通常先求 $S_g$ 再乘 $T_0$，比直接做㶲平衡更简便。
 
 <figure markdown="span">
   ![㶲损失的两种计算途径](imgs/03-exergy-loss.png){ width="90%" }
-  <figcaption>㶲损失的求解：一是建立㶲平衡方程（追踪伴随热/功/质量传递的㶲量），二是先求熵产 $S_g$（查表、构建可逆过程或用孤立系熵增原理）再由 $I=T_0 S_g$ 算得——后者通常更简便（图源：课程课件）</figcaption>
+  <figcaption>㶲损失的求解：一是建立㶲平衡方程（追踪伴随热/功/质量传递的㶲量），二是先求熵产 Sg（查表、构建可逆过程或用孤立系熵增原理）再由 I = T₀·Sg 算得——后者通常更简便（图源：课程课件）</figcaption>
 </figure>
 
 **㶲平衡方程**：
@@ -1305,12 +1310,14 @@ u &= u' + x(u'' - u')
 描述相平衡线（如汽化曲线）上饱和压力随饱和温度的变化率：
 
 !!! definition "克劳修斯-克拉贝龙方程"
+
     $$\frac{\mathrm{d}p_s}{\mathrm{d}T} = \frac{h'' - h'}{T(v'' - v')} = \frac{r}{T(v'' - v')}$$
 
     式中 $r$ 为相变潜热，$v''-v'$ 为相变比体积差。它由相平衡条件（两相吉布斯函数相等 $\mathrm{d}g' = \mathrm{d}g''$）直接导出，对汽化、熔化、升华均适用。斜率一般为正，**水是例外**（冰熔化时体积缩小，熔化线斜率为负）。
 
 !!! note "化学势与相平衡条件"
     单元系的**化学势** $\mu$ 等于其**比吉布斯函数** $g$（$\mu = g$）。如同温差驱动传热，化学势差驱动物质在相间转移。两相平衡共存的条件是二者**温度相同、压力相同、化学势相同**：
+
     $$T' = T'', \quad p' = p'', \quad \mu' = \mu''$$
 
 在低压下气相比体积远大于液相（$v'' \gg v'$），并对气相用理想气体方程，可将克劳修斯-克拉贝龙方程积分得到**蒸气压方程**：
@@ -1322,6 +1329,7 @@ $$\ln\frac{p_{s,2}}{p_{s,1}} = \frac{r}{R_g}\left(\frac{1}{T_{s,1}} - \frac{1}{T
 ### 吉布斯相律与平衡判据
 
 !!! key-point "吉布斯相律"
+
     $$F = C - P + 2$$
 
     $F$ 为自由度（可独立变化的强度量数），$C$ 为组分数，$P$ 为相数。对纯物质（$C=1$）：单相 $F=2$（需两参数定态）、两相 $F=1$（定压即定温）、三相点 $F=0$（状态唯一）。
@@ -1407,9 +1415,11 @@ $$\ln\frac{p_{s,2}}{p_{s,1}} = \frac{r}{R_g}\left(\frac{1}{T_{s,1}} - \frac{1}{T
 
 !!! definition "道尔顿分压定律 / 亚美格分体积定律"
     **分压定律**：混合物总压等于各组分单独占据总体积时的分压之和
+
     $$p = \sum p_i, \qquad p_i = x_i\, p$$
 
     **分体积定律**：总体积等于各组分单独处于总压、总温时的分体积之和
+
     $$V = \sum V_i, \qquad V_i = x_i\, V$$
 
 #### 折合摩尔质量与折合气体常数
@@ -1438,12 +1448,16 @@ $$R_g = \frac{R}{M} = \sum g_i R_{g,i}$$
 
 !!! definition "相对湿度 $\varphi$"
     水蒸气实际分压与同温度下饱和压力之比：
+
     $$\varphi = \frac{p_v}{p_s(t)} \times 100\%$$
+
     $\varphi$ 反映空气的**潮湿程度**（吸湿能力）：$\varphi = 0$ 为干空气，$\varphi = 100\%$ 为饱和。
 
 !!! definition "含湿量 $d$"
     每千克**干空气**所携带的水蒸气质量（基准是干空气，因为过程中干空气量不变）：
+
     $$d = 0.622\,\frac{p_v}{p - p_v} \quad (\text{kg 水汽/kg 干空气})$$
+
     其中 $0.622 = R_{g,a}/R_{g,v} = M_v/M_a = 18/29$。
 
 #### 湿空气的焓
@@ -1466,7 +1480,7 @@ $$h = \underbrace{1.005\, t}_{\text{干空气}} + \underbrace{d(2501 + 1.86\, t)
 
 <figure markdown="span">
   ![露点、湿球与绝热饱和温度在 p-v、T-s 图上的表示](imgs/07-humid-air-temps.png){ width="90%" }
-  <figcaption>从未饱和状态 1 出发的三条路径：定压降温到含湿量不变的露点 d（$T_d$）、绝热增湿到饱和的湿球 w（$T_w$）、定温到饱和 s；图上直观显示 $T_d < T_w < T$（图源：课程课件）</figcaption>
+  <figcaption>从未饱和状态 1 出发的三条路径：定压降温到含湿量不变的露点 d（T_d）、绝热增湿到饱和的湿球 w（T_w）、定温到饱和 s；图上直观显示 T_d < T_w < T（图源：课程课件）</figcaption>
 </figure>
 
 #### 焓湿图（h-d 图）
@@ -1475,7 +1489,7 @@ $$h = \underbrace{1.005\, t}_{\text{干空气}} + \underbrace{d(2501 + 1.86\, t)
 
 <figure markdown="span">
   ![焓湿图（h-d 图）的线簇结构](imgs/07-hd-chart.png){ width="58%" }
-  <figcaption>焓湿图结构：坐标轴成 135° 斜置以拉开两相区，图上绘有定含湿量线（竖直 $d$ 线，即定 $p_v$ 线）、定焓线、定温线与定相对湿度线（$\varphi=100\%$ 为饱和线）（图源：课程课件）</figcaption>
+  <figcaption>焓湿图结构：坐标轴成 135° 斜置以拉开两相区，图上绘有定含湿量线（竖直 d 线，即定 p_v 线）、定焓线、定温线与定相对湿度线（φ=100% 为饱和线）（图源：课程课件）</figcaption>
 </figure>
 
 ??? example "例题 7-1：混合气体的折合参数与分压"
@@ -1598,7 +1612,9 @@ $$h = \underbrace{1.005\, t}_{\text{干空气}} + \underbrace{d(2501 + 1.86\, t)
 实际过程往往既非绝热也非定温，可用**多变过程**统一描述：
 
 !!! definition "多变过程"
+
     $$pv^n = \text{const}$$
+
     其中 $n$ 为**多变指数**（常数）。四个基本过程都是它的特例：
 
     | $n$ | 过程 | 方程 |
@@ -1715,9 +1731,13 @@ $$c_2 = \sqrt{2(h_1 - h_2) + c_1^2}$$
 
 !!! definition "声速与马赫数"
     微弱扰动在工质中的传播速度（声速）：
+
     $$a = \sqrt{\gamma R_g T} = \sqrt{\gamma p v}$$
+
     流速与当地声速之比为**马赫数**：
+
     $$Ma = \frac{c}{a}$$
+
     $Ma < 1$ 为亚声速，$Ma = 1$ 为声速（临界），$Ma > 1$ 为超声速。
 
 ### 喷管形状与流动方向
@@ -1735,7 +1755,7 @@ $$\frac{\mathrm{d}A}{A} = (Ma^2 - 1)\,\frac{\mathrm{d}c}{c}$$
 
 <figure markdown="span">
   ![喷管与扩压管的形状与流态](imgs/09-nozzle-shapes.png){ width="92%" }
-  <figcaption>喷管（降压增速 $\mathrm{d}c>0,\mathrm{d}p<0$）与扩压管（增压减速）在亚声速 $Ma<1$、超声速 $Ma>1$ 下的形状由 $\mathrm{d}A/A=(Ma^2-1)\mathrm{d}c/c$ 决定；亚声速加速到超声速须用先缩后扩的缩放（拉伐尔）喷管，喉部 $Ma=1$（图源：课程课件）</figcaption>
+  <figcaption>喷管（降压增速 dc>0、dp<0）与扩压管（增压减速）在亚声速 Ma<1、超声速 Ma>1 下的形状由 dA/A=(Ma²−1)·dc/c 决定；亚声速加速到超声速须用先缩后扩的缩放（拉伐尔）喷管，喉部 Ma=1（图源：课程课件）</figcaption>
 </figure>
 
 ### 临界压力比
@@ -1775,7 +1795,7 @@ $$\varphi = \frac{c_{2,\text{实际}}}{c_{2,\text{理想}}}\ (\text{速度系数
 
 <figure markdown="span">
   ![有摩擦绝热流动的 h-s 图](imgs/09-friction-hs.png){ width="48%" }
-  <figcaption>有摩擦的绝热流动在 h-s 图上：理想等熵膨胀 $1^*\to 2$，实际因摩擦熵增沿 $1^*\to 2'$（$2'$ 在 $2$ 右侧、同一背压线 $p_2$ 上），实际焓降 $h^*-h_{2'}$ 小于理想焓降，出口流速随之降低（图源：课程课件）</figcaption>
+  <figcaption>有摩擦的绝热流动在 h-s 图上：理想等熵膨胀 1*→2，实际因摩擦熵增沿 1*→2′（2′ 在 2 右侧、同一背压线 p₂ 上），实际焓降 h*−h₂′ 小于理想焓降，出口流速随之降低（图源：课程课件）</figcaption>
 </figure>
 
 !!! warning "水蒸气在喷管中的流动"
@@ -1789,7 +1809,7 @@ $$h_1 = h_2$$
 
 <figure markdown="span">
   ![绝热节流（焦耳-汤姆逊实验）](imgs/09-throttle.png){ width="50%" }
-  <figcaption>绝热节流：流体流经多孔塞/缩孔等局部阻力，上下游测得 $p_1,T_1$ 与 $p_2,T_2$。这正是焦耳-汤姆逊实验装置，由 $T$、$p$ 的变化测定节流系数 $\mu_J$（图源：课程课件）</figcaption>
+  <figcaption>绝热节流：流体流经多孔塞/缩孔等局部阻力，上下游测得 p₁、T₁ 与 p₂、T₂。这正是焦耳-汤姆逊实验装置，由 T、p 的变化测定节流系数 μ_J（图源：课程课件）</figcaption>
 </figure>
 
 !!! note "节流的特征"
@@ -1867,17 +1887,19 @@ $$
 
 <figure markdown="span">
   ![活塞式压气机的示功图](imgs/10-piston-indicator.png){ width="56%" }
-  <figcaption>活塞式压气机示功图：1→2 压缩、2→3 排气、3→0 吸气，理论耗功（技术功）为 $w_t=\int v\,\mathrm{d}p$，对应 p-v 图上紧贴 $p$ 轴的 $V\mathrm{d}p$ 阴影面积（图源：课程课件）</figcaption>
+  <figcaption>活塞式压气机示功图：1→2 压缩、2→3 排气、3→0 吸气，理论耗功（技术功）为 wt = ∫v·dp，对应 p-v 图上紧贴 p 轴的 V·dp 阴影面积（图源：课程课件）</figcaption>
 </figure>
 
 !!! key-point "定温压缩最省功"
     在相同增压比下，三种过程耗功大小为：
+
     $$w_{C,T} < w_{C,n} < w_{C,s} \quad (1 < n < \gamma)$$
+
     在 $p$-$v$ 图上，定温线最靠左、所围"压缩功"面积最小。因此实际压气机都设法**冷却气缸**，使压缩过程尽量接近定温，同时降低排气温度。
 
 <figure markdown="span">
   ![三种压缩过程在 p-v、T-s 图上的比较](imgs/10-three-process.png){ width="92%" }
-  <figcaption>三种压缩过程比较：同一增压比下，定温 $2_T$（绿）、多变 $2_n$（红）、绝热 $2_s$（黄）。p-v 图上定温线最靠左、压缩功面积最小；T-s 图上绝热终温最高，故 $w_{C,T}<w_{C,n}<w_{C,s}$（图源：课程课件）</figcaption>
+  <figcaption>三种压缩过程比较：同一增压比下，定温 2ₜ（绿）、多变 2ₙ（红）、绝热 2ₛ（黄）。p-v 图上定温线最靠左、压缩功面积最小；T-s 图上绝热终温最高，故 w_C,T < w_C,n < w_C,s（图源：课程课件）</figcaption>
 </figure>
 
 ### 余隙容积与容积效率
@@ -1886,12 +1908,14 @@ $$
 
 !!! definition "容积效率 $\eta_V$"
     实际吸气容积与活塞行程容积之比：
+
     $$\eta_V = 1 - \sigma\left[\left(\frac{p_2}{p_1}\right)^{\frac{1}{n}} - 1\right]$$
+
     式中余隙比 $\sigma = V_c/V_s$（余隙容积/行程容积）。增压比 $p_2/p_1$ 越大，$\eta_V$ 越小——余隙的存在**限制了单级增压比**。
 
 <figure markdown="span">
   ![余隙容积对吸气过程的影响](imgs/10-clearance-volume.png){ width="58%" }
-  <figcaption>余隙容积 $V_c$：活塞到达上止点后留下的空间。排气终了 3 点残留的高压气体先膨胀到 4 点才开启进气阀，实际吸气量由 $V_1$ 缩小为 $V_1-V_4$，增压比越大膨胀越充分、容积效率越低（图源：课程课件）</figcaption>
+  <figcaption>余隙容积 Vc：活塞到达上止点后留下的空间。排气终了 3 点残留的高压气体先膨胀到 4 点才开启进气阀，实际吸气量由 V₁ 缩小为 V₁−V₄，增压比越大膨胀越充分、容积效率越低（图源：课程课件）</figcaption>
 </figure>
 
 ### 多级压缩中间冷却
@@ -1905,8 +1929,11 @@ $$
 
 !!! key-point "最佳增压比分配"
     总增压比 $\pi = p_{\text{终}}/p_{\text{初}}$ 分配给 $z$ 级时，使总耗功最小的条件是**各级增压比相等**：
+
     $$\frac{p_2}{p_1} = \frac{p_3}{p_2} = \cdots = \pi^{1/z}$$
+
     此时各级耗功相等。两级压缩的**最佳中间压力**为首末压力的几何平均：
+
     $$p_x = \sqrt{p_1\, p_3}$$
 
 中间冷却使每一级都接近定温，多级越多越逼近理想定温压缩，但设备复杂、成本升高，需折中。
@@ -2013,6 +2040,7 @@ $$\eta_t = \frac{w_{\text{net}}}{q_1} = \frac{(h_1 - h_2) - (h_4 - h_3)}{h_1 - h
 
 !!! tip "水泵功通常可忽略"
     液态水比体积很小，水泵功 $w_p$ 远小于汽轮机功，工程估算常忽略：
+
     $$\eta_t \approx \frac{h_1 - h_2}{h_1 - h_3}$$
 
 ### 提高朗肯循环效率的途径
@@ -2215,7 +2243,9 @@ $$\eta_t = 1 - \frac{1}{\varepsilon^{\gamma-1}}\cdot\frac{\lambda\rho^\gamma - 1
 </figure>
 
 !!! definition "布雷顿循环热效率"
+
     $$\eta_t = 1 - \frac{1}{\pi^{\frac{\gamma-1}{\gamma}}}, \qquad \pi = \frac{p_2}{p_1}\ (\text{增压比})$$
+
     效率随增压比 $\pi$ 增大而提高。燃气轮机连续运转、功率密度大，是航空发动机与联合循环电站的核心。
 
 除增压比外，再引入**增温比** $\tau = T_3/T_1$（循环最高温与最低温之比）。
@@ -2307,9 +2337,13 @@ $$\eta_{C,s} = \frac{w_{C,\text{理论}}}{w_{C,\text{实际}}}\ (\text{压气机
 
 !!! definition "制冷系数 $\varepsilon$ 与供热系数 $\varepsilon'$"
     制冷机以"从冷源取热 $q_2$"为目的：
+
     $$\varepsilon = \frac{q_2}{w_{\text{net}}}$$
+
     热泵以"向热源供热 $q_1$"为目的：
+
     $$\varepsilon' = \frac{q_1}{w_{\text{net}}} = \varepsilon + 1$$
+
     二者均可大于 1，这正是制冷/热泵节能的根源——搬运的热量远多于消耗的功。
 
 逆卡诺循环给出理论上限：
@@ -2455,6 +2489,7 @@ $$\varepsilon = \frac{q_2}{w} = \frac{h_1 - h_4}{h_2 - h_1}$$
     - **定压热效应**（恒压）：$Q_p = \Delta H$
 
     两者关系（理想气体，$\Delta n$ 为反应前后气体摩尔数之差）：
+
     $$Q_p = Q_V + \Delta n\, RT$$
 
 规定**放热反应** $\Delta H < 0$，吸热反应 $\Delta H > 0$。
@@ -2469,7 +2504,7 @@ $$\varepsilon = \frac{q_2}{w} = \frac{h_1 - h_4}{h_2 - h_1}$$
 
 <figure markdown="span">
   ![盖斯定律：反应热与途径无关](imgs/14-hess-law.png){ width="88%" }
-  <figcaption>盖斯定律：由 A 到 B，无论经 A→C→D→B 还是 A→E→B，热效应总和不变，即 $Q_1+Q_2+Q_3=Q_4+Q_5$；据此可由易测反应的反应热叠加推算难测反应的反应热（图源：课程课件）</figcaption>
+  <figcaption>盖斯定律：由 A 到 B，无论经 A→C→D→B 还是 A→E→B，热效应总和不变，即 Q₁+Q₂+Q₃ = Q₄+Q₅；据此可由易测反应的反应热叠加推算难测反应的反应热（图源：课程课件）</figcaption>
 </figure>
 
 借助**标准生成焓** $\Delta H_f^\circ$（由稳定单质生成 1 mol 化合物的焓变），任意反应的标准反应焓：
@@ -2478,7 +2513,9 @@ $$\Delta H_r^\circ = \sum_{\text{产物}} \nu_i\,\Delta H_{f,i}^\circ - \sum_{\t
 
 !!! note "基尔霍夫定律（Kirchhoff）"
     反应热随温度变化：
+
     $$\frac{\mathrm{d}(\Delta H_r)}{\mathrm{d}T} = \Delta C_p = \sum_{\text{产物}}\nu_i C_{p,i} - \sum_{\text{反应物}}\nu_j C_{p,j}$$
+
     用于把某温度下的反应热换算到另一温度。
 
 ### 理论燃烧温度（绝热燃烧温度）
@@ -2494,7 +2531,7 @@ $$H_{\text{产物}}(T_{ad}) = H_{\text{反应物}}(T_1)$$
 
 <figure markdown="span">
   ![绝热燃烧温度的焓-温图解](imgs/14-adiabatic-flame.png){ width="46%" }
-  <figcaption>绝热燃烧温度的焓-温图：反应物焓线与生成物焓线在初温 $T_0$ 处相差 $\Delta H^0$（反应热）；绝热定压时产物总焓等于反应物初态总焓，沿生成物线升温直至 $T_{ad}$（点 A），即理论燃烧温度（图源：课程课件）</figcaption>
+  <figcaption>绝热燃烧温度的焓-温图：反应物焓线与生成物焓线在初温 T₀ 处相差 ΔH⁰（反应热）；绝热定压时产物总焓等于反应物初态总焓，沿生成物线升温直至 T_ad（点 A），即理论燃烧温度（图源：课程课件）</figcaption>
 </figure>
 
 ### 反应方向与最大功
@@ -2503,7 +2540,7 @@ $$H_{\text{产物}}(T_{ad}) = H_{\text{反应物}}(T_1)$$
 
 <figure markdown="span">
   ![热力系平衡判据](imgs/14-equilibrium-criteria.png){ width="82%" }
-  <figcaption>热力系平衡判据：系统因各种势差自发变化，直到势差减小为零达到平衡。变化方向的判据同时也是平衡判据——孤立系用①平衡的熵判据，有约束时用②平衡的功势函数判据（$F$ 或 $G$）（图源：课程课件）</figcaption>
+  <figcaption>热力系平衡判据：系统因各种势差自发变化，直到势差减小为零达到平衡。变化方向的判据同时也是平衡判据——孤立系用①平衡的熵判据，有约束时用②平衡的功势函数判据（F 或 G）（图源：课程课件）</figcaption>
 </figure>
 
 !!! key-point "化学反应方向判据"
@@ -2536,7 +2573,9 @@ $$\frac{\mathrm{d}\ln K_p}{\mathrm{d}T} = \frac{\Delta H_r}{RT^2}$$
 
 !!! definition "热力学第三定律（奈斯特定理）"
     **奈斯特（Nernst）热定理**：凝聚系在可逆定温过程中的熵变，随热力学温度趋于零而趋于零（$\lim_{T\to 0}\Delta S = 0$）。普朗克进一步规定**绝对零度下完整晶体的熵为零**：
+
     $$\lim_{T\to 0} S = 0$$
+
     据此可确定物质的**绝对熵** $S^\circ$，从而计算化学反应熵变 $\Delta S_r^\circ = \sum\nu_i S_i^\circ$，进而由 $\Delta G = \Delta H - T\Delta S$ 判断反应方向。
 
 !!! key-point "绝对零度不可达"

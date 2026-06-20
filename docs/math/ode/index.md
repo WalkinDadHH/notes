@@ -501,6 +501,7 @@ $$y^{(n)} + a_1 y^{(n-1)} + \cdots + a_{n-1} y' + a_n y = 0$$
 - 一对共轭复根 $\alpha \pm \mathrm{i}\beta$（$k$ 重）：
 
 $$e^{\alpha x}\cos\beta x,\; x e^{\alpha x}\cos\beta x,\; \dots,\; x^{k-1}e^{\alpha x}\cos\beta x$$
+
 $$e^{\alpha x}\sin\beta x,\; x e^{\alpha x}\sin\beta x,\; \dots,\; x^{k-1}e^{\alpha x}\sin\beta x$$
 
 通解为所有基础解的线性组合。
@@ -1010,6 +1011,7 @@ $$\mathbf{x}^{(i)}(t) = e^{\lambda_i t}\sum_{j=0}^{k-1}\frac{t^{j}}{j!}\,\mathbf
 $$e^{\alpha t}(\mathbf{p}\cos\beta t - \mathbf{q}\sin\beta t),\quad e^{\alpha t}(\mathbf{p}\sin\beta t + \mathbf{q}\cos\beta t)$$
 
 !!! example "例题 (23-24 夏)"
+
     $$\begin{cases} \dfrac{\mathrm{d}x}{\mathrm{d}t} = 3x + 2y + 2z \\[2pt] \dfrac{\mathrm{d}y}{\mathrm{d}t} = -5x - 4y - 2z \\[2pt] \dfrac{\mathrm{d}z}{\mathrm{d}t} = 5x + 5y + 3z \end{cases}$$
 
     **① 写出矩阵并求特征值。**
@@ -1047,6 +1049,7 @@ $$X(t)\,\mathbf{c}'(t) = \mathbf{f}(t) \;\Rightarrow\; \mathbf{c}(t) = \int X^{-
 通解：$\mathbf{x} = X(t)\,\mathbf{c}(t)$。
 
 !!! example "例题 (23-24 夏)"
+
     $$\begin{cases} \dfrac{\mathrm{d}x}{\mathrm{d}t} = 2x + y \\[2pt] \dfrac{\mathrm{d}y}{\mathrm{d}t} = x + 2y - 2e^{2t} \end{cases},\qquad x(0)=1,\; y(0)=1$$
 
     **① 求齐次基本解矩阵 $X$。** 系数矩阵 $A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$，特征值 $\lambda_1 = 3,\, \lambda_2 = 1$，对应特征向量

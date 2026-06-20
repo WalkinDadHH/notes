@@ -1,5 +1,22 @@
 # Maintenance Log
 
+## 2026-06-20 — 修复行内/块级公式渲染 bug（裸 $ 显示）+ 图注改纯文本
+
+Scope: `docs/major/foundation/thermodynamics/index.md`、`docs/math/ode/index.md`、`docs/major/foundation/thermodynamics/imgs/10-clearance-volume.png`
+
+Problem: 多处公式在页面上以源码 `$...$`／`$$...$$` 原样显示。两类根因：
+1. **块级公式被挤在文字行之间（缺空行）**：单行 `$$公式$$` 若上一行/下一行不是空行，pymdownx.arithmatex 的块级规则不触发，退而把里层 `$公式$` 当行内转换，外层一对 `$` 残留为裸美元符号（HTML 形如 `$<span class="arithmatex">\(…\)</span>$`）。两条相邻 `$$…$$`（中间无空行）同理被合并、中间留裸 `$$`（ode 页特征方程）。
+2. **图注里的行内 `$…$` 不被解析**：figcaption 是 `md_in_html` 的 raw HTML（`markdown="span"`），arithmatex 行内规则在该上下文不生效，`$…$` 原样输出。
+
+Fix:
+- 用脚本对 `docs/**/*.md` 中所有「单行 `$$…$$` 但前后缺空行」的块级公式自动补空行（热力学页 39 处、ode 页 3 处）。构建后全站 HTML 裸 `$` 归零（验证：`grep -rF '$<span class=\"arithmatex\"'` 与裸 `$` 计数均为 0），arithmatex span 数不变（1314）
+- 第 6/7 批新增的 15 条 figcaption 内的 `$…$` 改为纯文本/Unicode（如 W=Q₁−Q₂、ε=T₂/(T₁−T₂)、T_d<T_w<T、ΔH⁰、μ_J、2ₜ/2ₙ/2ₛ 等），与早期批次「图注用纯文本」的约定一致
+- 顺手修正 `10-clearance-volume.png` 顶部残留的幻灯片标题（y0 0.11→0.16 重裁）
+
+Note: 约定补充——**块级公式 `$$…$$` 前后必须留空行**（尤其在 admonition 缩进内容里）；**图注一律用纯文本，不写 `$…$`**
+
+Validation: `scripts/validate-mkdocs.ps1` 通过；全站 HTML 无裸 `$` 残留
+
 ## 2026-06-20 — 工程热力学：第三、九章配入原理图（课件配图·第7批，PPTX 章节）
 
 Scope: `docs/major/foundation/thermodynamics/index.md`、`docs/major/foundation/thermodynamics/imgs/`
