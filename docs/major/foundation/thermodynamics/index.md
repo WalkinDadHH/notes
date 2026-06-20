@@ -573,6 +573,11 @@ $$\eta_C = 1 - \frac{T_2}{T_1}$$
     
     即：$\eta_{\text{irrev}} < \eta_C = 1 - \dfrac{T_2}{T_1}$
 
+<figure markdown="span">
+  ![卡诺定理的反证法](imgs/03-carnot-theorem.png){ width="62%" }
+  <figcaption>卡诺定理一的反证：设任意热机 E 的效率高于可逆热机 R，用 E 的部分功 $W_r$ 驱动 R 反转制冷，则可在不消耗外功的情况下把热量从低温热源搬向高温热源——构成第二类永动机，与第二定律矛盾，故 $\eta_E \le \eta_R$（图源：课程课件）</figcaption>
+</figure>
+
 ### 制冷循环与热泵
 
 逆向运行卡诺循环即为**卡诺制冷循环**，从低温热源 $T_2$ 吸热 $q_2$，向高温热源 $T_1$ 放热 $q_1$，消耗净功 $w$。
@@ -584,6 +589,11 @@ $$\varepsilon = \frac{q_2}{w} = \frac{T_2}{T_1 - T_2}$$
 **热泵供热系数**：
 
 $$\varepsilon' = \frac{q_1}{w} = \frac{T_1}{T_1 - T_2} = \varepsilon + 1$$
+
+<figure markdown="span">
+  ![逆卡诺循环与性能系数](imgs/03-reverse-carnot.png){ width="88%" }
+  <figcaption>逆卡诺循环（制冷/热泵）：消耗净功 $W=Q_1-Q_2$，从低温热源 $T_2$ 取热 $Q_2$、向高温热源 $T_1$ 放热 $Q_1$。制冷系数 $\varepsilon=T_2/(T_1-T_2)$、供暖系数 $\varepsilon'=T_1/(T_1-T_2)$，统称性能系数 COP（图源：课程课件）</figcaption>
+</figure>
 
 ### 克劳修斯不等式
 
@@ -611,6 +621,11 @@ $$\mathrm{d}S = \left(\frac{\delta Q}{T}\right)_{\text{rev}}$$
 $$S_2 - S_1 = \int_1^2 \frac{\delta Q}{T}$$
 
 在 $T$-$s$ 图上，可逆过程的**热量等于曲线下的面积**。
+
+<figure markdown="span">
+  ![T-s 图（示热图）](imgs/03-ts-diagram.png){ width="42%" }
+  <figcaption>T-s 图（示热图）：由 $\delta Q = T\,\mathrm{d}s$，过程曲线下的面积即可逆过程交换的热量。从 1 出发，$\mathrm{d}s>0$（1→2）为吸热、$\mathrm{d}s=0$（1→2′）为绝热、$\mathrm{d}s<0$（1→2″）为放热（图源：课程课件）</figcaption>
+</figure>
 
 ### 不可逆过程与熵产
 
@@ -716,6 +731,11 @@ $$
     一切不可逆过程都会**损失做功能力**，称为**㶲损** $I$。它与熵产 $S_g$ 直接成正比：
     $$I = T_0\, S_g \geq 0$$
     可逆过程 $S_g = 0$ 故 $I = 0$。**㶲损只取决于熵产**——而熵是状态量、易计算，功是过程量、难计算，所以求㶲损通常先求 $S_g$ 再乘 $T_0$，比直接做㶲平衡更简便。
+
+<figure markdown="span">
+  ![㶲损失的两种计算途径](imgs/03-exergy-loss.png){ width="90%" }
+  <figcaption>㶲损失的求解：一是建立㶲平衡方程（追踪伴随热/功/质量传递的㶲量），二是先求熵产 $S_g$（查表、构建可逆过程或用孤立系熵增原理）再由 $I=T_0 S_g$ 算得——后者通常更简便（图源：课程课件）</figcaption>
+</figure>
 
 **㶲平衡方程**：
 
@@ -1713,6 +1733,11 @@ $$\frac{\mathrm{d}A}{A} = (Ma^2 - 1)\,\frac{\mathrm{d}c}{c}$$
     - **超声速**（$Ma>1$）：需 $\mathrm{d}A>0$ → **渐扩喷管**
     - 要从亚声速加速到超声速，必须**先缩后扩**，即**缩放喷管（拉伐尔喷管）**，喉部恰好 $Ma=1$
 
+<figure markdown="span">
+  ![喷管与扩压管的形状与流态](imgs/09-nozzle-shapes.png){ width="92%" }
+  <figcaption>喷管（降压增速 $\mathrm{d}c>0,\mathrm{d}p<0$）与扩压管（增压减速）在亚声速 $Ma<1$、超声速 $Ma>1$ 下的形状由 $\mathrm{d}A/A=(Ma^2-1)\mathrm{d}c/c$ 决定；亚声速加速到超声速须用先缩后扩的缩放（拉伐尔）喷管，喉部 $Ma=1$（图源：课程课件）</figcaption>
+</figure>
+
 ### 临界压力比
 
 喷管喉部达到声速时的压力与进口（滞止）压力之比称为**临界压力比**：
@@ -1748,6 +1773,11 @@ $$h^* = h + \frac{c^2}{2}$$
 
 $$\varphi = \frac{c_{2,\text{实际}}}{c_{2,\text{理想}}}\ (\text{速度系数}), \qquad \eta_N = \frac{c_{2,\text{实际}}^2}{c_{2,\text{理想}}^2} = \varphi^2\ (\text{喷管效率})$$
 
+<figure markdown="span">
+  ![有摩擦绝热流动的 h-s 图](imgs/09-friction-hs.png){ width="48%" }
+  <figcaption>有摩擦的绝热流动在 h-s 图上：理想等熵膨胀 $1^*\to 2$，实际因摩擦熵增沿 $1^*\to 2'$（$2'$ 在 $2$ 右侧、同一背压线 $p_2$ 上），实际焓降 $h^*-h_{2'}$ 小于理想焓降，出口流速随之降低（图源：课程课件）</figcaption>
+</figure>
+
 !!! warning "水蒸气在喷管中的流动"
     理想气体的定熵流动公式对水蒸气**基本适用，但 $h$ 不能用 $c_p\Delta T$ 计算**！水蒸气物性复杂，焓降必须借助 **$h$-$s$ 图或水蒸气表**读取。临界压力比也随状态不同：过热蒸汽 $\gamma=1.3$（$\nu_{cr}=0.546$）、干饱和蒸汽 $\gamma=1.135$（$\nu_{cr}=0.577$）、湿蒸汽 $\gamma \approx 1.035 + 0.1x$。
 
@@ -1756,6 +1786,11 @@ $$\varphi = \frac{c_{2,\text{实际}}}{c_{2,\text{理想}}}\ (\text{速度系数
 工质流经阀门、缩孔等局部阻力时压力骤降，称为**绝热节流**。因流动极快、来不及换热且无轴功，节流前后**焓相等**：
 
 $$h_1 = h_2$$
+
+<figure markdown="span">
+  ![绝热节流（焦耳-汤姆逊实验）](imgs/09-throttle.png){ width="50%" }
+  <figcaption>绝热节流：流体流经多孔塞/缩孔等局部阻力，上下游测得 $p_1,T_1$ 与 $p_2,T_2$。这正是焦耳-汤姆逊实验装置，由 $T$、$p$ 的变化测定节流系数 $\mu_J$（图源：课程课件）</figcaption>
+</figure>
 
 !!! note "节流的特征"
     - 节流是典型**不可逆**过程，熵必增大（$s_2 > s_1$）

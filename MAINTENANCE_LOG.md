@@ -1,5 +1,30 @@
 # Maintenance Log
 
+## 2026-06-20 — 工程热力学：第三、九章配入原理图（课件配图·第7批，PPTX 章节）
+
+Scope: `docs/major/foundation/thermodynamics/index.md`、`docs/major/foundation/thermodynamics/imgs/`
+
+Workflow: 第三/四/九章课件为 `.pptx`，PyMuPDF 不能直接读取。先用 **PowerPoint COM 自动化**（PowerShell `New-Object -ComObject PowerPoint.Application` → `Presentations.Open` → `SaveAs(pdf, 32)`）批量转成 PDF，再按既有流程渲染裁切。
+
+Changed:
+- 第三章（熵与热力学第二定律）从《第三章 熵与热力学第二定律-新.pptx》《第三章 热力系的有效能.pptx》选 4 图：
+  - `03-carnot-theorem`（卡诺定理一反证：热机 E vs 可逆热机 R，第二类永动机）→ 卡诺定理 key-point 后
+  - `03-reverse-carnot`（逆卡诺循环 Rc 装置图 + 制冷/供暖系数 COP）→ 制冷循环与热泵
+  - `03-ts-diagram`（T-s 示热图：δQ=TdS，吸热/绝热/放热三过程）→ 熵的定义
+  - `03-exergy-loss`（㶲损失计算思维导图：㶲平衡方程 vs 先求熵产 I=T₀Sg）→ 㶲损与㶲平衡 Gouy-Stodola key-point 后
+- 第九章（气体与蒸汽的流动）从《第九章 气体与蒸汽的流动.pptx》选 3 图：
+  - `09-nozzle-shapes`（喷管/扩压管 × Ma<1/Ma>1 形状表 + 缩放拉伐尔喷管）→ 喷管形状与流动方向 key-point 后
+  - `09-friction-hs`（有摩擦绝热流动 h-s 图，1*→2 理想 / 1*→2′ 实际）→ 有摩擦的实际流动
+  - `09-throttle`（绝热节流装置 = 焦耳-汤姆逊实验，上下游 p/T 表）→ 绝热节流
+- 仍沿用 `<figure markdown="span">` + 「图源：课程课件」；PNG 保存，局部裁切 clip + Matrix 2.2–4.5
+
+Notes:
+- 第四章（热力学一般关系）课件几乎全为公式（吉布斯方程、Maxwell 关系、热系数），与正文已排版的表格/公式重复，无独立原理图可配，本批**跳过第四章**
+- ch3 卡诺循环改用「卡诺定理双热机反证图」(p7) 与「逆卡诺单机制冷图」(p17)，二者视觉区分明显，避免相邻小节出现近乎相同的热机方框图
+- 分批策略收尾：本批 2 章（第三/九章，PPTX 转 PDF）；**全书 13 章已全部配图完毕**（除第四章无图可配），累计 61 图。剩余仅第四章纯公式章节无需配图
+
+Validation: `scripts/validate-mkdocs.ps1` 通过（1.28s）
+
 ## 2026-06-20 — 工程热力学：第七、十、十四章配入原理图（课件配图·第6批）
 
 Scope: `docs/major/foundation/thermodynamics/index.md`、`docs/major/foundation/thermodynamics/imgs/`
