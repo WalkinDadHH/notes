@@ -1,5 +1,29 @@
 # Maintenance Log
 
+## 2026-06-20 — 工程热力学：从何雅玲《精要解析》补入教材例题卡片（截图式）
+
+Scope: `docs/major/foundation/thermodynamics/index.md`、`docs/major/foundation/thermodynamics/imgs/ex-ch*.png`
+
+Source: 《工程热力学精要解析（第2版）·何雅玲》PDF（仓库外，`C:\Users\KANEKI\Downloads`）。该书每章设「典型题精解」，含带【解】+【讨论】的工作例题，适合做卡片式截图，省去重排公式的工作量。
+
+Changed: 精选 6 道单页/双页例题，截图为卡片，包入可折叠 `??? example "教材例题 …（何雅玲《精要解析》）"` 放在各章「真题精选」之前：
+- `ex-ch01-pressure`（例题1-1 容器分腔压力计读数，绝压/表压/真空度换算，带附图）→ 第一章
+- `ex-ch02-closed-energy`（例题2-1 闭口系能量方程求动能增量）→ 第二章
+- `ex-ch03-heat-engine`（例题4-1 熵增/卡诺两法判断热机循环可行性，带附图）→ 第三章
+- `ex-ch04-real-gas`（例题5-1 由 p(v-b)=RgT 推 Δu/Δh/Δs/μ_J，跨页拼接）→ 第四章（该章原无图，补例题尤有价值）
+- `ex-ch09-nozzle`（例题8-1 喷管选型+出口流速+截面积，跨页拼接）→ 第九章
+- `ex-ch10-compressor`（例题9-1 压气机多变压缩 n/W/T2/Q，Q 结果写入图注）→ 第十章
+
+Workflow notes:
+- 用 PyMuPDF `get_toc()` 定位各章「典型题精解」页码；先 1.5x 渲染候选页挑选「单页能容下或双页干净拼接」的例题
+- 单页直接 `get_pixmap(clip=…)`；跨页例题用 fitz 画布上下拼接（裁掉页眉/页脚带，接缝留白 14px）；Matrix 2.1、x 0.06–0.96
+- 卡片包入 `??? example` 折叠块：`<figure markdown="span">` + `width="100%"`，已验证 `md_in_html` 在折叠 admonition 内可正确渲染为 `<img>`（HTML 抽查通过）
+- 图注用纯文本（沿用约定，不写 `$…$`）；署名「图源：何雅玲《工程热力学精要解析》第2版」
+
+Note: 仅为「一些」代表性例题；如需可继续按同法补第五/六/七/十一–十四章
+
+Validation: `scripts/validate-mkdocs.ps1` 通过；6 张卡片均渲染为折叠块内 `<img>`
+
 ## 2026-06-20 — 修复行内/块级公式渲染 bug（裸 $ 显示）+ 图注改纯文本
 
 Scope: `docs/major/foundation/thermodynamics/index.md`、`docs/math/ode/index.md`、`docs/major/foundation/thermodynamics/imgs/10-clearance-volume.png`
