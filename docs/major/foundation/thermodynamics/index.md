@@ -1370,6 +1370,11 @@ $$\ln\frac{p_{s,2}}{p_{s,1}} = \frac{r}{R_g}\left(\frac{1}{T_{s,1}} - \frac{1}{T
 
 ### 一、理想气体混合物
 
+<figure markdown="span">
+  ![理想气体混合物](imgs/07-mixture-concept.png){ width="72%" }
+  <figcaption>理想气体混合物：从单元物质到多元系，各组元气体及混合物整体都遵循理想气体状态方程；工程上的湿空气即「干空气 + 水蒸气」的混合物（图源：课程课件）</figcaption>
+</figure>
+
 #### 成分的表示
 
 | 成分 | 定义 | 关系 |
@@ -1439,9 +1444,19 @@ $$h = \underbrace{1.005\, t}_{\text{干空气}} + \underbrace{d(2501 + 1.86\, t)
 
     三者关系：未饱和时 $t > t_w > t_d$；饱和时三者相等。
 
+<figure markdown="span">
+  ![露点、湿球与绝热饱和温度在 p-v、T-s 图上的表示](imgs/07-humid-air-temps.png){ width="90%" }
+  <figcaption>从未饱和状态 1 出发的三条路径：定压降温到含湿量不变的露点 d（$T_d$）、绝热增湿到饱和的湿球 w（$T_w$）、定温到饱和 s；图上直观显示 $T_d < T_w < T$（图源：课程课件）</figcaption>
+</figure>
+
 #### 焓湿图（h-d 图）
 
 工程上用 $h$-$d$ 图（焓湿图）快速读取湿空气状态：图上绘有等温线、等相对湿度线、等含湿量线、等焓线。已知任意两个独立参数即可定点，再读出其余参数——是空调、干燥过程分析的核心工具。
+
+<figure markdown="span">
+  ![焓湿图（h-d 图）的线簇结构](imgs/07-hd-chart.png){ width="58%" }
+  <figcaption>焓湿图结构：坐标轴成 135° 斜置以拉开两相区，图上绘有定含湿量线（竖直 $d$ 线，即定 $p_v$ 线）、定焓线、定温线与定相对湿度线（$\varphi=100\%$ 为饱和线）（图源：课程课件）</figcaption>
+</figure>
 
 ??? example "例题 7-1：混合气体的折合参数与分压"
     **题目**：某理想气体混合物体积分数为 $\text{O}_2\ 21\%$、$\text{N}_2\ 79\%$，总压 $p = 0.1\,\text{MPa}$。求折合摩尔质量 $M$、折合气体常数 $R_g$ 及各组分分压。
@@ -1815,10 +1830,20 @@ $$
 \end{aligned}
 $$
 
+<figure markdown="span">
+  ![活塞式压气机的示功图](imgs/10-piston-indicator.png){ width="56%" }
+  <figcaption>活塞式压气机示功图：1→2 压缩、2→3 排气、3→0 吸气，理论耗功（技术功）为 $w_t=\int v\,\mathrm{d}p$，对应 p-v 图上紧贴 $p$ 轴的 $V\mathrm{d}p$ 阴影面积（图源：课程课件）</figcaption>
+</figure>
+
 !!! key-point "定温压缩最省功"
     在相同增压比下，三种过程耗功大小为：
     $$w_{C,T} < w_{C,n} < w_{C,s} \quad (1 < n < \gamma)$$
     在 $p$-$v$ 图上，定温线最靠左、所围"压缩功"面积最小。因此实际压气机都设法**冷却气缸**，使压缩过程尽量接近定温，同时降低排气温度。
+
+<figure markdown="span">
+  ![三种压缩过程在 p-v、T-s 图上的比较](imgs/10-three-process.png){ width="92%" }
+  <figcaption>三种压缩过程比较：同一增压比下，定温 $2_T$（绿）、多变 $2_n$（红）、绝热 $2_s$（黄）。p-v 图上定温线最靠左、压缩功面积最小；T-s 图上绝热终温最高，故 $w_{C,T}<w_{C,n}<w_{C,s}$（图源：课程课件）</figcaption>
+</figure>
 
 ### 余隙容积与容积效率
 
@@ -1829,9 +1854,19 @@ $$
     $$\eta_V = 1 - \sigma\left[\left(\frac{p_2}{p_1}\right)^{\frac{1}{n}} - 1\right]$$
     式中余隙比 $\sigma = V_c/V_s$（余隙容积/行程容积）。增压比 $p_2/p_1$ 越大，$\eta_V$ 越小——余隙的存在**限制了单级增压比**。
 
+<figure markdown="span">
+  ![余隙容积对吸气过程的影响](imgs/10-clearance-volume.png){ width="58%" }
+  <figcaption>余隙容积 $V_c$：活塞到达上止点后留下的空间。排气终了 3 点残留的高压气体先膨胀到 4 点才开启进气阀，实际吸气量由 $V_1$ 缩小为 $V_1-V_4$，增压比越大膨胀越充分、容积效率越低（图源：课程课件）</figcaption>
+</figure>
+
 ### 多级压缩中间冷却
 
 单级增压比过大会导致排气温度过高、容积效率下降、耗功增大。工程上改用**多级压缩 + 级间中间冷却**：每级压缩后将气体冷却回进气温度再进入下一级。
+
+<figure markdown="span">
+  ![两级压缩中间冷却装置流程](imgs/10-multistage-device.png){ width="90%" }
+  <figcaption>两级压缩中间冷却装置：气体经进气口进入低压缸压缩，排出后流经中间冷却器（用冷却水）降回进气温度，再进入高压缸二次压缩，最后送入储气罐（图源：课程课件）</figcaption>
+</figure>
 
 !!! key-point "最佳增压比分配"
     总增压比 $\pi = p_{\text{终}}/p_{\text{初}}$ 分配给 $z$ 级时，使总耗功最小的条件是**各级增压比相等**：
@@ -1840,6 +1875,11 @@ $$
     $$p_x = \sqrt{p_1\, p_3}$$
 
 中间冷却使每一级都接近定温，多级越多越逼近理想定温压缩，但设备复杂、成本升高，需折中。
+
+<figure markdown="span">
+  ![两级压缩中间冷却的节功](imgs/10-twostage-saving.png){ width="60%" }
+  <figcaption>两级压缩中间冷却的节功：单级压缩沿较陡的高温多变线（红），两级压缩经中间冷却后整体偏向低温线（绿），p-v 图上二者之间的阴影即两级方案相对单级的「省功」面积——压缩越接近定温越省功（图源：课程课件）</figcaption>
+</figure>
 
 !!! note "绝热效率"
     实际压缩偏离可逆，用**绝热效率**衡量：$\eta_{C,s} = w_{C,s}/w_{C,\text{实际}}$，即理论绝热耗功与实际耗功之比，$\eta_{C,s} < 1$。
@@ -2392,6 +2432,11 @@ $$\varepsilon = \frac{q_2}{w} = \frac{h_1 - h_4}{h_2 - h_1}$$
 !!! key-point "盖斯定律（Hess）"
     反应热只取决于反应的始态与终态，**与中间途径无关**。因此热化学方程可像代数式一样叠加，由已知反应的反应热推算未知反应的反应热。
 
+<figure markdown="span">
+  ![盖斯定律：反应热与途径无关](imgs/14-hess-law.png){ width="88%" }
+  <figcaption>盖斯定律：由 A 到 B，无论经 A→C→D→B 还是 A→E→B，热效应总和不变，即 $Q_1+Q_2+Q_3=Q_4+Q_5$；据此可由易测反应的反应热叠加推算难测反应的反应热（图源：课程课件）</figcaption>
+</figure>
+
 借助**标准生成焓** $\Delta H_f^\circ$（由稳定单质生成 1 mol 化合物的焓变），任意反应的标准反应焓：
 
 $$\Delta H_r^\circ = \sum_{\text{产物}} \nu_i\,\Delta H_{f,i}^\circ - \sum_{\text{反应物}} \nu_j\,\Delta H_{f,j}^\circ$$
@@ -2412,9 +2457,19 @@ $$H_{\text{产物}}(T_{ad}) = H_{\text{反应物}}(T_1)$$
 
 它是燃烧设备的温度上限。实际因散热、不完全燃烧、高温离解等，真实火焰温度低于 $T_{ad}$。
 
+<figure markdown="span">
+  ![绝热燃烧温度的焓-温图解](imgs/14-adiabatic-flame.png){ width="46%" }
+  <figcaption>绝热燃烧温度的焓-温图：反应物焓线与生成物焓线在初温 $T_0$ 处相差 $\Delta H^0$（反应热）；绝热定压时产物总焓等于反应物初态总焓，沿生成物线升温直至 $T_{ad}$（点 A），即理论燃烧温度（图源：课程课件）</figcaption>
+</figure>
+
 ### 反应方向与最大功
 
 第二定律不仅给出反应热，还判定**反应能否自发进行**及**可获得的最大功**。孤立系仍以熵增为准则，对常用约束则用相应的**功势函数**：
+
+<figure markdown="span">
+  ![热力系平衡判据](imgs/14-equilibrium-criteria.png){ width="82%" }
+  <figcaption>热力系平衡判据：系统因各种势差自发变化，直到势差减小为零达到平衡。变化方向的判据同时也是平衡判据——孤立系用①平衡的熵判据，有约束时用②平衡的功势函数判据（$F$ 或 $G$）（图源：课程课件）</figcaption>
+</figure>
 
 !!! key-point "化学反应方向判据"
     | 约束 | 判据 | 自发方向 / 平衡 |

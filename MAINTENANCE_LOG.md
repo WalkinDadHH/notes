@@ -1,5 +1,34 @@
 # Maintenance Log
 
+## 2026-06-20 — 工程热力学：第七、十、十四章配入原理图（课件配图·第6批）
+
+Scope: `docs/major/foundation/thermodynamics/index.md`、`docs/major/foundation/thermodynamics/imgs/`
+
+Changed:
+- 第七章（理想气体混合物与湿空气）从《第7章 理想气体混合物与湿空气-3.pdf》选 3 图：
+  - `07-mixture-concept`（单元物质→多元系→湿空气=干空气+水蒸气）→ 一、理想气体混合物开头
+  - `07-humid-air-temps`（露点/湿球/绝热饱和在 p-v、T-s 上，$T_d<T_w<T$）→ 四种特征温度 key-point 后
+  - `07-hd-chart`（焓湿图 h-d 线簇结构：定d/定h/定t/定φ线，135°）→ 焓湿图（h-d 图）小节
+- 第十章（气体的压缩）从《第十章 气体的压缩(1).pdf》选 5 图：
+  - `10-piston-indicator`（活塞式压气机示功图，$w_t=\int v\,dp$）→ 单级压缩的理论耗功
+  - `10-three-process`（三种压缩过程 p-v、T-s 比较，定温<多变<绝热）→ 定温压缩最省功 key-point 后
+  - `10-clearance-volume`（余隙容积 p-v 示功图 1-2-3-4 + 气缸）→ 余隙容积与容积效率
+  - `10-multistage-device`（两级压缩中间冷却装置：储气罐/高低压缸/中冷器/冷却水）→ 多级压缩中间冷却开头
+  - `10-twostage-saving`（两级 vs 单级 p-v「省功」阴影）→ 最佳增压比 paragraph 后
+- 第十四章（化学反应系统的热力学原理）从《第十四章 化学反应系统的热力学原理2026.pdf》选 3 图：
+  - `14-hess-law`（盖斯定律途径图 A→C→D→B / A→E→B，$Q_1+Q_2+Q_3=Q_4+Q_5$）→ 盖斯定律 key-point 后
+  - `14-adiabatic-flame`（绝热燃烧温度焓-温图，反应物/生成物焓线，$\Delta H^0$、$T_{ad}$）→ 理论燃烧温度
+  - `14-equilibrium-criteria`（热力系平衡判据树：熵判据/功势函数判据）→ 反应方向与最大功开头
+- 仍沿用 `<figure markdown="span">` + 「图源：课程课件」；本批为局部裁切（clip 取幻灯片中图区），Matrix 2.4–3.8、PNG 保存（线条图无损）
+
+Notes:
+- 修正一处页码错位：分级压缩中间冷却装置图实际在第20页（第19页为另一张余隙耗功 p-v，与 clearance 重复，已弃用）
+- 干-湿球温度计幻灯片（p18）为带电商水印的产品照，弃用；露点/湿球概念改用 p16 的 p-v、T-s 图
+- 幻灯片渲染告警（image masks / shadings 不支持）仅影响缩略拼版，最终裁切由 `page.get_pixmap(clip=...)` 直渲，质量完整
+- 分批策略续：本批 3 章（第七/十/十四章，均 PDF）；已配 11 章共 54 图；剩余 PPTX 章节第三/四/九待 PowerPoint 渲染（PyMuPDF 不直接读 pptx）
+
+Validation: `scripts/validate-mkdocs.ps1` 通过（1.40s）
+
 ## 2026-06-20 — 工程热力学：第十二、十三章配入原理图（课件配图·第5批）
 
 Scope: `docs/major/foundation/thermodynamics/index.md`、`docs/major/foundation/thermodynamics/imgs/`
