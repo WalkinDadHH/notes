@@ -88,6 +88,18 @@ Files changed:
 - `docs/major/foundation/index.md`
 - `mkdocs.yml`
 
+## 2026-07-03 — 工程热力学：修正热力系分类口径
+
+Scope: `docs/major/foundation/thermodynamics/index.md`
+
+Changed:
+- 第一章「热力学系统」分类表拆分为物质交换与能量交换两个维度：开口系/闭口系归入物质交换，绝热系/孤立系/简单热力系归入能量交换
+- 修正 24-25 春夏真题答案，按题干「能量交换关系」回答绝热系、孤立系、简单热力系，并补充开口系/闭口系属于物质交换分类
+
+Why:
+- 原答案把开口系、闭口系与绝热系、孤立系混列，未区分物质交换分类和能量交换分类；用户指出孤立系应放在能量交换口径下，需同步修正笔记与站点
+
+
 ## 2026-06-20 — 修复行内/块级公式渲染 bug（裸 $ 显示）+ 图注改纯文本
 
 Scope: `docs/major/foundation/thermodynamics/index.md`、`docs/math/ode/index.md`、`docs/major/foundation/thermodynamics/imgs/10-clearance-volume.png`
