@@ -1,5 +1,20 @@
 # Maintenance Log
 
+## 2026-09-23 — 补充圆柱旋转与往复活塞黏性阻力例题
+
+Completed:
+- 增加同心圆柱窄环隙旋转例题，推导阻力矩与驱动功率
+- 增加往复活塞例题，按给定振幅、频率和油液参数计算周期平均摩擦功率
+- 为两种流动新增中文示意图，并说明薄隙线性速度分布与忽略端面效应的假设
+
+Validation:
+- MkDocs 临时目录构建成功；平均功率复算为约 128.6 W，与讲义取整值 129 W 一致
+
+Files changed:
+- `docs/major/foundation/fluid-mechanics/index.md`
+- `docs/major/foundation/fluid-mechanics/imgs/coaxial-cylinder-gap.svg`
+- `docs/major/foundation/fluid-mechanics/imgs/reciprocating-piston-gap.svg`
+
 ## 2026-09-23 — 补充圆盘窄缝黏性阻力矩例题
 
 Completed:

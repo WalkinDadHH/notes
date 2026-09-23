@@ -498,6 +498,70 @@ $$
 
 若转速以每分钟 $n$ 转给出，代入 $\omega=2\pi n/60=\pi n/30$ 即可。上式只计**一个盘面与一处缝隙**；若上下两侧条件完全相同，两个盘面的阻力矩相加。量纲检查：$[\mu\omega d^4/\delta]=\mathrm{N\cdot m}$。
 
+### 例题：同心圆柱窄环隙中的旋转阻力
+
+半径为 $d/2$、长度为 $L$ 的圆柱轴在静止圆筒中转动，均匀环隙宽度为 $\delta$，其中充满动力黏度为 $\mu$ 的流体。若 $\delta\ll d$，忽略端面和轴承损失，求流体对转轴的阻力矩及维持转动所需功率。
+
+![同心圆柱窄环隙中的旋转与线性速度分布](imgs/coaxial-cylinder-gap.svg)
+
+轴面半径为 $d/2$，所以轴面切向速度为 $v_0=\omega d/2$；外筒静止，窄环隙内可近似为线性速度分布。轴面切应力与润湿面积分别为
+
+$$
+\tau=\mu\frac{v_0}{\delta}
+=\frac{\mu\omega d}{2\delta},
+\qquad
+A=\pi dL.
+$$
+
+把切应力乘以轴面面积得到切向阻力，再乘轴半径得到阻力矩：
+
+$$
+F=\tau A=\frac{\pi\mu Ld^2\omega}{2\delta},
+\qquad
+M=F\frac d2=\frac{\pi\mu Ld^3\omega}{4\delta}.
+$$
+
+维持匀速转动时，驱动功率等于阻力矩乘角速度：
+
+$$
+P=M\omega=\frac{\pi\mu Ld^3\omega^2}{4\delta}.
+$$
+
+!!! tip "圆柱与圆盘的积分区别"
+    圆柱轴面上半径固定为 $d/2$，因此切应力处处相同，直接用 $M=F(d/2)$。圆盘上半径从 $0$ 变到 $d/2$，局部速度和力臂都随半径变化，必须对环带积分。
+
+### 例题：往复活塞克服黏性摩擦的平均功率
+
+活塞长 $L=10\ \mathrm{cm}$、直径 $d=8\ \mathrm{cm}$，在同心圆筒中往复运动。均匀间隙为 $\delta=0.5\ \mathrm{mm}$，油液动力黏度为 $\mu=0.09\ \mathrm{Pa\cdot s}$。活塞位移为 $x=a\sin(\omega t)$，振幅 $a=20\ \mathrm{cm}$，每分钟往复 $n=360$ 次。忽略活塞惯性及端面摩擦，求克服流体摩擦所需的平均功率。
+
+![同心圆筒间隙中的往复活塞与速度梯度](imgs/reciprocating-piston-gap.svg)
+
+**先由位移求速度。**一往复对应一个周期，角频率为
+
+$$
+\omega=\frac{2\pi n}{60}=12\pi\ \mathrm{rad/s},
+\qquad
+v(t)=\frac{\mathrm dx}{\mathrm dt}=a\omega\cos(\omega t).
+$$
+
+活塞侧面与静止圆筒之间近似为库埃特流，润湿侧面积 $A=\pi dL$，故切应力大小和摩擦力大小为
+
+$$
+\tau(t)=\mu\frac{|v(t)|}{\delta},
+\qquad
+F(t)=\tau(t)A=\frac{\pi\mu Ld}{\delta}|v(t)|.
+$$
+
+瞬时驱动功率等于摩擦力乘活塞速度大小，即 $P(t)=F(t)|v(t)|$。由于 $v^2(t)=a^2\omega^2\cos^2(\omega t)$，而一个周期内 $\cos^2$ 的平均值为 $1/2$，得到
+
+$$
+\bar P=\frac{\pi\mu Ld}{\delta}\,\overline{v^2}
+=\frac{\pi\mu Ld\,a^2\omega^2}{2\delta}
+\approx129\ \mathrm W.
+$$
+
+代入 SI 单位：$L=0.10\ \mathrm m$、$d=0.08\ \mathrm m$、$a=0.20\ \mathrm m$、$\delta=5.0\times10^{-4}\ \mathrm m$。这里求的是一个完整往复周期的平均功率；不能把最大速度代入后当作平均值。
+
 ### 管流状态与沿程阻力
 
 圆管雷诺数为 $\mathrm{Re}_D=\bar uD/\nu$。通常 $\mathrm{Re}_D\lesssim2300$ 为层流，约 $2300$ 至 $4000$ 为过渡区，较大时为湍流；临界值会受入口扰动、管道粗糙度等影响。
