@@ -1483,7 +1483,7 @@
   <a href="#_27" class="md-nav__link">
     <span class="md-ellipsis">
       
-        第四章例题 · 用速度剖面求边界层厚度
+        第四章例题 · 用示范剖面求边界层厚度与摩擦
       
     </span>
   </a>
@@ -1705,28 +1705,6 @@
   <a href="#_42" class="md-nav__link">
     <span class="md-ellipsis">
       
-        计算题 · 复势求速度和压强
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_43" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        计算题 · 平行板间的压强驱动流
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_44" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         计算题 · 用边界层速度剖面求摩擦阻力
       
     </span>
@@ -1735,7 +1713,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_45" class="md-nav__link">
+  <a href="#_43" class="md-nav__link">
     <span class="md-ellipsis">
       
         简答题 · 足球弧线与月球环境
@@ -1751,7 +1729,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_46" class="md-nav__link">
+  <a href="#_44" class="md-nav__link">
     <span class="md-ellipsis">
       
         复习时最容易混淆的几组关系
@@ -1762,7 +1740,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_47" class="md-nav__link">
+  <a href="#_45" class="md-nav__link">
     <span class="md-ellipsis">
       
         资料说明
@@ -2322,7 +2300,7 @@
   <a href="#_27" class="md-nav__link">
     <span class="md-ellipsis">
       
-        第四章例题 · 用速度剖面求边界层厚度
+        第四章例题 · 用示范剖面求边界层厚度与摩擦
       
     </span>
   </a>
@@ -2544,28 +2522,6 @@
   <a href="#_42" class="md-nav__link">
     <span class="md-ellipsis">
       
-        计算题 · 复势求速度和压强
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_43" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        计算题 · 平行板间的压强驱动流
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_44" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         计算题 · 用边界层速度剖面求摩擦阻力
       
     </span>
@@ -2574,7 +2530,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_45" class="md-nav__link">
+  <a href="#_43" class="md-nav__link">
     <span class="md-ellipsis">
       
         简答题 · 足球弧线与月球环境
@@ -2590,7 +2546,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_46" class="md-nav__link">
+  <a href="#_44" class="md-nav__link">
     <span class="md-ellipsis">
       
         复习时最容易混淆的几组关系
@@ -2601,7 +2557,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_47" class="md-nav__link">
+  <a href="#_45" class="md-nav__link">
     <span class="md-ellipsis">
       
         资料说明
@@ -3137,30 +3093,38 @@ c_{f,x}=\frac{\tau_w}{\tfrac12\rho U^2}
 +U\frac{\mathrm dU}{\mathrm dx}(2\theta+\delta^*)
 \]</div>
 <p>若外流速度 <span class="arithmatex">\(U\)</span> 为常数，方程简化为 <span class="arithmatex">\(\tau_w=\rho U^2\,\mathrm d\theta/\mathrm dx\)</span>。给出速度剖面 <span class="arithmatex">\(u/U=f(y/\delta)\)</span> 时，依次计算 <span class="arithmatex">\(\theta/\delta\)</span>、壁面速度梯度，再代入动量积分方程求 <span class="arithmatex">\(\delta(x)\)</span>；摩擦阻力要对壁面切应力沿长度积分。</p>
-<h3 id="_27">第四章例题 · 用速度剖面求边界层厚度<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
-<p>回忆卷材料给出</p>
+<h3 id="_27">第四章例题 · 用示范剖面求边界层厚度与摩擦<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">演示题，非回忆卷原式</p>
+<p>回忆题的速度剖面系数和幂次不完整。以下取一个近似剖面演示动量积分法；考试时应改用题面给定的剖面重新积分。</p>
+</div>
+<p>设零压强梯度平板流动满足</p>
 <div class="arithmatex">\[
-\frac{u}{U}=\frac{3}{2}\eta-\frac{1}{2}\eta^3,\qquad
-\eta=\frac{y}{\delta}
+\frac{u}{U}=2\eta-\eta^2,\qquad \eta=\frac{y}{\delta}
 \]</div>
-<p>且为零压强梯度平板流动。先积分得</p>
+<p>该剖面满足壁面无滑移、外缘速度为 <span class="arithmatex">\(U\)</span> 且外缘速度梯度为零。积分得</p>
 <div class="arithmatex">\[
-\delta^*=\frac{3}{8}\delta,\qquad
-\theta=\frac{39}{280}\delta
+\delta^*=\frac{\delta}{3},\qquad
+\theta=\frac{2\delta}{15}
 \]</div>
 <p>壁面切应力为</p>
 <div class="arithmatex">\[
 \tau_w=\mu\left.\frac{\partial u}{\partial y}\right|_{y=0}
-=\frac{3\mu U}{2\delta}
+=\frac{2\mu U}{\delta}
 \]</div>
 <p>代入动量积分方程并令 <span class="arithmatex">\(\nu=\mu/\rho\)</span>：</p>
 <div class="arithmatex">\[
-\frac{39}{280}\frac{\mathrm d\delta}{\mathrm dx}
-=\frac{3\nu}{2U\delta}
+\frac{2}{15}\frac{\mathrm d\delta}{\mathrm dx}
+=\frac{2\nu}{U\delta}
 \quad\Longrightarrow\quad
-\delta(x)=\sqrt{\frac{280}{13}\frac{\nu x}{U}}
+\delta(x)=\sqrt{\frac{30\nu x}{U}}
 \]</div>
-<p>若水的 <span class="arithmatex">\(\nu=10^{-6}\ \mathrm{m^2/s}\)</span>，<span class="arithmatex">\(U=1\ \mathrm{m/s}\)</span>，<span class="arithmatex">\(L=1\ \mathrm m\)</span>，则 <span class="arithmatex">\(\mathrm{Re}_L=10^6\)</span>，<span class="arithmatex">\(\delta(L)\approx4.64\ \mathrm{mm}\)</span>。取 <span class="arithmatex">\(\rho=1000\ \mathrm{kg/m^3}\)</span>、<span class="arithmatex">\(\mu=\rho\nu=0.001\ \mathrm{Pa\cdot s}\)</span>，得 <span class="arithmatex">\(\tau_w(L)\approx0.323\ \mathrm{Pa}\)</span>。宽 <span class="arithmatex">\(0.5\ \mathrm m\)</span> 的平板两面总摩擦阻力约为 <span class="arithmatex">\(0.646\ \mathrm N\)</span>。</p>
+<p>若取 <span class="arithmatex">\(\nu=10^{-6}\ \mathrm{m^2/s}\)</span>、<span class="arithmatex">\(U=1\ \mathrm{m/s}\)</span>、<span class="arithmatex">\(L=1\ \mathrm m\)</span>、<span class="arithmatex">\(\rho=1000\ \mathrm{kg/m^3}\)</span>，则 <span class="arithmatex">\(\mathrm{Re}_L=10^6\)</span>，<span class="arithmatex">\(\delta(L)\approx5.48\ \mathrm{mm}\)</span>，<span class="arithmatex">\(\tau_w(L)\approx0.365\ \mathrm{Pa}\)</span>。宽 <span class="arithmatex">\(b=0.5\ \mathrm m\)</span> 的平板两面总摩擦阻力为</p>
+<div class="arithmatex">\[
+F_{\text{双面}}=2b\int_0^L\tau_w\,\mathrm dx
+=4bL\tau_w(L)\approx0.730\ \mathrm N
+\]</div>
+<p>相应的平均摩擦系数为 <span class="arithmatex">\(\bar c_f=8/\sqrt{30\mathrm{Re}_L}\approx1.46\times10^{-3}\)</span>。</p>
 <hr />
 <h2 id="_28">第五章 · 可压缩流体一维定常流动<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
@@ -3430,9 +3394,19 @@ V_2=V_1\frac{\rho_1}{\rho_2}\approx283.0\ \mathrm{m/s}
 <td>需要同时满足不可压缩和无旋条件</td>
 </tr>
 <tr>
+<td>开尔文环量定理</td>
+<td>定常不是必要条件</td>
+<td>常用条件是无黏、正压和有势体积力</td>
+</tr>
+<tr>
+<td>圆柱有环量绕流的组成</td>
+<td>均匀来流、满足圆柱表面不穿透条件的偶极流、点涡</td>
+<td>方向取决于坐标和环量正号约定</td>
+</tr>
+<tr>
 <td>有环量圆柱绕流的升力</td>
-<td>$L'=\rho U_\infty</td>
-<td>\Gamma</td>
+<td><span class="arithmatex">\(L'=\rho U_\infty\lvert\Gamma\rvert\)</span></td>
+<td>单位展长升力与半径无直接关系</td>
 </tr>
 </tbody>
 </table>
@@ -3448,16 +3422,16 @@ V_2=V_1\frac{\rho_1}{\rho_2}\approx283.0\ \mathrm{m/s}
 <li>若无旋且区域单连通，积分 <span class="arithmatex">\(u=\phi_x,\ v=\phi_y\)</span> 求速度势；若不可压缩，积分 <span class="arithmatex">\(u=\psi_y,\ v=-\psi_x\)</span> 求流函数。</li>
 <li>最后对求出的 <span class="arithmatex">\(\phi,\psi\)</span> 求偏导，验证是否还原原速度场。</li>
 </ol>
-<p>回忆卷中一个可辨认的速度场为</p>
+<p>为演示步骤，自拟一个速度场（不代表回忆卷原题）：</p>
 <div class="arithmatex">\[
-u=2xy+x,\qquad v=x^2-y^2-y
+u=2x,\qquad v=-2y
 \]</div>
-<p>其散度为 <span class="arithmatex">\(2y+1-2y-1=0\)</span>，涡量为 <span class="arithmatex">\(\omega_z=\tfrac12(2x-2x)=0\)</span>，所以流动不可压缩且无旋。积分得到</p>
+<p>其散度为 <span class="arithmatex">\(2-2=0\)</span>，涡量为 <span class="arithmatex">\(\omega_z=\tfrac12(0-0)=0\)</span>，所以流动不可压缩且无旋。积分得到</p>
 <div class="arithmatex">\[
-\phi=x^2y+\frac{x^2}{2}-\frac{y^3}{3}-\frac{y^2}{2}+C
+\phi=x^2-y^2+C
 \]</div>
 <div class="arithmatex">\[
-\psi=xy^2+xy-\frac{x^3}{3}+C
+\psi=2xy+C
 \]</div>
 <h3 id="_41">证明题 · 圆周速度环量<a class="headerlink" href="#_41" title="Permanent link">&para;</a></h3>
 <p>以 <span class="arithmatex">\(u=-ay,\ v=ax\)</span> 表示绕 <span class="arithmatex">\(z\)</span> 轴的平面刚体旋转。对半径 <span class="arithmatex">\(R\)</span> 的圆周取</p>
@@ -3473,40 +3447,7 @@ x=R\cos\theta,\qquad y=R\sin\theta,\qquad
 =2\pi aR^2
 \]</div>
 <p>回忆中另有 <span class="arithmatex">\(3\pi aR^2\)</span> 的版本，且速度矢量分量和根号项不完整。系数取决于原速度场；应按题面参数重新代入线积分，不能只凭记忆把 <span class="arithmatex">\(2\pi\)</span> 改成 <span class="arithmatex">\(3\pi\)</span>。</p>
-<h3 id="_42">计算题 · 复势求速度和压强<a class="headerlink" href="#_42" title="Permanent link">&para;</a></h3>
-<p>一份回忆题给出二维复势</p>
-<div class="arithmatex">\[
-W(z)=\frac{Q}{2\pi}\ln(z+2)-\frac{Q}{2\pi}\ln(z-2)
-\]</div>
-<p>并给出原点压强 <span class="arithmatex">\(p(0,0)=10^5\ \mathrm{Pa}\)</span>、密度 <span class="arithmatex">\(\rho=1400\ \mathrm{kg/m^3}\)</span>，要求求 <span class="arithmatex">\(z=1+i\)</span> 处速度和压强。由 <span class="arithmatex">\(\mathrm dW/\mathrm dz=u-iv\)</span>：</p>
-<div class="arithmatex">\[
-\frac{\mathrm dW}{\mathrm dz}
-=\frac{Q}{2\pi}\left(\frac{1}{z+2}-\frac{1}{z-2}\right)
-\]</div>
-<p>代入 <span class="arithmatex">\(z=1+i\)</span> 后，<span class="arithmatex">\(u=0.4Q/\pi\)</span>、<span class="arithmatex">\(v=-0.2Q/\pi\)</span>；原点速度大小为 <span class="arithmatex">\(Q/(2\pi)\)</span>。若按回忆中的 <span class="arithmatex">\(Q=40\)</span> 代入，速度大小平方分别为 <span class="arithmatex">\(320/\pi^2\)</span> 和 <span class="arithmatex">\(400/\pi^2\)</span>。无旋定常理想流动可在两点间使用伯努利方程：</p>
-<div class="arithmatex">\[
-p(1,1)=p(0,0)+\frac{\rho}{2}\left[\left(\frac{Q}{2\pi}\right)^2-
-\left|\boldsymbol V(1,1)\right|^2\right]
-\]</div>
-<p>按 <span class="arithmatex">\(Q=40\)</span> 计算，<span class="arithmatex">\(p(1,1)\approx105.67\ \mathrm{kPa}\)</span>。复势题的 <span class="arithmatex">\(Q\)</span> 应按二维单位展长流量理解；若原题单位确为 <span class="arithmatex">\(\mathrm{m^3/s}\)</span>，还需用题目给定展长换算后再赋予速度单位。</p>
-<h3 id="_43">计算题 · 平行板间的压强驱动流<a class="headerlink" href="#_43" title="Permanent link">&para;</a></h3>
-<p>回忆卷给出两块固定平行板，间距 <span class="arithmatex">\(h=0.10\ \mathrm m\)</span>，最大速度 <span class="arithmatex">\(u_{\max}=5\ \mathrm{m/s}\)</span>，动力黏度 <span class="arithmatex">\(\mu=0.08\ \mathrm{Pa\cdot s}\)</span>。平面泊肃叶流满足</p>
-<div class="arithmatex">\[
-u_{\max}=-\frac{h^2}{8\mu}\frac{\mathrm dp}{\mathrm dx}
-\]</div>
-<p>所以</p>
-<div class="arithmatex">\[
-\frac{\mathrm dp}{\mathrm dx}
-=-\frac{8\mu u_{\max}}{h^2}
-=-320\ \mathrm{Pa/m}
-\]</div>
-<p>单位宽度流量及壁面切应力大小为</p>
-<div class="arithmatex">\[
-Q'=\frac23u_{\max}h
-=0.333\ \mathrm{m^2/s},\qquad
-|\tau_w|=\mu\frac{4u_{\max}}h=16\ \mathrm{Pa}
-\]</div>
-<h3 id="_44">计算题 · 用边界层速度剖面求摩擦阻力<a class="headerlink" href="#_44" title="Permanent link">&para;</a></h3>
+<h3 id="_42">计算题 · 用边界层速度剖面求摩擦阻力<a class="headerlink" href="#_42" title="Permanent link">&para;</a></h3>
 <p>先从题目给定剖面 <span class="arithmatex">\(f(\eta)=u/U\)</span> 计算</p>
 <div class="arithmatex">\[
 \frac{\theta}{\delta}
@@ -3518,7 +3459,7 @@ Q'=\frac23u_{\max}h
 <p class="admonition-title">不同版本的边界层剖面不要混成同一道题</p>
 <p>用户转述的回忆版本中，速度剖面可能为 <span class="arithmatex">\(3\eta-2\eta^2\)</span>，但系数和幂次记忆不完整。做题时应以试卷给定的剖面重新积分，不要沿用未核实的积分系数。</p>
 </div>
-<h3 id="_45">简答题 · 足球弧线与月球环境<a class="headerlink" href="#_45" title="Permanent link">&para;</a></h3>
+<h3 id="_43">简答题 · 足球弧线与月球环境<a class="headerlink" href="#_43" title="Permanent link">&para;</a></h3>
 <p>足球自转使球两侧边界层速度分布不同，球面周围压强因此不对称，形成垂直于来流和自转轴的马格努斯力，轨迹随之弯曲。月球表面近似真空，空气动力极弱，普通踢球条件下不会出现可见香蕉球；如果提供足够密度的气体，马格努斯效应仍会发生。</p>
 <figure>
   <img alt="旋转球体两侧流速差与横向力示意" src="imgs/magnus-effect.png" width="62%" />
@@ -3526,7 +3467,7 @@ Q'=\frac23u_{\max}h
 <figcaption>球体自转改变两侧近壁流动，形成压力差和横向力（图源：流体基本概念课件）</figcaption>
 </figure>
 <hr />
-<h2 id="_46">复习时最容易混淆的几组关系<a class="headerlink" href="#_46" title="Permanent link">&para;</a></h2>
+<h2 id="_44">复习时最容易混淆的几组关系<a class="headerlink" href="#_44" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>静压强与伯努利压强</strong>：静水公式由静力平衡得到；伯努利方程沿流线连接压强、速度和高度。</li>
 <li><strong>黏度与运动黏度</strong>：<span class="arithmatex">\(\mu\)</span> 进入应力关系，<span class="arithmatex">\(\nu=\mu/\rho\)</span> 进入雷诺数。</li>
@@ -3538,7 +3479,7 @@ Q'=\frac23u_{\max}h
 <li><strong>伯努利方程与动量方程</strong>：前者平衡机械能，后者平衡矢量动量；弯管受力题通常两者都要用。</li>
 </ul>
 <hr />
-<h2 id="_47">资料说明<a class="headerlink" href="#_47" title="Permanent link">&para;</a></h2>
+<h2 id="_45">资料说明<a class="headerlink" href="#_45" title="Permanent link">&para;</a></h2>
 <p>主体章节依照《工程流体力学（甲）Ⅰ的课程知识体系》《课程教学指南_2026年秋季学期》及对应课程资料整理；黏性流动、可压缩流动和量纲分析按教学提纲补齐。回忆题解析仅依据用户提供的题目线索整理，课件原图保留并注明来源。</p>
 
 
