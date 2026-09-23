@@ -1,5 +1,21 @@
 # Maintenance Log
 
+## 2026-09-23 — 收录甲Ⅰ手写回忆卷与前三章手写讲义
+
+Completed:
+- 收录用户提供的手写原图，制作两道证明题与三组计算题的可展开解析卡片
+- 管路题拆成阻力系数及水头损失两张卡片，缺失图形与数值处注明条件
+- 修正讲义的资料说明，明确存在一份未注明年份的甲Ⅰ回忆卷
+- 收录四份前三章手写 PDF 为核心原稿，并在正文补充气体静压、旋转液面、截面平均流速、文丘里管和皮托管推导
+
+Validation:
+- MkDocs 临时目录构建并检查回忆题卡片及原图链接
+
+Files changed:
+- `docs/major/foundation/fluid-mechanics/index.md`
+- `docs/major/foundation/fluid-mechanics/imgs/fluid-i-recall-undated.png`
+- `docs/major/foundation/fluid-mechanics/sources/*.pdf`
+
 ## 2026-09-23 — 补齐工流甲Ⅰ帕斯卡定理与例题卡片
 
 Completed:
