@@ -461,6 +461,43 @@ Q=\frac{\pi R^4}{8\mu}\frac{\Delta p}{L},
 \bar u=\frac{R^2\Delta p}{8\mu L}
 $$
 
+### 例题：圆盘在窄缝中转动的黏性阻力矩
+
+半径为 $R=d/2$ 的圆盘以角速度 $\omega$ 转动，盘面与静止壁面之间有均匀、很薄的流体缝隙 $\delta$，动力黏度为 $\mu$。求流体作用在**圆盘这一侧表面**上的阻力矩大小。设 $\delta\ll d$，忽略圆盘边缘效应，并把缝隙中的速度分布近似看成直线。
+
+![圆盘窄缝转动与半径为 r、宽为 dr 的环带示意图](imgs/rotating-disk-gap.svg)
+
+**第一步：先看半径 $r$ 处，不要把整张圆盘当成同一个速度。**该处盘面切向速度是 $v_0=\omega r$，静止壁面速度为零。由无滑移条件和线性速度分布，缝隙内速度梯度及盘面切应力为
+
+$$
+\frac{\mathrm dv}{\mathrm dz}\approx\frac{\omega r}{\delta},
+\qquad
+\tau(r)=\mu\frac{\omega r}{\delta}.
+$$
+
+**第二步：取一个很窄的圆环。**半径为 $r$、宽为 $\mathrm dr$ 的环带面积是 $\mathrm dA=2\pi r\,\mathrm dr$。环带上的摩擦力，再乘以力臂 $r$，才得到微元力矩：
+
+$$
+\mathrm dF=\tau(r)\,\mathrm dA
+=\frac{2\pi\mu\omega}{\delta}r^2\,\mathrm dr,
+\qquad
+\mathrm dM=r\,\mathrm dF
+=\frac{2\pi\mu\omega}{\delta}r^3\,\mathrm dr.
+$$
+
+**第三步：沿半径积分。**圆心处 $r=0$，盘缘处 $r=d/2$，因此阻力矩大小为
+
+$$
+M=\int_0^{d/2}\frac{2\pi\mu\omega}{\delta}r^3\,\mathrm dr
+=\frac{\pi\mu\omega d^4}{32\delta}
+=\frac{\pi\mu\omega R^4}{2\delta}.
+$$
+
+!!! tip "为什么积分里是 $r^3$？"
+    $\tau\propto r$（盘缘速度更快），$\mathrm dA\propto r\,\mathrm dr$（外圈环带更长），力臂又是 $r$。三者相乘得到 $r^3\,\mathrm dr$。切应力随半径变化，不能直接用一整个圆盘面积乘一个固定切应力。
+
+若转速以每分钟 $n$ 转给出，代入 $\omega=2\pi n/60=\pi n/30$ 即可。上式只计**一个盘面与一处缝隙**；若上下两侧条件完全相同，两个盘面的阻力矩相加。量纲检查：$[\mu\omega d^4/\delta]=\mathrm{N\cdot m}$。
+
 ### 管流状态与沿程阻力
 
 圆管雷诺数为 $\mathrm{Re}_D=\bar uD/\nu$。通常 $\mathrm{Re}_D\lesssim2300$ 为层流，约 $2300$ 至 $4000$ 为过渡区，较大时为湍流；临界值会受入口扰动、管道粗糙度等影响。

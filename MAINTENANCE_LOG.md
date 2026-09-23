@@ -1,5 +1,18 @@
 # Maintenance Log
 
+## 2026-09-23 — 补充圆盘窄缝黏性阻力矩例题
+
+Completed:
+- 在工程流体力学（甲）Ⅰ讲义的黏性流动章节加入圆盘窄缝转动例题，逐步解释局部速度、切应力、微元环带面积和力矩积分
+- 新绘制剖面与环带示意图，并说明单侧盘面、窄缝线性速度分布和边缘效应忽略等适用条件
+
+Validation:
+- MkDocs 临时目录构建成功，页面与 SVG 均已生成并发布
+
+Files changed:
+- `docs/major/foundation/fluid-mechanics/index.md`
+- `docs/major/foundation/fluid-mechanics/imgs/rotating-disk-gap.svg`
+
 ## 2026-09-23 — 新增工程流体力学（甲）Ⅰ讲义
 
 Completed:
