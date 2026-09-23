@@ -112,6 +112,7 @@ nav:
       - major/foundation/index.md
       - 工程力学: major/foundation/engineering-mechanics.md
       - 工程热力学（甲）: major/foundation/thermodynamics/index.md
+      - 工程流体力学（甲）Ⅰ: major/foundation/fluid-mechanics/index.md
   - 笔记:
     - notes/index.md
     - 示例笔记: notes/example.md

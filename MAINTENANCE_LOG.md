@@ -1,5 +1,22 @@
 # Maintenance Log
 
+## 2026-09-23 — 新增工程流体力学（甲）Ⅰ讲义
+
+Completed:
+- 新增六章单页讲义，整理流体性质、静力学、理想流动、黏性流动、可压缩流动与量纲分析
+- 加入公式速查、课件原图、典型推导、边界层和正激波例题，以及按课程归属标注的回忆卷考点
+- 发布前移除甲Ⅱ专属附录与仅见于甲Ⅱ资料的题目；回忆题解析仅按用户提供的题干线索整理
+- 在专业基础课索引和站点导航中增加课程入口
+
+Validation:
+- `scripts/validate-mkdocs.ps1` 临时目录构建成功；构建输出一条既有工程力学 PDF 相对链接警告，与本次页面无关
+
+Files changed:
+- `docs/major/foundation/fluid-mechanics/index.md`
+- `docs/major/foundation/fluid-mechanics/imgs/`
+- `docs/major/foundation/index.md`
+- `mkdocs.yml`
+
 ## 2026-06-20 — 修复行内/块级公式渲染 bug（裸 $ 显示）+ 图注改纯文本
 
 Scope: `docs/major/foundation/thermodynamics/index.md`、`docs/math/ode/index.md`、`docs/major/foundation/thermodynamics/imgs/10-clearance-volume.png`
