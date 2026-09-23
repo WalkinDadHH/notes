@@ -555,39 +555,48 @@ $$
 
 若外流速度 $U$ 为常数，方程简化为 $\tau_w=\rho U^2\,\mathrm d\theta/\mathrm dx$。给出速度剖面 $u/U=f(y/\delta)$ 时，依次计算 $\theta/\delta$、壁面速度梯度，再代入动量积分方程求 $\delta(x)$；摩擦阻力要对壁面切应力沿长度积分。
 
-### 第四章例题 · 用速度剖面求边界层厚度
+### 第四章例题 · 用示范剖面求边界层厚度与摩擦
 
-回忆卷材料给出
+!!! note "演示题，非回忆卷原式"
+    回忆题的速度剖面系数和幂次不完整。以下取一个近似剖面演示动量积分法；考试时应改用题面给定的剖面重新积分。
 
-$$
-\frac{u}{U}=\frac{3}{2}\eta-\frac{1}{2}\eta^3,\qquad
-\eta=\frac{y}{\delta}
-$$
-
-且为零压强梯度平板流动。先积分得
+设零压强梯度平板流动满足
 
 $$
-\delta^*=\frac{3}{8}\delta,\qquad
-\theta=\frac{39}{280}\delta
+\frac{u}{U}=2\eta-\eta^2,\qquad \eta=\frac{y}{\delta}
+$$
+
+该剖面满足壁面无滑移、外缘速度为 $U$ 且外缘速度梯度为零。积分得
+
+$$
+\delta^*=\frac{\delta}{3},\qquad
+\theta=\frac{2\delta}{15}
 $$
 
 壁面切应力为
 
 $$
 \tau_w=\mu\left.\frac{\partial u}{\partial y}\right|_{y=0}
-=\frac{3\mu U}{2\delta}
+=\frac{2\mu U}{\delta}
 $$
 
 代入动量积分方程并令 $\nu=\mu/\rho$：
 
 $$
-\frac{39}{280}\frac{\mathrm d\delta}{\mathrm dx}
-=\frac{3\nu}{2U\delta}
+\frac{2}{15}\frac{\mathrm d\delta}{\mathrm dx}
+=\frac{2\nu}{U\delta}
 \quad\Longrightarrow\quad
-\delta(x)=\sqrt{\frac{280}{13}\frac{\nu x}{U}}
+\delta(x)=\sqrt{\frac{30\nu x}{U}}
 $$
 
-若水的 $\nu=10^{-6}\ \mathrm{m^2/s}$，$U=1\ \mathrm{m/s}$，$L=1\ \mathrm m$，则 $\mathrm{Re}_L=10^6$，$\delta(L)\approx4.64\ \mathrm{mm}$。取 $\rho=1000\ \mathrm{kg/m^3}$、$\mu=\rho\nu=0.001\ \mathrm{Pa\cdot s}$，得 $\tau_w(L)\approx0.323\ \mathrm{Pa}$。宽 $0.5\ \mathrm m$ 的平板两面总摩擦阻力约为 $0.646\ \mathrm N$。
+若取 $\nu=10^{-6}\ \mathrm{m^2/s}$、$U=1\ \mathrm{m/s}$、$L=1\ \mathrm m$、$\rho=1000\ \mathrm{kg/m^3}$，则 $\mathrm{Re}_L=10^6$，$\delta(L)\approx5.48\ \mathrm{mm}$，$\tau_w(L)\approx0.365\ \mathrm{Pa}$。宽 $b=0.5\ \mathrm m$ 的平板两面总摩擦阻力为
+
+$$
+F_{\text{双面}}=2b\int_0^L\tau_w\,\mathrm dx
+=4bL\tau_w(L)\approx0.730\ \mathrm N
+$$
+
+相应的平均摩擦系数为 $\bar c_f=8/\sqrt{30\mathrm{Re}_L}\approx1.46\times10^{-3}$。
 
 ---
 
@@ -824,7 +833,9 @@ $$
 | 层流边界层不会分离 | 错 | 层流也能在逆压强梯度下分离；湍流只是通常更抗分离 |
 | 同一平板、同一雷诺数下层流和湍流摩擦 | 常见全湍流比较中湍流摩擦较大 | 湍流近壁动量交换强；须确认处于湍流关联式适用区间 |
 | 平面不可压缩势流的 $\phi,\psi$ | 两者都满足拉普拉斯方程 | 需要同时满足不可压缩和无旋条件 |
-| 有环量圆柱绕流的升力 | $L'=\rho U_\infty|\Gamma|$ | 单位展长升力与半径无直接关系 |
+| 开尔文环量定理 | 定常不是必要条件 | 常用条件是无黏、正压和有势体积力 |
+| 圆柱有环量绕流的组成 | 均匀来流、满足圆柱表面不穿透条件的偶极流、点涡 | 方向取决于坐标和环量正号约定 |
+| 有环量圆柱绕流的升力 | $L'=\rho U_\infty\lvert\Gamma\rvert$ | 单位展长升力与半径无直接关系 |
 
 !!! note "“声速小扰动为等熵”的前提"
     声波可近似看作小振幅、快速、绝热且可逆的扰动，所以使用等熵声速关系。若存在强耗散、热交换或激波，不能把过程当成等熵。
@@ -838,20 +849,20 @@ $$
 3. 若无旋且区域单连通，积分 $u=\phi_x,\ v=\phi_y$ 求速度势；若不可压缩，积分 $u=\psi_y,\ v=-\psi_x$ 求流函数。
 4. 最后对求出的 $\phi,\psi$ 求偏导，验证是否还原原速度场。
 
-回忆卷中一个可辨认的速度场为
+为演示步骤，自拟一个速度场（不代表回忆卷原题）：
 
 $$
-u=2xy+x,\qquad v=x^2-y^2-y
+u=2x,\qquad v=-2y
 $$
 
-其散度为 $2y+1-2y-1=0$，涡量为 $\omega_z=\tfrac12(2x-2x)=0$，所以流动不可压缩且无旋。积分得到
+其散度为 $2-2=0$，涡量为 $\omega_z=\tfrac12(0-0)=0$，所以流动不可压缩且无旋。积分得到
 
 $$
-\phi=x^2y+\frac{x^2}{2}-\frac{y^3}{3}-\frac{y^2}{2}+C
+\phi=x^2-y^2+C
 $$
 
 $$
-\psi=xy^2+xy-\frac{x^3}{3}+C
+\psi=2xy+C
 $$
 
 ### 证明题 · 圆周速度环量
@@ -873,54 +884,6 @@ $$
 $$
 
 回忆中另有 $3\pi aR^2$ 的版本，且速度矢量分量和根号项不完整。系数取决于原速度场；应按题面参数重新代入线积分，不能只凭记忆把 $2\pi$ 改成 $3\pi$。
-
-### 计算题 · 复势求速度和压强
-
-一份回忆题给出二维复势
-
-$$
-W(z)=\frac{Q}{2\pi}\ln(z+2)-\frac{Q}{2\pi}\ln(z-2)
-$$
-
-并给出原点压强 $p(0,0)=10^5\ \mathrm{Pa}$、密度 $\rho=1400\ \mathrm{kg/m^3}$，要求求 $z=1+i$ 处速度和压强。由 $\mathrm dW/\mathrm dz=u-iv$：
-
-$$
-\frac{\mathrm dW}{\mathrm dz}
-=\frac{Q}{2\pi}\left(\frac{1}{z+2}-\frac{1}{z-2}\right)
-$$
-
-代入 $z=1+i$ 后，$u=0.4Q/\pi$、$v=-0.2Q/\pi$；原点速度大小为 $Q/(2\pi)$。若按回忆中的 $Q=40$ 代入，速度大小平方分别为 $320/\pi^2$ 和 $400/\pi^2$。无旋定常理想流动可在两点间使用伯努利方程：
-
-$$
-p(1,1)=p(0,0)+\frac{\rho}{2}\left[\left(\frac{Q}{2\pi}\right)^2-
-\left|\boldsymbol V(1,1)\right|^2\right]
-$$
-
-按 $Q=40$ 计算，$p(1,1)\approx105.67\ \mathrm{kPa}$。复势题的 $Q$ 应按二维单位展长流量理解；若原题单位确为 $\mathrm{m^3/s}$，还需用题目给定展长换算后再赋予速度单位。
-
-### 计算题 · 平行板间的压强驱动流
-
-回忆卷给出两块固定平行板，间距 $h=0.10\ \mathrm m$，最大速度 $u_{\max}=5\ \mathrm{m/s}$，动力黏度 $\mu=0.08\ \mathrm{Pa\cdot s}$。平面泊肃叶流满足
-
-$$
-u_{\max}=-\frac{h^2}{8\mu}\frac{\mathrm dp}{\mathrm dx}
-$$
-
-所以
-
-$$
-\frac{\mathrm dp}{\mathrm dx}
-=-\frac{8\mu u_{\max}}{h^2}
-=-320\ \mathrm{Pa/m}
-$$
-
-单位宽度流量及壁面切应力大小为
-
-$$
-Q'=\frac23u_{\max}h
-=0.333\ \mathrm{m^2/s},\qquad
-|\tau_w|=\mu\frac{4u_{\max}}h=16\ \mathrm{Pa}
-$$
 
 ### 计算题 · 用边界层速度剖面求摩擦阻力
 
