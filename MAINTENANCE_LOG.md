@@ -1,5 +1,17 @@
 # Maintenance Log
 
+## 2026-09-23 — 回忆卷原题移入对应知识点
+
+Completed:
+- 将六张甲Ⅰ手写回忆题卡片从集中附录移入第三至六章的对应公式旁
+- 顶部仅保留原图与题目索引，每张卡片提供返回原图的入口
+
+Validation:
+- MkDocs 临时目录构建，核对章节锚点、卡片位置及页面链接
+
+Files changed:
+- `docs/major/foundation/fluid-mechanics/index.md`
+
 ## 2026-09-23 — 收录甲Ⅰ手写回忆卷与前三章手写讲义
 
 Completed:
