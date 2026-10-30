@@ -1,5 +1,33 @@
 # Maintenance Log
 
+## 2026-10-30 — 修复 PDF 页面链接路径 + 忽略 .DS_Store
+
+Scope: `docs/physics/optics/interference.md`、`docs/physics/optics/geometrical-optics.md`、`docs/major/foundation/engineering-mechanics.md`、`.gitignore`
+
+Changed:
+- 光学两页 iframe 由 `src="xxx.pdf"` 改为 `src="../xxx.pdf"`：页面以目录 URL（`.../interference/`）发布，raw HTML 不经 MkDocs 改写，原写法解析到 `.../interference/interference.pdf` 导致 PDF 预览 404
+- 工程力学下载按钮 Markdown 链接由 `../engineering-mechanics.pdf` 改为 `engineering-mechanics.pdf`（MkDocs 会自动改写为 `../`），消除构建警告，输出不变
+- `.gitignore` 增加 `.DS_Store`
+
+Note: 约定——PDF 页面中 raw HTML（iframe）写 `../文件.pdf`，Markdown 链接写 `文件.pdf`（相对源文件）
+
+Validation: `./scripts/validate-mkdocs.sh` 通过，无警告；三页输出的 iframe/下载链接均为 `../xxx.pdf`
+
+## 2026-10-30 — 迁移到 macOS：更新部署钩子与维护文档路径
+
+Scope: `.claude/settings.local.json`、`.claude/commands/notes-guide.md`、`SKILL.md`、`README.md`、`scripts/validate-mkdocs.sh`（新增）、`CLAUDE.md`（新增）
+
+Changed:
+- Stop 钩子由 `cd /d/Unbili` + Windows `mkdocs.exe` 改为 `cd /Users/kaneki/Documents/unbili` + `/Users/kaneki/miniforge3/bin/mkdocs`，自动提交/推送/部署流程保持不变
+- `notes-guide.md`、`SKILL.md` 中项目目录、Python、mkdocs、gh 路径改为 macOS 路径
+- 新增 `scripts/validate-mkdocs.sh`（与 `.ps1` 等价，输出到 `.tmp_site_validation/`），README/SKILL/notes-guide 改为优先引用；`.ps1` 保留供 Windows 使用
+- 新增中文 `CLAUDE.md`，汇总常用命令、部署规则与内容约定
+
+Why:
+- 仓库已迁移到 macOS，原钩子第一步 `cd /d/Unbili` 即失败，自动部署实际失效
+
+Validation: `./scripts/validate-mkdocs.sh` 通过（仅既有警告：`engineering-mechanics.md` 中 `../engineering-mechanics.pdf` 链接目标不存在）
+
 ## 2026-09-23 — 回忆卷原题移入对应知识点
 
 Completed:
@@ -87,6 +115,7 @@ Files changed:
 - `docs/major/foundation/fluid-mechanics/imgs/`
 - `docs/major/foundation/index.md`
 - `mkdocs.yml`
+
 
 ## 2026-07-03 — 工程热力学：修正热力系分类口径
 

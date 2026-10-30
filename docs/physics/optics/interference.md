@@ -9,7 +9,7 @@ comments: true
 
 === ":material-file-pdf-box: PDF 预览"
 
-    <iframe src="interference.pdf" width="100%" height="820px" frameborder="0"></iframe>
+    <iframe src="../interference.pdf" width="100%" height="820px" frameborder="0"></iframe>
 
     [⬇ 下载 PDF](interference.pdf){ .md-button .md-button--primary }
 

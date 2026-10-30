@@ -6,11 +6,11 @@
 
 ## 项目基本信息
 
-- 项目目录：`D:\Unbili`
+- 项目目录：`/Users/kaneki/Documents/unbili`（macOS；2026-10 前在 Windows `D:\Unbili`）
 - 构建工具：MkDocs + Material 主题，Python 3.13
-- mkdocs 路径：`C:\Users\KANEKI\AppData\Local\Programs\Python\Python313\Scripts\mkdocs.exe`
-- Python 路径：`C:\Users\KANEKI\AppData\Local\Programs\Python\Python313\python.exe`
-- GitHub CLI：`C:\Program Files\GitHub CLI\gh.exe`，已登录 WalkinDadHH
+- mkdocs 路径：`/Users/kaneki/miniforge3/bin/mkdocs`（PATH 中直接用 `mkdocs`）
+- Python 路径：`/Users/kaneki/miniforge3/bin/python3`（PATH 中直接用 `python3`）
+- GitHub CLI：`gh`，已登录 WalkinDadHH
 
 ---
 
@@ -40,9 +40,9 @@
 ## 部署命令（每次更新必须执行）
 
 ```bash
-cd D:/Unbili
+cd /Users/kaneki/Documents/unbili
 git add . && git commit -m "feat/fix: 描述" && git push
-/c/Users/KANEKI/AppData/Local/Programs/Python/Python313/Scripts/mkdocs.exe gh-deploy --force
+mkdocs gh-deploy --force
 ```
 
 **这是仓库所有者明确要求保留的工作流。不要擅自关闭自动提交/自动部署机制。**
@@ -212,7 +212,7 @@ nav:
 - 两者都把本仓库视为共享工作区，不要覆盖对方未理解的改动
 - 优先修改 `docs/`、`mkdocs.yml`、维护文档；谨慎处理 `site/`
 - `site/` 当前仍在 Git 跟踪中，本地构建会产生大量脏文件，除非任务明确要求，不要顺手提交这些产物
-- 日常校验优先使用 `scripts/validate-mkdocs.ps1`，避免直接刷新已跟踪的 `site/`
+- 日常校验优先使用 `scripts/validate-mkdocs.sh`（Windows 用 `scripts/validate-mkdocs.ps1`），避免直接刷新已跟踪的 `site/`
 - 自动发布是仓库所有者要求保留的流程，不要自行关闭
 - 若更新了约定、脚本、目录策略，同步更新 `README.md` 或本文件，并记入 `MAINTENANCE_LOG.md`
 - 每次上传后，请说一句：主人！您的更新完成了，请登录您的站点进行查看吧！

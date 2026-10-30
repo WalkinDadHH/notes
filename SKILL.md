@@ -5,19 +5,19 @@ description: Use when working in the Unbili MkDocs notes repository to follow th
 
 # Unbili Maintainer
 
-This repository is a MkDocs + Material notes site rooted at `D:\Unbili`.
+This repository is a MkDocs + Material notes site rooted at `/Users/kaneki/Documents/unbili` (macOS; formerly `D:\Unbili` on Windows).
 
 Before changing repository conventions, deployment behavior, structure, or content patterns, read:
 
 - `README.md`
 - `MAINTENANCE_LOG.md`
 - `.claude/commands/notes-guide.md`
-- `scripts/validate-mkdocs.ps1` when build validation is relevant
+- `scripts/validate-mkdocs.sh` (Windows: `scripts/validate-mkdocs.ps1`) when build validation is relevant
 
 ## Core rules
 
 - Do not leave partial edits in `docs/` or `mkdocs.yml` if the task is meant to be published.
-- Prefer `scripts/validate-mkdocs.ps1` for validation when you do not want to refresh tracked `site/`.
+- Prefer `scripts/validate-mkdocs.sh` (Windows: `.ps1`) for validation when you do not want to refresh tracked `site/`.
 - Use plain `mkdocs build` only when you intentionally want updated generated output in `site/`.
 - Do not disable or rewrite the repository's established deploy workflow unless the owner explicitly asks for that.
 

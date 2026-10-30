@@ -49,6 +49,12 @@ mkdocs build
 
 Run a disposable validation build without touching tracked `site/` output:
 
+```bash
+./scripts/validate-mkdocs.sh
+```
+
+On Windows, use the PowerShell equivalent:
+
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\validate-mkdocs.ps1
 ```
@@ -91,7 +97,7 @@ Because of that:
 
 Preferred local validation:
 
-- Use `scripts/validate-mkdocs.ps1` for build verification when you do not intend to refresh tracked `site/`
+- Use `scripts/validate-mkdocs.sh` (Windows: `.ps1`) for build verification when you do not intend to refresh tracked `site/`
 - Use plain `mkdocs build` only when you intentionally want updated generated output
 
 ## Collaboration Notes
@@ -102,6 +108,6 @@ Codex and Claude should both read these files before editing repository conventi
 - `README.md`
 - `MAINTENANCE_LOG.md`
 - `.claude/commands/notes-guide.md`
-- `scripts/validate-mkdocs.ps1`
+- `scripts/validate-mkdocs.sh` / `scripts/validate-mkdocs.ps1`
 
 When changing workflow, deployment, structure, or conventions, append a short log entry to `MAINTENANCE_LOG.md`.

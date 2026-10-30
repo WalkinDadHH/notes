@@ -11,7 +11,7 @@ comments: true
 
     <iframe src="../engineering-mechanics.pdf" width="100%" height="820px" frameborder="0"></iframe>
 
-    [⬇ 下载 PDF](../engineering-mechanics.pdf){ .md-button .md-button--primary }
+    [⬇ 下载 PDF](engineering-mechanics.pdf){ .md-button .md-button--primary }
 
 === ":material-image-multiple: 图片模式（iOS 可用）"
 

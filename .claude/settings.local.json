@@ -55,7 +55,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cd /d/Unbili && git add docs/ mkdocs.yml && git diff --cached --quiet || (git commit -m \"auto: sync notes to GitHub Pages\" && git push origin main && /c/Users/KANEKI/AppData/Local/Programs/Python/Python313/Scripts/mkdocs.exe gh-deploy --force && echo '{\"systemMessage\": \"已部署完成，可访问 https://WalkinDadHH.github.io/notes/\"}')",
+            "command": "cd /Users/kaneki/Documents/unbili && git add docs/ mkdocs.yml && git diff --cached --quiet || (git commit -m \"auto: sync notes to GitHub Pages\" && git push origin main && /Users/kaneki/miniforge3/bin/mkdocs gh-deploy --force && echo '{\"systemMessage\": \"已部署完成，可访问 https://WalkinDadHH.github.io/notes/\"}')",
             "timeout": 120,
             "statusMessage": "同步到 GitHub Pages..."
           }
