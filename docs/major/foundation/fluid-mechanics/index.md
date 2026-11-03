@@ -378,19 +378,50 @@ $$
 
 ### 平面上的静水总压力
 
-平面面积为 $A$，形心位于自由液面下深度 $h_c$，且液面压强为 $p_0$。对表压积分得合力大小
+**坐标约定**（同课件图 2-17）：平面与水平面夹角为 $\alpha$，平面延长后与自由液面相交于 $Om$ 轴（侧视图中为点 $O$）。$l$ 轴从 $O$ 沿平面向下量取。平面上坐标为 $l$ 的点，淹没深度为
 
 $$
-F=\int_A \rho g h\,\mathrm dA=\rho g h_c A
+h=l\sin\alpha
 $$
 
-总压力作用点称为压力中心。对与自由液面相交、倾角为 $\alpha$ 的平面，沿平面从液面量距离 $s$，形心位置为 $s_c$，形心轴惯性矩为 $I_G$，则
+后面出现的 $\sin\alpha$ 都来自这一关系。平面面积为 $A$，形心 $C$ 的坐标为 $l_C$、深度为 $h_C=l_C\sin\alpha$。
+
+**总压力大小。**取微面积 $\mathrm dA$，它受表压力 $\mathrm dF=\rho g h\,\mathrm dA=\rho g\sin\alpha\,l\,\mathrm dA$。各 $\mathrm dF$ 都垂直于平面，组成平行力系，所以合力方向也垂直于平面。积分得
 
 $$
-s_{cp}=s_c+\frac{I_G}{s_c A}
+F=\rho g\sin\alpha\int_A l\,\mathrm dA=\rho g\sin\alpha\,l_C A=\rho g h_C A
 $$
 
-压力中心通常低于形心，因为压强随深度增加。若液面上方还存在均匀表压，需要把均匀压强产生的合力一并计入。
+其中 $\int_A l\,\mathrm dA=l_C A$ 是面积对 $Om$ 轴的静矩。
+
+**压力中心。**合力作用点 $D$ 称为压力中心。由合力矩定理，合力对 $Om$ 轴的力矩等于各分力力矩之和：$F\,l_D=\int_A l\,\mathrm dF$。因此
+
+$$
+l_D=\frac{\int_A l\,\mathrm dF}{F}
+=\frac{\rho g\sin\alpha\int_A l^2\,\mathrm dA}{\rho g h_C A}
+=\frac{\rho g\sin\alpha\,I_m}{\rho g\sin\alpha\,l_C A}
+=\frac{I_m}{l_C A}
+\tag{2-54}
+$$
+
+式中 $I_m=\int_A l^2\,\mathrm dA$ 为面积对 $Om$ 轴的惯性矩。分子和分母中的 $\rho g\sin\alpha$ 约去，所以 $l_D$ 只取决于平面的形状和位置，与液体种类、倾角无关。
+
+**为什么不在形心。**由平行移轴定理 $I_m=I_C+l_C^2A$（$I_C$ 为面积对过形心且平行于 $Om$ 的轴的惯性矩），得
+
+$$
+l_D=l_C+\frac{I_C}{l_C A}>l_C
+$$
+
+压力中心总在形心下方：压强随深度增大，下半部分受力更大，合力作用点随之下移。若液面上方还存在均匀表压，需要把均匀压强产生的合力一并计入，那一部分作用在形心。
+
+!!! tip "检验：竖直矩形闸门"
+    高 $b$、宽 $w$，上边缘与水面齐平。$l_C=b/2$，$I_C=wb^3/12$，$A=wb$，代入得
+
+    $$
+    l_D=\frac{b}{2}+\frac{wb^3/12}{(b/2)\,wb}=\frac{b}{2}+\frac{b}{6}=\frac{2b}{3}
+    $$
+
+    压力中心位于水下 $2b/3$ 处，正是三角形压强分布图的形心，与直观一致。
 
 ### 曲面上的静水总压力
 
