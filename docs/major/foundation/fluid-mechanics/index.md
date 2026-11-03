@@ -45,7 +45,7 @@ comments: true
     | $I_C$ | 面积对过形心水平轴的惯性矩 | $\mathrm{m^4}$ |
     | $A_x$ | 曲面在竖直面上的投影面积 | 求水平分力 |
     | $V_p$ | 压力体体积 | 求竖直分力 |
-    | $\Omega$ 或 $\omega$ | 容器旋转角速度 | $\omega=2\pi n/60$，$n$ 单位 $\mathrm{r/min}$ |
+    | $\omega$ | 角速度（旋转容器、转轴、圆盘） | $\omega=2\pi n/60$，$n$ 单位 $\mathrm{r/min}$ |
 
     **流动与管路**
 
@@ -123,9 +123,9 @@ comments: true
     |------|-------------|------|
     | $\nabla p=\rho(\boldsymbol g-\boldsymbol a)$ | 液体随容器做刚体运动；等压面垂直于 $\boldsymbol g-\boldsymbol a$ | [相对平衡](#relative-equilibrium) |
     | $\tan\theta=\dfrac{a_x}{g+a_z}$ | 容器水平加速时液面倾角 | [相对平衡](#relative-equilibrium) |
-    | $p=p_0+\dfrac12\rho\Omega^2r^2-\rho gz$ | 绕竖直轴等角速旋转；原点取轴心液面。$p_0=p_a$ 得绝对压强，$p_0=0$ 得表压（计示压强）；求壁面受力、外侧是大气时用表压 | [证明](#proof-rotation) |
-    | $z=\dfrac{\Omega^2r^2}{2g}$ | 自由液面为旋转抛物面 | [证明](#proof-rotation) |
-    | 中心降、边缘升各 $\dfrac{\Omega^2R^2}{4g}$ | 开口圆筒，相对原静止液面；抛物面体积为同底同高圆柱的一半 | [证明](#proof-rotation) |
+    | $p=p_0+\dfrac12\rho\omega^2r^2-\rho gz$ | 绕竖直轴等角速旋转；原点取轴心液面。$p_0=p_a$ 得绝对压强，$p_0=0$ 得表压（计示压强）；求壁面受力、外侧是大气时用表压 | [证明](#proof-rotation) |
+    | $z=\dfrac{\omega^2r^2}{2g}$ | 自由液面为旋转抛物面 | [证明](#proof-rotation) |
+    | 中心降、边缘升各 $\dfrac{\omega^2R^2}{4g}$ | 开口圆筒，相对原静止液面；抛物面体积为同底同高圆柱的一半 | [证明](#proof-rotation) |
     | $F=\displaystyle\int_0^R p(r)\,2\pi r\,\mathrm dr$ | 旋转液体对顶盖或底面的总压力；压强随 $r$ 变，必须圆环积分 | [习题 3-17](#proof-rotation) |
     | 等压面 $z=\dfrac{\omega^2r^2}{2g}+C$ | 形状与密度无关；两种液体的分界面也是这种抛物面 | [习题 3-19](#proof-rotation) |
 
@@ -898,36 +898,36 @@ $$
 #### ② 绕竖直轴等角速度旋转 { #proof-rotation }
 
 !!! definition "证明：旋转液面是抛物面（手写稿第 16 页）"
-    向心加速度 $\boldsymbol a=-r\Omega^2\boldsymbol e_r$，代入 $\nabla p=\rho(\boldsymbol g-\boldsymbol a)$：
+    向心加速度 $\boldsymbol a=-r\omega^2\boldsymbol e_r$，代入 $\nabla p=\rho(\boldsymbol g-\boldsymbol a)$：
 
     $$
-    \frac{\partial p}{\partial r}=\rho r\Omega^2,\qquad
+    \frac{\partial p}{\partial r}=\rho r\omega^2,\qquad
     \frac{\partial p}{\partial z}=-\rho g
     $$
 
-    第一式对 $r$ 积分得 $p=\frac12\rho r^2\Omega^2+f(z)$。代入第二式得 $f'(z)=-\rho g$，故 $f=-\rho gz+C$。取轴心液面处 $(r,z)=(0,0)$ 时 $p=p_0$，则 $C=p_0$：
+    第一式对 $r$ 积分得 $p=\frac12\rho r^2\omega^2+f(z)$。代入第二式得 $f'(z)=-\rho g$，故 $f=-\rho gz+C$。取轴心液面处 $(r,z)=(0,0)$ 时 $p=p_0$，则 $C=p_0$：
 
     $$
-    p=p_0+\frac12\rho\Omega^2r^2-\rho gz
+    p=p_0+\frac12\rho\omega^2r^2-\rho gz
     $$
 
     令 $p=p_0$（自由液面），得
 
     $$
-    \boxed{z=\frac{\Omega^2r^2}{2g}}
+    \boxed{z=\frac{\omega^2r^2}{2g}}
     $$
 
     自由液面是**旋转抛物面**。
 
 !!! warning "这个公式算出的是表压还是绝对压强？由 $p_0$ 决定"
-    公式 $p=p_0+\frac12\rho\Omega^2r^2-\rho gz$ 本身不分表压、绝压，**$p_0$ 用什么，算出来的 $p$ 就是什么**。$p_0$ 是原点（轴心、$z=0$ 处）的压强。
+    公式 $p=p_0+\frac12\rho\omega^2r^2-\rho gz$ 本身不分表压、绝压，**$p_0$ 用什么，算出来的 $p$ 就是什么**。$p_0$ 是原点（轴心、$z=0$ 处）的压强。
 
     | 情形 | $p_0$ 取 | 算出的 $p$ | 常用写法 |
     |---|---|---|---|
-    | 开口容器，原点取在轴心自由液面 | $p_a$ | **绝对压强** | $p=p_a+\rho g\left(\dfrac{\Omega^2r^2}{2g}-z\right)$ |
-    | 同上，但只关心比大气高多少 | $0$ | **表压**（计示压强） | $p=\rho g\left(\dfrac{\Omega^2r^2}{2g}-z\right)$ |
-    | 密闭容器，液面上方气体压强为 $p_0$ | 气体压强（看题目给的是表压还是绝压） | 与 $p_0$ 同类 | $p=p_0+\rho g\left(\dfrac{\Omega^2r^2}{2g}-z\right)$ |
-    | 容器充满、没有自由液面，已知某点压强 | 由该点代入求积分常数 | 与已知值同类 | 先写 $p=\frac12\rho\Omega^2r^2-\rho gz+C$，再代入已知点 |
+    | 开口容器，原点取在轴心自由液面 | $p_a$ | **绝对压强** | $p=p_a+\rho g\left(\dfrac{\omega^2r^2}{2g}-z\right)$ |
+    | 同上，但只关心比大气高多少 | $0$ | **表压**（计示压强） | $p=\rho g\left(\dfrac{\omega^2r^2}{2g}-z\right)$ |
+    | 密闭容器，液面上方气体压强为 $p_0$ | 气体压强（看题目给的是表压还是绝压） | 与 $p_0$ 同类 | $p=p_0+\rho g\left(\dfrac{\omega^2r^2}{2g}-z\right)$ |
+    | 容器充满、没有自由液面，已知某点压强 | 由该点代入求积分常数 | 与已知值同类 | 先写 $p=\frac12\rho\omega^2r^2-\rho gz+C$，再代入已知点 |
 
     **什么时候用表压**：
 
@@ -943,7 +943,7 @@ $$
     **易错**：开口容器旋转时，中心液面下降、边缘上升，但**自由液面上处处是大气压**，所以自由液面上的表压处处为零。表压为负（真空）只会出现在密闭充满的容器内部，绝压则永远不能为负。
 
 !!! tip "旋转容器题的体积守恒"
-    旋转抛物面的体积等于同底同高圆柱的**一半**。所以对于半径 $R$ 的圆筒，液面**中心下降**和**边缘上升**相对于原静止液面各为 $\dfrac{\Omega^2R^2}{4g}$。题目问「转速多大时液体刚好溢出或刚好露底」就用这一条。
+    旋转抛物面的体积等于同底同高圆柱的**一半**。所以对于半径 $R$ 的圆筒，液面**中心下降**和**边缘上升**相对于原静止液面各为 $\dfrac{\omega^2R^2}{4g}$。题目问「转速多大时液体刚好溢出或刚好露底」就用这一条。
 
 ??? example "教材习题 3-17｜离心铸造车轮：边缘压强与螺栓群拉力"
     **题目**：离心铸造机铸造车轮。铁水密度 $\rho=7138\ \mathrm{kg/m^3}$，车轮尺寸 $h=200\ \mathrm{mm}$、$d=900\ \mathrm{mm}$。下箱由基座支承，上箱及其砂重 $G=10\ \mathrm{kN}$。转速 $n=600\ \mathrm{r/min}$，求车轮边缘处的计示压强和螺栓群 A–A 所受的总拉力。（答案：$2864\ \mathrm{kPa}$，$905\ \mathrm{kN}$）
@@ -1139,7 +1139,7 @@ $$
     !!! warning "易错点"
         - 从 2 走到 3 时**必须用水的密度**：底板上除了中心那一个点，其余全是水。用油的密度会得到错误的 $p_3$。
         - 「油面接触底板」不是油跑到了底部外圈，而是**中心**的分界面顶点下降到底板。
-        - 不能直接用「中心下降、边缘上升各 $\Omega^2R^2/4g$」那条结论：它针对的是**开口容器的自由液面**；这里容器加盖装满，要用油的体积守恒重新列式。
+        - 不能直接用「中心下降、边缘上升各 $\omega^2R^2/4g$」那条结论：它针对的是**开口容器的自由液面**；这里容器加盖装满，要用油的体积守恒重新列式。
 
 ### 第二章填空速记
 
@@ -1148,7 +1148,7 @@ $$
 - 平面总压力 $F=\rho gh_CA$；压力中心 $y_D=y_C+I_C/(y_CA)$，在形心**下方**。
 - 曲面：$F_x=\rho gh_{C,x}A_x$（投影面），$F_z=\rho gV_p$（压力体）。
 - 浮力等于排开流体的重量，作用在浮心。
-- 等速旋转液面 $z=\Omega^2r^2/(2g)$，抛物面体积是同底同高圆柱的一半。
+- 等速旋转液面 $z=\omega^2r^2/(2g)$，抛物面体积是同底同高圆柱的一半。
 - 压强公式里的 $p_0$ 取 $p_a$ 得绝对压强，取 $0$ 得表压；计示压强 = 表压；外侧为大气的壁面受力用表压，判断汽化用绝压。
 
 ---
