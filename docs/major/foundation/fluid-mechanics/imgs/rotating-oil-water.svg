@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 470" role="img" aria-labelledby="title desc">
+  <title id="title">油水分层的旋转容器</title>
+  <desc id="desc">充满的圆柱容器绕中心轴旋转，顶盖中心小孔通大气。较重的水被甩到外侧，较轻的油聚在中心，油水分界面是顶点恰好落在底板中心的旋转抛物面，与顶盖相交于半径 r1 处。标出顶盖中心 1、底板中心 2、底板边缘 3、顶盖边缘 4 四个点。</desc>
+  <defs>
+    <style>
+      .label{font:19px "Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#263344}
+      .small{font:16px "Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#4d5f72}
+      .formula{font:italic 21px Georgia,serif;fill:#263344}
+      .water{fill:#cfe3f4}
+      .oil{fill:#f6dcae}
+      .wall{fill:none;stroke:#3a4b5c;stroke-width:4}
+      .interface{fill:none;stroke:#bd5627;stroke-width:3}
+      .dim{stroke:#4d5f72;stroke-width:1.6;fill:none}
+      .axis{stroke:#788a9c;stroke-width:1.6;stroke-dasharray:8 6}
+      .arrow{stroke:#4d5f72;stroke-width:2;fill:none;marker-end:url(#gray)}
+    </style>
+    <marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#4d5f72"/></marker>
+  </defs>
+  <rect x="1" y="1" width="958" height="468" rx="18" fill="#f8fafc" stroke="#d9e2eb" stroke-width="2"/>
+
+  <!-- container contents: water then oil paraboloid on top -->
+  <rect x="280" y="60" width="400" height="333" class="water"/>
+  <path d="M354 60 Q480 726 606 60 Z" class="oil"/>
+  <path d="M354 60 Q480 726 606 60" class="interface"/>
+
+  <!-- container walls with a hole at lid centre -->
+  <path d="M472 60 H280 V393 H680 V60 H488" class="wall"/>
+  <line x1="480" y1="22" x2="480" y2="440" class="axis"/>
+  <text x="384" y="40" class="small">小孔通大气</text>
+
+  <!-- labels for fluids -->
+  <text x="458" y="200" class="label">油</text>
+  <text x="300" y="300" class="label">水</text>
+  <text x="630" y="300" class="label">水</text>
+  <text x="700" y="210" class="small" style="fill:#bd5627">油水分界面</text>
+  <text x="700" y="232" class="small" style="fill:#bd5627">（等压面，抛物面）</text>
+  <line x1="698" y1="215" x2="590" y2="150" class="dim" style="stroke:#bd5627"/>
+
+  <!-- key points -->
+  <circle cx="480" cy="60" r="7" fill="#263344"/><text x="452" y="88" class="formula">1</text>
+  <circle cx="480" cy="393" r="7" fill="#263344"/><text x="492" y="386" class="formula">2</text>
+  <circle cx="680" cy="393" r="7" fill="#263344"/><text x="690" y="386" class="formula">3</text>
+  <circle cx="680" cy="60" r="7" fill="#263344"/><text x="690" y="56" class="formula">4</text>
+
+  <!-- r1 dimension -->
+  <line x1="480" y1="48" x2="606" y2="48" class="dim"/>
+  <line x1="606" y1="40" x2="606" y2="56" class="dim"/>
+  <text x="530" y="40" class="formula">r</text><text x="541" y="46" class="formula" style="font-size:14px">1</text>
+
+  <!-- H dimension -->
+  <line x1="760" y1="60" x2="760" y2="393" class="dim"/>
+  <line x1="750" y1="60" x2="770" y2="60" class="dim"/>
+  <line x1="750" y1="393" x2="770" y2="393" class="dim"/>
+  <text x="772" y="330" class="formula">H</text>
+
+  <!-- d dimension -->
+  <line x1="280" y1="420" x2="680" y2="420" class="dim"/>
+  <line x1="280" y1="410" x2="280" y2="430" class="dim"/>
+  <line x1="680" y1="410" x2="680" y2="430" class="dim"/>
+  <text x="590" y="448" class="formula">d</text>
+
+  <!-- rotation arrow -->
+  <path d="M440 455 A40 10 0 1 0 520 455" class="arrow"/>
+  <text x="528" y="462" class="formula">ω</text>
+
+  <!-- legend -->
+  <text x="40" y="110" class="small">较重的水被甩向外侧</text>
+  <text x="40" y="134" class="small">较轻的油聚在中心</text>
+  <text x="40" y="170" class="small">抛物面顶点刚好</text>
+  <text x="40" y="194" class="small">落在底板中心 2</text>
+</svg>
