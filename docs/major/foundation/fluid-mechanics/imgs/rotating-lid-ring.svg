@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img" aria-labelledby="title desc">
+  <title id="title">离心铸造上箱受压：压强随半径变化与圆环微元</title>
+  <desc id="desc">左图为车轮上表面的俯视图，取半径 r、宽 dr 的圆环，圆环上各点压强相同，展开后近似为长 2πr、宽 dr 的细长条。右图为压强沿半径的分布，中心约 14 kPa，边缘约 2864 kPa，呈抛物线增长。</desc>
+  <defs>
+    <style>
+      .label{font:19px "Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#263344}
+      .small{font:16px "Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#4d5f72}
+      .formula{font:italic 21px Georgia,serif;fill:#263344}
+      .disk{fill:#f6dcc0;stroke:#a75824;stroke-width:2}
+      .ring{fill:none;stroke:#bd5627;stroke-width:16;stroke-opacity:.75}
+      .dim{stroke:#4d5f72;stroke-width:1.6;fill:none}
+      .axis{stroke:#4d5f72;stroke-width:2;fill:none;marker-end:url(#gray)}
+      .curve{stroke:#3d6b93;stroke-width:3.5;fill:none}
+      .press{stroke:#3d6b93;stroke-width:2.2;fill:none;marker-end:url(#blue)}
+      .strip{fill:#bd5627;fill-opacity:.75}
+    </style>
+    <marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#3d6b93"/></marker>
+    <marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#4d5f72"/></marker>
+  </defs>
+  <rect x="1" y="1" width="958" height="428" rx="18" fill="#f8fafc" stroke="#d9e2eb" stroke-width="2"/>
+
+  <!-- left: top view -->
+  <text x="40" y="44" class="label">俯视：取一个圆环，环上各点压强相同</text>
+  <circle cx="220" cy="225" r="150" class="disk"/>
+  <circle cx="220" cy="225" r="100" class="ring"/>
+  <circle cx="220" cy="225" r="4" fill="#263344"/>
+  <line x1="220" y1="225" x2="311" y2="184" class="dim"/>
+  <text x="250" y="190" class="formula">r</text>
+  <line x1="220" y1="225" x2="220" y2="375" class="dim" stroke-dasharray="5 5"/>
+  <text x="228" y="330" class="formula">R</text>
+  <text x="330" y="140" class="formula">dr</text>
+  <path d="M327 146 L310 166" class="dim"/>
+  <!-- unrolled strip -->
+  <text x="40" y="410" class="small">把圆环剪开拉直 ≈ 细长条：面积 dA = 2πr · dr</text>
+
+  <!-- right: pressure distribution -->
+  <text x="500" y="44" class="label">压强沿半径的分布 p(r)</text>
+  <line x1="540" y1="360" x2="920" y2="360" class="axis"/>
+  <line x1="540" y1="360" x2="540" y2="70" class="axis"/>
+  <text x="900" y="388" class="formula">r</text>
+  <text x="505" y="80" class="formula">p</text>
+  <!-- parabola p = a + b r^2 from r=0 (y=354) to r=R (x=880,y=90) -->
+  <path d="M540 354 Q710 354 880 90" class="curve"/>
+  <line x1="880" y1="360" x2="880" y2="90" class="dim" stroke-dasharray="5 5"/>
+  <text x="868" y="384" class="formula">R</text>
+  <text x="556" y="328" class="small">中心 ≈ 14 kPa</text>
+  <text x="700" y="96" class="small">边缘 ≈ 2864 kPa</text>
+  <!-- ring band on the r axis -->
+  <rect x="756" y="232" width="34" height="128" class="strip"/>
+  <text x="742" y="224" class="formula">p(r)</text>
+  <text x="752" y="406" class="small">r ~ r+dr</text>
+  <text x="560" y="150" class="small">圆环受力 dF = p(r) · 2πr dr</text>
+  <text x="560" y="176" class="small">把所有圆环加起来 → 积分</text>
+</svg>

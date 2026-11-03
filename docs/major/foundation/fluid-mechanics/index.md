@@ -17,6 +17,237 @@ comments: true
 
 ---
 
+## 公式速查 { #formula-quickref }
+
+!!! info "怎么用这张表"
+    按章分页，点标签切换。每条公式都写了**适用条件**，最后一列链接到正文的推导或例题。做计算题卡住时，先在这里找对应的公式，再回正文看例题怎么用。闭卷考试，表里的公式和条件都要背。
+
+=== "符号"
+
+    **流体性质**
+
+    | 符号 | 含义 | 单位或关系 |
+    |------|------|------------|
+    | $\rho$ | 密度 | $\mathrm{kg/m^3}$ |
+    | $\gamma=\rho g$ | 重度（比重） | $\mathrm{N/m^3}$ |
+    | $\mu$ | 动力黏度 | $\mathrm{Pa\cdot s}$ |
+    | $\nu=\mu/\rho$ | 运动黏度 | $\mathrm{m^2/s}$ |
+    | $\sigma$ | 表面张力系数 | $\mathrm{N/m}$ |
+    | $K$ | 体积弹性模量 | $\mathrm{Pa}$ |
+
+    **压强与静力学**
+
+    | 符号 | 含义 | 说明 |
+    |------|------|------|
+    | $p$、$p_a$ | 压强、大气压 | $\mathrm{Pa}$ |
+    | $h_C$、$y_C$ | 形心的淹深、沿平面的坐标 | 计算总压力**大小**用 |
+    | $h_D$、$y_D$ | 压力中心的淹深、沿平面的坐标 | 总压力的**作用点** |
+    | $I_C$ | 面积对过形心水平轴的惯性矩 | $\mathrm{m^4}$ |
+    | $A_x$ | 曲面在竖直面上的投影面积 | 求水平分力 |
+    | $V_p$ | 压力体体积 | 求竖直分力 |
+    | $\Omega$ 或 $\omega$ | 容器旋转角速度 | $\omega=2\pi n/60$，$n$ 单位 $\mathrm{r/min}$ |
+
+    **流动与管路**
+
+    | 符号 | 含义 | 说明 |
+    |------|------|------|
+    | $\boldsymbol V=(u,v,w)$ | 速度矢量及分量 | $\mathrm{m/s}$ |
+    | $V$ | 断面平均流速 | $V=Q/A$ |
+    | $Q$、$\dot m$ | 体积流量、质量流量 | $\dot m=\rho Q$ |
+    | $\alpha$ | 动能修正系数 | 层流 2，湍流约 1.05 |
+    | $\lambda$ | 沿程阻力系数（达西系数） | 英文教材、课堂 OneNote 记作 $f$ |
+    | $\zeta$ | 局部阻力系数 | 英文教材记作 $K$ |
+    | $h_f$、$h_j$、$h_w$ | 沿程、局部、总水头损失 | $\mathrm m$ |
+    | $\Delta$ | 管壁绝对粗糙度 | 英文教材记作 $\varepsilon$ |
+    | $\tau_w$ | 壁面切应力 | $\mathrm{Pa}$ |
+    | $\delta$ | 缝隙宽度、黏性底层厚度或边界层厚度 | 按上下文区分 |
+    | $D_h$ | 水力直径 | $4A/\mathcal P$ |
+    | $\mathrm{Re}$、$\mathrm{Fr}$、$\mathrm{Eu}$ | 雷诺数、弗劳德数、欧拉数 | 无量纲 |
+
+    !!! tip "同一个字母的不同用法"
+        老师手写稿里 $\gamma$ 表示重度 $\rho g$；附录里的气体比热比另记为 $\gamma_g$。$\mu$ 在第一、四章是动力黏度，在小孔、文丘里、管路公式里是**流量系数**。遇到原题以题目定义为准。
+
+=== "第一章 流体性质"
+
+    **黏性**
+
+    | 公式 | 条件 / 说明 | 详见 |
+    |------|-------------|------|
+    | $\tau=\mu\dfrac{\mathrm du}{\mathrm dy}$ | 牛顿内摩擦定律，只适用于牛顿流体 | [黏性](#fluid-viscosity) |
+    | $\nu=\dfrac{\mu}{\rho}$ | 运动黏度 | [黏性](#fluid-viscosity) |
+    | $\dfrac{\mathrm du}{\mathrm dy}\approx\dfrac{U}{\delta}$ | 窄缝内速度近似线性分布（$\delta$ 很小） | [例题](#first-fluid-examples) |
+    | $F=\mu\dfrac{UA}{\delta}$ | 平板拖动力（库埃特流） | [两板间流动](#plate-flow) |
+    | $M=\dfrac{\pi\mu Ld^3\omega}{4\delta}$，$P=M\omega$ | 同心圆柱转轴的阻力矩与功率（轴面速度处处相同） | [例题](#first-fluid-examples) |
+    | $M=\dfrac{\pi\mu\omega d^4}{32\delta}$ | 圆盘一侧的阻力矩（速度随 $r$ 变，要圆环积分） | [例题](#first-fluid-examples) |
+    | $u=\dfrac{U}{h}y+\dfrac{1}{2\mu}\left(-\dfrac{\mathrm dp}{\mathrm dx}\right)y(h-y)$ | 两板间流动通解；上板固定时 $\bar u=\frac23u_{\max}$ | [证明](#proof-plate-flow) |
+
+    **表面张力、压缩性、雷诺数**
+
+    | 公式 | 条件 / 说明 | 详见 |
+    |------|-------------|------|
+    | $h=\dfrac{4\sigma\cos\theta}{\rho gd}$ | 毛细管液面高度；$\theta<90^\circ$ 上升，$\theta>90^\circ$ 下降 | [表面张力](#fluid-surface-tension) |
+    | $\Delta p=\dfrac{2\sigma}{R}$；肥皂泡 $\dfrac{4\sigma}{R}$ | 液滴一个界面，肥皂泡两个界面 | [表面张力](#fluid-surface-tension) |
+    | $K=-V\dfrac{\mathrm dp}{\mathrm dV}$ | 体积弹性模量，越大越难压缩 | 第一章 |
+    | $Q_2=Q_1[1+\alpha_V(T_2-T_1)]$ | 质量流量不变，体积随温度膨胀 | [作业 2-7](#first-fluid-examples) |
+    | $\mathrm{Re}=\dfrac{\rho Vd}{\mu}=\dfrac{Vd}{\nu}$ | 惯性力 / 黏性力；圆管 $\mathrm{Re}_c=2300$ | [雷诺数](#reynolds-number) |
+
+=== "第二章 静力学"
+
+    **静压分布**
+
+    | 公式 | 条件 / 说明 | 详见 |
+    |------|-------------|------|
+    | $\nabla p=\rho\boldsymbol f$ | 欧拉平衡方程，任何静止流体 | [证明](#proof-euler-statics) |
+    | $p=p_0+\rho gh$ 或 $z+\dfrac{p}{\rho g}=C$ | 只受重力、均质、连通、静止的液体 | [静压分布](#proof-euler-statics) |
+    | $p_{\text{表}}=p-p_a$，$p_{\text{真空}}=p_a-p$ | 表压、真空度 | [静压分布](#proof-euler-statics) |
+    | $p_2=p_1\exp\left[-\dfrac{g(z_2-z_1)}{RT}\right]$ | 等温大气 | [静压分布](#proof-euler-statics) |
+    | $F_2=F_1\dfrac{A_2}{A_1}$ | 帕斯卡定律（液压机），两活塞同高 | [帕斯卡](#pascal-law) |
+    | 向下 $+\rho g\Delta h$，向上 $-\rho g\Delta h$ | 压强计：沿连通液体逐段走 | [压强计](#manometer) |
+
+    **平面与曲面上的总压力**
+
+    | 公式 | 条件 / 说明 | 详见 |
+    |------|-------------|------|
+    | $F=\rho gh_CA$ | 平面总压力 = 形心压强 × 面积 | [证明](#proof-plane-force) |
+    | $y_D=y_C+\dfrac{I_C}{y_CA}$ | 压力中心，$y$ 沿平面从液面交线量起；$D$ 在形心下方 | [证明](#proof-plane-force) |
+    | $x_D-x_C=\dfrac{I_{Cxy}}{y_CA}$ | 横向位置；平面左右对称时 $x_D=x_C$ | [证明](#proof-plane-force) |
+    | 矩形 $\dfrac{bh^3}{12}$；圆 $\dfrac{\pi d^4}{64}$；三角形 $\dfrac{bh^3}{36}$ | 常用截面对形心水平轴的 $I_C$ | [惯性矩表](#proof-plane-force) |
+    | $F_x=\rho gh_{C,x}A_x$ | 曲面水平分力 = 竖直投影面上的平面总压力 | [曲面](#curved-force) |
+    | $F_z=\rho gV_p$ | 曲面竖直分力 = 压力体内液重；实压力体向下，虚压力体向上 | [曲面](#curved-force) |
+    | $F=\sqrt{F_x^2+F_z^2}$，$\tan\alpha=\dfrac{F_z}{F_x}$ | 曲面合力；圆弧面合力过圆心 | [曲面](#curved-force) |
+    | $F_B=\rho gV_{\text{排}}$ | 浮力，作用在浮心 | [浮力](#buoyancy) |
+
+    **相对平衡**
+
+    | 公式 | 条件 / 说明 | 详见 |
+    |------|-------------|------|
+    | $\nabla p=\rho(\boldsymbol g-\boldsymbol a)$ | 液体随容器做刚体运动；等压面垂直于 $\boldsymbol g-\boldsymbol a$ | [相对平衡](#relative-equilibrium) |
+    | $\tan\theta=\dfrac{a_x}{g+a_z}$ | 容器水平加速时液面倾角 | [相对平衡](#relative-equilibrium) |
+    | $p=p_0+\dfrac12\rho\Omega^2r^2-\rho gz$ | 绕竖直轴等角速旋转；原点取轴心液面 | [证明](#proof-rotation) |
+    | $z=\dfrac{\Omega^2r^2}{2g}$ | 自由液面为旋转抛物面 | [证明](#proof-rotation) |
+    | 中心降、边缘升各 $\dfrac{\Omega^2R^2}{4g}$ | 开口圆筒，相对原静止液面；抛物面体积为同底同高圆柱的一半 | [证明](#proof-rotation) |
+    | $F=\displaystyle\int_0^R p(r)\,2\pi r\,\mathrm dr$ | 旋转液体对顶盖或底面的总压力；压强随 $r$ 变，必须圆环积分 | [习题 3-17](#proof-rotation) |
+
+=== "第三章 理想流体"
+
+    **质量守恒**
+
+    | 公式 | 条件 / 说明 | 详见 |
+    |------|-------------|------|
+    | $Q=\displaystyle\int_A\boldsymbol V\cdot\boldsymbol n\,\mathrm dA$，$V=\dfrac QA$ | 流量与断面平均流速 | [研究方法](#ch3) |
+    | $\dfrac{\partial\rho}{\partial t}+\nabla\cdot(\rho\boldsymbol V)=0$ | 连续性微分方程，任何流动 | [证明](#proof-continuity) |
+    | $\nabla\cdot\boldsymbol V=0$ | 不可压缩流体（定常、非定常均可） | [证明](#proof-continuity) |
+    | $\dfrac{\partial v_r}{\partial r}+\dfrac{v_r}{r}+\dfrac1r\dfrac{\partial v_\theta}{\partial\theta}=0$ | 不可压缩二维流动，极坐标 | [证明](#recall-polar-continuity) |
+    | $\rho_1V_1A_1=\rho_2V_2A_2$；$V_1A_1=V_2A_2$ | 一维定常管流；后者为不可压缩 | [证明](#proof-continuity) |
+
+    **动量守恒**
+
+    | 公式 | 条件 / 说明 | 详见 |
+    |------|-------------|------|
+    | $\boldsymbol a=\dfrac{\partial\boldsymbol V}{\partial t}+(\boldsymbol V\cdot\nabla)\boldsymbol V$ | 局部加速度 + 对流加速度 | [加速度](#acceleration) |
+    | $\dfrac{\mathrm d\boldsymbol V}{\mathrm dt}=\boldsymbol f-\dfrac1\rho\nabla p$ | 欧拉运动方程，只适用于理想流体 | [证明](#proof-euler) |
+    | $\sum\boldsymbol F=\rho Q(\boldsymbol V_2-\boldsymbol V_1)$ | 动量方程：定常、一进一出、断面速度均匀；求固壁受力 | [动量方程](#momentum-integral) |
+
+    **能量守恒（伯努利方程）**
+
+    | 公式 | 条件 / 说明 | 详见 |
+    |------|-------------|------|
+    | $z+\dfrac{p}{\rho g}+\dfrac{V^2}{2g}=C$ | 定常、不可压、无摩擦、沿流线、无轴功、无传热 | [证明](#proof-bernoulli) |
+    | $V=\varphi\sqrt{2gh}$，$Q=\mu A\sqrt{2gh}$ | 小孔出流；理想时 $\varphi=1$ | [应用](#bernoulli-apps) |
+    | $u=\sqrt{\dfrac{2(p_0-p)}{\rho}}=\sqrt{2g\Delta h\dfrac{\rho'-\rho}{\rho}}$ | 皮托管；$\rho'$ 为 U 形管指示液密度 | [应用](#bernoulli-apps) |
+    | $Q=\mu A_2\sqrt{\dfrac{2g\Delta h(\rho'-\rho)}{\rho(1-A_2^2/A_1^2)}}$ | 文丘里流量计，$\mu=0.95\sim0.98$；与管道是否倾斜无关 | [应用](#bernoulli-apps) |
+    | $\dfrac{p}{\rho g}+\dfrac{u^2}{2g}-\dfrac{\omega^2r^2}{2g}=C$ | 叶轮中的相对运动 | [应用](#bernoulli-apps) |
+
+=== "第四章 黏性管流"
+
+    **能量方程与损失**
+
+    | 公式 | 条件 / 说明 | 详见 |
+    |------|-------------|------|
+    | $z_1+\dfrac{p_1}{\rho g}+\dfrac{\alpha_1V_1^2}{2g}+H_p=z_2+\dfrac{p_2}{\rho g}+\dfrac{\alpha_2V_2^2}{2g}+h_w$ | 黏性流体伯努利方程；$H_p$ 为泵扬程 | [黏性伯努利](#viscous-bernoulli) |
+    | $h_w=\sum h_f+\sum h_j$ | 总损失 = 沿程 + 局部 | [黏性伯努利](#viscous-bernoulli) |
+    | $h_f=\lambda\dfrac ld\dfrac{V^2}{2g}$ | 达西公式，层流湍流都适用 | [黏性伯努利](#viscous-bernoulli) |
+    | $\lambda=\dfrac{8\tau_w}{\rho V^2}$，$h_f=\dfrac{4\tau_w}{\rho g}\dfrac ld$ | 由管段动量平衡得到，不限流态 | [黏性伯努利](#viscous-bernoulli) |
+    | $h_j=\zeta\dfrac{V^2}{2g}$ | 局部损失；一般用**下游**速度水头 | [局部损失](#minor-loss) |
+    | $P=\dfrac{\rho gQH_p}{\eta}$ | 泵的输入功率，$\eta$ 为泵效率 | [例题](#single-pipe-pump) |
+
+    **圆管层流（$\mathrm{Re}<2300$）**
+
+    | 公式 | 条件 / 说明 | 详见 |
+    |------|-------------|------|
+    | $\tau=\dfrac{\Delta p}{l}\dfrac r2$ | 切应力线性分布，壁面最大；层流湍流都成立 | [证明](#proof-poiseuille) |
+    | $u=\dfrac{\Delta p}{4\mu l}(R^2-r^2)$ | 速度为旋转抛物面 | [证明](#proof-poiseuille) |
+    | $Q=\dfrac{\pi R^4\Delta p}{8\mu l}=\dfrac{\pi d^4\Delta p}{128\mu l}$ | 哈根–泊肃叶定律 | [证明](#proof-poiseuille) |
+    | $V=\dfrac{u_{\max}}{2}$ | 平均流速是最大流速的一半 | [证明](#proof-poiseuille) |
+    | $\lambda=\dfrac{64}{\mathrm{Re}}$，$h_f=\dfrac{32\mu lV}{\rho gd^2}$ | 只与 $\mathrm{Re}$ 有关；$h_f\propto V$ | [证明](#proof-poiseuille) |
+
+    **湍流沿程阻力系数**
+
+    | 公式 | 条件 / 说明 | 详见 |
+    |------|-------------|------|
+    | $\lambda=\dfrac{0.3164}{\mathrm{Re}^{0.25}}$ | 布拉休斯，水力光滑，$4000<\mathrm{Re}<10^5$ | [阻力系数](#friction-factor) |
+    | $\dfrac1{\sqrt\lambda}=2\lg(\mathrm{Re}\sqrt\lambda)-0.8$ | 普朗特–施利希廷，水力光滑 | [阻力系数](#friction-factor) |
+    | $\dfrac1{\sqrt\lambda}=-2\lg\left(\dfrac{\Delta}{3.7d}+\dfrac{2.51}{\mathrm{Re}\sqrt\lambda}\right)$ | 科尔布鲁克，过渡区（莫迪图的基础） | [阻力系数](#friction-factor) |
+    | $\lambda=\dfrac1{[2\lg(d/2\Delta)+1.74]^2}$ | 尼古拉兹，水力粗糙（阻力平方区） | [阻力系数](#friction-factor) |
+    | $\delta=\dfrac{34.2d}{\mathrm{Re}^{0.875}}$ | 黏性底层厚度；$\delta>\Delta$ 水力光滑，$\delta<\Delta$ 水力粗糙 | [光滑与粗糙](#hydraulic-smooth-rough) |
+    | $D_h=\dfrac{4A}{\mathcal P}$ | 非圆管水力直径，代替 $d$ | [水力直径](#hydraulic-diameter) |
+
+    **局部损失系数**
+
+    | 公式 | 条件 / 说明 | 详见 |
+    |------|-------------|------|
+    | $h_j=\dfrac{(V_1-V_2)^2}{2g}$ | 突然扩大（包达–卡诺公式） | [证明](#proof-sudden-expansion) |
+    | $\zeta_1=\left(1-\dfrac{A_1}{A_2}\right)^2$，$\zeta_2=\left(\dfrac{A_2}{A_1}-1\right)^2$ | 突扩，分别以上游、下游速度为基准 | [证明](#proof-sudden-expansion) |
+    | $\zeta\approx0.42\left(1-\dfrac{d^2}{D^2}\right)$ | 突然缩小，以小管速度为基准 | [管件](#minor-loss-fittings) |
+    | 入口 $0.5$，出口 $1.0$ | 锐缘入口；流入大水池的出口 | [管件](#minor-loss-fittings) |
+    | $L_{eq}=\dfrac{\zeta d}{\lambda}$ | 等效管长 | [管件](#minor-loss-fittings) |
+
+    **管路系统**
+
+    | 公式 | 条件 / 说明 | 详见 |
+    |------|-------------|------|
+    | $h_w=\dfrac{V^2}{2g}\left(\lambda\dfrac Ld+\sum\zeta\right)$ | 单根等径管路的总损失 | [管件](#minor-loss-fittings) |
+    | $Q=\mu A\sqrt{2gh}$，$\mu=\dfrac{1}{\sqrt{1+\sum\lambda_i\frac{l_i}{d_i}\left(\frac{A}{A_i}\right)^2+\sum\zeta_i\left(\frac{A}{A_i}\right)^2}}$ | 水箱经串联管出流，$A$ 为出口面积 | [串联](#series-pipes) |
+    | 串联：$Q$ 相同，$h_w=\sum h_{w,i}$ | | [串并联](#series-pipes) |
+    | 并联：$h_{w,i}$ 相同，$Q=\sum Q_i$；$\dfrac{Q_1}{Q_2}=\sqrt{\dfrac{\lambda_2l_2}{\lambda_1l_1}\left(\dfrac{d_1}{d_2}\right)^5}$ | 忽略局部损失 | [串并联](#series-pipes) |
+    | $\lambda_i\dfrac{L_i}{d_i}\dfrac{V_i^2}{2g}=z_i-h_J$，$\sum Q_i=0$ | 三水库问题，猜 $h_J$ 迭代 | [三水库](#three-reservoirs) |
+
+    **其他**
+
+    | 公式 | 条件 / 说明 | 详见 |
+    |------|-------------|------|
+    | 层流 $\dfrac{L_e}{d}\approx0.06\,\mathrm{Re}$；湍流 $\dfrac{L_e}{d}\approx4.4\,\mathrm{Re}^{1/6}$ | 入口段长度 | [流动状态](#reynolds-regimes) |
+    | $\Delta p=\rho cV_0$ | 水击压强升高（阀门突然关闭） | [水击](#water-hammer) |
+    | $u=0.99U$ 处 | 边界层厚度的定义；层流 $\delta\propto x^{1/2}$，湍流 $\delta\propto x^{4/5}$ | [边界层](#boundary-layer) |
+
+=== "第五章 量纲分析"
+
+    | 公式 | 条件 / 说明 | 详见 |
+    |------|-------------|------|
+    | $n-m$ 个独立 $\Pi$ 数 | $\Pi$ 定理：$n$ 个物理量、$m$ 个基本量纲（一般 $M,L,T$） | [$\Pi$ 定理](#pi-theorem) |
+    | $\Pi=x\,\rho^aV^bd^c$，令量纲为 1 | 重复变量通常选 $\rho,V,d$，不选待求量 | [$\Pi$ 定理](#pi-theorem) |
+    | $\mathrm{Re}=\dfrac{\rho VL}{\mu}$ | 惯性力 / 黏性力；有压管流的相似准则 | [相似](#similarity) |
+    | $\mathrm{Fr}=\dfrac{V}{\sqrt{gL}}$ | 惯性力 / 重力；明渠、波浪的相似准则 | [相似](#similarity) |
+    | $\mathrm{Eu}=\dfrac{\Delta p}{\rho V^2}$ | 压力 / 惯性力；一般是结果 | [相似](#similarity) |
+    | $\mathrm{We}=\dfrac{\rho V^2L}{\sigma}$，$\mathrm{Ma}=\dfrac Va$ | 表面张力、压缩性 | [相似](#similarity) |
+    | $V_m=V_p\dfrac{d_p}{d_m}$ | 雷诺准则，模型与原型用同种流体 | [相似](#similarity) |
+    | $V_m=V_p\sqrt{\dfrac{l_m}{l_p}}$ | 弗劳德准则 | [相似](#similarity) |
+    | $\Delta p_p=\Delta p_m\dfrac{\rho_pV_p^2}{\rho_mV_m^2}$ | 由欧拉数相等换算原型压降 | [相似](#similarity) |
+
+    **常用量纲**：速度 $LT^{-1}$；密度 $ML^{-3}$；力 $MLT^{-2}$；压强 $ML^{-1}T^{-2}$；动力黏度 $ML^{-1}T^{-1}$；运动黏度 $L^2T^{-1}$；表面张力 $MT^{-2}$；功率 $ML^2T^{-3}$。
+
+=== "附录 可压缩流动"
+
+    | 公式 | 条件 / 说明 | 详见 |
+    |------|-------------|------|
+    | $a=\sqrt{\gamma_gRT}$，$\mathrm{Ma}=\dfrac Va$ | 声速、马赫数 | [附录](#appendix-compressible) |
+    | $\dfrac{T_0}{T}=1+\dfrac{\gamma_g-1}{2}\mathrm{Ma}^2$ | 滞止温度，绝热无轴功 | [附录](#appendix-compressible) |
+    | $\dfrac{p_0}{p}=\left(1+\dfrac{\gamma_g-1}{2}\mathrm{Ma}^2\right)^{\gamma_g/(\gamma_g-1)}$ | 滞止压强，等熵 | [附录](#appendix-compressible) |
+    | $\dfrac{\mathrm dA}{A}=(\mathrm{Ma}^2-1)\dfrac{\mathrm dV}{V}$ | 亚声速加速要收缩，超声速加速要扩张 | [附录](#appendix-compressible) |
+    | $\dfrac{p^*}{p_0}=\left(\dfrac{2}{\gamma_g+1}\right)^{\gamma_g/(\gamma_g-1)}$ | 临界压比，空气约 0.528 | [附录](#appendix-compressible) |
+
+---
+
 ## 考前怎么用这一页 { #exam-guide }
 
 ### 题型与复习策略
@@ -84,27 +315,6 @@ comments: true
 | [第一章 1.1：流体的性质和特点](sources/ch1-fluid-properties-handwritten.pdf) | 7 | 牛顿内摩擦定律、非牛顿流体、表面张力 |
 | [第二章：流体静力学](sources/ch2-fluid-statics-handwritten.pdf) | 16 | 静压特性、压强计、平面与曲面总压力、浮力、相对平衡 |
 | [第三章：理想流体力学基础](sources/ch3-ideal-flow-handwritten.pdf) | 24 | 连续性方程、欧拉方程、动量方程、伯努利方程及应用 |
-
-## 符号速查 { #fluid-symbol-quickref }
-
-| 符号 | 含义 | 单位或关系 |
-|------|------|------------|
-| $\rho$ | 密度 | $\mathrm{kg/m^3}$ |
-| $\gamma=\rho g$ | 重度（比重） | $\mathrm{N/m^3}$ |
-| $p$ | 压强 | $\mathrm{Pa}$ |
-| $\mu$ | 动力黏度 | $\mathrm{Pa\cdot s}$ |
-| $\nu=\mu/\rho$ | 运动黏度 | $\mathrm{m^2/s}$ |
-| $\sigma$ | 表面张力系数 | $\mathrm{N/m}$ |
-| $\boldsymbol V=(u,v,w)$ | 速度矢量及分量 | $\mathrm{m/s}$ |
-| $Q$、$\dot m$ | 体积流量、质量流量 | $Q=VA$，$\dot m=\rho Q$ |
-| $\lambda$ | 沿程阻力系数（达西系数） | 无量纲 |
-| $\zeta$ | 局部阻力系数 | 无量纲 |
-| $h_f$、$h_j$、$h_w$ | 沿程损失、局部损失、总水头损失 | $\mathrm m$ |
-| $\Delta$ | 管壁绝对粗糙度 | $\mathrm m$ |
-| $\mathrm{Re}=\rho Vd/\mu$ | 雷诺数 | 无量纲 |
-
-!!! tip "同一个字母的不同用法"
-    老师手写稿里 $\gamma$ 表示重度 $\rho g$；附录里的气体比热比另记为 $\gamma_g$。$\lambda$ 是沿程阻力系数（有的英文教材记作 $f$）。遇到原题以题目定义为准。
 
 ## 章节概览
 
@@ -737,14 +947,56 @@ $$
 
     上箱静止，所以 $T=F_p-G$。
 
-    **④ 求 $F_p$**：上表面的压强 $p(r)=\rho g\left(\dfrac{\omega^2r^2}{2g}+0.2\right)$ **随半径增大**，不能用「某一点压强 × 面积」，要像[圆盘缝隙题](#first-fluid-examples)一样取圆环积分，$\mathrm dA=2\pi r\,\mathrm dr$：
+    **④ 求 $F_p$：为什么必须积分**
+
+    「力 = 压强 × 面积」只在**整块面积上压强都一样**时才成立。这道题里上表面的压强
 
     $$
-    F_p=\int_0^{d/2}\rho g\left(\frac{\omega^2r^2}{2g}+0.2\right)2\pi r\,\mathrm dr
+    p(r)=\rho g\left(\frac{\omega^2r^2}{2g}+0.2\right)
+    $$
+
+    随半径 $r$ 变化，而且变得非常剧烈：中心约 $14\ \mathrm{kPa}$，边缘约 $2864\ \mathrm{kPa}$，相差 200 倍。这时拿哪一个压强去乘面积都不对：
+
+    | 错误做法 | 结果 | 错在哪 |
+    |---|---|---|
+    | 中心压强 × 面积 | $14\ \mathrm{kPa}\times0.636\ \mathrm{m^2}\approx8.9\ \mathrm{kN}$ | 把外圈的高压全忽略了，小了约 100 倍 |
+    | 边缘压强 × 面积 | $2864\ \mathrm{kPa}\times0.636\ \mathrm{m^2}\approx1822\ \mathrm{kN}$ | 把内圈也当成最高压，大了约一倍 |
+    | 形心（圆心）压强 × 面积 | 同第一行 | 第二章 $F=\rho gh_CA$ 能用形心，是因为那里压强随位置**线性**变化；这里压强随 $r^2$ 变化，形心法失效 |
+
+    **正确思路：把面积切成小块，让每一小块上的压强「几乎一样」，各自算力再相加。**怎么切才能让每块上压强一样？压强只和 $r$ 有关，所以**同一个圆环上压强处处相同**——按圆环切。
+
+    <figure markdown="span">
+      ![上箱受压的圆环微元与压强分布](imgs/rotating-lid-ring.svg){ width="96%" }
+      <figcaption>左：按圆环切分，环上各点压强相同；右：压强沿半径呈抛物线增长，外圈远大于内圈</figcaption>
+    </figure>
+
+    半径 $r$、宽 $\mathrm dr$ 的圆环，剪开拉直近似是一根长 $2\pi r$、宽 $\mathrm dr$ 的细条，面积 $\mathrm dA=2\pi r\,\mathrm dr$。这个圆环受的力就是「这一圈的压强 × 这一圈的面积」：
+
+    $$
+    \mathrm dF=p(r)\cdot2\pi r\,\mathrm dr
+    $$
+
+    **先用粗切法感受一下**：把半径 $0.45\ \mathrm m$ 切成 3 个圆环，每环用中间半径处的压强近似：
+
+    | 圆环 | 中间半径 | 该处压强 | 圆环面积 | 圆环受力 |
+    |---|---|---|---|---|
+    | $0\sim0.15\ \mathrm m$ | $0.075\ \mathrm m$ | $93\ \mathrm{kPa}$ | $0.071\ \mathrm{m^2}$ | $6.6\ \mathrm{kN}$ |
+    | $0.15\sim0.30\ \mathrm m$ | $0.225\ \mathrm m$ | $727\ \mathrm{kPa}$ | $0.212\ \mathrm{m^2}$ | $154\ \mathrm{kN}$ |
+    | $0.30\sim0.45\ \mathrm m$ | $0.375\ \mathrm m$ | $1995\ \mathrm{kPa}$ | $0.353\ \mathrm{m^2}$ | $705\ \mathrm{kN}$ |
+    | 合计 | | | | $\approx865\ \mathrm{kN}$ |
+
+    已经接近答案了。切得越细，每环上的压强越接近真正的常数，结果越准；切成无穷多个无穷细的圆环，「求和」就变成了「积分」：
+
+    $$
+    F_p=\int_0^{R}p(r)\cdot2\pi r\,\mathrm dr
+    =\int_0^{R}\rho g\left(\frac{\omega^2r^2}{2g}+0.2\right)2\pi r\,\mathrm dr
     =\rho g\left[\frac{2\pi\omega^2}{2g}\cdot\frac{R^4}{4}+0.2\,\pi R^2\right]
     $$
 
     代入 $\rho g=69952$、$\omega^2=3948$、$R=0.45\ \mathrm m$：旋转项约 $907.6\ \mathrm{kN}$，静压项约 $8.9\ \mathrm{kN}$，合计 $F_p\approx916.5\ \mathrm{kN}$。
+
+    !!! tip "从表里看出的规律"
+        最外一环贡献了超过 80% 的力。原因是外圈**压强大**（$p\propto r^2$）且**面积大**（$\mathrm dA\propto r$），两者相乘，圆环受力 $\propto r^3$。这和[圆盘缝隙题](#first-fluid-examples)里阻力矩 $\propto r^3$ 是同一个道理：凡是「某个量随半径变化、又要对整个圆面求总和」，都按圆环 $2\pi r\,\mathrm dr$ 积分。
 
     $$
     T=F_p-G\approx916.5-10\approx906\ \mathrm{kN}
@@ -1918,18 +2170,6 @@ $V_0$ 是原流速。水中 $c$ 约 $1000\ \mathrm{m/s}$ 量级，所以 $V_0=1\
 - 有压管流用雷诺准则；明渠、波浪用弗劳德准则。
 
 ---
-
-## 考前一页纸 { #cheat-sheet }
-
-| 章 | 必背公式 |
-|---|---|
-| 一 | $\tau=\mu\dfrac{\mathrm du}{\mathrm dy}$　$\nu=\dfrac\mu\rho$　$h=\dfrac{4\sigma\cos\theta}{\rho gd}$　$\mathrm{Re}=\dfrac{\rho Vd}{\mu}$　圆盘 $M=\dfrac{\pi\mu\omega d^4}{32\delta}$ |
-| 二 | $\nabla p=\rho\boldsymbol f$　$p=p_0+\rho gh$　$F=\rho gh_CA$　$y_D=y_C+\dfrac{I_C}{y_CA}$　$F_x=\rho gh_{C,x}A_x$　$F_z=\rho gV_p$　$z=\dfrac{\Omega^2r^2}{2g}$ |
-| 三 | $\dfrac{\partial\rho}{\partial t}+\nabla\cdot(\rho\boldsymbol V)=0$　$\dfrac{\mathrm d\boldsymbol V}{\mathrm dt}=\boldsymbol f-\dfrac1\rho\nabla p$　$\sum\boldsymbol F=\rho Q(\boldsymbol V_2-\boldsymbol V_1)$　$z+\dfrac p{\rho g}+\dfrac{V^2}{2g}=C$ |
-| 三 | 小孔 $V=\sqrt{2gh}$　皮托 $u=\sqrt{\dfrac{2(p_0-p)}{\rho}}$　文丘里 $Q=\mu A_2\sqrt{\dfrac{2\Delta p}{\rho(1-A_2^2/A_1^2)}}$ |
-| 四 | $h_w=\sum h_f+\sum h_j$　$h_f=\lambda\dfrac ld\dfrac{V^2}{2g}$　$h_j=\zeta\dfrac{V^2}{2g}$　$\mathrm{Re}_c=2300$ |
-| 四 | 层流 $u=\dfrac{\Delta p}{4\mu l}(R^2-r^2)$　$Q=\dfrac{\pi R^4\Delta p}{8\mu l}$　$V=\dfrac{u_{\max}}2$　$\lambda=\dfrac{64}{\mathrm{Re}}$　突扩 $h_j=\dfrac{(V_1-V_2)^2}{2g}$ |
-| 五 | $n-m$ 个 $\Pi$　$\mathrm{Re}=\dfrac{\rho VL}\mu$　$\mathrm{Fr}=\dfrac V{\sqrt{gL}}$　$\mathrm{Eu}=\dfrac{\Delta p}{\rho V^2}$ |
 
 ## 最容易混淆的几组关系
 
