@@ -336,7 +336,7 @@ comments: true
 <details id="fluid-i-recall-photo">
 <summary>查看手写回忆卷原图</summary>
 
-![工程流体力学甲Ⅰ手写回忆卷，含两道证明题和三组计算题](imgs/fluid-i-recall-undated.png)
+<img src="imgs/fluid-i-recall-undated.png" alt="工程流体力学甲Ⅰ手写回忆卷，含两道证明题和三组计算题" style="width:100%">
 
 </details>
 
