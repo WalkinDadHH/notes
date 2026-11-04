@@ -1602,6 +1602,128 @@ $$
 
 外缘 $R_2$ 比内缘 $R_1$ 的机械能高 $\frac{\omega^2}{2g}(R_2^2-R_1^2)>0$：泵和风机的叶轮对流体做功，机械能增加；水轮机、汽轮机正好相反。
 
+### 第三章作业例题 { #ch3-homework }
+
+下面按红笔作业整理。4-13、4-15、4-18 是提纲重点题型（伯努利 + 连续性），优先做；4-34 的叶轮题不在提纲内。
+
+??? example "作业 4-13｜喷嘴出流求截面压强"
+    **题目**：直立圆管管径 $d_1=10\ \mathrm{mm}$，一端装有直径 $d_2=5\ \mathrm{mm}$ 的喷嘴，喷嘴中心比圆管截面 ① 高 $3.6\ \mathrm m$，水流从喷嘴排入大气，出口速度 $v_2=18\ \mathrm{m/s}$。不计摩擦损失，求截面 ① 处所需的计示压强。（答案：$1.87\times10^5\ \mathrm{Pa}$）
+
+    **解**：连续性方程：
+
+    $$
+    v_1=\left(\frac{d_2}{d_1}\right)^2v_2=\left(\frac{5}{10}\right)^2\times18=4.5\ \mathrm{m/s}
+    $$
+
+    压强取表压，出口通大气，$p_2=0$。对截面 ① 和喷嘴出口列伯努利方程：
+
+    $$
+    \frac{p_1}{\rho g}+\frac{v_1^2}{2g}+z_1=\frac{v_2^2}{2g}+z_2
+    $$
+
+    $$
+    p_1=\rho g(z_2-z_1)+\frac\rho2(v_2^2-v_1^2)
+    =1000\times9.81\times3.6+500\times(18^2-4.5^2)\approx1.87\times10^5\ \mathrm{Pa}
+    $$
+
+??? example "作业 4-15｜文丘里管流量与压强计读数的关系"
+    **题目**：文丘里管进口、喉部直径为 $d_1,d_2$，U 形压强计指示液密度 $\rho_m$，读数 $H$，流体密度 $\rho$。推导体积流量与读数的关系。
+
+    **解**：两断面列伯努利方程：
+
+    $$
+    \left(\frac{p_1}{\rho g}+z_1\right)-\left(\frac{p_2}{\rho g}+z_2\right)=\frac{v_2^2-v_1^2}{2g}
+    $$
+
+    由压强计沿液柱逐段列式，$p_1-p_2=\rho g(z_2-z_1)+(\rho_m-\rho)gH$，所以
+
+    $$
+    \left(\frac{p_1}{\rho g}+z_1\right)-\left(\frac{p_2}{\rho g}+z_2\right)=\left(\frac{\rho_m}{\rho}-1\right)H
+    $$
+
+    左边的高差 $z_2-z_1$ 被吸收了，这就是文丘里管**倾斜也不影响结果**的原因。代入 $v_i=\dfrac{4q_V}{\pi d_i^2}$：
+
+    $$
+    \frac{16q_V^2}{\pi^2}\left(\frac1{d_2^4}-\frac1{d_1^4}\right)=2gH\left(\frac{\rho_m}{\rho}-1\right)
+    $$
+
+    $$
+    \boxed{q_V=\frac\pi4\sqrt{\frac{2gH(\rho_m/\rho-1)}{1/d_2^4-1/d_1^4}}}
+    $$
+
+??? example "作业 4-18｜变径管出流与测压管水头线"
+    **题目**：敞口水池中的水沿截面变化的水平管道排出，质量流量 $q_m=14\ \mathrm{kg/s}$，三段管径 $d_1=100\ \mathrm{mm}$、$d_2=75\ \mathrm{mm}$、$d_3=50\ \mathrm{mm}$，不计损失。求所需水头 $H$、第二管段中央 $M$ 点的压强，并绘制测压管水头线。（答案：$2.59\ \mathrm m$，$2.04\times10^4\ \mathrm{Pa}$）
+
+    **解**：$q_V=q_m/\rho=0.014\ \mathrm{m^3/s}$，$v=\dfrac{4q_V}{\pi d^2}$：
+
+    | 管段 | $d/\mathrm m$ | $v/(\mathrm{m/s})$ | $v^2/2g$ $/\mathrm m$ | 测压管水头 $/\mathrm m$ |
+    |---|---|---|---|---|
+    | 第一段 | $0.100$ | $1.783$ | $0.162$ | $2.429$ |
+    | 第二段 | $0.075$ | $3.169$ | $0.512$ | $2.079$ |
+    | 第三段 | $0.050$ | $7.130$ | $2.591$ | $0$ |
+
+    **所需水头**：基准面取管轴。水池液面到出口，出口表压为 $0$：
+
+    $$
+    H=\frac{v_3^2}{2g}=2.59\ \mathrm m
+    $$
+
+    **$M$ 点压强**：
+
+    $$
+    H=\frac{p_M}{\rho g}+\frac{v_2^2}{2g}
+    \;\Longrightarrow\;
+    p_M=\frac\rho2(v_3^2-v_2^2)=500\times(7.130^2-3.169^2)\approx2.04\times10^4\ \mathrm{Pa}
+    $$
+
+    **水头线**：不计损失，总水头线是高度 $H$ 的水平线。测压管水头 $=z+\dfrac{p}{\rho g}=H-\dfrac{v^2}{2g}$，每段是一条水平线，在变径处向下跳，到出口段降为 $0$。
+
+    **规律**：管子越细，速度水头越大，测压管水头线离总水头线越远。
+
+??? example "作业 4-30｜射流冲击斜平板的分流"
+    **题目**：射流冲击光滑斜平板后分成两股，沿下侧流动的流量为总流量的 $45\%$，求平板倾斜角 $\theta$。（答案：$84^\circ15'$）
+
+    **解**：不计损失，两股流速都等于来流速度 $v_0$（伯努利方程，压强都是大气压）。平板光滑，沿板面方向没有外力，所以该方向动量守恒：
+
+    $$
+    q_Vv_0\cos\theta=q_{V1}v_0-q_{V2}v_0
+    $$
+
+    $q_{V1}=0.55q_V$，$q_{V2}=0.45q_V$：
+
+    $$
+    \cos\theta=0.55-0.45=0.10,\qquad\theta\approx84.26^\circ=84^\circ15'
+    $$
+
+??? example "作业 4-34｜风机叶轮的速度三角形与扭矩（提纲外）"
+    **题目**：风机叶轮内径 $d_1=12.5\ \mathrm{cm}$，外径 $d_2=30\ \mathrm{cm}$，叶片宽 $b=2.5\ \mathrm{cm}$，转速 $n=1725\ \mathrm{r/min}$，流量 $q_V=372\ \mathrm{m^3/h}$。空气径向流入，绝对压强 $p_1=9.7\times10^4\ \mathrm{Pa}$，气温 $20^\circ\mathrm C$，出口叶片角 $\beta_2=30^\circ$。按理想不可压缩流体，求入口叶片角 $\beta_1$、出口速度 $v_2$ 和所需扭矩 $M_z$。（答案：$43^\circ$；$20\ \mathrm{m/s}$；$0.348\ \mathrm{N\cdot m}$）
+
+    **入口**：径向流入，$v_{1u}=0$：
+
+    $$
+    u_1=\frac{\pi d_1n}{60}=11.29\ \mathrm{m/s},\quad
+    v_{1r}=\frac{q_V}{\pi d_1b}=10.53\ \mathrm{m/s},\quad
+    \tan\beta_1=\frac{v_{1r}}{u_1}=0.932,\quad\beta_1\approx43^\circ
+    $$
+
+    **出口**：
+
+    $$
+    u_2=\frac{\pi d_2n}{60}=27.09\ \mathrm{m/s},\quad
+    v_{2r}=\frac{q_V}{\pi d_2b}=4.385\ \mathrm{m/s}
+    $$
+
+    $$
+    v_{2u}=u_2-\frac{v_{2r}}{\tan\beta_2}=27.09-7.596=19.50\ \mathrm{m/s},\quad
+    v_2=\sqrt{v_{2u}^2+v_{2r}^2}\approx20\ \mathrm{m/s}
+    $$
+
+    **扭矩**：$\rho=\dfrac{p_1}{RT}\approx1.154\ \mathrm{kg/m^3}$，动量矩方程：
+
+    $$
+    M_z=\rho q_V(r_2v_{2u}-r_1v_{1u})=1.154\times0.1033\times0.15\times19.50\approx0.35\ \mathrm{N\cdot m}
+    $$
+
 ### 第三章填空速记
 
 - 理想流体：忽略黏性，$\mu=0$。
@@ -2229,6 +2351,70 @@ $z_i>h_J$ 的管流向节点，$z_i<h_J$ 的管流出节点。**解法**：先�
     $$
 
     分母必须为正，否则烟囱再高也达不到要求。原图缺 $d,Q,\rho_1,\rho_2,\lambda$ 的数值，只能写到符号答案。
+
+### 第四章作业例题 { #ch4-homework }
+
+下面按红笔作业整理，都是沿程损失的基本题。做题顺序一样：**先算 $\mathrm{Re}$ 判断流态，再选 $\lambda$**。
+
+??? example "作业 6-7｜层流每米管长的沿程损失"
+    **题目**：运动黏度 $\nu=4\times10^{-5}\ \mathrm{m^2/s}$ 的流体在直径 $d=1\ \mathrm{cm}$ 的管内以 $v=4\ \mathrm{m/s}$ 流动，求每米管长的沿程损失。（答案：$5.22$ 米流体柱每米）
+
+    **解**：
+
+    $$
+    \mathrm{Re}=\frac{vd}{\nu}=\frac{4\times0.01}{4\times10^{-5}}=1000<2300\quad\text{层流}
+    $$
+
+    $\lambda=64/\mathrm{Re}=0.064$，取 $l=1\ \mathrm m$：
+
+    $$
+    h_f=\lambda\frac ld\frac{v^2}{2g}=0.064\times\frac{1}{0.01}\times\frac{4^2}{2\times9.81}\approx5.22\ \mathrm m
+    $$
+
+??? example "作业 6-9｜输油管出口压强"
+    **题目**：输油管直径 $d=150\ \mathrm{mm}$，长 $l=5000\ \mathrm m$，出口端比进口端高 $h=10\ \mathrm m$，质量流量 $q_m=15489\ \mathrm{kg/h}$，油的密度 $\rho=859.4\ \mathrm{kg/m^3}$，进口油压 $p_i=49\times10^4\ \mathrm{Pa}$，$\lambda=0.03$。求出口油压 $p_o$。（答案：$3.712\times10^5\ \mathrm{Pa}$）
+
+    **解**：
+
+    $$
+    q_V=\frac{q_m}{\rho}=\frac{15489}{859.4\times3600}\approx0.00501\ \mathrm{m^3/s},\qquad
+    v=\frac{q_V}{\pi d^2/4}\approx0.283\ \mathrm{m/s}
+    $$
+
+    $$
+    h_f=\lambda\frac ld\frac{v^2}{2g}=0.03\times\frac{5000}{0.15}\times\frac{0.283^2}{2\times9.81}\approx4.09\ \mathrm m
+    $$
+
+    等径管，两端速度水头相同，约掉。黏性伯努利方程：
+
+    $$
+    \frac{p_i}{\rho g}+z_1=\frac{p_o}{\rho g}+z_2+h_f
+    \;\Longrightarrow\;
+    p_o=p_i-\rho g(h+h_f)\approx3.71\times10^5\ \mathrm{Pa}
+    $$
+
+??? example "作业 6-14｜油箱经细长管排油的流量"
+    **题目**：长 $l=15\ \mathrm m$、直径 $d=12\ \mathrm{mm}$ 的钢管排出油箱中的油，$\rho=815.8\ \mathrm{kg/m^3}$，$\mu=0.01\ \mathrm{Pa\cdot s}$，油面比管道出口高 $H=2\ \mathrm m$，求流量。
+
+    **解**：油的黏度大、管子细，先假设层流。忽略出口速度水头和局部损失，全部水头用于沿程损失：
+
+    $$
+    H=\lambda\frac ld\frac{v^2}{2g},\quad\lambda=\frac{64\mu}{\rho vd}
+    \;\Longrightarrow\;
+    H=\frac{32\mu lv}{\rho gd^2}
+    $$
+
+    $$
+    v=\frac{H\rho gd^2}{32\mu l}\approx0.480\ \mathrm{m/s}
+    $$
+
+    **验算**：$\mathrm{Re}=\dfrac{\rho vd}{\mu}\approx470<2300$，确实是层流，假设成立。速度水头 $v^2/2g\approx0.012\ \mathrm m$，比 $2\ \mathrm m$ 小得多，忽略合理。
+
+    $$
+    q_V=v\frac{\pi d^2}{4}\approx5.43\times10^{-5}\ \mathrm{m^3/s}=54.3\ \mathrm{cm^3/s}
+    $$
+
+    **注意**：书后答案印作 $54.29\ \mathrm{L/s}$，单位有误，应为 $54.3\ \mathrm{mL/s}$。
 
 ### 水击 { #water-hammer }
 
