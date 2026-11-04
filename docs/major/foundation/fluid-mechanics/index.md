@@ -138,6 +138,7 @@ comments: true
     | $Q=\displaystyle\int_A\boldsymbol V\cdot\boldsymbol n\,\mathrm dA$，$V=\dfrac QA$ | 流量与断面平均流速 | [研究方法](#ch3) |
     | $\dfrac{\partial\rho}{\partial t}+\nabla\cdot(\rho\boldsymbol V)=0$ | 连续性微分方程，任何流动 | [证明](#proof-continuity) |
     | $\nabla\cdot\boldsymbol V=0$ | 不可压缩流体（定常、非定常均可） | [证明](#proof-continuity) |
+    | $\nabla\cdot\boldsymbol V=\dfrac{1}{\delta V}\dfrac{\mathrm d(\delta V)}{\mathrm dt}$ | 散度 = 微团的相对体积变化率；只管体积，不管形状 | [动画与证明](#proof-divergence) |
     | $\dfrac{\partial v_r}{\partial r}+\dfrac{v_r}{r}+\dfrac1r\dfrac{\partial v_\theta}{\partial\theta}=0$ | 不可压缩二维流动，极坐标 | [证明](#recall-polar-continuity) |
     | $\rho_1V_1A_1=\rho_2V_2A_2$；$V_1A_1=V_2A_2$ | 一维定常管流；后者为不可压缩 | [证明](#proof-continuity) |
 
@@ -266,7 +267,7 @@ comments: true
 
 1. [圆管层流速度分布、哈根–泊肃叶公式与 $\lambda=64/\mathrm{Re}$](#proof-poiseuille)
 2. [突然扩大的局部损失 $h_j=(V_1-V_2)^2/2g$](#proof-sudden-expansion)
-3. [连续性微分方程（达朗贝尔）](#proof-continuity)及[极坐标形式](#recall-polar-continuity)
+3. [连续性微分方程（达朗贝尔）](#proof-continuity)、[极坐标形式](#recall-polar-continuity)及[散度的物理意义](#proof-divergence)
 4. [沿流线积分欧拉方程得到伯努利方程](#proof-bernoulli)
 5. [欧拉运动微分方程](#proof-euler)
 6. [平面总压力与压力中心](#proof-plane-force)
@@ -293,7 +294,7 @@ comments: true
 | 两板间流动 | [两板间流动](#plate-flow) | 证明、计算 |
 | 帕斯卡定律、静压分布 | [第二章前半](#ch2) | 填空、证明 |
 | 平面、曲面上的静压力 | [平面](#plane-force)、[曲面](#curved-force) | **计算**、证明 |
-| 理想流体、质量守恒、达朗贝尔定律、散度 | [第三章前半](#ch3) | 填空、证明 |
+| 理想流体、质量守恒、达朗贝尔定律、散度 | [第三章前半](#ch3)、[散度动画与证明](#proof-divergence) | 填空、证明 |
 | 欧拉方程、积分动量方程 | [欧拉方程](#proof-euler)、[动量方程](#momentum-integral) | 证明、计算 |
 | 伯努利方程及其假设条件 | [伯努利方程](#bernoulli) | 填空、证明 |
 | 小孔出流、皮托管、文丘里流量计 | [伯努利应用](#bernoulli-apps) | **计算** |
@@ -1216,7 +1217,7 @@ $$
 $$
 
 !!! key-point "散度的物理意义（填空、问答）"
-    速度的**散度** $\nabla\cdot\boldsymbol V$ 表示流体微团**单位体积的体积变化率**（相对膨胀率）。不可压缩流体的体积不能变，所以速度场的散度必须为零。
+    速度的**散度** $\nabla\cdot\boldsymbol V$ 表示流体微团**单位体积的体积变化率**（相对膨胀率）。不可压缩流体的体积不能变，所以速度场的散度必须为零。看不懂可以先看下面的[动画讲解](#proof-divergence)。
 
 **一维总流（管流）形式**：对一段流管，侧壁上 $\boldsymbol V\cdot\boldsymbol n=0$，只有两端断面有流量进出：
 
@@ -1225,6 +1226,88 @@ $$
 $$
 
 多进多出时：$\sum\dot m_{\text{进}}=\sum\dot m_{\text{出}}$。
+
+#### 散度：动画讲解与证明 { #proof-divergence }
+
+<video controls preload="metadata" playsinline poster="imgs/divergence-video-poster.jpg" style="width:100%;border-radius:8px">
+  <source src="videos/divergence-explained.mp4" type="video/mp4">
+  你的浏览器不支持视频播放，可以<a href="videos/divergence-explained.mp4">下载后观看</a>。
+</video>
+
+动画里盯住一小块橙色流体，看它的面积怎么变（二维流动中，垂直纸面的厚度不变，面积就代表体积）。最该记住的一句话：**散度只管体积，不管形状。**
+
+| 流动 | 速度场 | 散度 | 橙色方块 |
+|------|--------|------|----------|
+| 向四周散开 | $u=ax,\ v=ay$ | $2a>0$ | 变大 |
+| 向中心汇聚 | $u=-ax,\ v=-ay$ | $-2a<0$ | 变小（只有可压缩流体才可能） |
+| 一边拉长一边压扁 | $u=ax,\ v=-ay$ | $0$ | 形状变，面积不变 |
+| 剪切 | $u=ky,\ v=0$ | $0$ | 歪成平行四边形，面积不变 |
+| 整体旋转 | $u=-\omega y,\ v=\omega x$ | $0$ | 转动，面积不变 |
+
+所以**散度为零不等于流体不动、不变形**，只是体积不变。
+
+??? question "证明题｜速度散度等于流体微团的相对体积变化率"
+    **题目**：取边长为 $\delta x,\delta y,\delta z$ 的微小六面体流体微团，体积 $\delta V=\delta x\,\delta y\,\delta z$，速度场为 $(u,v,w)$。
+
+    （1）证明
+
+    $$
+    \frac{1}{\delta V}\frac{\mathrm d(\delta V)}{\mathrm dt}=\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}+\frac{\partial w}{\partial z}=\nabla\cdot\boldsymbol V
+    $$
+
+    （2）由此证明不可压缩流体满足 $\nabla\cdot\boldsymbol V=0$。
+
+    **证明（1）**：看 $x$ 方向的边。左面速度为 $u$，右面速度为 $u+\dfrac{\partial u}{\partial x}\delta x$。经过 $\mathrm dt$，右面比左面多走 $\dfrac{\partial u}{\partial x}\delta x\,\mathrm dt$，所以边长变成
+
+    $$
+    \delta x'=\delta x\left(1+\frac{\partial u}{\partial x}\mathrm dt\right)
+    $$
+
+    同理
+
+    $$
+    \delta y'=\delta y\left(1+\frac{\partial v}{\partial y}\mathrm dt\right),\qquad
+    \delta z'=\delta z\left(1+\frac{\partial w}{\partial z}\mathrm dt\right)
+    $$
+
+    三条边相乘，略去 $\mathrm dt$ 的高阶小量：
+
+    $$
+    \delta V'\approx\delta V\left[1+\left(\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}+\frac{\partial w}{\partial z}\right)\mathrm dt\right]
+    $$
+
+    由 $\mathrm d(\delta V)=\delta V'-\delta V$，两边除以 $\delta V\,\mathrm dt$：
+
+    $$
+    \boxed{\frac{1}{\delta V}\frac{\mathrm d(\delta V)}{\mathrm dt}=\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}+\frac{\partial w}{\partial z}=\nabla\cdot\boldsymbol V}
+    $$
+
+    **证明（2）**：微团由固定的流体质点组成，质量不变，$\delta m=\rho\,\delta V=$ 常数。对时间求导：
+
+    $$
+    \delta V\frac{\mathrm d\rho}{\mathrm dt}+\rho\frac{\mathrm d(\delta V)}{\mathrm dt}=0
+    $$
+
+    两边除以 $\rho\,\delta V$，代入（1）的结果：
+
+    $$
+    \frac1\rho\frac{\mathrm d\rho}{\mathrm dt}+\nabla\cdot\boldsymbol V=0
+    $$
+
+    不可压缩流体的 $\rho$ 不变，$\mathrm d\rho/\mathrm dt=0$，所以
+
+    $$
+    \boxed{\nabla\cdot\boldsymbol V=0}
+    $$
+
+    **得分点**：边长变化的来历、略去高阶小量、质量守恒 $\rho\,\delta V=$ 常数，这三步都要写出来。
+
+??? example "练习｜判断速度场能否是不可压缩流动"
+    **做法**：算 $\dfrac{\partial u}{\partial x}+\dfrac{\partial v}{\partial y}$，看是否恒等于零。
+
+    - (a) $u=2x,\ v=-2y$：$2-2=0$，**可以**；
+    - (b) $u=x^2,\ v=y$：$2x+1\neq0$，**不可以**；
+    - (c) $u=-y,\ v=x$：$0+0=0$，**可以**，这是整体旋转。
 
 #### 回忆题：极坐标连续性方程 { #recall-polar-continuity }
 
@@ -2171,7 +2254,7 @@ $V_0$ 是原流速。水中 $c$ 约 $1000\ \mathrm{m/s}$ 量级，所以 $V_0=1\
 !!! definition "量纲一致性原理（量纲和谐原理）"
     一个正确的物理方程，**各项的量纲必须相同**。所以方程可以除以其中任一项，化成全部由无量纲项组成的形式。这是量纲分析能成立的根据，也是检查公式是否写错的最快办法。
 
-### $\Pi$ 定理 { #pi-theorem }
+### Π 定理 { #pi-theorem }
 
 !!! key-point "白金汉 $\Pi$ 定理"
     若一个物理过程涉及 $n$ 个物理量，其中有 $m$ 个**基本量纲**（一般 $m=3$），则这个过程可以用 $n-m$ 个**独立的无量纲数** $\Pi_1,\Pi_2,\dots,\Pi_{n-m}$ 之间的关系来描述：
