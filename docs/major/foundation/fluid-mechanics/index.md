@@ -1473,10 +1473,10 @@ $\sum\boldsymbol F$ 包括两端断面的压力、重力和**固体壁面对流�
 
 #### 复习课版推导：沿流线取微元 { #bernoulli-review-proof }
 
-老师在复习课上强调这版「必须走一遍，5 个条件很重要」。动画把每一项的来历都走了一遍，重点看**压强项的泰勒展开**和**重力投影**。
+老师在复习课上强调这版「必须走一遍，5 个条件很重要」。动画把每一项的来历都走了一遍，重点看**压强项的泰勒展开**和**重力投影**。英文配音，配中英字幕，约 5 分钟。配音由开源模型 Fish Audio S2 Pro 生成。
 
-<video controls preload="metadata" playsinline poster="imgs/bernoulli-video-poster.jpg" style="width:100%;border-radius:8px">
-  <source src="videos/bernoulli-derivation.mp4" type="video/mp4">
+<video controls preload="metadata" playsinline poster="imgs/bernoulli-video-poster.jpg?v=20261105" style="width:100%;border-radius:8px">
+  <source src="videos/bernoulli-derivation.mp4?v=20261105" type="video/mp4">
   你的浏览器不支持视频播放，可以<a href="videos/bernoulli-derivation.mp4">下载后观看</a>。
 </video>
 
