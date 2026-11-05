@@ -1352,7 +1352,7 @@ $$
 !!! definition "证明：欧拉方程（手写稿第 9–12 页）"
     **取微元**：边长 $\Delta x,\Delta y,\Delta z$ 的六面体，中心 $M$。理想流体，**忽略黏性**，只受质量力和压力。
 
-    **$x$ 方向受力**：质量力 $\rho f_x\Delta x\Delta y\Delta z$；压力：左面 $(p-\frac{\partial p}{\partial x}\frac{\Delta x}2)\Delta y\Delta z$，右面 $(p+\frac{\partial p}{\partial x}\frac{\Delta x}2)\Delta y\Delta z$，净压力 $-\frac{\partial p}{\partial x}\Delta x\Delta y\Delta z$。
+    **$x$ 方向受力**：质量力 $\rho f_x\Delta x\Delta y\Delta z$；压力：左面 $(p-\frac{\partial p}{\partial x}\frac{\Delta x}2)\Delta y\Delta z$，右面 $(p+\frac{\partial p}{\partial x}\frac{\Delta x}2)\Delta y\Delta z$，净压力 $-\frac{\partial p}{\partial x}\Delta x\Delta y\Delta z$。这一项的来历见[伯努利动画和说明](#bernoulli-review-proof)。
 
     **牛顿第二定律**：
 
@@ -1427,7 +1427,64 @@ $\sum\boldsymbol F$ 包括两端断面的压力、重力和**固体壁面对流�
 
 ### 伯努利方程 { #bernoulli }
 
-#### 证明：沿流线积分 { #proof-bernoulli }
+<a id="proof-bernoulli"></a>
+
+#### 复习课版推导：沿流线取微元 { #bernoulli-review-proof }
+
+老师在复习课上强调这版「必须走一遍，5 个条件很重要」。动画把每一项的来历都走了一遍，重点看**压强项的泰勒展开**和**重力投影**。
+
+<video controls preload="metadata" playsinline poster="imgs/bernoulli-video-poster.jpg" style="width:100%;border-radius:8px">
+  <source src="videos/bernoulli-derivation.mp4" type="video/mp4">
+  你的浏览器不支持视频播放，可以<a href="videos/bernoulli-derivation.mp4">下载后观看</a>。
+</video>
+
+!!! key-point "为什么混用 $s$ 和 $z$"
+    $s$ 描述**运动**：质点沿流线走，一个方向就够，三个方程变成一个。$z$ 描述**重力**：不管流线怎么弯，重力都竖直向下。$\cos\theta=\partial z/\partial s$ 把两者接起来，问的只是「竖直的重力在 $s$ 方向有多少」。
+
+!!! definition "证明：伯努利方程（复习课版，五个条件）"
+    **取微元**：沿流线取长 $\mathrm ds$、截面积 $\mathrm dA$ 的微元，$\mathrm dV=\mathrm ds\,\mathrm dA$，中心压强为 $p$，$s$ 方向与竖直向上的 $z$ 轴夹角为 $\theta$。
+
+    **① 理想流体**（$\mu=0$）：侧面没有切应力，侧面压力又垂直于 $s$，所以沿 $s$ 方向只有两端面的压力。端面距中心 $\mathrm ds/2$，一阶泰勒展开得两端压强，相减：
+
+    $$
+    \left(p-\frac{\partial p}{\partial s}\frac{\mathrm ds}{2}\right)\mathrm dA-\left(p+\frac{\partial p}{\partial s}\frac{\mathrm ds}{2}\right)\mathrm dA=-\frac{\partial p}{\partial s}\,\mathrm ds\,\mathrm dA
+    $$
+
+    **② 重力场**：重量 $\rho g\,\mathrm dV$ 竖直向下，沿 $s$ 的分量为 $-\rho g\cos\theta\,\mathrm dV$。
+
+    **牛顿第二定律**，其中 $u=u(s,t)$，$\dfrac{\mathrm du}{\mathrm dt}=\dfrac{\partial u}{\partial t}+u\dfrac{\partial u}{\partial s}$：
+
+    $$
+    \rho\,\mathrm dV\frac{\mathrm du}{\mathrm dt}=-\frac{\partial p}{\partial s}\,\mathrm dV-\rho g\cos\theta\,\mathrm dV
+    \;\Longrightarrow\;
+    \rho\left(\frac{\partial u}{\partial t}+u\frac{\partial u}{\partial s}\right)+\frac{\partial p}{\partial s}+\rho g\cos\theta=0
+    $$
+
+    **③ 定常**（$\partial u/\partial t=0$）：再用 $u\dfrac{\partial u}{\partial s}=\dfrac{\partial(u^2/2)}{\partial s}$ 和几何关系 $\mathrm dz=\mathrm ds\cos\theta$，即 $\cos\theta=\dfrac{\partial z}{\partial s}$：
+
+    $$
+    \rho\frac{\partial(u^2/2)}{\partial s}+\frac{\partial p}{\partial s}+\rho g\frac{\partial z}{\partial s}=0
+    $$
+
+    **④ 均质不可压**（$\rho=$ 常数）：$\rho$ 放进导数，三项合并：
+
+    $$
+    \frac{\partial}{\partial s}\left(\frac12\rho u^2+p+\rho gz\right)=0
+    $$
+
+    **⑤ 沿同一条流线积分**：
+
+    $$
+    \boxed{\frac12\rho u^2+p+\rho gz=C}
+    $$
+
+!!! warning "$\theta$ 的两种取法"
+    这里的 $\theta$ 是流线与**竖直 $z$ 轴**的夹角，所以 $\mathrm dz=\mathrm ds\cos\theta$。下面手写稿版的 $\theta$ 是流线与**水平面**的夹角，所以写成 $\mathrm dz=\mathrm ds\sin\theta$。两版结果相同，答题时画图标明即可。
+
+!!! tip "压强项的 $\frac{\partial p}{\partial x}\frac{\Delta x}{2}$ 怎么理解"
+    $p$ 是微元**中心**的压强，端面离中心半个边长。压强变化的快慢是 $\partial p/\partial x$，**斜率 × 距离 = 变化量**，所以两端面分别是 $p\mp\frac{\partial p}{\partial x}\frac{\Delta x}{2}$。例如中心 $100$、斜率 $2$、$\Delta x=1$，左面 $99$、右面 $101$。[欧拉方程](#proof-euler)和这里是同一件事，只是把 $s$ 换成 $x$，把 $\mathrm dA$ 换成 $\Delta y\Delta z$。
+
+#### 手写稿版推导：流管动量方程
 
 !!! definition "证明：伯努利方程（手写稿第 15–17 页）"
     **取控制体**：沿流线取一段微小流管，长 $\mathrm ds$，截面积 $A$，流线与水平面夹角 $\theta$，高程变化 $\mathrm dz=\mathrm ds\sin\theta$。假设截面上 $\rho,V,p$ 均匀，**忽略管壁摩擦**（$\tau=0$）。
