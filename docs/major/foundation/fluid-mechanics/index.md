@@ -1260,10 +1260,12 @@ $$
 
 #### 散度：动画讲解与证明 { #proof-divergence }
 
-<video controls preload="metadata" playsinline poster="imgs/divergence-video-poster.jpg" style="width:100%;border-radius:8px">
-  <source src="videos/divergence-explained.mp4" type="video/mp4">
+<video controls preload="metadata" playsinline poster="imgs/divergence-video-poster.jpg?v=20261105" style="width:100%;border-radius:8px">
+  <source src="videos/divergence-explained.mp4?v=20261105" type="video/mp4">
   你的浏览器不支持视频播放，可以<a href="videos/divergence-explained.mp4">下载后观看</a>。
 </video>
+
+英文配音，配中英字幕，约 3 分 40 秒。配音由开源模型 Fish Audio S2 Pro 生成。
 
 动画里盯住一小块橙色流体，看它的面积怎么变（二维流动中，垂直纸面的厚度不变，面积就代表体积）。最该记住的一句话：**散度只管体积，不管形状。**
 
