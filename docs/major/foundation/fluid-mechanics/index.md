@@ -1248,7 +1248,7 @@ $$
 $$
 
 !!! key-point "散度的物理意义（填空、问答）"
-    速度的**散度** $\nabla\cdot\boldsymbol V$ 表示流体微团**单位体积的体积变化率**（相对膨胀率）。不可压缩流体的体积不能变，所以速度场的散度必须为零。看不懂可以先看下面的[动画讲解](#proof-divergence)。
+    速度的**散度** $\nabla\cdot\boldsymbol V$ 表示流体微团**单位体积的体积变化率**（相对膨胀率）。它的每一项都是一个方向的拉伸率，加起来就是体积变化的快慢。不可压缩流体的体积不能变，所以速度场的散度必须为零。看不懂可以先看下面的[动画讲解](#proof-divergence)。
 
 **一维总流（管流）形式**：对一段流管，侧壁上 $\boldsymbol V\cdot\boldsymbol n=0$，只有两端断面有流量进出：
 
@@ -1267,6 +1267,26 @@ $$
 
 动画里盯住一小块橙色流体，看它的面积怎么变（二维流动中，垂直纸面的厚度不变，面积就代表体积）。最该记住的一句话：**散度只管体积，不管形状。**
 
+**第一步：拆开符号。** $\nabla=(\partial/\partial x,\ \partial/\partial y,\ \partial/\partial z)$ 是一组还没填对象的求导操作，$\boldsymbol V=(u,v,w)$ 是三个方向的速度。点乘就是一一配对、相乘、相加：
+
+$$
+\nabla\cdot\boldsymbol V=\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}+\frac{\partial w}{\partial z}
+$$
+
+每个速度只沿**自己的方向**求导，$\partial u/\partial y$ 这种交叉项不进来。结果不是箭头，而是每个点上的一个数。
+
+**第二步：看每一项量的是什么。** 取一小段长 $\delta x$ 的流体。左端速度是 $u$，右端速度是 $u+\dfrac{\partial u}{\partial x}\delta x$，右端更快就会拉开距离。经过 $\mathrm dt$，多出来的长度是
+
+$$
+\frac{\partial u}{\partial x}\,\delta x\,\mathrm dt
+$$
+
+除以原长 $\delta x$，再除以 $\mathrm dt$，剩下 $\partial u/\partial x$。所以它就是 $x$ 方向的**拉伸率**：每米每秒长长多少。比如 $u=2x$ 时，$\partial u/\partial x=2\ \mathrm{s^{-1}}$，每米长度每秒长 2 m。
+
+**第三步：把三个方向加起来。** 三条边的拉伸率相加，就是体积的相对变化率。为什么是相加而不是相乘？单位正方形的两边变成 $1+a\,\mathrm dt$ 和 $1+b\,\mathrm dt$，面积多出 $a\,\mathrm dt$、$b\,\mathrm dt$ 两条和一个小角 $ab\,\mathrm dt^2$，小角是高阶小量，略去后只剩 $a+b$。
+
+**第四步：代入速度场算一遍。** 下表每一行都是这样算的，比如 $u=ax,\ v=-ay$ 时，$\nabla\cdot\boldsymbol V=a+(-a)=0$。
+
 | 流动 | 速度场 | 散度 | 橙色方块 |
 |------|--------|------|----------|
 | 向四周散开 | $u=ax,\ v=ay$ | $2a>0$ | 变大 |
@@ -1275,7 +1295,18 @@ $$
 | 剪切 | $u=ky,\ v=0$ | $0$ | 歪成平行四边形，面积不变 |
 | 整体旋转 | $u=-\omega y,\ v=\omega x$ | $0$ | 转动，面积不变 |
 
-所以**散度为零不等于流体不动、不变形**，只是体积不变。
+所以**散度为零不等于流体不动、不变形**，只是体积不变。剪切流 $u=ky$ 里 $u$ 确实在变，但它随 $y$ 变，散度只问 $u$ 随 $x$ 怎么变，所以是零。
+
+**和管流连起来**：水流进收缩管时，沿流动方向变快，微团被拉长；管壁收拢，微团变细。不可压缩时两者正好抵消，$\partial u/\partial x>0$ 被 $\partial v/\partial y<0$ 抵消，这就是 $V_1A_1=V_2A_2$ 在一个点上的版本。
+
+!!! warning "$\nabla\cdot\boldsymbol V$ 和 $(\boldsymbol V\cdot\nabla)$ 别搞混"
+    | 写法 | 名称 | 结果 |
+    |------|------|------|
+    | $\nabla\cdot\boldsymbol V$ | 散度 | 导数已经作用在 $\boldsymbol V$ 上，算完是一个数 |
+    | $\boldsymbol V\cdot\nabla=u\dfrac{\partial}{\partial x}+v\dfrac{\partial}{\partial y}+w\dfrac{\partial}{\partial z}$ | 对流运算模板 | 还没算完，后面要接东西；接 $u$ 得到一个数，接 $\boldsymbol V$ 得到矢量 |
+    | $\nabla p$ | 梯度 | 一个矢量 $(\partial p/\partial x,\ \partial p/\partial y,\ \partial p/\partial z)$ |
+
+    $\nabla$ 在右边，就还要继续作用到后面的量上；$\nabla$ 在左边，就已经作用完了。
 
 ??? question "证明题｜速度散度等于流体微团的相对体积变化率"
     **题目**：取边长为 $\delta x,\delta y,\delta z$ 的微小六面体流体微团，体积 $\delta V=\delta x\,\delta y\,\delta z$，速度场为 $(u,v,w)$。
