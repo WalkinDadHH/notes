@@ -139,14 +139,14 @@ comments: true
     | $\dfrac{\partial\rho}{\partial t}+\nabla\cdot(\rho\boldsymbol V)=0$ | 连续性微分方程，任何流动 | [证明](#proof-continuity) |
     | $\nabla\cdot\boldsymbol V=0$ | 不可压缩流体（定常、非定常均可） | [证明](#proof-continuity) |
     | $\nabla\cdot\boldsymbol V=\dfrac{1}{\delta V}\dfrac{\mathrm d(\delta V)}{\mathrm dt}$ | 散度 = 微团的相对体积变化率；只管体积，不管形状 | [动画与证明](#proof-divergence) |
-    | $\dfrac{\partial v_r}{\partial r}+\dfrac{v_r}{r}+\dfrac1r\dfrac{\partial v_\theta}{\partial\theta}=0$ | 不可压缩二维流动，极坐标 | [证明](#recall-polar-continuity) |
+    | $\dfrac{\partial v_r}{\partial r}+\dfrac{v_r}{r}+\dfrac1r\dfrac{\partial v_\theta}{\partial\theta}=0$ | 不可压缩二维流动，极坐标；看懂即可 | [证明](#recall-polar-continuity) |
     | $\rho_1V_1A_1=\rho_2V_2A_2$；$V_1A_1=V_2A_2$ | 一维定常管流；后者为不可压缩 | [证明](#proof-continuity) |
 
     **动量守恒**
 
     | 公式 | 条件 / 说明 | 详见 |
     |------|-------------|------|
-    | $\boldsymbol a=\dfrac{\partial\boldsymbol V}{\partial t}+(\boldsymbol V\cdot\nabla)\boldsymbol V$ | 局部加速度 + 对流加速度 | [加速度](#acceleration) |
+    | $\boldsymbol a=\dfrac{\partial\boldsymbol V}{\partial t}+(\boldsymbol V\cdot\nabla)\boldsymbol V$ | 局部加速度 + 对流加速度；**物质导数必考** | [加速度](#acceleration) |
     | $\dfrac{\mathrm d\boldsymbol V}{\mathrm dt}=\boldsymbol f-\dfrac1\rho\nabla p$ | 欧拉运动方程，只适用于理想流体 | [证明](#proof-euler) |
     | $\sum\boldsymbol F=\rho Q(\boldsymbol V_2-\boldsymbol V_1)$ | 动量方程：定常、一进一出、断面速度均匀；求固壁受力 | [动量方程](#momentum-integral) |
 
@@ -179,7 +179,7 @@ comments: true
     |------|-------------|------|
     | $\tau=\dfrac{\Delta p}{l}\dfrac r2$ | 切应力线性分布，壁面最大；层流湍流都成立 | [证明](#proof-poiseuille) |
     | $u=\dfrac{\Delta p}{4\mu l}(R^2-r^2)$ | 速度为旋转抛物面 | [证明](#proof-poiseuille) |
-    | $Q=\dfrac{\pi R^4\Delta p}{8\mu l}=\dfrac{\pi d^4\Delta p}{128\mu l}$ | 哈根–泊肃叶定律 | [证明](#proof-poiseuille) |
+    | $Q=\dfrac{\pi R^4\Delta p}{8\mu l}=\dfrac{\pi d^4\Delta p}{128\mu l}$ | 哈根–泊肃叶定律；记 $Q\propto d^4$ 和推导，公式不用死背 | [证明](#proof-poiseuille) |
     | $V=\dfrac{u_{\max}}{2}$ | 平均流速是最大流速的一半 | [证明](#proof-poiseuille) |
     | $\lambda=\dfrac{64}{\mathrm{Re}}$，$h_f=\dfrac{32\mu lV}{\rho gd^2}$ | 只与 $\mathrm{Re}$ 有关；$h_f\propto V$ | [证明](#proof-poiseuille) |
 
@@ -189,7 +189,7 @@ comments: true
     |------|-------------|------|
     | $\lambda=\dfrac{0.3164}{\mathrm{Re}^{0.25}}$ | 布拉休斯，水力光滑，$4000<\mathrm{Re}<10^5$ | [阻力系数](#friction-factor) |
     | $\dfrac1{\sqrt\lambda}=2\lg(\mathrm{Re}\sqrt\lambda)-0.8$ | 普朗特–施利希廷，水力光滑 | [阻力系数](#friction-factor) |
-    | $\dfrac1{\sqrt\lambda}=-2\lg\left(\dfrac{\Delta}{3.7d}+\dfrac{2.51}{\mathrm{Re}\sqrt\lambda}\right)$ | 科尔布鲁克，过渡区（莫迪图的基础） | [阻力系数](#friction-factor) |
+    | $\dfrac1{\sqrt\lambda}=-2\lg\left(\dfrac{\Delta}{3.7d}+\dfrac{2.51}{\mathrm{Re}\sqrt\lambda}\right)$ | 科尔布鲁克，过渡区（莫迪图的基础，莫迪图不考） | [阻力系数](#friction-factor) |
     | $\lambda=\dfrac1{[2\lg(d/2\Delta)+1.74]^2}$ | 尼古拉兹，水力粗糙（阻力平方区） | [阻力系数](#friction-factor) |
     | $\delta=\dfrac{34.2d}{\mathrm{Re}^{0.875}}$ | 黏性底层厚度；$\delta>\Delta$ 水力光滑，$\delta<\Delta$ 水力粗糙 | [光滑与粗糙](#hydraulic-smooth-rough) |
     | $D_h=\dfrac{4A}{\mathcal P}$ | 非圆管水力直径，代替 $d$ | [水力直径](#hydraulic-diameter) |
@@ -252,29 +252,58 @@ comments: true
 
 ## 考前怎么用这一页 { #exam-guide }
 
+### 复习课划的重点 { #review-class }
+
+老师的总体态度：**重心在第三章动力学，更想考概念和推导，不爱出难算题。** 他说希望「学完之后还有印象」。
+
+| 优先级 | 内容 | 老师的说法 |
+|---|---|---|
+| **必考** | [物质导数](#acceleration) $\dfrac{\mathrm d}{\mathrm dt}=\dfrac{\partial}{\partial t}+(\boldsymbol V\cdot\nabla)$ | 定常时 $\partial/\partial t=0$，但 $\mathrm d/\mathrm dt$ 不一定为 0 |
+| **最核心** | [理想流体运动方程](#proof-euler) | 本学期最核心，用力的分析求解 |
+| **必须会推** | [伯努利方程](#bernoulli-review-proof) | 必须走一遍，5 个条件很重要 |
+| **必须会推** | [毕托管、文丘里管](#bernoulli-apps) | 要会推导 |
+| **必须会推** | [圆管层流](#proof-poiseuille) | 推一遍抛物线，积一遍平均流速 |
+| **重要** | [沿程阻力系数](#friction-factor)、雷诺数 | 单独点名 |
+| **重要** | [管内流动的流量题](#pipe-systems) | 课后答疑时老师让关注 |
+| 了解 | [量纲分析与相似原理](#ch5) | 用 $M,L,T$ 描述物理量 |
+| 淡化 | [动量方程](#momentum-integral) | 能量、动量淡化，尽量考概念 |
+| 看看就行 | 静力学第五到八节：[相对平衡](#relative-equilibrium)、[平面](#plane-force)、[曲面](#curved-force)、[浮力](#buoyancy) | 可以出得很难，但老师不喜欢，说这种题跟高中一样没意思 |
+| **不考** | [莫迪图](#turbulent-pipe)；哈根–泊肃叶公式本身不用死背 | 能推导最重要 |
+| 不用管 | 柱坐标、球坐标下的方程；剪切变形率的推导 | 非考试重点 |
+
 ### 题型与复习策略
 
 | 题型 | 分值 | 怎么准备 |
 |------|------|----------|
-| 填空 | 10 题 × 4 分 | 背定义、单位、条件和几个关键数字（$2300$、$64/\mathrm{Re}$、伯努利六个条件等）。每章末尾的「填空速记」就是为它准备的 |
+| 填空 | 10 题 × 4 分 | 背定义、单位、条件和几个关键数字（$2300$、$64/\mathrm{Re}$、伯努利的条件等）。每章末尾的「填空速记」就是为它准备的 |
 | 证明 | 2 题 × 10 分 | 把下面「证明题清单」里的推导**自己默写一遍**。重点是取微元、列受力、化简这几步，不必背原句 |
-| 问答 | 1 题 × 10 分 | 概念对比类：牛顿与非牛顿流体、层流与湍流、水力光滑与粗糙、边界层分离、相似原理等 |
-| 计算 | 3 题 × 10 分 | 大概率是：平面/曲面总压力、伯努利 + 连续性（文丘里、皮托管、小孔）、管路能量方程（沿程 + 局部损失、串并联） |
+| 问答 | 1 题 × 10 分 | 概念对比类：牛顿与非牛顿流体、层流与湍流、$\partial/\partial t$ 与 $\mathrm d/\mathrm dt$、水力光滑与粗糙、相似原理等 |
+| 计算 | 3 题 × 10 分 | 优先准备：管路能量方程**求流量**（沿程 + 局部损失、串并联）、伯努利 + 连续性（文丘里、皮托管、小孔）。静压力题复习课说不深挖，会基本题即可 |
 
 ### 证明题清单 { #proof-list }
 
-下面这些推导老师在手写稿里**完整推过**，都是证明题的候选。按出现概率由高到低大致排序：
+按复习课的说法重排。先把第一组默写熟，时间够再看第二组。
 
-1. [圆管层流速度分布、哈根–泊肃叶公式与 $\lambda=64/\mathrm{Re}$](#proof-poiseuille)
-2. [突然扩大的局部损失 $h_j=(V_1-V_2)^2/2g$](#proof-sudden-expansion)
-3. [连续性微分方程（达朗贝尔）](#proof-continuity)、[极坐标形式](#recall-polar-continuity)及[散度的物理意义](#proof-divergence)
-4. [沿流线积分欧拉方程得到伯努利方程](#proof-bernoulli)
-5. [欧拉运动微分方程](#proof-euler)
-6. [平面总压力与压力中心](#proof-plane-force)
-7. [静压强各向同性（楔形微元）](#proof-isotropy)和[欧拉平衡方程](#proof-euler-statics)
-8. [两平板间流动的速度分布](#proof-plate-flow)
-9. [旋转容器自由液面为抛物面](#proof-rotation)
-10. [量纲分析证明某个关系式](#recall-dimension)
+**第一组：老师点名要会推**
+
+1. [理想流体运动方程（欧拉方程）](#proof-euler)
+2. [伯努利方程，五个条件逐步加](#bernoulli-review-proof)
+3. [圆管层流：速度抛物线、平均流速、$\lambda=64/\mathrm{Re}$](#proof-poiseuille)
+4. [皮托管、文丘里管的流速和流量公式](#bernoulli-apps)
+
+**第二组：手写稿完整推过，有可能考**
+
+5. [连续性微分方程（达朗贝尔）](#proof-continuity)及[散度的物理意义](#proof-divergence)
+6. [突然扩大的局部损失 $h_j=(V_1-V_2)^2/2g$](#proof-sudden-expansion)
+7. [两平板间流动的速度分布](#proof-plate-flow)
+8. [量纲分析证明某个关系式](#recall-dimension)
+9. [静压强各向同性（楔形微元）](#proof-isotropy)和[欧拉平衡方程](#proof-euler-statics)
+
+**第三组：看懂就行**
+
+10. [平面总压力与压力中心](#proof-plane-force)
+11. [旋转容器自由液面为抛物面](#proof-rotation)
+12. [极坐标连续性方程](#recall-polar-continuity)（回忆卷出现过，但复习课说柱、球坐标不考虑）
 
 !!! tip "证明题怎么写才拿满分"
     1. **画图并说明所取的微元或控制体**，标出坐标和尺寸。
@@ -293,14 +322,14 @@ comments: true
 | 雷诺数定义 | [雷诺数](#reynolds-number) | 填空 |
 | 两板间流动 | [两板间流动](#plate-flow) | 证明、计算 |
 | 帕斯卡定律、静压分布 | [第二章前半](#ch2) | 填空、证明 |
-| 平面、曲面上的静压力 | [平面](#plane-force)、[曲面](#curved-force) | **计算**、证明 |
+| 平面、曲面上的静压力 | [平面](#plane-force)、[曲面](#curved-force) | 看看就行 |
 | 理想流体、质量守恒、达朗贝尔定律、散度 | [第三章前半](#ch3)、[散度动画与证明](#proof-divergence) | 填空、证明 |
-| 欧拉方程、积分动量方程 | [欧拉方程](#proof-euler)、[动量方程](#momentum-integral) | 证明、计算 |
+| 欧拉方程、积分动量方程 | [欧拉方程](#proof-euler)、[动量方程](#momentum-integral) | 欧拉方程**证明**；动量淡化 |
 | 伯努利方程及其假设条件 | [伯努利方程](#bernoulli) | 填空、证明 |
-| 小孔出流、皮托管、文丘里流量计 | [伯努利应用](#bernoulli-apps) | **计算** |
+| 小孔出流、皮托管、文丘里流量计 | [伯努利应用](#bernoulli-apps) | **证明**、**计算** |
 | 黏性流体伯努利方程、达西公式、局部损失 | [第四章前半](#ch4) | 填空、**计算** |
 | 层流与湍流、圆管层流、哈根–泊肃叶 | [圆管层流](#proof-poiseuille) | **证明**、填空 |
-| 水力光滑与粗糙、莫迪图 | [湍流与阻力系数](#turbulent-pipe) | 填空、问答 |
+| 水力光滑与粗糙、莫迪图（不考） | [湍流与阻力系数](#turbulent-pipe) | 填空、问答 |
 | 局部损失（用下游速度水头） | [局部损失](#minor-loss) | 证明、计算 |
 | 串联、并联管路（「见笔记上的举例」） | [管路系统](#pipe-systems)、[三类问题](#three-pipe-problems) | **计算** |
 | 量纲分析、量纲一致性、$\Pi$ 定理、相似原理 | [第五章](#ch5) | 证明、填空 |
@@ -612,7 +641,7 @@ $$
 ## 第二章 · 流体静力学 { #ch2 }
 
 !!! info "章节概览"
-    静止流体里没有切应力，只有压强。这一章先证明**静压强的两个特性**，再由微元受力平衡推出**压强随深度线性增加**，最后算**流体对平面、曲面的总压力**。计算题最可能出在平面或曲面总压力上；证明题可能考楔形微元、平面总压力和旋转液面。
+    静止流体里没有切应力，只有压强。这一章先证明**静压强的两个特性**，再由微元受力平衡推出**压强随深度线性增加**，最后算**流体对平面、曲面的总压力**。复习课说：重点是 $p=p_0+\rho gh$ 的概念，其中 $h$ 本质是 $\Delta z$；相对平衡和平面、曲面、浮力这几节**看看就行，不用深挖**。
 
 ### 静压强的两个特性 { #proof-isotropy }
 
@@ -721,7 +750,7 @@ $$
 
 ### 平面上的静水总压力 { #plane-force }
 
-这是第二章计算题的头号考点。要求两样东西：**总压力多大**，**作用在哪里**（压力中心）。
+复习课把这部分归为「看看就行」，会基本题即可，不用深挖。要求两样东西：**总压力多大**，**作用在哪里**（压力中心）。
 
 !!! key-point "必背结论"
     $$
@@ -885,6 +914,8 @@ $$
 **浮体稳定性**：重心 $G$、浮心 $B$、定倾中心 $M$。$M$ 在 $G$ 之上（定倾高度 $\overline{MG}>0$）时产生恢复力矩，浮体稳定；$M$ 在 $G$ 之下则翻覆。
 
 ### 相对平衡：容器加速和旋转 { #relative-equilibrium }
+
+复习课说这部分考得少，看看就行。下面的长例题时间不够可以跳过。
 
 液体和容器一起做刚体运动时，液体内部没有相对运动、没有切应力，可以在随容器运动的坐标系里加上惯性力，当作「静止」处理：
 
@@ -1157,7 +1188,7 @@ $$
 ## 第三章 · 理想流体动力学 { #ch3 }
 
 !!! info "章节概览"
-    流体动起来以后，用三个守恒定律描述：**质量守恒 → 连续性方程**，**动量守恒 → 欧拉方程/动量方程**，**能量守恒 → 伯努利方程**。这章的证明题素材最多（连续性、欧拉、伯努利都完整推过），计算题主要是伯努利 + 连续性的组合（文丘里、皮托管、小孔）。
+    流体动起来以后，用三个守恒定律描述：**质量守恒 → 连续性方程**，**动量守恒 → 欧拉方程/动量方程**，**能量守恒 → 伯努利方程**。这章是全课的核心：**物质导数必考**，**欧拉方程和伯努利方程必须会推**，皮托管和文丘里管也要会推；计算题主要是伯努利 + 连续性的组合。动量方程和能量部分淡化，考概念为主。
 
 ### 理想流体与研究方法
 
@@ -1311,6 +1342,8 @@ $$
 
 #### 回忆题：极坐标连续性方程 { #recall-polar-continuity }
 
+复习课说柱、球坐标不考虑，但回忆卷里出现过这题，所以留着，看懂就行。
+
 ??? question "年份未注明 · 证明｜二维极坐标连续性方程"
     **原题**（[查看手写原图](#fluid-i-recall-photo)）：证明不可压缩流体二维平面流动的极坐标连续性方程
 
@@ -1344,6 +1377,13 @@ $$
 +\underbrace{u\frac{\partial\boldsymbol V}{\partial x}+v\frac{\partial\boldsymbol V}{\partial y}+w\frac{\partial\boldsymbol V}{\partial z}}_{\text{对流（迁移）加速度}}
 =\frac{\partial\boldsymbol V}{\partial t}+(\boldsymbol V\cdot\nabla)\boldsymbol V
 $$
+
+!!! key-point "物质导数（复习课：必考）"
+    $$
+    \frac{\mathrm d}{\mathrm dt}=\frac{\partial}{\partial t}+(\boldsymbol V\cdot\nabla)
+    $$
+
+    $\mathrm d/\mathrm dt$ **跟着质点走**，$\partial/\partial t$ **站在固定点看**，两者不相等。定常流动 $\partial/\partial t=0$，但 $\mathrm d/\mathrm dt$ 不一定为 0：水流过收缩管，每个固定点的速度都不随时间变，质点却在加速。
 
 **局部加速度**：固定空间点上速度随时间的变化，定常流动中为零。**对流加速度**：质点换了位置而引起的速度变化，例如定常流过收缩管时质点仍在加速。
 
@@ -1385,6 +1425,8 @@ $$
     再加上单位体积的黏性力 $\mu\nabla^2\boldsymbol V$，就得到不可压缩黏性流体的运动方程（纳维–斯托克斯方程）：$\rho\boldsymbol a=-\nabla p+\rho\boldsymbol g+\mu\nabla^2\boldsymbol V$。老师在第二章第 4 页写过这个式子。
 
 ### 积分形式的动量方程 { #momentum-integral }
+
+复习课说能量、动量这部分淡化，尽量考概念。记住方程的含义和使用步骤，不用多刷题。
 
 对任意固定控制体（体积 $V$，表面 $A$），**控制体内动量的增加率 + 通过控制面净流出的动量 = 作用在控制体内流体上的合外力**：
 
@@ -1529,6 +1571,8 @@ $\sum\boldsymbol F$ 包括两端断面的压力、重力和**固体壁面对流�
     5. 1、2 两点之间**没有轴功**（没有泵或涡轮）；
     6. 1、2 两点之间**没有热量传递**。
 
+    复习课按推导讲五个条件：理想、重力场、定常、均质不可压、沿流线，见[下面的推导](#bernoulli-review-proof)。答题时两种说法都写得出来最稳。
+
 **三个水头的意义**：
 
 | 项 | 名称 | 几何意义 | 物理意义（单位重量流体的……） |
@@ -1567,6 +1611,8 @@ $$
 $\alpha$ 是**动能修正系数**：截面速度不均匀时，用平均流速算的动能偏小，需乘 $\alpha$ 修正。层流 $\alpha=2.0$，湍流 $\alpha=1.04\sim1.11$（常取 1）。
 
 ### 伯努利方程的应用 { #bernoulli-apps }
+
+复习课点名：**毕托管（皮托管）和文丘里管要会推导**，两者都不考虑位置水头，用 $\frac12\rho u^2+p=C$ 就能看出动压和静压的关系。
 
 !!! tip "伯努利计算题四步"
     1. **选两个断面**：一个已知量多（如大水箱液面，$V\approx0$、$p=p_a$），一个包含待求量；
@@ -1786,9 +1832,11 @@ $$
 - 理想流体：忽略黏性，$\mu=0$。
 - 连续性方程 $\partial\rho/\partial t+\nabla\cdot(\rho\boldsymbol V)=0$；不可压缩时 $\nabla\cdot\boldsymbol V=0$；一维 $V_1A_1=V_2A_2$。
 - 散度 = 单位体积的体积变化率。
+- 物质导数（必考）$\mathrm d/\mathrm dt=\partial/\partial t+(\boldsymbol V\cdot\nabla)$；定常时 $\partial/\partial t=0$，$\mathrm d/\mathrm dt$ 不一定为 0。
 - 加速度 = 局部加速度 $\partial\boldsymbol V/\partial t$ + 对流加速度 $(\boldsymbol V\cdot\nabla)\boldsymbol V$。
 - 欧拉方程 $\mathrm d\boldsymbol V/\mathrm dt=\boldsymbol f-\nabla p/\rho$，适用于理想流体。
-- 伯努利六条件：定常、不可压、无摩擦、沿流线、无轴功、无传热。
+- 伯努利推导的五个条件：理想、重力场、定常、均质不可压、沿流线。
+- 手写稿的六条件：定常、不可压、无摩擦、沿流线、无轴功、无传热。
 - 伯努利方程的 $p$ 用表压或绝对压强都行，但两端必须一致；真空度按负表压代入。
 - 水头 = 单位重量流体的能量，单位 $\mathrm m$；有旋流动同一流线上总水头不变，无旋流动全场总水头相同。
 - 小孔 $V=\sqrt{2gh}$；皮托管 $u=\sqrt{2(p_0-p)/\rho}$；文丘里流量系数 $0.95\sim0.98$。
@@ -1799,7 +1847,7 @@ $$
 ## 第四章 · 黏性流体的管内流动 { #ch4 }
 
 !!! info "章节概览"
-    实际流体有黏性，流过管道会损失机械能。这一章的主线就是一个方程：**黏性流体的伯努利方程 = 理想伯努利 + 水头损失 $h_w$**。剩下的工作都是在算 $h_w$：先用雷诺数判断层流还是湍流，再算沿程损失 $h_f=\lambda\frac ld\frac{V^2}{2g}$ 和局部损失 $h_j=\zeta\frac{V^2}{2g}$。圆管层流的推导、突扩损失的推导是证明题的头号候选；管路能量方程是计算题的头号候选。
+    实际流体有黏性，流过管道会损失机械能。这一章的主线就是一个方程：**黏性流体的伯努利方程 = 理想伯努利 + 水头损失 $h_w$**。剩下的工作都是在算 $h_w$：先用雷诺数判断层流还是湍流，再算沿程损失 $h_f=\lambda\frac ld\frac{V^2}{2g}$ 和局部损失 $h_j=\zeta\frac{V^2}{2g}$。圆管层流的推导是证明题的头号候选；计算题重点是**用管路能量方程求流量**。莫迪图不考，所以湍流题的 $\lambda$ 大概率由题目给出。
 
 ### 管路问题要解决什么
 
@@ -1930,7 +1978,9 @@ $$
 
 ### 圆管层流 { #proof-poiseuille }
 
-!!! key-point "必背结果"
+老师的要求是**推一遍抛物线，积一遍平均流速**：能推导最重要，四次方公式重在概念，本身不用死背。
+
+!!! key-point "结果速查"
     | 量 | 公式 |
     |---|---|
     | 切应力分布 | $\tau=\dfrac{\Delta p}{l}\dfrac r2$（线性，轴心为 0，壁面最大） |
@@ -2061,11 +2111,11 @@ $$
 
 前三行里，层流 $\lambda=f(\mathrm{Re})$，光滑区 $\lambda=f(\mathrm{Re})$，过渡区 $\lambda=f(\mathrm{Re},\Delta/d)$，粗糙区 $\lambda=f(\Delta/d)$。这些公式来自尼古拉兹的**人工粗糙管**实验（把筛过的均匀沙粒贴在管壁上）。实际工业管道的粗糙不均匀，就用「**当量粗糙度**」折算：与某工业管有相同沿程损失系数的人工粗糙管的 $\Delta$。
 
-**莫迪图**（Moody, 1944）以科尔布鲁克公式为基础，画出工业管道 $\lambda$–$\mathrm{Re}$ 曲线族（每条曲线对应一个 $\Delta/d$），精度约 $\pm15\%$。图上从左到右依次是：层流直线 $64/\mathrm{Re}$ → 临界过渡区 → 光滑管曲线 → 过渡区 → 完全粗糙区（曲线变水平）。
+**莫迪图**（Moody, 1944）以科尔布鲁克公式为基础，画出工业管道 $\lambda$–$\mathrm{Re}$ 曲线族（每条曲线对应一个 $\Delta/d$），精度约 $\pm15\%$。图上从左到右依次是：层流直线 $64/\mathrm{Re}$ → 临界过渡区 → 光滑管曲线 → 过渡区 → 完全粗糙区（曲线变水平）。**复习课说莫迪图不考**，知道 $\lambda$ 取决于 $\mathrm{Re}$ 和 $\Delta/d$ 就够了。
 
 ### 管流计算的三类问题 { #three-pipe-problems }
 
-课上 OneNote 6.5 把管内流动计算归成三类：
+课上 OneNote 6.5 把管内流动计算归成三类。莫迪图不考，所以下面要查图、迭代的步骤看思路即可，考试更可能直接给 $\lambda$，或者是层流用 $64/\mathrm{Re}$。
 
 | 类型 | 已知 | 求 | 做法 |
 |------|------|----|------|
@@ -2249,6 +2299,11 @@ $L$ 取沿管道轴线的**全长**，包括弯头部分的长度。
     原图未给数值，只能写到符号答案。
 
 ### 管路系统计算 { #pipe-systems }
+
+!!! key-point "老师提示：关注流量相关的题目"
+    解题主线：**列断面 → 能量方程 → $h_w=\left(\lambda\frac ld+\sum\zeta\right)\frac{V^2}{2g}$ → 解出 $V$ → $Q=VA$**。
+
+    按这个顺序练：[作业 6-14](#ch4-homework)、[串联管路（老师例 2）](#series-pipes)、[两支路并联的流量分配](#three-reservoirs)。有层流可能时，算完要回头验算 $\mathrm{Re}<2300$。
 
 !!! tip "管路计算题的通用步骤"
     1. 选两个断面（通常是两个水池液面，或液面与出口），选基准面；
