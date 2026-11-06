@@ -1,5 +1,17 @@
 # Maintenance Log
 
+## 2026-11-06 — 流体力学：修正欧拉动画的压力箭头
+
+Scope: `docs/major/foundation/fluid-mechanics/videos/euler-equation.mp4`、视频地址版本号
+
+Changed:
+- 微元四个方向的压力箭头改为对齐过中心 M 的轴线，重力箭头缩短，避免和底面箭头重叠
+- 视频地址版本号改为 `20261106d`
+
+Why: 用户发现箭头没有对齐，这是画图时位置取得不准，不是物理含义。
+
+Validation: `./scripts/validate-mkdocs.sh` 通过；1080p 抽帧确认箭头对齐，线上文件大小与本地一致。
+
 ## 2026-11-06 — 流体力学：三段新动画加背景音乐和音效
 
 Scope: `docs/major/foundation/fluid-mechanics/videos/`（`euler-equation.mp4`、`pitot-venturi.mp4`、`poiseuille-flow.mp4`）、`index.md` 的视频地址版本号

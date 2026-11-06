@@ -1524,7 +1524,7 @@ $$
 动画从“定常流动里质点为什么还在加速”讲起，重点看**压差力的来历**和**加速度的两个来源**。英文配音，配中英字幕，约 4 分钟。配音由开源模型 Fish Audio S2 Pro 生成。
 
 <video controls preload="metadata" playsinline poster="imgs/euler-equation-video-poster.jpg?v=20261106" style="width:100%;border-radius:8px">
-  <source src="videos/euler-equation.mp4?v=20261106c" type="video/mp4">
+  <source src="videos/euler-equation.mp4?v=20261106d" type="video/mp4">
   你的浏览器不支持视频播放，可以<a href="videos/euler-equation.mp4">下载后观看</a>。
 </video>
 
