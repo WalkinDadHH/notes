@@ -1,5 +1,17 @@
 # Maintenance Log
 
+## 2026-11-06 — 流体力学：动画配乐改回纯电子并调低音量
+
+Scope: `docs/major/foundation/fluid-mechanics/videos/`（三段新动画）、视频地址版本号
+
+Changed:
+- 去掉钢琴，配乐改回程序合成的纯电子氛围音乐，音量降低 5 dB；音效不变
+- 视频地址版本号改为 `20261106e`
+
+Why: 用户觉得钢琴不适配，背景音乐还可以再小一点。
+
+Validation: `./scripts/validate-mkdocs.sh` 通过；线上文件大小与本地一致。这版音量未试听。
+
 ## 2026-11-06 — 流体力学：修正欧拉动画的压力箭头
 
 Scope: `docs/major/foundation/fluid-mechanics/videos/euler-equation.mp4`、视频地址版本号
