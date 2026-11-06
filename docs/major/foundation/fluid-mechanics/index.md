@@ -1765,8 +1765,8 @@ $\alpha$ 是**动能修正系数**：截面速度不均匀时，用平均流速�
 
 动画把两个推导连着走一遍，重点看**滞止点**、**U 形管的等压面**和**伯努利加连续性的联立**。英文配音，配中英字幕，约 4 分钟。配音由开源模型 Fish Audio S2 Pro 生成。
 
-<video controls preload="metadata" playsinline poster="imgs/pitot-venturi-video-poster.jpg?v=20261106" style="width:100%;border-radius:8px">
-  <source src="videos/pitot-venturi.mp4?v=20261106" type="video/mp4">
+<video controls preload="metadata" playsinline poster="imgs/pitot-venturi-video-poster.jpg?v=20261106b" style="width:100%;border-radius:8px">
+  <source src="videos/pitot-venturi.mp4?v=20261106b" type="video/mp4">
   你的浏览器不支持视频播放，可以<a href="videos/pitot-venturi.mp4">下载后观看</a>。
 </video>
 

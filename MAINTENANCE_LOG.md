@@ -1,5 +1,18 @@
 # Maintenance Log
 
+## 2026-11-06 — 流体力学：修正毕托管和文丘里管动画的测压结构
+
+Scope: `docs/major/foundation/fluid-mechanics/videos/pitot-venturi.mp4`、对应封面和地址版本号
+
+Changed:
+- 毕托管改成头部开口的弯管，静压直管停在管壁并开孔，不再伸入管内
+- 文丘里管两个测压点的管壁开口，U 形管与管内连通
+- 视频和封面地址版本号改为 `20261106b`；旁白和字幕未变
+
+Why: 用户看片后指出原图管头封闭、管壁没有开口，测不到压强。
+
+Validation: `./scripts/validate-mkdocs.sh` 通过；1080p 缩略图目视确认三处结构，各场景时长误差 ≤ 0.02 秒。
+
 ## 2026-11-06 — 流体力学：三段推导动画和层流修正系数
 
 Scope: `docs/major/foundation/fluid-mechanics/`、`docs/changelog.md`
