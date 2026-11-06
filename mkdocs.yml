@@ -1,4 +1,5 @@
 site_name: WalkinDadHH's Notebook
+site_url: https://walkindadhh.github.io/notes/
 site_description: 能环专业学习笔记，愿对学弟学妹有所帮助
 site_author: WalkinDadHH
 docs_dir: docs
@@ -46,7 +47,7 @@ plugins:
       lang:
         - zh
         - en
-      separator: '[\s\-\.]+'
+      separator: '[\s\u200b\-\.]+'
 
 markdown_extensions:
   - abbr
@@ -118,6 +119,7 @@ nav:
       - 工程力学: major/foundation/engineering-mechanics.md
       - 工程热力学（甲）: major/foundation/thermodynamics/index.md
       - 工程流体力学（甲）Ⅰ: major/foundation/fluid-mechanics/index.md
+      - 能源与环境系统工程概论: major/foundation/energy-environment/index.md
   - 笔记:
     - notes/index.md
     - 示例笔记: notes/example.md

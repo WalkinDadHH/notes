@@ -779,6 +779,33 @@ html:has(> body[data-md-color-scheme="slate"]) {
   fill: var(--site-seal);
 }
 
+.md-typeset .home-hero__caption {
+  display: block;
+  margin-top: .3em;
+  color: var(--md-default-fg-color--lighter);
+  font-family: var(--md-code-font);
+  font-size: .68em;
+  font-style: italic;
+  letter-spacing: .04em;
+  text-align: right;
+}
+
+/* 题词后的闲章 */
+.md-typeset .home-seal {
+  display: inline-grid;
+  place-items: center;
+  width: 1.35em;
+  height: 1.35em;
+  margin-left: .55em;
+  border-radius: .12em;
+  color: var(--site-tag-must-ink);
+  font-size: .62em;
+  line-height: 1;
+  vertical-align: .18em;
+  background-color: var(--site-tag-must);
+  transform: rotate(-4deg);
+}
+
 /* 首屏入口 */
 .md-typeset .home-links {
   display: flex;
@@ -891,6 +918,90 @@ html:has(> body[data-md-color-scheme="slate"]) {
   }
 }
 
+/* 长文阅读进度 */
+.reading-progress {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background-color: #e0714f;
+  transform: scaleX(0);
+  transform-origin: left;
+  pointer-events: none;
+}
+
+/* 项目交互网页 */
+.md-typeset .project-demo {
+  display: block;
+  width: 100%;
+  height: min(78vh, 42rem);
+  border: 1px solid var(--site-hairline);
+  border-radius: .3rem;
+  background-color: var(--site-surface);
+}
+
+/* 404：驻点 */
+.md-typeset .stagnation {
+  max-width: 30rem;
+  margin: 3rem auto;
+  color: var(--site-indigo);
+  text-align: center;
+}
+
+.md-typeset .stagnation svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1.6rem;
+}
+
+.md-typeset .stagnation__body {
+  fill: var(--site-sunken);
+  stroke: var(--site-ink-soft);
+}
+
+.md-typeset .stagnation__point {
+  fill: var(--site-seal);
+}
+
+.md-typeset .stagnation h1 {
+  margin-bottom: .3em;
+  font-size: 2.6em;
+  letter-spacing: .08em;
+}
+
+.md-typeset .stagnation p {
+  color: var(--site-ink-soft);
+}
+
+/* 不起眼的小细节 */
+.md-copyright,
+.md-skip {
+  font-size: .7rem;
+}
+
+.md-search__input {
+  caret-color: #e0714f;
+}
+
+.md-typeset :is(h2, h3, h4)::before {
+  transition: color 200ms;
+}
+
+.md-typeset :is(h3, h4):hover::before {
+  color: var(--site-seal);
+}
+
+.md-typeset :is(p, li) > a:not(.md-button) {
+  background: linear-gradient(currentcolor, currentcolor) left bottom / 0 1px no-repeat;
+  transition: background-size 220ms ease-out, color 150ms;
+}
+
+.md-typeset :is(p, li) > a:not(.md-button):hover {
+  background-size: 100% 1px;
+}
+
 /* 字数和阅读时长 */
 .md-typeset .page-meta {
   margin: -.9em 0 1.4em;
@@ -926,6 +1037,24 @@ html:has(> body[data-md-color-scheme="slate"]) {
     animation: site-rise 500ms ease-out 450ms both;
   }
 
+  .md-typeset .home-seal {
+    animation: site-stamp 450ms cubic-bezier(.22, 1, .36, 1) 1.1s both;
+  }
+
+  .md-typeset .stagnation__point {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: site-pulse 2.8s ease-in-out infinite;
+  }
+
+  .md-header__option .md-header__button svg {
+    transition: transform 400ms cubic-bezier(.22, 1, .36, 1);
+  }
+
+  .md-header__option .md-header__button:hover svg {
+    transform: rotate(40deg);
+  }
+
   .md-typeset .home-links ~ .grid.cards > ul > li {
     animation: site-rise 500ms ease-out both;
   }
@@ -954,6 +1083,14 @@ html:has(> body[data-md-color-scheme="slate"]) {
   .md-typeset .grid.cards a .twemoji {
     transition: none;
   }
+}
+
+@keyframes site-stamp {
+  from { opacity: 0; transform: rotate(-4deg) scale(1.7); }
+}
+
+@keyframes site-pulse {
+  50% { opacity: .35; transform: scale(.7); }
 }
 
 @keyframes site-draw {
