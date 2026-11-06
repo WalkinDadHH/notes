@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" role="img" aria-labelledby="title desc">
+  <title id="title">同心圆筒间隙中的往复活塞</title>
+  <desc id="desc">活塞在静止圆筒内往复移动，侧面与筒壁间的薄油膜形成近似线性的速度分布。活塞速度随时间变化。</desc>
+  <defs>
+    <style>
+      .label{font:20px "Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#263344}
+      .small{font:17px "Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#263344}
+      .formula{font:italic 22px Georgia,serif;fill:#263344}
+      .wall{fill:#ced9e6;stroke:#60758b;stroke-width:2}
+      .piston{fill:#f2b576;stroke:#a75824;stroke-width:2}
+      .oil{fill:#eaf4f8;stroke:#2585a7;stroke-width:1}
+      .arrow{stroke:#bd5627;stroke-width:3;fill:none;marker-end:url(#head)}
+    </style>
+    <marker id="head" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#bd5627"/></marker>
+  </defs>
+  <rect x="1" y="1" width="958" height="358" rx="18" fill="#f8fafc" stroke="#d9e2eb" stroke-width="2"/>
+  <text x="40" y="43" class="label">侧面剖面：活塞运动，圆筒壁静止</text>
+  <rect x="82" y="105" width="640" height="25" rx="3" class="wall"/>
+  <rect x="82" y="265" width="640" height="25" rx="3" class="wall"/>
+  <rect x="285" y="130" width="190" height="135" class="oil"/>
+  <rect x="290" y="143" width="180" height="109" rx="4" class="piston"/>
+  <rect x="470" y="164" width="230" height="67" rx="24" class="piston"/>
+  <path d="M366 150 H463" class="arrow"/>
+  <text x="330" y="122" class="formula">v(t)</text>
+  <path d="M483 134 V141" stroke="#bd5627" stroke-width="2" marker-start="url(#head)" marker-end="url(#head)"/>
+  <text x="493" y="145" class="formula">δ</text>
+  <text x="323" y="207" class="small">活塞</text>
+  <text x="536" y="204" class="small">活塞杆</text>
+  <text x="120" y="158" class="small">静止圆筒壁</text>
+  <text x="110" y="253" class="small">薄油膜：速度从活塞速度近似线性降至 0</text>
+  <path d="M795 236 C850 195 850 126 795 88" class="arrow"/>
+  <text x="786" y="270" class="formula">x = a sin(ωt)</text>
+  <text x="786" y="310" class="formula">v = aω cos(ωt)</text>
+  <text x="40" y="335" class="formula">侧面积 A = πdL　　平均摩擦功率：P̄ = μA⟨v²⟩/δ</text>
+</svg>

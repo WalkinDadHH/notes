@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" role="img" aria-labelledby="title desc">
+  <title id="title">倾斜平面上的静水总压力</title>
+  <desc id="desc">平面与水平液面夹角 θ，其延长线与液面交于 O。y 轴沿平面向下，形心 C 的坐标为 yC、深度为 hC，压力中心 D 的坐标为 yD，位于形心下方。压强垂直作用于平面，随深度线性增大。</desc>
+  <defs>
+    <style>
+      .label{font:20px "Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#263344}
+      .formula{font:italic 22px Georgia,serif;fill:#263344}
+      .water{fill:#dcebf7}
+      .surface{stroke:#3d6b93;stroke-width:3}
+      .gate{stroke:#a75824;stroke-width:9;stroke-linecap:round}
+      .guide{stroke:#788a9c;stroke-width:2;stroke-dasharray:6 6;fill:none}
+      .dim{stroke:#4d5f72;stroke-width:1.6;fill:none}
+      .press{stroke:#3d6b93;stroke-width:2.4;fill:none;marker-end:url(#blue)}
+      .force{stroke:#bd5627;stroke-width:4;fill:none;marker-end:url(#red)}
+    </style>
+    <marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#3d6b93"/></marker>
+    <marker id="red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#bd5627"/></marker>
+  </defs>
+  <rect x="1" y="1" width="958" height="438" rx="18" fill="#f8fafc" stroke="#d9e2eb" stroke-width="2"/>
+  <!-- water region above the plate line -->
+  <path d="M90 80 L760 80 L301 401 L90 401 Z" class="water"/>
+  <line x1="90" y1="80" x2="890" y2="80" class="surface"/>
+  <path d="M150 62 h28 l-14 14 Z" fill="#3d6b93"/>
+  <text x="190" y="66" class="label">自由液面</text>
+  <text x="290" y="66" class="formula">p = pₐ</text>
+  <!-- plate extension and gate -->
+  <line x1="760" y1="80" x2="301" y2="401" class="guide"/>
+  <line x1="547" y1="229" x2="334" y2="378" class="gate"/>
+  <circle cx="760" cy="80" r="5" fill="#263344"/>
+  <text x="768" y="70" class="formula">O</text>
+  <!-- angle -->
+  <path d="M690 80 A70 70 0 0 0 703 120" class="dim"/>
+  <text x="660" y="112" class="formula">θ</text>
+  <!-- pressure arrows, length grows with depth -->
+  <line x1="516" y1="194" x2="534" y2="220" class="press"/>
+  <line x1="463" y1="230" x2="485" y2="262" class="press"/>
+  <line x1="409" y1="263" x2="436" y2="301" class="press"/>
+  <line x1="356" y1="299" x2="387" y2="344" class="press"/>
+  <line x1="313" y1="327" x2="347" y2="376" class="press"/>
+  <!-- depth of centroid -->
+  <line x1="441" y1="80" x2="441" y2="304" class="dim"/>
+  <path d="M435 92 l6 -12 l6 12" class="dim"/>
+  <text x="400" y="190" class="formula">h</text><text x="413" y="196" class="formula" style="font-size:15px">C</text>
+  <!-- centroid C and pressure centre D -->
+  <circle cx="441" cy="304" r="6" fill="#263344"/>
+  <text x="455" y="300" class="formula">C</text>
+  <circle cx="424" cy="315" r="6" fill="#bd5627"/>
+  <line x1="372" y1="241" x2="420" y2="309" class="force"/>
+  <text x="350" y="236" class="formula" style="fill:#bd5627">F</text>
+  <text x="398" y="348" class="formula" style="fill:#bd5627">D</text>
+  <!-- dimension yC -->
+  <line x1="786" y1="117" x2="467" y2="341" class="dim"/>
+  <line x1="770" y1="94" x2="796" y2="131" class="dim"/>
+  <line x1="451" y1="318" x2="477" y2="355" class="dim"/>
+  <text x="640" y="248" class="formula">y</text><text x="652" y="254" class="formula" style="font-size:15px">C</text>
+  <!-- dimension yD -->
+  <line x1="806" y1="146" x2="470" y2="381" class="dim"/>
+  <line x1="800" y1="137" x2="812" y2="155" class="dim"/>
+  <line x1="464" y1="372" x2="476" y2="390" class="dim"/>
+  <text x="672" y="286" class="formula">y</text><text x="684" y="292" class="formula" style="font-size:15px">D</text>
+  <!-- y axis label -->
+  <text x="282" y="420" class="formula">y</text>
+  <text x="600" y="412" class="label">大气</text>
+  <text x="120" y="250" class="label">液体 ρ</text>
+</svg>
