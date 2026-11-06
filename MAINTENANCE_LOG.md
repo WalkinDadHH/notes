@@ -1,5 +1,18 @@
 # Maintenance Log
 
+## 2026-11-06 — 流体力学：重写圆管层流动画的压差和达西公式段
+
+Scope: `docs/major/foundation/fluid-mechanics/videos/poiseuille-flow.mp4`、对应封面、`index.md` 的视频说明和地址版本号
+
+Changed:
+- 受力平衡段分开讲两端压力，画出合力，再得到 $\Delta p\,\pi r^2$
+- 沿程损失段从黏性伯努利方程推出 $h_f=\Delta p/(\rho g)$，把平均流速公式放进画面变形，再按手写笔记思路推出达西公式和 $\lambda=64/\mathrm{Re}$
+- 视频由 3:59 变为 4:53，地址版本号改为 `20261106b`
+
+Why: 用户看片后指出“往前推”和“白送的结论”没讲清，$\Delta p$ 太抽象，达西公式应推导而不是直接给出。
+
+Validation: `./scripts/validate-mkdocs.sh` 通过；新增配音经对齐、指标和听写比对检查，未人工试听；1080p 缩略图和抽帧目视确认，各场景时长误差 ≤ 0.01 秒。
+
 ## 2026-11-06 — 流体力学：修正毕托管和文丘里管动画的测压结构
 
 Scope: `docs/major/foundation/fluid-mechanics/videos/pitot-venturi.mp4`、对应封面和地址版本号
