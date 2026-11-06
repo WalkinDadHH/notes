@@ -887,7 +887,7 @@ html:has(> body[data-md-color-scheme="slate"]) {
 
 @media (hover: hover) {
   .md-typeset .friend-links:hover a.friend-link:not(:hover) {
-    opacity: .72;
+    opacity: .8;
   }
 }
 
@@ -916,6 +916,10 @@ html:has(> body[data-md-color-scheme="slate"]) {
 
   .md-typeset .home-hero .home-hero__body {
     animation: site-fade 800ms ease-out both;
+  }
+
+  .md-typeset .home-hero .home-hero__tracer {
+    animation: site-fade 800ms ease-out 1.2s both;
   }
 
   .md-typeset .home-links {
