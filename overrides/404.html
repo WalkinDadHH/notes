@@ -1,0 +1,15 @@
+{% extends "main.html" %}
+{% block content %}
+  <div class="stagnation">
+    <svg viewBox="0 0 480 120" fill="none" aria-hidden="true">
+      <path d="M0 60H356" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 5"/>
+      <path d="M0 34C200 34 300 30 372 12" stroke="currentColor" opacity=".45"/>
+      <path d="M0 86C200 86 300 90 372 108" stroke="currentColor" opacity=".45"/>
+      <circle class="stagnation__body" cx="420" cy="60" r="60"/>
+      <circle class="stagnation__point" cx="360" cy="60" r="4.5"/>
+    </svg>
+    <h1>404</h1>
+    <p>此处是驻点，流速为零。这一页可能改了路径，也可能还没写。</p>
+    <p><a href="{{ nav.homepage.url | url }}">顺着流线回首页</a></p>
+  </div>
+{% endblock %}

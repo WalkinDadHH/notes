@@ -1,5 +1,382 @@
 # Maintenance Log
 
+## 2026-11-06 — 能源与环境系统工程概论、中文搜索和细节打磨
+
+Scope: `docs/major/foundation/energy-environment/`、`docs/major/foundation/index.md`、`docs/index.md`、`docs/javascripts/`、`docs/stylesheets/extra.css`、`overrides/404.html`、`mkdocs.yml`、`requirements.txt`、`CLAUDE.md`、`.claude/commands/notes-guide.md`
+
+Changed:
+- 新增能源与环境系统工程概论页面：敦煌离网生态监测站设计说明书、海报、答辩 PPT、交互网页，以及游泳馆 PVT 课程论文
+- 公开文件去掉成员姓名、学号、电话和邮箱，正文不变；不收录课件、文献 PDF 和代码
+- 安装 `jieba` 并修改搜索分隔符，修复中文搜索；搜索结果里的公式改为渲染显示
+- 修复 MathJax 首次加载报错；公式横滑提示改用 `ResizeObserver` 重新判断
+- 补 `site_url`，404 页在深层路径下也能加载资源；`mkdocs serve` 地址因此带 `/notes/`
+- 推荐阅读加入工程流体力学；首页增加流函数小注和闲章；长文增加朱砂阅读进度线；404 页改为驻点主题
+- `notes-guide.md` 增加公开前隐私检查
+
+Why: 用户要求解决遗留问题、让站点“骚气但低调”、把流体力学放进推荐阅读，并收录能环概的重要报告。
+
+Validation: `./scripts/validate-mkdocs.sh` 通过；`pdftotext` 和全站文本扫描未发现姓名、学号、电话；说明书与原版对比只有作者栏不同。Chrome 实测中文搜索和公式渲染；Playwright WebKit 模拟 iPhone 13 和桌面 Safari。机器没有 Xcode，未在 iOS 模拟器或真机上测试。检测器补齐依赖后 16 条提示，已修页脚小字，其余属于主题内部或有意的宣纸底色。
+
+## 2026-11-06 — 全站配色、首页动效和友链
+
+Scope: `docs/stylesheets/extra.css`、`docs/index.md`、`docs/friends.md`、`docs/_includes/friends.html`、`docs/javascripts/mathjax.js`、`docs/javascripts/site.js`、`overrides/partials/comments.html`、`mkdocs.yml`、`CLAUDE.md`
+
+Changed:
+- 全站配色改为宣纸与矿物颜料，浅色、深色分别配色；`primary`、`accent` 改为 `custom`
+- 红队测试 15 条中修复配色和交互问题：提示框与折叠框语义色、手机抽屉图标、深色按钮、深色图片、搜索建议重影、焦点环、考情标签权重、代码行号、导航状态
+- Giscus 评论改为跟随站内深浅色切换
+- 放不下的公式由脚本标记，边缘显示阴影提示
+- 导航箭头改用边框绘制，并去掉主题的圆形 hover 底
+- 首页加入流线绘入动画和按势流速度运动的示踪点，首屏增加入口行；动效遵守减弱动效设置，长文页不加入场动画
+- 新增 GZTime's Blog、咸鱼暄的代码空间；友链改为印章卡片，友链页和首页共用 `docs/_includes/friends.html`，导航移到首页之后
+- 页面标题下显示字数和预计阅读时长
+
+Why: 用户要求提升配色和配图质感、解释导航小圆球、借鉴三个站的动效和写法，并让友链更显眼。
+
+Validation: `./scripts/validate-mkdocs.sh` 通过；Playwright 实测 1280 和 375 宽度、浅色和深色、动画完成状态、减弱动效和页面横向溢出。未在 iOS Safari 真机上测试。检测器因缺依赖退回正则模式，结果不完整。
+
+## 2026-11-06 — 流体力学：标题考情标签和排版优化
+
+Scope: `docs/major/foundation/fluid-mechanics/index.md`、`docs/stylesheets/extra.css`、`.claude/commands/notes-guide.md`、`CLAUDE.md`
+
+Changed:
+- 71 个正文标题下新增考试可能性、重要程度、掌握程度标签，不考的标题变灰
+- 新增标签说明；章节概览增加考试可能性和重要程度两列
+- 页面顺序改为章节概览、考前指南、公式速查、手写讲义、回忆卷，考前内容排到最前
+- 全站 H2–H4 增加层级间距，H2 加分隔线；图注统一样式；手机上过宽的公式改为框内滑动，不再被裁切
+- 约定文档补充考情标签写法
+
+Why: 用户要求在正文标题标注考试可能性、重要程度和掌握程度，并整体优化排版
+
+Validation: `./scripts/validate-mkdocs.sh` 通过，内部链接无断链；浏览器检查桌面 1280 宽和手机 375 宽，手机无页面横向溢出，行内公式无裁切
+
+## 2026-11-05 — 流体力学：新增局部损失详解例题
+
+Scope: `docs/major/foundation/fluid-mechanics/index.md`（第四章）
+
+Changed:
+- 局部损失一节新增三道逐步详解例题：喷向大气、两水箱之间、突然扩大的串联管路
+- 新增喷向大气与进入大容器的对比表
+- 习题 6-35、6-38、6-25、6-17 改为逐步解答
+
+Why: 用户反馈原解答步骤太略，看不懂；局部损失可能在网课中漏看
+
+Validation: 全部数值用脚本验算；`./scripts/validate-mkdocs.sh` 通过，检查公式和内部链接
+
+## 2026-11-05 — 流体力学：新增流量类补充习题
+
+Scope: `docs/major/foundation/fluid-mechanics/index.md`（第四章）
+
+Changed:
+- 新增习题 6-35、6-38、6-25、6-17 的完整解答
+- 管路练习顺序加入这组习题
+- 标注 6-38 书上喉部流速疑似印刷错误
+
+Why: 用户提供四道管内流动习题和 6-17 的原图，要求放进讲义
+
+Validation: 四题数值用脚本验算；`./scripts/validate-mkdocs.sh` 通过，检查公式和内部链接
+
+## 2026-11-05 — 流体力学：新增两道 Π 定理作业题
+
+Scope: `docs/major/foundation/fluid-mechanics/index.md`（第五章、考前指南链接）
+
+Changed:
+- 第五章新增「$\Pi$ 定理作业题」：球的运动阻力、圆球沉降速度，题号标明为老版本书
+- 优先级表的作业说明改为链接到这两题
+
+Why: 范老师说考试里会有类似题，用户要求放进讲义
+
+Validation: `./scripts/validate-mkdocs.sh` 通过，检查公式和内部链接；6-6 的结论式在用户照片里未拍全，表达式为自行推出
+
+## 2026-11-05 — 流体力学：按全部课程字幕校正重点
+
+Scope: `docs/major/foundation/fluid-mechanics/index.md`（考前指南、公式速查、第一、三、四章标注和填空速记）
+
+Changed:
+- $\Pi$ 定理上调为很可能有一题，加入证明题清单第一组和计算题优先项
+- 哈根–泊肃叶公式改为要记住（俞老师 10 月 22 日说必考），修正此前“不用死背”的说法
+- 边界层确认不考；新增混合长度、对数律、黏性底层厚度公式、相似准则为不考或不用背
+- 填空速记补充文丘里管写法、水的运动黏度量级、$h_f$ 与 $V$ 的关系
+
+Why: 用户提供 9 节课字幕，要求分析重点；边界层是否考由用户确认
+
+Validation: 关键句回到字幕和时间戳核对；`./scripts/validate-mkdocs.sh` 通过，检查内部链接和新增公式
+
+## 2026-11-05 — 流体力学：按最后两节课更新考试范围
+
+Scope: `docs/major/foundation/fluid-mechanics/index.md`（课程信息、考前指南、公式速查、第一、三、四章标注）
+
+Changed:
+- 题型改为填空 10 题 40 分（每题 2 空）、证明 2 题、问答 2 题、计算 2 题
+- 重写优先级表，新增「概念翻译」和明确不考清单
+- 证明题清单调整：两平板降为看懂，极坐标移出
+- 迭代法、水力直径、边界层、环路管网、极坐标等章节加「本次不考」提示，填空速记同步标注
+
+Why: 用户提供 11-03、11-05 两节课字幕；俞老师 11-03 更新题型并划定不考内容
+
+Validation: 关键句回到带时间戳的字幕核对；`./scripts/validate-mkdocs.sh` 通过；检查新增内容的公式与内部链接
+
+## 2026-11-05 — 流体力学：重做散度动画
+
+Scope: `docs/major/foundation/fluid-mechanics/videos/divergence-explained.mp4`、`imgs/divergence-video-poster.jpg`、`index.md`（第三章说明文字）
+
+Changed:
+- 动画用 Manim 重做，1080p 60 帧，约 3 分 40 秒：方块谜题、拆符号、一维拉伸、面积小角略去、五种流动、不可压缩与收缩管、$\nabla\cdot\boldsymbol V$ 和 $\boldsymbol V\cdot\nabla$ 的区别
+- 配音改为 Fish Audio S2 Pro 英文配音，配中英字幕和术语翻译
+- 视频与封面地址加版本参数，避免浏览器继续用缓存的旧视频
+- 制作流程提炼为全局 skill `3b1b-explainer-video`，环境和模型装在 `~/.local/share/explainer-video`，不在本仓库
+
+Why: 用户要求散度动画达到伯努利新版的 3b1b 标准
+
+Validation: 词级对齐无不符，听写比对 4 段标记均为写法差异，各场景时长误差 ≤ 0.01 秒，成片逐场景抽帧检查；`./scripts/validate-mkdocs.sh` 通过。声音本身未人工试听
+
+## 2026-11-05 — 流体力学：重写散度讲解
+
+Scope: `docs/major/foundation/fluid-mechanics/index.md`（第三章「散度：动画讲解与证明」）
+
+Changed:
+- 散度讲解改为四步：拆开符号、看每一项的拉伸率、三个方向相加、代入速度场
+- 新增剪切流为何散度为零、与 $V_1A_1=V_2A_2$ 的联系，以及 $\nabla\cdot\boldsymbol V$、$\boldsymbol V\cdot\nabla$、$\nabla p$ 对照表
+
+Why: 用户问倒三角加 V 到底是什么意思，要求散度部分按同样的讲法重做
+
+Validation: `./scripts/validate-mkdocs.sh` 通过；散度小节输出 HTML 无裸 `$`，警告框内表格正常渲染
+
+## 2026-11-05 — 流体力学：替换伯努利推导动画
+
+Scope: `docs/major/foundation/fluid-mechanics/videos/bernoulli-derivation.mp4`、`imgs/bernoulli-video-poster.jpg`、`index.md`（第三章说明文字）
+
+Changed:
+- 动画改用 Manim 重做：新增开头谜题和结尾能量条，公式连续变形，黑底 60 帧
+- 配音改为 Fish Audio S2 Pro 英文配音，配中英字幕和术语翻译
+- 视频与封面地址加版本参数，避免浏览器继续用缓存的旧视频
+
+Why: 用户要求更接近 3b1b 的讲解手法，并换用开源声音模型；个人非商用笔记站
+
+Validation: `./scripts/validate-mkdocs.sh` 通过；视频 287.95 s，H.264 + AAC，1080p 60 帧；35 段配音语音识别回查无标记；10 个场景时长误差不超过 0.02 s
+
+## 2026-11-05 — 流体力学：按复习课调整考点优先级
+
+Scope: `docs/major/foundation/fluid-mechanics/index.md`（考前指南、公式速查、第二至四章标注）
+
+Changed:
+- 新增「复习课划的重点」表；证明题清单重排为三组；计算题预测改为以管路求流量和伯努利 + 连续性为主
+- 新增物质导数必考卡片和管路流量题提示
+- 标注莫迪图不考、哈根–泊肃叶公式不用死背、静力学第五到八节看看就行、动量淡化、极坐标题看懂即可
+
+Why: 用户提供 2026-11-05 复习课笔记和课后答疑内容，确认后要求调整
+
+Validation: `./scripts/validate-mkdocs.sh` 通过；输出 HTML 无裸 `$`，页内锚点无断链
+
+## 2026-11-05 — 流体力学：新增伯努利推导动画和复习课版证明
+
+Scope: `docs/major/foundation/fluid-mechanics/index.md`（第三章伯努利方程、欧拉方程）、`videos/bernoulli-derivation.mp4`、`imgs/bernoulli-video-poster.jpg`
+
+Changed:
+- 新增配音动画，讲清沿流线取微元、压强项泰勒展开、重力投影 $\cos\theta$ 和五个条件
+- 新增复习课版证明卡片，保留手写稿版并改名「流管动量方程」；说明两版 $\theta$ 取法不同
+- 欧拉方程证明加指向说明的链接
+
+Why: 用户看不懂压强项和重力投影，老师复习课要求这段推导必须走一遍
+
+Validation: `./scripts/validate-mkdocs.sh` 通过；新增段落无裸 `$`，admonition 标题公式正常，旧锚点 `#proof-bernoulli` 保留；视频 357.75 s，H.264 + AAC，32 段配音起点与画面节拍误差不超过 0.04 s
+
+## 2026-11-04 — 流体力学：修复手写回忆卷原图打不开
+
+Scope: `docs/major/foundation/fluid-mechanics/index.md`（甲Ⅰ手写回忆卷）
+
+Changed:
+- `<details>` 内的 Markdown 图片语法改为 `<img>`。原写法在 raw HTML 块内不被转换，页面只显示 `![...](...)` 文字，图片文件本身一直正常发布
+
+Why: CC98 读者反馈回忆卷图片打不开
+
+Note: raw HTML 块（如 `<details>`）内不要写 Markdown 语法，用 HTML 标签，或给标签加 `markdown` 属性
+
+Validation: `./scripts/validate-mkdocs.sh` 通过、无警告；全站输出 HTML 未发现残留的 Markdown 图片语法；浏览器展开后图片加载正常（1439×1919）
+
+## 2026-11-04 — 流体力学：新增第三、四章作业例题卡片
+
+Scope: `docs/major/foundation/fluid-mechanics/index.md`（新增「第三章作业例题」「第四章作业例题」）
+
+Changed:
+- 第三章新增作业 4-13、4-15、4-18、4-30、4-34 卡片（4-34 标注提纲外）
+- 第四章新增作业 6-7、6-9、6-14 卡片；6-14 注明书后答案单位有误
+
+Why: 用户提供作业，要求整理进笔记
+
+Validation: `./scripts/validate-mkdocs.sh` 通过、无警告；输出 HTML 无裸 `$`、无断链；各题数值已重算核对
+
+## 2026-11-04 — 流体力学：强调伯努利方程的压强基准
+
+Scope: `docs/major/foundation/fluid-mechanics/index.md`（第三章伯努利应用、第三章填空速记）
+
+Changed:
+- 「伯努利计算题四步」后新增警示框：表压与绝对压强都可用但两端须一致，分情形对照表，混用的后果和答题写法
+- 第三章填空速记补一条
+
+Why: 用户认为此点重要，要求写入笔记
+
+Validation: `./scripts/validate-mkdocs.sh` 通过、无警告；输出 HTML 无裸 `$`、无断链
+
+## 2026-11-04 — 流体力学：补充总流伯努利方程的适用条件
+
+Scope: `docs/major/foundation/fluid-mechanics/index.md`（第四章黏性伯努利方程、公式速查、第四章填空速记）
+
+Changed:
+- 新增总流的含义、动能修正系数 $\alpha$ 的来历及定义式
+- 新增适用条件提示框（定常、不可压缩、质量力只有重力、缓变流断面、$\alpha$ 取值）和方程意义；说明缓变流对选断面的要求
+- 公式速查第四章和第四章填空速记同步补充
+
+Why: 用户要求把课件上的适用条件加入笔记
+
+Validation: `./scripts/validate-mkdocs.sh` 通过、无警告；输出 HTML 无裸 `$`、无断链
+
+## 2026-11-04 — 流体力学：补充水头的几何意义与叫法差异
+
+Scope: `docs/major/foundation/fluid-mechanics/index.md`（第三章伯努利方程、第三章填空速记）
+
+Changed:
+- 三个水头表增加「几何意义」列；说明水头单位为米的原因，以及能量形式与水头形式的区别
+- 新增警示框：课件教材把 $p/\rho g$ 称测压管水头，手写稿把 $z+p/\rho g$ 称测压管水头，给出答题写法
+- 新增有旋与无旋流动的总水头说明；第三章填空速记补一条
+
+Why: 用户看到课件叫法与笔记不一致，要求补入
+
+Validation: `./scripts/validate-mkdocs.sh` 通过、无警告；输出 HTML 无裸 `$`、无断链
+
+## 2026-11-04 — 流体力学：新增散度配音动画、证明题与练习
+
+Scope: `docs/major/foundation/fluid-mechanics/index.md`（第三章、证明题清单、提纲对照表、公式速查、第五章标题）、`docs/major/foundation/fluid-mechanics/videos/divergence-explained.mp4`（新增，约 12.6 MB）、`docs/major/foundation/fluid-mechanics/imgs/divergence-video-poster.jpg`（新增）
+
+Changed:
+- 第三章新增「散度：动画讲解与证明」：内嵌 149 秒配音视频、五种流动对照表、证明题（散度 = 相对体积变化率，并推出不可压缩时 $\nabla\cdot\boldsymbol V=0$）、速度场判断练习
+- 散度提示框、证明题清单、提纲对照表、公式速查第三章加入链接或条目
+- 第五章标题 `$\Pi$ 定理` 改为 `Π 定理`，修复右侧目录显示 `\(\Pi\)` 的问题
+- 新建 `videos/` 目录存放页面内嵌视频；`index.md` 页面的 `<video>` 用相对路径 `videos/文件.mp4`
+
+Why: 用户看不懂散度，要求做视频辅助理解、配音，并放入笔记
+
+Note: 视频用 matplotlib 画帧、macOS `say`（Tingting）生成旁白、Swift AVFoundation 编码合成，未下载新依赖；旁白与静音先拼成一条连续音轨再合入，避免依赖 mp4 编辑表导致部分浏览器音画错位
+
+Validation: `./scripts/validate-mkdocs.sh` 通过、无警告；输出 HTML 无裸 `$`、无断链；解码成片逐幕核对旁白起止时间；浏览器中视频可播放（149.5 s，1280×720，音频解码正常），公式无 merror
+
+## 2026-11-03 — 流体力学：精简文末资料说明
+
+Scope: `docs/major/foundation/fluid-mechanics/index.md`（「资料说明」节）
+
+Changed:
+- 资料说明只保留到「平面压力部分参考了惯性矩课件。」，删去作业照片、课件截图、自拟题和回忆卷来源的说明
+
+Why: 用户要求
+
+Validation: `./scripts/validate-mkdocs.sh` 构建通过
+
+## 2026-11-03 — 流体力学：角速度统一用小写 ω
+
+Scope: `docs/major/foundation/fluid-mechanics/index.md`
+
+Changed:
+- 旋转容器部分（证明、表压/绝压警示框、体积守恒提示、习题 3-19、公式速查、填空速记）中的 $\Omega$ 全部改为 $\omega$，与第一章转轴、圆盘和各习题一致；符号表合并为一行「$\omega$ 角速度」
+
+Why: 用户反映大写 Ω 表示角速度太抽象，全页统一用小写
+
+Validation: `./scripts/validate-mkdocs.sh` 通过、无警告；输出 HTML 无裸 `$`；源文件中无 `\Omega` 残留
+
+## 2026-11-03 — 流体力学：新增油水分层旋转容器习题 3-19
+
+Scope: `docs/major/foundation/fluid-mechanics/index.md`（第二章旋转容器、公式速查第二章）、`docs/major/foundation/fluid-mechanics/imgs/rotating-oil-water.svg`（新增）
+
+Changed:
+- 习题 3-17 后新增可折叠例题卡片 3-19：物理图景、分界面为何是抛物面（等压面形状与密度无关）、油体积守恒求 $r_1$、求临界转速、从小孔基准沿同种液体逐段推出四点计示压强（分步公式 + 结果表），附分界面压强相等的验算和易错点
+- 新增油水分层旋转容器示意图 SVG
+- 公式速查第二章补「等压面形状与密度无关」一行
+
+Why: 用户要求把该题收进笔记
+
+Validation: `./scripts/validate-mkdocs.sh` 通过、无警告；输出 HTML 无裸 `$`；浏览器中卡片展开后公式无 merror，示意图与提示框正常
+
+## 2026-11-03 — 流体力学：强调旋转液体压强的表压与绝对压强
+
+Scope: `docs/major/foundation/fluid-mechanics/index.md`（第二章旋转容器、习题 3-17、公式速查、第二章填空速记）
+
+Changed:
+- 旋转液面证明后新增警示框：$p_0$ 决定结果是表压还是绝压；四种情形对照表（开口取 $p_a$ / 取 0、密闭有气体、充满无自由液面）；何时用表压（计示压强、外侧为大气的壁面受力）、何时必须用绝压（汽化判断、气体状态方程、外侧非大气）
+- 习题 3-17 第①步注明「计示压强 = 表压」，以及取绝压时常数为 $p_a$
+- 公式速查第二章、第二章填空速记各补一条
+
+Why: 用户指出旋转液体压强公式的表压 / 绝压容易混淆，需要强调
+
+Validation: `./scripts/validate-mkdocs.sh` 通过、无警告；输出 HTML 无裸 `$`
+
+## 2026-11-03 — 流体力学：习题 3-17 补充积分面与压力体解释
+
+Scope: `docs/major/foundation/fluid-mechanics/index.md`（第二章习题 3-17 卡片）
+
+Changed:
+- 第③步后新增提示框：车轮上表面即上箱内表面（型腔顶面）；侧壁、分型面以下为何不产生向上的力；台阶状顶面需分段积分
+- 积分结果后新增提示框：被积高度即到旋转抛物面（假想自由液面）的距离，$F_p$ 等于压力体液重，链接第二章曲面总压力
+
+Why: 用户问为什么在车轮上表面而不是上箱内表面积分
+
+Validation: `./scripts/validate-mkdocs.sh` 通过、无警告；卡片内无裸 `$`，两个提示框正常嵌套
+
+## 2026-11-03 — 流体力学：开头新增分章公式速查表；习题 3-17 讲清积分
+
+Scope: `docs/major/foundation/fluid-mechanics/index.md`、`docs/major/foundation/fluid-mechanics/imgs/rotating-lid-ring.svg`（新增）
+
+Changed:
+- 页首新增「公式速查」：参照工程热力学页的速查写法，用标签页分为符号 / 第一至五章 / 附录，每章按主题分组，表格列「公式｜条件 / 说明｜详见」，链接到正文推导或例题
+- 原「符号速查」并入速查表的「符号」页（补充分组和 $\mu$ 作流量系数的歧义说明）；删除文末「考前一页纸」（内容已被速查表覆盖）
+- 习题 3-17 第④步改写：解释「压强×面积」何时失效（列出三种错误做法的结果），为什么按圆环切分，3 环粗算 865 kN 逼近积分结果 916.5 kN，以及受力 ∝ r³ 的规律；新增圆环微元与 p(r) 分布示意图
+
+Why: 用户看不懂 3-17 为什么要积分；要求每章计算公式速查表放在开头，质量对齐工程热力学页
+
+Validation: `./scripts/validate-mkdocs.sh` 通过、无警告；输出 HTML 无裸 `$`、无断链；浏览器中 7 个标签页正常切换，公式全部渲染（无 merror），例题卡片内嵌提示框与示意图正常显示
+
+## 2026-11-03 — 流体力学：新增离心铸造习题 3-17
+
+Scope: `docs/major/foundation/fluid-mechanics/index.md`（第二章「相对平衡」旋转容器部分）
+
+Changed:
+- 在「旋转容器题的体积守恒」提示后新增可折叠例题卡片：教材习题 3-17 离心铸造车轮，含边缘压强、上箱受力分析表、圆环积分求总压力和螺栓群拉力
+
+Why: 用户看讲解视频时没看懂螺栓群 A–A 的受力；视频板书末尾数值有误（705 kN），按教材答案 905 kN 重算
+
+Validation: `./scripts/validate-mkdocs.sh` 构建通过；输出 HTML 无裸 `$`
+
+## 2026-11-03 — 流体力学讲义改写为期末复习版
+
+Scope: `docs/major/foundation/fluid-mechanics/index.md`（整页改写）、`docs/major/foundation/fluid-mechanics/imgs/plane-surface-force.svg`（新增）、`docs/major/foundation/index.md`（入口说明）
+
+Changed:
+- 章节按《2026–2027 秋〈工程流体力学〉（甲）Ⅰ期末复习提纲》重排为五章：第四章「黏性流体的管内流动」，第五章「量纲分析与相似原理」；可压缩一维流动提纲未列，移到文末附录
+- 新增「考前怎么用这一页」：考试时间与题型分值、证明题清单（10 项，链接到各推导）、提纲 → 本页位置对照表
+- 每章统一为「章节概览 → 定义/必背 → 证明题标准写法 → 例题 → 填空速记」，正文改为口语化解释，减少空泛表述
+- 按老师手写稿补全推导：静压各向同性（楔形微元）、欧拉平衡方程、平面总压力与压力中心（含惯性积、常用截面 $I_C$ 表）、曲面压力体、旋转液面、连续性方程、欧拉方程、积分动量方程、沿流线伯努利方程及六个条件、皮托管/文丘里/虹吸、圆管层流与哈根–泊肃叶、突扩损失、串联管路流量系数、水击、边界层分离
+- 第四章补入课堂 OneNote（6.4–6.8）内容：$\lambda=8\tau_w/\rho V^2$ 的普遍推导、管流三类问题与迭代法（例 6.9、6.11）、水力直径、等效管长、阀门/弯头/突缩/扩压器损失系数、泵功率例题 E6.16、并联例 6.18、三水库问题与管网规律
+- 第一章课件窄缝例题从原第四章移回第一章；删除已过期的「第一次课堂测验速查」
+- 新增文末「考前一页纸」公式表与易混点
+- 新增倾斜平面受压示意图 SVG（据手写稿第 10 页重绘）
+
+Why: 原讲义偏书面、结构按教学指南六章排列，与期末提纲和题型不对应；用户要求「说人话、面向考试」
+
+Note: OneNote `.one` 文件的手写墨迹不能直接读，本次用开源 `one2html`（Rust，`cargo install`，需 `RUSTC_BOOTSTRAP=1`）转成 HTML 后用浏览器渲染截图阅读；Rust 工具链装在 `~/.cargo`
+
+Validation: `./scripts/validate-mkdocs.sh` 通过、无警告；输出 HTML 无裸 `$`、页内锚点无断链；浏览器中 1272 个公式全部由 MathJax 渲染，无 merror
+
+## 2026-11-03 — 流体力学：补全平面静水总压力与压力中心推导
+
+Scope: `docs/major/foundation/fluid-mechanics/index.md`（第二章“平面上的静水总压力”）
+
+Changed:
+- 坐标记号统一为课件图 2-17 的 $l$、$l_C$、$l_D$、$I_m$、$I_C$（原为 $s$、$s_c$、$s_{cp}$、$I_G$）
+- 补全推导：$h=l\sin\alpha$ → 微元力 → 静矩求总压力 → 对 $Om$ 轴取矩得式 (2-54) $l_D=I_m/(l_C A)$ → 平行移轴得 $l_D=l_C+I_C/(l_C A)$
+- 新增竖直矩形闸门 $l_D=2b/3$ 的检验 tip
+
+Why: 课件只给出 (2-54) 的等式链，每一步的来历没有交代
+
+Validation: `./scripts/validate-mkdocs.sh` 构建通过；输出 HTML 中该节无残留裸 `$`
+
 ## 2026-10-30 — 修复 PDF 页面链接路径 + 忽略 .DS_Store
 
 Scope: `docs/physics/optics/interference.md`、`docs/physics/optics/geometrical-optics.md`、`docs/major/foundation/engineering-mechanics.md`、`.gitignore`

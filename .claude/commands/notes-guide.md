@@ -162,6 +162,16 @@ nav:
 | `!!! tip "..."` | 学习技巧、符号辨析、公式用法 |
 | `!!! warning "施工中"` | 未完成章节 |
 
+### 考情标签
+
+临近考试的长文笔记可以在 H2–H4 标题下加一行考情标签，样式在 `docs/stylesheets/extra.css`：
+
+```html
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：会计算</span></div>
+```
+
+可能性类名：`--must`（老师原话必考）、`--high`、`--mid`、`--low`、`--none`（不考）。不考的标题加 `{ .exam-skip }` 变灰。
+
 ---
 
 ## 课程索引页（index.md）规范——Savia 风格
@@ -189,7 +199,13 @@ nav:
 
 - 数学：微积分甲（I）、微积分甲（II）、线性代数、概率论与数理统计
 - 化学：普通化学（乙）
-- 专业：工程力学、工程热力学（甲）
+- 专业：工程力学、工程热力学（甲）、工程流体力学（甲）Ⅰ、能源与环境系统工程概论
+
+---
+
+## 公开前的隐私检查
+
+报告、论文、海报、PPT 放进 `docs/` 前，先去掉姓名、学号、电话、邮箱，并用 `pdftotext` 复查。小组成果还要去掉其他成员的信息。站点使用网名 WalkinDadHH。
 
 ---
 

@@ -16,7 +16,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 pip install -r requirements.txt   # mkdocs、mkdocs-material、pymdown-extensions
-mkdocs serve                       # 本地预览
+mkdocs serve                       # 本地预览，地址带 /notes/ 前缀
 ./scripts/validate-mkdocs.sh       # 校验构建，输出到 .tmp_site_validation/（已 gitignore），不动 site/
 mkdocs build                       # 会刷新被 Git 跟踪的 site/，仅在确实需要时用
 mkdocs gh-deploy --force           # 发布到 gh-pages
@@ -46,6 +46,8 @@ mkdocs gh-deploy --force           # 发布到 gh-pages
 关键约定：
 
 - **Admonition**：`info "章节概览"`、`definition`、`key-point`、`note`、`tip`、`warning "施工中"`。`definition` 和 `key-point` 是在 `docs/stylesheets/extra.css` 里自定义的类型，复用即可，不要另造新类型。
+- **考情标签**：临近考试的长文笔记在标题下加 `exam-tags`，写法见 `notes-guide.md`。
+- **友链**：数据只写在 `docs/_includes/friends.html`，友链页和首页都用 snippet 引入，改这一个文件即可。
 - **插图**（长文笔记）：`<figure markdown="span">` + `![...](imgs/NN-slug.png){ width="90%" }` + `<figcaption>…（图源：课程课件）</figcaption>`；图片按章节号命名（如 `03-carnot-theorem.png`），放在页面同级 `imgs/` 下。
 - **公式**：`pymdownx.arithmatex`（generic 模式）+ MathJax 3，配置在 `docs/javascripts/mathjax.js`。块级 `$$…$$` 前后必须留空行（admonition 缩进内同样），否则会渲染成裸 `$`。`<figcaption>` 里不要写 `$…$`（raw HTML 不会处理公式），改用纯文本/Unicode（如 `T_d<T_w<T`、`ΔH⁰`）。
 - **评论**：Giscus，见 `overrides/partials/comments.html`，在页面 frontmatter 加 `comments: true` 启用。
