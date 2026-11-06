@@ -2,7 +2,7 @@
    字体变量
    ========================================= */
 :root {
-  --md-text-font: "LXGW WenKai", "PingFang SC", "Microsoft YaHei", serif;
+  --md-text-font: "LXGW WenKai Screen", "PingFang SC", "Microsoft YaHei", serif;
   --md-code-font: "JetBrains Mono", "Fira Code", monospace;
 }
 
@@ -34,7 +34,7 @@ code, pre, kbd,
 .md-ellipsis,
 h1,
 .headerlink {
-  font-family: "LXGW WenKai", serif;
+  font-family: "LXGW WenKai Screen", serif;
 }
 
 .md-typeset h1,
@@ -345,6 +345,8 @@ h1,
 .md-typeset {
   font-size: 0.88rem;
   line-height: 1.85;
+  text-autospace: normal;
+  text-spacing-trim: normal;
 }
 
 center, p, li {
@@ -915,6 +917,43 @@ html:has(> body[data-md-color-scheme="slate"]) {
   pointer-events: none;
 }
 
+/* 更新记录 */
+.md-typeset .update-log ul {
+  margin-left: 0;
+  list-style: none;
+}
+
+.md-typeset .update-log li {
+  display: grid;
+  grid-template-columns: 3.4em 1fr;
+  gap: .9em;
+  margin: 0;
+  padding: .55em 0;
+  border-bottom: 1px solid var(--site-hairline);
+}
+
+.md-typeset .update-log li > code {
+  padding: 0;
+  color: var(--md-default-fg-color--lighter);
+  background: none;
+  line-height: 1.85;
+}
+
+/* 站点统计 */
+.md-typeset .site-stats {
+  margin: 2em 0 .4em;
+  color: var(--md-default-fg-color--lighter);
+  font-size: .8em;
+  text-align: center;
+}
+
+/* PDF 预览加载提示 */
+.md-typeset .pdf-hint {
+  margin: 0 0 .6em;
+  color: var(--site-ink-soft);
+  font-size: .85em;
+}
+
 /* 项目交互网页 */
 .md-typeset .project-demo {
   display: block;
@@ -977,12 +1016,12 @@ html:has(> body[data-md-color-scheme="slate"]) {
   color: var(--site-seal);
 }
 
-.md-typeset :is(p, li) > a:not(.md-button) {
+.md-typeset :is(p, li) > a:not(.md-button, .glightbox) {
   background: linear-gradient(currentcolor, currentcolor) left bottom / 0 1px no-repeat;
   transition: background-size 220ms ease-out, color 150ms;
 }
 
-.md-typeset :is(p, li) > a:not(.md-button):hover {
+.md-typeset :is(p, li) > a:not(.md-button, .glightbox):hover {
   background-size: 100% 1px;
 }
 

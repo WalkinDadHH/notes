@@ -48,6 +48,14 @@ plugins:
         - zh
         - en
       separator: '[\s\u200b\-\.]+'
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: fade
+      slide_effect: slide
+      zoomable: true
+      draggable: true
+      auto_caption: false
 
 markdown_extensions:
   - abbr
@@ -89,10 +97,14 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
 
+hooks:
+  - docs/_includes/site_stats.py
+
 exclude_docs: |
   _includes/
 
 not_in_nav: |
+  /changelog.md
   /major/foundation/energy-environment/design-report.md
   /major/foundation/energy-environment/pvt-paper.md
 
