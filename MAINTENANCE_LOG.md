@@ -1,5 +1,33 @@
 # Maintenance Log
 
+## 2026-11-06 — PDF 提速、文案和友站借鉴
+
+Scope: `docs/javascripts/site.js`、`docs/stylesheets/`、`docs/changelog.md`、`docs/_includes/site_stats.py`、各栏目页、`docs/major/foundation/energy-environment/index.md`、`mkdocs.yml`、`requirements.txt`、`CLAUDE.md`
+
+Changed:
+- PDF 改由 jsDelivr 提供，预览上方加图片模式提示，单页图片按需加载
+- 改写首页、关于页和各栏目的描述，修正与实际内容不符的说法；流体力学正文不动
+- 能环概增加项目过程和给学弟学妹的建议，组员使用外号
+- 新增更新记录页和首页站点统计；图片可点击放大；改用霞鹜文楷屏幕版，移除未使用的 Noto Serif SC；开启中英文自动间距
+
+Why: 用户反馈 PDF 预览打不开、描述 AI 味重、能环概太官方，并要求继续借鉴友站。实测 GitHub Pages 下载约 100 KB/s，jsDelivr 约 660 KB/s。
+
+Validation: `./scripts/validate-mkdocs.sh` 通过；Chrome 实测站内嵌入 jsDelivr PDF 能进入查看器，图片放大和站点统计正常；9 份 PDF 经 CDN 分段请求成功。Playwright 截图拍不到 PDF 插件内容，未目视确认页面渲染。
+
+## 2026-11-06 — 能环概：PDF 阅读页、源码包和报告清理
+
+Scope: `docs/major/foundation/energy-environment/`、`docs/index.md`、`docs/stylesheets/extra.css`、`mkdocs.yml`
+
+Changed:
+- 删除首页题词后的闲章
+- 设计说明书和课程论文改用站内 PDF 页面模板，提供 PDF 预览、下载和图片模式；课程页去掉新窗口链接
+- 设计说明书删去复现方法附录和正文里的本地路径说明，共 47 页；公开版作者栏不含成员信息
+- 新增脱敏后的敦煌项目源码包
+
+Why: 用户反馈 PDF 打不开、不需要闲章和本地路径说明，并要求放出源码。
+
+Validation: `./scripts/validate-mkdocs.sh` 通过；PDF 和源码包扫描未发现姓名、学号、电话、本机路径或密钥；源码包内 `tests.test_balance` 通过。未能复现用户的 PDF 打不开现象，改法基于链接方式的差异判断。
+
 ## 2026-11-06 — 能源与环境系统工程概论、中文搜索和细节打磨
 
 Scope: `docs/major/foundation/energy-environment/`、`docs/major/foundation/index.md`、`docs/index.md`、`docs/javascripts/`、`docs/stylesheets/extra.css`、`overrides/404.html`、`mkdocs.yml`、`requirements.txt`、`CLAUDE.md`、`.claude/commands/notes-guide.md`

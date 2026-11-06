@@ -47,6 +47,8 @@ mkdocs gh-deploy --force           # 发布到 gh-pages
 
 - **Admonition**：`info "章节概览"`、`definition`、`key-point`、`note`、`tip`、`warning "施工中"`。`definition` 和 `key-point` 是在 `docs/stylesheets/extra.css` 里自定义的类型，复用即可，不要另造新类型。
 - **考情标签**：临近考试的长文笔记在标题下加 `exam-tags`，写法见 `notes-guide.md`。
+- **PDF**：线上由 `docs/javascripts/site.js` 把 PDF 改到 jsDelivr 的 `gh-pages` 分支，GitHub Pages 传大文件太慢。同名 PDF 替换后要清 jsDelivr 缓存。
+- **更新记录**：较大的改动同时写进 `docs/changelog.md`，语气要像本人写的。
 - **友链**：数据只写在 `docs/_includes/friends.html`，友链页和首页都用 snippet 引入，改这一个文件即可。
 - **插图**（长文笔记）：`<figure markdown="span">` + `![...](imgs/NN-slug.png){ width="90%" }` + `<figcaption>…（图源：课程课件）</figcaption>`；图片按章节号命名（如 `03-carnot-theorem.png`），放在页面同级 `imgs/` 下。
 - **公式**：`pymdownx.arithmatex`（generic 模式）+ MathJax 3，配置在 `docs/javascripts/mathjax.js`。块级 `$$…$$` 前后必须留空行（admonition 缩进内同样），否则会渲染成裸 `$`。`<figcaption>` 里不要写 `$…$`（raw HTML 不会处理公式），改用纯文本/Unicode（如 `T_d<T_w<T`、`ΔH⁰`）。
