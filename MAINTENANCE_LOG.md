@@ -1,5 +1,18 @@
 # Maintenance Log
 
+## 2026-11-06 — 流体力学：Π 定理动画重做为零基础版
+
+Scope: `docs/major/foundation/fluid-mechanics/videos/pi-theorem.mp4`、封面、`index.md` 的说明和版本号
+
+Changed:
+- 视频由 4:13 扩到 8:43：新增量纲概念、单摆练手、量纲来历、重复变量反例、幂运算展开、指数表和函数 f 的含义
+- 作业 6-2、6-6 改为用指数表逐行解
+- 地址版本号改为 `20261106g`
+
+Why: 用户要求讲到没学过这个方法也能看懂。
+
+Validation: `./scripts/validate-mkdocs.sh` 通过；配音对齐无错配，听写比对标出的 3 段只是数字和字母写法差异，未人工试听；1080p 缩略图目视检查，各场景时长误差 ≤ 0.02 秒，线上文件大小与本地一致。
+
 ## 2026-11-06 — 流体力学：新增 Π 定理动画
 
 Scope: `docs/major/foundation/fluid-mechanics/videos/pi-theorem.mp4`、`imgs/pi-theorem-video-poster.jpg`、`index.md`、`docs/changelog.md`
