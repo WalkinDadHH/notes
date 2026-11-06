@@ -1,5 +1,17 @@
 # Maintenance Log
 
+## 2026-11-06 — 流体力学：散度和伯努利动画补配乐音效
+
+Scope: `docs/major/foundation/fluid-mechanics/videos/bernoulli-derivation.mp4`、`divergence-explained.mp4`、`index.md` 版本号、`docs/changelog.md`
+
+Changed:
+- 两段旧动画混入同款纯电子配乐和音效，音量与另外三段一致；画面和旁白未变
+- 视频地址版本号改为 `20261106f`
+
+Why: 用户要求所有视频都配乐。
+
+Validation: `./scripts/validate-mkdocs.sh` 通过；线上文件大小与本地一致。人声由原始配音片段重建，混音未试听。
+
 ## 2026-11-06 — 流体力学：动画配乐改回纯电子并调低音量
 
 Scope: `docs/major/foundation/fluid-mechanics/videos/`（三段新动画）、视频地址版本号
