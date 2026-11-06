@@ -88,12 +88,17 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
 
+exclude_docs: |
+  _includes/
+
 extra_javascript:
   - javascripts/mathjax.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/site.js
 
 nav:
   - 首页: index.md
+  - 友链: friends.md
   - 数学:
     - math/index.md
     - 常微分方程: math/ode/index.md
@@ -117,4 +122,3 @@ nav:
     - notes/index.md
     - 示例笔记: notes/example.md
   - 关于: about.md
-  - 友链: friends.md
