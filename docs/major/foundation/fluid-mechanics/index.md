@@ -17,6 +17,142 @@ comments: true
 
 ---
 
+## 章节概览
+
+| 章节 | 标题 | 一句话 | 考试可能性 | 重要程度 | 状态 |
+|------|------|--------|------|------|------|
+| [第一章](#ch1) | 流体的性质 | 流体为什么会流，黏性和表面张力怎么算 | 高 | ★★☆ | ✅ |
+| [第二章](#ch2) | 流体静力学 | 静止流体的压强怎么分布，对壁面的力多大、作用在哪 | 中 | ★★☆ | ✅ |
+| [第三章](#ch3) | 理想流体动力学 | 质量、动量、能量三大守恒在无黏流体中的样子 | 高 | ★★★ | ✅ |
+| [第四章](#ch4) | 黏性流体管内流动 | 实际管路的能量损失怎么算 | 高 | ★★★ | ✅ |
+| [第五章](#ch5) | 量纲分析与相似原理 | 用无量纲数组织实验、设计模型 | 高 | ★★★ | ✅ |
+| [附录](#appendix-compressible) | 可压缩一维流动 | 提纲未列，本次不考 | 不考 | ★☆☆ | ✅ |
+
+## 考前怎么用这一页 { #exam-guide }
+
+### 正文标签怎么看 { #exam-tags-guide }
+
+正文每节标题下都有三个标签，用来决定先看什么。
+
+| 标签 | 取值 | 含义 |
+|---|---|---|
+| 考试可能性 | 必考 | 老师原话说必考 |
+|  | 高 | 老师点名要会，或明确说考试会出 |
+|  | 中 | 提纲列了，或课上讲过，可能以填空、问答出现 |
+|  | 低 | 老师说看看就行，或只作为背景 |
+|  | 不考 | 老师说不考，或提纲对照表里没有 |
+| 重要程度 | ★★★ / ★★☆ / ★☆☆ | 对做题和理解后续内容的帮助 |
+| 掌握程度 | 会推导、会计算、会用公式、背熟、理解概念、看懂、了解、不用看 | 复习到这个程度就够了 |
+
+除“必考”外，这些标签是根据提纲、手写稿和全部课程字幕做的判断，不是老师公布的范围。
+
+### 复习课划的重点 { #review-class }
+
+根据全部课程字幕整理：11 月 3 日俞老师讲考试范围，11 月 5 日范老师做复习课，其余课上提到考试的地方也收在这里。出卷的是俞老师。
+
+老师的总体态度：**重心在第三章动力学，更想考概念和推导，不爱出难算题。** 俞老师的总规则是：**提纲上没有的不考，没讲过的不考**，难度比往年容易。
+
+| 优先级 | 内容 | 老师的说法 |
+|---|---|---|
+| **必考** | [物质导数](#acceleration) $\dfrac{\mathrm d}{\mathrm dt}=\dfrac{\partial}{\partial t}+(\boldsymbol V\cdot\nabla)$ | 定常时 $\partial/\partial t=0$，但 $\mathrm d/\mathrm dt$ 不一定为 0；局部加速度和对流（迁移）加速度要分清 |
+| **最核心** | [理想流体运动方程](#proof-euler) | 本学期最核心，用力的分析求解 |
+| **必须会推** | [伯努利方程](#bernoulli-review-proof) | 必须走一遍，5 个条件很重要，范老师说“经常考到” |
+| **必须会推** | [毕托管、文丘里管](#bernoulli-apps) | 记不住公式也要能推出来 |
+| **必须会推** | [圆管层流](#proof-poiseuille) | 推一遍抛物线，积一遍平均流速；$\lambda=64/\mathrm{Re}$ 不知道就“太过分了”。俞老师 10 月 22 日说哈根–泊肃叶公式“必考”，要记住 |
+| **概念翻译** | 定常、不可压、理想流体、牛顿内摩擦定律 | 要能把词翻译成数学式：$\partial/\partial t=0$、$\rho=$ 常数、不计切应力、切应力与速度梯度成正比 |
+| **重要** | [连续性方程](#proof-continuity)、[拉格朗日法与欧拉法](#ch3) | 微分形式和 $VA=$ 常数都要会 |
+| **重要** | [沿程阻力系数](#friction-factor)、雷诺数 | 达西公式要知道；雷诺数是惯性力与黏性力之比 |
+| **重要** | [单管路流量题](#pipe-systems) | 课后答疑时老师让关注 |
+| 了解 | [动力黏度与运动黏度](#fluid-viscosity)、黏度随温度变化 | 液体升温黏度减小，气体相反 |
+| **很可能有一题** | [$\Pi$ 定理](#pi-theorem) | 范老师 10 月 29 日说“一般我们考试会出这么一题”，当天布置的[两道作业](#pi-homework)“考试里面会有类似的”，要亲手重做 |
+| 了解 | [相似原理](#similarity) | 有所了解就好，考试基本考 $\Pi$ 定理 |
+| 淡化 | [动量方程](#momentum-integral) | 能量、动量淡化，尽量考概念 |
+| 看看就行 | 静力学第五到八节：[相对平衡](#relative-equilibrium)、[平面](#plane-force)、[曲面](#curved-force)、[浮力](#buoyancy) | 可以出得很难，但老师不喜欢，说这种题像高中题 |
+| 看懂就行 | [压差驱动的两平板流动](#plate-flow) | 11 月 3 日课上讲了但说不考；提纲仍列两板流动，[纯剪切流](#plate-flow)要会 |
+
+**明确不考**（知道概念就行，不用花时间）：
+
+- [迭代法](#three-pipe-problems)，俞老师说“很明确的告诉大家不考”
+- [莫迪图](#turbulent-pipe)和各区阻力公式，不用背；沿程阻力只考最简单的情形
+- [极坐标连续性方程](#recall-polar-continuity)和柱、球坐标方程，老师本来想考，已经换题
+- [水力直径和非圆管](#hydraulic-diameter)
+- 两平板的[水力直径对比](#hydraulic-diameter)、倾斜平板和同心环流动
+- [边界层](#boundary-layer)，已确定不考，别的班没学过，放到下个月再考
+- [混合长度和湍流时均理论](#turbulent-pipe)，俞老师 10 月 20 日说不会考
+- 黏性底层厚度公式和湍流对数律，不用背；只记雷诺数越大，黏性底层越薄
+- 相似准则的比例换算
+- [环路和管网](#three-reservoirs)
+- 局部损失的各种系数表，不用背
+- 剪切变形率的推导
+- 提纲对照表里没有的内容，比如[水击](#water-hammer)和[可压缩流动](#appendix-compressible)
+
+### 题型与复习策略
+
+| 题型 | 分值 | 怎么准备 |
+|------|------|----------|
+| 填空 | 10 题，每题 2 空，每空 2 分 | 背定义、单位、条件和几个关键数字（$2300$、$64/\mathrm{Re}$、伯努利的条件等）。名词要写对，比如“文丘里管”，俞老师两次提到有人写错。每章末尾的「填空速记」就是为它准备的 |
+| 证明 | 2 题 × 10 分 | 把下面「证明题清单」里的推导**自己默写一遍**。重点是取微元、列受力、化简这几步，不必背原句 |
+| 问答 | 2 题 × 10 分 | 分值比原来多一倍。老师把第三道计算题改成了问答分析题，看你是否掌握方法。准备概念对比和方法分析：牛顿与非牛顿流体、层流与湍流、$\partial/\partial t$ 与 $\mathrm d/\mathrm dt$、拉格朗日法与欧拉法、伯努利五个条件、相似原理 |
+| 计算 | 2 题 × 10 分 | 优先准备三类：单管路能量方程**求流量**（沿程 + 局部损失）、伯努利 + 连续性（文丘里、皮托管、小孔）、[$\Pi$ 定理](#pi-theorem)推关系式。简单串联看老师例题。静压力题复习课说不深挖 |
+
+### 证明题清单 { #proof-list }
+
+按复习课的说法重排。先把第一组默写熟，时间够再看第二组。
+
+**第一组：老师点名要会推**
+
+1. [理想流体运动方程（欧拉方程）](#proof-euler)
+2. [伯努利方程，五个条件逐步加](#bernoulli-review-proof)
+3. [圆管层流：速度抛物线、平均流速、$\lambda=64/\mathrm{Re}$](#proof-poiseuille)
+4. [皮托管、文丘里管的流速和流量公式](#bernoulli-apps)
+5. [用 $\Pi$ 定理推关系式](#pi-theorem)，也可能出成计算题
+
+**第二组：手写稿完整推过，有可能考**
+
+6. [连续性微分方程（达朗贝尔）](#proof-continuity)及[散度的物理意义](#proof-divergence)
+7. [突然扩大的局部损失 $h_j=(V_1-V_2)^2/2g$](#proof-sudden-expansion)
+8. [量纲分析证明某个关系式](#recall-dimension)
+9. [静压强各向同性（楔形微元）](#proof-isotropy)和[欧拉平衡方程](#proof-euler-statics)
+
+**第三组：看懂就行**
+
+10. [两平板间流动的速度分布](#proof-plate-flow)（纯剪切流要会，压差驱动看懂）
+11. [平面总压力与压力中心](#proof-plane-force)
+12. [旋转容器自由液面为抛物面](#proof-rotation)
+
+[极坐标连续性方程](#recall-polar-continuity)虽然在回忆卷出现过，但这次老师已经换题，不用准备。
+
+!!! tip "证明题怎么写才拿满分"
+    1. **画图并说明所取的微元或控制体**，标出坐标和尺寸。
+    2. **写清假设**：定常/不可压/忽略黏性/充分发展等。阅卷时，假设本身就是得分点。
+    3. **列受力或守恒式**，每一项写出来源（左面压力、右面压力、重力……）。
+    4. **化简**时说明约去了什么、略去了哪些高阶小量。
+    5. **框出结论**，必要时补一句物理意义。
+
+### 提纲对照表 { #outline-map }
+
+| 提纲条目 | 本页位置 | 可能的题型 |
+|----------|----------|------------|
+| 流体定义及性质、黏度、牛顿流体、牛顿内摩擦定律 | [第一章](#ch1) | 填空、问答 |
+| 牛顿与非牛顿流体的区别 | [非牛顿流体](#non-newtonian) | 问答 |
+| 表面张力 | [表面张力](#fluid-surface-tension) | 填空、小计算 |
+| 雷诺数定义 | [雷诺数](#reynolds-number) | 填空 |
+| 两板间流动 | [两板间流动](#plate-flow) | 纯剪切流要会；压差驱动看懂 |
+| 帕斯卡定律、静压分布 | [第二章前半](#ch2) | 填空、证明 |
+| 平面、曲面上的静压力 | [平面](#plane-force)、[曲面](#curved-force) | 看看就行 |
+| 理想流体、质量守恒、达朗贝尔定律、散度 | [第三章前半](#ch3)、[散度动画与证明](#proof-divergence) | 填空、证明 |
+| 欧拉方程、积分动量方程 | [欧拉方程](#proof-euler)、[动量方程](#momentum-integral) | 欧拉方程**证明**；动量淡化 |
+| 伯努利方程及其假设条件 | [伯努利方程](#bernoulli) | 填空、证明 |
+| 小孔出流、皮托管、文丘里流量计 | [伯努利应用](#bernoulli-apps) | **证明**、**计算** |
+| 黏性流体伯努利方程、达西公式、局部损失 | [第四章前半](#ch4) | 填空、**计算** |
+| 层流与湍流、圆管层流、哈根–泊肃叶 | [圆管层流](#proof-poiseuille) | **证明**、填空；公式要记 |
+| 水力光滑与粗糙、莫迪图（不考） | [湍流与阻力系数](#turbulent-pipe) | 概念填空、问答；公式不用背 |
+| 局部损失（用下游速度水头） | [局部损失](#minor-loss) | 证明、计算 |
+| 串联、并联管路（「见笔记上的举例」） | [管路系统](#pipe-systems) | 单管路和简单串联优先；环路、管网不考 |
+| 量纲分析、量纲一致性、$\Pi$ 定理、相似原理 | [第五章](#ch5) | $\Pi$ 定理**证明或计算**；相似原理了解 |
+
+---
+
 ## 公式速查 { #formula-quickref }
 
 !!! info "怎么用这张表"
@@ -250,115 +386,6 @@ comments: true
 
 ---
 
-## 考前怎么用这一页 { #exam-guide }
-
-### 复习课划的重点 { #review-class }
-
-根据全部课程字幕整理：11 月 3 日俞老师讲考试范围，11 月 5 日范老师做复习课，其余课上提到考试的地方也收在这里。出卷的是俞老师。
-
-老师的总体态度：**重心在第三章动力学，更想考概念和推导，不爱出难算题。** 俞老师的总规则是：**提纲上没有的不考，没讲过的不考**，难度比往年容易。
-
-| 优先级 | 内容 | 老师的说法 |
-|---|---|---|
-| **必考** | [物质导数](#acceleration) $\dfrac{\mathrm d}{\mathrm dt}=\dfrac{\partial}{\partial t}+(\boldsymbol V\cdot\nabla)$ | 定常时 $\partial/\partial t=0$，但 $\mathrm d/\mathrm dt$ 不一定为 0；局部加速度和对流（迁移）加速度要分清 |
-| **最核心** | [理想流体运动方程](#proof-euler) | 本学期最核心，用力的分析求解 |
-| **必须会推** | [伯努利方程](#bernoulli-review-proof) | 必须走一遍，5 个条件很重要，范老师说“经常考到” |
-| **必须会推** | [毕托管、文丘里管](#bernoulli-apps) | 记不住公式也要能推出来 |
-| **必须会推** | [圆管层流](#proof-poiseuille) | 推一遍抛物线，积一遍平均流速；$\lambda=64/\mathrm{Re}$ 不知道就“太过分了”。俞老师 10 月 22 日说哈根–泊肃叶公式“必考”，要记住 |
-| **概念翻译** | 定常、不可压、理想流体、牛顿内摩擦定律 | 要能把词翻译成数学式：$\partial/\partial t=0$、$\rho=$ 常数、不计切应力、切应力与速度梯度成正比 |
-| **重要** | [连续性方程](#proof-continuity)、[拉格朗日法与欧拉法](#ch3) | 微分形式和 $VA=$ 常数都要会 |
-| **重要** | [沿程阻力系数](#friction-factor)、雷诺数 | 达西公式要知道；雷诺数是惯性力与黏性力之比 |
-| **重要** | [单管路流量题](#pipe-systems) | 课后答疑时老师让关注 |
-| 了解 | [动力黏度与运动黏度](#fluid-viscosity)、黏度随温度变化 | 液体升温黏度减小，气体相反 |
-| **很可能有一题** | [$\Pi$ 定理](#pi-theorem) | 范老师 10 月 29 日说“一般我们考试会出这么一题”，当天布置的[两道作业](#pi-homework)“考试里面会有类似的”，要亲手重做 |
-| 了解 | [相似原理](#similarity) | 有所了解就好，考试基本考 $\Pi$ 定理 |
-| 淡化 | [动量方程](#momentum-integral) | 能量、动量淡化，尽量考概念 |
-| 看看就行 | 静力学第五到八节：[相对平衡](#relative-equilibrium)、[平面](#plane-force)、[曲面](#curved-force)、[浮力](#buoyancy) | 可以出得很难，但老师不喜欢，说这种题像高中题 |
-| 看懂就行 | [压差驱动的两平板流动](#plate-flow) | 11 月 3 日课上讲了但说不考；提纲仍列两板流动，[纯剪切流](#plate-flow)要会 |
-
-**明确不考**（知道概念就行，不用花时间）：
-
-- [迭代法](#three-pipe-problems)，俞老师说“很明确的告诉大家不考”
-- [莫迪图](#turbulent-pipe)和各区阻力公式，不用背；沿程阻力只考最简单的情形
-- [极坐标连续性方程](#recall-polar-continuity)和柱、球坐标方程，老师本来想考，已经换题
-- [水力直径和非圆管](#hydraulic-diameter)
-- 两平板的[水力直径对比](#hydraulic-diameter)、倾斜平板和同心环流动
-- [边界层](#boundary-layer)，已确定不考，别的班没学过，放到下个月再考
-- [混合长度和湍流时均理论](#turbulent-pipe)，俞老师 10 月 20 日说不会考
-- 黏性底层厚度公式和湍流对数律，不用背；只记雷诺数越大，黏性底层越薄
-- 相似准则的比例换算
-- [环路和管网](#three-reservoirs)
-- 局部损失的各种系数表，不用背
-- 剪切变形率的推导
-- 提纲对照表里没有的内容，比如[水击](#water-hammer)和[可压缩流动](#appendix-compressible)
-
-### 题型与复习策略
-
-| 题型 | 分值 | 怎么准备 |
-|------|------|----------|
-| 填空 | 10 题，每题 2 空，每空 2 分 | 背定义、单位、条件和几个关键数字（$2300$、$64/\mathrm{Re}$、伯努利的条件等）。名词要写对，比如“文丘里管”，俞老师两次提到有人写错。每章末尾的「填空速记」就是为它准备的 |
-| 证明 | 2 题 × 10 分 | 把下面「证明题清单」里的推导**自己默写一遍**。重点是取微元、列受力、化简这几步，不必背原句 |
-| 问答 | 2 题 × 10 分 | 分值比原来多一倍。老师把第三道计算题改成了问答分析题，看你是否掌握方法。准备概念对比和方法分析：牛顿与非牛顿流体、层流与湍流、$\partial/\partial t$ 与 $\mathrm d/\mathrm dt$、拉格朗日法与欧拉法、伯努利五个条件、相似原理 |
-| 计算 | 2 题 × 10 分 | 优先准备三类：单管路能量方程**求流量**（沿程 + 局部损失）、伯努利 + 连续性（文丘里、皮托管、小孔）、[$\Pi$ 定理](#pi-theorem)推关系式。简单串联看老师例题。静压力题复习课说不深挖 |
-
-### 证明题清单 { #proof-list }
-
-按复习课的说法重排。先把第一组默写熟，时间够再看第二组。
-
-**第一组：老师点名要会推**
-
-1. [理想流体运动方程（欧拉方程）](#proof-euler)
-2. [伯努利方程，五个条件逐步加](#bernoulli-review-proof)
-3. [圆管层流：速度抛物线、平均流速、$\lambda=64/\mathrm{Re}$](#proof-poiseuille)
-4. [皮托管、文丘里管的流速和流量公式](#bernoulli-apps)
-5. [用 $\Pi$ 定理推关系式](#pi-theorem)，也可能出成计算题
-
-**第二组：手写稿完整推过，有可能考**
-
-6. [连续性微分方程（达朗贝尔）](#proof-continuity)及[散度的物理意义](#proof-divergence)
-7. [突然扩大的局部损失 $h_j=(V_1-V_2)^2/2g$](#proof-sudden-expansion)
-8. [量纲分析证明某个关系式](#recall-dimension)
-9. [静压强各向同性（楔形微元）](#proof-isotropy)和[欧拉平衡方程](#proof-euler-statics)
-
-**第三组：看懂就行**
-
-10. [两平板间流动的速度分布](#proof-plate-flow)（纯剪切流要会，压差驱动看懂）
-11. [平面总压力与压力中心](#proof-plane-force)
-12. [旋转容器自由液面为抛物面](#proof-rotation)
-
-[极坐标连续性方程](#recall-polar-continuity)虽然在回忆卷出现过，但这次老师已经换题，不用准备。
-
-!!! tip "证明题怎么写才拿满分"
-    1. **画图并说明所取的微元或控制体**，标出坐标和尺寸。
-    2. **写清假设**：定常/不可压/忽略黏性/充分发展等。阅卷时，假设本身就是得分点。
-    3. **列受力或守恒式**，每一项写出来源（左面压力、右面压力、重力……）。
-    4. **化简**时说明约去了什么、略去了哪些高阶小量。
-    5. **框出结论**，必要时补一句物理意义。
-
-### 提纲对照表 { #outline-map }
-
-| 提纲条目 | 本页位置 | 可能的题型 |
-|----------|----------|------------|
-| 流体定义及性质、黏度、牛顿流体、牛顿内摩擦定律 | [第一章](#ch1) | 填空、问答 |
-| 牛顿与非牛顿流体的区别 | [非牛顿流体](#non-newtonian) | 问答 |
-| 表面张力 | [表面张力](#fluid-surface-tension) | 填空、小计算 |
-| 雷诺数定义 | [雷诺数](#reynolds-number) | 填空 |
-| 两板间流动 | [两板间流动](#plate-flow) | 纯剪切流要会；压差驱动看懂 |
-| 帕斯卡定律、静压分布 | [第二章前半](#ch2) | 填空、证明 |
-| 平面、曲面上的静压力 | [平面](#plane-force)、[曲面](#curved-force) | 看看就行 |
-| 理想流体、质量守恒、达朗贝尔定律、散度 | [第三章前半](#ch3)、[散度动画与证明](#proof-divergence) | 填空、证明 |
-| 欧拉方程、积分动量方程 | [欧拉方程](#proof-euler)、[动量方程](#momentum-integral) | 欧拉方程**证明**；动量淡化 |
-| 伯努利方程及其假设条件 | [伯努利方程](#bernoulli) | 填空、证明 |
-| 小孔出流、皮托管、文丘里流量计 | [伯努利应用](#bernoulli-apps) | **证明**、**计算** |
-| 黏性流体伯努利方程、达西公式、局部损失 | [第四章前半](#ch4) | 填空、**计算** |
-| 层流与湍流、圆管层流、哈根–泊肃叶 | [圆管层流](#proof-poiseuille) | **证明**、填空；公式要记 |
-| 水力光滑与粗糙、莫迪图（不考） | [湍流与阻力系数](#turbulent-pipe) | 概念填空、问答；公式不用背 |
-| 局部损失（用下游速度水头） | [局部损失](#minor-loss) | 证明、计算 |
-| 串联、并联管路（「见笔记上的举例」） | [管路系统](#pipe-systems) | 单管路和简单串联优先；环路、管网不考 |
-| 量纲分析、量纲一致性、$\Pi$ 定理、相似原理 | [第五章](#ch5) | $\Pi$ 定理**证明或计算**；相似原理了解 |
-
----
-
 ## 手写讲义原稿 { #fluid-handwritten-sources }
 
 本页前三章依据老师的手写讲义整理。想核对老师的列式顺序或图示，可以打开对应 PDF 原页（页码指阅读器显示的页码）。第四章另有一份英文手写稿 *Chapter 6 Viscous Flow in Ducts*，体积过大，没有放到站点上，正文按它的内容整理。
@@ -369,17 +396,6 @@ comments: true
 | [第一章 1.1：流体的性质和特点](sources/ch1-fluid-properties-handwritten.pdf) | 7 | 牛顿内摩擦定律、非牛顿流体、表面张力 |
 | [第二章：流体静力学](sources/ch2-fluid-statics-handwritten.pdf) | 16 | 静压特性、压强计、平面与曲面总压力、浮力、相对平衡 |
 | [第三章：理想流体力学基础](sources/ch3-ideal-flow-handwritten.pdf) | 24 | 连续性方程、欧拉方程、动量方程、伯努利方程及应用 |
-
-## 章节概览
-
-| 章节 | 标题 | 一句话 | 状态 |
-|------|------|--------|------|
-| [第一章](#ch1) | 流体的性质 | 流体为什么会流，黏性和表面张力怎么算 | ✅ |
-| [第二章](#ch2) | 流体静力学 | 静止流体的压强怎么分布，对壁面的力多大、作用在哪 | ✅ |
-| [第三章](#ch3) | 理想流体动力学 | 质量、动量、能量三大守恒在无黏流体中的样子 | ✅ |
-| [第四章](#ch4) | 黏性流体管内流动 | 实际管路的能量损失怎么算 | ✅ |
-| [第五章](#ch5) | 量纲分析与相似原理 | 用无量纲数组织实验、设计模型 | ✅ |
-| [附录](#appendix-compressible) | 可压缩一维流动 | 提纲未列，低优先级 | ✅ |
 
 ## 甲Ⅰ手写回忆卷 · 年份未注明 { #fluid-i-recall }
 
@@ -404,10 +420,14 @@ comments: true
 
 ## 第一章 · 流体的性质 { #ch1 }
 
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★☆</span><span class="exam-tag">掌握程度：理解概念</span></div>
+
 !!! info "章节概览"
     这一章要回答两个问题：**流体和固体到底差在哪**，以及**流体内部的摩擦（黏性）怎么定量**。考试主要考定义和单位（填空）、牛顿与非牛顿流体（问答），以及平板、圆盘、圆柱缝隙里的黏性力计算。
 
 ### 流体的定义与连续介质假设
+
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★☆</span><span class="exam-tag">掌握程度：会默写定义</span></div>
 
 !!! definition "流体的定义（填空高频）"
     流体是**在任何微小剪切力作用下都会发生连续变形**的物质。换句话说，**静止的流体不能承受剪切应力**。
@@ -424,6 +444,8 @@ comments: true
 **压缩性**用体积弹性模量 $K=-V\,\mathrm dp/\mathrm dV$ 描述，$K$ 越大越难压缩。液体通常按不可压缩处理（$\rho=$ 常数）；气体在低速（马赫数小于约 0.3）、压差不大时也可近似为不可压缩。
 
 ### 黏性与牛顿内摩擦定律 { #fluid-viscosity }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：会用公式</span></div>
 
 **黏性**是流体抵抗相邻流层相对滑动的性质，只有在流体**运动**、且各层速度不同时才表现出来。
 
@@ -453,6 +475,8 @@ $$
 
 ### 牛顿流体与非牛顿流体 { #non-newtonian }
 
+<div class="exam-tags"><span class="exam-tag exam-tag--mid">考试可能性：中</span><span class="exam-tag">重要程度：★★☆</span><span class="exam-tag">掌握程度：会答问答</span></div>
+
 **牛顿流体**：切应力与速度梯度成**线性**关系，且 $\tau$–$\mathrm du/\mathrm dy$ 曲线过原点，也就是 $\mu$ 只与温度、压强有关，与剪切快慢无关。水、空气、汽油、大多数低分子液体都是牛顿流体。
 
 **非牛顿流体**：不满足上述线性关系，常见三类：
@@ -470,6 +494,8 @@ $$
     4. 本课程的计算（含所有管流公式）**默认牛顿流体**。
 
 ### 表面张力与毛细现象 { #fluid-surface-tension }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--low">考试可能性：低</span><span class="exam-tag">重要程度：★☆☆</span><span class="exam-tag">掌握程度：了解</span></div>
 
 液面分子受力不对称，液面像一张绷紧的膜一样有收缩趋势。**表面张力系数** $\sigma$ 是液面上单位长度分界线受到的拉力，单位 $\mathrm{N/m}$，满足 $F=\sigma l$。
 
@@ -491,6 +517,8 @@ $$
 
 ### 雷诺数 { #reynolds-number }
 
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：会用公式</span></div>
+
 $$
 \mathrm{Re}=\frac{\rho Vd}{\mu}=\frac{Vd}{\nu}
 =\frac{\text{惯性力}}{\text{黏性力}}
@@ -499,6 +527,8 @@ $$
 $\mathrm{Re}$ 小，黏性占主导，流动稳定、分层，是**层流**；$\mathrm{Re}$ 大，惯性占主导，小扰动会被放大，变成**湍流**。圆管的临界雷诺数取 $\mathrm{Re}_c=2300$（用管径 $d$ 和断面平均流速 $V$ 计算）。详见[第四章](#reynolds-regimes)。
 
 ### 两平板间的流动（典型问题） { #plate-flow }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--mid">考试可能性：中</span><span class="exam-tag">重要程度：★★☆</span><span class="exam-tag">掌握程度：纯剪切流会算</span></div>
 
 这是提纲点名的「典型问题」，常见两种情形：
 
@@ -521,6 +551,8 @@ u_{\max}=\frac{h^2}{8\mu}\left(-\frac{\mathrm dp}{\mathrm dx}\right),
 $$
 
 #### 证明：两板间流动的速度分布 { #proof-plate-flow }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--low">考试可能性：低</span><span class="exam-tag">重要程度：★☆☆</span><span class="exam-tag">掌握程度：看懂</span></div>
 
 !!! definition "证明思路"
     **假设**：定常、不可压、二维、充分发展（$u=u(y)$，$v=0$），忽略重力。
@@ -551,6 +583,8 @@ $$
     令 $\mathrm dp/\mathrm dx=0$ 得情形①，令 $U=0$ 得情形②。
 
 ### 第一章例题 { #first-fluid-examples }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--mid">考试可能性：中</span><span class="exam-tag">重要程度：★★☆</span><span class="exam-tag">掌握程度：做一遍</span></div>
 
 缝隙类黏性题的统一套路：**写出接触面上的局部速度 → 速度梯度 ≈ 速度/缝隙 → 切应力 → 乘面积得力（转动要再乘力臂得力矩）→ 功率 = 力 × 速度或力矩 × 角速度**。
 
@@ -653,6 +687,8 @@ $$
 
 ### 第一章填空速记
 
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：背熟</span></div>
+
 - 流体在**任意微小**剪切力作用下都会**连续变形**；静止流体**不能**承受剪切应力。
 - 牛顿内摩擦定律 $\tau=\mu\,\mathrm du/\mathrm dy$；$\mu$ 单位 $\mathrm{Pa\cdot s}$；$\nu=\mu/\rho$ 单位 $\mathrm{m^2/s}$。
 - 温度升高：液体黏度**降低**，气体黏度**升高**。
@@ -664,10 +700,14 @@ $$
 
 ## 第二章 · 流体静力学 { #ch2 }
 
+<div class="exam-tags"><span class="exam-tag exam-tag--mid">考试可能性：中</span><span class="exam-tag">重要程度：★★☆</span><span class="exam-tag">掌握程度：理解概念</span></div>
+
 !!! info "章节概览"
     静止流体里没有切应力，只有压强。这一章先证明**静压强的两个特性**，再由微元受力平衡推出**压强随深度线性增加**，最后算**流体对平面、曲面的总压力**。复习课说：重点是 $p=p_0+\rho gh$ 的概念，其中 $h$ 本质是 $\Delta z$；相对平衡和平面、曲面、浮力这几节**看看就行，不用深挖**。
 
 ### 静压强的两个特性 { #proof-isotropy }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--mid">考试可能性：中</span><span class="exam-tag">重要程度：★★☆</span><span class="exam-tag">掌握程度：看懂推导</span></div>
 
 !!! key-point "必背"
     1. **方向性**：静压强的方向总是**垂直并指向**作用面（内法线方向）。
@@ -701,6 +741,8 @@ $$
     **注**：运动流体中有黏性应力，三个法向应力不再相等，这时把压强定义为三个法向应力的平均值的负值 $p=-\frac13(\sigma_{xx}+\sigma_{yy}+\sigma_{zz})$。
 
 ### 欧拉平衡方程与静压分布 { #proof-euler-statics }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：会用公式</span></div>
 
 **压强本身不产生合力，压强的梯度才产生合力。**取边长 $\mathrm dx,\mathrm dy,\mathrm dz$ 的六面体微元，$x$ 方向左面压力 $p\,\mathrm dy\,\mathrm dz$，右面压力 $(p+\frac{\partial p}{\partial x}\mathrm dx)\,\mathrm dy\,\mathrm dz$，净压力为 $-\frac{\partial p}{\partial x}\mathrm dx\,\mathrm dy\,\mathrm dz$。三个方向合起来，单位体积受的净压力为 $-\nabla p$。
 
@@ -747,6 +789,8 @@ $$
 
 ### 帕斯卡定律 { #pascal-law }
 
+<div class="exam-tags"><span class="exam-tag exam-tag--mid">考试可能性：中</span><span class="exam-tag">重要程度：★★☆</span><span class="exam-tag">掌握程度：理解概念</span></div>
+
 **在密闭、连通的静止液体中，施加在液体边界上的压强增量 $\Delta p$ 会等值地传到液体内各点。**这是 $p=p_0+\rho gh$ 的直接推论：$p_0$ 增加 $\Delta p$，各点 $p$ 都增加 $\Delta p$。
 
 液压机原理：两活塞同高，$\Delta p=F_1/A_1=F_2/A_2$，所以 $F_2=F_1A_2/A_1=F_1(d_2/d_1)^2$。
@@ -761,6 +805,8 @@ $$
 
 ### 压强计 { #manometer }
 
+<div class="exam-tags"><span class="exam-tag exam-tag--mid">考试可能性：中</span><span class="exam-tag">重要程度：★★☆</span><span class="exam-tag">掌握程度：会计算</span></div>
+
 用液柱高度差测压差。做题只记一条规则：**从已知压强点出发，沿连通液体一段段走到待求点，向下走加 $\rho g\Delta h$，向上走减 $\rho g\Delta h$，经过不同液体时换成该段液体的密度。**
 
 例如 U 形管一端接容器 A（流体密度 $\rho_1$），另一端开口，指示液密度 $\rho_2$：
@@ -773,6 +819,8 @@ $$
     两活塞同高，$d_1=2\ \mathrm{cm}$、$d_2=10\ \mathrm{cm}$，小活塞施力 $F_1=100\ \mathrm N$。$F_2=F_1(d_2/d_1)^2=2500\ \mathrm N$。力放大 25 倍，大活塞的位移只有小活塞的 1/25，能量守恒。
 
 ### 平面上的静水总压力 { #plane-force }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--low">考试可能性：低</span><span class="exam-tag">重要程度：★☆☆</span><span class="exam-tag">掌握程度：看懂</span></div>
 
 复习课把这部分归为「看看就行」，会基本题即可，不用深挖。要求两样东西：**总压力多大**，**作用在哪里**（压力中心）。
 
@@ -790,6 +838,8 @@ $$
     $y$ 沿平面从液面交线 $O$ 量起。压力中心 $D$ **总在形心 $C$ 的下方**（对称平面左右位置与形心相同）。
 
 #### 证明：平面总压力与压力中心 { #proof-plane-force }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--low">考试可能性：低</span><span class="exam-tag">重要程度：★☆☆</span><span class="exam-tag">掌握程度：看懂</span></div>
 
 <figure markdown="span">
   ![倾斜平面上的流体静压力，坐标原点在平面延长线与液面交点](imgs/plane-surface-force.svg){ width="62%" }
@@ -866,6 +916,8 @@ $$
 
 ### 曲面上的静水总压力 { #curved-force }
 
+<div class="exam-tags"><span class="exam-tag exam-tag--low">考试可能性：低</span><span class="exam-tag">重要程度：★☆☆</span><span class="exam-tag">掌握程度：看懂</span></div>
+
 曲面上各点压强方向不同，不能直接相加，所以先**分解成水平和竖直两个分量**分别积分（老师手写稿第 11–12 页）：
 
 $$
@@ -927,6 +979,8 @@ $\mathrm dA_x$、$\mathrm dA_z$ 分别是微元在竖直面和水平面上的投
 
 ### 浮力 { #buoyancy }
 
+<div class="exam-tags"><span class="exam-tag exam-tag--low">考试可能性：低</span><span class="exam-tag">重要程度：★☆☆</span><span class="exam-tag">掌握程度：了解</span></div>
+
 **阿基米德原理**：浸在流体中的物体受到竖直向上的浮力，大小等于它**排开流体的重量**，作用线通过排开体积的形心（浮心）：
 
 $$
@@ -938,6 +992,8 @@ $$
 **浮体稳定性**：重心 $G$、浮心 $B$、定倾中心 $M$。$M$ 在 $G$ 之上（定倾高度 $\overline{MG}>0$）时产生恢复力矩，浮体稳定；$M$ 在 $G$ 之下则翻覆。
 
 ### 相对平衡：容器加速和旋转 { #relative-equilibrium }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--low">考试可能性：低</span><span class="exam-tag">重要程度：★☆☆</span><span class="exam-tag">掌握程度：看懂</span></div>
 
 复习课说这部分考得少，看看就行。下面的长例题时间不够可以跳过。
 
@@ -952,6 +1008,8 @@ $$
 **① 水平加速 $a_x$（竖直加速度 $a_z$）**：自由液面倾斜，倾角 $\tan\theta=\dfrac{a_x}{g+a_z}$。
 
 #### ② 绕竖直轴等角速度旋转 { #proof-rotation }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--low">考试可能性：低</span><span class="exam-tag">重要程度：★☆☆</span><span class="exam-tag">掌握程度：看懂</span></div>
 
 !!! definition "证明：旋转液面是抛物面（手写稿第 16 页）"
     向心加速度 $\boldsymbol a=-r\omega^2\boldsymbol e_r$，代入 $\nabla p=\rho(\boldsymbol g-\boldsymbol a)$：
@@ -1199,6 +1257,8 @@ $$
 
 ### 第二章填空速记
 
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★☆</span><span class="exam-tag">掌握程度：背熟</span></div>
+
 - 静压强方向**垂直指向**作用面；一点的静压强**与方向无关**。
 - 欧拉平衡方程 $\nabla p=\rho\boldsymbol f$；重力场中 $p=p_0+\rho gh$，即 $z+p/(\rho g)=$ 常数。
 - 平面总压力 $F=\rho gh_CA$；压力中心 $y_D=y_C+I_C/(y_CA)$，在形心**下方**。
@@ -1211,10 +1271,14 @@ $$
 
 ## 第三章 · 理想流体动力学 { #ch3 }
 
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：会推导</span></div>
+
 !!! info "章节概览"
     流体动起来以后，用三个守恒定律描述：**质量守恒 → 连续性方程**，**动量守恒 → 欧拉方程/动量方程**，**能量守恒 → 伯努利方程**。这章是全课的核心：**物质导数必考**，**欧拉方程和伯努利方程必须会推**，皮托管和文丘里管也要会推；计算题主要是伯努利 + 连续性的组合。动量方程和能量部分淡化，考概念为主。
 
 ### 理想流体与研究方法
+
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：理解概念</span></div>
 
 !!! definition "理想流体（填空）"
     **理想流体**是**忽略黏性**（$\mu=0$）的假想流体。它运动时内部没有切应力，表面力只有压强。
@@ -1238,6 +1302,8 @@ $$
 **流线与迹线**：流线是某一**时刻**处处与速度相切的曲线；迹线是**一个质点**走过的轨迹。定常流动中二者重合。
 
 ### 连续性方程（达朗贝尔定律） { #proof-continuity }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：会推导</span></div>
 
 老师把质量守恒的微分形式称为**达朗贝尔（d'Alembert）连续性方程**，18 世纪中期由他首先建立。
 
@@ -1283,6 +1349,8 @@ $$
 多进多出时：$\sum\dot m_{\text{进}}=\sum\dot m_{\text{出}}$。
 
 #### 散度：动画讲解与证明 { #proof-divergence }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--mid">考试可能性：中</span><span class="exam-tag">重要程度：★★☆</span><span class="exam-tag">掌握程度：理解概念</span></div>
 
 <video controls preload="metadata" playsinline poster="imgs/divergence-video-poster.jpg?v=20261105" style="width:100%;border-radius:8px">
   <source src="videos/divergence-explained.mp4?v=20261105" type="video/mp4">
@@ -1397,7 +1465,9 @@ $$
     - (b) $u=x^2,\ v=y$：$2x+1\neq0$，**不可以**；
     - (c) $u=-y,\ v=x$：$0+0=0$，**可以**，这是整体旋转。
 
-#### 回忆题：极坐标连续性方程 { #recall-polar-continuity }
+#### 回忆题：极坐标连续性方程 { #recall-polar-continuity .exam-skip }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--none">考试可能性：不考</span><span class="exam-tag">重要程度：★☆☆</span><span class="exam-tag">掌握程度：不用看</span></div>
 
 !!! note "本次不考"
     俞老师 11 月 3 日说本来想考这题，已经换题了。回忆卷里出现过，所以留着，以后学柱坐标时可以回头看。
@@ -1427,6 +1497,8 @@ $$
 
 ### 质点加速度：局部 + 对流 { #acceleration }
 
+<div class="exam-tags"><span class="exam-tag exam-tag--must">考试可能性：必考</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：会默写</span></div>
+
 一个流体质点 $\Delta t$ 时间后从 $(x,y,z)$ 移到 $(x+\Delta x,y+\Delta y,z+\Delta z)$，速度变化 $\Delta\boldsymbol V=\frac{\partial\boldsymbol V}{\partial t}\Delta t+\frac{\partial\boldsymbol V}{\partial x}\Delta x+\cdots$，而 $\Delta x=u\Delta t$ 等。所以
 
 $$
@@ -1446,6 +1518,8 @@ $$
 **局部加速度**：固定空间点上速度随时间的变化，定常流动中为零。**对流加速度**：质点换了位置而引起的速度变化，例如定常流过收缩管时质点仍在加速。
 
 ### 欧拉运动微分方程 { #proof-euler }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：会推导</span></div>
 
 !!! definition "证明：欧拉方程（手写稿第 9–12 页）"
     **取微元**：边长 $\Delta x,\Delta y,\Delta z$ 的六面体，中心 $M$。理想流体，**忽略黏性**，只受质量力和压力。
@@ -1483,6 +1557,8 @@ $$
     再加上单位体积的黏性力 $\mu\nabla^2\boldsymbol V$，就得到不可压缩黏性流体的运动方程（纳维–斯托克斯方程）：$\rho\boldsymbol a=-\nabla p+\rho\boldsymbol g+\mu\nabla^2\boldsymbol V$。老师在第二章第 4 页写过这个式子。
 
 ### 积分形式的动量方程 { #momentum-integral }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--mid">考试可能性：中</span><span class="exam-tag">重要程度：★☆☆</span><span class="exam-tag">掌握程度：理解概念</span></div>
 
 复习课说能量、动量这部分淡化，尽量考概念。记住方程的含义和使用步骤，不用多刷题。
 
@@ -1527,9 +1603,13 @@ $\sum\boldsymbol F$ 包括两端断面的压力、重力和**固体壁面对流�
 
 ### 伯努利方程 { #bernoulli }
 
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：会推导</span></div>
+
 <a id="proof-bernoulli"></a>
 
 #### 复习课版推导：沿流线取微元 { #bernoulli-review-proof }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：会推导</span></div>
 
 老师在复习课上强调这版「必须走一遍，5 个条件很重要」。动画把每一项的来历都走了一遍，重点看**压强项的泰勒展开**和**重力投影**。英文配音，配中英字幕，约 5 分钟。配音由开源模型 Fish Audio S2 Pro 生成。
 
@@ -1585,6 +1665,8 @@ $\sum\boldsymbol F$ 包括两端断面的压力、重力和**固体壁面对流�
     $p$ 是微元**中心**的压强，端面离中心半个边长。压强变化的快慢是 $\partial p/\partial x$，**斜率 × 距离 = 变化量**，所以两端面分别是 $p\mp\frac{\partial p}{\partial x}\frac{\Delta x}{2}$。例如中心 $100$、斜率 $2$、$\Delta x=1$，左面 $99$、右面 $101$。[欧拉方程](#proof-euler)和这里是同一件事，只是把 $s$ 换成 $x$，把 $\mathrm dA$ 换成 $\Delta y\Delta z$。
 
 #### 手写稿版推导：流管动量方程
+
+<div class="exam-tags"><span class="exam-tag exam-tag--low">考试可能性：低</span><span class="exam-tag">重要程度：★☆☆</span><span class="exam-tag">掌握程度：看懂</span></div>
 
 !!! definition "证明：伯努利方程（手写稿第 15–17 页）"
     **取控制体**：沿流线取一段微小流管，长 $\mathrm ds$，截面积 $A$，流线与水平面夹角 $\theta$，高程变化 $\mathrm dz=\mathrm ds\sin\theta$。假设截面上 $\rho,V,p$ 均匀，**忽略管壁摩擦**（$\tau=0$）。
@@ -1669,6 +1751,8 @@ $$
 $\alpha$ 是**动能修正系数**：截面速度不均匀时，用平均流速算的动能偏小，需乘 $\alpha$ 修正。层流 $\alpha=2.0$，湍流 $\alpha=1.04\sim1.11$（常取 1）。
 
 ### 伯努利方程的应用 { #bernoulli-apps }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：会推导</span></div>
 
 复习课点名：**毕托管（皮托管）和文丘里管要会推导**，两者都不考虑位置水头，用 $\frac12\rho u^2+p=C$ 就能看出动压和静压的关系。
 
@@ -1764,6 +1848,8 @@ $$
 外缘 $R_2$ 比内缘 $R_1$ 的机械能高 $\frac{\omega^2}{2g}(R_2^2-R_1^2)>0$：泵和风机的叶轮对流体做功，机械能增加；水轮机、汽轮机正好相反。
 
 ### 第三章作业例题 { #ch3-homework }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：会计算</span></div>
 
 下面按红笔作业整理。4-13、4-15、4-18 是提纲重点题型（伯努利 + 连续性），优先做；4-34 的叶轮题不在提纲内。
 
@@ -1887,6 +1973,8 @@ $$
 
 ### 第三章填空速记
 
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：背熟</span></div>
+
 - 理想流体：忽略黏性，$\mu=0$。
 - 连续性方程 $\partial\rho/\partial t+\nabla\cdot(\rho\boldsymbol V)=0$；不可压缩时 $\nabla\cdot\boldsymbol V=0$；一维 $V_1A_1=V_2A_2$。
 - 散度 = 单位体积的体积变化率。
@@ -1905,10 +1993,14 @@ $$
 
 ## 第四章 · 黏性流体的管内流动 { #ch4 }
 
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：会计算</span></div>
+
 !!! info "章节概览"
     实际流体有黏性，流过管道会损失机械能。这一章的主线就是一个方程：**黏性流体的伯努利方程 = 理想伯努利 + 水头损失 $h_w$**。剩下的工作都是在算 $h_w$：先用雷诺数判断层流还是湍流，再算沿程损失 $h_f=\lambda\frac ld\frac{V^2}{2g}$ 和局部损失 $h_j=\zeta\frac{V^2}{2g}$。圆管层流的推导是证明题的头号候选；计算题重点是**用管路能量方程求流量**。莫迪图不考，所以湍流题的 $\lambda$ 大概率由题目给出。
 
 ### 管路问题要解决什么
+
+<div class="exam-tags"><span class="exam-tag exam-tag--mid">考试可能性：中</span><span class="exam-tag">重要程度：★★☆</span><span class="exam-tag">掌握程度：理解概念</span></div>
 
 老师在第四章开头说，管路计算无非两类：
 
@@ -1918,6 +2010,8 @@ $$
 要算这些，关键是知道流动阻力，而阻力规律取决于流动状态（层流还是湍流），所以第一步永远是**算雷诺数**。
 
 ### 雷诺实验与流动状态 { #reynolds-regimes }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：理解概念</span></div>
 
 **雷诺实验（1883）**：水箱水位恒定，水经玻璃管流出，管口注入细股颜色水。
 
@@ -1969,6 +2063,8 @@ $$
 入口段内摩擦损失比充分发展段大，忽略它会**低估**压降。长管（$l/d\sim1000$）可以忽略，短管换热器等不能忽略。
 
 ### 黏性流体的伯努利方程 { #viscous-bernoulli }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：会用公式</span></div>
 
 实际流体有黏性，流层之间、流体与管壁之间有摩擦，一部分机械能不可逆地转化为热能（损失掉），所以总机械能**沿流动方向减少**：
 
@@ -2036,6 +2132,8 @@ $$
 推导过程**没有假设流态**，所以达西公式普遍成立。量纲分析给出 $\tau_w=F(\rho,V,\mu,d,\Delta)$，即 $\lambda=F(\mathrm{Re},\Delta/d)$：沿程阻力系数只取决于雷诺数和相对粗糙度。课上 OneNote 记作 $f$，与本页的 $\lambda$ 是同一个量。
 
 ### 圆管层流 { #proof-poiseuille }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--must">考试可能性：必考</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：会推导</span></div>
 
 老师的要求是**推一遍抛物线，积一遍平均流速**。俞老师 10 月 22 日讲完哈根–泊肃叶公式说“这个东西必考”，所以公式要记住，推导也要会。
 
@@ -2118,6 +2216,8 @@ $$
 
 ### 湍流与沿程阻力系数 { #turbulent-pipe }
 
+<div class="exam-tags"><span class="exam-tag exam-tag--mid">考试可能性：中</span><span class="exam-tag">重要程度：★★☆</span><span class="exam-tag">掌握程度：了解</span></div>
+
 **湍流的特点**：质点有不规则的横向**脉动**，各层之间剧烈掺混。瞬时速度可分解为**时均值 + 脉动值** $u=\bar u+u'$，脉动值的时均为零。
 
 **湍流切应力**由两部分组成：
@@ -2145,6 +2245,8 @@ $$
 
 #### 水力光滑与水力粗糙 { #hydraulic-smooth-rough }
 
+<div class="exam-tags"><span class="exam-tag exam-tag--mid">考试可能性：中</span><span class="exam-tag">重要程度：★★☆</span><span class="exam-tag">掌握程度：理解概念</span></div>
+
 管壁粗糙凸起的平均高度叫**绝对粗糙度** $\Delta$，$\Delta/d$ 叫**相对粗糙度**。黏性底层厚度 $\delta$ 随 $\mathrm{Re}$ 增大而**变薄**，经验式
 
 $$
@@ -2160,6 +2262,8 @@ $$
 
 #### 沿程阻力系数计算公式 { #friction-factor }
 
+<div class="exam-tags"><span class="exam-tag exam-tag--mid">考试可能性：中</span><span class="exam-tag">重要程度：★★☆</span><span class="exam-tag">掌握程度：达西公式会用</span></div>
+
 | 区域 | 雷诺数范围 | 公式 | 名称 |
 |------|-----------|------|------|
 | 层流 | $\mathrm{Re}<2300$ | $\lambda=64/\mathrm{Re}$ | 理论解 |
@@ -2173,6 +2277,8 @@ $$
 **莫迪图**（Moody, 1944）以科尔布鲁克公式为基础，画出工业管道 $\lambda$–$\mathrm{Re}$ 曲线族（每条曲线对应一个 $\Delta/d$），精度约 $\pm15\%$。图上从左到右依次是：层流直线 $64/\mathrm{Re}$ → 临界过渡区 → 光滑管曲线 → 过渡区 → 完全粗糙区（曲线变水平）。**复习课说莫迪图不考**，知道 $\lambda$ 取决于 $\mathrm{Re}$ 和 $\Delta/d$ 就够了。
 
 ### 管流计算的三类问题 { #three-pipe-problems }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--low">考试可能性：低</span><span class="exam-tag">重要程度：★☆☆</span><span class="exam-tag">掌握程度：了解</span></div>
 
 课上 OneNote 6.5 把管内流动计算归成三类。俞老师明确说**迭代法不考**，莫迪图也不考，所以下面要查图、迭代的步骤看思路即可。考试更可能直接给 $\lambda$，或者是层流用 $64/\mathrm{Re}$。
 
@@ -2224,7 +2330,9 @@ $$
 
     与例 6.9 互为逆问题，结果一致。实际选管时取**不小于计算值的标准管径**。
 
-### 非圆管：水力直径 { #hydraulic-diameter }
+### 非圆管：水力直径 { #hydraulic-diameter .exam-skip }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--none">考试可能性：不考</span><span class="exam-tag">重要程度：★☆☆</span><span class="exam-tag">掌握程度：不用看</span></div>
 
 !!! note "本次不考"
     俞老师 11 月 3 日讲完这节时说“不会考你们的”，看懂思路即可。
@@ -2250,6 +2358,8 @@ $$
 
 ### 局部损失 { #minor-loss }
 
+<div class="exam-tags"><span class="exam-tag exam-tag--mid">考试可能性：中</span><span class="exam-tag">重要程度：★★☆</span><span class="exam-tag">掌握程度：会用公式</span></div>
+
 管道截面突变或流向改变处，主流与管壁分离，在死角处形成**旋涡区**。旋涡区内流体剧烈旋转、与主流掺混，把机械能耗散成热，这就是**局部损失**：
 
 $$
@@ -2260,6 +2370,8 @@ $$
     $\zeta$ 必须和它所对应的速度配套使用。**一般用下游（局部管件之后）的速度水头**计算局部损失（提纲原话）。突然扩大除外，它常写成以上游速度为基准的 $\zeta_1$，见下面的推导。
 
 #### 证明：突然扩大的局部损失 { #proof-sudden-expansion }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--mid">考试可能性：中</span><span class="exam-tag">重要程度：★★☆</span><span class="exam-tag">掌握程度：看懂推导</span></div>
 
 !!! definition "证明（手写稿第 17–18 页，老师整页推导）"
     **题设**：圆管由直径 $d_1$ 突然扩大到 $d_2$，面积 $A_1\to A_2$。取断面 1–1（突扩处）与断面 2–2（下游旋涡消失、流动恢复平顺处，约 $5\sim8\,d_2$）之间的流体为控制体。两断面距离短，**忽略沿程损失**；管道水平，$z_1=z_2$。
@@ -2306,6 +2418,8 @@ $$
 
 #### 各类管件的局部损失（OneNote 6.6） { #minor-loss-fittings }
 
+<div class="exam-tags"><span class="exam-tag exam-tag--low">考试可能性：低</span><span class="exam-tag">重要程度：★☆☆</span><span class="exam-tag">掌握程度：不用背</span></div>
+
 局部损失出现在：① 管道入口、出口；② 突然扩大、突然缩小；③ 弯头、肘管、三通等管件；④ 阀门（全开或部分开启）；⑤ 渐扩、渐缩管。管件内部流动复杂，理论分析很难，$\zeta$ 基本都靠**实验测定**：测出管件前后的压降 $\Delta p$，得 $h_j=\Delta p/(\rho g)$，再除以速度水头。$\zeta$ 只取决于管件的几何形状，与 $\mathrm{Re}$ 关系不大（表中数据都是湍流下测的）。
 
 **等效管长**：把局部损失折算成一段直管的沿程损失，
@@ -2338,6 +2452,8 @@ $L$ 取沿管道轴线的**全长**，包括弯头部分的长度。
 
 #### 回忆题：局部阻力系数与水头损失 { #recall-local-loss }
 
+<div class="exam-tags"><span class="exam-tag exam-tag--mid">考试可能性：中</span><span class="exam-tag">重要程度：★★☆</span><span class="exam-tag">掌握程度：会计算</span></div>
+
 ??? question "年份未注明 · 计算①｜由两截面积求局部阻力系数"
     **原题线索**（[查看手写原图](#fluid-i-recall-photo)）：已知 $A_1,A_2$，求 $\zeta_2$。原图没有管件形状。
 
@@ -2361,6 +2477,8 @@ $L$ 取沿管道轴线的**全长**，包括弯头部分的长度。
     原图未给数值，只能写到符号答案。
 
 #### 局部损失详解例题 { #minor-loss-examples }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：会计算</span></div>
 
 局部损失在题目里几乎不单独出现，它是能量方程里的一项。下面三题都按同一套步骤写，先看懂这三件事：
 
@@ -2532,6 +2650,8 @@ $L$ 取沿管道轴线的**全长**，包括弯头部分的长度。
 
 ### 管路系统计算 { #pipe-systems }
 
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：会计算</span></div>
+
 !!! key-point "老师提示：关注流量相关的题目"
     解题主线：**列断面 → 能量方程 → $h_w=\left(\lambda\frac ld+\sum\zeta\right)\frac{V^2}{2g}$ → 解出 $V$ → $Q=VA$**。
 
@@ -2544,6 +2664,8 @@ $L$ 取沿管道轴线的**全长**，包括弯头部分的长度。
     4. 解出未知量，最后**回头验算 $\mathrm{Re}$**，确认 $\lambda$ 取法正确。
 
 #### 单管路系统：求泵的功率 { #single-pipe-pump }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：会计算</span></div>
 
 ??? example "OneNote 例 E6.16｜两水池间抽水所需的泵功率"
     **题目**：用泵把水从水池 1（液面 $z_1=20\ \mathrm{ft}$）抽到水池 2（液面 $z_2=120\ \mathrm{ft}$），流量 $Q=0.2\ \mathrm{ft^3/s}$。管长 $L=400\ \mathrm{ft}$，管径 $d=2\ \mathrm{in}=\frac{2}{12}\ \mathrm{ft}$，$\Delta/d=0.001$，水 $\nu=1.1\times10^{-5}\ \mathrm{ft^2/s}$。沿途有锐缘入口、全开截止阀、$12\ \mathrm{in}$ 半径弯管、标准 90° 弯头、半开闸阀、锐缘出口。求泵的功率。
@@ -2571,6 +2693,8 @@ $L$ 取沿管道轴线的**全长**，包括弯头部分的长度。
     **要点**：泵扬程 = 提升高度 + 全部水头损失。局部损失在这里占了不小的比例（$\sum\zeta=12.2$），不能忽略。
 
 #### 串联管路（老师例 2） { #series-pipes }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--mid">考试可能性：中</span><span class="exam-tag">重要程度：★★☆</span><span class="exam-tag">掌握程度：会计算</span></div>
 
 !!! definition "手写稿第 19 页｜水箱经三段串联管出流"
     **题设**：开口大水箱，液面比管道出口中心高 $h$。管道由三段组成，管长 $l_i$、管径 $d_i$、沿程阻力系数 $\lambda_i$，每段有局部阻力系数 $\zeta_i$。出口流入大气，出口断面 3 速度 $V_3$、面积 $A_3$。求流量。
@@ -2638,7 +2762,9 @@ $$
 
     **对比**：同样三根管若串联、总损失也是 $20.3\ \mathrm m$，流量只有约 $10.2\ \mathrm{m^3/h}$。**相同损失下，并联管路的输送量约是串联的 10 倍。**
 
-#### 三水库问题与管网 { #three-reservoirs }
+#### 三水库问题与管网 { #three-reservoirs .exam-skip }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--none">考试可能性：不考</span><span class="exam-tag">重要程度：★☆☆</span><span class="exam-tag">掌握程度：不用看</span></div>
 
 !!! note "本次不考"
     老师说环路、管网这类多管系统不考。下面的并联例题可以看懂规律，不用多练。
@@ -2674,6 +2800,8 @@ $z_i>h_J$ 的管流向节点，$z_i<h_J$ 的管流出节点。**解法**：先�
 
 #### 回忆题：烟囱高度与抽力 { #recall-chimney }
 
+<div class="exam-tags"><span class="exam-tag exam-tag--mid">考试可能性：中</span><span class="exam-tag">重要程度：★★☆</span><span class="exam-tag">掌握程度：看懂</span></div>
+
 ??? question "年份未注明 · 计算｜烟囱高度与抽力"
     **原题线索**（[查看手写原图](#fluid-i-recall-photo)）：烟囱直径 $d$，烟气密度 $\rho_1$，大气密度 $\rho_2$，烟气流量 $Q$，沿程阻力系数 $\lambda$；底部截面 1 的负压需超过某阈值（手写数值疑为 $150\ \mathrm{Pa}$），求烟囱高度 $H$。
 
@@ -2700,6 +2828,8 @@ $z_i>h_J$ 的管流向节点，$z_i<h_J$ 的管流出节点。**解法**：先�
     分母必须为正，否则烟囱再高也达不到要求。原图缺 $d,Q,\rho_1,\rho_2,\lambda$ 的数值，只能写到符号答案。
 
 ### 第四章作业例题 { #ch4-homework }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：会计算</span></div>
 
 下面按红笔作业整理，都是沿程损失的基本题。做题顺序一样：**先算 $\mathrm{Re}$ 判断流态，再选 $\lambda$**。
 
@@ -2764,6 +2894,8 @@ $z_i>h_J$ 的管流向节点，$z_i<h_J$ 的管流出节点。**解法**：先�
     **注意**：书后答案印作 $54.29\ \mathrm{L/s}$，单位有误，应为 $54.3\ \mathrm{mL/s}$。
 
 #### 流量类补充习题 { #flow-exercises }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：会计算</span></div>
 
 这四题都是求流量或流速，和老师说的“关注流量题”对得上。优先做 6-35、6-38、6-17；6-25 要会列式，$\lambda$ 的迭代不考。下面都取 $g=9.8\ \mathrm{m/s^2}$。局部损失没看过的话，先看[局部损失详解例题](#minor-loss-examples)。
 
@@ -2967,7 +3099,9 @@ $z_i>h_J$ 的管流向节点，$z_i<h_J$ 的管流出节点。**解法**：先�
 
     注意两点：出口进入大容器时 $\zeta_2=1$，能量方程里不再单独写 $V^2/2g$。流态不能默认，油比水黏，但这题算出来是湍流。
 
-### 水击 { #water-hammer }
+### 水击 { #water-hammer .exam-skip }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--none">考试可能性：不考</span><span class="exam-tag">重要程度：★☆☆</span><span class="exam-tag">掌握程度：不用看</span></div>
 
 管道中阀门突然关闭，紧靠阀门的水先停下，压强骤增，这个高压区以**压力波速** $c$ 向上游传播，叫**水击**。取跟随波面运动的控制体，用动量方程可得压强升高（儒可夫斯基公式，手写稿第 22 页）：
 
@@ -2977,7 +3111,9 @@ $$
 
 $V_0$ 是原流速。水中 $c$ 约 $1000\ \mathrm{m/s}$ 量级，所以 $V_0=1\ \mathrm{m/s}$ 就能产生约 $1\ \mathrm{MPa}$ 的压强升高。整个过程以 $4l/c$ 为周期反复，因黏性和管壁变形逐渐衰减。工程上靠**慢关阀门**、设调压井来减轻水击。
 
-### 边界层概念 { #boundary-layer }
+### 边界层概念 { #boundary-layer .exam-skip }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--none">考试可能性：不考</span><span class="exam-tag">重要程度：★☆☆</span><span class="exam-tag">掌握程度：不用看</span></div>
 
 !!! note "本次不考"
     已确定不考。俞老师 10 月 27 日讲分离时说过“必考”，11 月 3 日改口说别的班没学过，放到下个月再考，以后者为准。
@@ -3011,6 +3147,8 @@ $V_0$ 是原流速。水中 $c$ 约 $1000\ \mathrm{m/s}$ 量级，所以 $V_0=1\
 
 ### 第四章填空速记
 
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：背熟</span></div>
+
 - 圆管临界雷诺数 $\mathrm{Re}_c=2300$；层流 $h_f\propto V$，湍流 $h_f\propto V^{1.75\sim2}$。
 - 黏性伯努利方程多一项 $h_w=\sum h_f+\sum h_j$。
 - 总流伯努利方程适用条件：定常、不可压缩、质量力只有重力、过流断面为缓变流。
@@ -3030,10 +3168,14 @@ $V_0$ 是原流速。水中 $c$ 约 $1000\ \mathrm{m/s}$ 量级，所以 $V_0=1\
 
 ## 第五章 · 量纲分析与相似原理 { #ch5 }
 
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：会计算</span></div>
+
 !!! info "章节概览"
     很多流动问题列得出变量，解不出方程，只能做实验。量纲分析的用处是**把几个有量纲的变量组合成少数几个无量纲数**，减少实验次数，并告诉我们模型实验该怎么做才能推广到原型。考试可能出一道「用量纲分析证明某关系式」的证明题，填空考 $\Pi$ 定理和相似准则数。
 
 ### 量纲与量纲一致性原理
+
+<div class="exam-tags"><span class="exam-tag exam-tag--mid">考试可能性：中</span><span class="exam-tag">重要程度：★★☆</span><span class="exam-tag">掌握程度：会用公式</span></div>
 
 **基本量纲**：流体力学（不涉及传热时）用三个：质量 $M$、长度 $L$、时间 $T$。其他量的量纲由它们导出：
 
@@ -3049,6 +3191,8 @@ $V_0$ 是原流速。水中 $c$ 约 $1000\ \mathrm{m/s}$ 量级，所以 $V_0=1\
     一个正确的物理方程，**各项的量纲必须相同**。所以方程可以除以其中任一项，化成全部由无量纲项组成的形式。这是量纲分析能成立的根据，也是检查公式是否写错的最快办法。
 
 ### Π 定理 { #pi-theorem }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：会计算</span></div>
 
 !!! key-point "白金汉 $\Pi$ 定理"
     若一个物理过程涉及 $n$ 个物理量，其中有 $m$ 个**基本量纲**（一般 $m=3$），则这个过程可以用 $n-m$ 个**独立的无量纲数** $\Pi_1,\Pi_2,\dots,\Pi_{n-m}$ 之间的关系来描述：
@@ -3105,6 +3249,8 @@ $V_0$ 是原流速。水中 $c$ 约 $1000\ \mathrm{m/s}$ 量级，所以 $V_0=1\
     左边整理为阻力系数 $C_D$，右边是 $\mathrm{Re}$。所以只要 $\mathrm{Re}$ 相同，不同尺寸、不同流体的圆柱阻力系数都相同，一条 $C_D$–$\mathrm{Re}$ 曲线就能概括所有实验。
 
 ### Π 定理作业题 { #pi-homework }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：会计算</span></div>
 
 范老师 10 月 29 日布置这两题时说考试里会有类似的。题号是老版本书的，新版本编号不同。
 
@@ -3172,6 +3318,8 @@ $V_0$ 是原流速。水中 $c$ 约 $1000\ \mathrm{m/s}$ 量级，所以 $V_0=1\
 
 ### 回忆题：沉降速度的量纲表达 { #recall-dimension }
 
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：会推导</span></div>
+
 ??? question "年份未注明 · 证明｜沉降速度的量纲表达"
     **原题线索**（[查看手写原图](#fluid-i-recall-photo)）：用量纲法说明物体在流体中的沉降速度 $V$ 可写成
 
@@ -3203,6 +3351,8 @@ $V_0$ 是原流速。水中 $c$ 约 $1000\ \mathrm{m/s}$ 量级，所以 $V_0=1\
     其中 $f=1/\sqrt F$。**说明**：量纲分析只能确定组合形式，函数 $f$ 要靠实验。对圆球，若阻力系数为 $C_D$，可得 $f=\sqrt{4/(3C_D)}$。
 
 ### 相似原理 { #similarity }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--low">考试可能性：低</span><span class="exam-tag">重要程度：★☆☆</span><span class="exam-tag">掌握程度：了解</span></div>
 
 模型实验的结果要能推广到原型，模型与原型必须**力学相似**，包括三方面：
 
@@ -3241,6 +3391,8 @@ $V_0$ 是原流速。水中 $c$ 约 $1000\ \mathrm{m/s}$ 量级，所以 $V_0=1\
 
 ### 第五章填空速记
 
+<div class="exam-tags"><span class="exam-tag exam-tag--mid">考试可能性：中</span><span class="exam-tag">重要程度：★★☆</span><span class="exam-tag">掌握程度：背熟</span></div>
+
 - 基本量纲 $M,L,T$；$\mu$ 的量纲 $ML^{-1}T^{-1}$，$\nu$ 为 $L^2T^{-1}$，$p$ 为 $ML^{-1}T^{-2}$。
 - 量纲一致性：物理方程各项量纲相同。
 - $\Pi$ 定理：$n$ 个物理量、$m$ 个基本量纲，可组成 $n-m$ 个独立无量纲数。
@@ -3251,6 +3403,8 @@ $V_0$ 是原流速。水中 $c$ 约 $1000\ \mathrm{m/s}$ 量级，所以 $V_0=1\
 ---
 
 ## 最容易混淆的几组关系
+
+<div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★☆</span><span class="exam-tag">掌握程度：理解概念</span></div>
 
 - **$\mu$ 与 $\nu$**：$\mu$ 进切应力公式，$\nu=\mu/\rho$ 进雷诺数。
 - **形心与压力中心**：总压力大小用**形心**深度算，作用点是**压力中心**，在形心下方。
@@ -3264,7 +3418,9 @@ $V_0$ 是原流速。水中 $c$ 约 $1000\ \mathrm{m/s}$ 量级，所以 $V_0=1\
 
 ---
 
-## 附录 · 可压缩流体一维定常流动 { #appendix-compressible }
+## 附录 · 可压缩流体一维定常流动 { #appendix-compressible .exam-skip }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--none">考试可能性：不考</span><span class="exam-tag">重要程度：★☆☆</span><span class="exam-tag">掌握程度：不用看</span></div>
 
 !!! warning "提纲未列"
     这部分课上讲过（作业 ⑨），但**期末复习提纲没有列出**。时间紧可以跳过，只看回忆卷那道题的思路。
@@ -3288,7 +3444,9 @@ $$
 
 亚声速要加速需**收缩**管，超声速要加速需**扩张**管。所以要得到超声速气流必须用**收缩–扩张喷管**（拉瓦尔喷管），喉部 $\mathrm{Ma}=1$。喉部达到声速后质量流量达到最大（**壅塞**），再降低背压流量也不增加。临界参数 $T^*/T_0=2/(\gamma_g+1)$，$p^*/p_0=[2/(\gamma_g+1)]^{\gamma_g/(\gamma_g-1)}$（空气 $\approx0.528$）。
 
-### 回忆题：两截面等熵气流 { #recall-isentropic }
+### 回忆题：两截面等熵气流 { #recall-isentropic .exam-skip }
+
+<div class="exam-tags"><span class="exam-tag exam-tag--none">考试可能性：不考</span><span class="exam-tag">重要程度：★☆☆</span><span class="exam-tag">掌握程度：不用看</span></div>
 
 ??? question "年份未注明 · 计算｜两截面等熵气流的速度、温度和马赫数"
     **原题线索**（[查看手写原图](#fluid-i-recall-photo)）：已知截面 1 的 $p_1,T_1,A_1$，截面 2 的 $p_2,A_2$，以及 $\gamma_g$、$R$；等熵。求 $V_1,\mathrm{Ma}_1,V_2,T_2,\mathrm{Ma}_2$。

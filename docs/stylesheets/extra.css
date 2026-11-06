@@ -363,3 +363,79 @@ center, p, li {
   border-bottom-color: rgba(156, 163, 175, .08);
   color: var(--md-default-fg-color);
 }
+
+/* =========================================
+   长文笔记排版：章节层级、考情标签
+   ========================================= */
+.md-typeset h2 {
+  margin-top: 2.6em;
+  padding-bottom: .3em;
+  border-bottom: 2px solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset h3 {
+  margin-top: 2.1em;
+}
+
+.md-typeset h4 {
+  margin-top: 1.7em;
+}
+
+.md-typeset .exam-skip {
+  color: var(--md-default-fg-color--light);
+}
+
+.md-typeset .exam-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4em;
+  margin: -.4em 0 1em;
+  line-height: 1.5;
+}
+
+.md-typeset .exam-tag {
+  padding: .1em .65em;
+  border-radius: 1em;
+  font-size: .8em;
+  white-space: nowrap;
+  color: var(--md-default-fg-color);
+  background: var(--md-default-fg-color--lightest);
+}
+
+.md-typeset .exam-tag--must { color: #fff; background: #c62828; }
+.md-typeset .exam-tag--high { color: #fff; background: #d84315; }
+.md-typeset .exam-tag--mid  { color: #fff; background: #1565c0; }
+.md-typeset .exam-tag--low  { color: #33475b; background: #cfd8e3; }
+.md-typeset .exam-tag--none { color: #fff; background: #6b7280; }
+
+[data-md-color-scheme="slate"] .md-typeset .exam-tag--low {
+  color: var(--md-default-fg-color);
+  background: rgba(207, 216, 227, .2);
+}
+
+/* 手机上公式和宽表格在框内滚动，不撑破页面 */
+.md-typeset div.arithmatex {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+@media screen and (max-width: 44.9375em) {
+  .md-typeset span.arithmatex {
+    display: inline-block;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    vertical-align: middle;
+    scrollbar-width: none;
+  }
+
+  .md-typeset span.arithmatex::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.md-typeset figcaption {
+  max-width: 100%;
+  font-size: .86em;
+  color: var(--md-default-fg-color--light);
+}
