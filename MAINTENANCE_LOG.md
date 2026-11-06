@@ -1,5 +1,17 @@
 # Maintenance Log
 
+## 2026-11-07 — 流体力学：改掉圆管层流里“层流湍流都成立”的说法
+
+Scope: `docs/major/foundation/fluid-mechanics/videos/poiseuille-flow.mp4`、`index.md`
+
+Changed:
+- 受力平衡段结尾改为“τ 还只是未知的力，只用了受力平衡，下一步才用 τ 和速度的关系”，旁白、字幕和画面同步修改
+- 讲义对应句子同步改写，视频地址版本号改为 `20261107a`
+
+Why: 用户指出“没用黏性却有切应力”和“层流湍流都成立”让人困惑。
+
+Validation: `./scripts/validate-mkdocs.sh` 通过；新配音听写比对 0.96，未人工试听；1080p 缩略图目视确认，线上文件大小与本地一致。
+
 ## 2026-11-06 — 流体力学：Π 定理动画重做为零基础版
 
 Scope: `docs/major/foundation/fluid-mechanics/videos/pi-theorem.mp4`、封面、`index.md` 的说明和版本号

@@ -2250,7 +2250,7 @@ $$
 动画从受力平衡一路推到 $\lambda=64/\mathrm{Re}$，还从平均流速推出达西公式，最后解释半径减半为什么流量只剩十六分之一。英文配音，配中英字幕，约 5 分钟。配音由开源模型 Fish Audio S2 Pro 生成。
 
 <video controls preload="metadata" playsinline poster="imgs/poiseuille-flow-video-poster.jpg?v=20261106b" style="width:100%;border-radius:8px">
-  <source src="videos/poiseuille-flow.mp4?v=20261106f" type="video/mp4">
+  <source src="videos/poiseuille-flow.mp4?v=20261107a" type="video/mp4">
   你的浏览器不支持视频播放，可以<a href="videos/poiseuille-flow.mp4">下载后观看</a>。
 </video>
 
@@ -2284,7 +2284,7 @@ $$
     \tau=\frac{\Delta p}{l}\cdot\frac r2
     $$
 
-    切应力沿半径**线性**分布，轴心为零，壁面最大 $\tau_w=\frac{\Delta p}{l}\frac R2$。**这一步只用了受力平衡，层流、湍流都成立。**
+    切应力沿半径**线性**分布，轴心为零，壁面最大 $\tau_w=\frac{\Delta p}{l}\frac R2$。**这一步只用了受力平衡，$\tau$ 还只是一个未知的力，下一步才用它和速度的关系。**
 
     **代入牛顿内摩擦定律**：$r$ 增大时 $u$ 减小，所以加负号，$\tau=-\mu\,\mathrm du/\mathrm dr$：
 
