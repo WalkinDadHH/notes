@@ -1,5 +1,17 @@
 # Maintenance Log
 
+## 2026-11-06 — 流体力学：新增 Π 定理动画
+
+Scope: `docs/major/foundation/fluid-mechanics/videos/pi-theorem.mp4`、`imgs/pi-theorem-video-poster.jpg`、`index.md`、`docs/changelog.md`
+
+Changed:
+- 新增 Π 定理动画（4:13，1080p 60 帧，英文配音，中英字幕，纯电子配乐和音效）：管流压降完整走四步，再快速过作业 6-2、6-6
+- 嵌入 Π 定理小节
+
+Why: 用户要求证明题清单里的 Π 定理也配视频，并用老师布置的作业题。
+
+Validation: `./scripts/validate-mkdocs.sh` 通过；配音经指标和听写比对（0 段标记），未人工试听；1080p 缩略图目视检查，各场景时长误差 ≤ 0.02 秒，线上文件大小与本地一致。
+
 ## 2026-11-06 — 流体力学：散度和伯努利动画补配乐音效
 
 Scope: `docs/major/foundation/fluid-mechanics/videos/bernoulli-derivation.mp4`、`divergence-explained.mp4`、`index.md` 版本号、`docs/changelog.md`

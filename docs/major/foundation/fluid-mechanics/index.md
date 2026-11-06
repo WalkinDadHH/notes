@@ -3237,6 +3237,13 @@ $V_0$ 是原流速。水中 $c$ 约 $1000\ \mathrm{m/s}$ 量级，所以 $V_0=1\
     f(\Pi_1,\Pi_2,\dots,\Pi_{n-m})=0
     $$
 
+动画用管流压降走完四步，后面快速过一遍范老师布置的[作业 6-2 和 6-6](#pi-homework)。英文配音，配中英字幕，约 4 分钟。配音由开源模型 Fish Audio S2 Pro 生成。
+
+<video controls preload="metadata" playsinline poster="imgs/pi-theorem-video-poster.jpg?v=20261106" style="width:100%;border-radius:8px">
+  <source src="videos/pi-theorem.mp4?v=20261106" type="video/mp4">
+  你的浏览器不支持视频播放，可以<a href="videos/pi-theorem.mp4">下载后观看</a>。
+</video>
+
 **做题步骤**：
 
 1. 列出所有相关物理量（包括待求量），共 $n$ 个；
