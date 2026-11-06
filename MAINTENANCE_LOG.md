@@ -1,5 +1,16 @@
 # Maintenance Log
 
+## 2026-11-06 — 能环概：发布作者大修的碎碎念
+
+Scope: `docs/major/foundation/energy-environment/index.md`
+
+Changed:
+- 发布作者亲自修改的“一些碎碎念”，内容按作者原文，未再改动
+
+Why: 用户要求上传修改后的版本。
+
+Validation: `./scripts/validate-mkdocs.sh` 通过；页面扫描未发现姓名、学号、手机号、邮箱或本机路径。
+
 ## 2026-11-06 — PDF 提速、文案和友站借鉴
 
 Scope: `docs/javascripts/site.js`、`docs/stylesheets/`、`docs/changelog.md`、`docs/_includes/site_stats.py`、各栏目页、`docs/major/foundation/energy-environment/index.md`、`mkdocs.yml`、`requirements.txt`、`CLAUDE.md`
