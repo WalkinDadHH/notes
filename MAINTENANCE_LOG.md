@@ -1,5 +1,17 @@
 # Maintenance Log
 
+## 2026-11-06 — 流体力学：三段推导动画和层流修正系数
+
+Scope: `docs/major/foundation/fluid-mechanics/`、`docs/changelog.md`
+
+Changed:
+- 新增欧拉运动微分方程、毕托管与文丘里管、圆管层流三段动画（1080p 60 帧，英文配音，中英字幕），分别嵌入对应小节，封面放在 `imgs/`
+- 圆管层流小节的结果速查表增加 $\alpha=2$、$\beta=4/3$，并补积分推导
+
+Why: 用户要求这三段推导配 3b1b 风格视频，并同意把网课笔记里的两个修正系数补进讲义。
+
+Validation: `./scripts/validate-mkdocs.sh` 通过，输出 HTML 含 5 个视频、无裸 `$$`；三条视频均为 1920×1080 60 帧 H.264 + AAC，各场景时长误差 ≤ 0.02 秒。配音经音高、语速、响度指标和听写比对检查，未人工试听。
+
 ## 2026-11-06 — 能环概：发布作者大修的碎碎念
 
 Scope: `docs/major/foundation/energy-environment/index.md`

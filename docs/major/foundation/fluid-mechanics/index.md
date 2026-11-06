@@ -1521,6 +1521,13 @@ $$
 
 <div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：会推导</span></div>
 
+动画从“定常流动里质点为什么还在加速”讲起，重点看**压差力的来历**和**加速度的两个来源**。英文配音，配中英字幕，约 4 分钟。配音由开源模型 Fish Audio S2 Pro 生成。
+
+<video controls preload="metadata" playsinline poster="imgs/euler-equation-video-poster.jpg?v=20261106" style="width:100%;border-radius:8px">
+  <source src="videos/euler-equation.mp4?v=20261106" type="video/mp4">
+  你的浏览器不支持视频播放，可以<a href="videos/euler-equation.mp4">下载后观看</a>。
+</video>
+
 !!! definition "证明：欧拉方程（手写稿第 9–12 页）"
     **取微元**：边长 $\Delta x,\Delta y,\Delta z$ 的六面体，中心 $M$。理想流体，**忽略黏性**，只受质量力和压力。
 
@@ -1755,6 +1762,13 @@ $\alpha$ 是**动能修正系数**：截面速度不均匀时，用平均流速�
 <div class="exam-tags"><span class="exam-tag exam-tag--high">考试可能性：高</span><span class="exam-tag">重要程度：★★★</span><span class="exam-tag">掌握程度：会推导</span></div>
 
 复习课点名：**毕托管（皮托管）和文丘里管要会推导**，两者都不考虑位置水头，用 $\frac12\rho u^2+p=C$ 就能看出动压和静压的关系。
+
+动画把两个推导连着走一遍，重点看**滞止点**、**U 形管的等压面**和**伯努利加连续性的联立**。英文配音，配中英字幕，约 4 分钟。配音由开源模型 Fish Audio S2 Pro 生成。
+
+<video controls preload="metadata" playsinline poster="imgs/pitot-venturi-video-poster.jpg?v=20261106" style="width:100%;border-radius:8px">
+  <source src="videos/pitot-venturi.mp4?v=20261106" type="video/mp4">
+  你的浏览器不支持视频播放，可以<a href="videos/pitot-venturi.mp4">下载后观看</a>。
+</video>
 
 !!! tip "伯努利计算题四步"
     1. **选两个断面**：一个已知量多（如大水箱液面，$V\approx0$、$p=p_a$），一个包含待求量；
@@ -2137,6 +2151,13 @@ $$
 
 老师的要求是**推一遍抛物线，积一遍平均流速**。俞老师 10 月 22 日讲完哈根–泊肃叶公式说“这个东西必考”，所以公式要记住，推导也要会。
 
+动画从受力平衡一路推到 $\lambda=64/\mathrm{Re}$，最后解释半径减半为什么流量只剩十六分之一。英文配音，配中英字幕，约 4 分钟。配音由开源模型 Fish Audio S2 Pro 生成。
+
+<video controls preload="metadata" playsinline poster="imgs/poiseuille-flow-video-poster.jpg?v=20261106" style="width:100%;border-radius:8px">
+  <source src="videos/poiseuille-flow.mp4?v=20261106" type="video/mp4">
+  你的浏览器不支持视频播放，可以<a href="videos/poiseuille-flow.mp4">下载后观看</a>。
+</video>
+
 !!! key-point "结果速查"
     | 量 | 公式 |
     |---|---|
@@ -2147,6 +2168,8 @@ $$
     | 平均流速 | $V=\dfrac{u_{\max}}{2}=\dfrac{\Delta pR^2}{8\mu l}$ |
     | 沿程阻力系数 | $\lambda=\dfrac{64}{\mathrm{Re}}$ |
     | 沿程损失 | $h_f=\dfrac{32\mu lV}{\rho gd^2}$（与 $V$ 的一次方成正比） |
+    | 动能修正系数 | $\alpha=2$ |
+    | 动量修正系数 | $\beta=\dfrac43\approx1.33$ |
 
 !!! definition "证明：圆管层流的速度分布与哈根–泊肃叶定律（手写稿第 9–11 页）"
     **假设**：无限长水平直圆管，半径 $R$，定常、不可压、充分发展的层流。取柱坐标 $(r,\theta,z)$，$z$ 沿管轴：
@@ -2207,6 +2230,19 @@ $$
     $$
 
     层流的 $\lambda$ **只与雷诺数有关，与管壁粗糙度无关**；$h_f=\frac{32\mu lV}{\rho gd^2}\propto V$，与雷诺实验结论一致。
+
+!!! note "层流的动能、动量修正系数"
+    平均流速算流量没问题，算动能和动量会偏小，所以要修正。令 $x=r/R$，由 $u=u_{\max}(1-x^2)=2V(1-x^2)$ 和 $\mathrm dA=2\pi R^2x\,\mathrm dx$ 得：
+
+    $$
+    \alpha=\frac{\int_Au^3\,\mathrm dA}{V^3A}=16\int_0^1(1-x^2)^3x\,\mathrm dx=2
+    $$
+
+    $$
+    \beta=\frac{\int_Au^2\,\mathrm dA}{V^2A}=8\int_0^1(1-x^2)^2x\,\mathrm dx=\frac43\approx1.33
+    $$
+
+    水平等径管两端 $\alpha_1=\alpha_2$、$V_1=V_2$，动能项抵消，所以 $h_f=\Delta p/(\rho g)$。
 
 !!! warning "倾斜管怎么办"
     管道倾斜时重力有轴向分量，把以上各式中的 $\Delta p$ 换成**测压管水头差对应的压差** $\Delta(p+\rho gz)$ 即可，形式完全不变。
