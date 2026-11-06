@@ -1,5 +1,18 @@
 # Maintenance Log
 
+## 2026-11-06 — 流体力学：三段新动画加背景音乐和音效
+
+Scope: `docs/major/foundation/fluid-mechanics/videos/`（`euler-equation.mp4`、`pitot-venturi.mp4`、`poiseuille-flow.mp4`）、`index.md` 的视频地址版本号
+
+Changed:
+- 混入程序合成的原创配乐：电子氛围铺底加稀疏钢琴，人声出现时自动压低
+- 按动画触发时间加入书写、箭头、变形、淡入和高亮音效
+- 视频地址版本号改为 `20261106c`；画面和旁白未变
+
+Why: 用户希望更接近 3b1b 的观感，并喜欢 Minecraft 配乐的感觉。原曲有版权，所以只做风格相近的原创配乐，不使用原曲。
+
+Validation: `./scripts/validate-mkdocs.sh` 通过；有人声时音乐比人声低约 16 dB，音效峰值 -25 dB，混音峰值低于 0.9；用户试听过纯电子版样片确认音量，电子加钢琴版未试听。
+
 ## 2026-11-06 — 流体力学：重写圆管层流动画的压差和达西公式段
 
 Scope: `docs/major/foundation/fluid-mechanics/videos/poiseuille-flow.mp4`、对应封面、`index.md` 的视频说明和地址版本号

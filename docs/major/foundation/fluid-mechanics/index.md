@@ -1524,7 +1524,7 @@ $$
 动画从“定常流动里质点为什么还在加速”讲起，重点看**压差力的来历**和**加速度的两个来源**。英文配音，配中英字幕，约 4 分钟。配音由开源模型 Fish Audio S2 Pro 生成。
 
 <video controls preload="metadata" playsinline poster="imgs/euler-equation-video-poster.jpg?v=20261106" style="width:100%;border-radius:8px">
-  <source src="videos/euler-equation.mp4?v=20261106" type="video/mp4">
+  <source src="videos/euler-equation.mp4?v=20261106c" type="video/mp4">
   你的浏览器不支持视频播放，可以<a href="videos/euler-equation.mp4">下载后观看</a>。
 </video>
 
@@ -1766,7 +1766,7 @@ $\alpha$ 是**动能修正系数**：截面速度不均匀时，用平均流速�
 动画把两个推导连着走一遍，重点看**滞止点**、**U 形管的等压面**和**伯努利加连续性的联立**。英文配音，配中英字幕，约 4 分钟。配音由开源模型 Fish Audio S2 Pro 生成。
 
 <video controls preload="metadata" playsinline poster="imgs/pitot-venturi-video-poster.jpg?v=20261106b" style="width:100%;border-radius:8px">
-  <source src="videos/pitot-venturi.mp4?v=20261106b" type="video/mp4">
+  <source src="videos/pitot-venturi.mp4?v=20261106c" type="video/mp4">
   你的浏览器不支持视频播放，可以<a href="videos/pitot-venturi.mp4">下载后观看</a>。
 </video>
 
@@ -2154,7 +2154,7 @@ $$
 动画从受力平衡一路推到 $\lambda=64/\mathrm{Re}$，还从平均流速推出达西公式，最后解释半径减半为什么流量只剩十六分之一。英文配音，配中英字幕，约 5 分钟。配音由开源模型 Fish Audio S2 Pro 生成。
 
 <video controls preload="metadata" playsinline poster="imgs/poiseuille-flow-video-poster.jpg?v=20261106b" style="width:100%;border-radius:8px">
-  <source src="videos/poiseuille-flow.mp4?v=20261106b" type="video/mp4">
+  <source src="videos/poiseuille-flow.mp4?v=20261106c" type="video/mp4">
   你的浏览器不支持视频播放，可以<a href="videos/poiseuille-flow.mp4">下载后观看</a>。
 </video>
 
