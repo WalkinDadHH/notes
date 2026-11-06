@@ -6,7 +6,7 @@
 
 !!! note ""
     <div align="center" style="font-size:1.3rem;padding:.5rem 0">
-        或许是不知梦的缘故，流离之人追逐幻影。<span class="home-seal" aria-hidden="true">流</span>
+        或许是不知梦的缘故，流离之人追逐幻影。
     </div>
 
 ---

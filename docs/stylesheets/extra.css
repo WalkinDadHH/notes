@@ -790,22 +790,6 @@ html:has(> body[data-md-color-scheme="slate"]) {
   text-align: right;
 }
 
-/* 题词后的闲章 */
-.md-typeset .home-seal {
-  display: inline-grid;
-  place-items: center;
-  width: 1.35em;
-  height: 1.35em;
-  margin-left: .55em;
-  border-radius: .12em;
-  color: var(--site-tag-must-ink);
-  font-size: .62em;
-  line-height: 1;
-  vertical-align: .18em;
-  background-color: var(--site-tag-must);
-  transform: rotate(-4deg);
-}
-
 /* 首屏入口 */
 .md-typeset .home-links {
   display: flex;
@@ -1037,10 +1021,6 @@ html:has(> body[data-md-color-scheme="slate"]) {
     animation: site-rise 500ms ease-out 450ms both;
   }
 
-  .md-typeset .home-seal {
-    animation: site-stamp 450ms cubic-bezier(.22, 1, .36, 1) 1.1s both;
-  }
-
   .md-typeset .stagnation__point {
     transform-box: fill-box;
     transform-origin: center;
@@ -1083,10 +1063,6 @@ html:has(> body[data-md-color-scheme="slate"]) {
   .md-typeset .grid.cards a .twemoji {
     transition: none;
   }
-}
-
-@keyframes site-stamp {
-  from { opacity: 0; transform: rotate(-4deg) scale(1.7); }
 }
 
 @keyframes site-pulse {

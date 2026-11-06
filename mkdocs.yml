@@ -92,6 +92,10 @@ markdown_extensions:
 exclude_docs: |
   _includes/
 
+not_in_nav: |
+  /major/foundation/energy-environment/design-report.md
+  /major/foundation/energy-environment/pvt-paper.md
+
 extra_javascript:
   - javascripts/mathjax.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

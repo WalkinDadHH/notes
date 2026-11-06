@@ -13,13 +13,14 @@ comments: true
 
 | 材料 | 内容 | 入口 |
 |---|---|---|
-| 设计说明书 | 小组项目完整报告，48 页 | [打开 PDF](sources/dunhuang-design-report.pdf){ target="_blank" } |
-| 答辩 PPT | 网页版，按方向键翻页 | [打开](demo/dunhuang-defense.html){ target="_blank" } |
-| 交互网页 | 看监测站逐时运行 | [打开](demo/dunhuang-station.html){ target="_blank" } |
-| 海报 | A3 设计总图 | [打开图片](imgs/dunhuang-poster.jpg){ target="_blank" } |
-| 课程论文 | 个人论文，9 页 | [打开 PDF](sources/pvt-swimming-pool-paper.pdf){ target="_blank" } |
+| 设计说明书 | 小组项目完整报告，47 页 | [阅读](design-report.md) |
+| 答辩 PPT | 网页版，按方向键翻页 | [打开](demo/dunhuang-defense.html) |
+| 交互网页 | 看监测站逐时运行 | [打开](demo/dunhuang-station.html) |
+| 海报 | A3 设计总图 | [打开图片](imgs/dunhuang-poster.jpg) |
+| 源码与数据 | 仿真代码、气象数据和结果文件，7 MB | [下载 zip](sources/dunhuang-offgrid-station-code.zip) |
+| 课程论文 | 个人论文，9 页 | [阅读](pvt-paper.md) |
 
-为保护隐私，这里的文件去掉了成员姓名、学号和联系方式，正文没有改动。
+这里的文件去掉了成员信息和本地路径说明，技术内容没有改动。
 
 ---
 
@@ -97,7 +98,7 @@ comments: true
 
 ### 动手看看
 
-下面是答辩时用的交互网页，可以直接操作。手机上建议[全屏打开](demo/dunhuang-station.html){ target="_blank" }。
+下面是答辩时用的交互网页，可以直接操作。手机上建议[全屏打开](demo/dunhuang-station.html)。
 
 <iframe class="project-demo" src="demo/dunhuang-station.html" title="敦煌离网生态监测站交互网页" loading="lazy"></iframe>
 
@@ -139,4 +140,4 @@ comments: true
 
 模型对 PV 发电量的复现偏差为 +6.0%，对 PVT 发电量偏高 12.7%，所以 PVT 的电输出要当上限看。
 
-[打开论文全文](sources/pvt-swimming-pool-paper.pdf){ .md-button .md-button--primary target="_blank" }
+[阅读论文全文](pvt-paper.md){ .md-button .md-button--primary }
