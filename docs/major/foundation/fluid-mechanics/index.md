@@ -2250,7 +2250,7 @@ $$
 动画从受力平衡一路推到 $\lambda=64/\mathrm{Re}$，还从平均流速推出达西公式，最后解释半径减半为什么流量只剩十六分之一。英文配音，配中英字幕，约 5 分钟。配音由开源模型 Fish Audio S2 Pro 生成。
 
 <video controls preload="metadata" playsinline poster="imgs/poiseuille-flow-video-poster.jpg?v=20261106b" style="width:100%;border-radius:8px">
-  <source src="videos/poiseuille-flow.mp4?v=20261107a" type="video/mp4">
+  <source src="videos/poiseuille-flow.mp4?v=20261107b" type="video/mp4">
   你的浏览器不支持视频播放，可以<a href="videos/poiseuille-flow.mp4">下载后观看</a>。
 </video>
 

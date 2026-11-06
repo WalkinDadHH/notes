@@ -1,5 +1,17 @@
 # Maintenance Log
 
+## 2026-11-07 — 流体力学：圆管层流动画结尾补平均流速
+
+Scope: `docs/major/foundation/fluid-mechanics/videos/poiseuille-flow.mp4`、视频地址版本号
+
+Changed:
+- 结尾解释四次方时加入 $V=u_{\max}/2$ 和 $Q=VA$，用平均流速乘面积得到十六分之一
+- 视频地址版本号改为 `20261107b`
+
+Why: 用户指出流量应该用平均流速，只写最大流速不够直观。
+
+Validation: `./scripts/validate-mkdocs.sh` 通过；新配音听写比对 1.00，未人工试听；1080p 抽帧确认版面，线上文件大小与本地一致。
+
 ## 2026-11-07 — 流体力学：改掉圆管层流里“层流湍流都成立”的说法
 
 Scope: `docs/major/foundation/fluid-mechanics/videos/poiseuille-flow.mp4`、`index.md`
