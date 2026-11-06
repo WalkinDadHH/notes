@@ -1,5 +1,19 @@
 # Maintenance Log
 
+## 2026-11-06 — 流体力学：补齐第二章作业
+
+Scope: `docs/major/foundation/fluid-mechanics/index.md`（第二章、公式速查、第四章题目标题）
+
+Changed:
+- 压强计一节新增作业 3-1、3-7，相对平衡一节新增作业 3-13，公式速查加一行水平减速压强分布
+- 3-7 没有原题和图，卡片按手写解答整理并标注题干待补
+- 3-17 边缘压强的算式改用 ω=62.8，并说明精确值 20π 得 2867 kPa
+- 3-17、3-19、6-17、6-25、6-35、6-38 确认是布置的作业，标题统一为“作业”，“流量类补充习题”改名“流量类作业题”
+
+Why: 用户提供完整作业 PDF，核对后发现第二章缺 3-1、3-7、3-13
+
+Validation: 三题和 3-17 数值用脚本验算；`./scripts/validate-mkdocs.sh` 通过，检查公式和内部链接
+
 ## 2026-11-06 — 能环概：发布作者大修的碎碎念
 
 Scope: `docs/major/foundation/energy-environment/index.md`
