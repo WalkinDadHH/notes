@@ -1,7 +1,4 @@
-
-<!doctype html>
-<html lang="zh" class="no-js">
-  <head>
+<!DOCTYPE html><html lang="zh" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -59,7 +56,17 @@
 
     
     
-  </head>
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     
@@ -92,15 +99,15 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="WalkinDadHH&#39;s Notebook" class="md-header__button md-logo" aria-label="WalkinDadHH's Notebook" data-md-component="logo">
+    <a href="../../.." title="WalkinDadHH's Notebook" class="md-header__button md-logo" aria-label="WalkinDadHH's Notebook" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4zM3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2-2v2h2V5zm0 14h2v-2H5zm0-6h2v-2H5z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4zM3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2-2v2h2V5zm0 14h2v-2H5zm0-6h2v-2H5z"></path></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -125,20 +132,20 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom" aria-label="切换到深色模式" type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom" aria-label="切换到浅色模式" type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
       </label>
     
   
@@ -154,24 +161,24 @@
       
         <label class="md-header__button md-icon" for="__search">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         </label>
         <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="查找">
         
         <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
         </button>
       </nav>
       
@@ -179,7 +186,7 @@
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             正在初始化搜索引擎
@@ -387,7 +394,7 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -398,16 +405,16 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="WalkinDadHH&#39;s Notebook" class="md-nav__button md-logo" aria-label="WalkinDadHH's Notebook" data-md-component="logo">
+    <a href="../../.." title="WalkinDadHH's Notebook" class="md-nav__button md-logo" aria-label="WalkinDadHH's Notebook" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4zM3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2-2v2h2V5zm0 14h2v-2H5zm0-6h2v-2H5z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4zM3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2-2v2h2V5zm0 14h2v-2H5zm0-6h2v-2H5z"></path></svg>
 
     </a>
     WalkinDadHH's Notebook
   </label>
   
-  <ul class="md-nav__list" data-md-scrollfix>
+  <ul class="md-nav__list" data-md-scrollfix="">
     
       
       
@@ -489,7 +496,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
         
           
           <div class="md-nav__link md-nav__container">
@@ -526,7 +533,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
             
@@ -591,7 +598,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
         
           
           <div class="md-nav__link md-nav__container">
@@ -628,7 +635,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
             
@@ -654,7 +661,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2">
         
           
           <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
@@ -684,7 +691,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -714,7 +721,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_1">
         
           
           <div class="md-nav__link md-nav__container">
@@ -751,7 +758,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
             
@@ -858,7 +865,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
         
           
           <div class="md-nav__link md-nav__container">
@@ -890,7 +897,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
             
@@ -932,7 +939,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked="">
         
           
           <div class="md-nav__link md-nav__container">
@@ -969,7 +976,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
             
@@ -1007,7 +1014,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked="">
         
           
           <div class="md-nav__link md-nav__container">
@@ -1044,7 +1051,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
             
@@ -1142,7 +1149,7 @@
       <span class="md-nav__icon md-icon"></span>
       目录
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
   <a href="#symbol-quickref" class="md-nav__link">
@@ -2835,7 +2842,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7">
         
           
           <div class="md-nav__link md-nav__container">
@@ -2872,7 +2879,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
             
@@ -2946,7 +2953,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -2964,7 +2971,7 @@
       <span class="md-nav__icon md-icon"></span>
       目录
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
   <a href="#symbol-quickref" class="md-nav__link">
@@ -4568,7 +4575,7 @@
 
 
 
-<h1 id="_1">工程热力学（甲）<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="_1">工程热力学（甲）<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">课程信息</p>
 <ul>
@@ -4578,9 +4585,9 @@
 <li><strong>考核方式</strong>：期末（60%）+ 平时（40%，点名 + 作业），约 8 道简答 + 3 道计算大题</li>
 </ul>
 </div>
-<p>工程热力学研究热能与机械能之间转换的基本规律及其在工程中的应用，是能源动力类专业的核心基础课。</p>
-<hr />
-<h2 id="symbol-quickref">符号速查<a class="headerlink" href="#symbol-quickref" title="Permanent link">&para;</a></h2>
+<p>工程热力学讲热能和机械能怎么互相转换，以及这些规律在工程里怎么用。</p>
+<hr>
+<h2 id="symbol-quickref">符号速查<a class="headerlink" href="#symbol-quickref" title="Permanent link">¶</a></h2>
 <div class="admonition info">
 <p class="admonition-title">本课程常用符号一览</p>
 <p><strong>热力学量（广延量 / 比参数）</strong></p>
@@ -4929,8 +4936,8 @@
 </tbody>
 </table>
 </div>
-<hr />
-<h2 id="_2">章节概览<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="_2">章节概览<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <p><strong>全 14 章已完成</strong>，每章配概念梳理、折叠式典型例题，并在章末附<strong>历年真题精选</strong>（简答 + 计算，按学期标注）。</p>
 <div class="admonition tip">
 <p class="admonition-title">如何使用本页</p>
@@ -5017,8 +5024,8 @@
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="_3">第一章 · 基本概念及定义<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="_3">第一章 · 基本概念及定义<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <div class="admonition info">
 <p class="admonition-title">章节概览</p>
 <p>建立热力学的基础语言：系统的划分、状态的描述、过程的分类，以及热量与功的严格定义。这些概念是后续分析的出发点。</p>
@@ -5027,7 +5034,7 @@
 <p class="admonition-title">符号太多？</p>
 <p>本课程符号体系庞杂，建议配合<a href="#symbol-quickref">本页符号速查表</a>一起阅读。</p>
 </div>
-<h3 id="_4">热力学系统<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_4">热力学系统<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
 <p>进行热力学分析时，首先需要明确<strong>研究对象</strong>的范围。我们把选定的研究对象称为<strong>热力学系统</strong>（简称系统），系统以外的一切物质称为<strong>外界</strong>，将二者分隔的界面称为<strong>边界</strong>。边界可以是实体的（如容器壁），也可以是假想的（如取一段流体截面）。</p>
 <p>根据系统与外界的交换关系，常按两个维度分类：</p>
 <table>
@@ -5067,15 +5074,15 @@
 </tbody>
 </table>
 <figure>
-  <img alt="热力系统分类" src="imgs/01-system-classification.png" width="90%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/01-system-classification.png" data-desc-position="bottom"><img alt="热力系统分类" src="imgs/01-system-classification.png" width="90%"></a>
+<br>
 <figcaption>热力系统分类：闭口系（控制质量 CM）与开口系（控制体 CV）（图源：课程课件）</figcaption>
 </figure>
 <div class="admonition note">
 <p class="admonition-title">工质</p>
 <p>热力学系统中实现能量转换的媒介物质称为<strong>工质</strong>。分析热机时，工质通常是气体或蒸汽；它在系统内流动并与外界交换热量和功。</p>
 </div>
-<h3 id="_5">热力学状态与平衡态<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_5">热力学状态与平衡态<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
 <p>系统在某一时刻的宏观状况称为<strong>热力学状态</strong>。当系统不受外界干扰且内部各处宏观性质均匀一致时，系统处于<strong>平衡态</strong>。</p>
 <div class="admonition definition">
 <p class="admonition-title">平衡态的判据</p>
@@ -5089,17 +5096,17 @@
 <p>只有处于平衡态，系统的宏观性质才能用确定的<strong>状态参数</strong>来描述。常用的状态参数有：温度 <span class="arithmatex">\(T\)</span>、压力 <span class="arithmatex">\(p\)</span>、比体积 <span class="arithmatex">\(v\)</span> 等。</p>
 <p>对于简单可压缩系统，<strong>两个独立的强度量参数</strong>即可完全确定系统状态，其余参数均可由状态方程导出。</p>
 <figure>
-  <img alt="状态参数坐标图" src="imgs/01-state-coordinates.png" width="90%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/01-state-coordinates.png" data-desc-position="bottom"><img alt="状态参数坐标图" src="imgs/01-state-coordinates.png" width="90%"></a>
+<br>
 <figcaption>简单可压缩系只需两个独立参数，即可在坐标图上确定一个状态点（图源：课程课件）</figcaption>
 </figure>
-<h3 id="_6">状态参数<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<h4 id="_7">压力<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<h3 id="_6">状态参数<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
+<h4 id="_7">压力<a class="headerlink" href="#_7" title="Permanent link">¶</a></h4>
 <p>压力是单位面积上工质对边界的法向力，国际单位为 Pa（<span class="arithmatex">\(\text{N/m}^2\)</span>）。</p>
 <p>工程中常使用相对于环境大气压 <span class="arithmatex">\(p_b\)</span> 的压力值：</p>
 <div class="arithmatex">\[p = \begin{cases} p_b + p_e &amp; \text{（表压，} p &gt; p_b\text{）} \\ p_b - p_v &amp; \text{（负压，} p &lt; p_b\text{）} \end{cases}\]</div>
 <p>其中 <span class="arithmatex">\(p_e\)</span> 为<strong>表压</strong>，<span class="arithmatex">\(p_v\)</span> 为<strong>真空度</strong>，两者均为非负值。热力学计算中必须使用<strong>绝对压力</strong> <span class="arithmatex">\(p\)</span>。</p>
-<h4 id="_8">温度与温标<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<h4 id="_8">温度与温标<a class="headerlink" href="#_8" title="Permanent link">¶</a></h4>
 <p>温度是描述系统冷热程度的状态参数，也是判断两系统是否达到热平衡的依据（热力学第零定律）。</p>
 <p><strong>经验温标与热力学温标</strong></p>
 <p>用两个固定点定义温标是常见做法：冰点（273.15 K）和沸点（373.15 K，标准大气压下）。若某经验温标 N 将冰点定为 <span class="arithmatex">\(T_1\)</span>（N刻度）、沸点定为 <span class="arithmatex">\(T_2\)</span>（N刻度），则任意温度在 N 温标与开氏温标之间满足线性关系：</p>
@@ -5117,19 +5124,19 @@
 <p>摄氏度（<span class="arithmatex">\(^\circ\text{C}\)</span>）是最常用的经验温标，取 <span class="arithmatex">\(T_1 = 0\)</span>，<span class="arithmatex">\(T_2 = 100\)</span> 代入上式化简即得：</p>
 <div class="arithmatex">\[T(\text{K}) = t(^{\circ}\text{C}) + 273.15\]</div>
 <p>热力学计算中统一使用<strong>热力学温标</strong>（开尔文，K）。</p>
-<h4 id="_9">比体积与密度<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<h4 id="_9">比体积与密度<a class="headerlink" href="#_9" title="Permanent link">¶</a></h4>
 <p>比体积 <span class="arithmatex">\(v\)</span> 为单位质量工质所占的体积：<span class="arithmatex">\(v = V/m\)</span>（单位 <span class="arithmatex">\(\text{m}^3/\text{kg}\)</span>）</p>
 <p>密度 <span class="arithmatex">\(\rho = 1/v\)</span>（单位 <span class="arithmatex">\(\text{kg/m}^3\)</span>）</p>
-<h3 id="_10">热力学过程<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<h4 id="_11">准静态过程<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<h3 id="_10">热力学过程<a class="headerlink" href="#_10" title="Permanent link">¶</a></h3>
+<h4 id="_11">准静态过程<a class="headerlink" href="#_11" title="Permanent link">¶</a></h4>
 <p>若过程进行得足够缓慢，系统在每个时刻都无限接近平衡态，则称该过程为<strong>准静态过程</strong>（或准平衡过程）。</p>
 <p>准静态过程可以在热力学状态图（如 <span class="arithmatex">\(p\)</span>-<span class="arithmatex">\(v\)</span> 图、<span class="arithmatex">\(T\)</span>-<span class="arithmatex">\(s\)</span> 图）上用连续曲线表示，这是进行图形分析的基础。</p>
 <figure>
-  <img alt="准静态过程" src="imgs/01-quasistatic-process.png" width="88%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/01-quasistatic-process.png" data-desc-position="bottom"><img alt="准静态过程" src="imgs/01-quasistatic-process.png" width="88%"></a>
+<br>
 <figcaption>准静态过程：每一时刻都无限接近平衡态，可在 p-v 图上用连续曲线表示（图源：课程课件）</figcaption>
 </figure>
-<h4 id="_12">可逆过程<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<h4 id="_12">可逆过程<a class="headerlink" href="#_12" title="Permanent link">¶</a></h4>
 <p>可逆过程是热力学中的理想化极限，需同时满足两个条件：</p>
 <div class="admonition key-point">
 <p class="admonition-title">可逆过程的充要条件</p>
@@ -5139,43 +5146,43 @@
 </ol>
 <p>实际过程均不可逆，可逆过程是评估热力学性能的理论上限。</p>
 </div>
-<h4 id="_13">循环<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<h4 id="_13">循环<a class="headerlink" href="#_13" title="Permanent link">¶</a></h4>
 <p>系统经历一系列过程后回到初始状态，称为<strong>热力学循环</strong>。循环在 <span class="arithmatex">\(p\)</span>-<span class="arithmatex">\(v\)</span> 图上为封闭曲线：</p>
 <ul>
 <li>顺时针循环：系统对外净输出功（正循环，如热机）</li>
 <li>逆时针循环：外界对系统净输入功（逆循环，如制冷机）</li>
 </ul>
-<h3 id="_14">热量与功<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<h3 id="_14">热量与功<a class="headerlink" href="#_14" title="Permanent link">¶</a></h3>
 <p>热量和功是系统与外界<strong>相互作用</strong>时传递的能量，均为<strong>过程量</strong>（不是状态参数）。</p>
-<h4 id="_15">热量<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
+<h4 id="_15">热量<a class="headerlink" href="#_15" title="Permanent link">¶</a></h4>
 <p>热量 <span class="arithmatex">\(Q\)</span> 是由温差驱动的能量传递。规定系统吸热为正，放热为负。</p>
 <p>对可逆过程，微元热量与熵 <span class="arithmatex">\(s\)</span> 的关系为：</p>
 <div class="arithmatex">\[\delta q = T \, \mathrm{d}s\]</div>
 <div class="arithmatex">\[q_{1\text{-}2} = \int_1^2 T \, \mathrm{d}s\]</div>
 <p>在 <span class="arithmatex">\(T\)</span>-<span class="arithmatex">\(s\)</span> 图上，可逆过程的热量等于曲线下的面积。</p>
 <figure>
-  <img alt="热量在 T-s 图上的面积" src="imgs/01-heat-ts.png" width="88%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/01-heat-ts.png" data-desc-position="bottom"><img alt="热量在 T-s 图上的面积" src="imgs/01-heat-ts.png" width="88%"></a>
+<br>
 <figcaption>可逆过程热量 q=∫T ds，等于 T-s 图上曲线下的面积（图源：课程课件）</figcaption>
 </figure>
-<h4 id="_16">体积功（膨胀功）<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
+<h4 id="_16">体积功（膨胀功）<a class="headerlink" href="#_16" title="Permanent link">¶</a></h4>
 <p>闭口系工质因体积变化对外做的功：</p>
 <div class="arithmatex">\[\delta w = p \, \mathrm{d}v\]</div>
 <div class="arithmatex">\[w_{1\text{-}2} = \int_1^2 p \, \mathrm{d}v\]</div>
 <p>在 <span class="arithmatex">\(p\)</span>-<span class="arithmatex">\(v\)</span> 图上，可逆过程的膨胀功等于曲线下的面积。</p>
 <figure>
-  <img alt="膨胀功在 p-v 图上的面积" src="imgs/01-volume-work.png" width="88%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/01-volume-work.png" data-desc-position="bottom"><img alt="膨胀功在 p-v 图上的面积" src="imgs/01-volume-work.png" width="88%"></a>
+<br>
 <figcaption>可逆膨胀功 w=∫p dv，等于 p-v 图上曲线下的面积（图源：课程课件）</figcaption>
 </figure>
-<h4 id="_17">有用功<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
+<h4 id="_17">有用功<a class="headerlink" href="#_17" title="Permanent link">¶</a></h4>
 <p>实际装置中，工质不仅推动活塞，还需克服大气背压 <span class="arithmatex">\(p_0\)</span>，因此<strong>有用功</strong>（净输出功）为：</p>
 <div class="arithmatex">\[w_u = \int_1^2 p \, \mathrm{d}v - p_0 \Delta v\]</div>
 <div class="admonition tip">
 <p class="admonition-title">符号约定</p>
 <p>本章起采用统一符号约定：大写字母（<span class="arithmatex">\(Q, W, U\)</span>）为广延量（与质量成正比），小写字母（<span class="arithmatex">\(q, w, u\)</span>）为比参数（单位质量对应值）。</p>
 </div>
-<h3 id="_18">真题精选<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<h3 id="_18">真题精选<a class="headerlink" href="#_18" title="Permanent link">¶</a></h3>
 <details class="question">
 <summary>24-25春夏 · 热力系如何分类，各与外界如何交换能量与物质</summary>
 <p><strong>题</strong> 根据热力系与外界能量交换的关系，可以把热力系分为哪几类？简述它们与外界的能量与物质交换情况。</p>
@@ -5223,13 +5230,13 @@
 <p><strong>题</strong> 摄氏温度和华氏温度有什么区别？有没有可能相等？</p>
 <p><strong>答</strong> 摄氏温标与华氏温标零点和单位间隔不同：<span class="arithmatex">\(t_F = \tfrac{9}{5}t_C + 32\)</span>。令 <span class="arithmatex">\(t_F = t_C\)</span> 得 <span class="arithmatex">\(t_C = t_F = -40^\circ\)</span>，二者<strong>可能相等</strong>。</p>
 </details>
-<hr />
-<h2 id="_19">第二章 · 能量与热力学第一定律<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="_19">第二章 · 能量与热力学第一定律<a class="headerlink" href="#_19" title="Permanent link">¶</a></h2>
 <div class="admonition info">
 <p class="admonition-title">章节概览</p>
 <p>热力学第一定律是能量守恒在热力学中的具体形式。本章从闭口系出发，逐步推广到开口系和稳定流动系统，建立各类系统的能量方程。</p>
 </div>
-<h3 id="_20">流动功与推进功<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<h3 id="_20">流动功与推进功<a class="headerlink" href="#_20" title="Permanent link">¶</a></h3>
 <p>当工质在开口系（如管道、涡轮）中流动时，上游工质必须克服截面处的压力将下游工质"推入"系统，这部分功称为<strong>流动功</strong>（或<strong>推进功</strong>）。</p>
 <p>对于截面处压力为 <span class="arithmatex">\(p\)</span>、比体积为 <span class="arithmatex">\(v\)</span> 的工质，单位质量的流动功为：</p>
 <div class="arithmatex">\[w_{\text{流动}} = pv\]</div>
@@ -5237,11 +5244,11 @@
 <div class="arithmatex">\[\Delta(pv) = p_2 v_2 - p_1 v_1\]</div>
 <p>这一项将频繁出现在开口系的能量方程中。</p>
 <figure>
-  <img alt="流动功示意图" src="imgs/02-flow-work.png" width="86%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/02-flow-work.png" data-desc-position="bottom"><img alt="流动功示意图" src="imgs/02-flow-work.png" width="86%"></a>
+<br>
 <figcaption>流动功 w=pv：上游工质把截面处的工质推入控制体所做的功（图源：课程课件）</figcaption>
 </figure>
-<h3 id="_21">焓<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<h3 id="_21">焓<a class="headerlink" href="#_21" title="Permanent link">¶</a></h3>
 <p>为了简化开口系的书写，引入<strong>焓</strong> <span class="arithmatex">\(H\)</span> 作为复合状态参数：</p>
 <div class="arithmatex">\[H = U + pV \quad \Longrightarrow \quad h = u + pv\]</div>
 <div class="admonition definition">
@@ -5249,7 +5256,7 @@
 <p>焓 <span class="arithmatex">\(h\)</span> 代表工质携带的<strong>总储运能量</strong>——既包括内能 <span class="arithmatex">\(u\)</span>，也包括将其推入流场所需的流动功 <span class="arithmatex">\(pv\)</span>。因此，在稳定流动问题中，焓是描述工质能量状态的最自然的参数。</p>
 </div>
 <p>焓是状态参数（广延量），单位为 J（或 J/kg）。</p>
-<h3 id="_22">热力学第一定律——闭口系<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<h3 id="_22">热力学第一定律——闭口系<a class="headerlink" href="#_22" title="Permanent link">¶</a></h3>
 <p>对于质量固定的<strong>闭口系</strong>，能量守恒表述为：</p>
 <div class="arithmatex">\[\delta Q = \mathrm{d}U + \delta W\]</div>
 <p>对可逆过程，<span class="arithmatex">\(\delta W = p \, \mathrm{d}V\)</span>，因此：</p>
@@ -5260,11 +5267,11 @@
 <div class="arithmatex">\[Q_{\text{net}} = W_{\text{net}}\]</div>
 <p>即循环净热量等于循环净功——这是热机效率分析的基础。</p>
 <figure>
-  <img alt="循环过程与内能是状态量" src="imgs/02-cycle-internal-energy.png" width="88%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/02-cycle-internal-energy.png" data-desc-position="bottom"><img alt="循环过程与内能是状态量" src="imgs/02-cycle-internal-energy.png" width="88%"></a>
+<br>
 <figcaption>沿任意循环 ∮(δQ−δW)=0，故内能 U 是状态参数；循环净热量等于净功（图源：课程课件）</figcaption>
 </figure>
-<h3 id="_23">开口系能量方程<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
+<h3 id="_23">开口系能量方程<a class="headerlink" href="#_23" title="Permanent link">¶</a></h3>
 <p>对于允许工质进出的<strong>开口系</strong>（控制体），除了热量和功的交换，还需计入工质携带的能量。</p>
 <p>设控制体在微元时间内：</p>
 <ul>
@@ -5276,15 +5283,15 @@
 <div class="arithmatex">\[\delta Q = \mathrm{d}E_{\text{cv}} + \left(h_2 + \frac{c_2^2}{2} + gz_2\right)\delta m_2 - \left(h_1 + \frac{c_1^2}{2} + gz_1\right)\delta m_1 + \delta W_i\]</div>
 <p>其中 <span class="arithmatex">\(E_{\text{cv}}\)</span> 为控制体内的总储存能（内能 + 动能 + 势能）。</p>
 <figure>
-  <img alt="开口系能量方程" src="imgs/02-open-system-energy.png" width="90%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/02-open-system-energy.png" data-desc-position="bottom"><img alt="开口系能量方程" src="imgs/02-open-system-energy.png" width="90%"></a>
+<br>
 <figcaption>开口系（控制体）能量平衡：进出口工质携带的焓、动能、位能，加上热量与轴功（图源：课程课件）</figcaption>
 </figure>
-<h3 id="_24">稳定流动能量方程<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<h3 id="_24">稳定流动能量方程<a class="headerlink" href="#_24" title="Permanent link">¶</a></h3>
 <p>工程中最常见的是<strong>稳定流动</strong>（稳态）：控制体内工质状态不随时间变化，进出质量流量相等（<span class="arithmatex">\(\dot{m}_1 = \dot{m}_2 = \dot{m}\)</span>），此时 <span class="arithmatex">\(\mathrm{d}E_{\text{cv}} = 0\)</span>。</p>
 <figure>
-  <img alt="稳定流动条件" src="imgs/02-steady-flow.png" width="88%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/02-steady-flow.png" data-desc-position="bottom"><img alt="稳定流动条件" src="imgs/02-steady-flow.png" width="88%"></a>
+<br>
 <figcaption>稳定流动：控制体内每一截面状态都不随时间变化，进出口质量流量相等（图源：课程课件）</figcaption>
 </figure>
 <p>单位质量工质的稳定流动能量方程（<strong>SFEE</strong>）：</p>
@@ -5297,11 +5304,11 @@
 <p>对<strong>绝热</strong>稳定流动（<span class="arithmatex">\(q = 0\)</span>），轴功完全来自焓降：<span class="arithmatex">\(w_i = h_1 - h_2\)</span></p>
 </div>
 <figure>
-  <img alt="透平机械的稳定流动" src="imgs/02-turbine.png" width="86%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/02-turbine.png" data-desc-position="bottom"><img alt="透平机械的稳定流动" src="imgs/02-turbine.png" width="86%"></a>
+<br>
 <figcaption>汽轮机等透平机械：绝热稳定流动时输出的轴功来自焓降，w=h₁−h₂&gt;0（图源：课程课件）</figcaption>
 </figure>
-<h3 id="_25">技术功<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
+<h3 id="_25">技术功<a class="headerlink" href="#_25" title="Permanent link">¶</a></h3>
 <p>在稳定流动中，<strong>技术功</strong> <span class="arithmatex">\(w_t\)</span> 定义为除流动功以外的所有功之和（含轴功、摩擦功等）：</p>
 <div class="arithmatex">\[w_t = w_i + \frac{\Delta c^2}{2} + g\Delta z\]</div>
 <p>对可逆稳定流动，技术功与压力的关系为：</p>
@@ -5309,8 +5316,8 @@
 <div class="arithmatex">\[w_t = -\int_1^2 v \, \mathrm{d}p\]</div>
 <p>在 <span class="arithmatex">\(p\)</span>-<span class="arithmatex">\(v\)</span> 图上，<span class="arithmatex">\(-\int v \, \mathrm{d}p\)</span> 对应曲线<strong>左侧</strong>的面积（与 <span class="arithmatex">\(\int p \, \mathrm{d}v\)</span> 在曲线下方对应）。</p>
 <figure>
-  <img alt="技术功在 p-v 图上的面积" src="imgs/02-technical-work-pv.png" width="86%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/02-technical-work-pv.png" data-desc-position="bottom"><img alt="技术功在 p-v 图上的面积" src="imgs/02-technical-work-pv.png" width="86%"></a>
+<br>
 <figcaption>技术功 wₜ=−∫v dp 在 p-v 图上对应曲线左侧（纵轴方向）的面积（图源：课程课件）</figcaption>
 </figure>
 <p>相应地，可逆稳定流动中热量与焓、熵的关系：</p>
@@ -5323,7 +5330,7 @@
 </ul>
 <p>两者相差一个 <span class="arithmatex">\(\mathrm{d}(pv)\)</span> 项，正是流动功的贡献。</p>
 </div>
-<h3 id="_26">真题精选<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h3>
+<h3 id="_26">真题精选<a class="headerlink" href="#_26" title="Permanent link">¶</a></h3>
 <details class="question">
 <summary>22-23春夏 · 节流阀工作原理，空气能否用节流阀节流</summary>
 <p><strong>题</strong> 请简述节流阀工作原理。空气能用节流阀节流吗？</p>
@@ -5347,13 +5354,13 @@
 <div class="arithmatex">\[\Delta U = W_\text{in} = mc_v(T_2 - T_1),\qquad \Delta H = mc_p(T_2 - T_1).\]</div>
 <p>其中 <span class="arithmatex">\(\Delta H\)</span> 只是焓作为状态参数的变化量；刚性容器分析能量平衡时主要使用 <span class="arithmatex">\(\Delta U\)</span>。以系统对外作功为正时 <span class="arithmatex">\(W = -W_\text{in}\)</span>，吸热量 <span class="arithmatex">\(Q = 0\)</span>。</p>
 </details>
-<hr />
-<h2 id="_27">第三章 · 熵与热力学第二定律<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="_27">第三章 · 熵与热力学第二定律<a class="headerlink" href="#_27" title="Permanent link">¶</a></h2>
 <div class="admonition info">
 <p class="admonition-title">章节概览</p>
 <p>热力学第一定律告诉我们能量守恒，但没有说明过程的<strong>方向</strong>。第二定律引入了过程方向性的判据——熵，揭示了自然过程不可逆的本质。</p>
 </div>
-<h3 id="_28">热力学第二定律<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h3>
+<h3 id="_28">热力学第二定律<a class="headerlink" href="#_28" title="Permanent link">¶</a></h3>
 <p>第二定律有多种等价表述，最常见的两种：</p>
 <div class="admonition definition">
 <p class="admonition-title">第二定律的两种经典表述</p>
@@ -5362,7 +5369,7 @@
 <p>这两种表述完全等价——违反其一必然违反其二。</p>
 </div>
 <p>第二定律的本质是：<strong>自然过程具有方向性</strong>，一切实际过程均不可逆。</p>
-<h3 id="_29">卡诺循环与热效率<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h3>
+<h3 id="_29">卡诺循环与热效率<a class="headerlink" href="#_29" title="Permanent link">¶</a></h3>
 <p><strong>卡诺循环</strong>是在高温热源 <span class="arithmatex">\(T_1\)</span> 和低温热源 <span class="arithmatex">\(T_2\)</span>（<span class="arithmatex">\(T_1 &gt; T_2\)</span>）之间工作的<strong>可逆循环</strong>，由两个等温过程和两个绝热过程组成。</p>
 <p>卡诺循环的热效率：</p>
 <div class="arithmatex">\[\eta_C = 1 - \frac{T_2}{T_1}\]</div>
@@ -5377,26 +5384,26 @@
 <p>即：<span class="arithmatex">\(\eta_{\text{irrev}} &lt; \eta_C = 1 - \dfrac{T_2}{T_1}\)</span></p>
 </div>
 <figure>
-  <img alt="卡诺定理的反证法" src="imgs/03-carnot-theorem.png" width="62%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/03-carnot-theorem.png" data-desc-position="bottom"><img alt="卡诺定理的反证法" src="imgs/03-carnot-theorem.png" width="62%"></a>
+<br>
 <figcaption>卡诺定理一的反证：设任意热机 E 的效率高于可逆热机 R，用 E 的部分功 Wr 驱动 R 反转制冷，则可在不消耗外功的情况下把热量从低温热源搬向高温热源——构成第二类永动机，与第二定律矛盾，故 η_E ≤ η_R（图源：课程课件）</figcaption>
 </figure>
-<h3 id="_30">制冷循环与热泵<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h3>
+<h3 id="_30">制冷循环与热泵<a class="headerlink" href="#_30" title="Permanent link">¶</a></h3>
 <p>逆向运行卡诺循环即为<strong>卡诺制冷循环</strong>，从低温热源 <span class="arithmatex">\(T_2\)</span> 吸热 <span class="arithmatex">\(q_2\)</span>，向高温热源 <span class="arithmatex">\(T_1\)</span> 放热 <span class="arithmatex">\(q_1\)</span>，消耗净功 <span class="arithmatex">\(w\)</span>。</p>
 <p><strong>制冷系数</strong>（COP）：</p>
 <div class="arithmatex">\[\varepsilon = \frac{q_2}{w} = \frac{T_2}{T_1 - T_2}\]</div>
 <p><strong>热泵供热系数</strong>：</p>
 <div class="arithmatex">\[\varepsilon' = \frac{q_1}{w} = \frac{T_1}{T_1 - T_2} = \varepsilon + 1\]</div>
 <figure>
-  <img alt="逆卡诺循环与性能系数" src="imgs/03-reverse-carnot.png" width="88%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/03-reverse-carnot.png" data-desc-position="bottom"><img alt="逆卡诺循环与性能系数" src="imgs/03-reverse-carnot.png" width="88%"></a>
+<br>
 <figcaption>逆卡诺循环（制冷/热泵）：消耗净功 W = Q₁−Q₂，从低温热源 T₂ 取热 Q₂、向高温热源 T₁ 放热 Q₁。制冷系数 ε = T₂/(T₁−T₂)、供暖系数 ε′ = T₁/(T₁−T₂)，统称性能系数 COP（图源：课程课件）</figcaption>
 </figure>
-<h3 id="_31">克劳修斯不等式<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h3>
+<h3 id="_31">克劳修斯不等式<a class="headerlink" href="#_31" title="Permanent link">¶</a></h3>
 <p>对任意热力学循环，将每个微元过程的热量 <span class="arithmatex">\(\delta Q\)</span> 除以该过程对应的热源温度 <span class="arithmatex">\(T\)</span>，沿整个循环积分，有：</p>
 <div class="arithmatex">\[\oint \frac{\delta Q}{T} \leq 0\]</div>
 <p>等号对应<strong>可逆循环</strong>，不等号对应<strong>不可逆循环</strong>。这一关系称为<strong>克劳修斯不等式</strong>，是第二定律的数学表达。</p>
-<h3 id="_32">熵的定义<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h3>
+<h3 id="_32">熵的定义<a class="headerlink" href="#_32" title="Permanent link">¶</a></h3>
 <p>由克劳修斯不等式可以证明，对于可逆过程，<span class="arithmatex">\(\dfrac{\delta Q}{T}\)</span> 是一个<strong>全微分</strong>，对应一个状态函数。将这个状态函数称为<strong>熵</strong> <span class="arithmatex">\(S\)</span>：</p>
 <div class="arithmatex">\[\mathrm{d}S = \left(\frac{\delta Q}{T}\right)_{\text{rev}}\]</div>
 <div class="admonition definition">
@@ -5409,11 +5416,11 @@
 <div class="arithmatex">\[S_2 - S_1 = \int_1^2 \frac{\delta Q}{T}\]</div>
 <p>在 <span class="arithmatex">\(T\)</span>-<span class="arithmatex">\(s\)</span> 图上，可逆过程的<strong>热量等于曲线下的面积</strong>。</p>
 <figure>
-  <img alt="T-s 图（示热图）" src="imgs/03-ts-diagram.png" width="42%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/03-ts-diagram.png" data-desc-position="bottom"><img alt="T-s 图（示热图）" src="imgs/03-ts-diagram.png" width="42%"></a>
+<br>
 <figcaption>T-s 图（示热图）：由 δQ = T·ds，过程曲线下的面积即可逆过程交换的热量。从 1 出发，ds&gt;0（1→2）为吸热、ds=0（1→2′）为绝热、ds&lt;0（1→2″）为放热（图源：课程课件）</figcaption>
 </figure>
-<h3 id="_33">不可逆过程与熵产<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h3>
+<h3 id="_33">不可逆过程与熵产<a class="headerlink" href="#_33" title="Permanent link">¶</a></h3>
 <p>对于实际（不可逆）过程，克劳修斯不等式给出：</p>
 <div class="arithmatex">\[\mathrm{d}S &gt; \frac{\delta Q}{T}\]</div>
 <p>引入<strong>熵产</strong> <span class="arithmatex">\(\delta S_g\)</span> 来量化不可逆程度：</p>
@@ -5426,7 +5433,7 @@
 <div class="arithmatex">\[\delta S_g \begin{cases} = 0 &amp; \text{可逆过程} \\ &gt; 0 &amp; \text{不可逆过程} \end{cases}\]</div>
 <p>熵产永远非负，且不可逆程度越高，熵产越大。熵产是衡量过程不可逆性的量度。</p>
 </div>
-<h3 id="_34">孤立系熵增原理<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h3>
+<h3 id="_34">孤立系熵增原理<a class="headerlink" href="#_34" title="Permanent link">¶</a></h3>
 <p>对于与外界无热量交换（绝热）且无物质交换的<strong>孤立系统</strong>，<span class="arithmatex">\(\delta Q = 0\)</span>，故：</p>
 <div class="arithmatex">\[\mathrm{d}S_{\text{iso}} = \delta S_g \geq 0\]</div>
 <div class="admonition key-point">
@@ -5435,14 +5442,14 @@
 <div class="arithmatex">\[\mathrm{d}S_{\text{iso}} \geq 0\]</div>
 <p>等号对应可逆过程（熵不变），不等号对应不可逆过程（熵增大）。这就是<strong>孤立系熵增原理</strong>，是判断过程方向性的最终判据。</p>
 </div>
-<h3 id="_35">熵方程<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h3>
-<h4 id="_36">闭口系熵方程<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h4>
+<h3 id="_35">熵方程<a class="headerlink" href="#_35" title="Permanent link">¶</a></h3>
+<h4 id="_36">闭口系熵方程<a class="headerlink" href="#_36" title="Permanent link">¶</a></h4>
 <p>对闭口系微元过程：</p>
 <div class="arithmatex">\[\mathrm{d}S = \frac{\delta Q}{T_b} + \delta S_g\]</div>
 <p>其中 <span class="arithmatex">\(T_b\)</span> 为边界温度，<span class="arithmatex">\(\delta S_g \geq 0\)</span>。</p>
 <p>展开为对有限过程：</p>
 <div class="arithmatex">\[S_2 - S_1 = \int_1^2 \frac{\delta Q}{T_b} + S_g\]</div>
-<h4 id="_37">开口系熵方程<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h4>
+<h4 id="_37">开口系熵方程<a class="headerlink" href="#_37" title="Permanent link">¶</a></h4>
 <p>稳定流动开口系，单位时间的熵平衡：</p>
 <div class="arithmatex">\[\dot{m}_2 s_2 - \dot{m}_1 s_1 = \frac{\dot{Q}}{T_b} + \dot{S}_g\]</div>
 <p>对单位质量工质：</p>
@@ -5455,7 +5462,7 @@
 <li>若熵不变，则该过程<strong>可逆</strong></li>
 </ul>
 </div>
-<h3 id="_38">能量的品位与㶲（有效能）<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h3>
+<h3 id="_38">能量的品位与㶲（有效能）<a class="headerlink" href="#_38" title="Permanent link">¶</a></h3>
 <p>第一定律只讲能量在数量上守恒，却没回答一个工程上更关键的问题：<strong>同样多的能量，做功本领是否相同？</strong> 答案是否定的——能量有<strong>品位（品质）</strong>之分。</p>
 <div class="admonition key-point">
 <p class="admonition-title">能量按可转换性分为三类</p>
@@ -5492,11 +5499,11 @@
 <div class="arithmatex">\[\text{能量} = E_x + A_n\]</div>
 <p>环境是㶲的基准，<strong>环境的㶲为零</strong>。㶲把"能量的量"与"能量的质"统一了起来。</p>
 </div>
-<h4 id="_39">热量㶲<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h4>
+<h4 id="_39">热量㶲<a class="headerlink" href="#_39" title="Permanent link">¶</a></h4>
 <p>从温度 <span class="arithmatex">\(T\,(&gt;T_0)\)</span> 的热源取热 <span class="arithmatex">\(Q\)</span>，其中可转化为功的部分（热量㶲）由卡诺因子给出：</p>
 <div class="arithmatex">\[E_{x,Q} = \int\left(1 - \frac{T_0}{T}\right)\delta Q\]</div>
 <p>定温热源时 <span class="arithmatex">\(E_{x,Q} = Q\left(1 - \dfrac{T_0}{T}\right)\)</span>，其余 <span class="arithmatex">\(A_{n,Q} = Q\dfrac{T_0}{T} = T_0\Delta S\)</span> 为无效能。可见<strong>热源温度越高，热量的㶲越多</strong>——这正是"能质"的体现。</p>
-<h4 id="_40">闭口系㶲与稳流㶲<a class="headerlink" href="#_40" title="Permanent link">&para;</a></h4>
+<h4 id="_40">闭口系㶲与稳流㶲<a class="headerlink" href="#_40" title="Permanent link">¶</a></h4>
 <p>工质相对环境所具有的做功能力：</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -5505,7 +5512,7 @@
 \end{aligned}
 \]</div>
 <p>（忽略动能、位能；下标 0 表示工质与环境平衡时的状态。）</p>
-<h4 id="_41">㶲损与㶲平衡<a class="headerlink" href="#_41" title="Permanent link">&para;</a></h4>
+<h4 id="_41">㶲损与㶲平衡<a class="headerlink" href="#_41" title="Permanent link">¶</a></h4>
 <div class="admonition key-point">
 <p class="admonition-title">Gouy–Stodola 定理：㶲损 = 熵产 × 环境温度</p>
 <p>一切不可逆过程都会<strong>损失做功能力</strong>，称为<strong>㶲损</strong> <span class="arithmatex">\(I\)</span>。它与熵产 <span class="arithmatex">\(S_g\)</span> 直接成正比：</p>
@@ -5513,13 +5520,13 @@
 <p>可逆过程 <span class="arithmatex">\(S_g = 0\)</span> 故 <span class="arithmatex">\(I = 0\)</span>。<strong>㶲损只取决于熵产</strong>——而熵是状态量、易计算，功是过程量、难计算，所以求㶲损通常先求 <span class="arithmatex">\(S_g\)</span> 再乘 <span class="arithmatex">\(T_0\)</span>，比直接做㶲平衡更简便。</p>
 </div>
 <figure>
-  <img alt="㶲损失的两种计算途径" src="imgs/03-exergy-loss.png" width="90%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/03-exergy-loss.png" data-desc-position="bottom"><img alt="㶲损失的两种计算途径" src="imgs/03-exergy-loss.png" width="90%"></a>
+<br>
 <figcaption>㶲损失的求解：一是建立㶲平衡方程（追踪伴随热/功/质量传递的㶲量），二是先求熵产 Sg（查表、构建可逆过程或用孤立系熵增原理）再由 I = T₀·Sg 算得——后者通常更简便（图源：课程课件）</figcaption>
 </figure>
 <p><strong>㶲平衡方程</strong>：</p>
 <div class="arithmatex">\[\text{进入系统的㶲} - \text{离开系统的㶲} - I = \text{系统㶲的变化}\]</div>
-<h4 id="_42">㶲效率<a class="headerlink" href="#_42" title="Permanent link">&para;</a></h4>
+<h4 id="_42">㶲效率<a class="headerlink" href="#_42" title="Permanent link">¶</a></h4>
 <div class="arithmatex">\[\eta_{ex} = \frac{\text{收益㶲}}{\text{耗费㶲}}\]</div>
 <p>它衡量用能在<strong>质</strong>上的完善程度，区别于只看"量"的热效率。</p>
 <div class="admonition note">
@@ -5540,7 +5547,7 @@
 <div class="arithmatex">\[W_{\min} = \Delta E_x = 9.82\ \text{kJ}\]</div>
 <p><strong>要点</strong>：直接用高温热源加热，虽然能量"够用"，却白白损失了 <span class="arithmatex">\(18.9\,\text{kJ}\)</span> 的做功能力；改用热泵从环境"搬运"低品位热，只需 <span class="arithmatex">\(9.82\,\text{kJ}\)</span> 功——㶲视角下热泵能效远高于电阻加热。</p>
 </details>
-<h3 id="_43">真题精选<a class="headerlink" href="#_43" title="Permanent link">&para;</a></h3>
+<h3 id="_43">真题精选<a class="headerlink" href="#_43" title="Permanent link">¶</a></h3>
 <details class="question">
 <summary>24-25春夏 · 第二定律的两个数学表达式并解释</summary>
 <p><strong>题</strong> 给出两个关于热力学第二定律的数学表达式，并解释。</p>
@@ -5611,22 +5618,22 @@
 <div class="arithmatex">\[Q_1 = \frac{W + T_L S_\text{gen}}{1 - T_L/T_H},\qquad \eta = \frac{W}{Q_1}.\]</div>
 <p>可逆卡诺循环是 <span class="arithmatex">\(S_\text{gen} = 0\)</span> 的特例。</p>
 </details>
-<hr />
-<h2 id="_44">第四章 · 热力学一般关系<a class="headerlink" href="#_44" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="_44">第四章 · 热力学一般关系<a class="headerlink" href="#_44" title="Permanent link">¶</a></h2>
 <div class="admonition info">
 <p class="admonition-title">章节概览</p>
 <p>本章从热力学基本微分方程出发，推导各状态参数之间的普遍关系。这些关系适用于任何纯物质，是建立具体物质热力学性质模型的理论基础。</p>
 </div>
-<h3 id="_45">比热容<a class="headerlink" href="#_45" title="Permanent link">&para;</a></h3>
+<h3 id="_45">比热容<a class="headerlink" href="#_45" title="Permanent link">¶</a></h3>
 <p>比热容描述物质升温所需热量的能力，但因过程不同而有不同定义。</p>
-<h4 id="c_v">定容比热容 c_v<a class="headerlink" href="#c_v" title="Permanent link">&para;</a></h4>
+<h4 id="c_v">定容比热容 c_v<a class="headerlink" href="#c_v" title="Permanent link">¶</a></h4>
 <p>在<strong>体积不变</strong>（<span class="arithmatex">\(\mathrm{d}v = 0\)</span>）的条件下加热，所有热量全部用于升高内能：</p>
 <div class="arithmatex">\[c_v = \left(\frac{\partial u}{\partial T}\right)_v\]</div>
-<h4 id="c_p">定压比热容 c_p<a class="headerlink" href="#c_p" title="Permanent link">&para;</a></h4>
+<h4 id="c_p">定压比热容 c_p<a class="headerlink" href="#c_p" title="Permanent link">¶</a></h4>
 <p>在<strong>压力不变</strong>（<span class="arithmatex">\(\mathrm{d}p = 0\)</span>）的条件下加热，热量用于升高内能并对外做膨胀功：</p>
 <div class="arithmatex">\[c_p = \left(\frac{\partial h}{\partial T}\right)_p\]</div>
 <p>由于定压过程额外包含了膨胀功，因此对同一物质 <span class="arithmatex">\(c_p &gt; c_v\)</span>（后续推导将给出精确关系）。</p>
-<h3 id="_46">热力学基本微分关系<a class="headerlink" href="#_46" title="Permanent link">&para;</a></h3>
+<h3 id="_46">热力学基本微分关系<a class="headerlink" href="#_46" title="Permanent link">¶</a></h3>
 <p>联合热力学第一定律和第二定律（可逆过程 <span class="arithmatex">\(\delta q = T \, \mathrm{d}s\)</span>, <span class="arithmatex">\(\delta w = p \, \mathrm{d}v\)</span>），得到：</p>
 <div class="arithmatex">\[\mathrm{d}u = T \, \mathrm{d}s - p \, \mathrm{d}v \tag{1}\]</div>
 <p>对焓 <span class="arithmatex">\(h = u + pv\)</span> 取全微分：</p>
@@ -5674,7 +5681,7 @@
 </tbody>
 </table>
 </div>
-<h3 id="maxwell">Maxwell 关系<a class="headerlink" href="#maxwell" title="Permanent link">&para;</a></h3>
+<h3 id="maxwell">Maxwell 关系<a class="headerlink" href="#maxwell" title="Permanent link">¶</a></h3>
 <p>由于 <span class="arithmatex">\(u, h, f, g\)</span> 均为状态参数（全微分），利用混合偏导数相等（<span class="arithmatex">\(\partial^2/\partial x\partial y = \partial^2/\partial y\partial x\)</span>），可从四个基本关系式各导出一个 <strong>Maxwell 关系</strong>：</p>
 <div class="arithmatex">\[\left(\frac{\partial T}{\partial v}\right)_s = -\left(\frac{\partial p}{\partial s}\right)_v \quad \text{（由 } \mathrm{d}u\text{）}\]</div>
 <div class="arithmatex">\[\left(\frac{\partial T}{\partial p}\right)_s = \left(\frac{\partial v}{\partial s}\right)_p \quad \text{（由 } \mathrm{d}h\text{）}\]</div>
@@ -5684,21 +5691,21 @@
 <p class="admonition-title">Maxwell 关系的用途</p>
 <p>熵 <span class="arithmatex">\(s\)</span> 不能直接测量，Maxwell 关系将含 <span class="arithmatex">\(s\)</span> 的偏导数转换为可测的 <span class="arithmatex">\(p, v, T\)</span> 偏导数，是推导热力学性质关系式的核心工具。</p>
 </div>
-<h3 id="_47">热系数<a class="headerlink" href="#_47" title="Permanent link">&para;</a></h3>
+<h3 id="_47">热系数<a class="headerlink" href="#_47" title="Permanent link">¶</a></h3>
 <p>以下三个热系数可由 <span class="arithmatex">\(p, v, T\)</span> 实验直接测定，是描述物质宏观热力学行为的重要参数。</p>
-<h4 id="_v">体膨胀系数 α_v<a class="headerlink" href="#_v" title="Permanent link">&para;</a></h4>
+<h4 id="_v">体膨胀系数 α_v<a class="headerlink" href="#_v" title="Permanent link">¶</a></h4>
 <p>恒压下，温度升高 1 K 时比体积的相对变化量：</p>
 <div class="arithmatex">\[\alpha_v = \frac{1}{v}\left(\frac{\partial v}{\partial T}\right)_p\]</div>
-<h4 id="_t">等温压缩率 κ_T<a class="headerlink" href="#_t" title="Permanent link">&para;</a></h4>
+<h4 id="_t">等温压缩率 κ_T<a class="headerlink" href="#_t" title="Permanent link">¶</a></h4>
 <p>恒温下，压力增加时比体积的相对缩小量（加负号使其为正值）：</p>
 <div class="arithmatex">\[\kappa_T = -\frac{1}{v}\left(\frac{\partial v}{\partial p}\right)_T\]</div>
-<h4 id="_j">焦汤系数 μ_J<a class="headerlink" href="#_j" title="Permanent link">&para;</a></h4>
+<h4 id="_j">焦汤系数 μ_J<a class="headerlink" href="#_j" title="Permanent link">¶</a></h4>
 <p>节流过程（<span class="arithmatex">\(h = \text{const}\)</span>）中，压降引起的温度变化：</p>
 <div class="arithmatex">\[\mu_J = \left(\frac{\partial T}{\partial p}\right)_h\]</div>
 <p><span class="arithmatex">\(\mu_J &gt; 0\)</span>：节流后温度降低（大多数气体在常温下）；<span class="arithmatex">\(\mu_J &lt; 0\)</span>：节流后温度升高。</p>
 <p>三个热系数之间满足循环关系：</p>
 <div class="arithmatex">\[\left(\frac{\partial p}{\partial T}\right)_v = \frac{\alpha_v}{\kappa_T}\]</div>
-<h3 id="_48">比热差关系<a class="headerlink" href="#_48" title="Permanent link">&para;</a></h3>
+<h3 id="_48">比热差关系<a class="headerlink" href="#_48" title="Permanent link">¶</a></h3>
 <p>利用 Maxwell 关系和热系数，可以推导出 <span class="arithmatex">\(c_p\)</span> 与 <span class="arithmatex">\(c_v\)</span> 的普遍差值：</p>
 <div class="arithmatex">\[c_p - c_v = Tv\frac{\alpha_v^2}{\kappa_T}\]</div>
 <div class="admonition key-point">
@@ -5709,7 +5716,7 @@
 <li>对理想气体，<span class="arithmatex">\(c_p - c_v = R_g\)</span>（第五章导出）</li>
 </ol>
 </div>
-<h3 id="_49">热力学能、焓、熵的全微分表达式<a class="headerlink" href="#_49" title="Permanent link">&para;</a></h3>
+<h3 id="_49">热力学能、焓、熵的全微分表达式<a class="headerlink" href="#_49" title="Permanent link">¶</a></h3>
 <p>把 <span class="arithmatex">\(u\)</span>、<span class="arithmatex">\(h\)</span>、<span class="arithmatex">\(s\)</span> 取作可测量自变量 <span class="arithmatex">\((T, v)\)</span> 或 <span class="arithmatex">\((T, p)\)</span> 的函数，利用基本微分关系与 Maxwell 关系代入，可把它们的变化量化为<strong>只含 <span class="arithmatex">\(c_v\)</span>、<span class="arithmatex">\(c_p\)</span> 和 <span class="arithmatex">\(p\)</span>-<span class="arithmatex">\(v\)</span>-<span class="arithmatex">\(T\)</span> 关系</strong>的可计算形式。这是制作物性表、计算实际气体（非理想气体）状态变化量的基础。</p>
 <p><strong>热力学能 <span class="arithmatex">\(u(T, v)\)</span></strong>：</p>
 <div class="arithmatex">\[
@@ -5745,7 +5752,7 @@
 <li>对<strong>实际气体</strong>，则代入具体状态方程或实测 <span class="arithmatex">\(p\)</span>-<span class="arithmatex">\(v\)</span>-<span class="arithmatex">\(T\)</span> 数据积分。</li>
 </ul>
 </div>
-<h3 id="_50">真题精选<a class="headerlink" href="#_50" title="Permanent link">&para;</a></h3>
+<h3 id="_50">真题精选<a class="headerlink" href="#_50" title="Permanent link">¶</a></h3>
 <details class="question">
 <summary>24-25春夏 · 基本热力学关系是否适用于不可逆过程</summary>
 <p><strong>题</strong> 基本热力学关系是否适用于不可逆过程，为什么？</p>
@@ -5768,17 +5775,17 @@
 <p><strong>题</strong> 绝热节流过程中，理想气体的温度如何变化？为什么？</p>
 <p><strong>答</strong> 理想气体 <span class="arithmatex">\(h = h(T)\)</span>。绝热节流 <span class="arithmatex">\(h_1 = h_2\)</span>，所以 <span class="arithmatex">\(T_1 = T_2\)</span>，温度不变，<span class="arithmatex">\(\mu_{JT} = 0\)</span>。</p>
 </details>
-<hr />
-<h2 id="_51">第五章 · 气体的热力性质<a class="headerlink" href="#_51" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="_51">第五章 · 气体的热力性质<a class="headerlink" href="#_51" title="Permanent link">¶</a></h2>
 <div class="admonition info">
 <p class="admonition-title">章节概览</p>
 <p>本章将第四章的普遍关系应用于<strong>理想气体</strong>，推导其状态方程和各热力学量的计算公式。理想气体是工程热力学计算的最重要模型。</p>
 </div>
-<h3 id="_52">理想气体模型<a class="headerlink" href="#_52" title="Permanent link">&para;</a></h3>
+<h3 id="_52">理想气体模型<a class="headerlink" href="#_52" title="Permanent link">¶</a></h3>
 <p><strong>理想气体</strong>是气体在低压高温极限下的简化模型：分子体积可忽略不计，分子间无相互作用力（无势能）。</p>
 <figure>
-  <img alt="理想气体分子模型" src="imgs/05-ideal-gas-model.png" width="86%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/05-ideal-gas-model.png" data-desc-position="bottom"><img alt="理想气体分子模型" src="imgs/05-ideal-gas-model.png" width="86%"></a>
+<br>
 <figcaption>理想气体微观模型：分子本身体积可忽略，分子间无相互作用力（图源：课程课件）</figcaption>
 </figure>
 <p>理想气体的状态方程（<strong>克拉贝龙方程</strong>）：</p>
@@ -5839,7 +5846,7 @@
 </tbody>
 </table>
 </div>
-<h3 id="_53">理想气体的热系数<a class="headerlink" href="#_53" title="Permanent link">&para;</a></h3>
+<h3 id="_53">理想气体的热系数<a class="headerlink" href="#_53" title="Permanent link">¶</a></h3>
 <p>将状态方程 <span class="arithmatex">\(pv = R_g T\)</span> 代入第四章的热系数定义，可得理想气体的热系数取特殊值：</p>
 <div class="arithmatex">\[\alpha_v = \frac{1}{v}\left(\frac{\partial v}{\partial T}\right)_p = \frac{1}{T}\]</div>
 <div class="arithmatex">\[\kappa_T = -\frac{1}{v}\left(\frac{\partial v}{\partial p}\right)_T = \frac{1}{p}\]</div>
@@ -5848,8 +5855,8 @@
 <p class="admonition-title">焦汤系数为零的含义</p>
 <p><span class="arithmatex">\(\mu_J = 0\)</span> 意味着理想气体节流后温度不变——这是理想气体"分子间无相互作用"假设的直接推论。实际气体节流时温度会变化（正或负）。</p>
 </div>
-<h3 id="_54">比热容关系<a class="headerlink" href="#_54" title="Permanent link">&para;</a></h3>
-<h4 id="_55">摩尔热容与质量热容<a class="headerlink" href="#_55" title="Permanent link">&para;</a></h4>
+<h3 id="_54">比热容关系<a class="headerlink" href="#_54" title="Permanent link">¶</a></h3>
+<h4 id="_55">摩尔热容与质量热容<a class="headerlink" href="#_55" title="Permanent link">¶</a></h4>
 <table>
 <thead>
 <tr>
@@ -5881,13 +5888,13 @@
 <p><strong>热容比</strong>（绝热指数）：</p>
 <div class="arithmatex">\[\gamma = \frac{c_p}{c_v} = \frac{C_{p,m}}{C_{v,m}}\]</div>
 <p>对单原子气体 <span class="arithmatex">\(\gamma = 5/3\)</span>，双原子气体 <span class="arithmatex">\(\gamma \approx 7/5\)</span>，多原子气体 <span class="arithmatex">\(\gamma\)</span> 更小。</p>
-<h3 id="_56">热力学函数微分式<a class="headerlink" href="#_56" title="Permanent link">&para;</a></h3>
+<h3 id="_56">热力学函数微分式<a class="headerlink" href="#_56" title="Permanent link">¶</a></h3>
 <p>由于理想气体 <span class="arithmatex">\(u\)</span> 和 <span class="arithmatex">\(h\)</span> 只是温度的函数（<span class="arithmatex">\(\mu_J = 0 \Rightarrow u = u(T)\)</span>，<span class="arithmatex">\(h = u + pv = u(T) + R_g T = h(T)\)</span>）：</p>
 <div class="arithmatex">\[\mathrm{d}u = c_v \, \mathrm{d}T\]</div>
 <div class="arithmatex">\[\mathrm{d}h = c_p \, \mathrm{d}T\]</div>
 <p>熵微分（代入 <span class="arithmatex">\((\partial p/\partial T)_v = R_g/v\)</span> 和 <span class="arithmatex">\((\partial v/\partial T)_p = R_g/p\)</span>）：</p>
 <div class="arithmatex">\[\mathrm{d}s = \frac{c_v}{T}\mathrm{d}T + \frac{R_g}{v}\mathrm{d}v = \frac{c_p}{T}\mathrm{d}T - \frac{R_g}{p}\mathrm{d}p\]</div>
-<h3 id="_57">状态变化量的计算<a class="headerlink" href="#_57" title="Permanent link">&para;</a></h3>
+<h3 id="_57">状态变化量的计算<a class="headerlink" href="#_57" title="Permanent link">¶</a></h3>
 <p>对于从状态 1 到状态 2 的过程，设比热容为<strong>常数</strong>（定值比热容假设）：</p>
 <div class="arithmatex">\[\Delta u = c_v (T_2 - T_1)\]</div>
 <div class="arithmatex">\[\Delta h = c_p (T_2 - T_1)\]</div>
@@ -5896,13 +5903,13 @@
 <p class="admonition-title">也可利用状态方程变换</p>
 <p>利用 <span class="arithmatex">\(pv = R_g T\)</span> 可在三个熵差表达式之间相互转换，选择已知量最方便的形式计算即可。</p>
 </div>
-<h3 id="_58">平均比热容<a class="headerlink" href="#_58" title="Permanent link">&para;</a></h3>
+<h3 id="_58">平均比热容<a class="headerlink" href="#_58" title="Permanent link">¶</a></h3>
 <p>实际气体比热容随温度变化，工程中常采用<strong>平均比热容</strong>处理变温区间：</p>
 <div class="arithmatex">\[\overline{c}_v \big|_{t_1}^{t_2} = \frac{\overline{c}_v \big|_0^{t_2} \cdot t_2 \;-\; \overline{c}_v \big|_0^{t_1} \cdot t_1}{t_2 - t_1}\]</div>
 <p>其中 <span class="arithmatex">\(\overline{c}_v \big|_0^{t}\)</span> 为从 0°C 到 <span class="arithmatex">\(t\)</span>°C 的平均比热容，可查热力学数据表。</p>
 <figure>
-  <img alt="平均比热容" src="imgs/05-mean-specific-heat.png" width="88%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/05-mean-specific-heat.png" data-desc-position="bottom"><img alt="平均比热容" src="imgs/05-mean-specific-heat.png" width="88%"></a>
+<br>
 <figcaption>真实比热容随温度升高而增大；平均比热容用 c-T 曲线下的面积除以温差表示（图源：课程课件）</figcaption>
 </figure>
 <div class="admonition tip">
@@ -5913,7 +5920,7 @@
 <li>代入 <span class="arithmatex">\(\Delta h = \overline{c}_p \cdot (t_2 - t_1)\)</span> 等计算</li>
 </ol>
 </div>
-<h3 id="_59">理想气体过程汇总<a class="headerlink" href="#_59" title="Permanent link">&para;</a></h3>
+<h3 id="_59">理想气体过程汇总<a class="headerlink" href="#_59" title="Permanent link">¶</a></h3>
 <p>对理想气体（定值比热），不同典型过程的计算规律：</p>
 <table>
 <thead>
@@ -5957,24 +5964,24 @@
 </tbody>
 </table>
 <p>绝热可逆过程满足 <span class="arithmatex">\(pv^\gamma = \text{const}\)</span>（详见第八章）。</p>
-<h3 id="_60">实际气体状态方程与压缩因子<a class="headerlink" href="#_60" title="Permanent link">&para;</a></h3>
+<h3 id="_60">实际气体状态方程与压缩因子<a class="headerlink" href="#_60" title="Permanent link">¶</a></h3>
 <p>理想气体模型只在低压、高温下成立。实际气体分子本身<strong>有体积</strong>、分子间<strong>有作用力</strong>，需要修正的状态方程来描述。最经典的是<strong>范德瓦尔斯方程（van der Waals）</strong>：</p>
 <div class="arithmatex">\[\left(p + \frac{a}{v^2}\right)(v - b) = R_g T\]</div>
 <p>其中 <span class="arithmatex">\(a/v^2\)</span> 修正分子间引力（使压力偏小），<span class="arithmatex">\(b\)</span> 修正分子自身占据的体积。常数 <span class="arithmatex">\(a\)</span>、<span class="arithmatex">\(b\)</span> 可由临界点的数学特征确定——临界等温线在临界点处为拐点，即 <span class="arithmatex">\(\left(\dfrac{\partial p}{\partial v}\right)_T = \left(\dfrac{\partial^2 p}{\partial v^2}\right)_T = 0\)</span>。</p>
 <figure>
-  <img alt="范德瓦尔斯方程等温线" src="imgs/05-vdw-isotherms.png" width="88%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/05-vdw-isotherms.png" data-desc-position="bottom"><img alt="范德瓦尔斯方程等温线" src="imgs/05-vdw-isotherms.png" width="88%"></a>
+<br>
 <figcaption>范德瓦尔斯方程在 p-v 图上的等温线：高温接近理想气体双曲线，低温出现可反映液-气相变的波动段，临界等温线在临界点有拐点（图源：课程课件）</figcaption>
 </figure>
 <p>工程上更常用<strong>压缩因子</strong> <span class="arithmatex">\(Z\)</span> 衡量实际气体偏离理想气体的程度：</p>
 <div class="arithmatex">\[Z = \frac{pv}{R_g T} = \frac{pV}{nRT}\]</div>
 <p>理想气体 <span class="arithmatex">\(Z \equiv 1\)</span>；<span class="arithmatex">\(Z\)</span> 偏离 1 的大小反映非理想性。<strong>对比态定律</strong>指出：用对比参数 <span class="arithmatex">\(p_r = p/p_c\)</span>、<span class="arithmatex">\(T_r = T/T_c\)</span> 表示时，各种气体的 <span class="arithmatex">\(Z\)</span> 近似只是 <span class="arithmatex">\(p_r\)</span>、<span class="arithmatex">\(T_r\)</span> 的通用函数，可查<strong>通用压缩因子图</strong>统一估算。</p>
 <figure>
-  <img alt="通用压缩因子图" src="imgs/05-compressibility-chart.png" width="86%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/05-compressibility-chart.png" data-desc-position="bottom"><img alt="通用压缩因子图" src="imgs/05-compressibility-chart.png" width="86%"></a>
+<br>
 <figcaption>通用压缩因子图：以对比压力 p_r、对比温度 T_r 为坐标，各种气体的 Z 近似落在同一族曲线上（图源：课程课件）</figcaption>
 </figure>
-<h3 id="_61">真题精选<a class="headerlink" href="#_61" title="Permanent link">&para;</a></h3>
+<h3 id="_61">真题精选<a class="headerlink" href="#_61" title="Permanent link">¶</a></h3>
 <details class="question">
 <summary>24-25春夏 · 压缩因子的定义，为何低压高温时趋近1</summary>
 <p><strong>题</strong> 压缩因子的定义，为什么低压高温时压缩因子趋近于 1？</p>
@@ -5988,8 +5995,8 @@
 <p><strong>答</strong> 理想气体比热容为单位质量气体升高单位温度所需热量：<span class="arithmatex">\(c_v = (\partial u/\partial T)_v\)</span>，<span class="arithmatex">\(c_p = (\partial h/\partial T)_p\)</span>。理想气体满足迈耶公式</p>
 <div class="arithmatex">\[c_p - c_v = R,\qquad \kappa = \frac{c_p}{c_v}.\]</div>
 </details>
-<hr />
-<h2 id="_62">第六章 · 蒸汽的热力性质<a class="headerlink" href="#_62" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="_62">第六章 · 蒸汽的热力性质<a class="headerlink" href="#_62" title="Permanent link">¶</a></h2>
 <div class="admonition info">
 <p class="admonition-title">章节概览</p>
 <p>工程上最常用的工质——水蒸气，在相变区附近严重偏离理想气体，必须借助<strong>实验数据（图表）</strong>而非状态方程来确定性质。本章建立蒸汽的相变图景、湿蒸汽参数算法、水蒸气表/图的查取方法，以及相平衡的克劳修斯-克拉贝龙方程。</p>
@@ -5998,7 +6005,7 @@
 <p class="admonition-title">「蒸气」与「蒸汽」</p>
 <p>在工作参数范围内可能发生气液相变的气态工质统称<strong>蒸气</strong>（vapor）；其中<strong>蒸汽</strong>（或单字"汽"）通常<strong>特指水蒸气</strong>。本章规律对各种蒸气（水蒸气、制冷剂蒸气等）普遍适用，举例多用水蒸气。</p>
 </div>
-<h3 id="_63">纯物质的相变与定压发生过程<a class="headerlink" href="#_63" title="Permanent link">&para;</a></h3>
+<h3 id="_63">纯物质的相变与定压发生过程<a class="headerlink" href="#_63" title="Permanent link">¶</a></h3>
 <p>在恒定压力下对水持续加热，工质依次经历<strong>五种状态</strong>：</p>
 <table>
 <thead>
@@ -6037,8 +6044,8 @@
 </tbody>
 </table>
 <figure>
-  <img alt="蒸气定压发生过程" src="imgs/06-isobaric-generation.png" width="88%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/06-isobaric-generation.png" data-desc-position="bottom"><img alt="蒸气定压发生过程" src="imgs/06-isobaric-generation.png" width="88%"></a>
+<br>
 <figcaption>蒸气的定压发生过程：在恒定压力下持续加热，工质从液体加热到气化、再到过热，连续经历未饱和水至过热蒸汽五种状态（图源：课程课件）</figcaption>
 </figure>
 <div class="admonition key-point">
@@ -6048,11 +6055,11 @@
 <p>汽化过程吸收的热量称为<strong>汽化潜热</strong> <span class="arithmatex">\(r\)</span>，等于饱和汽与饱和液的焓差：</p>
 <div class="arithmatex">\[r = h'' - h'\]</div>
 <figure>
-  <img alt="临界压力定压发生" src="imgs/06-critical-generation.png" width="88%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/06-critical-generation.png" data-desc-position="bottom"><img alt="临界压力定压发生" src="imgs/06-critical-generation.png" width="88%"></a>
+<br>
 <figcaption>p-v 图上不同压力下的定压发生过程：压力越高湿蒸汽段越短，达到临界压力 pc 后两相界限消失，超临界下加热不再出现明显相变（图源：课程课件）</figcaption>
 </figure>
-<h3 id="_64">相图与三区两线<a class="headerlink" href="#_64" title="Permanent link">&para;</a></h3>
+<h3 id="_64">相图与三区两线<a class="headerlink" href="#_64" title="Permanent link">¶</a></h3>
 <p>在 <span class="arithmatex">\(T\)</span>-<span class="arithmatex">\(s\)</span> 图（或 <span class="arithmatex">\(p\)</span>-<span class="arithmatex">\(v\)</span> 图）上，纯物质的相变区由两条特征线划分：</p>
 <ul>
 <li><strong>下界线（饱和液线，<span class="arithmatex">\(x=0\)</span>）</strong>：左侧为液相区</li>
@@ -6061,8 +6068,8 @@
 <li>两线之间为<strong>湿蒸汽区</strong>（汽液共存）</li>
 </ul>
 <figure>
-  <img alt="p-v 三区两线" src="imgs/06-pv-saturation-dome.png" width="88%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/06-pv-saturation-dome.png" data-desc-position="bottom"><img alt="p-v 三区两线" src="imgs/06-pv-saturation-dome.png" width="88%"></a>
+<br>
 <figcaption>p-v 图上的三区两线：饱和液线（x=0）与饱和气线（x=1）将平面分为液相区、湿蒸汽区与过热蒸汽区，两线顶点交于临界点 C（图源：课程课件）</figcaption>
 </figure>
 <div class="admonition note">
@@ -6070,11 +6077,11 @@
 <p>饱和液参数加一撇（<span class="arithmatex">\(v'\)</span>, <span class="arithmatex">\(h'\)</span>, <span class="arithmatex">\(s'\)</span>），干饱和蒸汽参数加两撇（<span class="arithmatex">\(v''\)</span>, <span class="arithmatex">\(h''\)</span>, <span class="arithmatex">\(s''\)</span>）。它们都只是饱和温度（或饱和压力）的单值函数，可直接查饱和水蒸气表。</p>
 </div>
 <figure>
-  <img alt="T-s 等温线群" src="imgs/06-ts-isotherms.png" width="88%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/06-ts-isotherms.png" data-desc-position="bottom"><img alt="T-s 等温线群" src="imgs/06-ts-isotherms.png" width="88%"></a>
+<br>
 <figcaption>T-s 图上的等温线群：湿蒸汽区内等温线水平（定压即定温），离饱和气线越远越接近理想气体（图源：课程课件）</figcaption>
 </figure>
-<h3 id="_65">干度与湿蒸汽参数<a class="headerlink" href="#_65" title="Permanent link">&para;</a></h3>
+<h3 id="_65">干度与湿蒸汽参数<a class="headerlink" href="#_65" title="Permanent link">¶</a></h3>
 <p>湿蒸汽中干饱和蒸汽所占的质量分数称为<strong>干度</strong> <span class="arithmatex">\(x\)</span>：</p>
 <div class="arithmatex">\[x = \frac{m_{\text{汽}}}{m_{\text{汽}} + m_{\text{液}}}\]</div>
 <p>湿蒸汽的任一比参数都是饱和液与饱和汽按干度的线性插值：</p>
@@ -6088,7 +6095,7 @@ u &amp;= u' + x(u'' - u')
 <p class="admonition-title">湿蒸汽区两个独立参数的选取</p>
 <p>在湿蒸汽区，<span class="arithmatex">\(p\)</span> 与 <span class="arithmatex">\(T\)</span> 不再独立（互相唯一确定），因此<strong>不能</strong>用 <span class="arithmatex">\((p, T)\)</span> 确定状态，必须用 <span class="arithmatex">\((p, x)\)</span> 或 <span class="arithmatex">\((T, x)\)</span>、<span class="arithmatex">\((p, v)\)</span> 等组合。这是相变区与单相区的关键差异。</p>
 </div>
-<h3 id="_66">水蒸气表与焓熵图<a class="headerlink" href="#_66" title="Permanent link">&para;</a></h3>
+<h3 id="_66">水蒸气表与焓熵图<a class="headerlink" href="#_66" title="Permanent link">¶</a></h3>
 <p>工程计算依赖两类实验数据：</p>
 <ul>
 <li><strong>饱和水蒸气表</strong>：按温度或按压力列出 <span class="arithmatex">\(v', v'', h', h'', s', s''\)</span> 及 <span class="arithmatex">\(r\)</span></li>
@@ -6096,15 +6103,15 @@ u &amp;= u' + x(u'' - u')
 <li><strong>焓熵图（<span class="arithmatex">\(h\)</span>-<span class="arithmatex">\(s\)</span> 图，莫里尔 Mollier 图）</strong>：纵轴 <span class="arithmatex">\(h\)</span>、横轴 <span class="arithmatex">\(s\)</span>，绝热过程为竖直线，便于读取喷管、汽轮机的焓降，是动力循环分析的常用工具</li>
 </ul>
 <figure>
-  <img alt="莫里尔焓熵图" src="imgs/06-mollier-hs.png" width="88%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/06-mollier-hs.png" data-desc-position="bottom"><img alt="莫里尔焓熵图" src="imgs/06-mollier-hs.png" width="88%"></a>
+<br>
 <figcaption>焓熵图（h-s 图，莫里尔图）：纵轴比焓、横轴比熵，绝热过程为竖直线，便于读取汽轮机与喷管的焓降（图源：课程课件）</figcaption>
 </figure>
 <div class="admonition note">
 <p class="admonition-title">水蒸气表的基准点</p>
 <p>水蒸气表规定<strong>三相点</strong>（<span class="arithmatex">\(273.16\,\text{K}\)</span>，即 <span class="arithmatex">\(0.01\,^\circ\text{C}\)</span>）的饱和水<strong>热力学能与熵取为零</strong>。因此表中 <span class="arithmatex">\(u, s\)</span> 都是相对值——计算中只用差值，基准的选取不影响结果。不同制冷工质的表可能选用不同基准点，混用前需留意。查表时<strong>不能跨相界线作线性内插</strong>。</p>
 </div>
-<h3 id="-">克劳修斯-克拉贝龙方程<a class="headerlink" href="#-" title="Permanent link">&para;</a></h3>
+<h3 id="-">克劳修斯-克拉贝龙方程<a class="headerlink" href="#-" title="Permanent link">¶</a></h3>
 <p>描述相平衡线（如汽化曲线）上饱和压力随饱和温度的变化率：</p>
 <div class="admonition definition">
 <p class="admonition-title">克劳修斯-克拉贝龙方程</p>
@@ -6119,15 +6126,15 @@ u &amp;= u' + x(u'' - u')
 <p>在低压下气相比体积远大于液相（<span class="arithmatex">\(v'' \gg v'\)</span>），并对气相用理想气体方程，可将克劳修斯-克拉贝龙方程积分得到<strong>蒸气压方程</strong>：</p>
 <div class="arithmatex">\[\ln\frac{p_{s,2}}{p_{s,1}} = \frac{r}{R_g}\left(\frac{1}{T_{s,1}} - \frac{1}{T_{s,2}}\right)\]</div>
 <p>它给出饱和压力与饱和温度的近似函数关系。</p>
-<h3 id="_67">吉布斯相律与平衡判据<a class="headerlink" href="#_67" title="Permanent link">&para;</a></h3>
+<h3 id="_67">吉布斯相律与平衡判据<a class="headerlink" href="#_67" title="Permanent link">¶</a></h3>
 <div class="admonition key-point">
 <p class="admonition-title">吉布斯相律</p>
 <div class="arithmatex">\[F = C - P + 2\]</div>
 <p><span class="arithmatex">\(F\)</span> 为自由度（可独立变化的强度量数），<span class="arithmatex">\(C\)</span> 为组分数，<span class="arithmatex">\(P\)</span> 为相数。对纯物质（<span class="arithmatex">\(C=1\)</span>）：单相 <span class="arithmatex">\(F=2\)</span>（需两参数定态）、两相 <span class="arithmatex">\(F=1\)</span>（定压即定温）、三相点 <span class="arithmatex">\(F=0\)</span>（状态唯一）。</p>
 </div>
 <figure>
-  <img alt="p-T 相图" src="imgs/06-pt-phase-diagram.png" width="88%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/06-pt-phase-diagram.png" data-desc-position="bottom"><img alt="p-T 相图" src="imgs/06-pt-phase-diagram.png" width="88%"></a>
+<br>
 <figcaption>纯物质的 p-T 相图：固、液、气三相区由三条相平衡线分隔，三线交于三相点（自由度 F=0），气液线终止于临界点 C（图源：课程课件）</figcaption>
 </figure>
 <p>不同约束下的<strong>平衡判据</strong>（由第三章熵增原理推广）：</p>
@@ -6190,7 +6197,7 @@ u &amp;= u' + x(u'' - u')
 <div class="arithmatex">\[s = s' + x(s'' - s') = 2.138 + 0.9 \times (6.586 - 2.138) = 6.141\ \text{kJ/(kg·K)}\]</div>
 <p><strong>要点</strong>：湿蒸汽三个参数同用一个干度插值；<span class="arithmatex">\((p, x)\)</span> 已足够确定状态，无需也无法再用温度。</p>
 </details>
-<h3 id="_68">真题精选<a class="headerlink" href="#_68" title="Permanent link">&para;</a></h3>
+<h3 id="_68">真题精选<a class="headerlink" href="#_68" title="Permanent link">¶</a></h3>
 <details class="question">
 <summary>22-23春夏 · 单相系/二相平衡/三相点的独立变量数（吉布斯相律）</summary>
 <p><strong>题</strong> 单元单相系独立变量为 2，二相平衡、三相平衡点独立变量分别是多少？</p>
@@ -6208,19 +6215,19 @@ u &amp;= u' + x(u'' - u')
 <p><strong>题</strong> 什么是未饱和水？未饱和水与饱和水的区别是什么？</p>
 <p><strong>答</strong> 未饱和水又称压缩水或过冷水，是在给定压力下温度低于饱和温度的液态水。饱和水处于即将汽化状态，温度和压力满足饱和关系；未饱和水还需继续加热才达到饱和。</p>
 </details>
-<hr />
-<h2 id="_69">第七章 · 理想气体混合物与湿空气<a class="headerlink" href="#_69" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="_69">第七章 · 理想气体混合物与湿空气<a class="headerlink" href="#_69" title="Permanent link">¶</a></h2>
 <div class="admonition info">
 <p class="admonition-title">章节概览</p>
 <p>工程工质多为混合物（如空气、燃气、湿空气）。本章先建立理想气体混合物的成分描述与折合参数，再把方法用于工程中极重要的<strong>湿空气</strong>，引入相对湿度、含湿量、各种温度等概念，为干燥、空调、冷却塔分析打基础。</p>
 </div>
-<h3 id="_70">一、理想气体混合物<a class="headerlink" href="#_70" title="Permanent link">&para;</a></h3>
+<h3 id="_70">一、理想气体混合物<a class="headerlink" href="#_70" title="Permanent link">¶</a></h3>
 <figure>
-  <img alt="理想气体混合物" src="imgs/07-mixture-concept.png" width="72%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/07-mixture-concept.png" data-desc-position="bottom"><img alt="理想气体混合物" src="imgs/07-mixture-concept.png" width="72%"></a>
+<br>
 <figcaption>理想气体混合物：从单元物质到多元系，各组元气体及混合物整体都遵循理想气体状态方程；工程上的湿空气即「干空气 + 水蒸气」的混合物（图源：课程课件）</figcaption>
 </figure>
-<h4 id="_71">成分的表示<a class="headerlink" href="#_71" title="Permanent link">&para;</a></h4>
+<h4 id="_71">成分的表示<a class="headerlink" href="#_71" title="Permanent link">¶</a></h4>
 <table>
 <thead>
 <tr>
@@ -6247,7 +6254,7 @@ u &amp;= u' + x(u'' - u')
 </tr>
 </tbody>
 </table>
-<h4 id="_72">分压定律与分体积定律<a class="headerlink" href="#_72" title="Permanent link">&para;</a></h4>
+<h4 id="_72">分压定律与分体积定律<a class="headerlink" href="#_72" title="Permanent link">¶</a></h4>
 <div class="admonition definition">
 <p class="admonition-title">道尔顿分压定律 / 亚美格分体积定律</p>
 <p><strong>分压定律</strong>：混合物总压等于各组分单独占据总体积时的分压之和</p>
@@ -6255,7 +6262,7 @@ u &amp;= u' + x(u'' - u')
 <p><strong>分体积定律</strong>：总体积等于各组分单独处于总压、总温时的分体积之和</p>
 <div class="arithmatex">\[V = \sum V_i, \qquad V_i = x_i\, V\]</div>
 </div>
-<h4 id="_73">折合摩尔质量与折合气体常数<a class="headerlink" href="#_73" title="Permanent link">&para;</a></h4>
+<h4 id="_73">折合摩尔质量与折合气体常数<a class="headerlink" href="#_73" title="Permanent link">¶</a></h4>
 <p>把混合物当作一种"假想纯气体"处理，其<strong>折合（平均）摩尔质量</strong>：</p>
 <div class="arithmatex">\[M = \sum x_i M_i = \frac{1}{\displaystyle\sum \frac{g_i}{M_i}}\]</div>
 <p><strong>折合气体常数</strong>：</p>
@@ -6265,13 +6272,13 @@ u &amp;= u' + x(u'' - u')
 <p class="admonition-title">混合熵增</p>
 <p>熵不能简单加权——不同气体混合本身是不可逆过程，存在<strong>混合熵增</strong>。各组分按其分压计算熵后再加权求和。</p>
 </div>
-<h3 id="_74">二、湿空气<a class="headerlink" href="#_74" title="Permanent link">&para;</a></h3>
+<h3 id="_74">二、湿空气<a class="headerlink" href="#_74" title="Permanent link">¶</a></h3>
 <p><strong>湿空气</strong> = 干空气 + 水蒸气。由于水蒸气分压很低，可将其视为理想气体处理。按是否达到饱和分为：</p>
 <ul>
 <li><strong>未饱和湿空气</strong>：水蒸气过热，<span class="arithmatex">\(p_v &lt; p_s(t)\)</span>，还能继续吸收水分</li>
 <li><strong>饱和湿空气</strong>：水蒸气恰好饱和，<span class="arithmatex">\(p_v = p_s(t)\)</span></li>
 </ul>
-<h4 id="_75">相对湿度与含湿量<a class="headerlink" href="#_75" title="Permanent link">&para;</a></h4>
+<h4 id="_75">相对湿度与含湿量<a class="headerlink" href="#_75" title="Permanent link">¶</a></h4>
 <div class="admonition definition">
 <p class="admonition-title">相对湿度 <span class="arithmatex">\(\varphi\)</span></p>
 <p>水蒸气实际分压与同温度下饱和压力之比：</p>
@@ -6284,11 +6291,11 @@ u &amp;= u' + x(u'' - u')
 <div class="arithmatex">\[d = 0.622\,\frac{p_v}{p - p_v} \quad (\text{kg 水汽/kg 干空气})\]</div>
 <p>其中 <span class="arithmatex">\(0.622 = R_{g,a}/R_{g,v} = M_v/M_a = 18/29\)</span>。</p>
 </div>
-<h4 id="_76">湿空气的焓<a class="headerlink" href="#_76" title="Permanent link">&para;</a></h4>
+<h4 id="_76">湿空气的焓<a class="headerlink" href="#_76" title="Permanent link">¶</a></h4>
 <p>以 1 kg 干空气为基准（<span class="arithmatex">\(0\,^\circ\text{C}\)</span> 为零点），单位 kJ/kg(干空气)：</p>
 <div class="arithmatex">\[h = \underbrace{1.005\, t}_{\text{干空气}} + \underbrace{d(2501 + 1.86\, t)}_{\text{水蒸气}}\]</div>
 <p>其中 <span class="arithmatex">\(2501\,\text{kJ/kg}\)</span> 为 <span class="arithmatex">\(0\,^\circ\text{C}\)</span> 时水的汽化潜热，<span class="arithmatex">\(1.86\)</span> 为水蒸气定压比热。</p>
-<h4 id="_77">四种特征温度<a class="headerlink" href="#_77" title="Permanent link">&para;</a></h4>
+<h4 id="_77">四种特征温度<a class="headerlink" href="#_77" title="Permanent link">¶</a></h4>
 <div class="admonition key-point">
 <p class="admonition-title">干球 / 湿球 / 露点 / 绝热饱和温度</p>
 <ul>
@@ -6300,15 +6307,15 @@ u &amp;= u' + x(u'' - u')
 <p>三者关系：未饱和时 <span class="arithmatex">\(t &gt; t_w &gt; t_d\)</span>；饱和时三者相等。</p>
 </div>
 <figure>
-  <img alt="露点、湿球与绝热饱和温度在 p-v、T-s 图上的表示" src="imgs/07-humid-air-temps.png" width="90%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/07-humid-air-temps.png" data-desc-position="bottom"><img alt="露点、湿球与绝热饱和温度在 p-v、T-s 图上的表示" src="imgs/07-humid-air-temps.png" width="90%"></a>
+<br>
 <figcaption>从未饱和状态 1 出发的三条路径：定压降温到含湿量不变的露点 d（T_d）、绝热增湿到饱和的湿球 w（T_w）、定温到饱和 s；图上直观显示 T_d &lt; T_w &lt; T（图源：课程课件）</figcaption>
 </figure>
-<h4 id="h-d">焓湿图（h-d 图）<a class="headerlink" href="#h-d" title="Permanent link">&para;</a></h4>
+<h4 id="h-d">焓湿图（h-d 图）<a class="headerlink" href="#h-d" title="Permanent link">¶</a></h4>
 <p>工程上用 <span class="arithmatex">\(h\)</span>-<span class="arithmatex">\(d\)</span> 图（焓湿图）快速读取湿空气状态：图上绘有等温线、等相对湿度线、等含湿量线、等焓线。已知任意两个独立参数即可定点，再读出其余参数——是空调、干燥过程分析的核心工具。</p>
 <figure>
-  <img alt="焓湿图（h-d 图）的线簇结构" src="imgs/07-hd-chart.png" width="58%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/07-hd-chart.png" data-desc-position="bottom"><img alt="焓湿图（h-d 图）的线簇结构" src="imgs/07-hd-chart.png" width="58%"></a>
+<br>
 <figcaption>焓湿图结构：坐标轴成 135° 斜置以拉开两相区，图上绘有定含湿量线（竖直 d 线，即定 p_v 线）、定焓线、定温线与定相对湿度线（φ=100% 为饱和线）（图源：课程课件）</figcaption>
 </figure>
 <details class="example">
@@ -6332,7 +6339,7 @@ u &amp;= u' + x(u'' - u')
 <div class="arithmatex">\[h = 1.005 t + d(2501 + 1.86 t) = 1.005 \times 25 + 0.0119 \times (2501 + 1.86 \times 25) \approx 55.4\ \text{kJ/kg(干)}\]</div>
 <p><strong>要点</strong>：含湿量与焓都以<strong>干空气</strong>为基准；先由 <span class="arithmatex">\(\varphi\)</span> 和饱和表得 <span class="arithmatex">\(p_v\)</span>，再依次求 <span class="arithmatex">\(d\)</span>、<span class="arithmatex">\(h\)</span>。</p>
 </details>
-<h3 id="_78">真题精选<a class="headerlink" href="#_78" title="Permanent link">&para;</a></h3>
+<h3 id="_78">真题精选<a class="headerlink" href="#_78" title="Permanent link">¶</a></h3>
 <details class="question">
 <summary>24-25春夏 · 含湿量相同，平原与高原的露点温度谁高</summary>
 <p><strong>题</strong> 含湿量相同，平原和高原的露点温度 <span class="arithmatex">\(t_d\)</span> 谁高，为什么？</p>
@@ -6387,13 +6394,13 @@ u &amp;= u' + x(u'' - u')
 <p><strong>题</strong> 湿空气的露点温度、湿球温度和干球温度三者之间有什么关系？不饱和湿空气中三者的大小顺序如何？</p>
 <p><strong>答</strong> 不饱和湿空气中三者大小一般为 <span class="arithmatex">\(t_d &lt; t_w &lt; t\)</span>（绝热饱和温度 <span class="arithmatex">\(t_{as} \approx t_w\)</span>，由露点 <span class="arithmatex">\(t_d &lt; t_{as} \approx t_w &lt; t\)</span>）。饱和空气中三者相等。露点由水蒸气分压力决定，湿球/绝热饱和温度由蒸发冷却能量平衡决定，干球温度最高。</p>
 </details>
-<hr />
-<h2 id="_79">第八章 · 理想气体的热力过程<a class="headerlink" href="#_79" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="_79">第八章 · 理想气体的热力过程<a class="headerlink" href="#_79" title="Permanent link">¶</a></h2>
 <div class="admonition info">
 <p class="admonition-title">章节概览</p>
 <p>本章系统分析理想气体经历各类过程时 <span class="arithmatex">\(w\)</span>、<span class="arithmatex">\(w_t\)</span>、<span class="arithmatex">\(q\)</span> 及 <span class="arithmatex">\(\Delta u\)</span>、<span class="arithmatex">\(\Delta h\)</span>、<span class="arithmatex">\(\Delta s\)</span> 的计算。四个基本过程（定容、定压、定温、绝热）统一为<strong>多变过程</strong>的特例，并借助 <span class="arithmatex">\(p\)</span>-<span class="arithmatex">\(v\)</span> 图与 <span class="arithmatex">\(T\)</span>-<span class="arithmatex">\(s\)</span> 图直观比较。</p>
 </div>
-<h3 id="_80">分析过程的统一思路<a class="headerlink" href="#_80" title="Permanent link">&para;</a></h3>
+<h3 id="_80">分析过程的统一思路<a class="headerlink" href="#_80" title="Permanent link">¶</a></h3>
 <p>对理想气体（定值比热）任意过程，分析步骤固定：</p>
 <ol>
 <li>由过程方程与状态方程确定 <span class="arithmatex">\(p, v, T\)</span> 之间的关系</li>
@@ -6404,7 +6411,7 @@ u &amp;= u' + x(u'' - u')
 <p class="admonition-title">状态量与过程量</p>
 <p><span class="arithmatex">\(\Delta u\)</span>、<span class="arithmatex">\(\Delta h\)</span>、<span class="arithmatex">\(\Delta s\)</span> 只取决于初末态，<strong>与路径无关</strong>，任何过程都按定值比热公式算；而 <span class="arithmatex">\(w\)</span>、<span class="arithmatex">\(w_t\)</span>、<span class="arithmatex">\(q\)</span> 是过程量，必须沿具体路径积分。</p>
 </div>
-<h3 id="_81">多变过程<a class="headerlink" href="#_81" title="Permanent link">&para;</a></h3>
+<h3 id="_81">多变过程<a class="headerlink" href="#_81" title="Permanent link">¶</a></h3>
 <p>实际过程往往既非绝热也非定温，可用<strong>多变过程</strong>统一描述：</p>
 <div class="admonition definition">
 <p class="admonition-title">多变过程</p>
@@ -6443,8 +6450,8 @@ u &amp;= u' + x(u'' - u')
 </table>
 </div>
 <figure>
-  <img alt="多变过程特例" src="imgs/08-polytropic-special-cases.png" width="86%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/08-polytropic-special-cases.png" data-desc-position="bottom"><img alt="多变过程特例" src="imgs/08-polytropic-special-cases.png" width="86%"></a>
+<br>
 <figcaption>四个基本过程都是多变过程 pvⁿ=C 的特例：n=0 为定压、n=1 为定温、n=γ 为绝热、n=∞ 为定容（图源：课程课件）</figcaption>
 </figure>
 <p><strong>多变过程参数关系</strong>：</p>
@@ -6453,7 +6460,7 @@ u &amp;= u' + x(u'' - u')
 <div class="arithmatex">\[w = \frac{R_g(T_1 - T_2)}{n-1} = \frac{p_1 v_1 - p_2 v_2}{n-1}, \qquad w_t = n\,w\]</div>
 <p><strong>热量</strong>——引入<strong>多变比热</strong> <span class="arithmatex">\(c_n\)</span>：</p>
 <div class="arithmatex">\[c_n = c_v\,\frac{n-\gamma}{n-1}, \qquad q = c_n(T_2 - T_1), \qquad \Delta s = c_n\ln\frac{T_2}{T_1}\]</div>
-<h3 id="_82">四个基本过程小结<a class="headerlink" href="#_82" title="Permanent link">&para;</a></h3>
+<h3 id="_82">四个基本过程小结<a class="headerlink" href="#_82" title="Permanent link">¶</a></h3>
 <table>
 <thead>
 <tr>
@@ -6495,10 +6502,10 @@ u &amp;= u' + x(u'' - u')
 </tr>
 </tbody>
 </table>
-<h3 id="p-v-t-s">p-v 图与 T-s 图上的过程走向<a class="headerlink" href="#p-v-t-s" title="Permanent link">&para;</a></h3>
+<h3 id="p-v-t-s">p-v 图与 T-s 图上的过程走向<a class="headerlink" href="#p-v-t-s" title="Permanent link">¶</a></h3>
 <figure>
-  <img alt="基本过程 p-v T-s 图" src="imgs/08-processes-pv-ts.png" width="90%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/08-processes-pv-ts.png" data-desc-position="bottom"><img alt="基本过程 p-v T-s 图" src="imgs/08-processes-pv-ts.png" width="90%"></a>
+<br>
 <figcaption>四个基本过程在 p-v 图与 T-s 图上的相对走向：自同一初态出发，多变指数 n 越大曲线越陡，定容线最陡、定压线最平（图源：课程课件）</figcaption>
 </figure>
 <div class="admonition key-point">
@@ -6510,8 +6517,8 @@ u &amp;= u' + x(u'' - u')
 </ul>
 </div>
 <figure>
-  <img alt="做功与吸放热分区" src="imgs/08-heat-direction.png" width="90%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/08-heat-direction.png" data-desc-position="bottom"><img alt="做功与吸放热分区" src="imgs/08-heat-direction.png" width="90%"></a>
+<br>
 <figcaption>p-v 图与 T-s 图上 w、Δu、q 的正负分区：过程线指向右方（熵增）则吸热，指向左方（熵减）则放热（图源：课程课件）</figcaption>
 </figure>
 <details class="example">
@@ -6528,11 +6535,11 @@ u &amp;= u' + x(u'' - u')
 <p><strong>要点</strong>：<span class="arithmatex">\(1 &lt; n &lt; \gamma\)</span> 的压缩过程<strong>对外放热</strong>（<span class="arithmatex">\(q&lt;0\)</span>）且压缩耗功，介于定温（<span class="arithmatex">\(n=1\)</span>，放热最多）与绝热（<span class="arithmatex">\(n=\gamma\)</span>，不放热）之间。</p>
 </details>
 <figure>
-  <img alt="过程判断练习" src="imgs/08-process-exercise.png" width="90%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/08-process-exercise.png" data-desc-position="bottom"><img alt="过程判断练习" src="imgs/08-process-exercise.png" width="90%"></a>
+<br>
 <figcaption>综合判断练习：已知过程为「压缩、升温、放热」，借助 p-v 与 T-s 图即可定位终态所在区域（图源：课程课件）</figcaption>
 </figure>
-<h3 id="_83">真题精选<a class="headerlink" href="#_83" title="Permanent link">&para;</a></h3>
+<h3 id="_83">真题精选<a class="headerlink" href="#_83" title="Permanent link">¶</a></h3>
 <details class="question">
 <summary>20-21春夏 · 什么是多变过程，推导多变过程的比热容</summary>
 <p><strong>题</strong> 什么是多变过程，推导多变过程的比热容。</p>
@@ -6541,13 +6548,13 @@ u &amp;= u' + x(u'' - u')
 <p>故多变比热容</p>
 <div class="arithmatex">\[c_n = \frac{\delta q}{\mathrm{d}T} = c_v + \frac{R}{1 - n} = \frac{c_p - nc_v}{1 - n} = c_v\frac{k - n}{1 - n}.\]</div>
 </details>
-<hr />
-<h2 id="_84">第九章 · 气体与蒸汽的流动<a class="headerlink" href="#_84" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="_84">第九章 · 气体与蒸汽的流动<a class="headerlink" href="#_84" title="Permanent link">¶</a></h2>
 <div class="admonition info">
 <p class="admonition-title">章节概览</p>
 <p>喷管（加速降压）与扩压管（减速增压）是热力设备中实现动能与焓相互转换的关键部件。本章建立一维稳定绝热流动的三大方程，引入声速与马赫数，分析喷管形状与临界流动，并讨论绝热节流。</p>
 </div>
-<h3 id="_85">稳定流动的基本方程<a class="headerlink" href="#_85" title="Permanent link">&para;</a></h3>
+<h3 id="_85">稳定流动的基本方程<a class="headerlink" href="#_85" title="Permanent link">¶</a></h3>
 <p>对一维、稳定、绝热、无轴功、忽略位能的流动：</p>
 <table>
 <thead>
@@ -6573,7 +6580,7 @@ u &amp;= u' + x(u'' - u')
 </table>
 <p>由能量方程可知：<strong>焓降全部转化为动能增量</strong>，故出口流速</p>
 <div class="arithmatex">\[c_2 = \sqrt{2(h_1 - h_2) + c_1^2}\]</div>
-<h3 id="_86">声速与马赫数<a class="headerlink" href="#_86" title="Permanent link">&para;</a></h3>
+<h3 id="_86">声速与马赫数<a class="headerlink" href="#_86" title="Permanent link">¶</a></h3>
 <div class="admonition definition">
 <p class="admonition-title">声速与马赫数</p>
 <p>微弱扰动在工质中的传播速度（声速）：</p>
@@ -6582,7 +6589,7 @@ u &amp;= u' + x(u'' - u')
 <div class="arithmatex">\[Ma = \frac{c}{a}\]</div>
 <p><span class="arithmatex">\(Ma &lt; 1\)</span> 为亚声速，<span class="arithmatex">\(Ma = 1\)</span> 为声速（临界），<span class="arithmatex">\(Ma &gt; 1\)</span> 为超声速。</p>
 </div>
-<h3 id="_87">喷管形状与流动方向<a class="headerlink" href="#_87" title="Permanent link">&para;</a></h3>
+<h3 id="_87">喷管形状与流动方向<a class="headerlink" href="#_87" title="Permanent link">¶</a></h3>
 <p>联立连续性、能量与声速关系可得<strong>面积变化关系</strong>：</p>
 <div class="arithmatex">\[\frac{\mathrm{d}A}{A} = (Ma^2 - 1)\,\frac{\mathrm{d}c}{c}\]</div>
 <div class="admonition key-point">
@@ -6595,11 +6602,11 @@ u &amp;= u' + x(u'' - u')
 </ul>
 </div>
 <figure>
-  <img alt="喷管与扩压管的形状与流态" src="imgs/09-nozzle-shapes.png" width="92%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/09-nozzle-shapes.png" data-desc-position="bottom"><img alt="喷管与扩压管的形状与流态" src="imgs/09-nozzle-shapes.png" width="92%"></a>
+<br>
 <figcaption>喷管（降压增速 dc&gt;0、dp&lt;0）与扩压管（增压减速）在亚声速 Ma&lt;1、超声速 Ma&gt;1 下的形状由 dA/A=(Ma²−1)·dc/c 决定；亚声速加速到超声速须用先缩后扩的缩放（拉伐尔）喷管，喉部 Ma=1（图源：课程课件）</figcaption>
 </figure>
-<h3 id="_88">临界压力比<a class="headerlink" href="#_88" title="Permanent link">&para;</a></h3>
+<h3 id="_88">临界压力比<a class="headerlink" href="#_88" title="Permanent link">¶</a></h3>
 <p>喷管喉部达到声速时的压力与进口（滞止）压力之比称为<strong>临界压力比</strong>：</p>
 <div class="arithmatex">\[\nu_{cr} = \frac{p_{cr}}{p_0} = \left(\frac{2}{\gamma+1}\right)^{\frac{\gamma}{\gamma-1}}\]</div>
 <table>
@@ -6636,7 +6643,7 @@ u &amp;= u' + x(u'' - u')
 <li><span class="arithmatex">\(p_b/p_0 &lt; \nu_{cr}\)</span>：用<strong>缩放喷管</strong>，喉部达临界，出口继续膨胀到背压</li>
 </ul>
 </div>
-<h3 id="_89">滞止参数<a class="headerlink" href="#_89" title="Permanent link">&para;</a></h3>
+<h3 id="_89">滞止参数<a class="headerlink" href="#_89" title="Permanent link">¶</a></h3>
 <p>设想把流动气体<strong>定熵地减速到零速</strong>，此时达到的状态参数称为<strong>滞止参数</strong>（上标 <span class="arithmatex">\(*\)</span>）。滞止焓把动能并入焓中：</p>
 <div class="arithmatex">\[h^* = h + \frac{c^2}{2}\]</div>
 <p>进口流速 <span class="arithmatex">\(c_1 \approx 0\)</span> 时，进口参数即滞止参数（<span class="arithmatex">\(p_1 = p^*\)</span>）。工程上以<strong>滞止压比</strong> <span class="arithmatex">\(\nu = p_2/p^*\)</span> 与 <span class="arithmatex">\(\nu_{cr}\)</span> 比较来选管型、判断是否完全膨胀。喷管计算分两类：</p>
@@ -6644,24 +6651,24 @@ u &amp;= u' + x(u'' - u')
 <li><strong>设计计算</strong>：给定进口参数、背压、流量，求完全膨胀的出口流速与喷管尺寸</li>
 <li><strong>校核计算</strong>：给定喷管尺寸与进出口参数，判断能否完全膨胀，求实际流速与流量</li>
 </ul>
-<h3 id="_90">有摩擦的实际流动<a class="headerlink" href="#_90" title="Permanent link">&para;</a></h3>
+<h3 id="_90">有摩擦的实际流动<a class="headerlink" href="#_90" title="Permanent link">¶</a></h3>
 <p>实际喷管存在摩擦，产生熵产（<span class="arithmatex">\(\mathrm{d}s = \mathrm{d}s_g &gt; 0\)</span>），出口实际流速低于理想值，用两个系数衡量：</p>
 <div class="arithmatex">\[\varphi = \frac{c_{2,\text{实际}}}{c_{2,\text{理想}}}\ (\text{速度系数}), \qquad \eta_N = \frac{c_{2,\text{实际}}^2}{c_{2,\text{理想}}^2} = \varphi^2\ (\text{喷管效率})\]</div>
 <figure>
-  <img alt="有摩擦绝热流动的 h-s 图" src="imgs/09-friction-hs.png" width="48%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/09-friction-hs.png" data-desc-position="bottom"><img alt="有摩擦绝热流动的 h-s 图" src="imgs/09-friction-hs.png" width="48%"></a>
+<br>
 <figcaption>有摩擦的绝热流动在 h-s 图上：理想等熵膨胀 1*→2，实际因摩擦熵增沿 1*→2′（2′ 在 2 右侧、同一背压线 p₂ 上），实际焓降 h*−h₂′ 小于理想焓降，出口流速随之降低（图源：课程课件）</figcaption>
 </figure>
 <div class="admonition warning">
 <p class="admonition-title">水蒸气在喷管中的流动</p>
 <p>理想气体的定熵流动公式对水蒸气<strong>基本适用，但 <span class="arithmatex">\(h\)</span> 不能用 <span class="arithmatex">\(c_p\Delta T\)</span> 计算</strong>！水蒸气物性复杂，焓降必须借助 <strong><span class="arithmatex">\(h\)</span>-<span class="arithmatex">\(s\)</span> 图或水蒸气表</strong>读取。临界压力比也随状态不同：过热蒸汽 <span class="arithmatex">\(\gamma=1.3\)</span>（<span class="arithmatex">\(\nu_{cr}=0.546\)</span>）、干饱和蒸汽 <span class="arithmatex">\(\gamma=1.135\)</span>（<span class="arithmatex">\(\nu_{cr}=0.577\)</span>）、湿蒸汽 <span class="arithmatex">\(\gamma \approx 1.035 + 0.1x\)</span>。</p>
 </div>
-<h3 id="_91">绝热节流<a class="headerlink" href="#_91" title="Permanent link">&para;</a></h3>
+<h3 id="_91">绝热节流<a class="headerlink" href="#_91" title="Permanent link">¶</a></h3>
 <p>工质流经阀门、缩孔等局部阻力时压力骤降，称为<strong>绝热节流</strong>。因流动极快、来不及换热且无轴功，节流前后<strong>焓相等</strong>：</p>
 <div class="arithmatex">\[h_1 = h_2\]</div>
 <figure>
-  <img alt="绝热节流（焦耳-汤姆逊实验）" src="imgs/09-throttle.png" width="50%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/09-throttle.png" data-desc-position="bottom"><img alt="绝热节流（焦耳-汤姆逊实验）" src="imgs/09-throttle.png" width="50%"></a>
+<br>
 <figcaption>绝热节流：流体流经多孔塞/缩孔等局部阻力，上下游测得 p₁、T₁ 与 p₂、T₂。这正是焦耳-汤姆逊实验装置，由 T、p 的变化测定节流系数 μ_J（图源：课程课件）</figcaption>
 </figure>
 <div class="admonition note">
@@ -6682,7 +6689,7 @@ u &amp;= u' + x(u'' - u')
 <div class="arithmatex">\[= \sqrt{951031 \times (1 - 0.599)} = \sqrt{381\,100} \approx 617\ \text{m/s}\]</div>
 <p><strong>要点</strong>：先用临界压力比判断喷管类型，再用焓降（或理想气体温降公式）求出口流速。喉部流速等于当地声速。</p>
 </details>
-<h3 id="_92">真题精选<a class="headerlink" href="#_92" title="Permanent link">&para;</a></h3>
+<h3 id="_92">真题精选<a class="headerlink" href="#_92" title="Permanent link">¶</a></h3>
 <details class="question">
 <summary>22-23春夏 · 管内流动何时与背压无关，此时管内外的流动情况</summary>
 <p><strong>题</strong> 管内流动什么时候跟背压无关？求此时管内外管子的流动情况。</p>
@@ -6715,13 +6722,13 @@ u &amp;= u' + x(u'' - u')
 <li>蒸汽喷管用 <span class="arithmatex">\(h\)</span>-<span class="arithmatex">\(s\)</span> 图或查表求 <span class="arithmatex">\(h_{2s}\)</span>，再用喷管效率 <span class="arithmatex">\(\eta_n = (h_1 - h_2)/(h_1 - h_{2s})\)</span> 修正。</li>
 </ol>
 </div>
-<hr />
-<h2 id="_93">第十章 · 气体的压缩<a class="headerlink" href="#_93" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="_93">第十章 · 气体的压缩<a class="headerlink" href="#_93" title="Permanent link">¶</a></h2>
 <div class="admonition info">
 <p class="admonition-title">章节概览</p>
 <p>压气机消耗外功提高气体压力。本章分析单级压缩三种过程的耗功、活塞式压气机的余隙容积与容积效率，以及多级压缩中间冷却如何节省耗功——核心结论是<strong>压缩越接近定温越省功</strong>。</p>
 </div>
-<h3 id="_94">单级压缩的理论耗功<a class="headerlink" href="#_94" title="Permanent link">&para;</a></h3>
+<h3 id="_94">单级压缩的理论耗功<a class="headerlink" href="#_94" title="Permanent link">¶</a></h3>
 <p>压气机为稳定流动设备，理论耗功等于技术功的相反数 <span class="arithmatex">\(w_C = -w_t = \int_1^2 v\,\mathrm{d}p\)</span>（取消耗为正）。三种典型压缩过程：</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -6731,8 +6738,8 @@ u &amp;= u' + x(u'' - u')
 \end{aligned}
 \]</div>
 <figure>
-  <img alt="活塞式压气机的示功图" src="imgs/10-piston-indicator.png" width="56%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/10-piston-indicator.png" data-desc-position="bottom"><img alt="活塞式压气机的示功图" src="imgs/10-piston-indicator.png" width="56%"></a>
+<br>
 <figcaption>活塞式压气机示功图：1→2 压缩、2→3 排气、3→0 吸气，理论耗功（技术功）为 wt = ∫v·dp，对应 p-v 图上紧贴 p 轴的 V·dp 阴影面积（图源：课程课件）</figcaption>
 </figure>
 <div class="admonition key-point">
@@ -6742,11 +6749,11 @@ u &amp;= u' + x(u'' - u')
 <p>在 <span class="arithmatex">\(p\)</span>-<span class="arithmatex">\(v\)</span> 图上，定温线最靠左、所围"压缩功"面积最小。因此实际压气机都设法<strong>冷却气缸</strong>，使压缩过程尽量接近定温，同时降低排气温度。</p>
 </div>
 <figure>
-  <img alt="三种压缩过程在 p-v、T-s 图上的比较" src="imgs/10-three-process.png" width="92%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/10-three-process.png" data-desc-position="bottom"><img alt="三种压缩过程在 p-v、T-s 图上的比较" src="imgs/10-three-process.png" width="92%"></a>
+<br>
 <figcaption>三种压缩过程比较：同一增压比下，定温 2ₜ（绿）、多变 2ₙ（红）、绝热 2ₛ（黄）。p-v 图上定温线最靠左、压缩功面积最小；T-s 图上绝热终温最高，故 w_C,T &lt; w_C,n &lt; w_C,s（图源：课程课件）</figcaption>
 </figure>
-<h3 id="_95">余隙容积与容积效率<a class="headerlink" href="#_95" title="Permanent link">&para;</a></h3>
+<h3 id="_95">余隙容积与容积效率<a class="headerlink" href="#_95" title="Permanent link">¶</a></h3>
 <p>活塞式压气机的活塞无法到达气缸顶端，余下的空间称为<strong>余隙容积</strong> <span class="arithmatex">\(V_c\)</span>。余隙中的高压残气在吸气行程中先<strong>膨胀</strong>，推迟了进气阀开启，减少了实际吸气量。</p>
 <div class="admonition definition">
 <p class="admonition-title">容积效率 <span class="arithmatex">\(\eta_V\)</span></p>
@@ -6755,15 +6762,15 @@ u &amp;= u' + x(u'' - u')
 <p>式中余隙比 <span class="arithmatex">\(\sigma = V_c/V_s\)</span>（余隙容积/行程容积）。增压比 <span class="arithmatex">\(p_2/p_1\)</span> 越大，<span class="arithmatex">\(\eta_V\)</span> 越小——余隙的存在<strong>限制了单级增压比</strong>。</p>
 </div>
 <figure>
-  <img alt="余隙容积对吸气过程的影响" src="imgs/10-clearance-volume.png" width="58%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/10-clearance-volume.png" data-desc-position="bottom"><img alt="余隙容积对吸气过程的影响" src="imgs/10-clearance-volume.png" width="58%"></a>
+<br>
 <figcaption>余隙容积 Vc：活塞到达上止点后留下的空间。排气终了 3 点残留的高压气体先膨胀到 4 点才开启进气阀，实际吸气量由 V₁ 缩小为 V₁−V₄，增压比越大膨胀越充分、容积效率越低（图源：课程课件）</figcaption>
 </figure>
-<h3 id="_96">多级压缩中间冷却<a class="headerlink" href="#_96" title="Permanent link">&para;</a></h3>
+<h3 id="_96">多级压缩中间冷却<a class="headerlink" href="#_96" title="Permanent link">¶</a></h3>
 <p>单级增压比过大会导致排气温度过高、容积效率下降、耗功增大。工程上改用<strong>多级压缩 + 级间中间冷却</strong>：每级压缩后将气体冷却回进气温度再进入下一级。</p>
 <figure>
-  <img alt="两级压缩中间冷却装置流程" src="imgs/10-multistage-device.png" width="90%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/10-multistage-device.png" data-desc-position="bottom"><img alt="两级压缩中间冷却装置流程" src="imgs/10-multistage-device.png" width="90%"></a>
+<br>
 <figcaption>两级压缩中间冷却装置：气体经进气口进入低压缸压缩，排出后流经中间冷却器（用冷却水）降回进气温度，再进入高压缸二次压缩，最后送入储气罐（图源：课程课件）</figcaption>
 </figure>
 <div class="admonition key-point">
@@ -6775,8 +6782,8 @@ u &amp;= u' + x(u'' - u')
 </div>
 <p>中间冷却使每一级都接近定温，多级越多越逼近理想定温压缩，但设备复杂、成本升高，需折中。</p>
 <figure>
-  <img alt="两级压缩中间冷却的节功" src="imgs/10-twostage-saving.png" width="60%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/10-twostage-saving.png" data-desc-position="bottom"><img alt="两级压缩中间冷却的节功" src="imgs/10-twostage-saving.png" width="60%"></a>
+<br>
 <figcaption>两级压缩中间冷却的节功：单级压缩沿较陡的高温多变线（红），两级压缩经中间冷却后整体偏向低温线（绿），p-v 图上二者之间的阴影即两级方案相对单级的「省功」面积——压缩越接近定温越省功（图源：课程课件）</figcaption>
 </figure>
 <div class="admonition note">
@@ -6795,7 +6802,7 @@ u &amp;= u' + x(u'' - u')
 <div class="arithmatex">\[w_{1} = 4.333 \times 287 \times 293.15 \times \left[16^{0.2308} - 1\right] = 364.6 \times 0.896 \approx 327\ \text{kJ/kg}\]</div>
 <p><strong>结论</strong>：两级中间冷却比单级省功约 <span class="arithmatex">\(\dfrac{327-275}{327} \approx 16\%\)</span>，且各级排气温度更低。</p>
 </details>
-<h3 id="_97">真题精选<a class="headerlink" href="#_97" title="Permanent link">&para;</a></h3>
+<h3 id="_97">真题精选<a class="headerlink" href="#_97" title="Permanent link">¶</a></h3>
 <details class="question">
 <summary>24-25春夏 · 等温与绝热压缩谁耗功少，画图说明，实际如何操作</summary>
 <p><strong>题</strong> 压气机的等温和绝热压缩谁消耗功量少，画图说明，在实际中是怎么操作的，画图说明。</p>
@@ -6818,23 +6825,23 @@ u &amp;= u' + x(u'' - u')
 <div class="arithmatex">\[w = \frac{n}{n-1}RT_1\left[\left(\frac{p_2}{p_1}\right)^{(n-1)/n} - 1\right] \approx 190\ \text{kJ/kg}.\]</div>
 <p>流量 <span class="arithmatex">\(0.5\ \text{kg/s}\)</span> 时功率约 <span class="arithmatex">\(95\ \text{kW}\)</span>。</p>
 </details>
-<hr />
-<h2 id="_98">第十一章 · 蒸汽动力循环<a class="headerlink" href="#_98" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="_98">第十一章 · 蒸汽动力循环<a class="headerlink" href="#_98" title="Permanent link">¶</a></h2>
 <div class="admonition info">
 <p class="admonition-title">章节概览</p>
 <p>蒸汽动力循环是火电厂的热力基础。本章从朗肯循环出发，分析四个设备与四个过程、热效率算法，以及提高效率的三条途径与再热、回热改良。</p>
 </div>
-<h3 id="_99">为什么不用蒸汽卡诺循环<a class="headerlink" href="#_99" title="Permanent link">&para;</a></h3>
+<h3 id="_99">为什么不用蒸汽卡诺循环<a class="headerlink" href="#_99" title="Permanent link">¶</a></h3>
 <p>卡诺循环效率最高，但以水蒸气为工质时难以实现：乏汽在湿蒸汽区压缩需压缩湿蒸汽（汽液两相，压缩机难做）、临界温度限制了高温热源利用。因此实际采用<strong>朗肯循环</strong>。</p>
 <figure>
-  <img alt="蒸汽卡诺循环 T-s 图" src="imgs/11-carnot-steam-ts.png" width="88%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/11-carnot-steam-ts.png" data-desc-position="bottom"><img alt="蒸汽卡诺循环 T-s 图" src="imgs/11-carnot-steam-ts.png" width="88%"></a>
+<br>
 <figcaption>蒸汽卡诺循环的 T-s 图：3→4 须压缩汽液两相的湿蒸汽，难以实现（图源：课程课件）</figcaption>
 </figure>
-<h3 id="_100">朗肯循环<a class="headerlink" href="#_100" title="Permanent link">&para;</a></h3>
+<h3 id="_100">朗肯循环<a class="headerlink" href="#_100" title="Permanent link">¶</a></h3>
 <figure>
-  <img alt="朗肯循环装置示意图" src="imgs/11-rankine-plant-schematic.png" width="90%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/11-rankine-plant-schematic.png" data-desc-position="bottom"><img alt="朗肯循环装置示意图" src="imgs/11-rankine-plant-schematic.png" width="90%"></a>
+<br>
 <figcaption>朗肯循环装置系统：锅炉 → 汽轮机 → 凝汽器 → 给水泵（图源：课程课件）</figcaption>
 </figure>
 <div class="admonition definition">
@@ -6872,8 +6879,8 @@ u &amp;= u' + x(u'' - u')
 </table>
 </div>
 <figure>
-  <img alt="朗肯循环 T-s 图与分过程" src="imgs/11-rankine-ts-process.png" width="90%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/11-rankine-ts-process.png" data-desc-position="bottom"><img alt="朗肯循环 T-s 图与分过程" src="imgs/11-rankine-ts-process.png" width="90%"></a>
+<br>
 <figcaption>朗肯循环在 T-s 图上的四个分过程（图源：课程课件）</figcaption>
 </figure>
 <p><strong>热效率</strong>：</p>
@@ -6884,7 +6891,7 @@ u &amp;= u' + x(u'' - u')
 <p>液态水比体积很小，水泵功 <span class="arithmatex">\(w_p\)</span> 远小于汽轮机功，工程估算常忽略：</p>
 <div class="arithmatex">\[\eta_t \approx \frac{h_1 - h_2}{h_1 - h_3}\]</div>
 </div>
-<h3 id="_101">提高朗肯循环效率的途径<a class="headerlink" href="#_101" title="Permanent link">&para;</a></h3>
+<h3 id="_101">提高朗肯循环效率的途径<a class="headerlink" href="#_101" title="Permanent link">¶</a></h3>
 <div class="admonition key-point">
 <p class="admonition-title">三条途径</p>
 <p>本质都是<strong>提高平均吸热温度</strong>或<strong>降低平均放热温度</strong>：</p>
@@ -6895,26 +6902,26 @@ u &amp;= u' + x(u'' - u')
 </ol>
 </div>
 <figure>
-  <img alt="提高初温对效率的影响" src="imgs/11-initial-temp-effect.png" width="90%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/11-initial-temp-effect.png" data-desc-position="bottom"><img alt="提高初温对效率的影响" src="imgs/11-initial-temp-effect.png" width="90%"></a>
+<br>
 <figcaption>提高初温 t₁：循环热效率上升、乏汽干度改善（右图为效率随初温的变化）（图源：课程课件）</figcaption>
 </figure>
-<h3 id="_102">再热循环与回热循环<a class="headerlink" href="#_102" title="Permanent link">&para;</a></h3>
+<h3 id="_102">再热循环与回热循环<a class="headerlink" href="#_102" title="Permanent link">¶</a></h3>
 <ul>
 <li><strong>再热循环</strong>：蒸汽在汽轮机高压缸膨胀后抽回锅炉<strong>再热</strong>，再进入低压缸继续膨胀。既提高了平均吸热温度、又改善了乏汽干度。</li>
 <li><strong>回热循环</strong>：从汽轮机中间级<strong>抽汽</strong>去加热锅炉给水，减少了锅炉中低温段的吸热，提高了平均吸热温度，是现代电厂提效的核心手段。抽汽量 <span class="arithmatex">\(\alpha\)</span> 由给水加热器的能量平衡确定。</li>
 </ul>
 <figure>
-  <img alt="再热循环装置图与 T-s 图" src="imgs/11-reheat-cycle.png" width="90%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/11-reheat-cycle.png" data-desc-position="bottom"><img alt="再热循环装置图与 T-s 图" src="imgs/11-reheat-cycle.png" width="90%"></a>
+<br>
 <figcaption>再热循环：高压缸膨胀后抽回锅炉再热，再入低压缸（装置图 + T-s 图）（图源：课程课件）</figcaption>
 </figure>
 <figure>
-  <img alt="回热循环 T-s 图" src="imgs/11-regenerative-cycle.png" width="88%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/11-regenerative-cycle.png" data-desc-position="bottom"><img alt="回热循环 T-s 图" src="imgs/11-regenerative-cycle.png" width="88%"></a>
+<br>
 <figcaption>回热循环：抽汽预热给水，改善低温吸热段（4→1 过程）（图源：课程课件）</figcaption>
 </figure>
-<h3 id="_103">循环的其他评价指标<a class="headerlink" href="#_103" title="Permanent link">&para;</a></h3>
+<h3 id="_103">循环的其他评价指标<a class="headerlink" href="#_103" title="Permanent link">¶</a></h3>
 <div class="admonition definition">
 <p class="admonition-title">汽耗率、循环功比与相对内效率</p>
 <ul>
@@ -6945,7 +6952,7 @@ u &amp;= u' + x(u'' - u')
 <div class="arithmatex">\[\eta_t = \frac{(h_1 - h_2) - w_p}{h_1 - h_4} = \frac{(3373 - 2011) - 10}{3373 - 147.8} = \frac{1352}{3225} \approx 41.9\%\]</div>
 <p><strong>要点</strong>：膨胀终点落在湿蒸汽区，须先由等熵求干度再求 <span class="arithmatex">\(h_2\)</span>；忽略水泵功时 <span class="arithmatex">\(\eta_t \approx 42.1\%\)</span>，差别很小。</p>
 </details>
-<h3 id="_104">真题精选<a class="headerlink" href="#_104" title="Permanent link">&para;</a></h3>
+<h3 id="_104">真题精选<a class="headerlink" href="#_104" title="Permanent link">¶</a></h3>
 <details class="question">
 <summary>24-25春夏 · 朗肯循环综合：效率、回热、再热、T-s 图（计算）</summary>
 <p><strong>题</strong> 普通的朗肯循环，汽轮机入口 <span class="arithmatex">\(26\ \text{MPa}\)</span>、<span class="arithmatex">\(600^\circ\text{C}\)</span>，冷凝压力 <span class="arithmatex">\(0.004\ \text{MPa}\)</span>。(1) 求热效率；(2) 加一个回热，给水温度变为 <span class="arithmatex">\(280^\circ\text{C}\)</span>，求回热时的压力及此时的平均吸热温度；(3) 加一个再热，再热压力 <span class="arithmatex">\(5.6\ \text{MPa}\)</span>，再热后温度 <span class="arithmatex">\(600^\circ\text{C}\)</span>，求温升、汽轮机增加的功率；(4) 同时加一个回热和一个再热，画出 <span class="arithmatex">\(T\)</span>-<span class="arithmatex">\(s\)</span> 图。</p>
@@ -6989,13 +6996,13 @@ u &amp;= u' + x(u'' - u')
 </ul>
 <p>乏汽（排汽）落在湿区时，干度 <span class="arithmatex">\(x = (s - s_f)/s_{fg} = (h - h_f)/h_{fg}\)</span>；汽耗率 <span class="arithmatex">\(b = 3600/w_\text{net}\)</span>。</p>
 </div>
-<hr />
-<h2 id="_105">第十二章 · 气体动力循环<a class="headerlink" href="#_105" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="_105">第十二章 · 气体动力循环<a class="headerlink" href="#_105" title="Permanent link">¶</a></h2>
 <div class="admonition info">
 <p class="admonition-title">章节概览</p>
 <p>以气体为工质的动力循环，包括活塞式内燃机（定容、定压、混合加热）与燃气轮机（布雷顿循环）。分析前先用<strong>空气标准假设</strong>把复杂的实际循环抽象为可计算的理想循环。</p>
 </div>
-<h3 id="_106">空气标准假设<a class="headerlink" href="#_106" title="Permanent link">&para;</a></h3>
+<h3 id="_106">空气标准假设<a class="headerlink" href="#_106" title="Permanent link">¶</a></h3>
 <div class="admonition definition">
 <p class="admonition-title">空气标准假设（五条）</p>
 <ol>
@@ -7007,7 +7014,7 @@ u &amp;= u' + x(u'' - u')
 </ol>
 <p>经此简化，实际不可逆开式循环就成了可在 <span class="arithmatex">\(p\)</span>-<span class="arithmatex">\(v\)</span>、<span class="arithmatex">\(T\)</span>-<span class="arithmatex">\(s\)</span> 图上分析的理想闭式循环。</p>
 </div>
-<h3 id="_107">活塞式内燃机理想循环<a class="headerlink" href="#_107" title="Permanent link">&para;</a></h3>
+<h3 id="_107">活塞式内燃机理想循环<a class="headerlink" href="#_107" title="Permanent link">¶</a></h3>
 <div class="admonition definition">
 <p class="admonition-title">三种加热方式</p>
 <table>
@@ -7041,22 +7048,22 @@ u &amp;= u' + x(u'' - u')
 <p><strong>定容加热循环（奥托）热效率</strong>：</p>
 <div class="arithmatex">\[\eta_t = 1 - \frac{1}{\varepsilon^{\gamma-1}}, \qquad \varepsilon = \frac{v_1}{v_2}\ (\text{压缩比})\]</div>
 <figure>
-  <img alt="定容加热（奥托）循环 p-v 图与 T-s 图" src="imgs/12-otto-cycle.png" width="90%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/12-otto-cycle.png" data-desc-position="bottom"><img alt="定容加热（奥托）循环 p-v 图与 T-s 图" src="imgs/12-otto-cycle.png" width="90%"></a>
+<br>
 <figcaption>定容加热（奥托）循环：1→2 绝热压缩、2→3 定容加热、3→4 绝热膨胀、4→1 定容放热，对应汽油机（图源：课程课件）</figcaption>
 </figure>
 <p><strong>定压加热循环（狄塞尔）热效率</strong>：</p>
 <div class="arithmatex">\[\eta_t = 1 - \frac{1}{\varepsilon^{\gamma-1}}\cdot\frac{\rho^\gamma - 1}{\gamma(\rho - 1)}, \qquad \rho = \frac{v_3}{v_2}\ (\text{预胀比})\]</div>
 <figure>
-  <img alt="定压加热（狄塞尔）循环 p-v 图与 T-s 图" src="imgs/12-diesel-cycle.png" width="90%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/12-diesel-cycle.png" data-desc-position="bottom"><img alt="定压加热（狄塞尔）循环 p-v 图与 T-s 图" src="imgs/12-diesel-cycle.png" width="90%"></a>
+<br>
 <figcaption>定压加热（狄塞尔）循环：加热段 2→3 为定压过程，对应低速柴油机；预胀比 ρ 越大、循环热效率越低（图源：课程课件）</figcaption>
 </figure>
 <p><strong>混合加热循环（萨巴德）热效率</strong>：</p>
 <div class="arithmatex">\[\eta_t = 1 - \frac{1}{\varepsilon^{\gamma-1}}\cdot\frac{\lambda\rho^\gamma - 1}{(\lambda - 1) + \gamma\lambda(\rho - 1)}, \qquad \lambda = \frac{p_3}{p_2}\ (\text{升压比})\]</div>
 <figure>
-  <img alt="混合加热（萨巴德）循环 p-v 图与 T-s 图" src="imgs/12-dual-cycle.png" width="90%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/12-dual-cycle.png" data-desc-position="bottom"><img alt="混合加热（萨巴德）循环 p-v 图与 T-s 图" src="imgs/12-dual-cycle.png" width="90%"></a>
+<br>
 <figcaption>混合加热（萨巴德）循环：加热分两段——2→3 定容升压（升压比 λ）、3→4 定压膨胀（预胀比 ρ），对应高速柴油机，性能介于奥托与狄塞尔之间（图源：课程课件）</figcaption>
 </figure>
 <div class="admonition key-point">
@@ -7073,15 +7080,15 @@ u &amp;= u' + x(u'' - u')
 <p>后一种比较更贴近实际（受材料耐压耐温限制），这也是高增压比柴油机经济性好的原因。</p>
 </div>
 <figure>
-  <img alt="三种内燃机循环效率比较（平均温度法）" src="imgs/12-cycle-comparison.png" width="90%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/12-cycle-comparison.png" data-desc-position="bottom"><img alt="三种内燃机循环效率比较（平均温度法）" src="imgs/12-cycle-comparison.png" width="90%"></a>
+<br>
 <figcaption>三种循环效率比较（平均温度法）：压缩比与吸热量相同时，定容加热的平均吸热温度最高，故 η奥托 &gt; η萨巴德 &gt; η狄塞尔（图源：课程课件）</figcaption>
 </figure>
-<h3 id="_108">燃气轮机循环（布雷顿循环）<a class="headerlink" href="#_108" title="Permanent link">&para;</a></h3>
+<h3 id="_108">燃气轮机循环（布雷顿循环）<a class="headerlink" href="#_108" title="Permanent link">¶</a></h3>
 <p>由压气机、燃烧室、燃气透平组成，理想化为：绝热压缩 → 定压加热 → 绝热膨胀 → 定压放热。</p>
 <figure>
-  <img alt="燃气轮机装置构造（开式布雷顿循环）" src="imgs/12-brayton-device.png" width="88%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/12-brayton-device.png" data-desc-position="bottom"><img alt="燃气轮机装置构造（开式布雷顿循环）" src="imgs/12-brayton-device.png" width="88%"></a>
+<br>
 <figcaption>燃气轮机装置构造（开式布雷顿循环）：空气经压气机（compressor）增压，在燃烧室（combustion chamber）定压加热，再进入燃气透平（gas turbine）膨胀做功，连续运转、功率密度大（图源：课程课件）</figcaption>
 </figure>
 <div class="admonition definition">
@@ -7107,8 +7114,8 @@ u &amp;= u' + x(u'' - u')
 <p>注意：<strong>脱离回热</strong>单纯分级压缩或中间再热<strong>并不能</strong>提高热效率。</p>
 </div>
 <figure>
-  <img alt="回热在 T-s 图上的表示" src="imgs/12-regeneration-ts.png" width="88%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/12-regeneration-ts.png" data-desc-position="bottom"><img alt="回热在 T-s 图上的表示" src="imgs/12-regeneration-ts.png" width="88%"></a>
+<br>
 <figcaption>回热在 T-s 图上的表示：用透平排气预热压缩后的空气，回收原本排往低温热源的热量，提高平均吸热温度、降低平均放热温度，从而提高热效率（图源：课程课件）</figcaption>
 </figure>
 <details class="example">
@@ -7118,7 +7125,7 @@ u &amp;= u' + x(u'' - u')
 <div class="arithmatex">\[\eta_t = 1 - \frac{1}{\varepsilon^{\gamma-1}} = 1 - \frac{1}{8^{0.4}} = 1 - \frac{1}{2.297} = 1 - 0.435 = 56.5\%\]</div>
 <p><strong>要点</strong>：理想热效率仅由压缩比决定。实际汽油机受爆震限制压缩比、并存在各种损失，实际效率远低于此（约 25–30%）。提高 <span class="arithmatex">\(\varepsilon\)</span> 是提升内燃机效率的根本方向。</p>
 </details>
-<h3 id="_109">真题精选<a class="headerlink" href="#_109" title="Permanent link">&para;</a></h3>
+<h3 id="_109">真题精选<a class="headerlink" href="#_109" title="Permanent link">¶</a></h3>
 <details class="question">
 <summary>23-24春夏 · 定压加热与定容加热循环效率，如何提高</summary>
 <p><strong>题</strong> 定压加热和定容加热循环，画出 <span class="arithmatex">\(p\)</span>-<span class="arithmatex">\(v\)</span> 图并计算热效率。分析该怎么提高热效率。</p>
@@ -7151,18 +7158,18 @@ u &amp;= u' + x(u'' - u')
 <div class="arithmatex">\[\eta_m = 1 - \frac{1}{\varepsilon^{k-1}}\frac{\lambda\rho^k - 1}{(\lambda - 1) + k\lambda(\rho - 1)}.\]</div>
 <p>在 <span class="arithmatex">\(T\)</span>-<span class="arithmatex">\(s\)</span> 图上定容加热温升更陡，平均吸热温度更高。</p>
 </details>
-<hr />
-<h2 id="_110">第十三章 · 制冷循环<a class="headerlink" href="#_110" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="_110">第十三章 · 制冷循环<a class="headerlink" href="#_110" title="Permanent link">¶</a></h2>
 <div class="admonition info">
 <p class="admonition-title">章节概览</p>
 <p>制冷循环是<strong>逆循环</strong>：消耗外功把热量从低温热源（冷库）抽向高温热源（环境）。本章给出制冷系数定义、逆卡诺上限，并重点分析工程主流的蒸汽压缩制冷循环。</p>
 </div>
 <figure>
-  <img alt="制冷循环的分类" src="imgs/13-refrigeration-types.png" width="86%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/13-refrigeration-types.png" data-desc-position="bottom"><img alt="制冷循环的分类" src="imgs/13-refrigeration-types.png" width="86%"></a>
+<br>
 <figcaption>制冷循环的分类：按工作原理分为压缩制冷（空气压缩、蒸气压缩）、吸收式制冷、蒸气喷射制冷、半导体制冷与热声制冷，本章重点是蒸气压缩制冷（图源：课程课件）</figcaption>
 </figure>
-<h3 id="_111">制冷系数与供热系数<a class="headerlink" href="#_111" title="Permanent link">&para;</a></h3>
+<h3 id="_111">制冷系数与供热系数<a class="headerlink" href="#_111" title="Permanent link">¶</a></h3>
 <div class="admonition definition">
 <p class="admonition-title">制冷系数 <span class="arithmatex">\(\varepsilon\)</span> 与供热系数 <span class="arithmatex">\(\varepsilon'\)</span></p>
 <p>制冷机以"从冷源取热 <span class="arithmatex">\(q_2\)</span>"为目的：</p>
@@ -7175,17 +7182,17 @@ u &amp;= u' + x(u'' - u')
 <div class="arithmatex">\[\varepsilon_c = \frac{T_2}{T_1 - T_2}\]</div>
 <p>温差 <span class="arithmatex">\(T_1 - T_2\)</span> 越小，制冷系数越高。</p>
 <figure>
-  <img alt="逆卡诺循环的 T-s 图" src="imgs/13-reverse-carnot-ts.png" width="88%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/13-reverse-carnot-ts.png" data-desc-position="bottom"><img alt="逆卡诺循环的 T-s 图" src="imgs/13-reverse-carnot-ts.png" width="88%"></a>
+<br>
 <figcaption>逆卡诺循环的 T-s 图：两条等温线与两条绝热线围成矩形，是制冷循环的理论上限；高低温热源温差越小，制冷系数越高（图源：课程课件）</figcaption>
 </figure>
-<h3 id="_112">空气压缩制冷循环<a class="headerlink" href="#_112" title="Permanent link">&para;</a></h3>
+<h3 id="_112">空气压缩制冷循环<a class="headerlink" href="#_112" title="Permanent link">¶</a></h3>
 <p>以空气为工质的逆布雷顿循环：绝热压缩 → 定压放热 → 绝热膨胀 → 定压吸热。</p>
 <div class="arithmatex">\[\varepsilon = \frac{1}{\pi^{\frac{\gamma-1}{\gamma}} - 1}\]</div>
 <p>因空气定压吸热温度变化大、制冷系数低，主要用于早期及航空空调等特殊场合。</p>
 <figure>
-  <img alt="空气压缩制冷循环 p-v 图与 T-s 图" src="imgs/13-air-cycle.png" width="90%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/13-air-cycle.png" data-desc-position="bottom"><img alt="空气压缩制冷循环 p-v 图与 T-s 图" src="imgs/13-air-cycle.png" width="90%"></a>
+<br>
 <figcaption>空气压缩制冷循环（逆布雷顿）：1→2 绝热压缩、2→3 定压放热、3→4 绝热膨胀、4→1 定压吸热制冷；定压吸放热温度变化大，故制冷系数偏低（图源：课程课件）</figcaption>
 </figure>
 <details class="example">
@@ -7221,11 +7228,11 @@ u &amp;= u' + x(u'' - u')
 </table>
 <p><strong>要点</strong>：增压比增大，<strong>制冷系数下降</strong>（耗功增加更快），但<strong>单位质量制冷量增大</strong>。实际设计需在效率与制冷量、设备尺寸之间权衡。</p>
 </details>
-<h3 id="_113">蒸汽压缩制冷循环<a class="headerlink" href="#_113" title="Permanent link">&para;</a></h3>
+<h3 id="_113">蒸汽压缩制冷循环<a class="headerlink" href="#_113" title="Permanent link">¶</a></h3>
 <p>利用制冷剂相变吸放热，是冰箱、空调的主流方案，又称<strong>帕金斯（Perkins）循环</strong>：</p>
 <figure>
-  <img alt="蒸气压缩制冷装置工作流程" src="imgs/13-vapor-device.png" width="88%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/13-vapor-device.png" data-desc-position="bottom"><img alt="蒸气压缩制冷装置工作流程" src="imgs/13-vapor-device.png" width="88%"></a>
+<br>
 <figcaption>蒸气压缩制冷装置工作流程：压缩机 → 冷凝器 → 节流阀 → 蒸发器构成闭式回路，制冷剂在蒸发器吸热、在冷凝器放热，靠相变潜热搬运热量（图源：课程课件）</figcaption>
 </figure>
 <div class="admonition definition">
@@ -7263,8 +7270,8 @@ u &amp;= u' + x(u'' - u')
 </table>
 </div>
 <figure>
-  <img alt="蒸气压缩制冷循环的 T-s 图" src="imgs/13-vapor-ts.png" width="88%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/13-vapor-ts.png" data-desc-position="bottom"><img alt="蒸气压缩制冷循环的 T-s 图" src="imgs/13-vapor-ts.png" width="88%"></a>
+<br>
 <figcaption>蒸气压缩制冷循环的 T-s 图：1→2 绝热压缩（干压缩，进口为干饱和蒸汽）、2→3 定压冷凝放热、3→4 绝热节流、4→1 定压蒸发吸热，相变段在两相区内近似等温（图源：课程课件）</figcaption>
 </figure>
 <p><strong>制冷系数</strong>：</p>
@@ -7278,8 +7285,8 @@ u &amp;= u' + x(u'' - u')
 <p>液态制冷剂经膨胀机可回收的功极小，而膨胀机处理汽液两相既昂贵又易损。改用<strong>节流阀</strong>虽是不可逆过程（产生熵），但结构简单可靠、损失有限，是工程上的最优折中。</p>
 </div>
 <figure>
-  <img alt="节流阀与膨胀机的对比" src="imgs/13-throttle-vs-expander.png" width="88%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/13-throttle-vs-expander.png" data-desc-position="bottom"><img alt="节流阀与膨胀机的对比" src="imgs/13-throttle-vs-expander.png" width="88%"></a>
+<br>
 <figcaption>节流阀与膨胀机的对比：液态制冷剂用膨胀机可回收的功极小，改用节流阀虽产生熵增却结构简单可靠，是工程上的最优折中（图源：课程课件）</figcaption>
 </figure>
 <details class="example">
@@ -7295,7 +7302,7 @@ u &amp;= u' + x(u'' - u')
 <div class="arithmatex">\[\varepsilon = \frac{h_1 - h_4}{h_2 - h_1} = \frac{392.4 - 256.4}{425.0 - 392.4} = \frac{136.0}{32.6} \approx 4.17\]</div>
 <p><strong>要点</strong>：制冷量 <span class="arithmatex">\(q_2 = h_1 - h_4\)</span> 取自节流后焓（节流使 <span class="arithmatex">\(h\)</span> 不变但压力温度骤降）；若作热泵用，供热系数 <span class="arithmatex">\(\varepsilon' = \varepsilon + 1 \approx 5.17\)</span>。</p>
 </details>
-<h3 id="_114">真题精选<a class="headerlink" href="#_114" title="Permanent link">&para;</a></h3>
+<h3 id="_114">真题精选<a class="headerlink" href="#_114" title="Permanent link">¶</a></h3>
 <details class="question">
 <summary>23-24/20-21春夏 · 蒸汽压缩制冷相比空气制冷的优点及原因</summary>
 <p><strong>题</strong> 蒸汽制冷比空气制冷的优点及原因（蒸汽制冷循环与空气制冷循环相比，优点是什么，为什么）。</p>
@@ -7327,13 +7334,13 @@ u &amp;= u' + x(u'' - u')
 <p><strong>题</strong> 空气制冷循环中环境温度为 <span class="arithmatex">\(T_1\)</span>，冷藏室温度为 <span class="arithmatex">\(T_2\)</span>，制冷系数是否等于 <span class="arithmatex">\(T_2/(T_2 - T_1)\)</span>，并解释原因。</p>
 <p><strong>答</strong> 不等于。<span class="arithmatex">\(T_2/(T_1 - T_2)\)</span> 是在高温环境 <span class="arithmatex">\(T_1\)</span> 与低温冷藏室 <span class="arithmatex">\(T_2\)</span> 间运行的逆卡诺制冷系数。空气制冷循环含非等温换热、压缩和膨胀不可逆，实际 COP 小于该值。题中写成 <span class="arithmatex">\(T_2/(T_2 - T_1)\)</span> 分母为负，也不符合制冷系数定义。</p>
 </details>
-<hr />
-<h2 id="_115">第十四章 · 化学反应系统的热力学原理<a class="headerlink" href="#_115" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="_115">第十四章 · 化学反应系统的热力学原理<a class="headerlink" href="#_115" title="Permanent link">¶</a></h2>
 <div class="admonition info">
 <p class="admonition-title">章节概览</p>
 <p>燃烧是热能的主要来源，涉及化学反应中的能量转换。本章把热力学第一、第二、第三定律推广到化学反应系统：反应热的计算、热化学定律、化学平衡判据，以及绝对熵。</p>
 </div>
-<h3 id="_116">反应热与热效应<a class="headerlink" href="#_116" title="Permanent link">&para;</a></h3>
+<h3 id="_116">反应热与热效应<a class="headerlink" href="#_116" title="Permanent link">¶</a></h3>
 <p>化学反应在定温下放出或吸收的热量称为<strong>反应热（热效应）</strong>。按反应条件分两种：</p>
 <div class="admonition definition">
 <p class="admonition-title">定容热效应与定压热效应</p>
@@ -7349,14 +7356,14 @@ u &amp;= u' + x(u'' - u')
 <p class="admonition-title">有用功与热效应的定义前提</p>
 <p>与简单可压缩系统不同，化学反应系统除体积功外还能输出<strong>非体积功</strong>（有用功 <span class="arithmatex">\(W_u\)</span>，如燃料电池的电功）。第一定律一般式为 <span class="arithmatex">\(\delta Q = \mathrm{d}U + \delta W + \delta W_u\)</span>。<strong>热效应</strong>特指<strong>不做有用功</strong>（<span class="arithmatex">\(W_u = 0\)</span>）、在定容或定压下反应所放出/吸收的热——这正是 <span class="arithmatex">\(Q_V=\Delta U\)</span>、<span class="arithmatex">\(Q_p=\Delta H\)</span> 成立的前提。对燃料燃烧，热效应即<strong>热值（发热量）</strong>。稳定单质的生成焓规定为零。</p>
 </div>
-<h3 id="_117">热化学定律<a class="headerlink" href="#_117" title="Permanent link">&para;</a></h3>
+<h3 id="_117">热化学定律<a class="headerlink" href="#_117" title="Permanent link">¶</a></h3>
 <div class="admonition key-point">
 <p class="admonition-title">盖斯定律（Hess）</p>
 <p>反应热只取决于反应的始态与终态，<strong>与中间途径无关</strong>。因此热化学方程可像代数式一样叠加，由已知反应的反应热推算未知反应的反应热。</p>
 </div>
 <figure>
-  <img alt="盖斯定律：反应热与途径无关" src="imgs/14-hess-law.png" width="88%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/14-hess-law.png" data-desc-position="bottom"><img alt="盖斯定律：反应热与途径无关" src="imgs/14-hess-law.png" width="88%"></a>
+<br>
 <figcaption>盖斯定律：由 A 到 B，无论经 A→C→D→B 还是 A→E→B，热效应总和不变，即 Q₁+Q₂+Q₃ = Q₄+Q₅；据此可由易测反应的反应热叠加推算难测反应的反应热（图源：课程课件）</figcaption>
 </figure>
 <p>借助<strong>标准生成焓</strong> <span class="arithmatex">\(\Delta H_f^\circ\)</span>（由稳定单质生成 1 mol 化合物的焓变），任意反应的标准反应焓：</p>
@@ -7367,7 +7374,7 @@ u &amp;= u' + x(u'' - u')
 <div class="arithmatex">\[\frac{\mathrm{d}(\Delta H_r)}{\mathrm{d}T} = \Delta C_p = \sum_{\text{产物}}\nu_i C_{p,i} - \sum_{\text{反应物}}\nu_j C_{p,j}\]</div>
 <p>用于把某温度下的反应热换算到另一温度。</p>
 </div>
-<h3 id="_118">理论燃烧温度（绝热燃烧温度）<a class="headerlink" href="#_118" title="Permanent link">&para;</a></h3>
+<h3 id="_118">理论燃烧温度（绝热燃烧温度）<a class="headerlink" href="#_118" title="Permanent link">¶</a></h3>
 <div class="admonition definition">
 <p class="admonition-title">绝热燃烧温度</p>
 <p>燃料在定压（或定容）下<strong>绝热完全燃烧</strong>（与外界换热为零、不做有用功）时，燃烧产物所能达到的最高温度，称为<strong>绝热燃烧温度</strong>（理论燃烧温度）<span class="arithmatex">\(T_{ad}\)</span>。</p>
@@ -7376,15 +7383,15 @@ u &amp;= u' + x(u'' - u')
 <div class="arithmatex">\[H_{\text{产物}}(T_{ad}) = H_{\text{反应物}}(T_1)\]</div>
 <p>它是燃烧设备的温度上限。实际因散热、不完全燃烧、高温离解等，真实火焰温度低于 <span class="arithmatex">\(T_{ad}\)</span>。</p>
 <figure>
-  <img alt="绝热燃烧温度的焓-温图解" src="imgs/14-adiabatic-flame.png" width="46%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/14-adiabatic-flame.png" data-desc-position="bottom"><img alt="绝热燃烧温度的焓-温图解" src="imgs/14-adiabatic-flame.png" width="46%"></a>
+<br>
 <figcaption>绝热燃烧温度的焓-温图：反应物焓线与生成物焓线在初温 T₀ 处相差 ΔH⁰（反应热）；绝热定压时产物总焓等于反应物初态总焓，沿生成物线升温直至 T_ad（点 A），即理论燃烧温度（图源：课程课件）</figcaption>
 </figure>
-<h3 id="_119">反应方向与最大功<a class="headerlink" href="#_119" title="Permanent link">&para;</a></h3>
+<h3 id="_119">反应方向与最大功<a class="headerlink" href="#_119" title="Permanent link">¶</a></h3>
 <p>第二定律不仅给出反应热，还判定<strong>反应能否自发进行</strong>及<strong>可获得的最大功</strong>。孤立系仍以熵增为准则，对常用约束则用相应的<strong>功势函数</strong>：</p>
 <figure>
-  <img alt="热力系平衡判据" src="imgs/14-equilibrium-criteria.png" width="82%" />
-<br />
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="imgs/14-equilibrium-criteria.png" data-desc-position="bottom"><img alt="热力系平衡判据" src="imgs/14-equilibrium-criteria.png" width="82%"></a>
+<br>
 <figcaption>热力系平衡判据：系统因各种势差自发变化，直到势差减小为零达到平衡。变化方向的判据同时也是平衡判据——孤立系用①平衡的熵判据，有约束时用②平衡的功势函数判据（F 或 G）（图源：课程课件）</figcaption>
 </figure>
 <div class="admonition key-point">
@@ -7417,7 +7424,7 @@ u &amp;= u' + x(u'' - u')
 <p class="admonition-title">与㶲一脉相承</p>
 <p>这正是第三章<strong>㶲（做功能力）</strong>概念在化学反应系统中的体现——最大有用功就是反应物相对产物的做功能力。燃料电池追求接近 <span class="arithmatex">\(W_{u,\max}\)</span>，而普通燃烧把这部分做功能力几乎全部耗散为热。</p>
 </div>
-<h3 id="_120">化学平衡<a class="headerlink" href="#_120" title="Permanent link">&para;</a></h3>
+<h3 id="_120">化学平衡<a class="headerlink" href="#_120" title="Permanent link">¶</a></h3>
 <p>可逆反应正逆同时进行，达到<strong>化学平衡</strong>时正逆速率相等。平衡程度由<strong>平衡常数</strong> <span class="arithmatex">\(K_p\)</span> 描述：</p>
 <div class="arithmatex">\[\Delta G^\circ = -RT\ln K_p\]</div>
 <p>平衡常数随温度的变化由<strong>范特霍夫方程</strong>给出：</p>
@@ -7426,7 +7433,7 @@ u &amp;= u' + x(u'' - u')
 <p class="admonition-title">平衡移动方向</p>
 <p>放热反应（<span class="arithmatex">\(\Delta H_r&lt;0\)</span>）升温使 <span class="arithmatex">\(K_p\)</span> 减小（平衡左移）；吸热反应升温使 <span class="arithmatex">\(K_p\)</span> 增大（平衡右移）——与勒夏特列原理一致。</p>
 </div>
-<h3 id="_121">热力学第三定律与绝对熵<a class="headerlink" href="#_121" title="Permanent link">&para;</a></h3>
+<h3 id="_121">热力学第三定律与绝对熵<a class="headerlink" href="#_121" title="Permanent link">¶</a></h3>
 <div class="admonition definition">
 <p class="admonition-title">热力学第三定律（奈斯特定理）</p>
 <p><strong>奈斯特（Nernst）热定理</strong>：凝聚系在可逆定温过程中的熵变，随热力学温度趋于零而趋于零（<span class="arithmatex">\(\lim_{T\to 0}\Delta S = 0\)</span>）。普朗克进一步规定<strong>绝对零度下完整晶体的熵为零</strong>：</p>
@@ -7446,7 +7453,7 @@ u &amp;= u' + x(u'' - u')
 <div class="arithmatex">\[= \left[-393.5 + 2\times(-241.8)\right] - \left[-74.8 + 0\right] = -877.1 + 74.8 = -802.3\ \text{kJ/mol}\]</div>
 <p><strong>要点</strong>：<span class="arithmatex">\(\Delta H_r^\circ &lt; 0\)</span>，反应放热 <span class="arithmatex">\(802.3\,\text{kJ/mol}\)</span>（这是甲烷的低位发热量，水以气态计）。生成焓法本质就是盖斯定律的应用。</p>
 </details>
-<h3 id="_122">真题精选<a class="headerlink" href="#_122" title="Permanent link">&para;</a></h3>
+<h3 id="_122">真题精选<a class="headerlink" href="#_122" title="Permanent link">¶</a></h3>
 <details class="question">
 <summary>24-25春夏 · 盖斯定律，设计实验测 C+½O₂→CO 的热效应</summary>
 <p><strong>题</strong> 赫斯（盖斯）定律，设计一个实验方法测定 <span class="arithmatex">\(\text{C} + \tfrac{1}{2}\text{O}_2 \to \text{CO}\)</span> 的热效应。</p>
@@ -7553,9 +7560,9 @@ u &amp;= u' + x(u'' - u')
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
-          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   回到页面顶部
 </button>
         
@@ -7600,5 +7607,7 @@ u &amp;= u' + x(u'' - u')
         <script src="../../../javascripts/site.js"></script>
       
     
-  </body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "fade", "closeEffect": "fade", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

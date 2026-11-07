@@ -1,7 +1,4 @@
-
-<!doctype html>
-<html lang="zh" class="no-js">
-  <head>
+<!DOCTYPE html><html lang="zh" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -59,7 +56,17 @@
 
     
     
-  </head>
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     
@@ -92,15 +99,15 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../.." title="WalkinDadHH&#39;s Notebook" class="md-header__button md-logo" aria-label="WalkinDadHH's Notebook" data-md-component="logo">
+    <a href="../.." title="WalkinDadHH's Notebook" class="md-header__button md-logo" aria-label="WalkinDadHH's Notebook" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4zM3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2-2v2h2V5zm0 14h2v-2H5zm0-6h2v-2H5z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4zM3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2-2v2h2V5zm0 14h2v-2H5zm0-6h2v-2H5z"></path></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -125,20 +132,20 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom" aria-label="切换到深色模式" type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom" aria-label="切换到浅色模式" type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
       </label>
     
   
@@ -154,24 +161,24 @@
       
         <label class="md-header__button md-icon" for="__search">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         </label>
         <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="查找">
         
         <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
         </button>
       </nav>
       
@@ -179,7 +186,7 @@
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             正在初始化搜索引擎
@@ -387,7 +394,7 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -398,16 +405,16 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="WalkinDadHH&#39;s Notebook" class="md-nav__button md-logo" aria-label="WalkinDadHH's Notebook" data-md-component="logo">
+    <a href="../.." title="WalkinDadHH's Notebook" class="md-nav__button md-logo" aria-label="WalkinDadHH's Notebook" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4zM3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2-2v2h2V5zm0 14h2v-2H5zm0-6h2v-2H5z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4zM3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2-2v2h2V5zm0 14h2v-2H5zm0-6h2v-2H5z"></path></svg>
 
     </a>
     WalkinDadHH's Notebook
   </label>
   
-  <ul class="md-nav__list" data-md-scrollfix>
+  <ul class="md-nav__list" data-md-scrollfix="">
     
       
       
@@ -494,7 +501,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked="">
         
           
           <div class="md-nav__link md-nav__container">
@@ -531,7 +538,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
             
@@ -601,7 +608,7 @@
       <span class="md-nav__icon md-icon"></span>
       目录
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
@@ -1005,7 +1012,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
         
           
           <div class="md-nav__link md-nav__container">
@@ -1042,7 +1049,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
             
@@ -1068,7 +1075,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2">
         
           
           <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
@@ -1098,7 +1105,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -1128,7 +1135,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_1">
         
           
           <div class="md-nav__link md-nav__container">
@@ -1165,7 +1172,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
             
@@ -1272,7 +1279,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
         
           
           <div class="md-nav__link md-nav__container">
@@ -1304,7 +1311,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
             
@@ -1341,7 +1348,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
         
           
           <div class="md-nav__link md-nav__container">
@@ -1378,7 +1385,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
             
@@ -1414,7 +1421,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2">
         
           
           <div class="md-nav__link md-nav__container">
@@ -1451,7 +1458,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
             
@@ -1608,7 +1615,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7">
         
           
           <div class="md-nav__link md-nav__container">
@@ -1645,7 +1652,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
             
@@ -1719,7 +1726,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1737,7 +1744,7 @@
       <span class="md-nav__icon md-icon"></span>
       目录
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
@@ -2117,7 +2124,7 @@
 
 
 <div class="ode-notes">
-<h1 id="_1">常微分方程<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="_1">常微分方程<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">讲义说明</p>
 <ul>
@@ -2134,9 +2141,9 @@
 <li><strong>初值问题</strong>（Cauchy（柯西）问题）：方程 + 初值条件 <span class="arithmatex">\(y(x_0) = y_0,\, y'(x_0) = y_1,\, \dots\)</span></li>
 <li><strong>Picard（皮卡）存在唯一性定理</strong>：<span class="arithmatex">\(y' = f(x,y)\)</span>，若 <span class="arithmatex">\(f\)</span> 和 <span class="arithmatex">\(\partial f / \partial y\)</span> 在 <span class="arithmatex">\((x_0, y_0)\)</span> 附近连续，则初值问题在某邻域内存在唯一解。</li>
 </ul>
-<hr />
-<h2 id="_2">一、一阶微分方程<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="11">1.1 变量可分离方程<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<hr>
+<h2 id="_2">一、一阶微分方程<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<h3 id="11">1.1 变量可分离方程<a class="headerlink" href="#11" title="Permanent link">¶</a></h3>
 <p><strong>形式</strong></p>
 <div class="arithmatex">\[\frac{\mathrm{d}y}{\mathrm{d}x} = f(x)\,g(y)\]</div>
 <p><strong>解法</strong></p>
@@ -2168,7 +2175,7 @@
 <div class="arithmatex">\[\frac{1+y}{1-y} = C\,e^{x^2}\]</div>
 <p><strong>检查遗漏解</strong>：<span class="arithmatex">\(1-y^2=0\)</span> 时 <span class="arithmatex">\(y=\pm 1\)</span>，代回验证 <span class="arithmatex">\(\dfrac{\mathrm{d}y}{\mathrm{d}x}=0\)</span> 成立，故 <span class="arithmatex">\(y\equiv 1\)</span> 和 <span class="arithmatex">\(y\equiv -1\)</span> 也是解。</p>
 </div>
-<h3 id="12">1.2 齐次方程<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<h3 id="12">1.2 齐次方程<a class="headerlink" href="#12" title="Permanent link">¶</a></h3>
 <p><strong>形式</strong>（右端只依赖 <span class="arithmatex">\(y/x\)</span>）</p>
 <div class="arithmatex">\[\frac{\mathrm{d}y}{\mathrm{d}x} = f\!\left(\frac{y}{x}\right)\]</div>
 <p><strong>解法</strong></p>
@@ -2190,7 +2197,7 @@
 <p><strong>代初值</strong> <span class="arithmatex">\(y(1)=1\)</span>：<span class="arithmatex">\(4+1 = C\)</span>，得 <span class="arithmatex">\(C = 5\)</span>，特解为</p>
 <div class="arithmatex">\[y^2 = 5x^3 - 4x^2\]</div>
 </div>
-<h3 id="13">1.3 一阶线性方程<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
+<h3 id="13">1.3 一阶线性方程<a class="headerlink" href="#13" title="Permanent link">¶</a></h3>
 <p><strong>形式</strong></p>
 <div class="arithmatex">\[\frac{\mathrm{d}y}{\mathrm{d}x} + p(x)\,y = f(x)\]</div>
 <p><strong>通解公式</strong>（积分因子法）</p>
@@ -2212,7 +2219,7 @@
 <p><strong>第三步：代初值</strong> <span class="arithmatex">\(y(1)=0\)</span>：<span class="arithmatex">\(0 = 1 + C\)</span>，故 <span class="arithmatex">\(C = -1\)</span>，特解为</p>
 <div class="arithmatex">\[y = x^3 - x^2\]</div>
 </div>
-<h3 id="14-bernoulli">1.4 Bernoulli（伯努利）方程<a class="headerlink" href="#14-bernoulli" title="Permanent link">&para;</a></h3>
+<h3 id="14-bernoulli">1.4 Bernoulli（伯努利）方程<a class="headerlink" href="#14-bernoulli" title="Permanent link">¶</a></h3>
 <p><strong>形式</strong></p>
 <div class="arithmatex">\[\frac{\mathrm{d}y}{\mathrm{d}x} + p(x)\,y = f(x)\,y^{n},\quad n \ne 0,1\]</div>
 <p><strong>解法</strong></p>
@@ -2239,7 +2246,7 @@
 <div class="arithmatex">\[y = z^2 = x^4\!\left(\frac{1}{2}\ln|x| + C\right)^{2}\]</div>
 <p>另外注意 <span class="arithmatex">\(y \equiv 0\)</span> 也是原方程的解（<span class="arithmatex">\(n&gt;0\)</span> 时的奇解）。</p>
 </div>
-<h3 id="15-riccati">1.5 Riccati（里卡提）方程<a class="headerlink" href="#15-riccati" title="Permanent link">&para;</a></h3>
+<h3 id="15-riccati">1.5 Riccati（里卡提）方程<a class="headerlink" href="#15-riccati" title="Permanent link">¶</a></h3>
 <p><strong>形式</strong></p>
 <div class="arithmatex">\[\frac{\mathrm{d}y}{\mathrm{d}x} = p(x)\,y^2 + q(x)\,y + r(x)\]</div>
 <p>这是形式上最简单的非线性方程，一般不能用初等方法求解。</p>
@@ -2269,7 +2276,7 @@
 <p><strong>第五步：回代。</strong> <span class="arithmatex">\(u = z^{-1} = \dfrac{3}{3Cx^4 - x}\)</span>，再回代 <span class="arithmatex">\(y = u + \dfrac{2}{x}\)</span>：</p>
 <div class="arithmatex">\[y = \frac{2}{x} + \frac{3}{3Cx^4 - x}\]</div>
 </div>
-<h3 id="16">1.6 全微分方程<a class="headerlink" href="#16" title="Permanent link">&para;</a></h3>
+<h3 id="16">1.6 全微分方程<a class="headerlink" href="#16" title="Permanent link">¶</a></h3>
 <p><strong>形式</strong></p>
 <div class="arithmatex">\[M(x,y)\,\mathrm{d}x + N(x,y)\,\mathrm{d}y = 0\]</div>
 <p><strong>判定与求解四步</strong></p>
@@ -2319,7 +2326,7 @@
 <p>利用凑微分 <span class="arithmatex">\(\dfrac{x\,\mathrm{d}y - y\,\mathrm{d}x}{y^2} = -\mathrm{d}\!\left(\dfrac{x}{y}\right)\)</span>，直接积分：</p>
 <div class="arithmatex">\[x^2 + \frac{3}{2}y^2 - \frac{x}{y} = C\]</div>
 </div>
-<h3 id="17">1.7 变量代换（一阶方程的降维打击）<a class="headerlink" href="#17" title="Permanent link">&para;</a></h3>
+<h3 id="17">1.7 变量代换（一阶方程的降维打击）<a class="headerlink" href="#17" title="Permanent link">¶</a></h3>
 <p>对"看起来像齐次/线性但不完全是"的方程，换元化归。</p>
 <div class="admonition example">
 <p class="admonition-title">例 1 (20-21)</p>
@@ -2333,7 +2340,7 @@
 <div class="arithmatex">\[\frac{\mathrm{d}Y}{\mathrm{d}X} = 2\!\left(\frac{Y}{X+Y}\right)^2\]</div>
 <p>再令 <span class="arithmatex">\(u = Y/X\)</span> 化为齐次方程。</p>
 </div>
-<h3 id="18-x-y">1.8 x, y 互换<a class="headerlink" href="#18-x-y" title="Permanent link">&para;</a></h3>
+<h3 id="18-x-y">1.8 x, y 互换<a class="headerlink" href="#18-x-y" title="Permanent link">¶</a></h3>
 <p>把 <span class="arithmatex">\(x\)</span> 视作 <span class="arithmatex">\(y\)</span> 的函数，伯努利型有时反过来就是线性。</p>
 <div class="admonition example">
 <p class="admonition-title">例题 (23-24)</p>
@@ -2358,7 +2365,7 @@
 <p>积分因子 <span class="arithmatex">\(y^2\)</span>，解得 <span class="arithmatex">\(z = -\dfrac{2y^3}{5} + \dfrac{C}{y^2}\)</span>，回代 <span class="arithmatex">\(x^{-2} = z\)</span>：</p>
 <div class="arithmatex">\[\frac{1}{x^2} = \frac{C}{y^2} - \frac{2y^3}{5}\]</div>
 </div>
-<h3 id="19-clairaut">1.9 Clairaut（克莱罗）方程与参数表示<a class="headerlink" href="#19-clairaut" title="Permanent link">&para;</a></h3>
+<h3 id="19-clairaut">1.9 Clairaut（克莱罗）方程与参数表示<a class="headerlink" href="#19-clairaut" title="Permanent link">¶</a></h3>
 <p><strong>Clairaut（克莱罗）方程</strong></p>
 <div class="arithmatex">\[y = xy' + \psi(y')\]</div>
 <p><strong>解法</strong>：令 <span class="arithmatex">\(p = y'\)</span>，两端对 <span class="arithmatex">\(x\)</span> 微分得 <span class="arithmatex">\(p = p + (x + \psi'(p))\,p'\)</span>，即</p>
@@ -2376,9 +2383,9 @@
 <div class="arithmatex">\[\begin{cases} x = 2p + Cp^{-2} \\ y = p^2 + 2Cp^{-1} \end{cases} \quad\text{（参数形式通解）}\]</div>
 <p>令 <span class="arithmatex">\(p' = 0\)</span> 还可得奇解 <span class="arithmatex">\(y = 0\)</span>。</p>
 </div>
-<hr />
-<h2 id="_3">二、可降阶的二阶微分方程<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h3 id="21-y">2.1 不显含 y 的方程<a class="headerlink" href="#21-y" title="Permanent link">&para;</a></h3>
+<hr>
+<h2 id="_3">二、可降阶的二阶微分方程<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<h3 id="21-y">2.1 不显含 y 的方程<a class="headerlink" href="#21-y" title="Permanent link">¶</a></h3>
 <p><strong>形式</strong> <span class="arithmatex">\(y'' = f(x,\, y')\)</span></p>
 <p><strong>解法</strong>：令 <span class="arithmatex">\(p = y'\)</span>，则 <span class="arithmatex">\(p' = y''\)</span>，化为一阶方程 <span class="arithmatex">\(p' = f(x,p)\)</span>。解出 <span class="arithmatex">\(p(x)\)</span> 后再积一次分得 <span class="arithmatex">\(y\)</span>。</p>
 <div class="admonition example">
@@ -2398,7 +2405,7 @@
 <p>再积分一次：</p>
 <div class="arithmatex">\[y = -x^4 - 4x^3 - 9x^2 + C_1 e^{x} + C_2 x + C_3\]</div>
 </div>
-<h3 id="22-x">2.2 不显含 x 的方程<a class="headerlink" href="#22-x" title="Permanent link">&para;</a></h3>
+<h3 id="22-x">2.2 不显含 x 的方程<a class="headerlink" href="#22-x" title="Permanent link">¶</a></h3>
 <p><strong>形式</strong> <span class="arithmatex">\(y'' = f(y,\, y')\)</span></p>
 <p><strong>解法</strong>：令 <span class="arithmatex">\(p = y'\)</span>，视 <span class="arithmatex">\(p\)</span> 为 <span class="arithmatex">\(y\)</span> 的函数，则</p>
 <div class="arithmatex">\[y'' = \frac{\mathrm{d}p}{\mathrm{d}x} = p\,\frac{\mathrm{d}p}{\mathrm{d}y}\]</div>
@@ -2437,8 +2444,8 @@
 <p>再分离 <span class="arithmatex">\(\cot y\,\mathrm{d}y = \mathrm{d}x\)</span>，积分得 <span class="arithmatex">\(\ln|\sin y| = x + C_2\)</span>。由 <span class="arithmatex">\(y(0) = \dfrac{\pi}{4}\)</span>：</p>
 <div class="arithmatex">\[\sin y = \frac{1}{\sqrt{2}}\,e^{x}\]</div>
 </div>
-<hr />
-<h2 id="_4">三、高阶线性微分方程<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="_4">三、高阶线性微分方程<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
 <p><strong>方法总览</strong>（<span class="arithmatex">\(n\)</span> 阶线性方程 <span class="arithmatex">\(y^{(n)} + a_1 y^{(n-1)} + \cdots + a_n y = f(x)\)</span>）</p>
 <table>
 <thead>
@@ -2461,8 +2468,8 @@
 </tr>
 </tbody>
 </table>
-<hr />
-<h3 id="31-n">3.1 n 阶常系数齐次线性方程<a class="headerlink" href="#31-n" title="Permanent link">&para;</a></h3>
+<hr>
+<h3 id="31-n">3.1 n 阶常系数齐次线性方程<a class="headerlink" href="#31-n" title="Permanent link">¶</a></h3>
 <p><strong>形式</strong></p>
 <div class="arithmatex">\[y^{(n)} + a_1 y^{(n-1)} + \cdots + a_{n-1} y' + a_n y = 0\]</div>
 <p><strong>解法：特征方程法</strong></p>
@@ -2480,7 +2487,7 @@
 <p>特征方程 <span class="arithmatex">\(\lambda^4 - 2\lambda^3 + 3\lambda^2 - 2\lambda + 1 = (\lambda^2 - \lambda + 1)^2 = 0\)</span>，得 <span class="arithmatex">\(\lambda = \tfrac{1}{2} \pm \tfrac{\sqrt{3}}{2}\mathrm{i}\)</span>（二重）。</p>
 <div class="arithmatex">\[y = e^{x/2}\!\left[(c_1 + c_2 x)\cos\tfrac{\sqrt{3}}{2}x + (c_3 + c_4 x)\sin\tfrac{\sqrt{3}}{2}x\right]\]</div>
 </div>
-<h3 id="32">3.2 二阶常系数非齐次线性方程<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
+<h3 id="32">3.2 二阶常系数非齐次线性方程<a class="headerlink" href="#32" title="Permanent link">¶</a></h3>
 <p><strong>形式</strong> <span class="arithmatex">\(y'' + py' + qy = f(x)\)</span></p>
 <p><strong>解法</strong>：<span class="arithmatex">\(y = \bar{y} + y^{*}\)</span>。齐次通解 <span class="arithmatex">\(\bar{y}\)</span> 查表：</p>
 <table>
@@ -2566,12 +2573,12 @@
 <p class="admonition-title">先化简再设特解</p>
 <p>含复合三角函数（如 <span class="arithmatex">\(\sin(x-\pi/4)\)</span>）时，务必先展开为 <span class="arithmatex">\(\sin x\)</span>, <span class="arithmatex">\(\cos x\)</span> 的线性组合，再判断 <span class="arithmatex">\(k\)</span> 并设特解形式。</p>
 </div>
-<h3 id="33-euler">3.3 Euler（欧拉）方程<a class="headerlink" href="#33-euler" title="Permanent link">&para;</a></h3>
+<h3 id="33-euler">3.3 Euler（欧拉）方程<a class="headerlink" href="#33-euler" title="Permanent link">¶</a></h3>
 <p><strong>形式</strong></p>
 <div class="arithmatex">\[a_0 x^{n} y^{(n)} + a_1 x^{n-1} y^{(n-1)} + \cdots + a_{n-1} x y' + a_n y = f(x)\]</div>
 <p><strong>解法</strong>：令 <span class="arithmatex">\(t = \ln|x|\)</span>，则</p>
 <div class="arithmatex">\[x y' = \dot{y},\qquad x^2 y'' = \ddot{y} - \dot{y}\]</div>
-<p>方程化为关于 <span class="arithmatex">\(t\)</span> 的常系数线性方程，按 3.&#8531;.2 求解后回代 <span class="arithmatex">\(t=\ln|x|\)</span>。</p>
+<p>方程化为关于 <span class="arithmatex">\(t\)</span> 的常系数线性方程，按 3.⅓.2 求解后回代 <span class="arithmatex">\(t=\ln|x|\)</span>。</p>
 <div class="admonition example">
 <p class="admonition-title">例题 (23-24)</p>
 <p><span class="arithmatex">\(x^2 y'' - 7xy' + 16y = 0\)</span>，<span class="arithmatex">\(y(-1)=1\)</span>，<span class="arithmatex">\(y'(1)=-3\)</span></p>
@@ -2594,7 +2601,7 @@
 <p><span class="arithmatex">\(a = 3\)</span> 是单特征根（<span class="arithmatex">\(k=1\)</span>），设 <span class="arithmatex">\(y^{*} = Ate^{3t}\)</span>。代入得 <span class="arithmatex">\(4A = 2\)</span>，<span class="arithmatex">\(A = \dfrac{1}{2}\)</span>。回代：</p>
 <div class="arithmatex">\[y = c_1 x^3 + c_2 x^{-1} + \frac{1}{2} x^3 \ln x\]</div>
 </div>
-<h3 id="34">3.4 二阶变系数齐次线性方程（已知一解）<a class="headerlink" href="#34" title="Permanent link">&para;</a></h3>
+<h3 id="34">3.4 二阶变系数齐次线性方程（已知一解）<a class="headerlink" href="#34" title="Permanent link">¶</a></h3>
 <p><strong>形式</strong> <span class="arithmatex">\(y'' + p(x)\,y' + q(x)\,y = 0\)</span></p>
 <p><strong>解法（设 <span class="arithmatex">\(y=u y_1\)</span> 降阶）</strong>：若已知一个非零解 <span class="arithmatex">\(y_1\)</span>，设</p>
 <div class="arithmatex">\[y = u y_1.\]</div>
@@ -2632,7 +2639,7 @@ y'' &amp;= u'' y_1 + 2u' y_1' + u y_1''.
 <p>由 Liouville 公式（<span class="arithmatex">\(p(x) = \dfrac{2x}{1-x^2}\)</span>）得 <span class="arithmatex">\(z_2 = x^2 + 1\)</span>（取线性无关部分 <span class="arithmatex">\(1+x^2\)</span>）。</p>
 <div class="arithmatex">\[z = C_1 x + C_2(1+x^2) \;\Rightarrow\; y = C_1 x^2 + C_2(x^3 + 3x) + C_3\]</div>
 </div>
-<h3 id="35">3.5 二阶变系数齐次线性方程（某些特殊系数）<a class="headerlink" href="#35" title="Permanent link">&para;</a></h3>
+<h3 id="35">3.5 二阶变系数齐次线性方程（某些特殊系数）<a class="headerlink" href="#35" title="Permanent link">¶</a></h3>
 <p><strong>形式</strong> <span class="arithmatex">\(y'' + p(x)\,y' + q(x)\,y = 0\)</span></p>
 <p><strong>解法（设 <span class="arithmatex">\(y=uv\)</span> 化为常系数）</strong>：设</p>
 <div class="arithmatex">\[y = uv,\]</div>
@@ -2682,7 +2689,7 @@ v'' &amp;= \left(-\frac{p'}{2} + \frac{p^2}{4}\right)v,
 <p>回代得</p>
 <div class="arithmatex">\[y = e^{-x^2/4}\!\left(c_1 e^{x/2} + c_2 e^{-x/2}\right).\]</div>
 </div>
-<h3 id="36">3.6 二阶变系数非齐次线性方程（常数变易法）<a class="headerlink" href="#36" title="Permanent link">&para;</a></h3>
+<h3 id="36">3.6 二阶变系数非齐次线性方程（常数变易法）<a class="headerlink" href="#36" title="Permanent link">¶</a></h3>
 <p><strong>形式</strong> <span class="arithmatex">\(y'' + p(x)\,y' + q(x)\,y = f(x)\)</span>，已知齐次基础解系 <span class="arithmatex">\(y_1, y_2\)</span>。</p>
 <p><strong>解法（常数变易法）</strong>：设</p>
 <div class="arithmatex">\[y = u_1(x)y_1(x) + u_2(x)y_2(x).\]</div>
@@ -2829,9 +2836,9 @@ u_2 = -\frac{1}{2}(x^2-2x+2)e^x.
 <p>通解为</p>
 <div class="arithmatex">\[y = c_1\frac{e^{x}}{x} + c_2\frac{e^{-x}}{x} - \frac{x^2 + 2}{x}\]</div>
 </div>
-<hr />
-<h2 id="_5">四、线性微分方程组<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<h3 id="41">4.1 常系数齐次线性方程组<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<hr>
+<h2 id="_5">四、线性微分方程组<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
+<h3 id="41">4.1 常系数齐次线性方程组<a class="headerlink" href="#41" title="Permanent link">¶</a></h3>
 <p><strong>形式</strong></p>
 <div class="arithmatex">\[\frac{\mathrm{d}\mathbf{x}}{\mathrm{d}t} = A\mathbf{x},\quad A \in \mathbb{R}^{n\times n},\; \mathbf{x} = (x_1,\dots,x_n)^{T}\]</div>
 <p><strong>解法</strong>：求 <span class="arithmatex">\(A\)</span> 的特征值 <span class="arithmatex">\(|A - \lambda E| = 0\)</span>。</p>
@@ -2860,7 +2867,7 @@ u_2 = -\frac{1}{2}(x^2-2x+2)e^x.
 <p>即</p>
 <div class="arithmatex">\[\begin{cases} x = c_1 e^{t} + c_2 e^{3t} \\ y = -c_1 e^{t} - c_2 e^{3t} - c_3 e^{-2t} \\ z = c_2 e^{3t} + c_3 e^{-2t} \end{cases}\]</div>
 </div>
-<h3 id="42">4.2 常系数非齐次线性方程组<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<h3 id="42">4.2 常系数非齐次线性方程组<a class="headerlink" href="#42" title="Permanent link">¶</a></h3>
 <p><strong>形式</strong></p>
 <div class="arithmatex">\[\frac{\mathrm{d}\mathbf{x}}{\mathrm{d}t} = A\mathbf{x} + \mathbf{f}(t)\]</div>
 <p><strong>常数变易法</strong>：设齐次方程组的基本解矩阵为 <span class="arithmatex">\(X(t)\)</span>，令 <span class="arithmatex">\(\mathbf{x} = X(t)\,\mathbf{c}(t)\)</span>，代入得</p>
@@ -2890,7 +2897,7 @@ u_2 = -\frac{1}{2}(x^2-2x+2)e^x.
 <p>设常向量特解 <span class="arithmatex">\(\mathbf{x}^{*} = (A, B, C)^T\)</span>，由 <span class="arithmatex">\(A\mathbf{a} + \mathbf{b} = 0\)</span> 解得 <span class="arithmatex">\(A = -7,\, B = -3,\, C = -1\)</span>。通解：</p>
 <div class="arithmatex">\[\mathbf{x} = c_1 \begin{pmatrix} 2 \\ 2 \\ 1 \end{pmatrix} e^{t} + c_2 \begin{pmatrix} -2 \\ 0 \\ 1 \end{pmatrix} e^{3t} + c_3 \begin{pmatrix} 2 \\ -2 \\ 1 \end{pmatrix} e^{5t} - \begin{pmatrix} 7 \\ 3 \\ 1 \end{pmatrix}\]</div>
 </div>
-<h3 id="43">4.3 消元法<a class="headerlink" href="#43" title="Permanent link">&para;</a></h3>
+<h3 id="43">4.3 消元法<a class="headerlink" href="#43" title="Permanent link">¶</a></h3>
 <p>当方程组只含 2 个未知函数时，消元法往往比矩阵特征根法更简便。</p>
 <p><strong>思路</strong>：从方程组中消去一个未知函数，化为一个高阶常系数方程求解。</p>
 <div class="admonition example">
@@ -2905,7 +2912,7 @@ u_2 = -\frac{1}{2}(x^2-2x+2)e^x.
 <p class="admonition-title">何时用消元法</p>
 <p>变量只有 2 个且系数为常数时，消元法计算量通常小于求特征向量。变量 3 个及以上时建议用矩阵法。</p>
 </div>
-<h3 id="44">4.4 二阶方程组化为一阶方程组<a class="headerlink" href="#44" title="Permanent link">&para;</a></h3>
+<h3 id="44">4.4 二阶方程组化为一阶方程组<a class="headerlink" href="#44" title="Permanent link">¶</a></h3>
 <div class="admonition example">
 <p class="admonition-title">例题 (24-25夏)</p>
 <p><span class="arithmatex">\(\begin{cases} x'' = 6x + 2y \\ y'' = 3x + 7y \end{cases}\)</span></p>
@@ -2917,8 +2924,8 @@ u_2 = -\frac{1}{2}(x^2-2x+2)e^x.
 <p>回代 <span class="arithmatex">\(y = \dfrac{x'' - 6x}{2}\)</span>：</p>
 <div class="arithmatex">\[y = -c_1 e^{2t} - c_2 e^{-2t} + \frac{3}{2}c_3 e^{3t} + \frac{3}{2}c_4 e^{-3t}\]</div>
 </div>
-<hr />
-<h2 id="_6">五、证明题选讲<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="_6">五、证明题选讲<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
 <p>本节收录历年卷中的典型证明题。</p>
 <div class="admonition info">
 <p class="admonition-title">证明题常用定理与工具</p>
@@ -2974,7 +2981,7 @@ u_2 = -\frac{1}{2}(x^2-2x+2)e^x.
 <p class="admonition-title">学习顺序</p>
 <p>建议先掌握"唯一性定理 + Wronskian + Cramer 法则"这三组工具，再看 5.1 和 5.2；5.3 和 5.4 更像是"结构识别题"，重点是看到题目后知道该套哪个工具。</p>
 </div>
-<h3 id="51">5.1 线性无关解无公共零点<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
+<h3 id="51">5.1 线性无关解无公共零点<a class="headerlink" href="#51" title="Permanent link">¶</a></h3>
 <div class="admonition example">
 <p class="admonition-title">命题 (24-25 / 23-24)</p>
 <p>设 <span class="arithmatex">\(u(x), v(x)\)</span> 是 <span class="arithmatex">\(y'' + p(x)y' + q(x)y = 0\)</span> 的两个线性无关解（<span class="arithmatex">\(p, q\)</span> 连续），则 <span class="arithmatex">\(u, v\)</span> 不存在公共零点。</p>
@@ -2986,7 +2993,7 @@ u_2 = -\frac{1}{2}(x^2-2x+2)e^x.
 <p class="admonition-title">另证（不用 Wronskian）</p>
 <p>若 <span class="arithmatex">\(u(x^{*}) = 0\)</span>，由 <span class="arithmatex">\(u \not\equiv 0\)</span> 知 <span class="arithmatex">\(u'(x^{*}) \ne 0\)</span>（否则由唯一性定理 <span class="arithmatex">\(u \equiv 0\)</span>）。同理 <span class="arithmatex">\(v'(x^{*}) \ne 0\)</span>。构造 <span class="arithmatex">\(\varphi(x) = u'(x^{*})\,v(x) - v'(x^{*})\,u(x)\)</span>，它也是齐次方程的解，且 <span class="arithmatex">\(\varphi(x^{*}) = \varphi'(x^{*}) = 0\)</span>，由唯一性 <span class="arithmatex">\(\varphi \equiv 0\)</span>，即 <span class="arithmatex">\(u, v\)</span> 线性相关，矛盾。</p>
 </div>
-<h3 id="52">5.2 系数由基础解系唯一确定<a class="headerlink" href="#52" title="Permanent link">&para;</a></h3>
+<h3 id="52">5.2 系数由基础解系唯一确定<a class="headerlink" href="#52" title="Permanent link">¶</a></h3>
 <div class="admonition example">
 <p class="admonition-title">命题 (23-24)</p>
 <p>设 <span class="arithmatex">\(y_1, y_2\)</span> 是 <span class="arithmatex">\(y'' + p(x)y' + q(x)y = 0\)</span> 的两个线性无关解，则 <span class="arithmatex">\(p(x), q(x)\)</span> 由 <span class="arithmatex">\(y_1, y_2\)</span> 唯一确定。</p>
@@ -2998,7 +3005,7 @@ u_2 = -\frac{1}{2}(x^2-2x+2)e^x.
 <div class="arithmatex">\[p = \frac{y_1'' y_2 - y_2'' y_1}{W},\quad q = \frac{y_2'' y_1' - y_1'' y_2'}{W}\]</div>
 <p>故 <span class="arithmatex">\(p(x), q(x)\)</span> 被 <span class="arithmatex">\(y_1, y_2\)</span> 唯一确定。证毕。</p>
 </div>
-<h3 id="53">5.3 齐次函数的积分因子<a class="headerlink" href="#53" title="Permanent link">&para;</a></h3>
+<h3 id="53">5.3 齐次函数的积分因子<a class="headerlink" href="#53" title="Permanent link">¶</a></h3>
 <div class="admonition example">
 <p class="admonition-title">命题 (24-25夏)</p>
 <p>若 <span class="arithmatex">\(P(x,y)\,\mathrm{d}x + Q(x,y)\,\mathrm{d}y = 0\)</span> 中 <span class="arithmatex">\(P, Q\)</span> 均为 <span class="arithmatex">\(m\)</span> 次齐次函数（即 <span class="arithmatex">\(P(tx,ty) = t^m P(x,y)\)</span>），则 <span class="arithmatex">\(\mu = \dfrac{1}{Px + Qy}\)</span> 是方程的一个积分因子（当 <span class="arithmatex">\(Px + Qy \ne 0\)</span>）。</p>
@@ -3008,7 +3015,7 @@ u_2 = -\frac{1}{2}(x^2-2x+2)e^x.
 <div class="arithmatex">\[\frac{\partial(\mu P)}{\partial y} = \frac{P_y D - P(P_x y + Q + Q_y y + P_y x - P_y x)}{D^2}\]</div>
 <p>经齐次性化简（利用 Euler 定理及 <span class="arithmatex">\(P_y = Q_x\)</span> 不必要成立的一般情况），可对称地证得两侧相等。证毕。</p>
 </div>
-<h3 id="54-riccati-bernoulli">5.4 Riccati（里卡提）方程化为 Bernoulli（伯努利）方程<a class="headerlink" href="#54-riccati-bernoulli" title="Permanent link">&para;</a></h3>
+<h3 id="54-riccati-bernoulli">5.4 Riccati（里卡提）方程化为 Bernoulli（伯努利）方程<a class="headerlink" href="#54-riccati-bernoulli" title="Permanent link">¶</a></h3>
 <div class="admonition example">
 <p class="admonition-title">命题 (23-24)</p>
 <p>若 <span class="arithmatex">\(y_1\)</span> 是 Riccati 方程 <span class="arithmatex">\(y' = a(x) + b(x)\,y + c(x)\,y^2\)</span> 的一个解，则代换 <span class="arithmatex">\(y = y_1 + u\)</span> 可将方程化为关于 <span class="arithmatex">\(u\)</span> 的 Bernoulli 方程。</p>
@@ -3017,7 +3024,7 @@ u_2 = -\frac{1}{2}(x^2-2x+2)e^x.
 <div class="arithmatex">\[u' = (b + 2cy_1)\,u + c\,u^2\]</div>
 <p>这正是关于 <span class="arithmatex">\(u\)</span> 的 Bernoulli 方程（<span class="arithmatex">\(n = 2\)</span>）。证毕。</p>
 </div>
-<hr />
+<hr>
 <div class="admonition info">
 <p class="admonition-title">说明</p>
 <p>如发现错误欢迎在评论区指出。</p>
@@ -3096,9 +3103,9 @@ u_2 = -\frac{1}{2}(x^2-2x+2)e^x.
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
-          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   回到页面顶部
 </button>
         
@@ -3143,5 +3150,7 @@ u_2 = -\frac{1}{2}(x^2-2x+2)e^x.
         <script src="../../javascripts/site.js"></script>
       
     
-  </body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "fade", "closeEffect": "fade", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

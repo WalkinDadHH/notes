@@ -1,8 +1,5 @@
-/* Noto Serif SC - 中文衬线字体（学术风格，jsDelivr CDN） */
-@import url('https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-sc@5/index.css');
-
-/* 霞鹜文楷 - 备用中文字体 */
-@import url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css');
+/* 霞鹜文楷屏幕版：屏幕上比普通版更清楚 */
+@import url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/style.css');
 
 /* JetBrains Mono - 代码字体 */
 @font-face {
